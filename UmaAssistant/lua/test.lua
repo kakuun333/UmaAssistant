@@ -33,8 +33,8 @@ local fm = require("file_manager");
 -- local event_dict = parser.getEventDict(event_html);
 -- utility.deepprint(event_dict);
 
-local ms = 2000;
-event_data = dumper.dumpEventData(ms);
+
+event_data = dumper.dumpEventData();
 
 -- for i,v in next, event_data do
 --     print(i,v);

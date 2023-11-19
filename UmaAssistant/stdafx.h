@@ -39,6 +39,7 @@ using json = nlohmann::json;
 /*			class			*/	
 #include "class/Screenshot.h"
 #include "class/Scanner.h"
+#include "class/FileManager.h"
 
 /*			utility			*/
 #include "utility/CharacterConvert.h"

@@ -79,7 +79,7 @@ local html_id_arr = {
 ---- 公共函數 ---- 公共函數 ---- 公共函數 ---- 公共函數 ---- 公共函數 
 
 function dumper.dumpEventData(ms)
-    ms = ms or 2500;
+    ms = ms or 2000;
 
     local event_data = {--[[
         [article_id] = {

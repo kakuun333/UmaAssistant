@@ -166,3 +166,7 @@ x64/Release/UmaAssistant.UmaForm.resources
 x64/Release/utility.lua
 opencv_world481d.dll
 opencv_world481.dll
+.vs/UmaAssistant/v17/ipch/AutoPCH/6f007f7900521d8d/FILEMANAGER.ipch
+.vs/UmaAssistant/v17/ipch/AutoPCH/679dce1d761fab88/FILEMANAGER.ipch
+.vs/UmaAssistant/v17/ipch/AutoPCH/4c136782441bc704/FILEMANAGER.ipch
+*.obj
