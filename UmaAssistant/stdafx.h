@@ -1,0 +1,66 @@
+#pragma once
+
+//#define UMA_DEBUG
+
+
+/*			Windows API			*/
+#include <Windows.h>
+#include <iostream>
+#include <fstream>
+#include <memory>
+#include <map>
+#include <vector>
+#include <cstring>
+#include <thread>
+
+
+// Gdi+
+#include <GdiPlus.h>
+#pragma comment(lib, "gdiplus.lib")
+
+/*			C++/CLI			*/
+#include <vcclr.h>
+
+// msclr
+#include <msclr/marshal.h>
+#include <msclr/marshal_cppstd.h>
+using namespace msclr::interop;
+
+/*			3rdparty			*/
+#include <curl/curl.h>
+
+#include <nlohmann/json.hpp>
+using json = nlohmann::json;
+
+#include <libxml/HTMLparser.h>
+#include <tesseract/baseapi.h>
+#include <leptonica/allheaders.h>
+
+/*			class			*/	
+#include "class/Screenshot.h"
+#include "class/Scanner.h"
+
+/*			utility			*/
+#include "utility/CharacterConvert.h"
+#include "utility/CharacterCombine.h"
+#include "utility/CharacterFilter.h"
+#include "utility/Pathfinder.h"
+
+/*			global			*/
+#include "global/Path.h"
+#include "global/FormManager.h"
+
+/*			lua			*/
+#include "lua/luaTest.h"
+
+
+/*			.Net			*/
+using namespace System;
+using namespace System::Collections;
+using namespace System::Collections::Generic;
+//using namespace System::ComponentModel;
+using namespace System::Data;
+using namespace System::Diagnostics;
+using namespace System::Drawing;
+using namespace System::IO;
+using namespace System::Windows::Forms;
