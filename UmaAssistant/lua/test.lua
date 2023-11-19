@@ -31,9 +31,10 @@ local fm = require("file_manager");
 -- local html = GetHtmlFromUrl("https://gamewith.jp/uma-musume/article/show/257406");
 -- local event_html = parser.getEventHtmlById(html, "tuuzyou_a");
 -- local event_dict = parser.getEventDict(event_html);
+-- utility.deepprint(event_dict);
 
-
-event_data = dumper.dumpEventData();
+local ms = 2000;
+event_data = dumper.dumpEventData(ms);
 
 -- for i,v in next, event_data do
 --     print(i,v);

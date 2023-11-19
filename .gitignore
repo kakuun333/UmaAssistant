@@ -164,3 +164,5 @@ x64/Release/UmaAssistant.PreviewForm.resources
 x64/Release/UmaAssistant.SettingsForm.resources
 x64/Release/UmaAssistant.UmaForm.resources
 x64/Release/utility.lua
+opencv_world481d.dll
+opencv_world481.dll

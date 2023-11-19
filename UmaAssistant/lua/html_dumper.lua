@@ -78,7 +78,9 @@ local html_id_arr = {
 
 ---- 公共函數 ---- 公共函數 ---- 公共函數 ---- 公共函數 ---- 公共函數 
 
-function dumper.dumpEventData()
+function dumper.dumpEventData(ms)
+    ms = ms or 2500;
+
     local event_data = {--[[
         [article_id] = {
             ["event_owner"] = event_owner,
@@ -101,7 +103,7 @@ function dumper.dumpEventData()
     ]]};
     
     local white_list = fm.getWhiteList();
-    local ms = 1500;
+    
 
     for i, white_id in ipairs(white_list) do
         local event_html = nil;

@@ -2,6 +2,7 @@ local pe = require("print_enhance");
 
 local utility = {};
 
+-- 打印出 table 的所有內容
 function utility.deepprint(otable, keyColor, valueColor)
     keyColor = keyColor or "";
     valueColor = valueColor or "";
@@ -19,6 +20,7 @@ function utility.deepprint(otable, keyColor, valueColor)
     end
 end
 
+-- table 深拷貝
 function utility.deepcopy(otable)
     local tmp;
 
