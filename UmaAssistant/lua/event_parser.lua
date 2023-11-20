@@ -1,4 +1,5 @@
 local pe = require("print_enhance");
+local utility = require("utility");
 
 parser = {}
 
@@ -51,15 +52,15 @@ end
 function parser.getEventDict(event_html)
     local event_dict = {--[[
         ["event_owner"] = event_owner,
-        ["event_slot"] = {
-            [1] = {
+        ["event_list"] = {
+            [event_1] = {
                 ["event_title"] = event_title,
-                ["event_choice"] = {
-                    [1] = {
+                ["choice_list"] = {
+                    [choice_1] = {
                         ["choice_title"] = choice_title
                         ["choice_effect"] = choice_effect
                     },
-                    [2] = {
+                    [choice_2] = {
                         ["choice_title"] = choice_title
                         ["choice_effect"] = choice_effect
                     },
@@ -72,7 +73,9 @@ function parser.getEventDict(event_html)
     -- 獲取 event_owner
     local event_owner = string.match(event_html, "<event_owner>(.-)</event_owner>");
     event_dict["event_owner"] = event_owner;
-    event_dict["event_slot"] = {};
+    event_dict["event_list"] = {};
+
+    local event_idx = 1;
 
     for event_content in string.gmatch(event_html, "(<h4.->.-</table>)") do
 
@@ -81,19 +84,18 @@ function parser.getEventDict(event_html)
         local event_title = string.match(event_content, "<h4.->(.-)</h4>");
         -- print("イベントタイトル: ", event_title);
 
-        local slot_idx = 1;
-        local choice_slot_idx = 1;
+        
+        local choice_idx = 1;
 
-        table.insert(event_dict["event_slot"], slot_idx, {
-            ["event_title"] = event_title,
-            ["event_slot"] = {}
-        })
+        event_dict["event_list"]["event_"..tostring(event_idx)] = {
+            ["event_title"] = event_title;
+            ["choice_list"] = {};
+        };
 
-        event_dict["event_slot"][slot_idx]["event_choice"] = {};
 
         for choice_html in string.gmatch(event_content, "<tr.->(.-)</tr>") do
-            local choice_title = string.match(choice_html, "<th.->(.-)</th.->");
             
+            local choice_title = string.match(choice_html, "<th.->(.-)</th.->");
             -- print("選択肢タイトル: ", choice_title);
             local choice_effect = string.match(choice_html, "<td.->(.-)</td.->");
             
@@ -102,23 +104,34 @@ function parser.getEventDict(event_html)
                 goto continue;
             end
 
-            local removed_br_effect = string.gsub(choice_effect, "<br>", "\n")
-            local replace_hr_effect = string.gsub(removed_br_effect, "<hr>", "\n--------------\n")
+            --[[
+                有一些角色的 choice_title 會有其他內容
+                例如「423577」就有 「L'Arcで発生時： 」
+                所以要再去從 tag 中篩選出需要的文字
+            ]]
+            if string.match(choice_title, "<hr>") ~= nil then 
+                local replaced_br_title = string.gsub(choice_title, "<br>", "\n");
+                local replaced_hr_title = string.gsub(replaced_br_title, "<hr>", "\n--------------\n");
+                local removed_span_title = string.gsub(replaced_hr_title, "<span.->(.-)</span>", "%1");
+                choice_title = removed_span_title;
+            end
+
+
+            local replace_br_effect = string.gsub(choice_effect, "<br>", "\n")
+            local replace_hr_effect = string.gsub(replace_br_effect, "<hr>", "\n--------------\n")
             -- print("選択肢効果: \n" .. replace_hr_effect);
             
-            
-            table.insert(event_dict["event_slot"][slot_idx]["event_choice"], choice_slot_idx, {
+            event_dict["event_list"]["event_"..tostring(event_idx)]["choice_list"]["choice_"..tostring(choice_idx)] = {
                 ["choice_title"] = choice_title,
                 ["choice_effect"] = replace_hr_effect,
-            })
+            }
 
-            choice_slot_idx = choice_slot_idx + 1;
+            choice_idx = choice_idx + 1;
             
             ::continue::
         end
 
-        slot_idx = slot_idx + 1;
-
+        event_idx = event_idx + 1;
     end
 
     return event_dict;

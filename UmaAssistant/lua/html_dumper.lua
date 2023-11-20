@@ -1,10 +1,10 @@
 --[[==============================================================================================================
-html_dumper的原則：公共函數一定會用到 GetHtmlFromUrl 函數。
+html_dumper 的原則：公共函數一定會用到 GetHtmlFromUrl() 函數。
 
 HTML 參考：
 <div id="tuuzyou_a" class="uma_skill_table">通常イベント(選択肢あり)</div>
 
-正則表達式：
+正規表達式：
 ()      ：補獲符合條件的字串內容，也就是會返回符合條件的字串
 +       ：匹配多個字符
 .-      ：任意字符（非貪婪）
@@ -20,6 +20,10 @@ dumper = {};
 local pe = require("print_enhance");
 local parser = require("event_parser");
 local fm = require("file_manager")
+
+
+---- 本地定數 ---- 本地定數 ---- 本地定數 ---- 本地定數 ---- 本地定數 
+local DEFAULT_MILLISECONDS = 2000
 
 ---- 本地變數 ---- 本地變數 ---- 本地變數 ---- 本地變數 ---- 本地變數 
 
@@ -79,20 +83,20 @@ local html_id_arr = {
 ---- 公共函數 ---- 公共函數 ---- 公共函數 ---- 公共函數 ---- 公共函數 
 
 function dumper.dumpEventData(ms)
-    ms = ms or 2000;
+    ms = ms or DEFAULT_MILLISECONDS;
 
     local event_data = {--[[
         [article_id] = {
             ["event_owner"] = event_owner,
-            ["event_slot"] = {
-                [1] = {
+            ["event_list"] = {
+                [event_1] = {
                     ["event_title"] = event_title,
-                    ["event_choice"] = {
-                        [1] = {
+                    ["choice_list"] = {
+                        [choice_1] = {
                             ["choice_title"] = choice_title
                             ["choice_effect"] = choice_effect
                         },
-                        [2] = {
+                        [choice_2] = {
                             ["choice_title"] = choice_title
                             ["choice_effect"] = choice_effect
                         },
@@ -126,7 +130,7 @@ function dumper.dumpEventData(ms)
 
         print("進度: ["..pe.red..i..pe.reset.. "/" ..pe.yellow..#white_list..pe.reset.."] "..pe.yellow..white_id..pe.reset..pe.cyan.." --"..ms.." 毫秒"..pe.reset);
 
-        
+        -- break; --[[ Debug 時使用 ]]
         sleep(ms);
     end
 
@@ -135,7 +139,9 @@ function dumper.dumpEventData(ms)
     return event_data;
 end
 
-function dumper.dumpBlackWhiteList()
+function dumper.dumpBlackWhiteList(ms)
+    ms = ms or DEFAULT_MILLISECONDS;
+
     local aid_arr = fm.getArticleId();
     -------------------------------------------------------------
     local black_list_file = io.open(fm.BLACK_LIST_PATH, "a");
@@ -144,7 +150,6 @@ function dumper.dumpBlackWhiteList()
     if black_list_file and white_list_file then
         local blacked_amount = 0;
         local whited_amount = 0;
-        local ms = 2500;
         -- 獲取已儲存的黑白名單
         local saved_black_list = fm.getBlackList();
         local saved_white_list = fm.getWhiteList();

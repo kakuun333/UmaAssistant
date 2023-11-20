@@ -107,16 +107,17 @@ void testlua()
                         //std::cout << event_owner << std::endl;
                         json_data[article_id_str][article_id_key] = event_owner;
                     }
-                    else // article_id_key == event_slot
+                    else // article_id_key == event_list
                     {
+                        const char* event_list = lua_tostring(L, -2);
+
                         lua_pushnil(L);
                         while (lua_next(L, table_idx_2) != 0)
                         {
-                            int slot = lua_tointeger(L, -2);
+                            const char* event = lua_tostring(L, -2);
                             int table_idx_3 = lua_gettop(L);
 
-                            std::string slot_str = std::to_string(slot);
-                            json_data[article_id_str][article_id_key][slot_str] = {};
+                            json_data[article_id_str][event_list][event] = {};
                             //std::cout << slot << std::endl;
 
                             lua_pushnil(L);
@@ -125,28 +126,27 @@ void testlua()
                                 int key_type = lua_type(L, -2);
                                 if (key_type == LUA_TSTRING) // 不知道為什麼會跑出 LUA_TBOOLEAN，所以用 lua_type() 篩選成 LUA_TSTRING
                                 {
-                                    const char* slot_key = lua_tostring(L, -2);
+                                    const char* event_key = lua_tostring(L, -2);
                                     
-                                    if (strcmp(slot_key, "event_title") == 0)
+                                    if (strcmp(event_key, "event_title") == 0)
                                     {
                                         const char* event_title = lua_tostring(L, -1);
                                         //std::cout << event_title << std::endl;
-                                        json_data[article_id_str][article_id_key][slot_str][slot_key] = event_title;
+                                        json_data[article_id_str][event_list][event][event_key] = event_title;
                                     }
-                                    else // slot_key == event_choice
+                                    else // event_key == choice_list
                                     {
+                                        const char* choice_list = lua_tostring(L, -2);
+
                                         int table_idx_4 = lua_gettop(L);
 
                                         lua_pushnil(L);
                                         while (lua_next(L, table_idx_4) != 0)
                                         {
-                                            int choice_slot = lua_tointeger(L, -2);
+                                            const char* choice = lua_tostring(L, -2);
                                             int table_idx_5 = lua_gettop(L);
 
-                                            std::string choice_slot_str = std::to_string(choice_slot);
-                                            json_data[article_id_str][article_id_key][slot_str][slot_key][choice_slot_str] = {};
-
-                                            //std::cout << choice_slot << std::endl;
+                                            json_data[article_id_str][event_list][event][choice_list][choice] = {};
 
                                             lua_pushnil(L);
                                             while (lua_next(L, table_idx_5) != 0)
@@ -154,7 +154,7 @@ void testlua()
                                                 const char* key = lua_tostring(L, -2);
                                                 const char* value = lua_tostring(L, -1);
 
-                                                json_data[article_id_str][article_id_key][slot_str][slot_key][choice_slot_str][key] = value;
+                                                json_data[article_id_str][event_list][event][choice_list][choice][key] = value;
 
                                                 lua_pop(L, 1);
                                             }

@@ -1,7 +1,7 @@
 ﻿#include "../stdafx.h"
-#include "Scanner.h"
 
-#include "../stdafx.h"
+Scanner::Scanner() {}
+Scanner* Scanner::_instance = nullptr;
 
 System::String^ Scanner::Scan(const char* imgPath, const char* language)
 {
@@ -24,6 +24,7 @@ System::String^ Scanner::Scan(const char* imgPath, const char* language)
 
 	// 進行文字辨識
 	char* utf8 = ocr->GetUTF8Text();
+
 
 	// utf8 轉 utf16
 	wchar_t* utf16 = utility::utf8to16(utf8);

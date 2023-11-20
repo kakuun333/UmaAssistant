@@ -54,7 +54,13 @@
     <ClCompile Include="UmaAssistant\utility\CharacterFilter.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="UmaAssistant\class\FileManager.cpp">
+    <ClCompile Include="UmaAssistant\class\DataManager.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="UmaAssistant\class\data\UmaEventData.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="UmaAssistant\class\ref\FormDesigner.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
@@ -98,7 +104,19 @@
     <ClInclude Include="UmaAssistant\utility\CharacterConvert.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="UmaAssistant\class\FileManager.h">
+    <ClInclude Include="UmaAssistant\class\DataManager.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="UmaAssistant\class\data\UmaEventData.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="UmaAssistant\enum\UmaEventDataType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="UmaAssistant\enum\CharType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="UmaAssistant\class\ref\FormDesigner.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

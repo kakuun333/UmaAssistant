@@ -4,7 +4,9 @@
 namespace utility
 {
 	// 把 System::String^ 轉成 std::string
-	std::string sys_str2std_str(System::String^ sys_str);
+	std::string systemStr2std(System::String^ systemStr);
+
+	System::String^ stdStr2system(std::string stdStr);
 
 	// 把 char* 轉成 wchat_t*
 	wchar_t* char2wchar(const char* str);

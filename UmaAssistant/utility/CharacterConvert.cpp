@@ -2,17 +2,30 @@
 
 namespace utility
 {
-	std::string sys_str2std_str(System::String^ sys_str)
+	std::string systemStr2std(System::String^ systemStr)
 	{
 		marshal_context context;
 
-		const wchar_t* c_utf16 = context.marshal_as<const wchar_t*>(sys_str);
+		const wchar_t* c_utf16 = context.marshal_as<const wchar_t*>(systemStr);
 
 		char* c_utf8 = utf16to8(const_cast<wchar_t*>(c_utf16));
 
 		std::string std_string(c_utf8);
 
 		return std_string;
+	}
+
+	System::String^ stdStr2system(std::string stdStr)
+	{
+		marshal_context context;
+
+		char* utf8 = const_cast<char*>(stdStr.c_str());
+
+		wchar_t* c_utf16 = utf8to16(utf8);
+
+		System::String^ sys_str = msclr::interop::marshal_as<System::String^>(c_utf16);
+
+		return sys_str;
 	}
 
 	wchar_t* char2wchar(const char* str)

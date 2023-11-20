@@ -12,6 +12,7 @@
 #include <vector>
 #include <cstring>
 #include <thread>
+#include <regex>
 
 
 // Gdi+
@@ -39,13 +40,23 @@ using json = nlohmann::json;
 /*			class			*/	
 #include "class/Screenshot.h"
 #include "class/Scanner.h"
-#include "class/FileManager.h"
+#include "class/DataManager.h"
+
+// ¨ü±±
+#include "class/ref/FormDesigner.h"
+
+// data
+#include "class/data/UmaEventData.h"
 
 /*			utility			*/
 #include "utility/CharacterConvert.h"
 #include "utility/CharacterCombine.h"
 #include "utility/CharacterFilter.h"
 #include "utility/Pathfinder.h"
+
+/*			enum			*/
+#include "enum/UmaEventDataType.h"
+#include "enum/CharType.h"
 
 /*			global			*/
 #include "global/Path.h"
@@ -65,3 +76,4 @@ using namespace System::Diagnostics;
 using namespace System::Drawing;
 using namespace System::IO;
 using namespace System::Windows::Forms;
+using namespace System::Text::RegularExpressions;

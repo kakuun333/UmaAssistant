@@ -139,7 +139,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="UmaAssistant\class\FileManager.cpp" />
+    <ClCompile Include="UmaAssistant\class\ref\FormDesigner.cpp" />
+    <ClCompile Include="UmaAssistant\class\data\UmaEventData.cpp" />
+    <ClCompile Include="UmaAssistant\class\DataManager.cpp" />
     <ClCompile Include="UmaAssistant\utility\CharacterFilter.cpp" />
     <ClCompile Include="UmaAssistant\global\FormManager.cpp" />
     <ClCompile Include="UmaAssistant\form\PreviewForm.cpp" />
@@ -155,7 +157,11 @@
     <ClCompile Include="UmaAssistant\form\UmaForm.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="UmaAssistant\class\FileManager.h" />
+    <ClInclude Include="UmaAssistant\class\ref\FormDesigner.h" />
+    <ClInclude Include="UmaAssistant\class\data\UmaEventData.h" />
+    <ClInclude Include="UmaAssistant\class\DataManager.h" />
+    <ClInclude Include="UmaAssistant\enum\CharType.h" />
+    <ClInclude Include="UmaAssistant\enum\UmaEventDataType.h" />
     <ClInclude Include="UmaAssistant\utility\CharacterConvert.h" />
     <ClInclude Include="UmaAssistant\utility\CharacterFilter.h" />
     <ClInclude Include="UmaAssistant\global\FormManager.h" />
