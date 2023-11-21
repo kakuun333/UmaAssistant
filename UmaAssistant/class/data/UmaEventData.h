@@ -50,6 +50,9 @@ public:
 
 	std::vector<UmaEvent> event_list;
 
+	// 如果資料完整返回 true，不完整返回 false
+	bool CheckDataIntegrity();
+
 	template<typename T>
 	T Get(UmaEventDataType dataType, int elementIndex = NONE_INDEX)
 	{

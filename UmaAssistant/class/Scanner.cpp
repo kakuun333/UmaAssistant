@@ -79,7 +79,15 @@ void Scanner::Start(const char* imgPath, const char* language)
 				if (_previousText != scannedText)
 				{
 					UmaEventData event_data = dataManager->GetUmaEventDataFromJson(scannedText); // 從 event_data_jp.json 中獲取資料;
-					if (event_data.event_owner.empty()) continue; // 防止 System.NullReferenceException: '並未將物件參考設定為物件的執行個體。'
+
+					///
+					/// 防止 System.NullReferenceException: '並未將物件參考設定為物件的執行個體。'
+					/// 
+					if (!event_data.IsDataComplete())
+					{
+						std::cout << u8"資料不完整 " << u8"scannedText: " << scannedText << std::endl;
+						continue;
+					};
 
 
 					utility::formctrl::Clear(global::form::umaForm->choicePanel); // 清除先前創建的 WinForm 物件
@@ -91,17 +99,15 @@ void Scanner::Start(const char* imgPath, const char* language)
 					System::String^ sys_event_owner = event_data.Get<System::String^>(UmaEventDataType::EVENT_OWNER);
 					utility::formctrl::Text(global::form::umaForm->event_owner_textBox, sys_event_owner);
 
-
 					System::String^ sys_event_title = event_data.Get<System::String^>(UmaEventDataType::EVENT_TITLE);
 					utility::formctrl::Text(global::form::umaForm->event_title_textbox, sys_event_owner);
-					//utility::formctrl::Text(global::form::umaForm->event_title_textbox, event_data.event_list[0].sys_event_title);
 				}
 				else
 				{
 					std::cout << u8"偵測結果與上次一致" << std::endl;
 				}
 
-				_previousText = scannedText;
+				_previousText = scannedText; // 更新上次辨識到的文字
 
 				std::cout << u8"scanned" << std::endl;
 

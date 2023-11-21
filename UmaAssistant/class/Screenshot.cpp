@@ -75,17 +75,17 @@ Screenshot::Screenshot()
 	cv::cvtColor(binary, gray, cv::COLOR_BGR2GRAY);
 
 
-	int pixel_x = gray.cols;
-	int pixel_y = gray.rows;
+	int img_width = gray.cols;
+	int img_height = gray.rows;
 
 
-	int x = 78; // 起始 X 座標
-	int y = 175;  // 起始 Y 座標
-	int width = 300; // 裁切寬度
-	int height = 60; // 裁切高度
+	int crop_x		= img_width  - (img_width  * 0.85); // 起始 X 座標
+	int crop_y		= img_height - (img_height * 0.81); // 起始 Y 座標
+	int crop_width  = img_width  - (img_width  * 0.35); // 98 // 裁切寬度
+	int crop_height = img_height - (img_height * 0.97); // 223 // 裁切高度
 
 	// 使用 cv::Rect 定義裁切區域
-	cv::Rect roi(x, y, width, height);
+	cv::Rect roi(crop_x, crop_y, crop_width, crop_height);
 
 	// 進行圖片裁切
 	cv::Mat croppedImage = gray(roi);
