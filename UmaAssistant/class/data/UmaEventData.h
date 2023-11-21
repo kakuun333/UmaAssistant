@@ -57,13 +57,25 @@ public:
 		{
 			if (dataType == UmaEventDataType::CHOICE_LIST)
 			{
-				return event_list[0].choice_list;
+				for (const UmaEvent& _event : event_list)
+				{
+					if (_event.choice_list.empty()) continue;
+
+					return _event.choice_list;
+				}
+				//return event_list[0].choice_list;
 			}
 		}
 		else if constexpr (std::is_same_v<T, System::String^>)
 		{
 			if (dataType == UmaEventDataType::EVENT_TITLE)
 			{
+				//for (const UmaEvent& _event : event_list)
+				//{
+				//	if (_event.sys_event_title->Empty) continue;
+
+				//	return _event.sys_event_title;
+				//}
 				return event_list[0].sys_event_title;
 			}
 			else if(dataType == UmaEventDataType::EVENT_OWNER)

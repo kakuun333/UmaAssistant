@@ -139,6 +139,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="UmaAssistant\utility\FormControl.cpp" />
+    <ClCompile Include="UmaAssistant\global\UmaSwitch.cpp" />
     <ClCompile Include="UmaAssistant\class\ref\FormDesigner.cpp" />
     <ClCompile Include="UmaAssistant\class\data\UmaEventData.cpp" />
     <ClCompile Include="UmaAssistant\class\DataManager.cpp" />
@@ -157,6 +159,8 @@
     <ClCompile Include="UmaAssistant\form\UmaForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="UmaAssistant\utility\FormControl.h" />
+    <ClInclude Include="UmaAssistant\global\UmaSwitch.h" />
     <ClInclude Include="UmaAssistant\class\ref\FormDesigner.h" />
     <ClInclude Include="UmaAssistant\class\data\UmaEventData.h" />
     <ClInclude Include="UmaAssistant\class\DataManager.h" />

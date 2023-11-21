@@ -1,20 +1,35 @@
-#pragma once
+﻿#pragma once
+
+#include <string>
+#include <functional>
+#include <vector>
+#include <iostream>
+
+
+
 class Scanner
 {
 private:
-	Scanner();
+	Scanner() {}
 
 	static Scanner* _instance;
+
+	static std::string _previousText;
+
+	static bool _scanning;
+
+	std::string Scanner::GetScannedText(const char* imgPath, const char* language);
 public:
-	static Scanner& GetInstance()
+	static Scanner* GetInstance()
 	{
 		if (_instance == nullptr)
 		{
 			_instance = new Scanner();
 		}
-		return *_instance;
+		return _instance;
 	}
 
-	System::String^ Scan(const char* imgPath, const char* language = "jpn");
-};
+	void Start(const char* imgPath, const char* language = "jpn");
 
+	void Stop();
+};

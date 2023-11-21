@@ -44,6 +44,8 @@ UmaEventData DataManager::GetUmaEventDataFromJson(std::string scanned_text)
 			umaEventData.event_owner = it.value()["event_owner"];
 			umaEventData.sys_event_owner = utility::stdStr2system(it.value()["event_owner"]);
 
+			std::cout << it.value()["event_owner"] << std::endl;
+
 
 			umaEvent.event_title = it2.value()["event_title"];
 			umaEvent.sys_event_title = utility::stdStr2system(it2.value()["event_title"]);

@@ -13,6 +13,8 @@
 #include <cstring>
 #include <thread>
 #include <regex>
+#include <future>
+#include <functional>
 
 
 // Gdi+
@@ -53,6 +55,7 @@ using json = nlohmann::json;
 #include "utility/CharacterCombine.h"
 #include "utility/CharacterFilter.h"
 #include "utility/Pathfinder.h"
+#include "utility/FormControl.h"
 
 /*			enum			*/
 #include "enum/UmaEventDataType.h"
@@ -61,6 +64,7 @@ using json = nlohmann::json;
 /*			global			*/
 #include "global/Path.h"
 #include "global/FormManager.h"
+#include "global/UmaSwitch.h"
 
 /*			lua			*/
 #include "lua/luaTest.h"
@@ -77,3 +81,5 @@ using namespace System::Drawing;
 using namespace System::IO;
 using namespace System::Windows::Forms;
 using namespace System::Text::RegularExpressions;
+using namespace System::Threading;
+using namespace System::Threading::Tasks;

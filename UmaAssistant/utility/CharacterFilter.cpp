@@ -1,8 +1,21 @@
 #include "../stdafx.h"
 
+/*
+UTF-8 編碼
+	全形空白鍵：\xE3\x80\x80
 
+
+*/
 namespace utility
 {
+	std::string RemoveSpace(std::string input)
+	{
+		std::regex pattern("\\s+|\n+|\xE3\x80\x80+");
+
+		std::string result = std::regex_replace(input, pattern, "");
+		return result;
+	}
+
 	System::String^ RemoveSpace(System::String^ input)
 	{
 		System::String^ removed_n = input->Replace("\n", "");

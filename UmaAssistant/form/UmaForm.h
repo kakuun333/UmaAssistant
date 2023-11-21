@@ -67,7 +67,9 @@ namespace UmaAssistant {
 	private: System::Windows::Forms::Button^ screenshot_preview_btnd;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel2;
-	private: System::Windows::Forms::FlowLayoutPanel^ choicePanel;
+	public: System::Windows::Forms::FlowLayoutPanel^ choicePanel;
+	private:
+
 
 
 
@@ -363,9 +365,9 @@ namespace UmaAssistant {
 			this->tableLayoutPanel3->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				73.60825F)));
 			this->tableLayoutPanel3->Controls->Add(this->textBox2, 1, 1);
-			this->tableLayoutPanel3->Controls->Add(this->label4, 0, 1);
 			this->tableLayoutPanel3->Controls->Add(this->label3, 0, 0);
 			this->tableLayoutPanel3->Controls->Add(this->textBox1, 1, 0);
+			this->tableLayoutPanel3->Controls->Add(this->label4, 0, 1);
 			this->tableLayoutPanel3->Location = System::Drawing::Point(3, 3);
 			this->tableLayoutPanel3->Name = L"tableLayoutPanel3";
 			this->tableLayoutPanel3->RowCount = 2;
@@ -385,11 +387,11 @@ namespace UmaAssistant {
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
 			this->textBox2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->textBox2->Location = System::Drawing::Point(131, 28);
+			this->textBox2->Location = System::Drawing::Point(130, 28);
 			this->textBox2->Multiline = true;
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->ReadOnly = true;
-			this->textBox2->Size = System::Drawing::Size(351, 52);
+			this->textBox2->Size = System::Drawing::Size(352, 52);
 			this->textBox2->TabIndex = 6;
 			this->textBox2->Text = L"吾輩は猫であるるるるるるるるるるるるるるるるるるるるるる";
 			// 
@@ -402,7 +404,7 @@ namespace UmaAssistant {
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->label4->Location = System::Drawing::Point(3, 25);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(122, 20);
+			this->label4->Size = System::Drawing::Size(114, 40);
 			this->label4->TabIndex = 7;
 			this->label4->Text = L"choice_effect";
 			// 
@@ -430,11 +432,11 @@ namespace UmaAssistant {
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
 			this->textBox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->textBox1->Location = System::Drawing::Point(131, 3);
+			this->textBox1->Location = System::Drawing::Point(130, 3);
 			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->ReadOnly = true;
-			this->textBox1->Size = System::Drawing::Size(351, 19);
+			this->textBox1->Size = System::Drawing::Size(352, 19);
 			this->textBox1->TabIndex = 6;
 			this->textBox1->Text = L"吾輩は猫である。";
 			// 

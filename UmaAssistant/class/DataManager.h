@@ -1,7 +1,5 @@
 #pragma once
 
-#include <map>
-#include <vector>
 #include <string>
 #include "data/UmaEventData.h"
 
@@ -13,13 +11,13 @@ private:
 	static DataManager* _instance;
 
 public:
-	static DataManager& GetInstance()
+	static DataManager* GetInstance()
 	{
 		if (_instance == nullptr)
 		{
 			_instance = new DataManager();
 		}
-		return *_instance;
+		return _instance;
 	}
 
 	UmaEventData GetUmaEventDataFromJson(std::string scanned_text);
