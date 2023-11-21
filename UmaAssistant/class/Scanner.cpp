@@ -58,6 +58,8 @@ void Scanner::Start(const char* imgPath, const char* language)
 		return;
 	}
 
+	DataManager* dataManager = DataManager::GetInstance();
+
 	global::umaswitch::Scanning = true;
 
 	std::thread scanThread([=]()
@@ -76,11 +78,11 @@ void Scanner::Start(const char* imgPath, const char* language)
 				/// 
 				if (_previousText != scannedText)
 				{
-					utility::formctrl::Clear(global::form::umaForm->choicePanel); // 清除先前創建的 WinForm 物件
-
-					DataManager* dataManager = DataManager::GetInstance();
 					UmaEventData event_data = dataManager->GetUmaEventDataFromJson(scannedText); // 從 event_data_jp.json 中獲取資料;
+					if (event_data.event_owner.empty()) continue; // 防止 System.NullReferenceException: '並未將物件參考設定為物件的執行個體。'
 
+
+					utility::formctrl::Clear(global::form::umaForm->choicePanel); // 清除先前創建的 WinForm 物件
 					for (UmaChoice choice : event_data.Get<std::vector<UmaChoice>>(UmaEventDataType::CHOICE_LIST))
 					{
 						FormDesigner::Instance->CreateChoiceTable(choice);
@@ -91,7 +93,8 @@ void Scanner::Start(const char* imgPath, const char* language)
 
 
 					System::String^ sys_event_title = event_data.Get<System::String^>(UmaEventDataType::EVENT_TITLE);
-					utility::formctrl::Text(global::form::umaForm->event_title_textbox, sys_event_title);
+					utility::formctrl::Text(global::form::umaForm->event_title_textbox, sys_event_owner);
+					//utility::formctrl::Text(global::form::umaForm->event_title_textbox, event_data.event_list[0].sys_event_title);
 				}
 				else
 				{
@@ -100,7 +103,9 @@ void Scanner::Start(const char* imgPath, const char* language)
 
 				_previousText = scannedText;
 
-				std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+				std::cout << u8"scanned" << std::endl;
+
+				std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 			}
 			_scanning = false;
 		});

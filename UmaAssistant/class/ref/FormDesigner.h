@@ -18,7 +18,7 @@ private:
 public:
 	static property FormDesigner^ Instance { FormDesigner^ get() { return % _instance; } }
 	
-	void CreateChoiceTable(UmaChoice choice);
+	System::Void CreateChoiceTable(UmaChoice choice);
 
 	// 傳入 textbox 後計算出 table_layout 垂直所需的高度
 	int CalcChoiceTableVerticalSize(TextBox^ choice_effect_textbox);
