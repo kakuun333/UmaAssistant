@@ -6,7 +6,7 @@
 class DataManager
 {
 private:
-	DataManager();
+	DataManager() {}
 
 	static DataManager* _instance;
 

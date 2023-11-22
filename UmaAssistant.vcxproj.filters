@@ -72,6 +72,12 @@
     <ClCompile Include="UmaAssistant\utility\CharacterCompare.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="UmaAssistant\class\WebManager.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="UmaAssistant\class\ref\FormController.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UmaAssistant\form\UmaForm.h">
@@ -137,9 +143,16 @@
     <ClInclude Include="UmaAssistant\utility\CharacterCompare.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+    <ClInclude Include="UmaAssistant\class\WebManager.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="UmaAssistant\class\ref\FormController.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="UmaAssistant\lua\test.lua" />
+    <None Include="UmaWeb\index.html" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SettingsForm.resx">

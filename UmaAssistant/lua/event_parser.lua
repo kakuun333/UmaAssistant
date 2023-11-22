@@ -24,7 +24,7 @@ function parser.getEventHtmlById(html, id)
     end
 
     --[[
-    another_name 就表示了連接請求被阻擋了
+    到這裡 another_name 還是 nil 就表示了連接請求被阻擋了
     所以 ms 要再調高
     ]]
 
@@ -110,20 +110,24 @@ function parser.getEventDict(event_html)
                 所以要再去從 tag 中篩選出需要的文字
             ]]
             if string.match(choice_title, "<hr>") ~= nil then 
-                local replaced_br_title = string.gsub(choice_title, "<br>", "\n");
-                local replaced_hr_title = string.gsub(replaced_br_title, "<hr>", "\n--------------\n");
-                local removed_span_title = string.gsub(replaced_hr_title, "<span.->(.-)</span>", "%1");
-                choice_title = removed_span_title;
+                -- local replaced_br_title = string.gsub(choice_title, "<br>", "\n");
+                -- local replaced_hr_title = string.gsub(replaced_br_title, "<hr>", "\n--------------\n");
+                -- local removed_span_title = string.gsub(replaced_hr_title, "<span.->(.-)</span>", "%1");
+                -- local replaced_br_title = string.gsub(choice_title, "<br>", "\n");
+                -- local replaced_hr_title = string.gsub(replaced_br_title, "<hr>", "\n--------------\n");
+                local span_title_content = string.gsub(choice_title, "<span.->(.-)</span>", "%1");
+                local replaced_span_title = "<span class=\"special_choice_title\">"..span_title_content.."</span>";
+                choice_title = replaced_span_title;
             end
 
 
-            local replace_br_effect = string.gsub(choice_effect, "<br>", "\n")
-            local replace_hr_effect = string.gsub(replace_br_effect, "<hr>", "\n--------------\n")
+            -- local replace_br_effect = string.gsub(choice_effect, "<br>", "\n")
+            -- local replace_hr_effect = string.gsub(replace_br_effect, "<hr>", "\n--------------\n")
             -- print("選択肢効果: \n" .. replace_hr_effect);
             
             event_dict["event_list"]["event_"..tostring(event_idx)]["choice_list"]["choice_"..tostring(choice_idx)] = {
                 ["choice_title"] = choice_title,
-                ["choice_effect"] = replace_hr_effect,
+                ["choice_effect"] = choice_effect,
             }
 
             choice_idx = choice_idx + 1;

@@ -116,10 +116,10 @@ namespace utility
 		return setStr_list;
 	}
 
-	std::vector<int> GetNonSameIndexList(std::vector<std::string> jpnchar_list_1, std::vector<std::string> jpnchar_list_2)
+	std::vector<int> GetNonSameIndexList(std::vector<std::string> smaller_list, std::vector<std::string> larger_list)
 	{
-		std::vector<std::string> larger_list = jpnchar_list_1.size() > jpnchar_list_2.size() ? jpnchar_list_1 : jpnchar_list_2;
-		std::vector<std::string> smaller_list = larger_list == larger_list ? jpnchar_list_2 : jpnchar_list_1;
+		//std::vector<std::string> larger_list = jpnchar_list_1.size() > jpnchar_list_2.size() ? jpnchar_list_1 : jpnchar_list_2;
+		//std::vector<std::string> smaller_list = larger_list == jpnchar_list_1 ? jpnchar_list_2 : jpnchar_list_1;
 
 		std::vector<int> non_same_idx_list;
 
@@ -128,14 +128,18 @@ namespace utility
 
 		for (std::string s1 : larger_list)
 		{
-			if (s1 == smaller_list[char_idx])
+			if (smaller_list.size() > char_idx)
 			{
-				++sameCount;
+				if (s1 == smaller_list[char_idx])
+				{
+					++sameCount;
+				}
+				else
+				{
+					non_same_idx_list.push_back(char_idx);
+				}
 			}
-			else
-			{
-				non_same_idx_list.push_back(char_idx);
-			}
+
 
 			++char_idx;
 		}
@@ -143,16 +147,17 @@ namespace utility
 		return non_same_idx_list;
 	}
 
-	int GetSameCount(std::vector<std::string> jpnchar_list_1, std::vector<std::string> jpnchar_list_2)
+	int GetSameCount(std::vector<std::string> smaller_list, std::vector<std::string> larger_list)
 	{
-		std::vector<std::string> larger_list = jpnchar_list_1.size() > jpnchar_list_2.size() ? jpnchar_list_1 : jpnchar_list_2;
-		std::vector<std::string> smaller_list = larger_list == larger_list ? jpnchar_list_2 : jpnchar_list_1;
+		//std::vector<std::string> larger_list = jpnchar_list_1.size() > jpnchar_list_2.size() ? jpnchar_list_1 : jpnchar_list_2;
+		//std::vector<std::string> smaller_list = larger_list == jpnchar_list_1 ? jpnchar_list_2 : jpnchar_list_1;
 
 		float sameCount = 0;
 		int char_idx = 0;
 		for (std::string s1 : larger_list)
 		{
-			if (s1 == smaller_list[char_idx]) ++sameCount;
+			if (smaller_list.size() > char_idx)
+				if (s1 == smaller_list[char_idx]) ++sameCount;
 
 			++char_idx;
 		}
@@ -237,8 +242,10 @@ namespace utility
 				++char_idx;
 			}
 
+#ifdef UMA_DEBUG
 			std::cout << "firstSameCount: " << firstSameCount << std::endl;
 			std::cout << "secondSameCount: " << secondSameCount << std::endl;
+#endif
 
 			if (secondSameCount > firstSameCount)
 			{
@@ -263,11 +270,11 @@ namespace utility
 			std::vector<std::string> jpnchar_list_1 = utility::SplitJpnChar(str1);
 			std::vector<std::string> jpnchar_list_2 = utility::SplitJpnChar(str2);
 
-			int firstSameCount = GetSameCount(jpnchar_list_1, jpnchar_list_2);
+			int firstSameCount = GetSameCount(jpnchar_list_2, jpnchar_list_1);
 
 			if (firstSameCount <= 0) return false;
 
-			std::vector<int> nonSameIdxList = GetNonSameIndexList(jpnchar_list_1, jpnchar_list_2);
+			std::vector<int> nonSameIdxList = GetNonSameIndexList(jpnchar_list_2, jpnchar_list_1);
 
 			int secondSameCount = 0;
 			int char_idx = 0;
@@ -288,12 +295,15 @@ namespace utility
 				++char_idx;
 			}
 
+#ifdef UMA_DEBUG
 			std::cout << "firstSameCount: " << firstSameCount << std::endl;
 			std::cout << "secondSameCount: " << secondSameCount << std::endl;
+#endif
 
 			if (secondSameCount > firstSameCount)
 			{
 				float similarity = (secondSameCount / totalCount) * 100;
+
 				std::cout << "similarity: " << (secondSameCount / totalCount) * 100 << "%" << std::endl;
 
 				return similarity > SIMILAR_METRIC;

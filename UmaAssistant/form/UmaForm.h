@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-
+#include "../global/Path.h"
 
 namespace UmaAssistant {
 
@@ -19,17 +19,7 @@ namespace UmaAssistant {
 	public ref class UmaForm : public System::Windows::Forms::Form
 	{
 	public:
-		UmaForm(void)
-		{
-			InitializeComponent();
-			//
-			//TODO:  在此加入建構函式程式碼
-			//
-
-			// 更改 .resx 檔的路徑為 UmaAssistant/UmaAssistant/form
-			/*System::Resources::ResourceManager^ resources = gcnew System::Resources::ResourceManager(L"UmaAssistant.UmaAssistant.form.UmaForm",
-				System::Reflection::Assembly::GetExecutingAssembly());*/
-		}
+		UmaForm(void);
 
 	protected:
 		/// <summary>
@@ -57,52 +47,26 @@ namespace UmaAssistant {
 		/// <summary>
 		/// 設計工具所需的變數。
 		/// </summary>
-
 		bool draggingForm = false;
+		System::Drawing::Point dragOffset;
+
+
 	private: System::Windows::Forms::Button^ close_form_btn;
 	private: System::Windows::Forms::Button^ minimize_btn;
 	private: System::Windows::Forms::Button^ settings_btn;
-
 	private: System::Windows::Forms::Button^ test_btn;
 	private: System::Windows::Forms::Button^ screenshot_preview_btnd;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel2;
 	public: System::Windows::Forms::FlowLayoutPanel^ choicePanel;
-	private:
-
-
-
-
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel3;
 	private: System::Windows::Forms::Label^ label3;
 	public: System::Windows::Forms::TextBox^ textBox1;
-	private:
-
-	public:
 	private: System::Windows::Forms::Label^ label4;
 	public: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
 	private: System::Windows::Forms::Button^ button1;
-
-
-	public:
-	private:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		   System::Drawing::Point dragOffset;
-
+	public: System::Windows::Forms::WebBrowser^ choiceWebBrowser;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -133,6 +97,7 @@ namespace UmaAssistant {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->choiceWebBrowser = (gcnew System::Windows::Forms::WebBrowser());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->icon_pictureBox))->BeginInit();
 			this->tableLayoutPanel1->SuspendLayout();
 			this->tableLayoutPanel2->SuspendLayout();
@@ -227,7 +192,7 @@ namespace UmaAssistant {
 			this->close_form_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->close_form_btn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"close_form_btn.Image")));
-			this->close_form_btn->Location = System::Drawing::Point(501, 0);
+			this->close_form_btn->Location = System::Drawing::Point(723, 0);
 			this->close_form_btn->Name = L"close_form_btn";
 			this->close_form_btn->Size = System::Drawing::Size(40, 32);
 			this->close_form_btn->TabIndex = 9;
@@ -246,7 +211,7 @@ namespace UmaAssistant {
 			this->minimize_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->minimize_btn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"minimize_btn.Image")));
-			this->minimize_btn->Location = System::Drawing::Point(456, 0);
+			this->minimize_btn->Location = System::Drawing::Point(678, 0);
 			this->minimize_btn->Name = L"minimize_btn";
 			this->minimize_btn->Size = System::Drawing::Size(39, 32);
 			this->minimize_btn->TabIndex = 10;
@@ -323,7 +288,7 @@ namespace UmaAssistant {
 				372)));
 			this->tableLayoutPanel1->Controls->Add(this->label2, 0, 0);
 			this->tableLayoutPanel1->Controls->Add(this->event_owner_textBox, 1, 0);
-			this->tableLayoutPanel1->Location = System::Drawing::Point(12, 129);
+			this->tableLayoutPanel1->Location = System::Drawing::Point(580, 90);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 1;
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
@@ -341,7 +306,7 @@ namespace UmaAssistant {
 				72.94118F)));
 			this->tableLayoutPanel2->Controls->Add(this->label1, 0, 0);
 			this->tableLayoutPanel2->Controls->Add(this->event_title_textbox, 1, 0);
-			this->tableLayoutPanel2->Location = System::Drawing::Point(12, 161);
+			this->tableLayoutPanel2->Location = System::Drawing::Point(580, 122);
 			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
 			this->tableLayoutPanel2->RowCount = 1;
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
@@ -353,7 +318,7 @@ namespace UmaAssistant {
 			this->choicePanel->AutoScroll = true;
 			this->choicePanel->BackColor = System::Drawing::Color::Transparent;
 			this->choicePanel->Controls->Add(this->tableLayoutPanel3);
-			this->choicePanel->Location = System::Drawing::Point(12, 224);
+			this->choicePanel->Location = System::Drawing::Point(580, 154);
 			this->choicePanel->Name = L"choicePanel";
 			this->choicePanel->Size = System::Drawing::Size(513, 267);
 			this->choicePanel->TabIndex = 20;
@@ -467,11 +432,20 @@ namespace UmaAssistant {
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &UmaForm::button1_Click);
 			// 
+			// choiceWebBrowser
+			// 
+			this->choiceWebBrowser->Location = System::Drawing::Point(12, 125);
+			this->choiceWebBrowser->MinimumSize = System::Drawing::Size(20, 20);
+			this->choiceWebBrowser->Name = L"choiceWebBrowser";
+			this->choiceWebBrowser->Size = System::Drawing::Size(510, 366);
+			this->choiceWebBrowser->TabIndex = 22;
+			// 
 			// UmaForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(540, 503);
+			this->ClientSize = System::Drawing::Size(762, 503);
+			this->Controls->Add(this->choiceWebBrowser);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->choicePanel);
 			this->Controls->Add(this->tableLayoutPanel2);

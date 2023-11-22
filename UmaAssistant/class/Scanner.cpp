@@ -58,22 +58,16 @@ void Scanner::Start(const char* imgPath, const char* language)
 		return;
 	}
 
-	std::string text = u8"食いしん坊は伊達じゃない";
-
-	//utility::SplitText(text, 4);
-
-	/*utility::SplitJpnChar(text);*/
-
-	//utility::IsSimilar(u8"食いしん坊は伊達じゃない", u8"食いじん坊は伊達じゃない");
 
 
-
-	DataManager* dataManager = DataManager::GetInstance();
 
 	global::umaswitch::Scanning = true;
 
 	std::thread scanThread([=]()
 		{
+			DataManager* dataManager = DataManager::GetInstance();
+			WebManager* webManager = WebManager::GetInstance();
+
 			_scanning = true;
 			while (global::umaswitch::Scanning)
 			{
@@ -104,17 +98,21 @@ void Scanner::Start(const char* imgPath, const char* language)
 					};
 
 
-					utility::formctrl::Clear(global::form::umaForm->choicePanel); // 清除先前創建的 WinForm 物件
+					//utility::formctrl::Clear(global::form::umaForm->choicePanel); // 清除先前創建的 WinForm 物件
 					for (UmaChoice choice : event_data.Get<std::vector<UmaChoice>>(UmaEventDataType::CHOICE_LIST))
 					{
-						FormDesigner::Instance->CreateChoiceTable(choice);
+						webManager->CreateChoice(choice.sys_choice_title, choice.sys_choice_effect);
+						//FormDesigner::Instance->CreateChoiceTable(choice);
 					}
 
 					System::String^ sys_event_owner = event_data.Get<System::String^>(UmaEventDataType::EVENT_OWNER);
-					utility::formctrl::Text(global::form::umaForm->event_owner_textBox, sys_event_owner);
+					//utility::formctrl::Text(global::form::umaForm->event_owner_textBox, sys_event_owner);
+					webManager->ChangeEventOwner(sys_event_owner);
+
 
 					System::String^ sys_event_title = event_data.Get<System::String^>(UmaEventDataType::EVENT_TITLE);
-					utility::formctrl::Text(global::form::umaForm->event_title_textbox, sys_event_owner);
+					//utility::formctrl::Text(global::form::umaForm->event_title_textbox, sys_event_owner);
+					webManager->ChangeEventTitle(sys_event_title);
 
 				}
 				else

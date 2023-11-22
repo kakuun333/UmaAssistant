@@ -34,14 +34,8 @@ local fm = require("file_manager");
 -- utility.deepprint(event_dict);
 
 
-function test()
-    sleep(5000);
-    print("WRGGGG");
-end
 
-test();
-
--- event_data = dumper.dumpEventData();
+event_data = dumper.dumpEventData();
 
 
 

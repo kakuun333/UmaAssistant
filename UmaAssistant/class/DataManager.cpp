@@ -1,6 +1,6 @@
 #include "../stdafx.h"
 
-DataManager::DataManager() {}
+//DataManager::DataManager() {}
 DataManager* DataManager::_instance = nullptr;
 
 

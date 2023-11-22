@@ -1,12 +1,12 @@
 #include "FormControl.h"
 
-using namespace System;
+
 
 namespace utility
 {
 	namespace formctrl
 	{
-		void Add(Control^ parentControl, Control^ childControl)
+		System::Void Add(Control^ parentControl, Control^ childControl)
 		{
 			if (parentControl->InvokeRequired)
 			{
@@ -20,7 +20,7 @@ namespace utility
 			}
 		}
 
-		void Text(Control^ control, System::String^ text)
+		System::Void Text(Control^ control, System::String^ text)
 		{
 			if (control->InvokeRequired)
 			{
@@ -32,7 +32,7 @@ namespace utility
 			}
 		}
 
-		void Clear(Control^ control)
+		System::Void Clear(Control^ control)
 		{
 			if (control->InvokeRequired)
 			{

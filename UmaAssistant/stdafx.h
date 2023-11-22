@@ -3,7 +3,7 @@
 //#define UMA_DEBUG
 
 
-/*			Windows API			*/
+/*			C++ ¨ç¼Æ®w			*/
 #include <Windows.h>
 #include <iostream>
 #include <fstream>
@@ -45,9 +45,11 @@ using json = nlohmann::json;
 #include "class/Screenshot.h"
 #include "class/Scanner.h"
 #include "class/DataManager.h"
+#include "class/WebManager.h"
 
 // ¨ü±±
 #include "class/ref/FormDesigner.h"
+#include "class/ref/FormController.h"
 
 // data
 #include "class/data/UmaEventData.h"

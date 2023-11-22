@@ -139,6 +139,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="UmaAssistant\class\ref\FormController.cpp" />
     <ClCompile Include="UmaAssistant\utility\CharacterCompare.cpp" />
     <ClCompile Include="UmaAssistant\utility\FormControl.cpp" />
     <ClCompile Include="UmaAssistant\global\UmaSwitch.cpp" />
@@ -158,8 +159,10 @@
     <ClCompile Include="UmaAssistant\utility\CharacterConvert.cpp" />
     <ClCompile Include="UmaAssistant\class\Screenshot.cpp" />
     <ClCompile Include="UmaAssistant\form\UmaForm.cpp" />
+    <ClCompile Include="UmaAssistant\class\WebManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="UmaAssistant\class\ref\FormController.h" />
     <ClInclude Include="UmaAssistant\utility\CharacterCompare.h" />
     <ClInclude Include="UmaAssistant\utility\FormControl.h" />
     <ClInclude Include="UmaAssistant\global\UmaSwitch.h" />
@@ -187,6 +190,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="UmaAssistant\stdafx.h" />
+    <ClInclude Include="UmaAssistant\class\WebManager.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PreviewForm.resx" />
@@ -204,6 +208,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="UmaAssistant\lua\test.lua" />
+    <None Include="UmaWeb\index.html" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

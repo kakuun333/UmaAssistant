@@ -1,9 +1,35 @@
 ﻿#include "../stdafx.h"
 
+#pragma region 本地函數
+
+//void OnDocumentCompleted(Object^ sender, WebBrowserDocumentCompletedEventArgs^ e)
+//{
+//	array<Object^>^ param = gcnew array<Object^> { "cppTitle", "cppEffect" };
+//	global::form::umaForm->choiceWebBrowser->Document->InvokeScript("createChoice", param);
+//}
+
+#pragma endregion 本地函數
+
+
 namespace UmaAssistant
 {
+	UmaForm::UmaForm(void) // UmaForm 的建構函數
+	{
+		InitializeComponent();
+		//
+		//TODO:  在此加入建構函式程式碼
+		//
+
+#pragma region choiceWebBrowser
+		choiceWebBrowser->Navigate("file://" + global::path::currentDir + "/UmaWeb/index.html");
+		//choiceWebBrowser->DocumentCompleted += gcnew WebBrowserDocumentCompletedEventHandler(&OnDocumentCompleted);
+#pragma endregion choiceWebBrowser
+	}
+
 	System::Void UmaForm::button1_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		array<Object^>^ param = gcnew array<Object^> { "cppTitle", "cppEffect" };
+		global::form::umaForm->choiceWebBrowser->Document->InvokeScript("createChoice", param);
 		utility::IsSimilar(u8"食いしん坊は伊達じゃない", u8"食いじん坊は伊達じゃよなここい");
 	}
 

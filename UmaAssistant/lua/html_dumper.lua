@@ -23,7 +23,8 @@ local fm = require("file_manager")
 
 
 ---- 本地定數 ---- 本地定數 ---- 本地定數 ---- 本地定數 ---- 本地定數 
-local DEFAULT_MILLISECONDS = 2000
+
+local DEFAULT_MILLISECONDS = 2000 --[[低於 2000 會有被拒絕訪問的風險]]
 
 ---- 本地變數 ---- 本地變數 ---- 本地變數 ---- 本地變數 ---- 本地變數 
 
@@ -130,7 +131,7 @@ function dumper.dumpEventData(ms)
 
         print("進度: ["..pe.red..i..pe.reset.. "/" ..pe.yellow..#white_list..pe.reset.."] "..pe.yellow..white_id..pe.reset..pe.cyan.." --"..ms.." 毫秒"..pe.reset);
 
-        -- break; --[[ Debug 時使用 ]]
+        -- break; --[[ Debug 時使用 Debug 時使用 Debug 時使用 Debug 時使用 ]]
         sleep(ms);
     end
 

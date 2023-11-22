@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "MochiyPopOne";
+    src: url("../UmaMisc/Font/MochiyPopOne-Regular.ttf") format("truetype");
+}
+
+body {
+    background: linear-gradient(to right, #1e2330, rgb(17, 29, 44));
+
+    /* font */
+    font-family: "MochiyPopOne", sans-serif;
+    color: #e6d485;
+    font-size: 1em;
+}
+
+img {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+#choice_table {
+    color: #e6d485;
+}
+
+table, th, td {
+    border: 1px solid #1c4da7;
+}
