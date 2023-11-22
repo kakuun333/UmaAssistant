@@ -2,6 +2,10 @@
 
 namespace UmaAssistant
 {
+	System::Void UmaForm::button1_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		utility::IsSimilar(u8"食いしん坊は伊達じゃない", u8"食いじん坊は伊達じゃよなここい");
+	}
 
 	System::Void UmaForm::test_btn_Click(System::Object^ sender, System::EventArgs^ e)
 	{

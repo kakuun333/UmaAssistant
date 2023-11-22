@@ -51,7 +51,7 @@ public:
 	std::vector<UmaEvent> event_list;
 
 	// 如果資料完整返回 true，不完整返回 false
-	bool CheckDataIntegrity();
+	bool IsDataComplete();
 
 	template<typename T>
 	T Get(UmaEventDataType dataType, int elementIndex = NONE_INDEX)
@@ -84,6 +84,17 @@ public:
 			else if(dataType == UmaEventDataType::EVENT_OWNER)
 			{
 				return sys_event_owner;
+			}
+		}
+		else if constexpr (std::is_same_v <T, std::string>)
+		{
+			if (dataType == UmaEventDataType::EVENT_TITLE)
+			{
+				return event_list[0].event_title;
+			}
+			else if (dataType == UmaEventDataType::EVENT_OWNER)
+			{
+				return event_owner;
 			}
 		}
 	}

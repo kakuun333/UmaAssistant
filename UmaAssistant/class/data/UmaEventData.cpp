@@ -1,6 +1,6 @@
 #include "../../stdafx.h"
 
-bool UmaEventData::CheckDataIntegrity()
+bool UmaEventData::IsDataComplete()
 {
 	//std::cout << "1" << std::endl;
 	if (this->event_owner.empty()) return false;

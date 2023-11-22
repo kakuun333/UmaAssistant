@@ -58,6 +58,16 @@ void Scanner::Start(const char* imgPath, const char* language)
 		return;
 	}
 
+	std::string text = u8"食いしん坊は伊達じゃない";
+
+	//utility::SplitText(text, 4);
+
+	/*utility::SplitJpnChar(text);*/
+
+	//utility::IsSimilar(u8"食いしん坊は伊達じゃない", u8"食いじん坊は伊達じゃない");
+
+
+
 	DataManager* dataManager = DataManager::GetInstance();
 
 	global::umaswitch::Scanning = true;
@@ -73,6 +83,8 @@ void Scanner::Start(const char* imgPath, const char* language)
 				std::string scannedText = this->GetScannedText(imgPath, language);
 				
 
+				std::cout << "scannedText: " << scannedText << std::endl;
+
 				///
 				/// 更新 UmaForm 的 ChoicePanel
 				/// 
@@ -85,7 +97,9 @@ void Scanner::Start(const char* imgPath, const char* language)
 					/// 
 					if (!event_data.IsDataComplete())
 					{
-						std::cout << u8"資料不完整 " << u8"scannedText: " << scannedText << std::endl;
+						std::cout << u8"[資料不完整]" << std::endl;
+						//std::cout << u8"scannedText: " << scannedText << std::endl;
+						//std::cout << u8"length: " << scannedText.length() << " size: " << scannedText.size() << std::endl;
 						continue;
 					};
 
@@ -101,6 +115,7 @@ void Scanner::Start(const char* imgPath, const char* language)
 
 					System::String^ sys_event_title = event_data.Get<System::String^>(UmaEventDataType::EVENT_TITLE);
 					utility::formctrl::Text(global::form::umaForm->event_title_textbox, sys_event_owner);
+
 				}
 				else
 				{

@@ -69,6 +69,9 @@
     <ClCompile Include="UmaAssistant\utility\FormControl.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="UmaAssistant\utility\CharacterCompare.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UmaAssistant\form\UmaForm.h">
@@ -129,6 +132,9 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="UmaAssistant\utility\FormControl.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="UmaAssistant\utility\CharacterCompare.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

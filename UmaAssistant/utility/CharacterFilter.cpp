@@ -1,8 +1,8 @@
-#include "../stdafx.h"
+ï»¿#include "../stdafx.h"
 
 /*
-UTF-8 ½s½X
-	¥þ§ÎªÅ¥ÕÁä¡G\xE3\x80\x80
+UTF-8 ç·¨ç¢¼
+	å…¨å½¢ç©ºç™½éµï¼š\xE3\x80\x80
 
 
 */
@@ -20,7 +20,7 @@ namespace utility
 	{
 		System::String^ removed_n = input->Replace("\n", "");
 		System::String^ removed_space = removed_n->Replace(" ", "");
-		System::String^ removed_widthspace = removed_space->Replace("¡@", "");
+		System::String^ removed_widthspace = removed_space->Replace("ã€€", "");
 		return removed_widthspace;
 	}
 

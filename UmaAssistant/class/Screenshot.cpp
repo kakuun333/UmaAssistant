@@ -49,46 +49,38 @@ Screenshot::Screenshot()
 	this->bmp_window->Save(global::path::screenshot, System::Drawing::Imaging::ImageFormat::Png);
 #pragma endregion
 
-#pragma region Event
-	/*
-	int eventSizeX = gameWidth - (gameWidth * 0.35);
-	int eventSizeY = gameHeight - (gameHeight * 0.92);
-	int eventPosX = gamePosX + (gamePosX * 0.032);
-	int eventPosY = gamePosY + (gameWidth * 0.35);
-	hBitmap = CreateCompatibleBitmap(hdcWindow, eventSizeX, eventSizeY);
-	SelectObject(hdcMemDC, hBitmap);
-	BitBlt(hdcMemDC, 0, 0,
-		eventSizeX,
-		eventSizeY,
-		hdcWindow,
-		eventPosX,
-		eventPosY,
-		SRCCOPY);
-	this->bmp_event = Bitmap::FromHbitmap(static_cast<IntPtr>(hBitmap));
-	this->bmp_event->Save(global::path::screenshot_event, System::Drawing::Imaging::ImageFormat::Png);
-	*/
 
+
+#pragma region Event
 	cv::Mat oimg = cv::imread((cv::String)global::path::c_screenshot);
 
-	cv::Mat binary, gray;
-	cv::threshold(oimg, binary, 230, 255, cv::THRESH_BINARY);
-	cv::cvtColor(binary, gray, cv::COLOR_BGR2GRAY);
+	//cv::Mat bin, gray;
+
+	// 灰度化
+	cv::cvtColor(oimg, oimg, cv::COLOR_BGR2GRAY);
+
+	// 二值化
+	cv::threshold(oimg, oimg, 254/*230*/, 255, cv::THRESH_BINARY);
+
+	// 模糊化
+	//cv::GaussianBlur(oimg, oimg, cv::Size(1.5, 1.5), 0);
 
 
-	int img_width = gray.cols;
-	int img_height = gray.rows;
 
-
+#pragma region 裁切圖片
+	int img_width = oimg.cols;
+	int img_height = oimg.rows;
 	int crop_x		= img_width  - (img_width  * 0.85); // 起始 X 座標
 	int crop_y		= img_height - (img_height * 0.81); // 起始 Y 座標
-	int crop_width  = img_width  - (img_width  * 0.35); // 98 // 裁切寬度
-	int crop_height = img_height - (img_height * 0.97); // 223 // 裁切高度
+	int crop_width  = img_width  - (img_width  * 0.30); // 裁切寬度
+	int crop_height = img_height - (img_height * 0.97); // 裁切高度
 
 	// 使用 cv::Rect 定義裁切區域
-	cv::Rect roi(crop_x, crop_y, crop_width, crop_height);
+	cv::Rect rect(crop_x, crop_y, crop_width, crop_height);
 
 	// 進行圖片裁切
-	cv::Mat croppedImage = gray(roi);
+	cv::Mat croppedImage = oimg(rect);
+#pragma endregion 裁切圖片
 
 	//// 找輪廓
 	//std::vector<std::vector<cv::Point>> contours;
@@ -99,13 +91,14 @@ Screenshot::Screenshot()
 	//cv::drawContours(result, contours, -1, cv::Scalar(0, 255, 0), 2);
 
 	cv::imwrite((cv::String)global::path::c_screenshot_event, croppedImage);
-#pragma endregion
+#pragma endregion Event
 
 
-	// 釋放記憶體
+#pragma region 釋放記憶體
 	ReleaseDC(desktopHWND, hdcWindow);
 	DeleteDC(hdcMemDC);
 	DeleteObject(hBitmap);
+#pragma endregion 釋放記憶體
 }
 
 

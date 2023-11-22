@@ -82,6 +82,7 @@ namespace UmaAssistant {
 	private: System::Windows::Forms::Label^ label4;
 	public: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
+	private: System::Windows::Forms::Button^ button1;
 
 
 	public:
@@ -127,10 +128,11 @@ namespace UmaAssistant {
 			this->choicePanel = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->tableLayoutPanel3 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->icon_pictureBox))->BeginInit();
 			this->tableLayoutPanel1->SuspendLayout();
 			this->tableLayoutPanel2->SuspendLayout();
@@ -287,7 +289,7 @@ namespace UmaAssistant {
 			this->test_btn->Name = L"test_btn";
 			this->test_btn->Size = System::Drawing::Size(97, 67);
 			this->test_btn->TabIndex = 16;
-			this->test_btn->Text = L"測試按鈕";
+			this->test_btn->Text = L"掃描";
 			this->test_btn->UseVisualStyleBackColor = false;
 			this->test_btn->Click += gcnew System::EventHandler(this, &UmaForm::test_btn_Click);
 			// 
@@ -395,19 +397,6 @@ namespace UmaAssistant {
 			this->textBox2->TabIndex = 6;
 			this->textBox2->Text = L"吾輩は猫であるるるるるるるるるるるるるるるるるるるるるる";
 			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->BackColor = System::Drawing::Color::Transparent;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
-			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
-				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->label4->Location = System::Drawing::Point(3, 25);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(114, 40);
-			this->label4->TabIndex = 7;
-			this->label4->Text = L"choice_effect";
-			// 
 			// label3
 			// 
 			this->label3->Anchor = System::Windows::Forms::AnchorStyles::Left;
@@ -440,16 +429,50 @@ namespace UmaAssistant {
 			this->textBox1->TabIndex = 6;
 			this->textBox1->Text = L"吾輩は猫である。";
 			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->BackColor = System::Drawing::Color::Transparent;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
+			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
+				static_cast<System::Int32>(static_cast<System::Byte>(151)));
+			this->label4->Location = System::Drawing::Point(3, 25);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(114, 40);
+			this->label4->TabIndex = 7;
+			this->label4->Text = L"choice_effect";
+			// 
 			// contextMenuStrip1
 			// 
 			this->contextMenuStrip1->Name = L"contextMenuStrip1";
 			this->contextMenuStrip1->Size = System::Drawing::Size(61, 4);
+			// 
+			// button1
+			// 
+			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)), static_cast<System::Int32>(static_cast<System::Byte>(61)),
+				static_cast<System::Int32>(static_cast<System::Byte>(81)));
+			this->button1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.BackgroundImage")));
+			this->button1->FlatAppearance->BorderSize = 0;
+			this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
+				static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
+			this->button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
+				static_cast<System::Int32>(static_cast<System::Byte>(151)));
+			this->button1->Location = System::Drawing::Point(15, 40);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(97, 67);
+			this->button1->TabIndex = 21;
+			this->button1->Text = L"測試";
+			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &UmaForm::button1_Click);
 			// 
 			// UmaForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(540, 503);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->choicePanel);
 			this->Controls->Add(this->tableLayoutPanel2);
 			this->Controls->Add(this->tableLayoutPanel1);
@@ -490,6 +513,6 @@ namespace UmaAssistant {
 	private: System::Void UmaForm_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
 	private: System::Void close_form_btn_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void minimize_btn_Click(System::Object^ sender, System::EventArgs^ e);
-
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

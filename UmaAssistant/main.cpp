@@ -11,6 +11,7 @@ using namespace System::Windows::Forms;
 [STAThreadAttribute]
 int main(array<String^>^ args)
 {
+	
 
 	SetConsoleOutputCP(CP_UTF8); // 設定控制台輸出字碼頁為 UTF8 ，這樣日文字才不會變亂碼。
 

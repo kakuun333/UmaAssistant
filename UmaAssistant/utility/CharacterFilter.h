@@ -1,6 +1,8 @@
-#pragma once
+﻿#pragma once
+
 namespace utility
 {
+
 	std::string RemoveSpace(std::string input);
 
 	System::String^ RemoveSpace(System::String^ input);

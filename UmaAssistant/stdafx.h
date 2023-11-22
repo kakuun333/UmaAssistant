@@ -15,6 +15,8 @@
 #include <regex>
 #include <future>
 #include <functional>
+#include <locale>
+#include <codecvt>
 
 
 // Gdi+
@@ -54,6 +56,7 @@ using json = nlohmann::json;
 #include "utility/CharacterConvert.h"
 #include "utility/CharacterCombine.h"
 #include "utility/CharacterFilter.h"
+#include "utility/CharacterCompare.h"
 #include "utility/Pathfinder.h"
 #include "utility/FormControl.h"
 

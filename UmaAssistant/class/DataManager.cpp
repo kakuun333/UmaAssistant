@@ -25,6 +25,11 @@ UmaEventData DataManager::GetUmaEventDataFromJson(std::string scanned_text)
 	}
 
 
+	//std::cout << "scanned_text: " << scanned_text << std::endl;
+
+
+
+
 
 	// ¹M¾ú json ª«¥ó
 	for (json::iterator it = jsonData.begin(); it != jsonData.end(); ++it) // article_id_table
@@ -35,7 +40,24 @@ UmaEventData DataManager::GetUmaEventDataFromJson(std::string scanned_text)
 		json event_list = it.value()["event_list"];
 		for (json::iterator it2 = event_list.begin(); it2 != event_list.end(); ++it2)
 		{
-			if (it2.value()["event_title"] != scanned_text) continue;
+			//for (std::string splitted_json_text : utility::SplitText(it2.value()["event_title"], 6))
+			//{
+			//	bool notThis = false;
+			//	for (std::string splitted_scanned_text : utility::SplitText(scanned_text))
+			//	{
+			//		if (splitted_json_text != splitted_scanned_text)
+			//		{
+			//			notThis = true;
+			//		}
+			//	}
+
+			//	if (notThis) continue;
+			//}
+
+			if (!utility::IsSimilar(scanned_text, it2.value()["event_title"])) continue;
+
+			//if (it2.value()["event_title"] != scanned_text) continue;
+
 
 			//std::string event_idx = it2.key();
 

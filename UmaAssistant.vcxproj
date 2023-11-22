@@ -139,6 +139,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="UmaAssistant\utility\CharacterCompare.cpp" />
     <ClCompile Include="UmaAssistant\utility\FormControl.cpp" />
     <ClCompile Include="UmaAssistant\global\UmaSwitch.cpp" />
     <ClCompile Include="UmaAssistant\class\ref\FormDesigner.cpp" />
@@ -159,6 +160,7 @@
     <ClCompile Include="UmaAssistant\form\UmaForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="UmaAssistant\utility\CharacterCompare.h" />
     <ClInclude Include="UmaAssistant\utility\FormControl.h" />
     <ClInclude Include="UmaAssistant\global\UmaSwitch.h" />
     <ClInclude Include="UmaAssistant\class\ref\FormDesigner.h" />
