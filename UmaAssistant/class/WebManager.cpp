@@ -19,3 +19,9 @@ void WebManager::ChangeEventTitle(System::String^ text)
 	array<Object^>^ param = gcnew array<Object^> { text };
 	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "changeEventTitle", param);
 }
+
+void WebManager::CleanChoiceTable()
+{
+	array<Object^>^ param = gcnew array<Object^> { };
+	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "cleanChoiceTable", param);
+}

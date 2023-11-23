@@ -7,8 +7,11 @@
     <link rel="stylesheet" type="text/css" href="ChoiceStyle.css">
     <title>ChoiceHTML</title>
 </head>
-<body>
-    <table>
+<body id="content">
+    <!-- <span id="custom_scroll"></span> -->
+
+
+    <table id="info_table">
         <thead>
             <tr>
                 <th>事件所有者</th>
@@ -16,26 +19,36 @@
             </tr>
             <tr>
                 <th>事件標題</th>
-                <td id="event_title">食いしん坊</td>
+                <td id="event_title">食いしん坊<br>食いしん坊</td>
             </tr>
         </thead>
-        <tbody id="choice_table">
-            <!--
-            <tr>
-                <th class="choice_title">食事は適量が１番</th>
-                <td class="choice_effect"">効果</td>
-            </tr>
-            <tr>
-                <th class="choice_title">腹が減っては力が出ない！</th>
-                <td class="choice_effect"">
-                    効果
-                    <br>
-                    <span style="color: red;">効果2</span>
-                    <img src="../UmaMisc/StatusIcon/group.png">
-                </td>
-            </tr>
-            -->
-        </tbody>
+    </table>
+
+    <table id="choice_table">
+        <tr>
+            <th class="choice_title">食事は適量が１１１１１番</th>
+            
+        </tr>
+        <tr>
+            <td class="choice_effect"">
+                <img src="../UmaMisc/Image/Status/group.png">
+                <span class="status_speed">効果</span>
+                <span class="status_minus_value">+25</span>
+            </td>
+        </tr>
+
+
+
+        <!-- <tr>
+            <th class="choice_title">腹が減っては力が出ない！</th>
+            <td class="choice_effect"">
+                効果
+                <br>
+                <span style="color: red;">効果2</span>
+                <img src="../UmaMisc/Image/Status/group.png">
+            </td>
+        </tr> -->
+
     </table>
     <script src="ChoiceDisplayer.js"></script>
 </body>

@@ -22,5 +22,6 @@ public:
 	void CreateChoice(System::String^ title, System::String^ effect);
 	void ChangeEventOwner(System::String^ text);
 	void ChangeEventTitle(System::String^ text);
+	void CleanChoiceTable();
 };
 

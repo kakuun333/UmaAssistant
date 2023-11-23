@@ -34,6 +34,8 @@ local html_id_arr = {
     "hirenzoku",
 };
 
+local LUA_DEBUG = false;
+
 ---- 本地函數 ---- 本地函數 ---- 本地函數 ---- 本地函數 ---- 本地函數 
 
 -- local function getBlackList()
@@ -131,7 +133,9 @@ function dumper.dumpEventData(ms)
 
         print("進度: ["..pe.red..i..pe.reset.. "/" ..pe.yellow..#white_list..pe.reset.."] "..pe.yellow..white_id..pe.reset..pe.cyan.." --"..ms.." 毫秒"..pe.reset);
 
-        -- break; --[[ Debug 時使用 Debug 時使用 Debug 時使用 Debug 時使用 ]]
+        if LUA_DEBUG then --[[ Debug 時使用 Debug 時使用 Debug 時使用 Debug 時使用 ]]
+            break;
+        end
         sleep(ms);
     end
 

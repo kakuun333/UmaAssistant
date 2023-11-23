@@ -118,9 +118,6 @@ namespace utility
 
 	std::vector<int> GetNonSameIndexList(std::vector<std::string> smaller_list, std::vector<std::string> larger_list)
 	{
-		//std::vector<std::string> larger_list = jpnchar_list_1.size() > jpnchar_list_2.size() ? jpnchar_list_1 : jpnchar_list_2;
-		//std::vector<std::string> smaller_list = larger_list == jpnchar_list_1 ? jpnchar_list_2 : jpnchar_list_1;
-
 		std::vector<int> non_same_idx_list;
 
 		float sameCount = 0;
@@ -149,9 +146,6 @@ namespace utility
 
 	int GetSameCount(std::vector<std::string> smaller_list, std::vector<std::string> larger_list)
 	{
-		//std::vector<std::string> larger_list = jpnchar_list_1.size() > jpnchar_list_2.size() ? jpnchar_list_1 : jpnchar_list_2;
-		//std::vector<std::string> smaller_list = larger_list == jpnchar_list_1 ? jpnchar_list_2 : jpnchar_list_1;
-
 		float sameCount = 0;
 		int char_idx = 0;
 		for (std::string s1 : larger_list)

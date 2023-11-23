@@ -25,7 +25,5 @@ public:
 
 	System::Void FormController::InvokeScript(WebBrowser^ webBrowser, System::String^ script, array<Object^>^ param);
 
-	
-
 };
 

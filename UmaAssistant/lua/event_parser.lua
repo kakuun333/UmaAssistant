@@ -3,7 +3,43 @@ local utility = require("utility");
 
 parser = {}
 
+---- 本地變數 ---- 本地變數 ---- 本地變數 ---- 本地變數 ---- 本地變數 
 
+local jp_status_name_list = {
+    "スピード",
+    "スタミナ",
+    "パワー",
+    "根性",
+    "賢さ",
+}
+
+local status_class_dict = {
+    ["スピード"] = "speed",
+    ["スタミナ"] = "sutamina",
+    ["パワー"] = "power",
+    ["根性"] = "konjyou",
+    ["賢さ"] = "kasikosa",
+}
+
+---- 本地函數 ---- 本地函數 ---- 本地函數 ---- 本地函數 ---- 本地函數 
+local function placeTagToStatus(choice_effect) 
+    
+    -- 給 choice_effect 相對應的 status 添加 <img> 和 <span>
+    for _, status_name in ipairs(jp_status_name_list) do
+        local replace_pattern = "<img src=\"../UmaMisc/Image/Status/"..status_class_dict[status_name]..".png\"><span class=\"status_"..status_class_dict[status_name].."\">%1</span>"
+        choice_effect = string.gsub(choice_effect, "("..status_name..")", replace_pattern);
+    end
+
+
+    choice_effect = string.gsub(choice_effect, "([%-]%d+)", "<span class=\"status_minus_value\">%1</span>");
+
+    choice_effect = string.gsub(choice_effect, "([%+]%d+)", "<span class=\"status_plus_value\">%1</span>");
+
+
+    return choice_effect;
+end
+
+---- 公共函數 ---- 公共函數 ---- 公共函數 ---- 公共函數 ---- 公共函數 
 
 
 -- 傳入 html 和 element 的 id，將返回已處理好的 event_html
@@ -117,8 +153,16 @@ function parser.getEventDict(event_html)
                 -- local replaced_hr_title = string.gsub(replaced_br_title, "<hr>", "\n--------------\n");
                 local span_title_content = string.gsub(choice_title, "<span.->(.-)</span>", "%1");
                 local replaced_span_title = "<span class=\"special_choice_title\">"..span_title_content.."</span>";
+                
                 choice_title = replaced_span_title;
             end
+
+
+
+            --[[
+                對 choice_effect 加工
+            ]]
+            choice_effect = placeTagToStatus(choice_effect);
 
 
             -- local replace_br_effect = string.gsub(choice_effect, "<br>", "\n")

@@ -97,7 +97,7 @@ void Scanner::Start(const char* imgPath, const char* language)
 						continue;
 					};
 
-
+					webManager->CleanChoiceTable();
 					//utility::formctrl::Clear(global::form::umaForm->choicePanel); // 清除先前創建的 WinForm 物件
 					for (UmaChoice choice : event_data.Get<std::vector<UmaChoice>>(UmaEventDataType::CHOICE_LIST))
 					{
