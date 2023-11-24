@@ -11,10 +11,10 @@ System::Void FormController::InvokeScript(WebBrowser^ webBrowser, System::String
         Action<String^, array<Object^>^>^ action = gcnew Action<String^, array<Object^>^>(this, &FormController::InvokeScriptInternal);
         webBrowser->Invoke(action, script, param);
     }
-    else
-    {
-        webBrowser->Document->InvokeScript(script, param);
-    }
+    //else
+    //{
+    //    webBrowser->Document->InvokeScript(script, param);
+    //}
 }
 
 System::Void FormController::InvokeScriptInternal(String^ script, array<Object^>^ param)
