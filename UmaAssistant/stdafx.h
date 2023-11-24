@@ -46,6 +46,7 @@ using json = nlohmann::json;
 #include "class/Scanner.h"
 #include "class/DataManager.h"
 #include "class/WebManager.h"
+#include "class/FileManager.h"
 
 // ¨ü±±
 #include "class/ref/FormDesigner.h"

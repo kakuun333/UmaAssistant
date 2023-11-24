@@ -25,6 +25,7 @@ namespace global
 
 		// UmaData
 		const char* c_UmaData						= utility::CombineChar(c_currentDir, "\\UmaData");
-		const char* event_data_jp_json				= utility::CombineChar(c_UmaData, "\\event_data_jp.json");
+		const char* c_event_data_jp_json			= utility::CombineChar(c_UmaData, "\\event_data_jp.json");
+		const char* c_similar_char_list_json		= utility::CombineChar(global::path::c_UmaData, "\\similar_char_list.json");
 	}
 };

@@ -24,7 +24,8 @@ namespace global
 		extern const char* c_tessdata_best;
 
 		extern const char* c_UmaData;
-		extern const char* event_data_jp_json;
+		extern const char* c_event_data_jp_json;
+		extern const char* c_similar_char_list_json;
 
 
 	}

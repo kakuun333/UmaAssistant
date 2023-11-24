@@ -159,7 +159,209 @@ namespace utility
 		return sameCount;
 	}
 
+	/// <summary>
+	/// 獲取碰到不同字就 +1 Index 的 SameCount;
+	/// </summary>
+	/// <param name="smaller_list"></param>
+	/// <param name="larger_list"></param>
+	/// <param name="nonSameIdxList"></param>
+	/// <returns></returns>
+	int GetSameCountByMoveIdx(std::vector<std::string> smaller_list, std::vector<std::string> larger_list, std::vector<int> nonSameIdxList)
+	{
+		int sameCount = 0;
+		int char_idx = 0;
+		for (std::string s1 : smaller_list)
+		{
+			if (s1 == larger_list[char_idx])
+			{
+				++sameCount;
+			}
+			else
+			{
+				for (int nonSameIdx : nonSameIdxList)
+				{
+					if (smaller_list[nonSameIdx] == larger_list[char_idx])
+					{
+						++sameCount;
+					}
+					//else
+					//{
+					//	if (HasSimilarChar(larger_list[char_idx]))
+					//	{
+					//		std::vector<std::string> similarCharList = GetSimilarCharList(larger_list[char_idx]);
+					//	}
+					//}
+				}
+			}
 
+			++char_idx;
+		}
+
+		return sameCount;
+	}
+
+	int GetSameCountBySimilarChar(std::vector<std::string> smaller_list, std::vector<std::string> larger_list)
+	{
+		//
+		// smaller_list 灰簾石の瞳
+		// larger_list  色雇五の睡
+		//
+
+		float sameCount = 0;
+		int char_idx = 0;
+
+		for (std::string lStr : larger_list)
+		{
+			if (smaller_list.size() > char_idx)
+			{
+				if (lStr == smaller_list[char_idx])
+				{
+					++sameCount;
+				}
+				else
+				{
+
+					if (HasSimilarChar(larger_list[char_idx]))
+					{
+						std::vector<std::string> similarCharList = GetSimilarCharList(smaller_list[char_idx]);
+
+						for (std::string similarChar : similarCharList)
+						{
+
+							if (similarChar == lStr) ++sameCount;
+						}
+					}
+				}
+			}
+			++char_idx;
+		}
+
+		return sameCount;
+	}
+
+	int GetSameCountByMoveIdxSimilarChar(std::vector<std::string> smaller_list, std::vector<std::string> larger_list, std::vector<int> nonSameIdxList)
+	{
+		//
+		// smaller_list 灰簾石の瞳
+		// larger_list  色雇五のだ睡
+		//
+
+		int sameCount = 0;
+		int similarCount = 0;
+		int char_idx = 0;
+		for (std::string sStr : smaller_list)
+		{
+			if (sStr == larger_list[char_idx])
+			{
+				++sameCount;
+			}
+			else
+			{
+				for (int nonSameIdx : nonSameIdxList)
+				{
+					if (smaller_list[nonSameIdx] == larger_list[char_idx])
+					{
+						++sameCount;
+					}
+					else
+					{
+						if (HasSimilarChar(larger_list[nonSameIdx]))
+						{
+							std::vector<std::string> similarCharList = GetSimilarCharList(larger_list[nonSameIdx]);
+
+							for (std::string similarChar : similarCharList)
+							{
+								
+								if (similarChar == sStr) { /*std::cout << "sStr: " << sStr << "  similarChar: " << similarChar << std::endl;*/  ++similarCount; }
+							}
+						}
+					}
+				}
+			}
+
+			++char_idx;
+		}
+
+
+		//std::cout << "sameCount: " << sameCount << std::endl;
+		//std::cout << "similarCount: " << similarCount << std::endl;
+		sameCount += similarCount;
+
+
+		return sameCount;
+	}
+
+
+	bool HasSimilarChar(std::string strChar)
+	{
+		json json = FileManager::GetInstance()->ReadJson(global::path::c_similar_char_list_json);
+
+		//std::cout << "========== Start ==========" << std::endl;
+		for (const auto& similarCharArr : json)
+		{
+			for (const auto& element : similarCharArr)
+			{
+				std::string similarChar = element.get<std::string>();
+
+				if (strChar == similarChar) return true;
+			}
+		}
+		//std::cout << "==========  End  ==========" << std::endl;
+
+		return false;
+	}
+
+	std::vector<std::string> GetSimilarCharList(std::string strChar)
+	{
+		json json = FileManager::GetInstance()->ReadJson(global::path::c_similar_char_list_json);
+
+		std::vector<std::string> similarCharList = {};
+		int trueArrIdx = -1;
+
+		//std::cout << "========== Start ==========" << std::endl;
+
+		//
+		// 獲取 strChar 所在的 similarCharArrIdx
+		//
+		int similarCharArrIdx = 0;
+		for (const auto& similarCharArr : json)
+		{
+			for (int i = 0; i < similarCharArr.size(); ++i)
+			{
+				std::string similarChar = similarCharArr[i].get<std::string>();
+
+				if (strChar == similarChar) trueArrIdx = similarCharArrIdx;
+			}
+			++similarCharArrIdx;
+		}
+
+		//
+		// 將 trueSimilarChar 放入 similarCharList;
+		//
+		for (const auto& trueSimilarChar : json[trueArrIdx])
+		{
+			
+			if (trueSimilarChar != strChar) similarCharList.push_back(trueSimilarChar);
+		}
+
+		//for (std::string str : similarCharList)
+		//{
+		//	std::cout << "strChar: " << strChar << "  trueSimilarChar: " << str << std::endl;
+		//}
+
+		//std::cout << "==========  End  ==========" << std::endl;
+
+		return similarCharList;
+	}
+
+
+
+	/// <summary>
+	/// 比較兩個字串是否相似
+	/// </summary>
+	/// <param name="str1"></param>
+	/// <param name="str2"></param>
+	/// <returns></returns>
 	bool IsSimilar(std::string str1, std::string str2)
 	{
 #ifdef UMA_DEBUG
@@ -170,6 +372,10 @@ namespace utility
 
 		int str1CharCount = CountUTF8Char(str1);
 		int str2CharCount = CountUTF8Char(str2);
+
+		float similarity = 0;
+
+
 		///
 		/// 如果兩個字數一致
 		/// 
@@ -180,19 +386,34 @@ namespace utility
 			std::vector<std::string> jpnchar_list_1 = utility::SplitJpnChar(str1);
 			std::vector<std::string> jpnchar_list_2 = utility::SplitJpnChar(str2);
 
-			float sameCount = 0;
+			//float sameCount = 0;
 
-			int char_idx = 0;
-			for (std::string s1 : jpnchar_list_1)
-			{
-				if (s1 == jpnchar_list_2[char_idx]) ++sameCount;
+			//int char_idx = 0;
+			//for (std::string s1 : jpnchar_list_1)
+			//{
+			//	if (s1 == jpnchar_list_2[char_idx]) ++sameCount;
 
-				++char_idx;
-			}
+			//	++char_idx;
+			//}
 			//std::cout << "same_count: " << sameCount << std::endl;
 			//std::cout << "similarity: " << (sameCount / totalCount) * 100 << "%" << std::endl;
+			int firstSameCount = GetSameCount(jpnchar_list_1, jpnchar_list_2);
 
-			float similarity = (sameCount / totalCount) * 100;
+			int sameCountBySimilarChar = GetSameCountBySimilarChar(jpnchar_list_1, jpnchar_list_2);
+
+
+			if (sameCountBySimilarChar > firstSameCount)
+			{
+				
+				similarity = (sameCountBySimilarChar / totalCount) * 100;
+
+				std::cout << "sameCountBySimilarChar: " << sameCountBySimilarChar << std::endl;
+				std::cout << "similarity: " << similarity << "%" << std::endl;
+
+				return similarity > SIMILAR_METRIC;
+			}
+			
+			similarity = (firstSameCount / totalCount) * 100;
 
 			return similarity > SIMILAR_METRIC;
 		}
@@ -214,39 +435,34 @@ namespace utility
 			int firstSameCount = GetSameCount(jpnchar_list_1, jpnchar_list_2);
 
 			if (firstSameCount <= 0) return false;
-			
+
 			std::vector<int> nonSameIdxList = GetNonSameIndexList(jpnchar_list_1, jpnchar_list_2);
+			int movedIdxCount = GetSameCountByMoveIdx(jpnchar_list_1, jpnchar_list_2, nonSameIdxList);
+			int movedIdxSimilarCharCount = GetSameCountByMoveIdxSimilarChar(jpnchar_list_1, jpnchar_list_2, nonSameIdxList);
 
-			int secondSameCount = 0;
-			int char_idx = 0;
-			for (std::string s1 : jpnchar_list_1)
-			{
-				if (s1 == jpnchar_list_2[char_idx])
-				{
-					++secondSameCount;
-				}
-				else
-				{
-					for (int nonSameIdx : nonSameIdxList)
-					{
-						if (jpnchar_list_1[nonSameIdx] == jpnchar_list_2[char_idx]) ++secondSameCount;
-					}
-				}
-
-				++char_idx;
-			}
+			//std::cout << "movedIdxCount: " << movedIdxCount << std::endl;
+			//std::cout << "movedIdxSimilarCharCount: " << movedIdxSimilarCharCount << std::endl;
 
 #ifdef UMA_DEBUG
 			std::cout << "firstSameCount: " << firstSameCount << std::endl;
-			std::cout << "secondSameCount: " << secondSameCount << std::endl;
+			std::cout << "movedIdxCount: " << movedIdxCount << std::endl;
 #endif
 
-			if (secondSameCount > firstSameCount)
+			if (movedIdxSimilarCharCount > movedIdxCount)
 			{
-				float similarity = (secondSameCount / totalCount) * 100;
-				std::cout << "similarity: " << (secondSameCount / totalCount) * 100 << "%" << std::endl;
+				similarity = (movedIdxSimilarCharCount / totalCount) * 100;
 
-				return similarity > SIMILAR_METRIC;
+				std::cout << "similarity: " << similarity << "%" << std::endl;
+
+				return similarity >= SIMILAR_METRIC;
+			}
+			else if (movedIdxCount > firstSameCount)
+			{
+				similarity = (movedIdxCount / totalCount) * 100;
+
+				std::cout << "similarity: " << similarity << "%" << std::endl;
+
+				return similarity >= SIMILAR_METRIC;
 			}
 		}
 		///
@@ -269,44 +485,35 @@ namespace utility
 			if (firstSameCount <= 0) return false;
 
 			std::vector<int> nonSameIdxList = GetNonSameIndexList(jpnchar_list_2, jpnchar_list_1);
+			int movedIdxCount = GetSameCountByMoveIdx(jpnchar_list_2, jpnchar_list_1, nonSameIdxList);
+			int movedIdxSimilarCharCount = GetSameCountByMoveIdxSimilarChar(jpnchar_list_2, jpnchar_list_1, nonSameIdxList);
 
-			int secondSameCount = 0;
-			int char_idx = 0;
-			for (std::string s1 : jpnchar_list_2)
-			{
-				if (s1 == jpnchar_list_1[char_idx])
-				{
-					++secondSameCount;
-				}
-				else
-				{
-					for (int nonSameIdx : nonSameIdxList)
-					{
-						if (jpnchar_list_2[nonSameIdx] == jpnchar_list_1[char_idx]) ++secondSameCount;
-					}
-				}
-
-				++char_idx;
-			}
 
 #ifdef UMA_DEBUG
 			std::cout << "firstSameCount: " << firstSameCount << std::endl;
-			std::cout << "secondSameCount: " << secondSameCount << std::endl;
+			std::cout << "movedIdxCount: " << movedIdxCount << std::endl;
 #endif
-
-			if (secondSameCount > firstSameCount)
+			if (movedIdxSimilarCharCount > movedIdxCount)
 			{
-				float similarity = (secondSameCount / totalCount) * 100;
+				similarity = (movedIdxSimilarCharCount / totalCount) * 100;
 
-				std::cout << "similarity: " << (secondSameCount / totalCount) * 100 << "%" << std::endl;
+				std::cout << "similarity: " << similarity << "%" << std::endl;
 
-				return similarity > SIMILAR_METRIC;
+				return similarity >= SIMILAR_METRIC;
 			}
-		}
+			else if (movedIdxCount > firstSameCount)
+			{
+				similarity = (movedIdxCount / totalCount) * 100;
+
+				std::cout << "similarity: " << similarity << "%" << std::endl;
+
+				return similarity >= SIMILAR_METRIC;
+			}
 
 #ifdef UMA_DEBUG
-		std::cout << "================= TEST END =================" << std::endl;
+			std::cout << "================= TEST END =================" << std::endl;
 #endif
-		return false;
+			return false;
+		}
 	}
 }

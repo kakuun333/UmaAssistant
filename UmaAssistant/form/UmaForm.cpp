@@ -28,9 +28,15 @@ namespace UmaAssistant
 
 	System::Void UmaForm::button1_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		array<Object^>^ param = gcnew array<Object^> { "cppTitle", "cppEffect" };
-		global::form::umaForm->choiceWebBrowser->Document->InvokeScript("createChoice", param);
-		utility::IsSimilar(u8"食いしん坊は伊達じゃない", u8"食いじん坊は伊達じゃよなここい");
+		//array<Object^>^ param = gcnew array<Object^> { "cppTitle", "cppEffect" };
+		//global::form::umaForm->choiceWebBrowser->Document->InvokeScript("createChoice", param);
+
+
+		
+			
+		//std::cout << utility::IsSimilar(u8"食いしん坊は伊達じゃない", u8"食いじん坊は伊達じゃよない") << std::endl;
+
+		utility::IsSimilar(u8"灰簾石の瞳", u8"色雇五のだ睡");
 	}
 
 	System::Void UmaForm::test_btn_Click(System::Object^ sender, System::EventArgs^ e)

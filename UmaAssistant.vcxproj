@@ -139,6 +139,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="UmaAssistant\class\FileManager.cpp" />
     <ClCompile Include="UmaAssistant\class\ref\FormController.cpp" />
     <ClCompile Include="UmaAssistant\utility\CharacterCompare.cpp" />
     <ClCompile Include="UmaAssistant\utility\FormControl.cpp" />
@@ -162,6 +163,7 @@
     <ClCompile Include="UmaAssistant\class\WebManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="UmaAssistant\class\FileManager.h" />
     <ClInclude Include="UmaAssistant\class\ref\FormController.h" />
     <ClInclude Include="UmaAssistant\utility\CharacterCompare.h" />
     <ClInclude Include="UmaAssistant\utility\FormControl.h" />

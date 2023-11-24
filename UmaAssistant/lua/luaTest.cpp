@@ -183,7 +183,7 @@ void testlua()
                 std::string json_string = json_data.dump(4 /*縮排空格數*/);
 
                 // 寫入 json
-                std::ofstream outputFile(global::path::event_data_jp_json);
+                std::ofstream outputFile(global::path::c_event_data_jp_json);
                 if (outputFile.is_open())
                 {
                     outputFile << json_string << std::endl;

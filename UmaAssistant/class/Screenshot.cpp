@@ -60,10 +60,10 @@ Screenshot::Screenshot()
 	cv::cvtColor(oimg, oimg, cv::COLOR_BGR2GRAY);
 
 	// 二值化
-	cv::threshold(oimg, oimg, 254/*230*/, 255, cv::THRESH_BINARY);
+	cv::threshold(oimg, oimg, 230/*230*/, 255, cv::THRESH_BINARY);
 
 	// 模糊化
-	//cv::GaussianBlur(oimg, oimg, cv::Size(1.5, 1.5), 0);
+	//cv::GaussianBlur(oimg, oimg, cv::Size(2, 2), 0);
 
 
 

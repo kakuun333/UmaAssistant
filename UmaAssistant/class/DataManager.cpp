@@ -15,7 +15,7 @@ UmaEventData DataManager::GetUmaEventDataFromJson(std::string scanned_text)
 
 
 	// 打開 JSON 檔
-	std::ifstream jsonFile(global::path::event_data_jp_json);
+	std::ifstream jsonFile(global::path::c_event_data_jp_json);
 	if (jsonFile.is_open())
 	{
 		// 讀取 JSON 檔的內容到 json 物件
