@@ -54,7 +54,7 @@ UmaEventData DataManager::GetUmaEventDataFromJson(std::string scanned_text)
 			//	if (notThis) continue;
 			//}
 
-			if (!utility::IsSimilar(scanned_text, it2.value()["event_title"])) continue;
+			if (!utility::IsSimilar(scanned_text, it2.value()["event_title"].get<std::string>())) continue;
 
 			//if (it2.value()["event_title"] != scanned_text) continue;
 
@@ -62,15 +62,15 @@ UmaEventData DataManager::GetUmaEventDataFromJson(std::string scanned_text)
 			//std::string event_idx = it2.key();
 
 			UmaEvent umaEvent;
-
-			umaEventData.event_owner = it.value()["event_owner"];
-			umaEventData.sys_event_owner = utility::stdStr2system(it.value()["event_owner"]);
+			
+			umaEventData.event_owner = it.value()["event_owner"].get<std::string>();
+			umaEventData.sys_event_owner = utility::stdStr2system(umaEventData.event_owner);
 
 			std::cout << it.value()["event_owner"] << std::endl;
 
 
-			umaEvent.event_title = it2.value()["event_title"];
-			umaEvent.sys_event_title = utility::stdStr2system(it2.value()["event_title"]);
+			umaEvent.event_title = it2.value()["event_title"].get<std::string>();
+			umaEvent.sys_event_title = utility::stdStr2system(umaEvent.event_title);
 			
 			
 			json choice_list = it2.value()["choice_list"];
@@ -80,11 +80,11 @@ UmaEventData DataManager::GetUmaEventDataFromJson(std::string scanned_text)
 
 				UmaChoice umaChoice;
 
-				umaChoice.choice_title = it4.value()["choice_title"];
-				umaChoice.sys_choice_title = utility::stdStr2system(it4.value()["choice_title"]);
+				umaChoice.choice_title = it4.value()["choice_title"].get<std::string>();
+				umaChoice.sys_choice_title = utility::stdStr2system(umaChoice.choice_title);
 
-				umaChoice.choice_effect = it4.value()["choice_effect"];
-				umaChoice.sys_choice_effect = utility::stdStr2system(it4.value()["choice_effect"]);
+				umaChoice.choice_effect = it4.value()["choice_effect"].get<std::string>();
+				umaChoice.sys_choice_effect = utility::stdStr2system(umaChoice.choice_effect);
 
 				umaEvent.choice_list.push_back(umaChoice);
 				//std::cout << "event_idx: \n" << event_idx << std::endl;

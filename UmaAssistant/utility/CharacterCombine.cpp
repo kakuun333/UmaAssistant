@@ -2,6 +2,12 @@
 
 namespace utility
 {
+	/// <summary>
+	/// 將兩個 const char* 和在一起變成一個 const char*
+	/// </summary>
+	/// <param name="str1"></param>
+	/// <param name="str2"></param>
+	/// <returns></returns>
 	const char* CombineChar(const char* str1, const char* str2)
 	{
         // 合併後的長度

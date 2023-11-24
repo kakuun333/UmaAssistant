@@ -144,20 +144,20 @@ function dumper.dumpEventData(ms)
     return event_data;
 end
 
-function dumper.dumpBlackWhiteList(ms)
+function dumper.dumpEventBlackWhiteList(ms)
     ms = ms or DEFAULT_MILLISECONDS;
 
     local aid_arr = fm.getArticleId();
     -------------------------------------------------------------
-    local black_list_file = io.open(fm.BLACK_LIST_PATH, "a");
-    local white_list_file = io.open(fm.WHITE_LIST_PATH, "a");
+    local black_list_file = io.open(fm.EVENT_BLACK_LIST_PATH, "a");
+    local white_list_file = io.open(fm.EVENT_WHITE_LIST_PATH, "a");
     -- 如果檔案都順利開啟
     if black_list_file and white_list_file then
         local blacked_amount = 0;
         local whited_amount = 0;
         -- 獲取已儲存的黑白名單
-        local saved_black_list = fm.getBlackList();
-        local saved_white_list = fm.getWhiteList();
+        local saved_black_list = fm.getEventBlackList();
+        local saved_white_list = fm.getEventWhiteList();
         for i, id in ipairs(aid_arr) do
             -- 跳過已儲存的黑名單
             for _, v in ipairs(saved_black_list) do
@@ -205,12 +205,81 @@ function dumper.dumpBlackWhiteList(ms)
     end
 end
 
+function dumper.dumpSkillBlackWhiteList(ms)
+    ms = ms or DEFAULT_MILLISECONDS;
+
+    local aid_arr = fm.getArticleId();
+    -------------------------------------------------------------
+    local black_list_file = io.open(fm.SKILL_BLACK_LIST_PATH, "a");
+    local white_list_file = io.open(fm.SKILL_WHITE_LIST_PATH, "a");
+    -- 如果檔案都順利開啟
+    if black_list_file and white_list_file then
+        local blacked_amount = 0;
+        local whited_amount = 0;
+        -- 獲取已儲存的黑白名單
+        local saved_black_list = fm.getSkillBlackList();
+        local saved_white_list = fm.getSkillWhiteList();
+        local event_white_list = fm.getEventWhiteList();
+        for i, id in ipairs(aid_arr) do
+            -- 跳過已儲存的黑名單
+            for _, v in ipairs(saved_black_list) do
+                if id == v then
+                    print(pe.magenta.."跳過已儲存的黑名單："..id..pe.reset);
+                    goto continue
+                end;
+            end
+            -- 跳過已儲存的白名單
+            for _, v in ipairs(saved_white_list) do
+                if id == v then
+                    print(pe.magenta.."跳過已儲存的白名單："..id..pe.reset);
+                    goto continue
+                end;
+            end
+            -- 跳過 event 的白名單
+            
+            for _, v in ipairs(event_white_list) do
+                if id == v then
+                    print(pe.magenta.."跳過 event 的白名單："..id..pe.reset);
+                    goto continue
+                end;
+            end
+
+            -- 開始進行分析並寫入
+            local black_listed = false;
+            local html = GetHtmlFromUrl("https://gamewith.jp/uma-musume/article/show/"..id);
+            if not string.match(html, "<div class=\"uma_skill_hyouka\">") then
+                black_list_file:write("<"..id..">".."\n");
+                black_list_file:flush();
+                blacked_amount = blacked_amount + 1;
+                black_listed = true;
+            else
+                whited_amount = whited_amount  + 1;
+                white_list_file:write("<"..id..">".."\n");
+                white_list_file:flush();
+            end
+            if black_listed then
+                print("進度: " ..pe.red..i..pe.reset.. "/" ..pe.yellow..#aid_arr..pe.reset.. "   " ..pe.red..id.."  已加入黑名單  "..pe.reset..pe.cyan..ms.." 毫秒"..pe.reset);
+            else
+                print("進度: " ..pe.red..i..pe.reset.. "/" ..pe.yellow..#aid_arr..pe.reset.. "   " ..pe.green..id.."  已加入白名單  "..pe.reset..pe.cyan..ms.." 毫秒"..pe.reset);
+            end
+            sleep(ms);
+            ::continue::
+        end
+
+        black_list_file:write("\n\n黑名單總數："..blacked_amount);
+        white_list_file:write("\n\n白名單總數："..whited_amount);
+        black_list_file:close();
+        white_list_file:close();
+        print("黑白名單製作完成！");
+    end
+end
+
 function dumper.dumpArticleIdFromSiteMap()
     local aid_arr = {};
     local sitemapXml = "https://gamewith.jp/uma-musume/sitemap.xml";
     local xml = GetHtmlFromUrl(sitemapXml);
     print("已獲取 xml")
-    --               <loc>https://gamewith.jp/uma-musume/article/show/256047</loc>
+    -- <loc>https://gamewith.jp/uma-musume/article/show/256047</loc>
     local pattern = "<loc.-(%d+)</loc>";
     for id in string.gmatch(xml, pattern) do
         -- print(id.."\n")

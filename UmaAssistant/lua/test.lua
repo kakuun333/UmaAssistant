@@ -35,22 +35,16 @@ local fm = require("file_manager");
 
 
 
-event_data = dumper.dumpEventData();
+-- print(string.match("体力-15~27", "(%-%d+)[?!~]"));
+-- local test = string.gsub([[AA+15~27  DD-15]], "([%-|%+%d+]+~?%d*)", "<span class=\"status_minus_value\">%1</span>")
+-- print(test);
+-- local test2 = string.gsub(test, "?!>([%+%d+]+~?%d*)?!<", "<span class=\"status_plus_value\">%1</span>");
+-- print(test2);
 
+-- event_data = dumper.dumpEventData();
 
+dumper.dumpSkillBlackWhiteList(2500);
 
--- for i,v in next, event_data do
---     print(i,v);
---     for i2, v2 in next, v do
---         print(i2,v2);
---         if (type(v2) == "table") then
---             for i3, v3 in next, v2 do
---                 print(i3, v3);
---             end
---         end
---     end
--- end
-
--- dumper.dumpBlackWhiteList();
+-- dumper.dumpEventBlackWhiteList();
 
 -- dumper.dumpArticleIdFromSiteMap();

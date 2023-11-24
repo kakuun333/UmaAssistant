@@ -221,16 +221,16 @@ namespace utility
 				else
 				{
 
-					if (HasSimilarChar(larger_list[char_idx]))
+					if (!HasSimilarChar(larger_list[char_idx])) continue;
+
+					std::vector<std::string> similarCharList = GetSimilarCharList(smaller_list[char_idx]);
+
+					for (std::string similarChar : similarCharList)
 					{
-						std::vector<std::string> similarCharList = GetSimilarCharList(smaller_list[char_idx]);
 
-						for (std::string similarChar : similarCharList)
-						{
-
-							if (similarChar == lStr) ++sameCount;
-						}
+						if (similarChar == lStr) ++sameCount;
 					}
+
 				}
 			}
 			++char_idx;
@@ -265,16 +265,16 @@ namespace utility
 					}
 					else
 					{
-						if (HasSimilarChar(larger_list[nonSameIdx]))
-						{
-							std::vector<std::string> similarCharList = GetSimilarCharList(larger_list[nonSameIdx]);
+						if (!HasSimilarChar(larger_list[nonSameIdx])) continue;
 
-							for (std::string similarChar : similarCharList)
-							{
+						std::vector<std::string> similarCharList = GetSimilarCharList(larger_list[nonSameIdx]);
+
+						for (std::string similarChar : similarCharList)
+						{
 								
-								if (similarChar == sStr) { /*std::cout << "sStr: " << sStr << "  similarChar: " << similarChar << std::endl;*/  ++similarCount; }
-							}
+							if (similarChar == sStr) { /*std::cout << "sStr: " << sStr << "  similarChar: " << similarChar << std::endl;*/  ++similarCount; }
 						}
+
 					}
 				}
 			}
@@ -399,19 +399,17 @@ namespace utility
 			//std::cout << "similarity: " << (sameCount / totalCount) * 100 << "%" << std::endl;
 			int firstSameCount = GetSameCount(jpnchar_list_1, jpnchar_list_2);
 
-			int sameCountBySimilarChar = GetSameCountBySimilarChar(jpnchar_list_1, jpnchar_list_2);
+			//int sameCountBySimilarChar = GetSameCountBySimilarChar(jpnchar_list_1, jpnchar_list_2);
+			//if (sameCountBySimilarChar > firstSameCount)
+			//{
+			//	
+			//	similarity = (sameCountBySimilarChar / totalCount) * 100;
 
+			//	std::cout << "sameCountBySimilarChar: " << sameCountBySimilarChar << std::endl;
+			//	std::cout << "similarity: " << similarity << "%" << std::endl;
 
-			if (sameCountBySimilarChar > firstSameCount)
-			{
-				
-				similarity = (sameCountBySimilarChar / totalCount) * 100;
-
-				std::cout << "sameCountBySimilarChar: " << sameCountBySimilarChar << std::endl;
-				std::cout << "similarity: " << similarity << "%" << std::endl;
-
-				return similarity > SIMILAR_METRIC;
-			}
+			//	return similarity > SIMILAR_METRIC;
+			//}
 			
 			similarity = (firstSameCount / totalCount) * 100;
 
@@ -438,25 +436,23 @@ namespace utility
 
 			std::vector<int> nonSameIdxList = GetNonSameIndexList(jpnchar_list_1, jpnchar_list_2);
 			int movedIdxCount = GetSameCountByMoveIdx(jpnchar_list_1, jpnchar_list_2, nonSameIdxList);
-			int movedIdxSimilarCharCount = GetSameCountByMoveIdxSimilarChar(jpnchar_list_1, jpnchar_list_2, nonSameIdxList);
-
-			//std::cout << "movedIdxCount: " << movedIdxCount << std::endl;
-			//std::cout << "movedIdxSimilarCharCount: " << movedIdxSimilarCharCount << std::endl;
+			//int movedIdxSimilarCharCount = GetSameCountByMoveIdxSimilarChar(jpnchar_list_1, jpnchar_list_2, nonSameIdxList);
 
 #ifdef UMA_DEBUG
 			std::cout << "firstSameCount: " << firstSameCount << std::endl;
 			std::cout << "movedIdxCount: " << movedIdxCount << std::endl;
 #endif
 
-			if (movedIdxSimilarCharCount > movedIdxCount)
-			{
-				similarity = (movedIdxSimilarCharCount / totalCount) * 100;
+			//if (movedIdxSimilarCharCount > movedIdxCount)
+			//{
+			//	similarity = (movedIdxSimilarCharCount / totalCount) * 100;
 
-				std::cout << "similarity: " << similarity << "%" << std::endl;
+			//	std::cout << "similarity: " << similarity << "%" << std::endl;
 
-				return similarity >= SIMILAR_METRIC;
-			}
-			else if (movedIdxCount > firstSameCount)
+			//	return similarity >= SIMILAR_METRIC;
+			//}
+
+			if (movedIdxCount > firstSameCount)
 			{
 				similarity = (movedIdxCount / totalCount) * 100;
 
@@ -486,22 +482,24 @@ namespace utility
 
 			std::vector<int> nonSameIdxList = GetNonSameIndexList(jpnchar_list_2, jpnchar_list_1);
 			int movedIdxCount = GetSameCountByMoveIdx(jpnchar_list_2, jpnchar_list_1, nonSameIdxList);
-			int movedIdxSimilarCharCount = GetSameCountByMoveIdxSimilarChar(jpnchar_list_2, jpnchar_list_1, nonSameIdxList);
+			//int movedIdxSimilarCharCount = GetSameCountByMoveIdxSimilarChar(jpnchar_list_2, jpnchar_list_1, nonSameIdxList);
 
 
 #ifdef UMA_DEBUG
 			std::cout << "firstSameCount: " << firstSameCount << std::endl;
 			std::cout << "movedIdxCount: " << movedIdxCount << std::endl;
 #endif
-			if (movedIdxSimilarCharCount > movedIdxCount)
-			{
-				similarity = (movedIdxSimilarCharCount / totalCount) * 100;
+			//if (movedIdxSimilarCharCount > movedIdxCount)
+			//{
+			//	similarity = (movedIdxSimilarCharCount / totalCount) * 100;
 
-				std::cout << "similarity: " << similarity << "%" << std::endl;
+			//	std::cout << "similarity: " << similarity << "%" << std::endl;
 
-				return similarity >= SIMILAR_METRIC;
-			}
-			else if (movedIdxCount > firstSameCount)
+			//	return similarity >= SIMILAR_METRIC;
+			//}
+
+
+			if (movedIdxCount > firstSameCount)
 			{
 				similarity = (movedIdxCount / totalCount) * 100;
 

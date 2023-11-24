@@ -139,9 +139,36 @@ function cleanChoiceTable() {
 //     console.log('scrollRange', scrollRange);
 // });
 
+function createSkillHintContent() {
+    let div = document.createElement("div");
+    div.innerHTML = "TEST";
+}
 
 
+function displaySkillContent() {
+    let allSkillHint = document.querySelectorAll(".skill_hint");
 
+    for (let i = 0; i < allSkillHint.length; ++i) {
+        createSkillHintContent();
+    }
+    
+    // for ()
+    document.addEventListener("mousemove", function(event) {
+        let mouseX = event.clientX;
+        let mouseY = event.clientY;
+
+        let hoveredElement = document.elementFromPoint(mouseX, mouseY);
+    
+        if (hoveredElement && hoveredElement.classList.contains("skill_hint")) {
+            // 以滑鼠為中心顯示
+            // console.log(hoveredElement);
+            hoveredElement.style.left = mouseX + 'px';
+            hoveredElement.style.top = mouseY + 'px';
+        }
+    });
+}
+
+displaySkillContent()
 
 createChoice("title", "effect<br>effect");
 createChoice("title", "effect<br>effect");

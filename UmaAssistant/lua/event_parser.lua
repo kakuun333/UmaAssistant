@@ -31,9 +31,14 @@ local function placeTagToStatus(choice_effect)
     end
 
 
-    choice_effect = string.gsub(choice_effect, "([%-]%d+)", "<span class=\"status_minus_value\">%1</span>");
+    -- 負號
+    choice_effect = string.gsub(choice_effect, "－(%d+)", "-%1");
+    choice_effect = string.gsub(choice_effect, "?!>([%-%d+]+~?%d*)?!<", "<span class=\"status_minus_value\">%1</span>");
 
-    choice_effect = string.gsub(choice_effect, "([%+]%d+)", "<span class=\"status_plus_value\">%1</span>");
+
+    -- 正號
+    choice_effect = string.gsub(choice_effect, "＋(%d+)", "+%1");
+    choice_effect = string.gsub(choice_effect, "?!>([%+%d+]+~?%d*)?!<", "<span class=\"status_plus_value\">%1</span>");
 
 
     return choice_effect;

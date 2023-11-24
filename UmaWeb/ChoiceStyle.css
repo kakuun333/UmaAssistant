@@ -86,6 +86,14 @@ table, tr, th, td {
     color: #55bd84;
 }
 
+.skill_hint_content {
+    display: none;
+}
+
+/* .skill_hint:hover {
+    color: red;
+} */
+
 
 
 
