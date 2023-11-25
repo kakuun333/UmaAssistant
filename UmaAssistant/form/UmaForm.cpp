@@ -1,16 +1,5 @@
 ﻿#include "../stdafx.h"
 
-#pragma region 本地函數
-
-//void OnDocumentCompleted(Object^ sender, WebBrowserDocumentCompletedEventArgs^ e)
-//{
-//	array<Object^>^ param = gcnew array<Object^> { "cppTitle", "cppEffect" };
-//	global::form::umaForm->choiceWebBrowser->Document->InvokeScript("createChoice", param);
-//}
-
-#pragma endregion 本地函數
-
-
 namespace UmaAssistant
 {
 	UmaForm::UmaForm(void) // UmaForm 的建構函數
@@ -20,23 +9,20 @@ namespace UmaAssistant
 		//TODO:  在此加入建構函式程式碼
 		//
 
-#pragma region choiceWebBrowser
-		choiceWebBrowser->Navigate("file://" + global::path::currentDir + "/UmaWeb/index.html");
+#pragma region WebBrowser
 		//choiceWebBrowser->DocumentCompleted += gcnew WebBrowserDocumentCompletedEventHandler(&OnDocumentCompleted);
-#pragma endregion choiceWebBrowser
+		choiceWebBrowser->Navigate(global::path::choiceWebBrowser);
+		characterNameWebBrowser->Navigate(global::path::characterNameWebBrowser);
+#pragma endregion WebBrowser
 	}
 
 	System::Void UmaForm::button1_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		//array<Object^>^ param = gcnew array<Object^> { "cppTitle", "cppEffect" };
-		//global::form::umaForm->choiceWebBrowser->Document->InvokeScript("createChoice", param);
-
-
-		
-			
 		//std::cout << utility::IsSimilar(u8"食いしん坊は伊達じゃない", u8"食いじん坊は伊達じゃよない") << std::endl;
 
-		utility::IsSimilar(u8"灰簾石の瞳", u8"色雇五のだ睡");
+		//utility::IsSimilar(u8"灰簾石の瞳", u8"色雇五のだ睡");
+
+		utility::GetCharacterNameSimilarity(u8"キセキの白星オグリキャップ", u8"オグリキャップ（キセキの白星）");
 	}
 
 	System::Void UmaForm::test_btn_Click(System::Object^ sender, System::EventArgs^ e)
@@ -45,7 +31,8 @@ namespace UmaAssistant
 
 		if (!global::umaswitch::Scanning)
 		{
-			scanner->Start(global::path::c_screenshot_event, "jpn");
+			//scanner->Start("jpn");
+			scanner->Start("jpn");
 
 			test_btn->Text = "Stop";
 		}

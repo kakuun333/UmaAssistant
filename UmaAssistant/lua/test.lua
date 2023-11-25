@@ -34,17 +34,10 @@ local fm = require("file_manager");
 -- utility.deepprint(event_dict);
 
 
-
--- print(string.match("体力-15~27", "(%-%d+)[?!~]"));
--- local test = string.gsub([[AA+15~27  DD-15]], "([%-|%+%d+]+~?%d*)", "<span class=\"status_minus_value\">%1</span>")
--- print(test);
--- local test2 = string.gsub(test, "?!>([%+%d+]+~?%d*)?!<", "<span class=\"status_plus_value\">%1</span>");
--- print(test2);
-
--- event_data = dumper.dumpEventData();
-
-dumper.dumpSkillBlackWhiteList(2500);
+event_data = dumper.dumpEventData(2100);
 
 -- dumper.dumpEventBlackWhiteList();
+-- dumper.dumpSkillBlackWhiteList(2500);
+
 
 -- dumper.dumpArticleIdFromSiteMap();

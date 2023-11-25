@@ -1,11 +1,14 @@
 ﻿#pragma once
 
-constexpr inline unsigned int UTF8_CHAR_SIZE = 3;
 
-constexpr inline float SIMILAR_METRIC = 50; // 相似度標準，大於 n 才算是相似;
 
 namespace utility
 {
+	constexpr inline unsigned int UTF8_CHAR_SIZE = 3;
+	constexpr inline float SIMILAR_METRIC = 50; // 相似度標準，大於 n 才算是相似;
+	constexpr inline int SIMIALAR_MAX = 100;
+	constexpr inline int NOT_SIMILAR = -1;
+
 	int CountUTF8Char(std::string input);
 
 	std::vector<std::string> SplitJpnChar(std::string input);
@@ -33,4 +36,8 @@ namespace utility
 	std::vector<std::string> GetSimilarCharList(std::string strChar);
 
 	bool IsSimilar(std::string str1, std::string str2);
+
+	float GetSimilarity(std::string str1, std::string str2);
+
+	float GetCharacterNameSimilarity(std::string scannedName, std::string jsonDataName);
 }

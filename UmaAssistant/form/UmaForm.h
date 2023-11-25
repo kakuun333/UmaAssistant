@@ -66,6 +66,10 @@ namespace UmaAssistant {
 	public: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
 	private: System::Windows::Forms::Button^ button1;
+	public: System::Windows::Forms::WebBrowser^ characterNameWebBrowser;
+	private:
+
+	private:
 	public: System::Windows::Forms::WebBrowser^ choiceWebBrowser;
 
 #pragma region Windows Form Designer generated code
@@ -98,6 +102,7 @@ namespace UmaAssistant {
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->choiceWebBrowser = (gcnew System::Windows::Forms::WebBrowser());
+			this->characterNameWebBrowser = (gcnew System::Windows::Forms::WebBrowser());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->icon_pictureBox))->BeginInit();
 			this->tableLayoutPanel1->SuspendLayout();
 			this->tableLayoutPanel2->SuspendLayout();
@@ -192,7 +197,7 @@ namespace UmaAssistant {
 			this->close_form_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->close_form_btn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"close_form_btn.Image")));
-			this->close_form_btn->Location = System::Drawing::Point(723, 0);
+			this->close_form_btn->Location = System::Drawing::Point(511, 0);
 			this->close_form_btn->Name = L"close_form_btn";
 			this->close_form_btn->Size = System::Drawing::Size(40, 32);
 			this->close_form_btn->TabIndex = 9;
@@ -211,7 +216,7 @@ namespace UmaAssistant {
 			this->minimize_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->minimize_btn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"minimize_btn.Image")));
-			this->minimize_btn->Location = System::Drawing::Point(678, 0);
+			this->minimize_btn->Location = System::Drawing::Point(466, 0);
 			this->minimize_btn->Name = L"minimize_btn";
 			this->minimize_btn->Size = System::Drawing::Size(39, 32);
 			this->minimize_btn->TabIndex = 10;
@@ -434,17 +439,26 @@ namespace UmaAssistant {
 			// 
 			// choiceWebBrowser
 			// 
-			this->choiceWebBrowser->Location = System::Drawing::Point(12, 125);
+			this->choiceWebBrowser->Location = System::Drawing::Point(15, 164);
 			this->choiceWebBrowser->MinimumSize = System::Drawing::Size(20, 20);
 			this->choiceWebBrowser->Name = L"choiceWebBrowser";
-			this->choiceWebBrowser->Size = System::Drawing::Size(510, 366);
+			this->choiceWebBrowser->Size = System::Drawing::Size(523, 374);
 			this->choiceWebBrowser->TabIndex = 22;
+			// 
+			// characterNameWebBrowser
+			// 
+			this->characterNameWebBrowser->Location = System::Drawing::Point(15, 113);
+			this->characterNameWebBrowser->MinimumSize = System::Drawing::Size(20, 20);
+			this->characterNameWebBrowser->Name = L"characterNameWebBrowser";
+			this->characterNameWebBrowser->Size = System::Drawing::Size(523, 45);
+			this->characterNameWebBrowser->TabIndex = 23;
 			// 
 			// UmaForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(762, 503);
+			this->ClientSize = System::Drawing::Size(550, 550);
+			this->Controls->Add(this->characterNameWebBrowser);
 			this->Controls->Add(this->choiceWebBrowser);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->choicePanel);

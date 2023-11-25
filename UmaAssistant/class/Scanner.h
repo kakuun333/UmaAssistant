@@ -10,15 +10,23 @@
 class Scanner
 {
 private:
-	Scanner() {}
+	Scanner();
 
 	static Scanner* _instance;
 
-	static std::string _previousText;
+	static std::string _previousEventText;
+	static std::string _previousCharacterNameText;
 
 	static bool _scanning;
 
+	static tesseract::TessBaseAPI* ocr_jpn;
+
+	static tesseract::TessBaseAPI* ocr_jpn_character;
+
+
 	std::string Scanner::GetScannedText(const char* imgPath, const char* language);
+
+	std::string Scanner::GetCharacterName(const char* imgPath, const char* language);
 public:
 	static Scanner* GetInstance()
 	{
@@ -29,7 +37,9 @@ public:
 		return _instance;
 	}
 
-	void Start(const char* imgPath, const char* language = "jpn");
+	static void InitOcrJpn();
+
+	void Start(const char* language = "jpn");
 
 	void Stop();
 };

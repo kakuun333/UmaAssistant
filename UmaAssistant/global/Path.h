@@ -8,6 +8,10 @@ namespace global
 	{
 		/*		System::String^		*/
 		extern gcroot<System::String^> currentDir;
+
+		// WebBrowser
+		extern gcroot<System::String^> choiceWebBrowser;
+		extern gcroot<System::String^> characterNameWebBrowser;
 		
 		extern gcroot<System::String^> umaTemp; // º»¶s¿…¶Ï∏m
 		extern gcroot<System::String^> screenshot;
@@ -19,6 +23,7 @@ namespace global
 		extern const char* c_UmaTemp;
 		extern const char* c_screenshot;
 		extern const char* c_screenshot_event;
+		extern const char* c_screenshot_character_name;
 
 		extern const char* c_tessdata;
 		extern const char* c_tessdata_best;

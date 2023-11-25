@@ -36,59 +36,25 @@ local html_id_arr = {
 
 local LUA_DEBUG = false;
 
----- 本地函數 ---- 本地函數 ---- 本地函數 ---- 本地函數 ---- 本地函數 
-
--- local function getBlackList()
---     local tmp = {};
-
---     local file = io.open("./UmaData/black_list.txt", "r");
---     if file then
---         local content = file:read("*all");
---         local pattern = "<(%d+)>";
---         for id in string.gmatch(content, pattern) do
---             table.insert(tmp, id);
---         end
---     end
-
---     return tmp;
--- end
-
--- local function getWhiteList()
---     local tmp = {};
-
---     local file = io.open("./UmaData/white_list.txt", "r");
---     if file then
---         local content = file:read("*all");
---         local pattern = "<(%d+)>";
---         for id in string.gmatch(content, pattern) do
---             table.insert(tmp, id);
---         end
---     end
-
---     return tmp;
--- end
-
--- local function getArticleId()
---     local aid_arr = {};
-
---     local file = io.open("./UmaData/article_id.txt", "r");
---     if file then
---         local content = file:read("*all")
---         local pattern = "<(%d+)>";
---         for id in string.gmatch(content, pattern) do
---             table.insert(aid_arr, id);
---         end
---     end
-
---     return aid_arr;
--- end
-
 ---- 公共函數 ---- 公共函數 ---- 公共函數 ---- 公共函數 ---- 公共函數 
 
 function dumper.dumpEventData(ms)
     ms = ms or DEFAULT_MILLISECONDS;
 
-    local event_data = {--[[
+--[[
+["character"] = {
+    ["3_star"] = {
+
+    },
+    ["2_star"] = {
+
+    },
+    ["1_star"] = {
+
+    }
+},
+["support_card"] = {
+    ["SSR"] = {
         [article_id] = {
             ["event_owner"] = event_owner,
             ["event_list"] = {
@@ -107,19 +73,54 @@ function dumper.dumpEventData(ms)
                 } 
             },
         }
-    ]]};
+    },
+    ["SR"] = {
+
+    },
+    ["R"] = {
+
+    }
+}
+]]
+
+    local event_data = {
+        ["character"] = {
+            ["3_star"] = {
+
+            },
+            ["2_star"] = {
+
+            },
+            ["1_star"] = {
+
+            }
+        },
+        ["support_card"] = {
+            ["SSR"] = {
+                
+            },
+            ["SR"] = {
+
+            },
+            ["R"] = {
+
+            }
+        }
+    };
     
-    local white_list = fm.getWhiteList();
+    local white_list = fm.getEventWhiteList();
     
 
     for i, white_id in ipairs(white_list) do
         local event_html = nil;
+        local owner_type = "";
+        local rare = "";
         
         local html = GetHtmlFromUrl("https://gamewith.jp/uma-musume/article/show/"..tostring(white_id));
 
         for i, html_id in ipairs(html_id_arr) do
             if event_html == nil then
-                event_html = parser.getEventHtmlById(html, html_id);
+                event_html, owner_type, rare = parser.getEventHtmlById(html, html_id);
             else
                 goto continue;
             end
@@ -129,7 +130,11 @@ function dumper.dumpEventData(ms)
         
         local event_dict = parser.getEventDict(event_html);
 
-        event_data[white_id] = event_dict;
+        print("white_id:", white_id, "owner_type:", owner_type, "rare:", rare);
+        event_data[owner_type] = event_data[owner_type] or {}
+        event_data[owner_type][rare] = event_data[owner_type][rare] or {}
+        event_data[owner_type][rare][white_id] = event_dict;
+        -- event_data[white_id] = event_dict;
 
         print("進度: ["..pe.red..i..pe.reset.. "/" ..pe.yellow..#white_list..pe.reset.."] "..pe.yellow..white_id..pe.reset..pe.cyan.." --"..ms.." 毫秒"..pe.reset);
 
@@ -197,8 +202,8 @@ function dumper.dumpEventBlackWhiteList(ms)
             ::continue::
         end
 
-        black_list_file:write("\n\n黑名單總數："..blacked_amount);
-        white_list_file:write("\n\n白名單總數："..whited_amount);
+        -- black_list_file:write("\n\n黑名單總數："..blacked_amount);
+        -- white_list_file:write("\n\n白名單總數："..whited_amount);
         black_list_file:close();
         white_list_file:close();
         print("黑白名單製作完成！");
@@ -266,8 +271,8 @@ function dumper.dumpSkillBlackWhiteList(ms)
             ::continue::
         end
 
-        black_list_file:write("\n\n黑名單總數："..blacked_amount);
-        white_list_file:write("\n\n白名單總數："..whited_amount);
+        -- black_list_file:write("\n\n黑名單總數："..blacked_amount);
+        -- white_list_file:write("\n\n白名單總數："..whited_amount);
         black_list_file:close();
         white_list_file:close();
         print("黑白名單製作完成！");

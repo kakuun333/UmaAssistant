@@ -33,12 +33,16 @@ local function placeTagToStatus(choice_effect)
 
     -- 負號
     choice_effect = string.gsub(choice_effect, "－(%d+)", "-%1");
-    choice_effect = string.gsub(choice_effect, "?!>([%-%d+]+~?%d*)?!<", "<span class=\"status_minus_value\">%1</span>");
+    -- choice_effect = string.gsub(choice_effect, "([%-%d]+~%d+)", "<span class=\"status_minus_value\">%1</span>");
+    choice_effect = string.gsub(choice_effect, "(%-%d+)[^~%d]*$", "<span class=\"status_minus_value\">%1</span>");
 
 
     -- 正號
     choice_effect = string.gsub(choice_effect, "＋(%d+)", "+%1");
-    choice_effect = string.gsub(choice_effect, "?!>([%+%d+]+~?%d*)?!<", "<span class=\"status_plus_value\">%1</span>");
+    -- choice_effect = string.gsub(choice_effect, "([%+%d]+~%d+)", "<span class=\"status_plus_value\">%1</span>");
+    choice_effect = string.gsub(choice_effect, "(%+%d+)[^~%d]*$", "<span class=\"status_plus_value\">%1</span>");
+
+    -- choice_effect = string.gsub(choice_effect, "?!>([%+%d+]+~?%d*)?!<", "<span class=\"status_plus_value\">%1</span>");
 
 
     return choice_effect;
@@ -51,6 +55,63 @@ end
 function parser.getEventHtmlById(html, id)
     assert(html and id, "\n[html_parser] html 或 id 是 nil。\n" ..  "html: " .. tostring(html) .. " id: "..tostring(id));
 
+    local rare = nil;
+    local owner_type = "character";
+
+    local function tryGetRare(pattern, rarity)
+
+        rare = string.match(html, pattern);
+
+        if rare then return rarity; end
+
+        return rare;
+    end
+
+    
+    -- local owner_type = "support_card";
+    -- local rare = nil;
+    -- if not rare then
+    --     -- <h1 class="_title">【ウマ娘】マチカネタンホイザ(SRサポート)の評価とイベント</h1>
+    --     -- <h1 class="_title">【ウマ娘】メジロマックイーン(SSR賢さ)の評価とイベント</h1>
+    --     -- <h1 class="_title">【ウマ娘】シンボリクリスエス(2周年配布報酬)</h1>
+    --     -- <h1 class="_title">【ウマ娘】エアグルーヴ(イベント配布報酬)</h1>
+    --     rare = string.match(html, "<h1 class=\"_title\">【ウマ娘】.-%(SSR.-%).-</h1>");
+    --     if not rare then rare = string.match(html, "<h1 class=\"_title\">【ウマ娘】.-%(.-配布.-%).-</h1>") end
+    --     if rare then rare = "SSR" end
+    -- end
+    -- if not rare then
+    --     rare = string.match(html, "<h1 class=\"_title\">【ウマ娘】.-%(SR.-%).-</h1>");
+    --     if rare then rare = "SR" end
+    -- end
+    -- if not rare then
+    --     rare = string.match(html, "<h1 class=\"_title\">【ウマ娘】.-%(R.-%).-</h1>");
+    --     if rare then rare = "R" end
+    -- end
+    -- -- character rare: 星3, 星2, 星1
+    -- if not rare then
+    --     -- <h1 class="_title">【ウマ娘】トウカイテイオー(秋衣装)の評価とイベント</h1>
+    --     -- <h1 class="_title">【ウマ娘】スペシャルウィーク(新衣装/配布)のイベントと入手方法</h1>
+    --     -- <h1 class="_title">【ウマ娘】マヤノトップガン(花嫁/新衣装)の評価とイベント</h1>
+    --     rare = string.match(html, "<h1 class=\"_title\">【ウマ娘】.-%(星3%).-</h1>");
+    --     if not rare then rare = string.match(html, "<h1 class=\"_title\">【ウマ娘】.-%(.-衣装.-%).-</h1>") end
+    --     if rare then rare = "3_star" end
+    --     owner_type = "character";
+    -- end
+    -- if not rare then
+    --     rare = string.match(html, "<h1 class=\"_title\">【ウマ娘】.-%(星2%).-</h1>");
+    --     if rare then rare = "2_star" end
+    --     owner_type = "character";
+    -- end
+    -- if not rare then
+    --     rare = string.match(html, "<h1 class=\"_title\">【ウマ娘】.-%(星1%).-</h1>");
+    --     if rare then rare = "1_star" end
+    --     owner_type = "character";
+    -- end
+
+
+
+
+
     local owner_pattern = "<h1 class=\"_title\">【ウマ娘】(.-)%(";
     local event_owner = string.match(html, owner_pattern);
 
@@ -59,16 +120,37 @@ function parser.getEventHtmlById(html, id)
     local another_name_character_pattern = "<th.-名称.-<td.->(.-)</td.->"
     another_name = string.match(html, another_name_character_pattern);
 
-    if another_name == nil then -- 此時還是 nil 就是支援卡
+    if another_name ~= nil then -- 此時還是 nil 就是支援卡
+        if rare == nil then rare = tryGetRare("<h1 class=\"_title\">【ウマ娘】.-%(星1%).-</h1>", "1_star"); end
+        if rare == nil then rare = tryGetRare("<h1 class=\"_title\">【ウマ娘】.-%(星2%).-</h1>", "2_star"); end
+        if rare == nil then rare = tryGetRare("<h1 class=\"_title\">【ウマ娘】.-%(星3%).-</h1>", "3_star"); end
+        if rare == nil then rare = tryGetRare("<h1 class=\"_title\">【ウマ娘】.-%(.-%).-</h1>", "3_star"); end
+        -- if rare == nil then rare = tryGetRare("<h1 class=\"_title\">【ウマ娘】.-%(.-衣装.-%).-</h1>", "3_star"); end
+        -- if rare == nil then rare = tryGetRare("<h1 class=\"_title\">【ウマ娘】.-%(ハロウィン%).-</h1>", "3_star"); end
+        -- if rare == nil then rare = tryGetRare("<h1 class=\"_title\">【ウマ娘】.-%(クリスマス%).-</h1>", "3_star"); end
+    else 
         local another_name_card_pattern = "<th.-二つ名.-<td.->(.-)</td.->"
         another_name = string.match(html, another_name_card_pattern);
+
+        owner_type = "support_card";
+        rare = tryGetRare("<h1 class=\"_title\">【ウマ娘】.-%(R.-%).-</h1>", "R")
+        if rare == nil then rare = tryGetRare("<h1 class=\"_title\">【ウマ娘】.-%(SR.-%).-</h1>", "SR"); end
+        if rare == nil then rare = tryGetRare("<h1 class=\"_title\">【ウマ娘】.-%(SSR.-%).-</h1>", "SSR"); end
+        if rare == nil then rare = tryGetRare("<h1 class=\"_title\">【ウマ娘】.-%(.-%).-</h1>", "SSR"); end
+        -- if rare == nil then rare = tryGetRare("<h1 class=\"_title\">【ウマ娘】.-%(.-配布.-%).-</h1>", "SSR"); end
     end
+
+
+    -- if another_name == nil then -- 此時還是 nil 就是支援卡
+    --     local another_name_card_pattern = "<th.-二つ名.-<td.->(.-)</td.->"
+    --     another_name = string.match(html, another_name_card_pattern);
+    -- end
 
     --[[
     到這裡 another_name 還是 nil 就表示了連接請求被阻擋了
     所以 ms 要再調高
     ]]
-
+    if not another_name then return nil end;
     local event_owner_tag = "<event_owner>"..event_owner.."（"..another_name.."）".."</event_owner";
 
     local pattern = "<([%w]+)[%s+]id=\"(" .. id .. ")\"(.-)</body>";
@@ -83,7 +165,8 @@ function parser.getEventHtmlById(html, id)
 
     local final_html = event_owner_tag .. event_html;
 
-    return final_html;
+    -- print("id=", id, "owner_type=", owner_type, "rare=", rare);
+    return final_html, owner_type, rare;
 end
 
 

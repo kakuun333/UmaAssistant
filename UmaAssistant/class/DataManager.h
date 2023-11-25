@@ -10,6 +10,9 @@ private:
 
 	static DataManager* _instance;
 
+	static std::map<std::string, std::string> _currentCharacterInfoDict;
+
+	static bool _currentCharacterInfoLocked;
 public:
 	static DataManager* GetInstance()
 	{
@@ -21,5 +24,24 @@ public:
 	}
 
 	UmaEventData GetUmaEventDataFromJson(std::string scanned_text);
+
+	UmaEventData GetCurrentCharacterUmaEventData(std::string scanned_text);
+
+	void TryGetCurrentCharacterName(std::string scanned_text);
+
+	inline bool IsCurrentCharacterInfoLocked()
+	{
+		return _currentCharacterInfoLocked;
+	}
+
+	inline void SetCurrentCharacterInfo(bool value)
+	{
+		_currentCharacterInfoLocked = value;
+	}
+
+	inline std::map<std::string, std::string> GetCurrentCharacterInfoDict()
+	{
+		return _currentCharacterInfoDict;
+	}
 };
 

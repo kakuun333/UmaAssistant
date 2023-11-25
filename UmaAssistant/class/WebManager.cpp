@@ -8,7 +8,6 @@ void WebManager::CreateChoice(System::String^ title, System::String^ effect)
 	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "createChoice", param);
 }
 
-
 void WebManager::ChangeEventOwner(System::String^ text)
 {
 	array<Object^>^ param = gcnew array<Object^> { text };
@@ -24,4 +23,10 @@ void WebManager::CleanChoiceTable()
 {
 	array<Object^>^ param = gcnew array<Object^> { };
 	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "cleanChoiceTable", param);
+}
+
+void WebManager::ChangeCharacterName(System::String^ characterName)
+{
+	array<Object^>^ param = gcnew array<Object^> { characterName };
+	FormController::Instance->InvokeScript(global::form::umaForm->characterNameWebBrowser, "changeCharacterName", param);
 }
