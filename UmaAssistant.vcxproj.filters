@@ -155,6 +155,9 @@
     <ClInclude Include="UmaAssistant\class\FileManager.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+    <ClInclude Include="UmaAssistant\enum\ImageType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="UmaAssistant\lua\test.lua" />

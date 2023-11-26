@@ -34,12 +34,18 @@ using namespace msclr::interop;
 /*			3rdparty			*/
 #include <curl/curl.h>
 
+// nlohmann/json
 #include <nlohmann/json.hpp>
 using json = nlohmann::json;
 
 #include <libxml/HTMLparser.h>
+
+// tesseract
 #include <tesseract/baseapi.h>
 #include <leptonica/allheaders.h>
+
+// opencv
+#include <opencv2/opencv.hpp>
 
 /*			class			*/	
 #include "class/Screenshot.h"
@@ -66,6 +72,7 @@ using json = nlohmann::json;
 /*			enum			*/
 #include "enum/UmaEventDataType.h"
 #include "enum/CharType.h"
+#include "enum/ImageType.h"
 
 /*			global			*/
 #include "global/Path.h"

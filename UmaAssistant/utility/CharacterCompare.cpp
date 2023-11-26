@@ -576,6 +576,11 @@ namespace utility
 			食いしん坊は伊達じゃない
 			食いじん坊は伊達じゃよない
 			*/
+
+			/*
+				了史みんなのオグリキャップ
+				みんなのオグリキャップ
+			*/
 			float totalCount = str2CharCount;
 
 			std::vector<std::string> jpnchar_list_1 = utility::SplitJpnChar(str1);
@@ -702,19 +707,31 @@ namespace utility
 
 		int scanned_count = CountUTF8Char(scannedName);
 		int replaced_count = CountUTF8Char(replaced_name);
-		int totalCount = scanned_count > replaced_count ? scanned_count : replaced_count;
+		float totalCount = scanned_count > replaced_count ? scanned_count : replaced_count;
 
 		std::vector<std::string> scanned_char_list = utility::SplitJpnChar(scannedName);
 		std::vector<std::string> replaced_char_list = utility::SplitJpnChar(replaced_name);
 
 		int firstSameCount = GetSameCount(scanned_char_list, replaced_char_list);
 
-		if (firstSameCount <= 0) return NOT_SIMILAR;
 
-		if ((firstSameCount / totalCount) * 100 > SIMILAR_METRIC)
+		if (firstSameCount <= 1) return NOT_SIMILAR;
+
+
+		//std::cout << 111 << std::endl;
+
+		std::cout << "firstSameCount: " << firstSameCount << std::endl;
+		std::cout << "totalCount: " << totalCount << std::endl;
+		std::cout << "similarity: " << firstSameCount / totalCount * 100 << std::endl;
+		std::cout << "SIMILAR_METRIC: " << SIMILAR_METRIC << std::endl;
+		if ((firstSameCount / totalCount) * 100 >= SIMILAR_METRIC)
 		{
+			//std::cout << 222 << std::endl;
 			similarity = (firstSameCount / totalCount) * 100;
+
+			std::cout << similarity << std::endl;
 		}
+		//std::cout << 333 << std::endl;
 
 		return similarity;
 	}

@@ -13,6 +13,8 @@ private:
 	static std::map<std::string, std::string> _currentCharacterInfoDict;
 
 	static bool _currentCharacterInfoLocked;
+
+
 public:
 	static DataManager* GetInstance()
 	{
@@ -27,7 +29,9 @@ public:
 
 	UmaEventData GetCurrentCharacterUmaEventData(std::string scanned_text);
 
-	void TryGetCurrentCharacterName(std::string scanned_text);
+	UmaEventData GetSupportCardUmaEventData(std::string scanned_text);
+
+	bool TryGetCurrentCharacterName(std::string scanned_text);
 
 	inline bool IsCurrentCharacterInfoLocked()
 	{

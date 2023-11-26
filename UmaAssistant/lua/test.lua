@@ -34,7 +34,16 @@ local fm = require("file_manager");
 -- utility.deepprint(event_dict);
 
 
+-- local test = "体力+10~432<br>スキルPt+5~99"
+-- test = string.gsub(test, "(%+%d+[~%d+]*)", "<span class=\"status_plus_value\">%1</span>");
+-- print(test)
+
 event_data = dumper.dumpEventData(2100);
+
+
+
+-- utility.deepprint(event_data);
+
 
 -- dumper.dumpEventBlackWhiteList();
 -- dumper.dumpSkillBlackWhiteList(2500);

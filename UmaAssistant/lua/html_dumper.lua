@@ -55,24 +55,38 @@ function dumper.dumpEventData(ms)
 },
 ["support_card"] = {
     ["SSR"] = {
-        [article_id] = {
-            ["event_owner"] = event_owner,
-            ["event_list"] = {
-                [event_1] = {
-                    ["event_title"] = event_title,
-                    ["choice_list"] = {
-                        [choice_1] = {
-                            ["choice_title"] = choice_title
+        [event_owner] = {
+            ["event"] = {
+                [1] =  {
+                    [event_title] = {
+                        [1] = {
+                            ["choice_title"] = choice_title,
                             ["choice_effect"] = choice_effect
-                        },
-                        [choice_2] = {
-                            ["choice_title"] = choice_title
-                            ["choice_effect"] = choice_effect
-                        },
+                        }
                     },
-                } 
-            },
-        }
+                    [event_title] = {
+                        [1] = {
+                            ["choice_title"] = choice_title,
+                            ["choice_effect"] = choice_effect
+                        }
+                    }
+                },
+                [2] =  {
+                    [event_title] = {
+                        [1] = {
+                            ["choice_title"] = choice_title,
+                            ["choice_effect"] = choice_effect
+                        }
+                    },
+                    [event_title] = {
+                        [1] = {
+                            ["choice_title"] = choice_title,
+                            ["choice_effect"] = choice_effect
+                        }
+                    }
+                },
+            } 
+        },
     },
     ["SR"] = {
 
@@ -128,13 +142,12 @@ function dumper.dumpEventData(ms)
 
         ::continue::
         
-        local event_dict = parser.getEventDict(event_html);
+        local event_dict, event_owner = parser.getEventDict(event_html);
 
         print("white_id:", white_id, "owner_type:", owner_type, "rare:", rare);
         event_data[owner_type] = event_data[owner_type] or {}
         event_data[owner_type][rare] = event_data[owner_type][rare] or {}
-        event_data[owner_type][rare][white_id] = event_dict;
-        -- event_data[white_id] = event_dict;
+        event_data[owner_type][rare][event_owner] = event_dict;
 
         print("進度: ["..pe.red..i..pe.reset.. "/" ..pe.yellow..#white_list..pe.reset.."] "..pe.yellow..white_id..pe.reset..pe.cyan.." --"..ms.." 毫秒"..pe.reset);
 

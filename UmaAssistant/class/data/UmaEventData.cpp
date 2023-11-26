@@ -8,7 +8,7 @@ bool UmaEventData::IsDataComplete()
 	if (System::String::IsNullOrEmpty(this->sys_event_owner)) return false;
 
 	//std::cout << "3" << std::endl;
-	//if (this->event_list.empty()) return false;
+	if (this->event_list.empty()) return false;
 
 	for (UmaEvent _event : this->event_list)
 	{

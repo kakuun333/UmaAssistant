@@ -24,6 +24,7 @@ namespace global
 		extern const char* c_screenshot;
 		extern const char* c_screenshot_event;
 		extern const char* c_screenshot_character_name;
+		extern const char* c_screenshot_hensei_character_name;
 
 		extern const char* c_tessdata;
 		extern const char* c_tessdata_best;

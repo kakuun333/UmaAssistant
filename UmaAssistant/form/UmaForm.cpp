@@ -1,5 +1,7 @@
 ﻿#include "../stdafx.h"
 
+
+
 namespace UmaAssistant
 {
 	UmaForm::UmaForm(void) // UmaForm 的建構函數
@@ -51,7 +53,10 @@ namespace UmaAssistant
 
 	System::Void UmaForm::screenshot_preview_btn_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		global::form::previewForm->Show();
+		Screenshot::ShowImage();
+
+
+		//global::form::previewForm->Show();
 	}
 
 

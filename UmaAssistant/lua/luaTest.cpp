@@ -91,116 +91,125 @@ void testlua()
                     lua_pushnil(L);
                     while (lua_next(L, event_data_idx) != 0)
                     {
-                        const char* owner_type = lua_tostring(L, -2);
-                        int owner_type_table_idx = lua_gettop(L);
-
-                        json_data[owner_type] = {};
-
-                        lua_pushnil(L);
-                        while (lua_next(L, owner_type_table_idx) != 0)
+                        if (lua_type(L, -2) == LUA_TSTRING && lua_istable(L, -1))
                         {
-                            const char* rare = lua_tostring(L, -2);
-                            int rare_table_idx = lua_gettop(L);
+                            const char* owner_type = lua_tostring(L, -2);
+                            int owner_type_table_idx = lua_gettop(L);
 
-                            json_data[owner_type][rare] = {};
+                            //std::cout << "owner_type: " << owner_type << std::endl;
+
+                            json_data[owner_type] = {};
 
                             lua_pushnil(L);
-                            while (lua_next(L, rare_table_idx) != 0)
+                            while (lua_next(L, owner_type_table_idx) != 0)
                             {
-                                int article_id = lua_tointeger(L, -2);
-                                int table_idx_1 = lua_gettop(L);
-
-                                //std::cout << article_id << std::endl;
-                                std::string article_id_str = std::to_string(article_id);
-                                json_data[owner_type][rare][article_id_str] = {};
-
-                                lua_pushnil(L);
-                                while (lua_next(L, table_idx_1) != 0)
+                                if (lua_type(L, -2) == LUA_TSTRING && lua_istable(L, -1))
                                 {
-                                    const char* article_id_key = lua_tostring(L, -2);
-                                    int table_idx_2 = lua_gettop(L);
+                                    const char* rare = lua_tostring(L, -2);
+                                    int rare_table_idx = lua_gettop(L);
 
+                                    //std::cout << "rare: " << rare << std::endl;
 
-                                    if (strcmp(article_id_key, "event_owner") == 0)
+                                    json_data[owner_type][rare] = {};
+
+                                    lua_pushnil(L);
+                                    while (lua_next(L, rare_table_idx) != 0)
                                     {
-                                        const char* event_owner = lua_tostring(L, -1);
-                                        //std::cout << event_owner << std::endl;
-                                        json_data[owner_type][rare][article_id_str][article_id_key] = event_owner;
-                                    }
-                                    else // article_id_key == event_list
-                                    {
-                                        const char* event_list = lua_tostring(L, -2);
-
-                                        lua_pushnil(L);
-                                        while (lua_next(L, table_idx_2) != 0)
+                                        if (lua_type(L, -2) == LUA_TSTRING && lua_istable(L, -1))
                                         {
-                                            const char* event = lua_tostring(L, -2);
-                                            int table_idx_3 = lua_gettop(L);
+                                            const char* event_owner = lua_tostring(L, -2);
+                                            int event_owner_idx = lua_gettop(L);
 
-                                            json_data[owner_type][rare][article_id_str][event_list][event] = {};
-                                            //std::cout << slot << std::endl;
+                                            //std::cout << "event_owner: " << event_owner << std::endl;
+
+                                            json_data[owner_type][rare][event_owner] = {};
+                                            
 
                                             lua_pushnil(L);
-                                            while (lua_next(L, table_idx_3) != 0)
+                                            while (lua_next(L, event_owner_idx) != 0)
                                             {
-                                                int key_type = lua_type(L, -2);
-                                                if (key_type == LUA_TSTRING) // 不知道為什麼會跑出 LUA_TBOOLEAN，所以用 lua_type() 篩選成 LUA_TSTRING
+                                                const char* event_list = lua_tostring(L, -2);
+                                                int event_list_idx = lua_gettop(L);
+
+                                                json_data[owner_type][rare][event_owner][event_list] = json::array();
+                                                //std::cout << "event_list: " << event_list << std::endl;
+
+                                                lua_pushnil(L);
+                                                while (lua_next(L, event_list_idx) != 0)
                                                 {
-                                                    const char* event_key = lua_tostring(L, -2);
+                                                    int event_lua_idx = lua_tointeger(L, -2);
+                                                    int event_idx = lua_gettop(L);
 
-                                                    if (strcmp(event_key, "event_title") == 0)
+                                                    //std::cout << "event_lua_idx: " << event_lua_idx << std::endl;
+
+                                                    json event_obj;
+
+                                                    lua_pushnil(L);
+                                                    while (lua_next(L, event_idx) != 0)
                                                     {
-                                                        const char* event_title = lua_tostring(L, -1);
-                                                        //std::cout << event_title << std::endl;
-                                                        json_data[owner_type][rare][article_id_str][event_list][event][event_key] = event_title;
-                                                    }
-                                                    else // event_key == choice_list
-                                                    {
-                                                        const char* choice_list = lua_tostring(L, -2);
+                                                        const char* event_title = lua_tostring(L, -2);
+                                                        int event_title_idx = lua_gettop(L);
 
-                                                        int table_idx_4 = lua_gettop(L);
-
+                                                        event_obj[event_title] = {};
+                                                            
+                                                        //std::cout << "event_title: " << event_title << std::endl;
                                                         lua_pushnil(L);
-                                                        while (lua_next(L, table_idx_4) != 0)
+                                                        while (lua_next(L, event_title_idx) != 0)
                                                         {
-                                                            const char* choice = lua_tostring(L, -2);
-                                                            int table_idx_5 = lua_gettop(L);
+                                                            int choice_lua_idx = lua_tointeger(L, -2);
+                                                            int choice_idx = lua_gettop(L);
 
-                                                            json_data[owner_type][rare][article_id_str][event_list][event][choice_list][choice] = {};
+                                                            //std::cout << "-2: " << lua_type(L, -2) << std::endl;
+                                                            //std::cout << "-1: " << lua_type(L, -1) << std::endl;
+
+                                                            json choice_obj;
 
                                                             lua_pushnil(L);
-                                                            while (lua_next(L, table_idx_5) != 0)
+                                                            while (lua_next(L, choice_idx) != 0)
                                                             {
                                                                 const char* key = lua_tostring(L, -2);
                                                                 const char* value = lua_tostring(L, -1);
 
-                                                                json_data[owner_type][rare][article_id_str][event_list][event][choice_list][choice][key] = value;
+                                                                if (key == "choice_title")
+                                                                {
+                                                                    choice_obj[key] = value;
+                                                                }
+                                                                else
+                                                                {
+                                                                    choice_obj[key] = value;
+                                                                }
 
                                                                 lua_pop(L, 1);
                                                             }
 
+                                                            event_obj[event_title].push_back(choice_obj);
+
                                                             lua_pop(L, 1);
                                                         }
+
+                                                        json_data[owner_type][rare][event_owner][event_list].push_back(event_obj);
+
+                                                        lua_pop(L, 1);
                                                     }
+
+                                                    lua_pop(L, 1);
                                                 }
+
                                                 lua_pop(L, 1);
                                             }
-
-                                            lua_pop(L, 1);
                                         }
+                                        lua_pop(L, 1);
                                     }
-                                    lua_pop(L, 1);
                                 }
                                 lua_pop(L, 1);
                             }
-                            lua_pop(L, 1);
                         }
                         lua_pop(L, 1);
                     }
                 }
 
 
-                std::string json_string = json_data.dump(4 /*縮排空格數*/);
+                std::string json_string = json_data.dump(2 /*縮排空格數*/);
 
                 // 寫入 json
                 std::ofstream outputFile(global::path::c_event_data_jp_json);

@@ -4,7 +4,9 @@
 #include <functional>
 #include <vector>
 #include <iostream>
-
+#include <tesseract/baseapi.h>
+#include <leptonica/allheaders.h>
+#include <opencv2/opencv.hpp>
 
 
 class Scanner
@@ -16,17 +18,13 @@ private:
 
 	static std::string _previousEventText;
 	static std::string _previousCharacterNameText;
+	static std::string _previousHenseiCharacterNameText;
 
 	static bool _scanning;
 
 	static tesseract::TessBaseAPI* ocr_jpn;
 
-	static tesseract::TessBaseAPI* ocr_jpn_character;
-
-
-	std::string Scanner::GetScannedText(const char* imgPath, const char* language);
-
-	std::string Scanner::GetCharacterName(const char* imgPath, const char* language);
+	std::string GetScannedText(cv::Mat cvmat, std::string language);
 public:
 	static Scanner* GetInstance()
 	{
@@ -39,7 +37,7 @@ public:
 
 	static void InitOcrJpn();
 
-	void Start(const char* language = "jpn");
+	void Start(std::string language = "jpn");
 
 	void Stop();
 };

@@ -26,6 +26,7 @@ namespace global
 		const char* c_screenshot						= utility::CombineChar(c_UmaTemp, "\\screenshot.png");
 		const char* c_screenshot_event					= utility::CombineChar(c_UmaTemp, "\\screenshot_event.png");
 		const char* c_screenshot_character_name			= utility::CombineChar(c_UmaTemp, "\\screenshot_character_name.png");
+		const char* c_screenshot_hensei_character_name	= utility::CombineChar(c_UmaTemp, "\\screenshot_hensei_character_name.png");
 
 		// tessdata
 		const char* c_tessdata							= utility::CombineChar(c_currentDir, "\\tessdata");

@@ -34,13 +34,13 @@ local function placeTagToStatus(choice_effect)
     -- 負號
     choice_effect = string.gsub(choice_effect, "－(%d+)", "-%1");
     -- choice_effect = string.gsub(choice_effect, "([%-%d]+~%d+)", "<span class=\"status_minus_value\">%1</span>");
-    choice_effect = string.gsub(choice_effect, "(%-%d+)[^~%d]*$", "<span class=\"status_minus_value\">%1</span>");
+    choice_effect = string.gsub(choice_effect, "(%-%d+[~%d+]*)", "<span class=\"status_minus_value\">%1</span>");
 
 
     -- 正號
     choice_effect = string.gsub(choice_effect, "＋(%d+)", "+%1");
     -- choice_effect = string.gsub(choice_effect, "([%+%d]+~%d+)", "<span class=\"status_plus_value\">%1</span>");
-    choice_effect = string.gsub(choice_effect, "(%+%d+)[^~%d]*$", "<span class=\"status_plus_value\">%1</span>");
+    choice_effect = string.gsub(choice_effect, "(%+%d+[~%d+]*)", "<span class=\"status_plus_value\">%1</span>");
 
     -- choice_effect = string.gsub(choice_effect, "?!>([%+%d+]+~?%d*)?!<", "<span class=\"status_plus_value\">%1</span>");
 
@@ -66,51 +66,6 @@ function parser.getEventHtmlById(html, id)
 
         return rare;
     end
-
-    
-    -- local owner_type = "support_card";
-    -- local rare = nil;
-    -- if not rare then
-    --     -- <h1 class="_title">【ウマ娘】マチカネタンホイザ(SRサポート)の評価とイベント</h1>
-    --     -- <h1 class="_title">【ウマ娘】メジロマックイーン(SSR賢さ)の評価とイベント</h1>
-    --     -- <h1 class="_title">【ウマ娘】シンボリクリスエス(2周年配布報酬)</h1>
-    --     -- <h1 class="_title">【ウマ娘】エアグルーヴ(イベント配布報酬)</h1>
-    --     rare = string.match(html, "<h1 class=\"_title\">【ウマ娘】.-%(SSR.-%).-</h1>");
-    --     if not rare then rare = string.match(html, "<h1 class=\"_title\">【ウマ娘】.-%(.-配布.-%).-</h1>") end
-    --     if rare then rare = "SSR" end
-    -- end
-    -- if not rare then
-    --     rare = string.match(html, "<h1 class=\"_title\">【ウマ娘】.-%(SR.-%).-</h1>");
-    --     if rare then rare = "SR" end
-    -- end
-    -- if not rare then
-    --     rare = string.match(html, "<h1 class=\"_title\">【ウマ娘】.-%(R.-%).-</h1>");
-    --     if rare then rare = "R" end
-    -- end
-    -- -- character rare: 星3, 星2, 星1
-    -- if not rare then
-    --     -- <h1 class="_title">【ウマ娘】トウカイテイオー(秋衣装)の評価とイベント</h1>
-    --     -- <h1 class="_title">【ウマ娘】スペシャルウィーク(新衣装/配布)のイベントと入手方法</h1>
-    --     -- <h1 class="_title">【ウマ娘】マヤノトップガン(花嫁/新衣装)の評価とイベント</h1>
-    --     rare = string.match(html, "<h1 class=\"_title\">【ウマ娘】.-%(星3%).-</h1>");
-    --     if not rare then rare = string.match(html, "<h1 class=\"_title\">【ウマ娘】.-%(.-衣装.-%).-</h1>") end
-    --     if rare then rare = "3_star" end
-    --     owner_type = "character";
-    -- end
-    -- if not rare then
-    --     rare = string.match(html, "<h1 class=\"_title\">【ウマ娘】.-%(星2%).-</h1>");
-    --     if rare then rare = "2_star" end
-    --     owner_type = "character";
-    -- end
-    -- if not rare then
-    --     rare = string.match(html, "<h1 class=\"_title\">【ウマ娘】.-%(星1%).-</h1>");
-    --     if rare then rare = "1_star" end
-    --     owner_type = "character";
-    -- end
-
-
-
-
 
     local owner_pattern = "<h1 class=\"_title\">【ウマ娘】(.-)%(";
     local event_owner = string.match(html, owner_pattern);
@@ -139,13 +94,6 @@ function parser.getEventHtmlById(html, id)
         if rare == nil then rare = tryGetRare("<h1 class=\"_title\">【ウマ娘】.-%(.-%).-</h1>", "SSR"); end
         -- if rare == nil then rare = tryGetRare("<h1 class=\"_title\">【ウマ娘】.-%(.-配布.-%).-</h1>", "SSR"); end
     end
-
-
-    -- if another_name == nil then -- 此時還是 nil 就是支援卡
-    --     local another_name_card_pattern = "<th.-二つ名.-<td.->(.-)</td.->"
-    --     another_name = string.match(html, another_name_card_pattern);
-    -- end
-
     --[[
     到這裡 another_name 還是 nil 就表示了連接請求被阻擋了
     所以 ms 要再調高
@@ -175,19 +123,35 @@ end
 -- 傳入 event_html ，並解析 html 後返回解析後的 event_dict
 function parser.getEventDict(event_html)
     local event_dict = {--[[
-        ["event_owner"] = event_owner,
-        ["event_list"] = {
-            [event_1] = {
-                ["event_title"] = event_title,
-                ["choice_list"] = {
-                    [choice_1] = {
-                        ["choice_title"] = choice_title
-                        ["choice_effect"] = choice_effect
+        [event_owner] = {
+            ["event"] = {
+                [1] =  {
+                    [event_title] = {
+                        [1] = {
+                            ["choice_title"] = choice_title,
+                            ["choice_effect"] = choice_effect
+                        }
                     },
-                    [choice_2] = {
-                        ["choice_title"] = choice_title
-                        ["choice_effect"] = choice_effect
+                    [event_title] = {
+                        [1] = {
+                            ["choice_title"] = choice_title,
+                            ["choice_effect"] = choice_effect
+                        }
+                    }
+                },
+                [2] =  {
+                    [event_title] = {
+                        [1] = {
+                            ["choice_title"] = choice_title,
+                            ["choice_effect"] = choice_effect
+                        }
                     },
+                    [event_title] = {
+                        [1] = {
+                            ["choice_title"] = choice_title,
+                            ["choice_effect"] = choice_effect
+                        }
+                    }
                 },
             } 
         },
@@ -196,8 +160,7 @@ function parser.getEventDict(event_html)
 
     -- 獲取 event_owner
     local event_owner = string.match(event_html, "<event_owner>(.-)</event_owner>");
-    event_dict["event_owner"] = event_owner;
-    event_dict["event_list"] = {};
+    
 
     local event_idx = 1;
 
@@ -211,10 +174,9 @@ function parser.getEventDict(event_html)
         
         local choice_idx = 1;
 
-        event_dict["event_list"]["event_"..tostring(event_idx)] = {
-            ["event_title"] = event_title;
-            ["choice_list"] = {};
-        };
+
+
+
 
 
         for choice_html in string.gmatch(event_content, "<tr.->(.-)</tr>") do
@@ -256,11 +218,19 @@ function parser.getEventDict(event_html)
             -- local replace_br_effect = string.gsub(choice_effect, "<br>", "\n")
             -- local replace_hr_effect = string.gsub(replace_br_effect, "<hr>", "\n--------------\n")
             -- print("選択肢効果: \n" .. replace_hr_effect);
+            event_dict = event_dict or {}
+            event_dict["event"] = event_dict["event"] or {}
+            event_dict["event"][event_idx] = event_dict["event"][event_idx] or {}
+            event_dict["event"][event_idx][event_title] = event_dict["event"][event_idx][event_title] or {}
             
-            event_dict["event_list"]["event_"..tostring(event_idx)]["choice_list"]["choice_"..tostring(choice_idx)] = {
+            event_dict["event"][event_idx][event_title][choice_idx] = {
                 ["choice_title"] = choice_title,
-                ["choice_effect"] = choice_effect,
+                ["choice_effect"] = choice_effect
             }
+            -- table.insert(event_dict[event_owner]["event"][event_idx][event_title], choice_idx, {
+            --     ["choice_title"] = choice_title,
+            --     ["choice_effect"] = choice_effect
+            -- })
 
             choice_idx = choice_idx + 1;
             
@@ -270,7 +240,7 @@ function parser.getEventDict(event_html)
         event_idx = event_idx + 1;
     end
 
-    return event_dict;
+    return event_dict, event_owner;
 end
 
 return parser;

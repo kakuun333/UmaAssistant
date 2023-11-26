@@ -5,8 +5,8 @@
 
 System::Void FormDesigner::CreateChoiceTable(UmaChoice choice)
 {
-	std::cout << "choice_title: " << choice.choice_title << std::endl;
-	std::cout << "choice_effect: " << choice.choice_effect << std::endl;
+	//std::cout << "choice_title: " << choice.choice_title << std::endl;
+	//std::cout << "choice_effect: " << choice.choice_effect << std::endl;
 
 	// ------------------------------------------------------------------------------- //
 	Label^ choice_title_label = gcnew Label();

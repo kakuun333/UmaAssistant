@@ -16,7 +16,7 @@ bool DataManager::_currentCharacterInfoLocked = false;
 
 
 
-void DataManager::TryGetCurrentCharacterName(std::string scanned_text)
+bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 {
 	FileManager* fileManager = FileManager::GetInstance();
 	WebManager* webManager = WebManager::GetInstance();
@@ -38,14 +38,14 @@ void DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 					{
 						std::string event_owner = it2.value()["event_owner"].get<std::string>();
 
-						if (utility::SIMILAR_METRIC > utility::GetCharacterNameSimilarity(scanned_text, event_owner)) continue;
+						//if (utility::SIMILAR_METRIC > utility::GetCharacterNameSimilarity(scanned_text, event_owner)) continue;
 
-						_currentCharacterInfoDict["rare"] = it.key();
-						_currentCharacterInfoDict["article_id"] = it2.key();
-						_currentCharacterInfoDict["event_owner"] = event_owner;
-						_currentCharacterInfoLocked = true;
+						//_currentCharacterInfoDict["rare"] = it.key();
+						//_currentCharacterInfoDict["article_id"] = it2.key();
+						//_currentCharacterInfoDict["event_owner"] = event_owner;
+						//_currentCharacterInfoLocked = true;
 
-						webManager->ChangeCharacterName(utility::stdStr2system(event_owner));
+						//webManager->ChangeCharacterName(utility::stdStr2system(event_owner));
 					}
 				});
 
@@ -58,14 +58,14 @@ void DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 					{
 						std::string event_owner = it2.value()["event_owner"].get<std::string>();
 
-						if (utility::SIMILAR_METRIC > utility::GetCharacterNameSimilarity(scanned_text, event_owner)) continue;
+						//if (utility::SIMILAR_METRIC > utility::GetCharacterNameSimilarity(scanned_text, event_owner)) continue;
 
-						_currentCharacterInfoDict["rare"] = it.key();
-						_currentCharacterInfoDict["article_id"] = it2.key();
-						_currentCharacterInfoDict["event_owner"] = event_owner;
-						_currentCharacterInfoLocked = true;
+						//_currentCharacterInfoDict["rare"] = it.key();
+						//_currentCharacterInfoDict["article_id"] = it2.key();
+						//_currentCharacterInfoDict["event_owner"] = event_owner;
+						//_currentCharacterInfoLocked = true;
 
-						webManager->ChangeCharacterName(utility::stdStr2system(event_owner));
+						//webManager->ChangeCharacterName(utility::stdStr2system(event_owner));
 					}
 				});
 		}
@@ -77,14 +77,14 @@ void DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 					{
 						std::string event_owner = it2.value()["event_owner"].get<std::string>();
 
-						if (utility::SIMILAR_METRIC > utility::GetCharacterNameSimilarity(scanned_text, event_owner)) continue;
+						//if (utility::SIMILAR_METRIC > utility::GetCharacterNameSimilarity(scanned_text, event_owner)) continue;
 
-						_currentCharacterInfoDict["rare"] = it.key();
-						_currentCharacterInfoDict["article_id"] = it2.key();
-						_currentCharacterInfoDict["event_owner"] = event_owner;
-						_currentCharacterInfoLocked = true;
+						//_currentCharacterInfoDict["rare"] = it.key();
+						//_currentCharacterInfoDict["article_id"] = it2.key();
+						//_currentCharacterInfoDict["event_owner"] = event_owner;
+						//_currentCharacterInfoLocked = true;
 
-						webManager->ChangeCharacterName(utility::stdStr2system(event_owner));
+						//webManager->ChangeCharacterName(utility::stdStr2system(event_owner));
 					}
 				});
 		}
@@ -93,6 +93,13 @@ void DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 	oneStarThread->join();
 	twoStarThread->join();
 	threeStarThread->join();
+
+	delete oneStarThread;
+	delete twoStarThread;
+	delete threeStarThread;
+
+	return true;
+	//return !_currentCharacterInfoDict["event_owner"].empty();
 }
 
 UmaEventData DataManager::GetCurrentCharacterUmaEventData(std::string scanned_text)
@@ -123,7 +130,7 @@ UmaEventData DataManager::GetCurrentCharacterUmaEventData(std::string scanned_te
 		similarEventTitleList.begin(), similarEventTitleList.end(),
 		[](const auto& p1, const auto& p2)
 		{
-			std::cout << "first: " << p1.first << "second: " << p1.second << std::endl;
+			//std::cout << "first: " << p1.first << "second: " << p1.second << std::endl;
 			return p1.second < p2.second;
 		}
 	);
@@ -160,6 +167,147 @@ UmaEventData DataManager::GetCurrentCharacterUmaEventData(std::string scanned_te
 	return umaEventData;
 }
 
+UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
+{
+	FileManager* fileManager = FileManager::GetInstance();
+	json jsonData = fileManager->ReadJson(global::path::c_event_data_jp_json);
+
+	UmaEventData umaEventData;
+
+	std::map<std::string, float> similarEventTitleList = {};
+
+
+	std::thread* rStarThread = nullptr;
+	std::thread* srStarThread = nullptr;
+	std::thread* ssrStarThread = nullptr;
+
+
+	for (json::iterator it = jsonData["support_card"].begin(); it != jsonData["support_card"].end(); ++it)
+	{
+		// it == rare;
+
+
+		if (it.key() == "R")
+		{
+			rStarThread = new std::thread([=, &similarEventTitleList]()
+				{
+					for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
+					{
+						// it2 == article_id;
+						for (json::iterator it3 = it2.value()["event_list"].begin(); it3 != it2.value()["event_list"].end(); ++it3)
+						{
+							// it3 == event;
+							float similarity = utility::GetSimilarity(scanned_text, it3.value()["event_title"].get<std::string>());
+
+							if (similarity >= utility::SIMILAR_METRIC)
+							{
+								similarEventTitleList.emplace(it3.value()["event_title"].get<std::string>(), similarity);
+							}
+						}
+					}
+				});
+		}
+		else if (it.key() == "SR")
+		{
+			srStarThread = new std::thread([=, &similarEventTitleList]()
+				{
+					for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
+					{
+						// it2 == article_id;
+						for (json::iterator it3 = it2.value()["event_list"].begin(); it3 != it2.value()["event_list"].end(); ++it3)
+						{
+							// it3 == event;
+							float similarity = utility::GetSimilarity(scanned_text, it3.value()["event_title"].get<std::string>());
+
+							if (similarity >= utility::SIMILAR_METRIC)
+							{
+								similarEventTitleList.emplace(it3.value()["event_title"].get<std::string>(), similarity);
+							}
+						}
+					}
+				});
+		}
+		else if (it.key() == "SSR")
+		{
+			ssrStarThread = new std::thread([=, &similarEventTitleList]()
+				{
+					for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
+					{
+						// it2 == article_id;
+						for (json::iterator it3 = it2.value()["event_list"].begin(); it3 != it2.value()["event_list"].end(); ++it3)
+						{
+							// it3 == event;
+							float similarity = utility::GetSimilarity(scanned_text, it3.value()["event_title"].get<std::string>());
+
+							if (similarity >= utility::SIMILAR_METRIC)
+							{
+								similarEventTitleList.emplace(it3.value()["event_title"].get<std::string>(), similarity);
+							}
+						}
+					}
+				});
+		}
+	}
+
+	rStarThread->join();
+	srStarThread->join();
+	ssrStarThread->join();
+
+	if (similarEventTitleList.empty()) return umaEventData;
+
+	auto maxElement = std::max_element(
+		similarEventTitleList.begin(), similarEventTitleList.end(),
+		[](const auto& p1, const auto& p2)
+		{
+			//std::cout << "first: " << p1.first << "second: " << p1.second << std::endl;
+			return p1.second < p2.second;
+		}
+	);
+
+	for (json::iterator it = jsonData["support_card"].begin(); it != jsonData["support_card"].end(); ++it)
+	{
+		// it == rare;
+
+		for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
+		{
+
+			umaEventData.event_owner = it2.value()["event_owner"].get<std::string>();
+			umaEventData.sys_event_owner = utility::stdStr2system(umaEventData.event_owner);
+
+			// it2 == article_id;
+			for (json::iterator it3 = it2.value()["event_list"].begin(); it3 != it2.value()["event_list"].end(); ++it3)
+			{
+				// it3 == event;
+				if (it3.value()["event_title"] != maxElement->first) continue;
+
+				UmaEvent umaEvent;
+				umaEvent.event_title = it3.value()["event_title"].get<std::string>();
+				umaEvent.sys_event_title = utility::stdStr2system(umaEvent.event_title);
+
+				for (json::iterator it4 = it3.value()["choice_list"].begin(); it4 != it3.value()["choice_list"].end(); ++it4)
+				{
+					// it2 == UmaChoice;
+					UmaChoice umaChoice;
+					umaChoice.choice_title = it4.value()["choice_title"].get<std::string>();
+					umaChoice.sys_choice_title = utility::stdStr2system(umaChoice.choice_title);
+
+					umaChoice.choice_effect = it4.value()["choice_effect"].get<std::string>();
+					umaChoice.sys_choice_effect = utility::stdStr2system(umaChoice.choice_effect);
+
+					umaEvent.choice_list.push_back(umaChoice);
+				}
+
+				umaEventData.event_list.push_back(umaEvent);
+			}
+		}
+	}
+
+	delete rStarThread;
+	delete srStarThread;
+	delete ssrStarThread;
+
+	return umaEventData;
+}
 
 UmaEventData DataManager::GetUmaEventDataFromJson(std::string scanned_text)
 {
