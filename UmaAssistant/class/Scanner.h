@@ -7,6 +7,7 @@
 #include <tesseract/baseapi.h>
 #include <leptonica/allheaders.h>
 #include <opencv2/opencv.hpp>
+#include "../enum/ImageType.h"
 
 
 class Scanner
@@ -24,7 +25,7 @@ private:
 
 	static tesseract::TessBaseAPI* ocr_jpn;
 
-	std::string GetScannedText(cv::Mat cvmat, std::string language);
+	std::string GetScannedText(cv::Mat image, std::string language, ImageType imgType);
 public:
 	static Scanner* GetInstance()
 	{

@@ -10,17 +10,22 @@ using namespace System::Drawing;
 
 constexpr inline int FIX_GAME_WIDTH = 13;
 constexpr inline int FIX_GAME_POS_Y = 30;
-constexpr inline double EVENT_ICON_METRIC = 0.67;
+constexpr inline double EVENT_ICON_METRIC = 0.73;
 
 
-//enum ImagePattern
-//{
-//	O_IMG,
-//	EVENT_TITLE_OIMG,
-//	EVENT_TITLE_GRAY,
-//	EVENT_TITLE_GRAY_BIN,
-//	EVENT_ICON,
-//};
+enum ImagePattern
+{
+	IMG_PATTERN_NONE,
+
+	O_IMG,
+
+	EVENT_TITLE_OIMG,
+	EVENT_TITLE_GRAY,
+	EVENT_TITLE_GRAY_BIN,
+	EVENT_TITLE_GRAY_BIN_INV,
+
+	EVENT_ICON,
+};
 
 class Screenshot
 {
@@ -28,15 +33,21 @@ private:
 	cv::Mat hwnd2mat(HWND hwnd);
 	
 
-	void CropImage(cv::Mat& img, ImageType imgType);
+	void CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPattern);
 
-	void ResizeImage(cv::Mat& img, float scale_factor);
+	void ResizeImage(cv::Mat& img, float scale_factor /*©ñ¤j­¿¼Æ*/, cv::InterpolationFlags interpolationFlag);
+
+	const double GetWhitePixelRatio(cv::Mat img);
+
+	const double GetBlackPixelRatio(cv::Mat img);
 
 	bool IsEventIcon(cv::Mat img);
 
-	void GetEventTextImage();
+	void GetEventTitleImage();
 
 	void GetEventIconImage();
+
+	void GetHenseiCharacterNameImage();
 
 public:
 	Screenshot();
@@ -52,4 +63,8 @@ public:
 	static cv::Mat event_title_gray_bin_inv;
 
 	static cv::Mat event_icon;
+
+	static cv::Mat sentaku_character_name;
+	static cv::Mat hensei_character_name_gray;
+	static cv::Mat hensei_character_name_gray_inv;
 };

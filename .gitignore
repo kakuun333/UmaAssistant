@@ -172,3 +172,4 @@ opencv_world481.dll
 *.obj
 /.vs/UmaAssistant/v17/ipch/AutoPCH
 .vs/UmaAssistant/v17/HierarchyCache.v1.txt
+x64/Release/UmaAssistant.tlog/unsuccessfulbuild

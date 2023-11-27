@@ -36,13 +36,13 @@ namespace UmaAssistant
 			//scanner->Start("jpn");
 			scanner->Start("jpn");
 
-			test_btn->Text = "Stop";
+			test_btn1->Text = "Stop";
 		}
 		else
 		{
 			scanner->Stop();
 
-			test_btn->Text = "Start";
+			test_btn1->Text = "Start";
 		}
 	}
 

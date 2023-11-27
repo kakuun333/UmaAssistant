@@ -538,20 +538,20 @@ namespace utility
 			if ((firstSameCount / totalCount) * 100 < SIMILAR_METRIC) return NOT_SIMILAR;
 			if (firstSameCount == totalCount) return (firstSameCount / totalCount) * 100;
 
-			int sameCountBySimilarChar = GetSameCountBySimilarChar(jpnchar_list_1, jpnchar_list_2);
-			if (sameCountBySimilarChar > firstSameCount)
-			{
+			//int sameCountBySimilarChar = GetSameCountBySimilarChar(jpnchar_list_1, jpnchar_list_2);
+			//if (sameCountBySimilarChar > firstSameCount)
+			//{
 	
-				similarity = (sameCountBySimilarChar / totalCount) * 100;
+			//	similarity = (sameCountBySimilarChar / totalCount) * 100;
 
-				std::cout << "sameCountBySimilarChar: " << sameCountBySimilarChar << std::endl;
-				std::cout << "similarity: " << similarity << "%" << std::endl;
+			//	std::cout << "sameCountBySimilarChar: " << sameCountBySimilarChar << std::endl;
+			//	std::cout << "similarity: " << similarity << "%" << std::endl;
 
-				if (similarity >= SIMILAR_METRIC)
-				{
-					return similarity;
-				}
-			}
+			//	if (similarity >= SIMILAR_METRIC)
+			//	{
+			//		return similarity;
+			//	}
+			//}
 
 
 			similarity = (firstSameCount / totalCount) * 100;

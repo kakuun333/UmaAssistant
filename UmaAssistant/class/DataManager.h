@@ -2,6 +2,7 @@
 
 #include <string>
 #include "data/UmaEventData.h"
+#include <nlohmann/json.hpp>
 
 class DataManager
 {
@@ -14,7 +15,7 @@ private:
 
 	static bool _currentCharacterInfoLocked;
 
-
+	static nlohmann::json event_data_json;
 public:
 	static DataManager* GetInstance()
 	{
@@ -24,6 +25,8 @@ public:
 		}
 		return _instance;
 	}
+
+	static void InitEventDataJson();
 
 	UmaEventData GetUmaEventDataFromJson(std::string scanned_text);
 
