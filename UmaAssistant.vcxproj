@@ -139,6 +139,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="UmaAssistant\class\LocalServer.cpp" />
     <ClCompile Include="UmaAssistant\class\FileManager.cpp" />
     <ClCompile Include="UmaAssistant\class\ref\FormController.cpp" />
     <ClCompile Include="UmaAssistant\utility\CharacterCompare.cpp" />
@@ -151,7 +152,7 @@
     <ClCompile Include="UmaAssistant\global\FormManager.cpp" />
     <ClCompile Include="UmaAssistant\form\PreviewForm.cpp" />
     <ClCompile Include="UmaAssistant\form\SettingsForm.cpp" />
-    <ClCompile Include="UmaAssistant\lua\luaTest.cpp" />
+    <ClCompile Include="UmaAssistant\class\LuaManager.cpp" />
     <ClCompile Include="UmaAssistant\main.cpp" />
     <ClCompile Include="UmaAssistant\utility\Pathfinder.cpp" />
     <ClCompile Include="UmaAssistant\global\Path.cpp" />
@@ -161,10 +162,15 @@
     <ClCompile Include="UmaAssistant\class\Screenshot.cpp" />
     <ClCompile Include="UmaAssistant\form\UmaForm.cpp" />
     <ClCompile Include="UmaAssistant\class\WebManager.cpp" />
+    <ClCompile Include="UmaAssistant\class\WindowFinder.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="UmaAssistant\class\LocalServer.h" />
     <ClInclude Include="UmaAssistant\class\FileManager.h" />
     <ClInclude Include="UmaAssistant\class\ref\FormController.h" />
+    <ClInclude Include="UmaAssistant\enum\FilePathType.h" />
+    <ClInclude Include="UmaAssistant\enum\FileType.h" />
+    <ClInclude Include="UmaAssistant\enum\GameWindowType.h" />
     <ClInclude Include="UmaAssistant\enum\ImageType.h" />
     <ClInclude Include="UmaAssistant\utility\CharacterCompare.h" />
     <ClInclude Include="UmaAssistant\utility\FormControl.h" />
@@ -172,7 +178,6 @@
     <ClInclude Include="UmaAssistant\class\ref\FormDesigner.h" />
     <ClInclude Include="UmaAssistant\class\data\UmaEventData.h" />
     <ClInclude Include="UmaAssistant\class\DataManager.h" />
-    <ClInclude Include="UmaAssistant\enum\CharType.h" />
     <ClInclude Include="UmaAssistant\enum\UmaEventDataType.h" />
     <ClInclude Include="UmaAssistant\utility\CharacterConvert.h" />
     <ClInclude Include="UmaAssistant\utility\CharacterFilter.h" />
@@ -183,7 +188,7 @@
     <ClInclude Include="UmaAssistant\form\SettingsForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="UmaAssistant\lua\luaTest.h" />
+    <ClInclude Include="UmaAssistant\class\LuaManager.h" />
     <ClInclude Include="UmaAssistant\utility\Pathfinder.h" />
     <ClInclude Include="UmaAssistant\global\Path.h" />
     <ClInclude Include="UmaAssistant\utility\CharacterCombine.h" />
@@ -194,6 +199,7 @@
     </ClInclude>
     <ClInclude Include="UmaAssistant\stdafx.h" />
     <ClInclude Include="UmaAssistant\class\WebManager.h" />
+    <ClInclude Include="UmaAssistant\class\WindowFinder.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PreviewForm.resx" />
@@ -210,10 +216,8 @@
     <EmbeddedResource Include="UmaForm.resx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="UmaAssistant\lua\test.lua" />
     <None Include="UmaWeb\index.html" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
 </Project>

@@ -20,5 +20,7 @@ public:
 	}
 
 	nlohmann::json ReadJson(std::string path);
+
+	System::String^ SysReadFile(System::String^ path);
 };
 

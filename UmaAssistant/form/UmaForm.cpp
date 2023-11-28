@@ -1,4 +1,9 @@
 ﻿#include "../stdafx.h"
+//#using <System.dll>
+//#using <System.Net.dll>
+
+
+
 
 
 
@@ -13,10 +18,33 @@ namespace UmaAssistant
 
 #pragma region WebBrowser
 		//choiceWebBrowser->DocumentCompleted += gcnew WebBrowserDocumentCompletedEventHandler(&OnDocumentCompleted);
-		choiceWebBrowser->Navigate(global::path::choiceWebBrowser);
-		characterNameWebBrowser->Navigate(global::path::characterNameWebBrowser);
-#pragma endregion WebBrowser
+
+		System::String^ port = "1234";
+
+		LocalServer::Instance->Start(port);
+
+
+		choiceWebBrowser->Navigate("http://localhost:" + port + "/choice.html");
+		//characterNameWebBrowser->Navigate(global::path::character_name_html);
+
+
+
+
+		//json skill_data_jp = FileManager::GetInstance()->ReadJson(global::path::std_skill_data_jp_json);
+		//// 要插入的 json
+		//std::string insertJson = skill_data_jp.dump();
+		//// 正規表達式模式
+		//std::regex pattern("(<pre id=\"skill_json_jp\">)(</pre>)");
+		//// 替換字符串
+		//std::string insertedJsonHtml = std::regex_replace(utility::systemStr2std(choiceWebBrowser->DocumentText), pattern, "$1" + insertJson + "$2");
+		//choiceWebBrowser->DocumentText = utility::stdStr2system(insertedJsonHtml);
+		//std::cout << insertedJsonHtml << std::endl;
+#pragma endregion
 	}
+
+
+
+
 
 	System::Void UmaForm::button1_Click(System::Object^ sender, System::EventArgs^ e)
 	{
@@ -27,22 +55,21 @@ namespace UmaAssistant
 		utility::GetCharacterNameSimilarity(u8"キセキの白星オグリキャップ", u8"オグリキャップ（キセキの白星）");
 	}
 
-	System::Void UmaForm::test_btn_Click(System::Object^ sender, System::EventArgs^ e)
+	System::Void UmaForm::scan_btn_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		Scanner* scanner = Scanner::GetInstance();
 
 		if (!global::umaswitch::Scanning)
 		{
-			//scanner->Start("jpn");
 			scanner->Start("jpn");
 
-			test_btn1->Text = "Stop";
+			this->scan_btn->Text = "停止";
 		}
 		else
 		{
 			scanner->Stop();
 
-			test_btn1->Text = "Start";
+			this->scan_btn->Text = "起動";
 		}
 	}
 
@@ -87,5 +114,13 @@ namespace UmaAssistant
 	System::Void UmaForm::minimize_btn_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		this->WindowState = System::Windows::Forms::FormWindowState::Minimized;
+	}
+
+
+
+	System::Void UmaForm::clean_current_character_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		DataManager::GetInstance()->SetCurrentCharacterInfoLock(false);
+		WebManager::GetInstance()->ChangeCharacterName("");
 	}
 }

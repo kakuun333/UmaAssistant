@@ -36,7 +36,7 @@
     <ClCompile Include="UmaAssistant\utility\Pathfinder.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="UmaAssistant\lua\luaTest.cpp">
+    <ClCompile Include="UmaAssistant\class\LuaManager.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="UmaAssistant\form\SettingsForm.cpp">
@@ -81,6 +81,12 @@
     <ClCompile Include="UmaAssistant\class\FileManager.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="UmaAssistant\class\WindowFinder.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="UmaAssistant\class\LocalServer.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UmaAssistant\form\UmaForm.h">
@@ -104,7 +110,7 @@
     <ClInclude Include="UmaAssistant\utility\Pathfinder.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="UmaAssistant\lua\luaTest.h">
+    <ClInclude Include="UmaAssistant\class\LuaManager.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="UmaAssistant\form\SettingsForm.h">
@@ -131,9 +137,6 @@
     <ClInclude Include="UmaAssistant\enum\UmaEventDataType.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="UmaAssistant\enum\CharType.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
     <ClInclude Include="UmaAssistant\class\ref\FormDesigner.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
@@ -158,9 +161,23 @@
     <ClInclude Include="UmaAssistant\enum\ImageType.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+    <ClInclude Include="UmaAssistant\class\WindowFinder.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="UmaAssistant\enum\GameWindowType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="UmaAssistant\class\LocalServer.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="UmaAssistant\enum\FileType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="UmaAssistant\enum\FilePathType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="UmaAssistant\lua\test.lua" />
     <None Include="UmaWeb\index.html" />
   </ItemGroup>
   <ItemGroup>

@@ -54,6 +54,8 @@ public:
 
 	static void ShowImage();
 
+	bool IsDataComplete();
+
 	//static std::map<std::string, cv::Mat> img_dict
 	static cv::Mat oimg;
 	static cv::Mat event_title_oimg;

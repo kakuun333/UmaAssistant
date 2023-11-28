@@ -20,6 +20,8 @@ namespace utility
 		System::Void Text(Control^ control, System::String^ text);
 
 		System::Void Clear(Control^ control);
+
+		System::Void ForeColor(Control^ control, int r, int g, int b);
 	}
 };
 

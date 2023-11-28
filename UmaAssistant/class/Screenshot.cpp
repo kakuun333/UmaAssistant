@@ -13,12 +13,23 @@ cv::Mat Screenshot::sentaku_character_name;
 cv::Mat Screenshot::hensei_character_name_gray;
 cv::Mat Screenshot::hensei_character_name_gray_inv;
 
+bool Screenshot::IsDataComplete()
+{
+	if (oimg.empty()) return false;
+
+
+	return true;
+}
+
 
 cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 {
-	HWND gameHWND = FindWindow(nullptr, L"umamusume");
-	if (gameHWND == NULL) { std::cout << u8"找不到遊戲視窗" << std::endl; return cv::Mat(); }
+	//HWND gameHWND = FindWindow(nullptr, L"umamusume");
+	//if (gameHWND == NULL) { std::cout << u8"找不到遊戲視窗" << std::endl; return cv::Mat(); }
+	HWND gameHWND = WindowFinder::GetInstance()->GetCurrentGameWindow();
+	if (gameHWND == NULL) return cv::Mat();
 
+	
 	HDC hwindowDC, hwindowCompatibleDC;
 
 	int height, width, srcheight, srcwidth, xsrc, ysrc;
@@ -57,7 +68,7 @@ cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 	hbwindow = CreateCompatibleBitmap(hwindowDC, width, height);
 	bi.biSize = sizeof(BITMAPINFOHEADER);    //http://msdn.microsoft.com/en-us/library/windows/window/dd183402%28v=vs.85%29.aspx
 	bi.biWidth = width;
-	bi.biHeight = -height;  //this is the line that makes it draw upside down or not
+	bi.biHeight = -height;  // 這行決定了 bmp 是否顛倒
 	bi.biPlanes = 1;
 	bi.biBitCount = 32;
 	bi.biCompression = BI_RGB;
@@ -70,13 +81,14 @@ cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 	// 創建 cv::Mat
 	cvmat.create(height, width, CV_8UC4);
 
-	// use the previously created device context with the bitmap
+	// 使用先前創建的 device context with the bitmap
 	SelectObject(hwindowCompatibleDC, hbwindow);
-	// copy from the window device context to the bitmap device context
+	// 複製 window device context 到 bitmap device context
 	StretchBlt(hwindowCompatibleDC, 0, 0, width, height, hwindowDC, xsrc, ysrc, srcwidth, srcheight, SRCCOPY);
 	GetDIBits(hwindowCompatibleDC, hbwindow, 0, height, cvmat.data, (BITMAPINFO*)&bi, DIB_RGB_COLORS);  //copy from hwindowCompatibleDC to hbwindow
 
-	// avoid memory leak
+
+	// 釋放記憶體
 	DeleteObject(hbwindow);
 	DeleteDC(hwindowCompatibleDC);
 	ReleaseDC(hwnd, hwindowDC);
@@ -199,6 +211,8 @@ bool Screenshot::IsEventIcon(cv::Mat img)
 Screenshot::Screenshot()
 {
 	oimg = this->hwnd2mat();
+	if (oimg.empty()) return;
+
 
 	// event_icon
 	this->GetEventIconImage(); // 優先獲取 EventIconImage

@@ -53,6 +53,11 @@ using json = nlohmann::json;
 #include "class/DataManager.h"
 #include "class/WebManager.h"
 #include "class/FileManager.h"
+#include "class/WindowFinder.h"
+#include "class/LocalServer.h"
+
+// lua
+#include "class/LuaManager.h"
 
 // ¨ü±±
 #include "class/ref/FormDesigner.h"
@@ -71,16 +76,18 @@ using json = nlohmann::json;
 
 /*			enum			*/
 #include "enum/UmaEventDataType.h"
-#include "enum/CharType.h"
+#include "enum/GameWindowType.h"
 #include "enum/ImageType.h"
+#include "enum/FileType.h"
+#include "enum/FilePathType.h"
 
 /*			global			*/
 #include "global/Path.h"
 #include "global/FormManager.h"
 #include "global/UmaSwitch.h"
 
-/*			lua			*/
-#include "lua/luaTest.h"
+
+
 
 
 /*			.Net			*/
@@ -93,6 +100,8 @@ using namespace System::Diagnostics;
 using namespace System::Drawing;
 using namespace System::IO;
 using namespace System::Windows::Forms;
+using namespace System::Net;
+using namespace System::Text;
 using namespace System::Text::RegularExpressions;
 using namespace System::Threading;
 using namespace System::Threading::Tasks;

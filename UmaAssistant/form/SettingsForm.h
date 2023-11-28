@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "../lua/luaTest.h"
+#include "../class/LuaManager.h"
 
 namespace UmaAssistant {
 
@@ -54,6 +54,7 @@ namespace UmaAssistant {
 			}
 		}
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ button2;
 	protected:
 
 	private:
@@ -70,24 +71,37 @@ namespace UmaAssistant {
 		void InitializeComponent(void)
 		{
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"新細明體", 11));
-			this->button1->Location = System::Drawing::Point(66, 84);
+			this->button1->Location = System::Drawing::Point(12, 12);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(139, 86);
+			this->button1->Size = System::Drawing::Size(130, 86);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"更新 event_data_jp.json";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &SettingsForm::button1_Click);
+			// 
+			// button2
+			// 
+			this->button2->Font = (gcnew System::Drawing::Font(L"新細明體", 11));
+			this->button2->Location = System::Drawing::Point(142, 163);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(130, 86);
+			this->button2->TabIndex = 1;
+			this->button2->Text = L"更新 skill_data_jp.json";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &SettingsForm::button2_Click);
 			// 
 			// SettingsForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(284, 261);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Name = L"SettingsForm";
 			this->Text = L"SettingsForm";
@@ -98,5 +112,6 @@ namespace UmaAssistant {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
 
 
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

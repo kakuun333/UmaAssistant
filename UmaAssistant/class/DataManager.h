@@ -41,7 +41,7 @@ public:
 		return _currentCharacterInfoLocked;
 	}
 
-	inline void SetCurrentCharacterInfo(bool value)
+	inline void SetCurrentCharacterInfoLock(bool value)
 	{
 		_currentCharacterInfoLocked = value;
 	}

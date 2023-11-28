@@ -167,7 +167,13 @@ void Scanner::Start(std::string language)
 				auto start_time = std::chrono::system_clock::now();
 				//std::unique_ptr<Screenshot> ss(new Screenshot());
 				Screenshot ss;
+				if (!ss.IsDataComplete())
+				{
+					std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+					continue;
+				}
 				
+
 				//global::form::previewForm->pictureBox1->Image = ss->bmp_window;
 
 				///
@@ -243,12 +249,12 @@ void Scanner::Start(std::string language)
 						}
 
 						System::String^ sys_event_owner = charUmaEventData.Get<System::String^>(UmaEventDataType::EVENT_OWNER);
-						utility::formctrl::Text(global::form::umaForm->event_owner_textBox, sys_event_owner);
+						//utility::formctrl::Text(global::form::umaForm->event_owner_textBox, sys_event_owner);
 
 						webManager->ChangeEventOwner(sys_event_owner);
 
 						System::String^ sys_event_title = charUmaEventData.Get<System::String^>(UmaEventDataType::EVENT_TITLE);
-						utility::formctrl::Text(global::form::umaForm->event_title_textbox, sys_event_owner);
+						//utility::formctrl::Text(global::form::umaForm->event_title_textbox, sys_event_owner);
 
 						webManager->ChangeEventTitle(sys_event_title);
 
@@ -299,12 +305,12 @@ void Scanner::Start(std::string language)
 						}
 
 						System::String^ sys_event_owner = sapokaUmaEventData.Get<System::String^>(UmaEventDataType::EVENT_OWNER);
-						utility::formctrl::Text(global::form::umaForm->event_owner_textBox, sys_event_owner);
+						//utility::formctrl::Text(global::form::umaForm->event_owner_textBox, sys_event_owner);
 
 						webManager->ChangeEventOwner(sys_event_owner);
 
 						System::String^ sys_event_title = sapokaUmaEventData.Get<System::String^>(UmaEventDataType::EVENT_TITLE);
-						utility::formctrl::Text(global::form::umaForm->event_title_textbox, sys_event_owner);
+						//utility::formctrl::Text(global::form::umaForm->event_title_textbox, sys_event_owner);
 
 						webManager->ChangeEventTitle(sys_event_title);
 					}

@@ -43,5 +43,18 @@ namespace utility
 				control->Controls->Clear();
 			}
 		}
+
+		System::Void ForeColor(Control^ control, int r = 255, int g = 255, int b = 255)
+		{
+			if (control->InvokeRequired)
+			{
+				control->Invoke(gcnew Action<Control^, int, int, int>(&ForeColor), control, r, g, b);
+			}
+			else
+			{
+				control->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(r)),
+					static_cast<System::Int32>(static_cast<System::Byte>(g)), static_cast<System::Int32>(static_cast<System::Byte>(b)));
+			}
+		}
 	}
 };
