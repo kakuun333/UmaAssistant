@@ -4,7 +4,7 @@ function createSkillHintContent() {
 }
 
 
-function displaySkillContent() {
+function updateSkillContent() {
     // var
     let hoveringSkill = false;
     let delayTimer;
@@ -78,9 +78,12 @@ function displaySkillContent() {
                             for (let json_skill_name in rare_obj) {
                                 if (rare_obj.hasOwnProperty(json_skill_name)) {
                                     let skill_name_obj = rare_obj[json_skill_name];
-                                    let pattern = new RegExp('『(.+)』');
+                                    
+                                    // <span class=\"skill_hint\">『負けん気』
+                                    let pattern = new RegExp("<span class=\"skill_hint\">『(.+)』");
                                     // 測試字符串是否匹配正規表達式
-                                    let match_name = skill_hint.textContent.match(pattern);
+                                    let match_name = skill_hint.outerHTML.match(pattern);
+
                                     if (json_skill_name == match_name[1]) {
 
                                         skill_name.innerText = json_skill_name;
@@ -166,6 +169,12 @@ function readJson(jsonPath, callback) {
     xhr.send();
 }
 
+function hiddenSkillHintContent() {
+    let content = document.getElementById("skill_hint_content");
+
+    content.style.display = "none";
+}
+
 
 
 let skill_data_jp = null;
@@ -175,4 +184,4 @@ readJson("../UmaData/skill_data_jp.json", function(jsonData){
     skill_data_jp = jsonData;
 });
 
-displaySkillContent();
+updateSkillContent();

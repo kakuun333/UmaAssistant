@@ -25,20 +25,9 @@ namespace UmaAssistant
 
 
 		choiceWebBrowser->Navigate("http://localhost:" + port + "/choice.html");
-		//characterNameWebBrowser->Navigate(global::path::character_name_html);
+		characterNameWebBrowser->Navigate("http://localhost:" + port + "/character_name.html");
 
 
-
-
-		//json skill_data_jp = FileManager::GetInstance()->ReadJson(global::path::std_skill_data_jp_json);
-		//// 要插入的 json
-		//std::string insertJson = skill_data_jp.dump();
-		//// 正規表達式模式
-		//std::regex pattern("(<pre id=\"skill_json_jp\">)(</pre>)");
-		//// 替換字符串
-		//std::string insertedJsonHtml = std::regex_replace(utility::systemStr2std(choiceWebBrowser->DocumentText), pattern, "$1" + insertJson + "$2");
-		//choiceWebBrowser->DocumentText = utility::stdStr2system(insertedJsonHtml);
-		//std::cout << insertedJsonHtml << std::endl;
 #pragma endregion
 	}
 

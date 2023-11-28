@@ -258,6 +258,8 @@ void Scanner::Start(std::string language)
 
 						webManager->ChangeEventTitle(sys_event_title);
 
+						webManager->HiddenSkillContent();
+						webManager->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
 					}
 					else
 					{
@@ -313,6 +315,10 @@ void Scanner::Start(std::string language)
 						//utility::formctrl::Text(global::form::umaForm->event_title_textbox, sys_event_owner);
 
 						webManager->ChangeEventTitle(sys_event_title);
+
+
+						webManager->HiddenSkillContent();
+						webManager->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
 					}
 				}
 				else

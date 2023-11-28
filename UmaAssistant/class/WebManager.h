@@ -23,6 +23,8 @@ public:
 	void ChangeEventOwner(System::String^ text);
 	void ChangeEventTitle(System::String^ text);
 	void CleanChoiceTable();
+	void UpdateSkillContent();
+	void HiddenSkillContent();
 
 	void ChangeCharacterName(System::String^ characterName);
 };

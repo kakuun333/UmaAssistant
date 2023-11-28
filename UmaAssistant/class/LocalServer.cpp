@@ -32,7 +32,7 @@ void LocalServer::HandleUmaWebRequest(Object^ obj)
 		break;
 	}
 
-	Console::WriteLine("filePath = " + filePath);
+	//Console::WriteLine("filePath = " + filePath);
 
 
 	try
@@ -92,10 +92,10 @@ void LocalServer::StartLocalServer(Object^ port)
 
 	try
 	{
-		// 開始聽取請求
+		// 開始監聽請求
 		listener->Start();
 
-		Console::WriteLine("Server listening...");
+		Console::WriteLine("正在監聽本地伺服器..."/*"Local Server listening..."*/);
 
 		while (true)
 		{
@@ -105,7 +105,7 @@ void LocalServer::StartLocalServer(Object^ port)
 
 			String^ requestUrl = context->Request->Url->AbsolutePath;
 
-			Console::WriteLine(requestUrl);
+			//Console::WriteLine(requestUrl);
 
 			if (requestUrl->EndsWith(".html"))
 			{
