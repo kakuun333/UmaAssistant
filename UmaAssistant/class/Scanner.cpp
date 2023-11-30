@@ -8,6 +8,8 @@ std::string Scanner::_previousHenseiCharacterNameText = "";
 bool Scanner::_scanning = false;
 
 tesseract::TessBaseAPI* Scanner::ocr_jpn = nullptr;
+tesseract::TessBaseAPI* Scanner::ocr_tw = nullptr;
+
 #pragma endregion
 
 /*
@@ -27,12 +29,31 @@ void Scanner::InitOcrJpn()
 		{
 			tesseract::TessBaseAPI* ocr = new tesseract::TessBaseAPI(); // 初始化 Tesseract
 
-			ocr->Init(global::path::c_tessdata_best, "jpn", tesseract::OEM_DEFAULT); // 英文 "eng"、日文 "jpn"
+			ocr->Init(global::path::c_tessdata_best, "jpn", tesseract::OEM_DEFAULT); // 日文 "jpn"、繁體中文 "chi_tra"
 
 			ocr->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=");
 
+			ocr->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_LINE*//*tesseract::PSM_SINGLE_BLOCK*/);
 
 			ocr_jpn = ocr;
+		});
+
+	initThread.detach();
+}
+
+void Scanner::InitOcrTw()
+{
+	std::thread initThread([]()
+		{
+			tesseract::TessBaseAPI* ocr = new tesseract::TessBaseAPI(); // 初始化 Tesseract
+
+			ocr->Init(global::path::c_tessdata_best, "chi_tra", tesseract::OEM_DEFAULT); // 日文 "jpn"、繁體中文 "chi_tra"
+
+			ocr->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=");
+
+			ocr->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_LINE*//*tesseract::PSM_SINGLE_BLOCK*/);
+
+			ocr_tw = ocr;
 		});
 
 	initThread.detach();
@@ -42,29 +63,56 @@ void Scanner::InitOcrJpn()
 #pragma region 私人函數
 std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageType imgType = ImageType::IMG_EVENT_TITLE)
 {
-	ocr_jpn->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_LINE*//*tesseract::PSM_SINGLE_BLOCK*/);
+	char* utf8;
 
+	//ocr_jpn->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_LINE*//*tesseract::PSM_SINGLE_BLOCK*/);
 
-	switch (imgType)
+	switch (global::config->GameServer)
 	{
-	case ImageType::IMG_EVENT_TITLE:
-		ocr_jpn->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=");
+	case GameServerType::JP:
+		switch (imgType)
+		{
+		case ImageType::IMG_EVENT_TITLE:
+			ocr_jpn->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=");
+			break;
+		case ImageType::IMG_HENSEI_CHARACTER_NAME:
+			ocr_jpn->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=「」【】『』〈〉［］〔〕≪≫（）");
+			break;
+		}
+
+		// 設置圖片到 ocr
+		//ocr_jpn->SetImage(image.data, image.size().width, image.size().height, image.channels(), image.step);
+		ocr_jpn->SetImage(image.data, image.cols, image.rows, 1, image.cols);
+
+		ocr_jpn->Recognize(0);
+
+		// 進行文字辨識
+		utf8 = ocr_jpn->GetUTF8Text();
 		break;
-	case ImageType::IMG_HENSEI_CHARACTER_NAME:
-		ocr_jpn->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=「」【】『』〈〉［］〔〕≪≫（）");
+
+	case GameServerType::TW:
+		switch (imgType)
+		{
+		case ImageType::IMG_EVENT_TITLE:
+			ocr_tw->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=");
+			break;
+		case ImageType::IMG_HENSEI_CHARACTER_NAME:
+			ocr_tw->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=「」【】『』〈〉［］〔〕≪≫（）");
+			break;
+		}
+
+		// 設置圖片到 ocr
+		//ocr_jpn->SetImage(image.data, image.size().width, image.size().height, image.channels(), image.step);
+		ocr_tw->SetImage(image.data, image.cols, image.rows, 1, image.cols);
+
+		ocr_tw->Recognize(0);
+
+		// 進行文字辨識
+		utf8 = ocr_tw->GetUTF8Text();
 		break;
 	}
 
 
-
-	// 設置圖片到 ocr
-	//ocr_jpn->SetImage(image.data, image.size().width, image.size().height, image.channels(), image.step);
-	ocr_jpn->SetImage(image.data, image.cols, image.rows, 1, image.cols);
-
-	ocr_jpn->Recognize(0);
-
-	// 進行文字辨識
-	char* utf8 = ocr_jpn->GetUTF8Text();
 
 	std::string stdString(utf8);
 	std::string result = utility::RemoveSpace(stdString);
@@ -248,7 +296,7 @@ void Scanner::Start(std::string language)
 						// 這裡更新 UI
 						webManager->CleanChoiceTable();
 
-						utility::formctrl::Clear(global::form::umaForm->choicePanel); // 清除先前創建的 WinForm 物件
+						//utility::formctrl::Clear(global::form::umaForm->choicePanel); // 清除先前創建的 WinForm 物件
 						for (UmaChoice choice : charUmaEventData.Get<std::vector<UmaChoice>>(UmaEventDataType::CHOICE_LIST))
 						{
 							webManager->CreateChoice(choice.sys_choice_title, choice.sys_choice_effect);
@@ -306,7 +354,6 @@ void Scanner::Start(std::string language)
 
 						webManager->CleanChoiceTable();
 
-						utility::formctrl::Clear(global::form::umaForm->choicePanel); // 清除先前創建的 WinForm 物件
 						for (UmaChoice choice : sapokaUmaEventData.Get<std::vector<UmaChoice>>(UmaEventDataType::CHOICE_LIST))
 						{
 							webManager->CreateChoice(choice.sys_choice_title, choice.sys_choice_effect);

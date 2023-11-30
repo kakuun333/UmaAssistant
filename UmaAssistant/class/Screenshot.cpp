@@ -44,10 +44,26 @@ cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 	Debug::WriteLine("[Window] left: {0}, right: {1}, top: {2}, bottom: {3}", rcWindow.left, rcWindow.right, rcWindow.top, rcWindow.bottom);
 #endif
 
-	int gameWidth = rcClient.right - rcClient.left - FIX_GAME_WIDTH;
-	int gameHeight = rcClient.bottom - rcClient.top;
-	int gamePosX = rcWindow.left + FIX_GAME_WIDTH;
-	int gamePosY = rcWindow.top + FIX_GAME_POS_Y;
+	int gameWidth, gameHeight, gamePosX, gamePosY = 0;
+
+
+	switch (global::config->GameWindow)
+	{
+	case GameWindowType::DMM:
+		gameWidth = rcClient.right - rcClient.left - DMM_FIX_GAME_WIDTH;
+		gameHeight = rcClient.bottom - rcClient.top;
+		gamePosX = rcWindow.left + DMM_FIX_GAME_WIDTH;
+		gamePosY = rcWindow.top + DMM_FIX_GAME_POS_Y;
+		break;
+
+	case GameWindowType::BLUE_STACKS:
+		gameWidth = rcClient.right - rcClient.left - BLUE_STACKS_FIX_GAME_WIDTH;
+		gameHeight = rcClient.bottom - rcClient.top - BLUE_STACKS_FIX_GAME_HEIGHT;
+		gamePosX = rcWindow.left + BLUE_STACKS_FIX_GAME_POS_X;
+		gamePosY = rcWindow.top + BLUE_STACKS_FIX_GAME_POS_Y;
+		break;
+	}
+
 
 
 	// 依照遊戲視窗修改 bmp 的大小和位置
@@ -105,49 +121,103 @@ void Screenshot::CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPatt
 	int crop_height	 = 0; // 裁切高度
 
 
-	switch (imgType)
+	switch (global::config->GameWindow)
 	{
-	case IMG_EVENT_TITLE:
-		if (IsEventIcon(event_icon))
+	case GameWindowType::DMM:
+		switch (imgType)
 		{
-			crop_x		 = img_width  - (img_width  * 0.78);
-			crop_y		 = img_height - (img_height * 0.81);
-			crop_width	 = img_width  - (img_width  * 0.45);
-			crop_height  = img_height - (img_height * 0.97);
+		case IMG_EVENT_TITLE:
+			if (IsEventIcon(event_icon))
+			{
+				crop_x = img_width - (img_width * 0.78);
+				crop_y = img_height - (img_height * 0.81);
+				crop_width = img_width - (img_width * 0.45);
+				crop_height = img_height - (img_height * 0.97);
+			}
+			else
+			{
+				crop_x = img_width - (img_width * 0.85);
+				crop_y = img_height - (img_height * 0.81);
+				crop_width = img_width - (img_width * 0.4);
+				crop_height = img_height - (img_height * 0.97);
+			}
+			break;
+		case IMG_EVENT_ICON:
+			crop_x = img_width - (img_width * 0.841);
+			crop_y = img_height - (img_height * 0.81);
+			crop_width = img_width - (img_width * 0.946);
+			crop_height = img_height - (img_height * 0.97);
+			break;
+		case IMG_SENTAKU_CHARACTER_NAME:
+			crop_x = img_width - (img_width * 0.96);
+			crop_y = img_height - (img_height * 0.693);
+			crop_width = img_width - (img_width * 0.6);
+			crop_height = img_height - (img_height * 0.96);
+			break;
+		case IMG_HENSEI_CHARACTER_NAME:
+			crop_x = img_width - (img_width * 0.75);
+			crop_y = img_height - (img_height * 0.845);
+			crop_width = img_width - (img_width * 0.55);
+			crop_height = img_height - (img_height * 0.948);
+			break;
+		case IMG_SYOUSAI_CHARACTER_NAME:
+			crop_x = img_width - (img_width * 0.75);
+			crop_y = img_height - (img_height * 0.845);
+			crop_width = img_width - (img_width * 0.55);
+			crop_height = img_height - (img_height * 0.948);
+			break;
 		}
-		else
+		break;
+
+	case GameWindowType::BLUE_STACKS:
+		switch (imgType)
 		{
-			crop_x		 = img_width  - (img_width  * 0.85);
-			crop_y		 = img_height - (img_height * 0.81);
-			crop_width	 = img_width  - (img_width  * 0.4);
-			crop_height	 = img_height - (img_height * 0.97);
+		case IMG_EVENT_TITLE:
+			if (IsEventIcon(event_icon))
+			{
+				crop_x = img_width - (img_width * 0.78);
+				crop_y = img_height - (img_height * 0.81);
+				crop_width = img_width - (img_width * 0.45);
+				crop_height = img_height - (img_height * 0.97);
+			}
+			else
+			{
+				crop_x = img_width - (img_width * 0.85);
+				crop_y = img_height - (img_height * 0.81);
+				crop_width = img_width - (img_width * 0.4);
+				crop_height = img_height - (img_height * 0.97);
+			}
+			break;
+		case IMG_EVENT_ICON:
+			crop_x = img_width - (img_width * 0.841);
+			crop_y = img_height - (img_height * 0.81);
+			crop_width = img_width - (img_width * 0.946);
+			crop_height = img_height - (img_height * 0.97);
+			break;
+		case IMG_SENTAKU_CHARACTER_NAME:
+			crop_x = img_width - (img_width * 0.96);
+			crop_y = img_height - (img_height * 0.693);
+			crop_width = img_width - (img_width * 0.6);
+			crop_height = img_height - (img_height * 0.96);
+			break;
+		case IMG_HENSEI_CHARACTER_NAME:
+			crop_x = img_width - (img_width * 0.76);
+			crop_y = img_height - (img_height * 0.85);
+			crop_width = img_width - (img_width * 0.6);
+			crop_height = img_height - (img_height * 0.948);
+			break;
+		case IMG_SYOUSAI_CHARACTER_NAME:
+			crop_x = img_width - (img_width * 0.75);
+			crop_y = img_height - (img_height * 0.845);
+			crop_width = img_width - (img_width * 0.55);
+			crop_height = img_height - (img_height * 0.948);
+			break;
 		}
-		break;
-	case IMG_EVENT_ICON:
-		crop_x		 = img_width  - (img_width  * 0.841);
-		crop_y		 = img_height - (img_height * 0.81);
-		crop_width	 = img_width  - (img_width  * 0.946);
-		crop_height	 = img_height - (img_height * 0.97);
-		break;
-	case IMG_SENTAKU_CHARACTER_NAME:
-		crop_x		 = img_width  - (img_width  * 0.96);
-		crop_y		 = img_height - (img_height * 0.693);
-		crop_width	 = img_width  - (img_width  * 0.6);
-		crop_height  = img_height - (img_height * 0.96);
-		break;
-	case IMG_HENSEI_CHARACTER_NAME:
-		crop_x		 = img_width  - (img_width  * 0.75);
-		crop_y		 = img_height - (img_height * 0.845);
-		crop_width	 = img_width  - (img_width  * 0.55);
-		crop_height	 = img_height - (img_height * 0.948);
-		break;
-	case IMG_SYOUSAI_CHARACTER_NAME:
-		crop_x = img_width - (img_width * 0.75);
-		crop_y = img_height - (img_height * 0.845);
-		crop_width = img_width - (img_width * 0.55);
-		crop_height = img_height - (img_height * 0.948);
 		break;
 	}
+
+
+
 
 	// 使用 cv::Rect 定義裁切區域
 	cv::Rect rect(crop_x, crop_y, crop_width, crop_height);
@@ -222,7 +292,7 @@ Screenshot::Screenshot()
 
 	// character_name
 	this->GetHenseiCharacterNameImage();
-	this->GetSyousaiCharacterName();
+	//this->GetSyousaiCharacterName();
 }
 
 
@@ -234,7 +304,7 @@ void Screenshot::ShowImage()
 	cv::destroyAllWindows();
 
 	// original
-	//cv::imshow("oimg", oimg);
+	cv::imshow("oimg", oimg);
 
 	// event_title
 	cv::imshow("event_title_oimg", event_title_oimg);
@@ -250,7 +320,7 @@ void Screenshot::ShowImage()
 	cv::imshow("hensei_character_name_gray", hensei_character_name_gray);
 	cv::imshow("hensei_character_name_gray_inv", hensei_character_name_gray_inv);
 
-	cv::imshow("syousai_character_name_gray_bin", syousai_character_name_gray_bin);
+	//cv::imshow("syousai_character_name_gray_bin", syousai_character_name_gray_bin);
 	
 
 

@@ -56,6 +56,8 @@ using json = nlohmann::json;
 #include "class/GameWindowFinder.h"
 #include "class/LocalServer.h"
 #include "class/ConsoleManager.h"
+#include "class/PyManager.h"
+#include "class/Config.h"
 
 // lua
 #include "class/LuaManager.h"
@@ -81,11 +83,15 @@ using json = nlohmann::json;
 #include "enum/ImageType.h"
 #include "enum/FileType.h"
 #include "enum/FilePathType.h"
+#include "enum/GameServerType.h"
+#include "enum/GameWindowType.h"
+
 
 /*			global			*/
 #include "global/Path.h"
 #include "global/FormManager.h"
 #include "global/UmaSwitch.h"
+#include "global/Others.h"
 
 
 
@@ -99,6 +105,7 @@ using namespace System::Collections::Generic;
 using namespace System::Data;
 using namespace System::Diagnostics;
 using namespace System::Drawing;
+using namespace System::Drawing::Text;
 using namespace System::IO;
 using namespace System::Windows::Forms;
 using namespace System::Net;

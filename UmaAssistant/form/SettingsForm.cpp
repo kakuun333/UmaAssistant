@@ -30,17 +30,58 @@ namespace UmaAssistant
 		
 		if (text->Length >= 4)
 		{
-			FileManager* fileManager = FileManager::GetInstance();
+			global::config->LocalServer["Port"] = utility::systemStr2std(text);
 
-			json config = fileManager->ReadJson(global::path::std_config);
-
-			config["LocalServer"]["Port"] = utility::systemStr2std(text);
-
-			std::string jsonString = config.dump(2);
-
-			fileManager->WriteJson(global::path::std_config, jsonString);
+			global::config->WriteToJson();
 		}
 
+	}
+
+	void SettingsForm::GameServerRadioButtonChanged(Object^ sender, EventArgs^ e)
+	{
+		RadioButton^ radioButton = dynamic_cast<RadioButton^>(sender);
+
+		if (radioButton != nullptr && radioButton->Checked)
+		{
+			// 如果 RadioButton 被選中
+			if (radioButton == tw_server_radio_btn)
+			{
+				global::config->GameServer = GameServerType::TW;
+				Console::WriteLine("RadioButton Checked: " + radioButton->Text);
+			}
+			else if (radioButton == jp_server_radio_btn)
+			{
+				global::config->GameServer = GameServerType::JP;
+				Console::WriteLine("RadioButton Checked: " + radioButton->Text);
+			}
+		}
+
+		global::config->WriteToJson();
+	}
+
+	void SettingsForm::GameWindowRadioButtonChanged(Object^ sender, EventArgs^ e)
+	{
+		RadioButton^ radioButton = dynamic_cast<RadioButton^>(sender);
+
+		FileManager* fileManager = FileManager::GetInstance();
+		json config = fileManager->ReadJson(global::path::std_config);
+
+		if (radioButton != nullptr && radioButton->Checked)
+		{
+			// 如果 RadioButton 被選中
+			if (radioButton == dmm_radio_btn)
+			{
+				global::config->GameWindow = GameWindowType::DMM;
+				Console::WriteLine("RadioButton Checked: " + radioButton->Text);
+			}
+			else if (radioButton == blue_stacks_radio_btn)
+			{
+				global::config->GameWindow = GameWindowType::BLUE_STACKS;
+				Console::WriteLine("RadioButton Checked: " + radioButton->Text);
+			}
+		}
+
+		global::config->WriteToJson();
 	}
 
 
@@ -59,37 +100,70 @@ namespace UmaAssistant
 		this->FormClosing += gcnew FormClosingEventHandler(this, &SettingsForm::FormClosingHandler);
 
 		// 初始化 serverPortTextBox->Text
-		FileManager* fileManager = FileManager::GetInstance();
-		json config = fileManager->ReadJson(global::path::std_config);
-		serverPortTextBox->Text = utility::stdStr2system(config["LocalServer"]["Port"].get<std::string>());
 
-
+		serverPortTextBox->Text = utility::stdStr2system(global::config->LocalServer["Port"]);
 
 		// 註冊 KeyPress 事件
 		serverPortTextBox->KeyPress += gcnew KeyPressEventHandler(this, &SettingsForm::serverPortTextBox_KeyPress);
 
 		// 註冊 TextChanged 事件
 		serverPortTextBox->TextChanged += gcnew EventHandler(this, &SettingsForm::serverPortTextBox_TextChanged);
+
+
+		//
+		// RadioButtons
+		//
+#pragma region GameServerType
+		// 從 config 初始化 Checked
+		switch (global::config->GameServer)
+		{
+		case GameServerType::JP:
+			jp_server_radio_btn->Checked = true;
+			break;
+		case GameServerType::TW:
+			tw_server_radio_btn->Checked = true;
+			break;
+		}
+
+		// 註冊 CheckedChanged 事件
+		jp_server_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::GameServerRadioButtonChanged);
+		tw_server_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::GameServerRadioButtonChanged);
+#pragma endregion
+#pragma region GameWindow
+		// 從 config 初始化 Checked
+		switch (global::config->GameWindow)
+		{
+		case GameWindowType::DMM:
+			dmm_radio_btn->Checked = true;
+			break;
+		case GameWindowType::BLUE_STACKS:
+			blue_stacks_radio_btn->Checked = true;
+			break;
+		}
+
+		// 註冊 CheckedChanged 事件
+		dmm_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::GameWindowRadioButtonChanged);
+		blue_stacks_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::GameWindowRadioButtonChanged);
+#pragma endregion
 	}
 
 	System::Void SettingsForm::debugMode_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
 	{
 		ConsoleManager* consoleManager = ConsoleManager::GetInstance();
-		FileManager* fileManager = FileManager::GetInstance();
-		json config = fileManager->ReadJson(global::path::std_config);
+
+
 		if (debugMode_checkBox->Checked)
 		{
-			config["DebugMode"] = true;
+			global::config->DebugMode = true;
 			global::form::umaForm->test_btn->Visible = true;
 			global::form::umaForm->screenshot_preview_btn->Visible = true;
 			
 
 			consoleManager->Enable();
-
 		}
 		else
 		{
-			config["DebugMode"] = false;
+			global::config->DebugMode = false;
 			global::form::umaForm->test_btn->Visible = false;
 			global::form::umaForm->screenshot_preview_btn->Visible = false;
 
@@ -98,9 +172,8 @@ namespace UmaAssistant
 
 		}
 
-		std::string jsonString = config.dump(2);
 
-		fileManager->WriteJson(global::path::std_config, jsonString);
+		global::config->WriteToJson();
 	}
 
 	System::Void SettingsForm::update_event_data_jp_btn_Click(System::Object^ sender, System::EventArgs^ e)

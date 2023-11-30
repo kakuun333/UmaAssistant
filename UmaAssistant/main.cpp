@@ -3,12 +3,16 @@
 
 #include "global/Path.h"
 #include "global/FormManager.h"
+#include "global/Others.h"
+
 #include "class/DataManager.h"
 #include "class/Scanner.h"
 #include "class/GameWindowFinder.h"
 #include "class/FileManager.h"
 #include "class/ConsoleManager.h"
 #include "class/LocalServer.h"
+//#include "class/PyManager.h"
+
 
 #include <nlohmann/json.hpp>
 using json = nlohmann::json;
@@ -20,18 +24,32 @@ using namespace System::Windows::Forms;
 [STAThreadAttribute]
 int main(array<String^>^ args)
 {
+	// 加載字型
+	AddFontResourceW(utility::string2wstring(global::path::std_MochiyPopOne).c_str());
+
+
+	SetDllDirectory(utility::string2wstring(global::path::std_currentDir + "\\dll").c_str());
+
 	// 初始化
 	Scanner::InitOcrJpn();
+	Scanner::InitOcrTw();
+
 	DataManager::InitEventDataJson();
 
+	// 初始化 python
+	//PyManager::GetInstance()->Init();
+
+
+	global::config->Update();
 	// 提取 config 資料
-	json config = FileManager::GetInstance()->ReadJson(global::path::std_config);
+	//Config config;
+	//json config = FileManager::GetInstance()->ReadJson(global::path::std_config);
 
 #pragma region 初始化 Console
 	/*
 	* 如果 DebugMode 有開啟就創建 Console
 	*/
-	if (config["DebugMode"] == true)
+	if (global::config->DebugMode == true)
 	{
 		ConsoleManager::GetInstance()->Enable();
 	}
@@ -39,7 +57,7 @@ int main(array<String^>^ args)
 
 #pragma region 啟動本地伺服器
 	
-	System::String^ port = utility::stdStr2system(config["LocalServer"]["Port"].get<std::string>());
+	System::String^ port = utility::stdStr2system(global::config->LocalServer["Port"]);
 	LocalServer::Instance->Start(port);
 
 	Application::EnableVisualStyles();
@@ -62,7 +80,7 @@ int main(array<String^>^ args)
 	* 不知道為什麼放在 SettingsForm 的構造函數裡面 nlohmann::json 會報錯
 	* 所以在這裡初始化
 	*/
-	if (config["DebugMode"] == true)
+	if (global::config->DebugMode == true)
 		global::form::settingsForm->debugMode_checkBox->Checked = true;
 	else
 		global::form::settingsForm->debugMode_checkBox->Checked = false;

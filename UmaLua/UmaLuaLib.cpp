@@ -3,13 +3,13 @@
 compile cmd:
 
 g++ -shared -o UmaLuaLib.dll UmaLuaLib.cpp -I"D:/Cpp/Projects/UmaAssistant/vcpkg/installed/x64-windows/include" -I"D:/Program Files/Lua/lua54/include" -L"D:/Cpp/Projects/UmaAssistant/vcpkg/installed/x64-windows/lib" -L"D:/Program Files/Lua/lua54/lib" -lcurl -llua54
-
+g++ -shared -o UmaLuaLib.dll UmaLuaLib.cpp  -I ./include  -L ./lib -llua54
 */
 
 #include <iostream>
 #include <thread>
 
-#include <curl/curl.h>
+// #include <curl/curl.h>
 
 #include <lua.hpp>
 

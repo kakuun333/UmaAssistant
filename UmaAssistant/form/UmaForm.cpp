@@ -1,4 +1,5 @@
 ﻿#include "../stdafx.h"
+
 //#using <System.dll>
 //#using <System.Net.dll>
 
@@ -15,6 +16,7 @@ namespace UmaAssistant
 		//
 		//TODO:  在此加入建構函式程式碼
 		//
+
 
 #pragma region WebBrowser
 		//choiceWebBrowser->DocumentCompleted += gcnew WebBrowserDocumentCompletedEventHandler(&OnDocumentCompleted);
@@ -60,9 +62,23 @@ namespace UmaAssistant
 	{
 		Scanner* scanner = Scanner::GetInstance();
 
+		FileManager* fileManager = FileManager::GetInstance();
+		json config = fileManager->ReadJson(global::path::std_config);
+
 		if (!global::umaswitch::Scanning)
 		{
-			scanner->Start("jpn");
+			switch (config["GameServer"].get<int>())
+			{
+			case GameServerType::JP:
+				scanner->Start("jpn");
+				Console::WriteLine("scanner GameServer: JP");
+				break;
+			case GameServerType::TW:
+				scanner->Start("chi_tra");
+				Console::WriteLine("scanner GameServer: TW");
+				break;
+			}
+			
 
 			this->scan_btn->Text = "停止";
 		}

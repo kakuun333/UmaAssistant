@@ -34,12 +34,12 @@ namespace UmaAssistant {
 			}
 		}
 
-	public: System::Windows::Forms::TextBox^ event_title_textbox;
 
 
-	private: System::Windows::Forms::Label^ label1;
-	public: System::Windows::Forms::TextBox^ event_owner_textBox;
-	private: System::Windows::Forms::Label^ label2;
+
+
+
+
 	private: System::Windows::Forms::PictureBox^ icon_pictureBox;
 	private: System::ComponentModel::IContainer^ components;
 
@@ -57,7 +57,6 @@ namespace UmaAssistant {
 	private: System::Windows::Forms::Button^ settings_btn;
 	private: System::Windows::Forms::Button^ scan_btn;
 	public: System::Windows::Forms::Button^ screenshot_preview_btn;
-	private:
 
 
 
@@ -68,28 +67,16 @@ namespace UmaAssistant {
 
 
 
-	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
-	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel2;
-	public: System::Windows::Forms::FlowLayoutPanel^ choicePanel;
-	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel3;
-	private: System::Windows::Forms::Label^ label3;
-	public: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::Label^ label4;
-	public: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
 	public: System::Windows::Forms::Button^ test_btn;
-	private:
-
 
 	public: System::Windows::Forms::WebBrowser^ characterNameWebBrowser;
 	private: System::Windows::Forms::Button^ clean_current_character_btn;
 	public: System::Windows::Forms::Label^ game_window_status_label;
-	private:
+
 
 	private: System::Windows::Forms::Label^ app_name_label;
-	public:
 
-	public:
 
 
 	public: System::Windows::Forms::WebBrowser^ choiceWebBrowser;
@@ -103,24 +90,12 @@ namespace UmaAssistant {
 		{
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(UmaForm::typeid));
-			this->event_title_textbox = (gcnew System::Windows::Forms::TextBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->event_owner_textBox = (gcnew System::Windows::Forms::TextBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->icon_pictureBox = (gcnew System::Windows::Forms::PictureBox());
 			this->close_form_btn = (gcnew System::Windows::Forms::Button());
 			this->minimize_btn = (gcnew System::Windows::Forms::Button());
 			this->settings_btn = (gcnew System::Windows::Forms::Button());
 			this->scan_btn = (gcnew System::Windows::Forms::Button());
 			this->screenshot_preview_btn = (gcnew System::Windows::Forms::Button());
-			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
-			this->tableLayoutPanel2 = (gcnew System::Windows::Forms::TableLayoutPanel());
-			this->choicePanel = (gcnew System::Windows::Forms::FlowLayoutPanel());
-			this->tableLayoutPanel3 = (gcnew System::Windows::Forms::TableLayoutPanel());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
 			this->test_btn = (gcnew System::Windows::Forms::Button());
 			this->choiceWebBrowser = (gcnew System::Windows::Forms::WebBrowser());
@@ -129,75 +104,7 @@ namespace UmaAssistant {
 			this->game_window_status_label = (gcnew System::Windows::Forms::Label());
 			this->app_name_label = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->icon_pictureBox))->BeginInit();
-			this->tableLayoutPanel1->SuspendLayout();
-			this->tableLayoutPanel2->SuspendLayout();
-			this->choicePanel->SuspendLayout();
-			this->tableLayoutPanel3->SuspendLayout();
 			this->SuspendLayout();
-			// 
-			// event_title_textbox
-			// 
-			this->event_title_textbox->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->event_title_textbox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)),
-				static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(81)));
-			this->event_title_textbox->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->event_title_textbox->Cursor = System::Windows::Forms::Cursors::Default;
-			this->event_title_textbox->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
-			this->event_title_textbox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
-				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->event_title_textbox->Location = System::Drawing::Point(140, 3);
-			this->event_title_textbox->Multiline = true;
-			this->event_title_textbox->Name = L"event_title_textbox";
-			this->event_title_textbox->ReadOnly = true;
-			this->event_title_textbox->Size = System::Drawing::Size(366, 20);
-			this->event_title_textbox->TabIndex = 2;
-			this->event_title_textbox->Text = L"名前はまだ無い。";
-			// 
-			// label1
-			// 
-			this->label1->Anchor = System::Windows::Forms::AnchorStyles::Left;
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
-			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
-				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->label1->Location = System::Drawing::Point(3, 3);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(102, 20);
-			this->label1->TabIndex = 5;
-			this->label1->Text = L"event_title";
-			// 
-			// event_owner_textBox
-			// 
-			this->event_owner_textBox->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->event_owner_textBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)),
-				static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(81)));
-			this->event_owner_textBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->event_owner_textBox->Cursor = System::Windows::Forms::Cursors::Default;
-			this->event_owner_textBox->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
-			this->event_owner_textBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
-				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->event_owner_textBox->Location = System::Drawing::Point(141, 3);
-			this->event_owner_textBox->Multiline = true;
-			this->event_owner_textBox->Name = L"event_owner_textBox";
-			this->event_owner_textBox->ReadOnly = true;
-			this->event_owner_textBox->Size = System::Drawing::Size(366, 1);
-			this->event_owner_textBox->TabIndex = 6;
-			this->event_owner_textBox->Text = L"吾輩は猫である。";
-			// 
-			// label2
-			// 
-			this->label2->Anchor = System::Windows::Forms::AnchorStyles::Left;
-			this->label2->AutoSize = true;
-			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
-			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
-				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->label2->Location = System::Drawing::Point(3, 0);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(116, 6);
-			this->label2->TabIndex = 7;
-			this->label2->Text = L"event_owner";
 			// 
 			// icon_pictureBox
 			// 
@@ -222,7 +129,7 @@ namespace UmaAssistant {
 			this->close_form_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->close_form_btn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"close_form_btn.Image")));
-			this->close_form_btn->Location = System::Drawing::Point(526, 0);
+			this->close_form_btn->Location = System::Drawing::Point(521, 0);
 			this->close_form_btn->Name = L"close_form_btn";
 			this->close_form_btn->Size = System::Drawing::Size(40, 32);
 			this->close_form_btn->TabIndex = 9;
@@ -241,7 +148,7 @@ namespace UmaAssistant {
 			this->minimize_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->minimize_btn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"minimize_btn.Image")));
-			this->minimize_btn->Location = System::Drawing::Point(481, 0);
+			this->minimize_btn->Location = System::Drawing::Point(476, 0);
 			this->minimize_btn->Name = L"minimize_btn";
 			this->minimize_btn->Size = System::Drawing::Size(39, 32);
 			this->minimize_btn->TabIndex = 10;
@@ -308,136 +215,6 @@ namespace UmaAssistant {
 			this->screenshot_preview_btn->UseVisualStyleBackColor = false;
 			this->screenshot_preview_btn->Click += gcnew System::EventHandler(this, &UmaForm::screenshot_preview_btn_Click);
 			// 
-			// tableLayoutPanel1
-			// 
-			this->tableLayoutPanel1->BackColor = System::Drawing::Color::Transparent;
-			this->tableLayoutPanel1->ColumnCount = 2;
-			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				372)));
-			this->tableLayoutPanel1->Controls->Add(this->label2, 0, 0);
-			this->tableLayoutPanel1->Controls->Add(this->event_owner_textBox, 1, 0);
-			this->tableLayoutPanel1->Location = System::Drawing::Point(580, 90);
-			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
-			this->tableLayoutPanel1->RowCount = 2;
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 20)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(510, 26);
-			this->tableLayoutPanel1->TabIndex = 18;
-			// 
-			// tableLayoutPanel2
-			// 
-			this->tableLayoutPanel2->BackColor = System::Drawing::Color::Transparent;
-			this->tableLayoutPanel2->ColumnCount = 2;
-			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				27.05882F)));
-			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				72.94118F)));
-			this->tableLayoutPanel2->Controls->Add(this->label1, 0, 0);
-			this->tableLayoutPanel2->Controls->Add(this->event_title_textbox, 1, 0);
-			this->tableLayoutPanel2->Location = System::Drawing::Point(580, 122);
-			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
-			this->tableLayoutPanel2->RowCount = 1;
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 20)));
-			this->tableLayoutPanel2->Size = System::Drawing::Size(510, 26);
-			this->tableLayoutPanel2->TabIndex = 19;
-			// 
-			// choicePanel
-			// 
-			this->choicePanel->AutoScroll = true;
-			this->choicePanel->BackColor = System::Drawing::Color::Transparent;
-			this->choicePanel->Controls->Add(this->tableLayoutPanel3);
-			this->choicePanel->Location = System::Drawing::Point(580, 154);
-			this->choicePanel->Name = L"choicePanel";
-			this->choicePanel->Size = System::Drawing::Size(513, 267);
-			this->choicePanel->TabIndex = 20;
-			// 
-			// tableLayoutPanel3
-			// 
-			this->tableLayoutPanel3->BackColor = System::Drawing::Color::Transparent;
-			this->tableLayoutPanel3->ColumnCount = 2;
-			this->tableLayoutPanel3->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				26.39175F)));
-			this->tableLayoutPanel3->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				73.60825F)));
-			this->tableLayoutPanel3->Controls->Add(this->textBox2, 1, 1);
-			this->tableLayoutPanel3->Controls->Add(this->label3, 0, 0);
-			this->tableLayoutPanel3->Controls->Add(this->textBox1, 1, 0);
-			this->tableLayoutPanel3->Controls->Add(this->label4, 0, 1);
-			this->tableLayoutPanel3->Location = System::Drawing::Point(3, 3);
-			this->tableLayoutPanel3->Name = L"tableLayoutPanel3";
-			this->tableLayoutPanel3->RowCount = 2;
-			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 25)));
-			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle()));
-			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 20)));
-			this->tableLayoutPanel3->Size = System::Drawing::Size(485, 71);
-			this->tableLayoutPanel3->TabIndex = 19;
-			// 
-			// textBox2
-			// 
-			this->textBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)), static_cast<System::Int32>(static_cast<System::Byte>(61)),
-				static_cast<System::Int32>(static_cast<System::Byte>(81)));
-			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox2->Cursor = System::Windows::Forms::Cursors::Default;
-			this->textBox2->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
-			this->textBox2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
-				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->textBox2->Location = System::Drawing::Point(130, 28);
-			this->textBox2->Multiline = true;
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->ReadOnly = true;
-			this->textBox2->Size = System::Drawing::Size(352, 52);
-			this->textBox2->TabIndex = 6;
-			this->textBox2->Text = L"吾輩は猫であるるるるるるるるるるるるるるるるるるるるるる";
-			// 
-			// label3
-			// 
-			this->label3->Anchor = System::Windows::Forms::AnchorStyles::Left;
-			this->label3->AutoSize = true;
-			this->label3->BackColor = System::Drawing::Color::Transparent;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
-			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
-				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->label3->Location = System::Drawing::Point(3, 2);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(105, 20);
-			this->label3->TabIndex = 7;
-			this->label3->Text = L"choice_title";
-			// 
-			// textBox1
-			// 
-			this->textBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)), static_cast<System::Int32>(static_cast<System::Byte>(61)),
-				static_cast<System::Int32>(static_cast<System::Byte>(81)));
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox1->Cursor = System::Windows::Forms::Cursors::Default;
-			this->textBox1->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
-			this->textBox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
-				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->textBox1->Location = System::Drawing::Point(130, 3);
-			this->textBox1->Multiline = true;
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->ReadOnly = true;
-			this->textBox1->Size = System::Drawing::Size(352, 19);
-			this->textBox1->TabIndex = 6;
-			this->textBox1->Text = L"吾輩は猫である。";
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->BackColor = System::Drawing::Color::Transparent;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
-			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
-				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->label4->Location = System::Drawing::Point(3, 25);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(114, 40);
-			this->label4->TabIndex = 7;
-			this->label4->Text = L"choice_effect";
-			// 
 			// contextMenuStrip1
 			// 
 			this->contextMenuStrip1->Name = L"contextMenuStrip1";
@@ -488,7 +265,6 @@ namespace UmaAssistant {
 			this->clean_current_character_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
 				static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
 			this->clean_current_character_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->clean_current_character_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
 			this->clean_current_character_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->clean_current_character_btn->Location = System::Drawing::Point(478, 113);
@@ -504,11 +280,10 @@ namespace UmaAssistant {
 			this->game_window_status_label->Anchor = System::Windows::Forms::AnchorStyles::Left;
 			this->game_window_status_label->AutoSize = true;
 			this->game_window_status_label->BackColor = System::Drawing::Color::Transparent;
-			this->game_window_status_label->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->game_window_status_label->ForeColor = System::Drawing::Color::Red;
 			this->game_window_status_label->Location = System::Drawing::Point(168, 8);
 			this->game_window_status_label->Name = L"game_window_status_label";
-			this->game_window_status_label->Size = System::Drawing::Size(122, 24);
+			this->game_window_status_label->Size = System::Drawing::Size(107, 20);
 			this->game_window_status_label->TabIndex = 8;
 			this->game_window_status_label->Text = L"未找到遊戲視窗";
 			// 
@@ -517,7 +292,6 @@ namespace UmaAssistant {
 			this->app_name_label->Anchor = System::Windows::Forms::AnchorStyles::Left;
 			this->app_name_label->AutoSize = true;
 			this->app_name_label->BackColor = System::Drawing::Color::Transparent;
-			this->app_name_label->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
 			this->app_name_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->app_name_label->Location = System::Drawing::Point(39, 9);
@@ -530,24 +304,20 @@ namespace UmaAssistant {
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(565, 550);
+			this->ClientSize = System::Drawing::Size(560, 550);
 			this->Controls->Add(this->app_name_label);
 			this->Controls->Add(this->game_window_status_label);
 			this->Controls->Add(this->clean_current_character_btn);
 			this->Controls->Add(this->characterNameWebBrowser);
 			this->Controls->Add(this->choiceWebBrowser);
 			this->Controls->Add(this->test_btn);
-			this->Controls->Add(this->choicePanel);
-			this->Controls->Add(this->tableLayoutPanel2);
-			this->Controls->Add(this->tableLayoutPanel1);
 			this->Controls->Add(this->screenshot_preview_btn);
 			this->Controls->Add(this->scan_btn);
 			this->Controls->Add(this->settings_btn);
 			this->Controls->Add(this->minimize_btn);
 			this->Controls->Add(this->close_form_btn);
 			this->Controls->Add(this->icon_pictureBox);
-			this->Font = (gcnew System::Drawing::Font(L"微軟正黑體", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(136)));
+			this->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"UmaForm";
@@ -556,13 +326,6 @@ namespace UmaAssistant {
 			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &UmaForm::UmaForm_MouseMove);
 			this->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &UmaForm::UmaForm_MouseUp);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->icon_pictureBox))->EndInit();
-			this->tableLayoutPanel1->ResumeLayout(false);
-			this->tableLayoutPanel1->PerformLayout();
-			this->tableLayoutPanel2->ResumeLayout(false);
-			this->tableLayoutPanel2->PerformLayout();
-			this->choicePanel->ResumeLayout(false);
-			this->tableLayoutPanel3->ResumeLayout(false);
-			this->tableLayoutPanel3->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

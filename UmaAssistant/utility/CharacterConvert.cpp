@@ -2,6 +2,14 @@
 
 namespace utility
 {
+	std::wstring string2wstring(const std::string& str)
+	{
+		int size = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, nullptr, 0);
+		std::wstring result(size, L'\0');
+		MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, &result[0], size);
+		return result;
+	}
+
 	std::string systemStr2std(System::String^ systemStr)
 	{
 		marshal_context context;

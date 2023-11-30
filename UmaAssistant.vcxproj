@@ -26,6 +26,7 @@
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>UmaAssistant</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>7.0</WindowsTargetPlatformMinVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -74,7 +75,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ExecutablePath>$(OutDir)dll;$(ExecutablePath)</ExecutablePath>
+    <OutDir>$(ProjectDir)Release</OutDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -122,13 +126,15 @@
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)vcpkg\installed\x64-windows\include;D:\Libraries\opencv\build\include;D:\Program Files\Lua\lua54\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)vcpkg\installed\x64-windows\include;D:\Libraries\opencv\build\include;D:\Program Files\Lua\lua54\include;D:\Program Files\Python\Python312\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>gdi32.lib;user32.lib;opencv_world481.lib;opencv_world481d.lib;lua54.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>gdi32.lib;user32.lib;opencv_world481.lib;lua54.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
-      <AdditionalLibraryDirectories>$(ProjectDir)vcpkg\installed\x64-windows\lib;D:\Libraries\opencv\build\x64\vc16\lib;D:\Program Files\Lua\lua54\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)vcpkg\installed\x64-windows\lib;D:\Libraries\opencv\build\x64\vc16\lib;D:\Program Files\Lua\lua54\lib;D:\Program Files\Python\Python312\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EmbedManagedResourceFile>$(ProjectDir)UmaAssistant/form/UmaForm.resx;$(ProjectDir)UmaAssistant/form/SettingsForm.resx;%(EmbedManagedResourceFile)</EmbedManagedResourceFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -139,10 +145,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="UmaAssistant\class\Config.cpp" />
     <ClCompile Include="UmaAssistant\class\ConsoleManager.cpp" />
     <ClCompile Include="UmaAssistant\class\LocalServer.cpp" />
     <ClCompile Include="UmaAssistant\class\FileManager.cpp" />
     <ClCompile Include="UmaAssistant\class\ref\FormController.cpp" />
+    <ClCompile Include="UmaAssistant\global\Others.cpp" />
     <ClCompile Include="UmaAssistant\utility\CharacterCompare.cpp" />
     <ClCompile Include="UmaAssistant\utility\FormControl.cpp" />
     <ClCompile Include="UmaAssistant\global\UmaSwitch.cpp" />
@@ -166,6 +174,7 @@
     <ClCompile Include="UmaAssistant\class\GameWindowFinder.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="UmaAssistant\class\Config.h" />
     <ClInclude Include="UmaAssistant\class\ConsoleManager.h" />
     <ClInclude Include="UmaAssistant\class\LocalServer.h" />
     <ClInclude Include="UmaAssistant\class\FileManager.h" />
@@ -174,6 +183,8 @@
     <ClInclude Include="UmaAssistant\enum\FileType.h" />
     <ClInclude Include="UmaAssistant\enum\GameWindowType.h" />
     <ClInclude Include="UmaAssistant\enum\ImageType.h" />
+    <ClInclude Include="UmaAssistant\enum\GameServerType.h" />
+    <ClInclude Include="UmaAssistant\global\Others.h" />
     <ClInclude Include="UmaAssistant\utility\CharacterCompare.h" />
     <ClInclude Include="UmaAssistant\utility\FormControl.h" />
     <ClInclude Include="UmaAssistant\global\UmaSwitch.h" />

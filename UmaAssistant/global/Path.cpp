@@ -25,9 +25,15 @@ namespace global
 
 		/*		std::string		*//*		std::string		*//*		std::string		*/
 		std::string std_currentDir						 = utility::GetCurrentDir();  // char ªº CurrentDirectory
+
+		// UmaPy
+		std::string std_umaPy = std_currentDir + "\\UmaPy";
+		std::string std_event_data_jp2tw_dumper_py = std_umaPy + "\\event_data_jp2tw_dumper.py";
+
 		// UmaMisc
 		std::string std_umaMisc = std_currentDir + "\\UmaMisc";
 		std::string std_config = std_umaMisc + "\\config.json";
+		std::string std_MochiyPopOne = std_umaMisc + "\\Font\\MochiyPopOne-Regular.ttf";
 
 		// UmaTemp
 		std::string std_UmaTemp							 = std_currentDir + "\\UmaTemp";
@@ -42,8 +48,13 @@ namespace global
 
 		// UmaData
 		std::string std_UmaData							 = std_currentDir + "\\UmaData";
+
 		std::string std_event_data_jp_json				 = std_UmaData + "\\event_data_jp.json";
 		std::string std_skill_data_jp_json				 = std_UmaData + "\\skill_data_jp.json";
+
+		std::string std_event_data_tw_json				 = std_UmaData + "\\event_data_tw.json";
+		std::string std_skill_data_tw_json				 = std_UmaData + "\\skill_data_tw.json";
+
 		std::string std_similar_char_list_json			 = std_UmaData + "\\similar_char_list.json";
 
 		// UmaLua

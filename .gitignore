@@ -195,3 +195,6 @@ x64/Release/UmaSwitch.nativecodeanalysis.sarif
 x64/Release/console.lua
 UmaPy/__pycache__
 UmaPy/umaenv
+python312.dll
+lua54.dll
+Release

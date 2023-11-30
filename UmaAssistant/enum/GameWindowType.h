@@ -1,6 +1,6 @@
 #pragma once
 enum GameWindowType
 {
-	DMM,
-	BLUE_STACKS,
+	DMM = 0,
+	BLUE_STACKS = 1,
 };

@@ -7,7 +7,7 @@ HWND GameWindowFinder::_currentGameWindow = NULL;
 std::map<GameWindowType, LPCWSTR> GameWindowFinder::_gameWindowDict =
 {
 	{ GameWindowType::DMM,		   L"umamusume" },
-	{ GameWindowType::BLUE_STACKS, L"umamusume" },
+	{ GameWindowType::BLUE_STACKS, L"BlueStacks App Player 1" },
 
 };
 
@@ -19,15 +19,18 @@ void GameWindowFinder::CreateFindGameWindowThread()
 			{
 				if (FindWindow(nullptr, _gameWindowDict[GameWindowType::DMM]))
 				{
-					_currentGameWindow = FindWindow(nullptr, L"umamusume");
+					_currentGameWindow = FindWindow(nullptr, _gameWindowDict[GameWindowType::DMM]);
 					//std::cout << u8"[WindowFinder] GameWindow: umamusume" << std::endl;
 					utility::formctrl::Text(global::form::umaForm->game_window_status_label, "已找到遊戲視窗");
 					utility::formctrl::ForeColor(global::form::umaForm->game_window_status_label, 0, 255, 0);
 				}
-				//else if (FindWindow(nullptr, _gameWindowDict[GameWindowType::BLUE_STACKS]))
-				//{
-
-				//}
+				else if (FindWindow(nullptr, _gameWindowDict[GameWindowType::BLUE_STACKS]))
+				{
+					_currentGameWindow = FindWindow(nullptr, _gameWindowDict[GameWindowType::BLUE_STACKS]);
+					//std::cout << u8"[WindowFinder] GameWindow: umamusume" << std::endl;
+					utility::formctrl::Text(global::form::umaForm->game_window_status_label, "已找到遊戲視窗");
+					utility::formctrl::ForeColor(global::form::umaForm->game_window_status_label, 0, 255, 0);
+				}
 				else
 				{
 					_currentGameWindow = NULL;

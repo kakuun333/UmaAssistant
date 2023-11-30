@@ -8,8 +8,14 @@ using namespace System;
 using namespace System::Drawing;
 
 
-constexpr inline int FIX_GAME_WIDTH = 13;
-constexpr inline int FIX_GAME_POS_Y = 30;
+constexpr inline int DMM_FIX_GAME_WIDTH = 13;
+constexpr inline int DMM_FIX_GAME_POS_Y = 30;
+
+constexpr inline int BLUE_STACKS_FIX_GAME_WIDTH = 44;
+constexpr inline int BLUE_STACKS_FIX_GAME_HEIGHT = 37;
+constexpr inline int BLUE_STACKS_FIX_GAME_POS_X = 10;
+constexpr inline int BLUE_STACKS_FIX_GAME_POS_Y = 36;
+
 constexpr inline double EVENT_ICON_METRIC = 0.73;
 
 
@@ -31,7 +37,6 @@ class Screenshot
 {
 private:
 	cv::Mat hwnd2mat(HWND hwnd);
-	
 
 	void CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPattern);
 

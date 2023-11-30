@@ -5,7 +5,8 @@ DataManager* DataManager::_instance = nullptr;
 
 bool DataManager::_currentCharacterInfoLocked = false;
 
-nlohmann::json DataManager::event_data_json;
+nlohmann::json DataManager::event_data_jp_json;
+nlohmann::json DataManager::event_data_tw_json;
 
 std::map<std::string, std::string> DataManager::_currentCharacterInfoDict =
 {
@@ -21,11 +22,24 @@ std::map<std::string, std::string> DataManager::_currentCharacterInfoDict =
 void DataManager::InitEventDataJson()
 {
 	FileManager* fileManager = FileManager::GetInstance();
-	event_data_json = fileManager->ReadJson(global::path::c_event_data_jp_json);
+	event_data_jp_json = fileManager->ReadJson(global::path::std_event_data_jp_json);
+	event_data_tw_json = fileManager->ReadJson(global::path::std_event_data_tw_json);
 }
 
 bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 {
+	json event_data_json;
+
+	switch (global::config->GameServer)
+	{
+	case GameServerType::JP:
+		event_data_json = event_data_jp_json;
+		break;
+	case GameServerType::TW:
+		event_data_json = event_data_tw_json;
+	}
+
+
 	WebManager* webManager = WebManager::GetInstance();
 
 	std::thread* oneStarThread = nullptr;
@@ -109,6 +123,18 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 
 UmaEventData DataManager::GetCurrentCharacterUmaEventData(std::string scanned_text)
 {
+	json event_data_json;
+
+	switch (global::config->GameServer)
+	{
+	case GameServerType::JP:
+		event_data_json = event_data_jp_json;
+		break;
+	case GameServerType::TW:
+		event_data_json = event_data_tw_json;
+	}
+
+
 	UmaEventData umaEventData;
 
 
@@ -188,6 +214,18 @@ UmaEventData DataManager::GetCurrentCharacterUmaEventData(std::string scanned_te
 
 UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 {
+	json event_data_json;
+
+	switch (global::config->GameServer)
+	{
+	case GameServerType::JP:
+		event_data_json = event_data_jp_json;
+		break;
+	case GameServerType::TW:
+		event_data_json = event_data_tw_json;
+	}
+
+
 	UmaEventData umaEventData;
 
 	std::map<std::string, float> similarEventTitleList = {};

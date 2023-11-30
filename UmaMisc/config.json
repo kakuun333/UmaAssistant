@@ -1,6 +1,8 @@
 {
-  "DebugMode": false,
+  "DebugMode": true,
+  "GameServer": 1,
+  "GameWindow": 1,
   "LocalServer": {
-    "Port": "3411"
+    "Port": "1234"
   }
 }

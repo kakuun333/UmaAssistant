@@ -15,7 +15,9 @@ private:
 
 	static bool _currentCharacterInfoLocked;
 
-	static nlohmann::json event_data_json;
+	static nlohmann::json event_data_jp_json;
+
+	static nlohmann::json event_data_tw_json;
 public:
 	static DataManager* GetInstance()
 	{

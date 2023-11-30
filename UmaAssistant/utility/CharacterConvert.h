@@ -3,6 +3,8 @@
 
 namespace utility
 {
+	std::wstring string2wstring(const std::string& str);
+
 	// §â System::String^ Âà¦¨ std::string
 	std::string systemStr2std(System::String^ systemStr);
 

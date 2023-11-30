@@ -25,6 +25,8 @@ private:
 
 	static tesseract::TessBaseAPI* ocr_jpn;
 
+	static tesseract::TessBaseAPI* ocr_tw;
+
 	std::string GetScannedText(cv::Mat image, std::string language, ImageType imgType);
 public:
 	static Scanner* GetInstance()
@@ -37,6 +39,8 @@ public:
 	}
 
 	static void InitOcrJpn();
+
+	static void InitOcrTw();
 
 	void Start(std::string language = "jpn");
 

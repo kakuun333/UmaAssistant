@@ -123,8 +123,7 @@ System::Void FormDesigner::CreateChoiceTable(UmaChoice choice)
 	choice_effect_table->Controls->Add(choice_effect_textbox, 1, 0);
 
 
-	utility::formctrl::Add(global::form::umaForm->choicePanel, choice_title_table);
-	utility::formctrl::Add(global::form::umaForm->choicePanel, choice_effect_table);
+
 	//if (global::form::umaForm->choicePanel->InvokeRequired)
 	//{
 	//	global::form::umaForm->choicePanel->Invoke(gcnew Action<Control^, Control^>());

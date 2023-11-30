@@ -90,6 +90,12 @@
     <ClCompile Include="UmaAssistant\class\ConsoleManager.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="UmaAssistant\class\Config.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="UmaAssistant\global\Others.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UmaAssistant\form\UmaForm.h">
@@ -182,6 +188,15 @@
     <ClInclude Include="UmaAssistant\class\ConsoleManager.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+    <ClInclude Include="UmaAssistant\enum\GameServerType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="UmaAssistant\class\Config.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="UmaAssistant\global\Others.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="UmaWeb\index.html" />
@@ -190,10 +205,10 @@
     <EmbeddedResource Include="SettingsForm.resx">
       <Filter>資源檔</Filter>
     </EmbeddedResource>
-    <EmbeddedResource Include="PreviewForm.resx">
+    <EmbeddedResource Include="UmaForm.resx">
       <Filter>資源檔</Filter>
     </EmbeddedResource>
-    <EmbeddedResource Include="UmaForm.resx">
+    <EmbeddedResource Include="PreviewForm.resx">
       <Filter>資源檔</Filter>
     </EmbeddedResource>
   </ItemGroup>

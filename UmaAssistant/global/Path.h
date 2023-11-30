@@ -31,8 +31,14 @@ namespace global
 		/*		std::string		*//*		std::string		*//*		std::string		*/
 		extern std::string std_currentDir;
 
+		// UmaPy
+		extern std::string std_umaPy;
+		extern std::string std_event_data_jp2tw_dumper_py;
+
+		// UmaMisc
 		extern std::string std_umaMisc;
 		extern std::string std_config;
+		extern std::string std_MochiyPopOne;
 
 		// UmaTemp
 		extern std::string std_UmaTemp;
@@ -47,8 +53,13 @@ namespace global
 
 		// UmaData
 		extern std::string std_UmaData;
+
 		extern std::string std_event_data_jp_json;
 		extern std::string std_skill_data_jp_json;
+
+		extern std::string std_event_data_tw_json;
+		extern std::string std_skill_data_tw_json;
+
 		extern std::string std_similar_char_list_json;
 
 		// UmaLua
