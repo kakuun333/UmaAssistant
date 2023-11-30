@@ -1,10 +1,15 @@
 local umalib = require("UmaLuaLib");
 local pe = require("print_enhance");
 local utility = require("utility");
+local Console = require("console");
+
+
+
 
 parser = {}
 
 ---- 本地變數 ---- 本地變數 ---- 本地變數 ---- 本地變數 ---- 本地變數 
+local console = Console.new();
 
 local jp_status_name_list = {
     "スピード",
@@ -20,6 +25,64 @@ local status_class_dict = {
     ["パワー"] = "power",
     ["根性"] = "konjyou",
     ["賢さ"] = "kasikosa",
+}
+
+local all_condition_list = {
+    -- プラス
+    "引っ込み思案",
+    "練習上手○",
+    "練習上手◯",
+    "練習上手◎",
+    "切れ者",
+    "注目株",
+    "愛嬌○",
+    "愛嬌◯",
+    "大輪の輝き",
+    "ファンとの約束",
+    -- 佐岳メイ
+    "幸運体質",
+    "ポジティブ思考",
+
+    -- マイナス
+    "練習ベタ",
+    "練習下手",
+    "片頭痛",
+    "肌荒れ",
+    "夜ふかし気味",
+    "太り気味",
+    "なまけ癖",
+    "小さなほころび",
+    "まだまだ準備中",
+}
+
+local plus_condition_list = {
+    -- プラス
+    "引っ込み思案",
+    "練習上手○",
+    "練習上手◯",
+    "練習上手◎",
+    "切れ者",
+    "注目株",
+    "愛嬌○",
+    "愛嬌◯",
+    "大輪の輝き",
+    "ファンとの約束",
+    -- 佐岳メイ
+    "幸運体質",
+    "ポジティブ思考",
+}
+
+local minus_condition_list = {
+    -- マイナス
+    "練習ベタ",
+    "練習下手",
+    "片頭痛",
+    "肌荒れ",
+    "夜ふかし気味",
+    "太り気味",
+    "なまけ癖",
+    "小さなほころび",
+    "まだまだ準備中",
 }
 
 ---- 本地函數 ---- 本地函數 ---- 本地函數 ---- 本地函數 ---- 本地函數 
@@ -51,7 +114,50 @@ end
 
 local function placeTagToSkillHint(choice_effect)
 
-    choice_effect = string.gsub(choice_effect, "『(.-)』", "<span class=\"skill_hint\">『%1』</span>")
+    --[[
+    例外狀況：
+    『バ場状況や出場したレース場に関係するスキルのヒント』
+    ]]
+
+    for skillOrCondition in string.gmatch(choice_effect, "『(.-)』") do
+        for _, condition in ipairs(all_condition_list) do
+            if skillOrCondition == condition or skillOrCondition == "バ場状況や出場したレース場に関係するスキルのヒント"  then
+                goto continue
+            end
+        end
+    
+        local skill = skillOrCondition
+        -- console:print(skill);
+
+        choice_effect = string.gsub(choice_effect, "『"..skill.."』", "<span class=\"skill_hint\">『"..skill.."』</span>")
+    
+        ::continue::
+    end
+
+
+    return choice_effect;
+end
+
+local function placeTagToCondition(choice_effect)
+    for skillOrCondition in string.gmatch(choice_effect, "『(.-)』") do
+        for _, plus_condition in ipairs(plus_condition_list) do
+            if skillOrCondition == plus_condition then
+                local plus_condition = skillOrCondition
+                -- console:print(plus_condition)
+                choice_effect = string.gsub(choice_effect, "『"..plus_condition.."』", "<span class=\"plus_condition\">『"..plus_condition.."』</span>")
+            end
+        end
+    end
+
+    for skillOrCondition in string.gmatch(choice_effect, "『(.-)』") do
+        for _, minus_condition in ipairs(minus_condition_list) do
+            if skillOrCondition == minus_condition then
+                local minus_condition = skillOrCondition
+                -- console:print(minus_condition)
+                choice_effect = string.gsub(choice_effect, "『"..minus_condition.."』", "<span class=\"minus_condition\">『"..minus_condition.."』</span>")
+            end
+        end
+    end
 
     return choice_effect;
 end
@@ -208,12 +314,12 @@ function parser.getEventHtmlById(html, id)
     -- local pattern = "<[%w+][%s+]id=\"" .. id .. "\"(.-)</body>";
     -- local event_html = string.match(html, pattern);
 
-    -- print(html);
-    -- print(event_html);
+    -- console:print(html);
+    -- console:print(event_html);
 
     local final_html = event_owner_tag .. event_html;
 
-    -- print("id=", id, "owner_type=", owner_type, "rare=", rare);
+    -- console:print("id=", id, "owner_type=", owner_type, "rare=", rare);
     return final_html, owner_type, rare;
 end
 
@@ -266,10 +372,10 @@ function parser.getEventDict(event_html)
 
     for event_content in string.gmatch(event_html, "(<h4.->.-</table>)") do
 
-        -- print("============================");
-        -- print("イベント：\n", event_content);
+        -- console:print("============================");
+        -- console:print("イベント：\n", event_content);
         local event_title = string.match(event_content, "<h4.->(.-)</h4>");
-        -- print("イベントタイトル: ", event_title);
+        -- console:print("イベントタイトル: ", event_title);
 
         
         local choice_idx = 1;
@@ -282,11 +388,11 @@ function parser.getEventDict(event_html)
         for choice_html in string.gmatch(event_content, "<tr.->(.-)</tr>") do
             
             local choice_title = string.match(choice_html, "<th.->(.-)</th.->");
-            -- print("選択肢タイトル: ", choice_title);
+            -- console:print("選択肢タイトル: ", choice_title);
             local choice_effect = string.match(choice_html, "<td.->(.-)</td.->");
             
             if choice_title == nil or choice_effect == nil then
-                print(pe.yellow.."【警告】getEventDict(): choice_title 或 choice_effect 是 nil\nchoice_title: "..tostring(choice_title).."\nchoice_effect: "..tostring(choice_effect)..pe.reset);
+                console:print(pe.yellow.."【警告】getEventDict(): choice_title 或 choice_effect 是 nil\nchoice_title: "..tostring(choice_title).."\nchoice_effect: "..tostring(choice_effect)..pe.reset);
                 goto continue;
             end
 
@@ -314,11 +420,13 @@ function parser.getEventDict(event_html)
             ]]
             choice_effect = placeTagToStatus(choice_effect);
 
-            choice_effect = placeTagToSkillHint(choice_effect)
+            choice_effect = placeTagToSkillHint(choice_effect);
+
+            choice_effect = placeTagToCondition(choice_effect);
 
             -- local replace_br_effect = string.gsub(choice_effect, "<br>", "\n")
             -- local replace_hr_effect = string.gsub(replace_br_effect, "<hr>", "\n--------------\n")
-            -- print("選択肢効果: \n" .. replace_hr_effect);
+            -- console:print("選択肢効果: \n" .. replace_hr_effect);
             event_dict = event_dict or {}
             event_dict["event"] = event_dict["event"] or {}
             event_dict["event"][event_idx] = event_dict["event"][event_idx] or {}

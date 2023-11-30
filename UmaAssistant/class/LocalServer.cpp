@@ -95,7 +95,7 @@ void LocalServer::StartLocalServer(Object^ port)
 		// 開始監聽請求
 		listener->Start();
 
-		Console::WriteLine("正在監聽本地伺服器..."/*"Local Server listening..."*/);
+		Console::WriteLine("正在監聽本地伺服器... Port: " + port_str);
 
 		while (true)
 		{
@@ -131,8 +131,8 @@ void LocalServer::StartLocalServer(Object^ port)
 				array<Object^>^ paramsArray = gcnew array<Object^>
 				{
 					context,
-						static_cast<Object^>(safe_cast<Int32>(FileType::JSON)),
-						static_cast<Object^>(safe_cast<Int32>(FilePathType::UMA_DATA))
+					static_cast<Object^>(safe_cast<Int32>(FileType::JSON)),
+					static_cast<Object^>(safe_cast<Int32>(FilePathType::UMA_DATA))
 				};
 				ThreadPool::QueueUserWorkItem(gcnew WaitCallback(this, &LocalServer::HandleUmaWebRequest), paramsArray);
 			}
@@ -141,8 +141,8 @@ void LocalServer::StartLocalServer(Object^ port)
 				array<Object^>^ paramsArray = gcnew array<Object^>
 				{
 					context,
-						static_cast<Object^>(safe_cast<Int32>(FileType::JAVASCRIPT)),
-						static_cast<Object^>(safe_cast<Int32>(FilePathType::UMA_WEB))
+					static_cast<Object^>(safe_cast<Int32>(FileType::JAVASCRIPT)),
+					static_cast<Object^>(safe_cast<Int32>(FilePathType::UMA_WEB))
 				};
 				ThreadPool::QueueUserWorkItem(gcnew WaitCallback(this, &LocalServer::HandleUmaWebRequest), paramsArray);
 			}

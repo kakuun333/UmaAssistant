@@ -11,6 +11,9 @@ local parser = require("event_parser");
 local utility = require("utility");
 local pe = require("print_enhance");
 local fm = require("file_manager");
+local Console = require("console");
+
+local console = Console.new();
 
 
 -- local html = GetHtmlFromUrl("https://gamewith.jp/uma-musume/article/show/302924");
@@ -20,8 +23,9 @@ local fm = require("file_manager");
 -- print(skill_rare);
 -- print(skill_name);
 -- utility.deepprint(skill_dict);
-
-skill_data = dumper.dumpSkillData()
+dumper.dumpArticleIdFromSiteMap();
+dumper.dumpSkillBlackWhiteList(2000);
+skill_data = dumper.dumpSkillData(2000);
 
 -- utility.deepprint(skill_data);
 
@@ -29,3 +33,5 @@ skill_data = dumper.dumpSkillData()
 -- dumper.dumpSkillBlackWhiteList(2500);
 
 -- dumper.dumpArticleIdFromSiteMap();
+
+console:close();

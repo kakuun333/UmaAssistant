@@ -21,6 +21,8 @@ public:
 
 	nlohmann::json ReadJson(std::string path);
 
+	void WriteJson(std::string path, std::string jsonString);
+
 	System::String^ SysReadFile(System::String^ path);
 };
 

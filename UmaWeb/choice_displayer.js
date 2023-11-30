@@ -5,6 +5,7 @@ function createChoice(choice_title, choice_effect) {
     let th = document.createElement("th");
     // ------------------------------------------ //
     th.innerHTML = choice_title;
+    th.className = "choice_title";
     title_tr.appendChild(th);
     choice_table.appendChild(title_tr);
 
@@ -14,6 +15,7 @@ function createChoice(choice_title, choice_effect) {
     
     // ------------------------------------------ //
     td.innerHTML = choice_effect;
+    td.className = "choice_effect";
     effect_tr.appendChild(td);
     choice_table.appendChild(effect_tr);
 
@@ -141,7 +143,5 @@ function cleanChoiceTable() {
 
 // createChoice("title", "effect<br>effect");
 // createChoice("title", "effect<br>effect");
-
-// createChoice("WTF", "WTF<br>WTF");
 
 

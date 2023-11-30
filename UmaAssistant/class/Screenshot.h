@@ -49,12 +49,20 @@ private:
 
 	void GetHenseiCharacterNameImage();
 
+	void GetSyousaiCharacterName();
+
 public:
 	Screenshot();
 
 	static void ShowImage();
 
-	bool IsDataComplete();
+	inline bool IsDataComplete()
+	{
+		if (oimg.empty()) return false;
+
+
+		return true;
+	}
 
 	//static std::map<std::string, cv::Mat> img_dict
 	static cv::Mat oimg;
@@ -69,4 +77,6 @@ public:
 	static cv::Mat sentaku_character_name;
 	static cv::Mat hensei_character_name_gray;
 	static cv::Mat hensei_character_name_gray_inv;
+
+	static cv::Mat syousai_character_name_gray_bin;
 };

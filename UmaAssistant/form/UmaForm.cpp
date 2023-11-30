@@ -19,15 +19,27 @@ namespace UmaAssistant
 #pragma region WebBrowser
 		//choiceWebBrowser->DocumentCompleted += gcnew WebBrowserDocumentCompletedEventHandler(&OnDocumentCompleted);
 
-		System::String^ port = "1234";
 
-		LocalServer::Instance->Start(port);
+		// 提取 config 資料
+		json config = FileManager::GetInstance()->ReadJson(global::path::std_config);
 
+		System::String^ port = utility::stdStr2system(config["LocalServer"]["Port"].get<std::string>());
 
 		choiceWebBrowser->Navigate("http://localhost:" + port + "/choice.html");
 		characterNameWebBrowser->Navigate("http://localhost:" + port + "/character_name.html");
+#pragma endregion
 
-
+#pragma region DebugMode
+		if (config["DebugMode"] == true)
+		{
+			test_btn->Visible = true;
+			screenshot_preview_btn->Visible = true;
+		}
+		else
+		{
+			test_btn->Visible = false;
+			screenshot_preview_btn->Visible = false;
+		}
 #pragma endregion
 	}
 
@@ -35,7 +47,7 @@ namespace UmaAssistant
 
 
 
-	System::Void UmaForm::button1_Click(System::Object^ sender, System::EventArgs^ e)
+	System::Void UmaForm::test_btn_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		//std::cout << utility::IsSimilar(u8"食いしん坊は伊達じゃない", u8"食いじん坊は伊達じゃよない") << std::endl;
 
@@ -86,6 +98,7 @@ namespace UmaAssistant
 	{
 		draggingForm = false;
 	}
+
 	System::Void UmaForm::UmaForm_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
 	{
 		if (draggingForm)

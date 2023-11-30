@@ -21,6 +21,12 @@ local umalib = require("UmaLuaLib");
 local pe = require("print_enhance");
 local parser = require("event_parser");
 local fm = require("file_manager");
+local Console = require("console");
+
+
+
+
+
 
 
 ---- 本地定數 ---- 本地定數 ---- 本地定數 ---- 本地定數 ---- 本地定數 
@@ -28,6 +34,7 @@ local fm = require("file_manager");
 local DEFAULT_MILLISECONDS = 2000 --[[低於 2000 會有被拒絕訪問的風險]]
 
 ---- 本地變數 ---- 本地變數 ---- 本地變數 ---- 本地變數 ---- 本地變數 
+local console = Console.new();
 
 local html_id_arr = {
     "tuuzyou_a",
@@ -96,16 +103,16 @@ function dumper.dumpSkillData(ms)
             刻意篩選到固有技能和進化技能
         ]]
         if skill_color == nil or skill_rare == nil or skill_name == nil or skill_dict == nil then
-            print(pe.yellow.."[警告] SkillData 不完整！ white_id:" ..tostring(white_id).."\nskill_color: "..tostring(skill_color).."\nskill_rare: "..tostring(skill_rare).."\nskill_name: "..tostring(skill_name).."\nskill_dict: "..tostring(skill_dict)..pe.reset)
+            console:print(pe.yellow.."[警告] SkillData 不完整！ white_id:" ..tostring(white_id).."\nskill_color: "..tostring(skill_color).."\nskill_rare: "..tostring(skill_rare).."\nskill_name: "..tostring(skill_name).."\nskill_dict: "..tostring(skill_dict)..pe.reset)
             goto continue
         end
 
-        print("white_id:", white_id, "skill_color:", skill_color, "skill_rare:", skill_rare);
+        console:print("white_id:", white_id, "skill_color:", skill_color, "skill_rare:", skill_rare);
         skill_data[skill_color] = skill_data[skill_color] or {}
         skill_data[skill_color][skill_rare] = skill_data[skill_color][skill_rare] or {}
         skill_data[skill_color][skill_rare][skill_name] = skill_dict;
 
-        print("進度: ["..pe.red..i..pe.reset.. "/" ..pe.yellow..#white_list..pe.reset.."] "..pe.yellow..white_id..pe.reset..pe.cyan.." --"..ms.." 毫秒"..pe.reset);
+        console:print("進度: ["..pe.red..i..pe.reset.. "/" ..pe.yellow..#white_list..pe.reset.."] "..pe.yellow..white_id..pe.reset..pe.cyan.." --"..ms.." 毫秒"..pe.reset);
 
         if LUA_DEBUG then --[[ Debug 時使用 Debug 時使用 Debug 時使用 Debug 時使用 ]]
             break;
@@ -115,69 +122,70 @@ function dumper.dumpSkillData(ms)
         umalib.sleep(ms);
     end
 
-    print(pe.green.."已完成獲取 SkillData"..pe.reset);
+    console:print(pe.green.."已完成獲取 SkillData"..pe.reset);
 
     return skill_data;
 end
 
 function dumper.dumpEventData(ms)
+    console:print("嘗試獲取 EventData");
     ms = ms or DEFAULT_MILLISECONDS;
 
---[[
-["character"] = {
-    ["3_star"] = {
+    --[[
+    ["character"] = {
+        ["3_star"] = {
 
-    },
-    ["2_star"] = {
-
-    },
-    ["1_star"] = {
-
-    }
-},
-["support_card"] = {
-    ["SSR"] = {
-        [event_owner] = {
-            ["event"] = {
-                [1] =  {
-                    [event_title] = {
-                        [1] = {
-                            ["choice_title"] = choice_title,
-                            ["choice_effect"] = choice_effect
-                        }
-                    },
-                    [event_title] = {
-                        [1] = {
-                            ["choice_title"] = choice_title,
-                            ["choice_effect"] = choice_effect
-                        }
-                    }
-                },
-                [2] =  {
-                    [event_title] = {
-                        [1] = {
-                            ["choice_title"] = choice_title,
-                            ["choice_effect"] = choice_effect
-                        }
-                    },
-                    [event_title] = {
-                        [1] = {
-                            ["choice_title"] = choice_title,
-                            ["choice_effect"] = choice_effect
-                        }
-                    }
-                },
-            } 
         },
-    },
-    ["SR"] = {
+        ["2_star"] = {
 
-    },
-    ["R"] = {
+        },
+        ["1_star"] = {
 
+        }
+    },
+    ["support_card"] = {
+        ["SSR"] = {
+            [event_owner] = {
+                ["event"] = {
+                    [1] =  {
+                        [event_title] = {
+                            [1] = {
+                                ["choice_title"] = choice_title,
+                                ["choice_effect"] = choice_effect
+                            }
+                        },
+                        [event_title] = {
+                            [1] = {
+                                ["choice_title"] = choice_title,
+                                ["choice_effect"] = choice_effect
+                            }
+                        }
+                    },
+                    [2] =  {
+                        [event_title] = {
+                            [1] = {
+                                ["choice_title"] = choice_title,
+                                ["choice_effect"] = choice_effect
+                            }
+                        },
+                        [event_title] = {
+                            [1] = {
+                                ["choice_title"] = choice_title,
+                                ["choice_effect"] = choice_effect
+                            }
+                        }
+                    },
+                } 
+            },
+        },
+        ["SR"] = {
+
+        },
+        ["R"] = {
+
+        }
     }
-}
-]]
+    ]]
 
     local event_data = {
         ["character"] = {
@@ -226,12 +234,12 @@ function dumper.dumpEventData(ms)
         
         local event_dict, event_owner = parser.getEventDict(event_html);
 
-        print("white_id:", white_id, "owner_type:", owner_type, "rare:", rare);
+        console:print("white_id:", white_id, "owner_type:", owner_type, "rare:", rare);
         event_data[owner_type] = event_data[owner_type] or {}
         event_data[owner_type][rare] = event_data[owner_type][rare] or {}
         event_data[owner_type][rare][event_owner] = event_dict;
 
-        print("進度: ["..pe.red..i..pe.reset.. "/" ..pe.yellow..#white_list..pe.reset.."] "..pe.yellow..white_id..pe.reset..pe.cyan.." --"..ms.." 毫秒"..pe.reset);
+        console:print("進度: ["..pe.red..i..pe.reset.. "/" ..pe.yellow..#white_list..pe.reset.."] "..pe.yellow..white_id..pe.reset..pe.cyan.." --"..ms.." 毫秒"..pe.reset);
 
         if LUA_DEBUG then --[[ Debug 時使用 Debug 時使用 Debug 時使用 Debug 時使用 ]]
             break;
@@ -239,12 +247,13 @@ function dumper.dumpEventData(ms)
         umalib.sleep(ms);
     end
 
-    print(pe.green.."已完成獲取 EventData"..pe.reset);
+    console:print(pe.green.."成功獲取 EventData ！"..pe.reset);
 
     return event_data;
 end
 
 function dumper.dumpEventBlackWhiteList(ms)
+    console:print("嘗試更新 Event 黑白名單");
     ms = ms or DEFAULT_MILLISECONDS;
 
     local aid_arr = fm.getArticleId();
@@ -262,14 +271,14 @@ function dumper.dumpEventBlackWhiteList(ms)
             -- 跳過已儲存的黑名單
             for _, v in ipairs(saved_black_list) do
                 if id == v then
-                    print(pe.magenta.."跳過已儲存的黑名單："..id..pe.reset);
+                    console:print(pe.magenta.."跳過已儲存的黑名單："..id..pe.reset);
                     goto continue
                 end;
             end
             -- 跳過已儲存的白名單
             for _, v in ipairs(saved_white_list) do
                 if id == v then
-                    print(pe.magenta.."跳過已儲存的白名單："..id..pe.reset);
+                    console:print(pe.magenta.."跳過已儲存的白名單："..id..pe.reset);
                     goto continue
                 end;
             end
@@ -289,9 +298,9 @@ function dumper.dumpEventBlackWhiteList(ms)
                 white_list_file:flush();
             end
             if black_listed then
-                print("進度: " ..pe.red..i..pe.reset.. "/" ..pe.yellow..#aid_arr..pe.reset.. "   " ..pe.red..id.."  已加入黑名單  "..pe.reset..pe.cyan..ms.." 毫秒"..pe.reset);
+                console:print("進度: " ..pe.red..i..pe.reset.. "/" ..pe.yellow..#aid_arr..pe.reset.. "   " ..pe.red..id.."  已加入黑名單  "..pe.reset..pe.cyan.."--"..ms.." 毫秒"..pe.reset);
             else
-                print("進度: " ..pe.red..i..pe.reset.. "/" ..pe.yellow..#aid_arr..pe.reset.. "   " ..pe.green..id.."  已加入白名單  "..pe.reset..pe.cyan..ms.." 毫秒"..pe.reset);
+                console:print("進度: " ..pe.red..i..pe.reset.. "/" ..pe.yellow..#aid_arr..pe.reset.. "   " ..pe.green..id.."  已加入白名單  "..pe.reset..pe.cyan.."--"..ms.." 毫秒"..pe.reset);
             end
             umalib.sleep(ms);
             ::continue::
@@ -301,11 +310,12 @@ function dumper.dumpEventBlackWhiteList(ms)
         -- white_list_file:write("\n\n白名單總數："..whited_amount);
         black_list_file:close();
         white_list_file:close();
-        print("黑白名單製作完成！");
+        console:print(pe.green.."Event 黑白名單製作完成！"..pe.reset);
     end
 end
 
 function dumper.dumpSkillBlackWhiteList(ms)
+    console:print("嘗試更新 Skill 黑白名單");
     ms = ms or DEFAULT_MILLISECONDS;
 
     local aid_arr = fm.getArticleId();
@@ -324,14 +334,14 @@ function dumper.dumpSkillBlackWhiteList(ms)
             -- 跳過已儲存的黑名單
             for _, v in ipairs(saved_black_list) do
                 if id == v then
-                    print(pe.magenta.."跳過已儲存的黑名單："..id..pe.reset);
+                    console:print(pe.magenta.."跳過已儲存的黑名單："..id..pe.reset);
                     goto continue
                 end;
             end
             -- 跳過已儲存的白名單
             for _, v in ipairs(saved_white_list) do
                 if id == v then
-                    print(pe.magenta.."跳過已儲存的白名單："..id..pe.reset);
+                    console:print(pe.magenta.."跳過已儲存的白名單："..id..pe.reset);
                     goto continue
                 end;
             end
@@ -339,7 +349,7 @@ function dumper.dumpSkillBlackWhiteList(ms)
             
             for _, v in ipairs(event_white_list) do
                 if id == v then
-                    print(pe.magenta.."跳過 event 的白名單："..id..pe.reset);
+                    console:print(pe.magenta.."跳過 event 的白名單："..id..pe.reset);
                     goto continue
                 end;
             end
@@ -358,9 +368,9 @@ function dumper.dumpSkillBlackWhiteList(ms)
                 white_list_file:flush();
             end
             if black_listed then
-                print("進度: " ..pe.red..i..pe.reset.. "/" ..pe.yellow..#aid_arr..pe.reset.. "   " ..pe.red..id.."  已加入黑名單  "..pe.reset..pe.cyan..ms.." 毫秒"..pe.reset);
+                console:print("進度: " ..pe.red..i..pe.reset.. "/" ..pe.yellow..#aid_arr..pe.reset.. "   " ..pe.red..id.."  已加入黑名單  "..pe.reset..pe.cyan.."--"..ms.." 毫秒"..pe.reset);
             else
-                print("進度: " ..pe.red..i..pe.reset.. "/" ..pe.yellow..#aid_arr..pe.reset.. "   " ..pe.green..id.."  已加入白名單  "..pe.reset..pe.cyan..ms.." 毫秒"..pe.reset);
+                console:print("進度: " ..pe.red..i..pe.reset.. "/" ..pe.yellow..#aid_arr..pe.reset.. "   " ..pe.green..id.."  已加入白名單  "..pe.reset..pe.cyan.."--"..ms.." 毫秒"..pe.reset);
             end
             umalib.sleep(ms);
             ::continue::
@@ -370,15 +380,16 @@ function dumper.dumpSkillBlackWhiteList(ms)
         -- white_list_file:write("\n\n白名單總數："..whited_amount);
         black_list_file:close();
         white_list_file:close();
-        print("黑白名單製作完成！");
+        console:print(pe.green.."Skill 黑白名單製作完成！"..pe.reset);
     end
 end
 
 function dumper.dumpArticleIdFromSiteMap()
+    console:print("嘗試更新 ArticleId");
     local aid_arr = {};
     local sitemapXml = "https://gamewith.jp/uma-musume/sitemap.xml";
     local xml = GetHtmlFromUrl(sitemapXml);
-    print("已獲取 xml")
+    console:print("已獲取 xml")
     -- <loc>https://gamewith.jp/uma-musume/article/show/256047</loc>
     local pattern = "<loc.-(%d+)</loc>";
     for id in string.gmatch(xml, pattern) do
@@ -394,7 +405,7 @@ function dumper.dumpArticleIdFromSiteMap()
         end
         file_idx:close()
     else
-        print("無法打開文件")
+        console:print("無法打開文件")
     end
 
     local file = io.open(fm.ARTICLE_ID_PATH, "w")
@@ -405,9 +416,9 @@ function dumper.dumpArticleIdFromSiteMap()
         end
         file:close()
     else
-        print("無法打開文件")
+        console:print("無法打開文件")
     end
-    print("完成！");
+    console:print(pe.green.."ArticleId 更新完成！"..pe.reset);
 end
 
 
@@ -421,7 +432,7 @@ end
 
 --     local pattern = "<([%w]+)[%s+].-[%s+]class=\"(".. class .. ")\"></%1>";
 
---     print("pattern: " .. pattern)
+--     console:print("pattern: " .. pattern)
 
 --     local tag, class, content = string.match(html, pattern);
 --     return tag, class, content;

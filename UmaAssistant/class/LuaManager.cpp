@@ -79,6 +79,9 @@ void LuaManager::DumpEventData()
 
     std::thread luaThread([=]()
         {
+            ConsoleManager* consoleManager = ConsoleManager::GetInstance();
+            consoleManager->Enable();
+
             this->SetBusy(true);
 
             json json_data;
@@ -87,8 +90,8 @@ void LuaManager::DumpEventData()
             luaL_openlibs(L);
             lua_register(L, "GetHtmlFromUrl", GetHtmlFromUrl);
 
-            int r = luaL_dofile(L, global::path::std_update_event_data_lua.c_str());
-            if (r == LUA_OK)
+            int fileState = luaL_dofile(L, global::path::std_update_event_data_lua.c_str());
+            if (fileState == LUA_OK)
             {
                 lua_getglobal(L, "event_data");
                 int event_data_idx = lua_gettop(L);
@@ -223,11 +226,11 @@ void LuaManager::DumpEventData()
                 {
                     outputFile << json_string << std::endl;
                     outputFile.close();
-                    std::cout << u8"event_data.json 成功創建並寫入！" << std::endl;
+                    std::cout << global::path::c_event_data_jp_json << u8" 成功創建並寫入！" << std::endl;
                 }
                 else
                 {
-                    std::cerr << u8"event_data.json 創建失敗。" << std::endl;
+                    std::cerr << global::path::c_event_data_jp_json << u8" 創建失敗。" << std::endl;
                 }
 
 
@@ -241,6 +244,8 @@ void LuaManager::DumpEventData()
             lua_close(L);
 
             this->SetBusy(false);
+
+            consoleManager->Disable();
         });
 
 
@@ -252,14 +257,17 @@ void LuaManager::DumpSkillData()
 
     std::thread luaThread([=]()
         {
+            ConsoleManager* consoleManager = ConsoleManager::GetInstance();
+            consoleManager->Enable();
+
             json json_data;
 
             lua_State* L = luaL_newstate();
             luaL_openlibs(L);
             lua_register(L, "GetHtmlFromUrl", GetHtmlFromUrl);
 
-            int r = luaL_dofile(L, global::path::std_update_skill_data_lua.c_str());
-            if (r == LUA_OK)
+            int fileState = luaL_dofile(L, global::path::std_update_skill_data_lua.c_str());
+            if (fileState == LUA_OK)
             {
                 lua_getglobal(L, "skill_data");
                 int skill_data_idx = lua_gettop(L);
@@ -361,6 +369,8 @@ void LuaManager::DumpSkillData()
             }
 
             lua_close(L);
+
+            consoleManager->Disable();
         });
 
     luaThread.detach();

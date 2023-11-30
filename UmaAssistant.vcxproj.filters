@@ -81,10 +81,13 @@
     <ClCompile Include="UmaAssistant\class\FileManager.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="UmaAssistant\class\WindowFinder.cpp">
+    <ClCompile Include="UmaAssistant\class\GameWindowFinder.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="UmaAssistant\class\LocalServer.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="UmaAssistant\class\ConsoleManager.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
@@ -161,7 +164,7 @@
     <ClInclude Include="UmaAssistant\enum\ImageType.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="UmaAssistant\class\WindowFinder.h">
+    <ClInclude Include="UmaAssistant\class\GameWindowFinder.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="UmaAssistant\enum\GameWindowType.h">
@@ -174,6 +177,9 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="UmaAssistant\enum\FilePathType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="UmaAssistant\class\ConsoleManager.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

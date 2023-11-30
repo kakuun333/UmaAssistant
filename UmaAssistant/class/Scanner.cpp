@@ -225,7 +225,15 @@ void Scanner::Start(std::string language)
 					}
 					else
 					{
-						dataManager->TryGetCurrentCharacterName(henseiCharNameText);
+						if (!dataManager->TryGetCurrentCharacterName(henseiCharNameText))
+						{
+							std::cout << u8"[Scanner] TryGetCurrentCharacterName 失敗" << std::endl;
+							
+							henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_inv, language);
+							std::cout << "[Scanner] hensei_character_name_gray_inv: " << henseiCharNameText << std::endl;
+							std::cout << u8"[Scanner] 嘗試 hensei_character_name_gray_inv" << std::endl;
+							dataManager->TryGetCurrentCharacterName(henseiCharNameText);
+						}
 						//if (!dataManager->TryGetCurrentCharacterName(henseiCharNameText))
 						//{
 						//	dataManager->TryGetCurrentCharacterName(characterNameText);
@@ -258,7 +266,7 @@ void Scanner::Start(std::string language)
 
 						webManager->ChangeEventTitle(sys_event_title);
 
-						webManager->HiddenSkillContent();
+						webManager->HiddenSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
 						webManager->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
 					}
 					else
@@ -317,7 +325,7 @@ void Scanner::Start(std::string language)
 						webManager->ChangeEventTitle(sys_event_title);
 
 
-						webManager->HiddenSkillContent();
+						webManager->HiddenSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
 						webManager->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
 					}
 				}

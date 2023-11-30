@@ -29,8 +29,12 @@ namespace global
 
 
 		/*		std::string		*//*		std::string		*//*		std::string		*/
-		// UmaTemp
 		extern std::string std_currentDir;
+
+		extern std::string std_umaMisc;
+		extern std::string std_config;
+
+		// UmaTemp
 		extern std::string std_UmaTemp;
 		extern std::string std_screenshot;
 		extern std::string std_screenshot_event;

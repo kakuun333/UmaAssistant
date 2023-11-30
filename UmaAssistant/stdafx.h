@@ -53,8 +53,9 @@ using json = nlohmann::json;
 #include "class/DataManager.h"
 #include "class/WebManager.h"
 #include "class/FileManager.h"
-#include "class/WindowFinder.h"
+#include "class/GameWindowFinder.h"
 #include "class/LocalServer.h"
+#include "class/ConsoleManager.h"
 
 // lua
 #include "class/LuaManager.h"

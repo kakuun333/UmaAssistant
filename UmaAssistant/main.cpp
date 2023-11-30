@@ -5,7 +5,13 @@
 #include "global/FormManager.h"
 #include "class/DataManager.h"
 #include "class/Scanner.h"
-#include "class/WindowFinder.h"
+#include "class/GameWindowFinder.h"
+#include "class/FileManager.h"
+#include "class/ConsoleManager.h"
+#include "class/LocalServer.h"
+
+#include <nlohmann/json.hpp>
+using json = nlohmann::json;
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -18,14 +24,27 @@ int main(array<String^>^ args)
 	Scanner::InitOcrJpn();
 	DataManager::InitEventDataJson();
 
+	// 提取 config 資料
+	json config = FileManager::GetInstance()->ReadJson(global::path::std_config);
 
-	// 控制台初始化
-	SetConsoleOutputCP(CP_UTF8); // 設定控制台輸出字碼頁為 UTF8 ，這樣日文字才不會變亂碼。
+#pragma region 初始化 Console
+	/*
+	* 如果 DebugMode 有開啟就創建 Console
+	*/
+	if (config["DebugMode"] == true)
+	{
+		ConsoleManager::GetInstance()->Enable();
+	}
+#pragma endregion
 
-
+#pragma region 啟動本地伺服器
+	
+	System::String^ port = utility::stdStr2system(config["LocalServer"]["Port"].get<std::string>());
+	LocalServer::Instance->Start(port);
 
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
+#pragma endregion
 
 #pragma region 初始化 Form
 	UmaAssistant::UmaForm^ umaForm = gcnew UmaAssistant::UmaForm();
@@ -38,16 +57,26 @@ int main(array<String^>^ args)
 	global::form::previewForm = previewForm;
 #pragma endregion
 
+#pragma region 初始化 SettingsForm 的 debugMode_checkBox
 	/*
-	* 初始化 UmaForm 之後才可以初始化 WindowFinder
+	* 不知道為什麼放在 SettingsForm 的構造函數裡面 nlohmann::json 會報錯
+	* 所以在這裡初始化
+	*/
+	if (config["DebugMode"] == true)
+		global::form::settingsForm->debugMode_checkBox->Checked = true;
+	else
+		global::form::settingsForm->debugMode_checkBox->Checked = false;
+#pragma endregion
+
+#pragma region 初始化 GameWindowFinder
+	/*
+	* 初始化 UmaForm 之後才可以初始化 GameWindowFinder
 	* 因為 WindowFinder 需要與 UmaForm 的物件互動
 	*/
-	WindowFinder::GetInstance()->CreateFindGameWindowThread();
-
+	GameWindowFinder::GetInstance()->CreateFindGameWindowThread();
+#pragma endregion
 
 
 	Application::Run(umaForm); // 啟動主要的 Form (UmaForm)
-
-
 	return 0;
 }

@@ -22,7 +22,9 @@ local parser = require("event_parser");
 local utility = require("utility");
 local pe = require("print_enhance");
 local fm = require("file_manager");
+local Console = require("console");
 
+local console = Console.new();
 
 --[[
     257406
@@ -38,7 +40,9 @@ local fm = require("file_manager");
 -- test = string.gsub(test, "(%+%d+[~%d+]*)", "<span class=\"status_plus_value\">%1</span>");
 -- print(test)
 
-event_data = dumper.dumpEventData(2000);
+dumper.dumpArticleIdFromSiteMap();
+dumper.dumpEventBlackWhiteList(2000);
+event_data = dumper.dumpEventData(2100);
 
 
 
@@ -50,3 +54,4 @@ event_data = dumper.dumpEventData(2000);
 
 
 -- dumper.dumpArticleIdFromSiteMap();
+console:close();

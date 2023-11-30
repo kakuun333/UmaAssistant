@@ -13,20 +13,14 @@ cv::Mat Screenshot::sentaku_character_name;
 cv::Mat Screenshot::hensei_character_name_gray;
 cv::Mat Screenshot::hensei_character_name_gray_inv;
 
-bool Screenshot::IsDataComplete()
-{
-	if (oimg.empty()) return false;
-
-
-	return true;
-}
+cv::Mat Screenshot::syousai_character_name_gray_bin;
 
 
 cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 {
 	//HWND gameHWND = FindWindow(nullptr, L"umamusume");
 	//if (gameHWND == NULL) { std::cout << u8"找不到遊戲視窗" << std::endl; return cv::Mat(); }
-	HWND gameHWND = WindowFinder::GetInstance()->GetCurrentGameWindow();
+	HWND gameHWND = GameWindowFinder::GetInstance()->GetCurrentGameWindow();
 	if (gameHWND == NULL) return cv::Mat();
 
 	
@@ -130,9 +124,9 @@ void Screenshot::CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPatt
 		}
 		break;
 	case IMG_EVENT_ICON:
-		crop_x		 = img_width  - (img_width  * 0.85);
+		crop_x		 = img_width  - (img_width  * 0.841);
 		crop_y		 = img_height - (img_height * 0.81);
-		crop_width	 = img_width  - (img_width  * 0.935);
+		crop_width	 = img_width  - (img_width  * 0.946);
 		crop_height	 = img_height - (img_height * 0.97);
 		break;
 	case IMG_SENTAKU_CHARACTER_NAME:
@@ -146,6 +140,12 @@ void Screenshot::CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPatt
 		crop_y		 = img_height - (img_height * 0.845);
 		crop_width	 = img_width  - (img_width  * 0.55);
 		crop_height	 = img_height - (img_height * 0.948);
+		break;
+	case IMG_SYOUSAI_CHARACTER_NAME:
+		crop_x = img_width - (img_width * 0.75);
+		crop_y = img_height - (img_height * 0.845);
+		crop_width = img_width - (img_width * 0.55);
+		crop_height = img_height - (img_height * 0.948);
 		break;
 	}
 
@@ -176,7 +176,7 @@ const double Screenshot::GetWhitePixelRatio(cv::Mat img)
 	const int imgPixelCount = img.cols * img.rows;
 	const double whitePixelRatio = static_cast<double>(whitePixelCount) / static_cast<double>(imgPixelCount);
 
-	//std::cout << "whitePixelRatio: " << whitePixelRatio << std::endl;
+	std::cout << "whitePixelRatio: " << whitePixelRatio << std::endl;
 
 	return whitePixelRatio;
 }
@@ -202,7 +202,7 @@ const double Screenshot::GetBlackPixelRatio(cv::Mat img)
 bool Screenshot::IsEventIcon(cv::Mat img)
 {
 	/*
-	クリオグリ whitePixelRatio: 0.87605
+	クリオグリ whitePixelRatio: 0.799745
 	*/
 
 	return this->GetWhitePixelRatio(img) > EVENT_ICON_METRIC;
@@ -222,6 +222,7 @@ Screenshot::Screenshot()
 
 	// character_name
 	this->GetHenseiCharacterNameImage();
+	this->GetSyousaiCharacterName();
 }
 
 
@@ -248,6 +249,9 @@ void Screenshot::ShowImage()
 	// character_name
 	cv::imshow("hensei_character_name_gray", hensei_character_name_gray);
 	cv::imshow("hensei_character_name_gray_inv", hensei_character_name_gray_inv);
+
+	cv::imshow("syousai_character_name_gray_bin", syousai_character_name_gray_bin);
+	
 
 
 	cv::waitKey(10);
@@ -299,6 +303,16 @@ void Screenshot::GetEventIconImage()
 	cv::cvtColor(event_icon, event_icon, cv::COLOR_BGR2GRAY);
 	this->CropImage(event_icon, ImageType::IMG_EVENT_ICON);
 	cv::threshold(event_icon, event_icon, 160/*230*/, 255, cv::THRESH_BINARY);
+}
+
+
+void Screenshot::GetSyousaiCharacterName()
+{
+	syousai_character_name_gray_bin = oimg.clone();
+	this->CropImage(syousai_character_name_gray_bin, ImageType::IMG_SYOUSAI_CHARACTER_NAME);
+	this->ResizeImage(syousai_character_name_gray_bin, 1.2);
+	cv::cvtColor(syousai_character_name_gray_bin, syousai_character_name_gray_bin, cv::COLOR_BGR2GRAY);
+	cv::threshold(syousai_character_name_gray_bin, syousai_character_name_gray_bin, 200, 255, cv::THRESH_BINARY_INV);
 }
 
 void Screenshot::GetHenseiCharacterNameImage()

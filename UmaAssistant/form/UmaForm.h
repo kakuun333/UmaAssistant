@@ -56,11 +56,13 @@ namespace UmaAssistant {
 	private: System::Windows::Forms::Button^ minimize_btn;
 	private: System::Windows::Forms::Button^ settings_btn;
 	private: System::Windows::Forms::Button^ scan_btn;
+	public: System::Windows::Forms::Button^ screenshot_preview_btn;
+	private:
 
 
 
 
-	private: System::Windows::Forms::Button^ screenshot_preview_btn;
+
 
 
 
@@ -75,7 +77,10 @@ namespace UmaAssistant {
 	private: System::Windows::Forms::Label^ label4;
 	public: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
-	private: System::Windows::Forms::Button^ button1;
+	public: System::Windows::Forms::Button^ test_btn;
+	private:
+
+
 	public: System::Windows::Forms::WebBrowser^ characterNameWebBrowser;
 	private: System::Windows::Forms::Button^ clean_current_character_btn;
 	public: System::Windows::Forms::Label^ game_window_status_label;
@@ -117,7 +122,7 @@ namespace UmaAssistant {
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->test_btn = (gcnew System::Windows::Forms::Button());
 			this->choiceWebBrowser = (gcnew System::Windows::Forms::WebBrowser());
 			this->characterNameWebBrowser = (gcnew System::Windows::Forms::WebBrowser());
 			this->clean_current_character_btn = (gcnew System::Windows::Forms::Button());
@@ -255,9 +260,9 @@ namespace UmaAssistant {
 			this->settings_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->settings_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->settings_btn->Location = System::Drawing::Point(478, 40);
+			this->settings_btn->Location = System::Drawing::Point(110, 42);
 			this->settings_btn->Name = L"settings_btn";
-			this->settings_btn->Size = System::Drawing::Size(75, 67);
+			this->settings_btn->Size = System::Drawing::Size(95, 65);
 			this->settings_btn->TabIndex = 11;
 			this->settings_btn->Text = L"設定";
 			this->settings_btn->UseVisualStyleBackColor = false;
@@ -275,9 +280,9 @@ namespace UmaAssistant {
 			this->scan_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->scan_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->scan_btn->Location = System::Drawing::Point(272, 40);
+			this->scan_btn->Location = System::Drawing::Point(9, 42);
 			this->scan_btn->Name = L"scan_btn";
-			this->scan_btn->Size = System::Drawing::Size(97, 67);
+			this->scan_btn->Size = System::Drawing::Size(95, 65);
 			this->scan_btn->TabIndex = 16;
 			this->scan_btn->Text = L"起動";
 			this->scan_btn->UseVisualStyleBackColor = false;
@@ -295,9 +300,9 @@ namespace UmaAssistant {
 			this->screenshot_preview_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->screenshot_preview_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->screenshot_preview_btn->Location = System::Drawing::Point(375, 40);
+			this->screenshot_preview_btn->Location = System::Drawing::Point(357, 42);
 			this->screenshot_preview_btn->Name = L"screenshot_preview_btn";
-			this->screenshot_preview_btn->Size = System::Drawing::Size(97, 67);
+			this->screenshot_preview_btn->Size = System::Drawing::Size(95, 65);
 			this->screenshot_preview_btn->TabIndex = 17;
 			this->screenshot_preview_btn->Text = L"截圖預覽";
 			this->screenshot_preview_btn->UseVisualStyleBackColor = false;
@@ -438,25 +443,25 @@ namespace UmaAssistant {
 			this->contextMenuStrip1->Name = L"contextMenuStrip1";
 			this->contextMenuStrip1->Size = System::Drawing::Size(61, 4);
 			// 
-			// button1
+			// test_btn
 			// 
-			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)), static_cast<System::Int32>(static_cast<System::Byte>(61)),
+			this->test_btn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)), static_cast<System::Int32>(static_cast<System::Byte>(61)),
 				static_cast<System::Int32>(static_cast<System::Byte>(81)));
-			this->button1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.BackgroundImage")));
-			this->button1->FlatAppearance->BorderSize = 0;
-			this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
+			this->test_btn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"test_btn.BackgroundImage")));
+			this->test_btn->FlatAppearance->BorderSize = 0;
+			this->test_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
 				static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
-			this->button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
+			this->test_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->test_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
+			this->test_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->button1->Location = System::Drawing::Point(9, 40);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(103, 67);
-			this->button1->TabIndex = 21;
-			this->button1->Text = L"測試";
-			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &UmaForm::button1_Click);
+			this->test_btn->Location = System::Drawing::Point(458, 42);
+			this->test_btn->Name = L"test_btn";
+			this->test_btn->Size = System::Drawing::Size(95, 65);
+			this->test_btn->TabIndex = 21;
+			this->test_btn->Text = L"測試";
+			this->test_btn->UseVisualStyleBackColor = false;
+			this->test_btn->Click += gcnew System::EventHandler(this, &UmaForm::test_btn_Click);
 			// 
 			// choiceWebBrowser
 			// 
@@ -531,7 +536,7 @@ namespace UmaAssistant {
 			this->Controls->Add(this->clean_current_character_btn);
 			this->Controls->Add(this->characterNameWebBrowser);
 			this->Controls->Add(this->choiceWebBrowser);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->test_btn);
 			this->Controls->Add(this->choicePanel);
 			this->Controls->Add(this->tableLayoutPanel2);
 			this->Controls->Add(this->tableLayoutPanel1);
@@ -573,7 +578,7 @@ namespace UmaAssistant {
 	private: System::Void UmaForm_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
 	private: System::Void close_form_btn_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void minimize_btn_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void test_btn_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void clean_current_character_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

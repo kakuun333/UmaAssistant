@@ -46,3 +46,19 @@ System::String^ FileManager::SysReadFile(System::String^ path)
 
     return fileContent;
 }
+
+void FileManager::WriteJson(std::string path, std::string jsonString)
+{
+    // 寫入 json
+    std::ofstream outputFile(path);
+    if (outputFile.is_open())
+    {
+        outputFile << jsonString << std::endl;
+        outputFile.close();
+        std::cout << "[FileManager] " << path << u8" 成功創建並寫入！" << std::endl;
+    }
+    else
+    {
+        std::cout << "[FileManager] " << path << u8" 寫入失敗" << std::endl;
+    }
+}

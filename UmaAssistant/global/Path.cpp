@@ -24,8 +24,12 @@ namespace global
 		gcroot<System::String^> screenshot_event		 = umaTemp + "\\screenshot_event.png";
 
 		/*		std::string		*//*		std::string		*//*		std::string		*/
-		// UmaTemp
 		std::string std_currentDir						 = utility::GetCurrentDir();  // char ªº CurrentDirectory
+		// UmaMisc
+		std::string std_umaMisc = std_currentDir + "\\UmaMisc";
+		std::string std_config = std_umaMisc + "\\config.json";
+
+		// UmaTemp
 		std::string std_UmaTemp							 = std_currentDir + "\\UmaTemp";
 		std::string std_screenshot						 = std_UmaTemp + "\\screenshot.png";
 		std::string std_screenshot_event				 = std_UmaTemp + "\\screenshot_event.png";

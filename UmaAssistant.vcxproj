@@ -126,7 +126,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>gdi32.lib;user32.lib;opencv_world481.lib;opencv_world481d.lib;lua54.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
       <AdditionalLibraryDirectories>$(ProjectDir)vcpkg\installed\x64-windows\lib;D:\Libraries\opencv\build\x64\vc16\lib;D:\Program Files\Lua\lua54\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
@@ -139,6 +139,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="UmaAssistant\class\ConsoleManager.cpp" />
     <ClCompile Include="UmaAssistant\class\LocalServer.cpp" />
     <ClCompile Include="UmaAssistant\class\FileManager.cpp" />
     <ClCompile Include="UmaAssistant\class\ref\FormController.cpp" />
@@ -162,9 +163,10 @@
     <ClCompile Include="UmaAssistant\class\Screenshot.cpp" />
     <ClCompile Include="UmaAssistant\form\UmaForm.cpp" />
     <ClCompile Include="UmaAssistant\class\WebManager.cpp" />
-    <ClCompile Include="UmaAssistant\class\WindowFinder.cpp" />
+    <ClCompile Include="UmaAssistant\class\GameWindowFinder.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="UmaAssistant\class\ConsoleManager.h" />
     <ClInclude Include="UmaAssistant\class\LocalServer.h" />
     <ClInclude Include="UmaAssistant\class\FileManager.h" />
     <ClInclude Include="UmaAssistant\class\ref\FormController.h" />
@@ -199,7 +201,7 @@
     </ClInclude>
     <ClInclude Include="UmaAssistant\stdafx.h" />
     <ClInclude Include="UmaAssistant\class\WebManager.h" />
-    <ClInclude Include="UmaAssistant\class\WindowFinder.h" />
+    <ClInclude Include="UmaAssistant\class\GameWindowFinder.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PreviewForm.resx" />

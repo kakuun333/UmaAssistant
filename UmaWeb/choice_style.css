@@ -54,20 +54,12 @@ img {
 }
 
 #choice_table th {
-    color: rgb(212, 156, 245);
+    color: #f8e2ff;
 }   
 
 #choice_table td {
     color: rgb(255, 255, 255) ;
     text-align: center;
-}
-
-#skill_json_jp {
-    display: none;
-}
-
-#skill_json_tw {
-    display: none;
 }
 
 #skill_table {
@@ -84,6 +76,10 @@ img {
 #skill_table thead td {
 
     width: 100%;
+}
+
+#skill_table thead, th {
+    /* border-right: solid; */
 }
 
 #skill_hint_content {
@@ -108,8 +104,7 @@ img {
 
 #skill_name {
     color: rgb(123, 66, 26);
-    /* vertical-align: inherit;
-    padding: 25px; */
+    font-size: 1.1em;
 }
 
 /* class *//* class *//* class *//* class */
@@ -118,9 +113,8 @@ img {
 }
 
 .status_plus_value {
-    color: rgb(0, 255, 0);
+    color: #9dff00;
 }
-
 
 .status_speed {
     color: #5aadf9;
@@ -138,7 +132,21 @@ img {
     color: #55bd84;
 }
 
+.skill_hint {
+    color: rgb(250, 236, 110);
+}
 
+.plus_condition {
+    color: #9dff00;
+}
+
+.minus_condition {
+    color: rgb(255, 40, 40);
+}
+
+.choice_title {
+    background: linear-gradient(to right,  rgb(132, 79, 255), rgb(54, 51, 248));
+}
 
 /* .skill_hint:hover {
     color: red;
