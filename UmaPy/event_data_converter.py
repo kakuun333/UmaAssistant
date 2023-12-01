@@ -7,6 +7,9 @@ event_data_jp = utility.read_json_file(r"../UmaData/event_data_jp.json");
 char_convert_data = utility.read_json_file(r"../UmaData/event_data_jp_to_tw_char.json");
 card_convert_data = utility.read_json_file(r"../UmaData/event_data_jp_to_tw_card.json");
 
+skill_data_jp = utility.read_json_file(r"../UmaData/skill_data_jp.json");
+skill_convert_data = utility.read_json_file(r"../UmaData/event_data_jp_to_tw_skill.json");
+
 
 event_data_tw = {
     "character": {
@@ -20,6 +23,41 @@ event_data_tw = {
         "SSR": {},
     },
 };
+
+skill_data_tw = {
+    "blue": {
+        "normal": {
+
+        },
+        "rare": {
+
+        }
+    },
+    "green": {
+        "normal": {
+
+        },
+        "rare": {
+            
+        }
+    },
+    "red": {
+        "normal": {
+
+        },
+        "rare": {
+            
+        }
+    },
+    "yellow": {
+        "normal": {
+
+        },
+        "rare": {
+            
+        }
+    }
+}
 
 
 choice_effect_jp_to_tw_dict = {
@@ -71,6 +109,7 @@ choice_effect_jp_to_tw_dict = {
     "の絆ゲージ": "的情誼量條",
     "ランダムで": "隨機地",
     "5種ステータスからランダムに2種を": "五種數值中隨機選兩種",
+    "5種ステータスからランダムに3種を": "五種數值中隨機選三種",
     "直前のトレーニングに応じたステータス": "當前選擇的訓練的數值",
     "シナリオに応じたNPC": "與劇本NPC相應",
     "アオハル": "青春",
@@ -95,9 +134,17 @@ choice_title_jp_to_tw_dict = {
 }
 
 
-def convert_choice_effect_jp_to_tw(choice_effect):
+def convert_choice_effect_jp_to_tw(choice_effect, jp_event_owner, tw_event_owner):
     for jp, tw in choice_effect_jp_to_tw_dict.items():
-        choice_effect = re.sub(jp, tw, choice_effect, flags=re.IGNORECASE)
+        choice_effect = re.sub(jp, tw, choice_effect, flags=re.IGNORECASE);
+
+
+    # 情誼量條 jp 轉 tw
+    owner_name_pattern = r"(.+)（.+）";
+    jp_event_owner = re.match(owner_name_pattern, jp_event_owner).group(1);
+    tw_event_owner = re.match(owner_name_pattern, tw_event_owner).group(1);
+    choice_effect = re.sub(jp_event_owner, tw_event_owner, choice_effect, flags=re.IGNORECASE);
+    # 情誼量條 jp 轉 tw
 
     return choice_effect;
 
@@ -106,6 +153,9 @@ def convert_choice_title_jp_to_tw(choice_title):
         choice_title = re.sub(jp, tw, choice_title, flags=re.IGNORECASE)
 
     return choice_title;
+
+
+
 
 def convert_to_event_data_tw(convert_data):
     for owner_type, owner_type_v in event_data_jp.items():
@@ -124,9 +174,12 @@ def convert_to_event_data_tw(convert_data):
                                 # event_data_tw[owner_type][rare][convert_data[jp_event_owner]["tw_event_owner"]]["event"].append()
                                 for choice_info in jp_event_title_v:
                                     tw_choice_obj = {};
+
+                                    tw_event_owner = convert_data[jp_event_owner]["tw_event_owner"];
+
                                     for key, value in choice_info.items():
                                         if (key == "choice_effect"):
-                                            value = convert_choice_effect_jp_to_tw(value);
+                                            value = convert_choice_effect_jp_to_tw(value, jp_event_owner, tw_event_owner);
                                         else:
                                             value = convert_choice_title_jp_to_tw(value);
                                         
@@ -144,3 +197,27 @@ convert_to_event_data_tw(card_convert_data);
 json_string = json.dumps(event_data_tw, indent=2, ensure_ascii=False);
 
 utility.write_file("../UmaData/event_data_tw.json", json_string);
+
+
+def convert_to_skill_data_tw(convert_data):
+    for color, color_v in skill_data_jp.items():
+        for rare, rare_v in color_v.items():
+            for jp_skill_title, jp_skill_title_v in rare_v.items():
+                if jp_skill_title in convert_data:
+                    skill_data_tw[color][rare][convert_data[jp_skill_title]["tw_skill_title"]] = {};
+                    for key, value in jp_skill_title_v.items():
+
+                        if (key == "upper_skill"):
+                            skill_data_tw[color][rare][convert_data[jp_skill_title]["tw_skill_title"]][key] = convert_data[jp_skill_title]["tw_upper_skill"];
+                        elif (key == "lower_skill"):
+                            skill_data_tw[color][rare][convert_data[jp_skill_title]["tw_skill_title"]][key] = convert_data[jp_skill_title]["tw_lower_skill"];
+                        elif (key == "skill_effect"):
+                            skill_data_tw[color][rare][convert_data[jp_skill_title]["tw_skill_title"]][key] = convert_data[jp_skill_title]["tw_skill_effect"];
+                        else:
+                            skill_data_tw[color][rare][convert_data[jp_skill_title]["tw_skill_title"]][key] = value;
+
+convert_to_skill_data_tw(skill_convert_data);
+
+json_string = json.dumps(skill_data_tw, indent=2, ensure_ascii=False);
+
+utility.write_file("../UmaData/skill_data_tw.json", json_string);

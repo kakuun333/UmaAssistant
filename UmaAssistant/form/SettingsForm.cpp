@@ -41,18 +41,20 @@ namespace UmaAssistant
 	{
 		RadioButton^ radioButton = dynamic_cast<RadioButton^>(sender);
 
+		WebManager* webManager = WebManager::GetInstance();
+
 		if (radioButton != nullptr && radioButton->Checked)
 		{
 			// 如果 RadioButton 被選中
 			if (radioButton == tw_server_radio_btn)
 			{
 				global::config->GameServer = GameServerType::TW;
-				//Console::WriteLine("RadioButton Checked: " + radioButton->Text);
+				webManager->ChangeSkillGameServer("tw");
 			}
 			else if (radioButton == jp_server_radio_btn)
 			{
 				global::config->GameServer = GameServerType::JP;
-				//Console::WriteLine("RadioButton Checked: " + radioButton->Text);
+				webManager->ChangeSkillGameServer("jp");
 			}
 		}
 
@@ -72,12 +74,10 @@ namespace UmaAssistant
 			if (radioButton == dmm_radio_btn)
 			{
 				global::config->GameWindow = GameWindowType::DMM;
-				//Console::WriteLine("RadioButton Checked: " + radioButton->Text);
 			}
 			else if (radioButton == blue_stacks_radio_btn)
 			{
 				global::config->GameWindow = GameWindowType::BLUE_STACKS;
-				//Console::WriteLine("RadioButton Checked: " + radioButton->Text);
 			}
 		}
 

@@ -28,6 +28,16 @@ def write_convert_data_char(json_string):
     with open(r"../UmaData/event_data_jp_to_tw_char.json", "w+", encoding="utf-8") as json_file:
         json_file.write(json_string);
 
+def write_convert_data_skill(json_string):
+    # 獲取腳本所在的路徑
+    script_dir = os.path.dirname(os.path.abspath(__file__));
+    # 設置當前的路徑為腳本所在的路徑
+    os.chdir(script_dir);
+
+    # 寫入 event_data_tw.json
+    with open(r"../UmaData/event_data_jp_to_tw_skill.json", "w+", encoding="utf-8") as json_file:
+        json_file.write(json_string);
+
 def write_file(path, string):
     # 獲取腳本所在的路徑
     script_dir = os.path.dirname(os.path.abspath(__file__));

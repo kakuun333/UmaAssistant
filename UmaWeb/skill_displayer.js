@@ -65,13 +65,21 @@ function updateSkillContent() {
                 skill_hint_content.style.top = parseInt(skill_hint_content.style.top) - vertical_offset + "px";
                 skill_hint_content.style.bottom = parseInt(skill_hint_content.style.bottom) - vertical_offset + "px";
             }
-
             // style
 
-            // json
-            for (let color in skill_data_jp) {
-                if (skill_data_jp.hasOwnProperty(color)) {
-                    let color_obj = skill_data_jp[color];
+
+            // skill json
+            skill_data = null;
+
+            if (SkillGameServer == "jp") {
+                skill_data = skill_data_jp;
+            } else if (SkillGameServer == "tw") {
+                skill_data = skill_data_tw;
+            }
+
+            for (let color in skill_data) {
+                if (skill_data.hasOwnProperty(color)) {
+                    let color_obj = skill_data[color];
                     for (let skill_rare in color_obj) {
                         if (color_obj.hasOwnProperty(skill_rare)) {
                             let rare_obj = color_obj[skill_rare];
@@ -175,13 +183,27 @@ function hiddenSkillHintContent() {
     content.style.display = "none";
 }
 
+function changeSkillGameServer(gameServer) {
+    //
+    //  SkillGameServer:
+    //  "jp", "tw"
+    //
+    SkillGameServer = gameServer;
+}
 
 
 let skill_data_jp = null;
+let skill_data_tw = null;
 
+let SkillGameServer = "jp";
 
 readJson("../UmaData/skill_data_jp.json", function(jsonData){
     skill_data_jp = jsonData;
 });
+
+readJson("../UmaData/skill_data_tw.json", function(jsonData){
+    skill_data_tw = jsonData;
+});
+
 
 updateSkillContent();

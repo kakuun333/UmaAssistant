@@ -26,7 +26,6 @@ namespace UmaAssistant
 		if (window_listbox->SelectedIndex != -1)
 		{
 			System::String^ selectedItem = dynamic_cast<System::String^>(window_listbox->SelectedItem);
-			Console::WriteLine("¿ï¾Ü¤F¡G" + selectedItem);
 
 			GameWindowFinder* windowFinder = GameWindowFinder::GetInstance();
 

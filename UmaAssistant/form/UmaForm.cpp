@@ -10,6 +10,20 @@
 
 namespace UmaAssistant
 {
+	void UmaForm::OnChoiceDocumentCompleted(System::Object^ sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^ e)
+	{
+		// 初始化 skill_displayer.js 中的 SkillGameServer 變數
+		WebManager* webManager = WebManager::GetInstance();
+		if (global::config->GameServer == GameServerType::JP)
+		{
+			webManager->ChangeSkillGameServer("jp");
+		}
+		else if (global::config->GameServer == GameServerType::TW)
+		{
+			webManager->ChangeSkillGameServer("tw");
+		}
+	}
+
 	UmaForm::UmaForm(void) // UmaForm 的建構函數
 	{
 		InitializeComponent();
@@ -19,20 +33,23 @@ namespace UmaAssistant
 
 
 #pragma region WebBrowser
-		//choiceWebBrowser->DocumentCompleted += gcnew WebBrowserDocumentCompletedEventHandler(&OnDocumentCompleted);
-
+		WebManager* webManager = WebManager::GetInstance();
 
 		// 提取 config 資料
-		json config = FileManager::GetInstance()->ReadJson(global::path::std_config);
+		System::String^ port = utility::stdStr2system(global::config->LocalServer["Port"]);
+		//json config = FileManager::GetInstance()->ReadJson(global::path::std_config);
 
-		System::String^ port = utility::stdStr2system(config["LocalServer"]["Port"].get<std::string>());
+		//System::String^ port = utility::stdStr2system(config["LocalServer"]["Port"].get<std::string>());
 
+		choiceWebBrowser->DocumentCompleted += gcnew WebBrowserDocumentCompletedEventHandler(this, &UmaForm::OnChoiceDocumentCompleted);
 		choiceWebBrowser->Navigate("http://localhost:" + port + "/choice.html");
 		characterNameWebBrowser->Navigate("http://localhost:" + port + "/character_name.html");
+
+
 #pragma endregion
 
 #pragma region DebugMode
-		if (config["DebugMode"] == true)
+		if (global::config->DebugMode == true)
 		{
 			test_btn->Visible = true;
 			screenshot_preview_btn->Visible = true;
@@ -43,6 +60,11 @@ namespace UmaAssistant
 			screenshot_preview_btn->Visible = false;
 		}
 #pragma endregion
+
+
+
+
+
 	}
 
 
@@ -60,22 +82,25 @@ namespace UmaAssistant
 
 	System::Void UmaForm::scan_btn_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+
+
+
 		Scanner* scanner = Scanner::GetInstance();
 
 		FileManager* fileManager = FileManager::GetInstance();
 		json config = fileManager->ReadJson(global::path::std_config);
-
 		if (!global::umaswitch::Scanning)
 		{
 			switch (config["GameServer"].get<int>())
 			{
 			case GameServerType::JP:
 				scanner->Start("jpn");
-				Console::WriteLine("scanner GameServer: JP");
+				
+				std::cout << "scanner GameServer: JP" << std::endl;
 				break;
 			case GameServerType::TW:
 				scanner->Start("chi_tra");
-				Console::WriteLine("scanner GameServer: TW");
+				std::cout << "scanner GameServer: TW" << std::endl;
 				break;
 			}
 			

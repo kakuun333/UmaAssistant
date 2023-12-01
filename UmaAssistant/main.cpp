@@ -11,6 +11,7 @@
 #include "class/FileManager.h"
 #include "class/ConsoleManager.h"
 #include "class/LocalServer.h"
+#include "class/WebManager.h"
 //#include "class/PyManager.h"
 
 
@@ -60,14 +61,12 @@ int main(array<String^>^ args)
 
 
 #pragma region 啟動本地伺服器
-	
 	System::String^ port = utility::stdStr2system(global::config->LocalServer["Port"]);
 	LocalServer::Instance->Start(port);
 
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
 #pragma endregion
-
 #pragma region 初始化 Form
 	UmaAssistant::UmaForm^ umaForm = gcnew UmaAssistant::UmaForm();
 	UmaAssistant::SettingsForm^ settingsForm = gcnew UmaAssistant::SettingsForm();
@@ -78,7 +77,6 @@ int main(array<String^>^ args)
 	global::form::settingsForm = settingsForm;
 	global::form::previewForm = previewForm;
 #pragma endregion
-
 #pragma region 初始化 SettingsForm 的 debugMode_checkBox
 	/*
 	* 不知道為什麼放在 SettingsForm 的構造函數裡面 nlohmann::json 會報錯
@@ -101,10 +99,14 @@ int main(array<String^>^ args)
 
 	Application::Run(umaForm); // 啟動主要的 Form (UmaForm)
 
+
+
+#pragma region 釋放資源
+	// 中止 LocalServer
 	LocalServer::Instance->Stop();
 
 	// 卸載字型
 	RemoveFontResourceW(utility::string2wstring(global::path::std_MochiyPopOne).c_str());
-
+#pragma endregion
 	return 0;
 }

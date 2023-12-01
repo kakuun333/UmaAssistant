@@ -30,11 +30,11 @@ void ConsoleManager::Enable()
 	if (freopen_s(&newStdout, "CONOUT$", "w", stdout) == 0)
 	{
 		// 現在 stdout 被重新導向到 CONOUT$
-		printf("New console\n");
-
-		// 恢復標準輸出到控制台
-		freopen_s(&newStdout, "CONOUT$", "w", stdout);
-		printf("Back to the console.\n");
+		printf(u8"已成功創建新的控制台\n");
+		
+		//// 恢復標準輸出到控制台
+		//freopen_s(&newStdout, "CONOUT$", "w", stdout);
+		//printf("Back to the console.\n");
 	}
 	else
 	{
@@ -45,9 +45,6 @@ void ConsoleManager::Enable()
 	//{
 	//	// 處理打開文件失敗的情況
 	//}
-
-
-	
 }
 
 void ConsoleManager::Disable()

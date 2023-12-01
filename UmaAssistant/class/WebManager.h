@@ -27,5 +27,7 @@ public:
 	void HiddenSkillContent();
 
 	void ChangeCharacterName(System::String^ characterName);
+
+	void ChangeSkillGameServer(System::String^ gameServer);
 };
 

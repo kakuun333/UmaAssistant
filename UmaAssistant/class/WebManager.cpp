@@ -42,3 +42,9 @@ void WebManager::HiddenSkillContent()
 	array<Object^>^ param = gcnew array<Object^> { };
 	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "hiddenSkillHintContent", param);
 }
+
+void WebManager::ChangeSkillGameServer(System::String^ gameServer)
+{
+	array<Object^>^ param = gcnew array<Object^> { gameServer };
+	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "changeSkillGameServer", param);
+}

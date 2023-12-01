@@ -22,6 +22,8 @@ namespace UmaAssistant {
 		UmaForm(void);
 
 
+		void InitSkillGameServer(Object^ sender, WebBrowserDocumentCompletedEventArgs^ e);
+
 	protected:
 		/// <summary>
 		/// 清除任何使用中的資源。
@@ -33,12 +35,6 @@ namespace UmaAssistant {
 				delete components;
 			}
 		}
-
-
-
-
-
-
 
 	private: System::Windows::Forms::PictureBox^ icon_pictureBox;
 	private: System::ComponentModel::IContainer^ components;
@@ -57,13 +53,6 @@ namespace UmaAssistant {
 	private: System::Windows::Forms::Button^ settings_btn;
 	private: System::Windows::Forms::Button^ scan_btn;
 	public: System::Windows::Forms::Button^ screenshot_preview_btn;
-
-
-
-
-
-
-
 
 
 

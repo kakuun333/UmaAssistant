@@ -41,7 +41,7 @@ System::String^ FileManager::SysReadFile(System::String^ path)
     catch (Exception^ e)
     {
         // 處理可能的異常
-        Console::WriteLine("Error: " + e->Message);
+        std::cout << "Error: " << utility::systemStr2std(e->Message)<< std::endl;
     }
 
     return fileContent;
