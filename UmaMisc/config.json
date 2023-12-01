@@ -2,6 +2,7 @@
   "DebugMode": true,
   "GameServer": 1,
   "GameWindow": 1,
+  "GameWindowName": "BlueStacks App Player 1",
   "LocalServer": {
     "Port": "1234"
   }

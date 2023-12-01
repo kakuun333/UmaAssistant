@@ -134,11 +134,16 @@ namespace UmaAssistant
 		this->WindowState = System::Windows::Forms::FormWindowState::Minimized;
 	}
 
-
-
 	System::Void UmaForm::clean_current_character_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		DataManager::GetInstance()->SetCurrentCharacterInfoLock(false);
 		WebManager::GetInstance()->ChangeCharacterName("");
+	}
+
+	System::Void UmaForm::select_window_btn_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		global::form::previewForm->window_listbox->Items->Clear();
+		GameWindowFinder::GetInstance()->EnumWindow();
+		global::form::previewForm->Show();
 	}
 }

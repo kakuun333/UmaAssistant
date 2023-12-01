@@ -76,6 +76,7 @@ namespace UmaAssistant {
 
 
 	private: System::Windows::Forms::Label^ app_name_label;
+	private: System::Windows::Forms::Button^ select_window_btn;
 
 
 
@@ -103,6 +104,7 @@ namespace UmaAssistant {
 			this->clean_current_character_btn = (gcnew System::Windows::Forms::Button());
 			this->game_window_status_label = (gcnew System::Windows::Forms::Label());
 			this->app_name_label = (gcnew System::Windows::Forms::Label());
+			this->select_window_btn = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->icon_pictureBox))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -167,7 +169,7 @@ namespace UmaAssistant {
 			this->settings_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->settings_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->settings_btn->Location = System::Drawing::Point(110, 42);
+			this->settings_btn->Location = System::Drawing::Point(211, 42);
 			this->settings_btn->Name = L"settings_btn";
 			this->settings_btn->Size = System::Drawing::Size(95, 65);
 			this->settings_btn->TabIndex = 11;
@@ -281,7 +283,7 @@ namespace UmaAssistant {
 			this->game_window_status_label->AutoSize = true;
 			this->game_window_status_label->BackColor = System::Drawing::Color::Transparent;
 			this->game_window_status_label->ForeColor = System::Drawing::Color::Red;
-			this->game_window_status_label->Location = System::Drawing::Point(168, 8);
+			this->game_window_status_label->Location = System::Drawing::Point(164, 10);
 			this->game_window_status_label->Name = L"game_window_status_label";
 			this->game_window_status_label->Size = System::Drawing::Size(107, 20);
 			this->game_window_status_label->TabIndex = 8;
@@ -300,11 +302,32 @@ namespace UmaAssistant {
 			this->app_name_label->TabIndex = 25;
 			this->app_name_label->Text = L"UmaAssistant";
 			// 
+			// select_window_btn
+			// 
+			this->select_window_btn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(81)));
+			this->select_window_btn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"select_window_btn.BackgroundImage")));
+			this->select_window_btn->FlatAppearance->BorderSize = 0;
+			this->select_window_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
+				static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
+			this->select_window_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->select_window_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
+			this->select_window_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
+				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
+			this->select_window_btn->Location = System::Drawing::Point(110, 42);
+			this->select_window_btn->Name = L"select_window_btn";
+			this->select_window_btn->Size = System::Drawing::Size(95, 65);
+			this->select_window_btn->TabIndex = 26;
+			this->select_window_btn->Text = L"選取視窗";
+			this->select_window_btn->UseVisualStyleBackColor = false;
+			this->select_window_btn->Click += gcnew System::EventHandler(this, &UmaForm::select_window_btn_Click);
+			// 
 			// UmaForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(560, 550);
+			this->Controls->Add(this->select_window_btn);
 			this->Controls->Add(this->app_name_label);
 			this->Controls->Add(this->game_window_status_label);
 			this->Controls->Add(this->clean_current_character_btn);
@@ -343,5 +366,6 @@ namespace UmaAssistant {
 	private: System::Void minimize_btn_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void test_btn_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void clean_current_character_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void select_window_btn_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

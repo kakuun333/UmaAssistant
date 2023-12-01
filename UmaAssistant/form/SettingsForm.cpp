@@ -47,12 +47,12 @@ namespace UmaAssistant
 			if (radioButton == tw_server_radio_btn)
 			{
 				global::config->GameServer = GameServerType::TW;
-				Console::WriteLine("RadioButton Checked: " + radioButton->Text);
+				//Console::WriteLine("RadioButton Checked: " + radioButton->Text);
 			}
 			else if (radioButton == jp_server_radio_btn)
 			{
 				global::config->GameServer = GameServerType::JP;
-				Console::WriteLine("RadioButton Checked: " + radioButton->Text);
+				//Console::WriteLine("RadioButton Checked: " + radioButton->Text);
 			}
 		}
 
@@ -72,12 +72,12 @@ namespace UmaAssistant
 			if (radioButton == dmm_radio_btn)
 			{
 				global::config->GameWindow = GameWindowType::DMM;
-				Console::WriteLine("RadioButton Checked: " + radioButton->Text);
+				//Console::WriteLine("RadioButton Checked: " + radioButton->Text);
 			}
 			else if (radioButton == blue_stacks_radio_btn)
 			{
 				global::config->GameWindow = GameWindowType::BLUE_STACKS;
-				Console::WriteLine("RadioButton Checked: " + radioButton->Text);
+				//Console::WriteLine("RadioButton Checked: " + radioButton->Text);
 			}
 		}
 
@@ -169,7 +169,6 @@ namespace UmaAssistant
 
 
 			consoleManager->Disable();
-
 		}
 
 

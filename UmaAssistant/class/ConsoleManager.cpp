@@ -14,6 +14,8 @@ void ConsoleManager::Enable()
 		AllocConsole();
 	}
 
+	SetConsoleOutputCP(CP_UTF8); // 設定控制台輸出字碼頁為 UTF8 ，這樣日文字才不會變亂碼。
+
 	// 獲取標準輸出句柄
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
@@ -22,15 +24,30 @@ void ConsoleManager::Enable()
 	GetConsoleMode(hConsole, &mode);
 	SetConsoleMode(hConsole, mode | ENABLE_VIRTUAL_TERMINAL_PROCESSING);
 
+
+	FILE* newStdout;
 	// 重定向標準輸出
-	if (freopen("CONOUT$", "w", stdout) == nullptr)
+	if (freopen_s(&newStdout, "CONOUT$", "w", stdout) == 0)
 	{
-		// 處理打開文件失敗的情況
-		// 這裡可以加入錯誤處理邏輯，例如顯示一個錯誤消息或日誌
+		// 現在 stdout 被重新導向到 CONOUT$
+		printf("New console\n");
+
+		// 恢復標準輸出到控制台
+		freopen_s(&newStdout, "CONOUT$", "w", stdout);
+		printf("Back to the console.\n");
 	}
+	else
+	{
+		// 處理錯誤
+		perror("freopen_s");
+	}
+	//if (freopen("CONOUT$", "w", stdout) == nullptr)
+	//{
+	//	// 處理打開文件失敗的情況
+	//}
 
 
-	SetConsoleOutputCP(CP_UTF8); // 設定控制台輸出字碼頁為 UTF8 ，這樣日文字才不會變亂碼。
+	
 }
 
 void ConsoleManager::Disable()

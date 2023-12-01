@@ -175,8 +175,8 @@ void Screenshot::CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPatt
 		case IMG_EVENT_TITLE:
 			if (IsEventIcon(event_icon))
 			{
-				crop_x = img_width - (img_width * 0.78);
-				crop_y = img_height - (img_height * 0.81);
+				crop_x = img_width - (img_width * 0.787);
+				crop_y = img_height - (img_height * 0.813);
 				crop_width = img_width - (img_width * 0.45);
 				crop_height = img_height - (img_height * 0.97);
 			}
@@ -189,8 +189,8 @@ void Screenshot::CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPatt
 			}
 			break;
 		case IMG_EVENT_ICON:
-			crop_x = img_width - (img_width * 0.841);
-			crop_y = img_height - (img_height * 0.81);
+			crop_x = img_width - (img_width * 0.85);
+			crop_y = img_height - (img_height * 0.8139);
 			crop_width = img_width - (img_width * 0.946);
 			crop_height = img_height - (img_height * 0.97);
 			break;

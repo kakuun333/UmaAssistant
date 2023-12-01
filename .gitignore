@@ -198,3 +198,5 @@ UmaPy/umaenv
 python312.dll
 lua54.dll
 Release
+Release.zip
+*.rar

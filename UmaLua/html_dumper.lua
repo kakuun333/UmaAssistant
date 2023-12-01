@@ -184,6 +184,41 @@ function dumper.dumpEventData(ms)
         ["R"] = {
 
         }
+    },
+    ["scenario"] = {
+        ["URA"] = {
+            ["event"] = {
+                [1] =  {
+                    [event_title] = {
+                        [1] = {
+                            ["choice_title"] = choice_title,
+                            ["choice_effect"] = choice_effect
+                        }
+                    },
+                    [event_title] = {
+                        [1] = {
+                            ["choice_title"] = choice_title,
+                            ["choice_effect"] = choice_effect
+                        }
+                    }
+                },
+            }
+        },
+        ["aoharu"] = {
+
+        },
+        ["meikura"] = {
+
+        }
+        ["gurarai"] = {
+
+        },
+        ["sanmegami"] = {
+
+        },
+        ["L'Arc"] = {
+
+        }
     }
     ]]
 
@@ -209,7 +244,26 @@ function dumper.dumpEventData(ms)
             ["R"] = {
 
             }
-        }
+        },
+        -- ["scenario"] = {
+        --     ["URA"] = {
+    
+        --     },
+        --     ["aoharu"] = {
+    
+        --     },
+        --     ["meikura"] = {
+    
+        --     }
+        --     ["gurarai"] = {
+    
+        --     },
+        --     ["sanmegami"] = {
+    
+        --     },
+        --     ["L'Arc"] = {
+                
+        --     }
     };
     
     local white_list = fm.getEventWhiteList();

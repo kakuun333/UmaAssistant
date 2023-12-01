@@ -17,33 +17,21 @@
 #include <nlohmann/json.hpp>
 using json = nlohmann::json;
 
+
+#include <locale>
+#include <codecvt>
+
 using namespace System;
 using namespace System::Windows::Forms;
+
+
 
 
 [STAThreadAttribute]
 int main(array<String^>^ args)
 {
-	// 加載字型
-	AddFontResourceW(utility::string2wstring(global::path::std_MochiyPopOne).c_str());
-
-
-	SetDllDirectory(utility::string2wstring(global::path::std_currentDir + "\\dll").c_str());
-
-	// 初始化
-	Scanner::InitOcrJpn();
-	Scanner::InitOcrTw();
-
-	DataManager::InitEventDataJson();
-
-	// 初始化 python
-	//PyManager::GetInstance()->Init();
-
-
+	// 初始化 config
 	global::config->Update();
-	// 提取 config 資料
-	//Config config;
-	//json config = FileManager::GetInstance()->ReadJson(global::path::std_config);
 
 #pragma region 初始化 Console
 	/*
@@ -54,6 +42,22 @@ int main(array<String^>^ args)
 		ConsoleManager::GetInstance()->Enable();
 	}
 #pragma endregion
+
+	// 加載字型
+	AddFontResourceW(utility::string2wstring(global::path::std_MochiyPopOne).c_str());
+
+
+
+	// 初始化 Scanner
+	Scanner::InitOcrJpn();
+	Scanner::InitOcrTw();
+
+	// 初始化 DataManager
+	DataManager::InitEventDataJson();
+
+	// 初始化 python
+	//PyManager::GetInstance()->Init();
+
 
 #pragma region 啟動本地伺服器
 	
@@ -96,5 +100,11 @@ int main(array<String^>^ args)
 
 
 	Application::Run(umaForm); // 啟動主要的 Form (UmaForm)
+
+	LocalServer::Instance->Stop();
+
+	// 卸載字型
+	RemoveFontResourceW(utility::string2wstring(global::path::std_MochiyPopOne).c_str());
+
 	return 0;
 }

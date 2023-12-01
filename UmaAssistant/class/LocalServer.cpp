@@ -87,8 +87,11 @@ void LocalServer::StartLocalServer(Object^ port)
 	// 創建 HttpListener 物件
 	HttpListener^ listener = gcnew HttpListener();
 
+	_listener = listener;
+
 	// 添加要聽取的前綴（URL）
 	listener->Prefixes->Add("http://localhost:" + port_str + "/");
+
 
 	try
 	{
@@ -166,46 +169,6 @@ void LocalServer::StartLocalServer(Object^ port)
 				};
 				ThreadPool::QueueUserWorkItem(gcnew WaitCallback(this, &LocalServer::HandleUmaWebRequest), paramsArray);
 			}
-
-
-
-			//if (requestUrl == "/choice.html")
-			//{
-			//	// 返回 choice.html 的內容
-			//	String^ responseString = FileManager::GetInstance()->SysReadFile(global::path::choice_html);
-			//	array<Byte>^ buffer = Encoding::UTF8->GetBytes(responseString);
-
-			//	System::IO::Stream^ output = context->Response->OutputStream;
-			//	output->Write(buffer, 0, buffer->Length);
-			//}
-			//else if (requestUrl == "/choice_style.css")
-			//{
-			//	String^ responseString = FileManager::GetInstance()->SysReadFile(global::path::choice_style_css);
-			//	array<Byte>^ buffer = Encoding::UTF8->GetBytes(responseString);
-
-			//	System::IO::Stream^ output = context->Response->OutputStream;
-			//	output->Write(buffer, 0, buffer->Length);
-			//}
-			//else if (requestUrl == "/choice_displayer.js")
-			//{
-			//	String^ responseString = FileManager::GetInstance()->SysReadFile(global::path::choice_displayer_js);
-			//	array<Byte>^ buffer = Encoding::UTF8->GetBytes(responseString);
-
-			//	System::IO::Stream^ output = context->Response->OutputStream;
-			//	output->Write(buffer, 0, buffer->Length);
-			//}
-			//else if (requestUrl == "/skill_displayer.js")
-			//{
-			//	String^ responseString = FileManager::GetInstance()->SysReadFile(global::path::skill_displayer_js);
-			//	array<Byte>^ buffer = Encoding::UTF8->GetBytes(responseString);
-
-			//	System::IO::Stream^ output = context->Response->OutputStream;
-			//	output->Write(buffer, 0, buffer->Length);
-			//}
-
-
-			// 關閉輸出流和上下文
-			//context->Response->Close();
 		}
 	}
 	catch (Exception^ ex)
@@ -216,6 +179,7 @@ void LocalServer::StartLocalServer(Object^ port)
 	{
 		// 關閉伺服器
 		listener->Close();
+		//listener->Stop();
 	}
 }
 
@@ -224,4 +188,10 @@ void LocalServer::Start(System::String^ port)
 	Thread^ localHostThread = gcnew Thread(gcnew ParameterizedThreadStart(this, &LocalServer::StartLocalServer));
 
 	localHostThread->Start(port);
+}
+
+void LocalServer::Stop()
+{
+	_listener->Close();
+	//_listener->Stop();
 }

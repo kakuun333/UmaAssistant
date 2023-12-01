@@ -14,6 +14,7 @@ public:
 	bool DebugMode;
 	int GameServer;
 	int GameWindow;
+	std::string GameWindowName;
 	std::map<std::string, std::string> LocalServer;
 
 	void Update();
