@@ -29,7 +29,7 @@ local status_class_dict = {
 
 local all_condition_list = {
     -- プラス
-    "引っ込み思案",
+    -- "引っ込み思案",
     "練習上手○",
     "練習上手◯",
     "練習上手◎",
@@ -57,7 +57,7 @@ local all_condition_list = {
 
 local plus_condition_list = {
     -- プラス
-    "引っ込み思案",
+    -- "引っ込み思案",
     "練習上手○",
     "練習上手◯",
     "練習上手◎",
@@ -85,12 +85,32 @@ local minus_condition_list = {
     "まだまだ準備中",
 }
 
+local wrong_skill_list = {
+    --      錯誤                    正確
+    ["孤線のプロフェッサー"] = "弧線のプロフェッサー";
+}
+
+
 ---- 本地函數 ---- 本地函數 ---- 本地函數 ---- 本地函數 ---- 本地函數 
+local function fixWrongSkillName(choice_effect)
+    for wrong_skill, correct_skill in pairs(wrong_skill_list) do
+        if string.match(choice_effect, wrong_skill) then
+            choice_effect = string.gsub(choice_effect, wrong_skill, correct_skill);
+        end
+    end
+
+    return choice_effect
+end
+
+
 local function placeTagToStatus(choice_effect) 
     
     -- 給 choice_effect 相對應的 status 添加 <img> 和 <span>
     for _, status_name in ipairs(jp_status_name_list) do
         local replace_pattern = "<img src=\"../UmaMisc/Image/Status/"..status_class_dict[status_name]..".png\"><span class=\"status_"..status_class_dict[status_name].."\">%1</span>"
+        
+        -- 避免替換到 スタミナキープ
+        -- choice_effect = string.gsub(choice_effect, "("..status_name..")", replace_pattern);
         choice_effect = string.gsub(choice_effect, "("..status_name..")", replace_pattern);
     end
 
@@ -127,12 +147,29 @@ local function placeTagToSkillHint(choice_effect)
         end
     
         local skill = skillOrCondition
+        for wrong_skill, correct_skill in pairs(wrong_skill_list) do
+            if (skill == wrong_skill) then
+                skill = correct_skill;
+            end
+        end
+
         -- console:print(skill);
 
         choice_effect = string.gsub(choice_effect, "『"..skill.."』", "<span class=\"skill_hint\">『"..skill.."』</span>")
+
+        --[[
+            錯字：孤線->弧線
+            <span class=\"status_plus_value\">+10</span><br>孤線のプロフェッサーのヒントLv<span class=\"status_plus_value\">+3</span><br>
+        ]]
+        
     
         ::continue::
     end
+
+    --[[
+        因為有些技能沒有加上『』，所以特別再檢查一次
+    ]]
+    choice_effect = string.gsub(choice_effect, "<br>([^<]-)のヒントLv<span class=", "<span class=\"skill_hint\">『%1』</span>のヒントLv<span class=");
 
 
     return choice_effect;
@@ -418,6 +455,8 @@ function parser.getEventDict(event_html)
             --[[
                 對 choice_effect 加工
             ]]
+            choice_effect = fixWrongSkillName(choice_effect)
+
             choice_effect = placeTagToStatus(choice_effect);
 
             choice_effect = placeTagToSkillHint(choice_effect);

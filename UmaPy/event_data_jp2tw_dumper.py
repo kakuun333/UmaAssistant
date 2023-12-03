@@ -11,7 +11,7 @@ driver = webdriver.Chrome();
 # 全局變數
 DEBUG_MODE = False;
 event_dict = {};
-skill_dict = {};
+
 """
 event_dict = {
     jp_event_owner: {
@@ -60,13 +60,7 @@ def filtered_char_img_list(img_list):
     
     return filtered_img_list;
 
-def switch_to_new_tab():
-    # 獲取視窗句柄
-    window_handles = driver.window_handles;
-    # 獲取新視窗句柄
-    new_window_handle = window_handles[-1];
-    # 切換到新視窗
-    driver.switch_to.window(new_window_handle);
+
 
 def open_char_card_url(img):
     # 找到 img 的父級元素
@@ -76,12 +70,7 @@ def open_char_card_url(img):
 
     driver.execute_script(f"window.open('{url}', '_blank');");
 
-def open_url(url):
-    driver.execute_script(f"window.open('{url}', '_blank');");
 
-def return_to_first_window():
-    window_handles = driver.window_handles;
-    driver.switch_to.window(window_handles[0])
 
 def get_tw_card_event_owner():
     main_element = driver.find_element(By.CLASS_NAME, "support_card-right");
@@ -223,7 +212,7 @@ def dump_card_convert_data():
         # img.click();
         open_char_card_url(img);
 
-        switch_to_new_tab();
+        utility.switch_to_new_tab(driver);
 
         tw_event_owner = get_tw_card_event_owner();
         jp_event_owner = get_jp_card_event_owner();
@@ -241,7 +230,7 @@ def dump_card_convert_data():
 
         open_jp_url();
 
-        switch_to_new_tab();
+        utility.switch_to_new_tab(driver);
 
         got_jp_list = False;
         jp_event_title_list = [];
@@ -265,11 +254,11 @@ def dump_card_convert_data():
 
         driver.close();
 
-        switch_to_new_tab();
+        utility.switch_to_new_tab(driver);
 
         driver.close();
 
-        return_to_first_window();
+        utility.return_to_first_window(driver);
 
 
 
@@ -282,7 +271,7 @@ def dump_char_convert_data():
     for img in filtered_char_img_list(img_list):
         open_char_card_url(img);
 
-        switch_to_new_tab();
+        utility.switch_to_new_tab(driver);
 
         tw_char_event_owner = get_tw_char_event_owner();
 
@@ -298,7 +287,7 @@ def dump_char_convert_data():
 
         open_jp_url();
 
-        switch_to_new_tab();
+        utility.switch_to_new_tab(driver);
 
         jp_char_event_owner = get_jp_char_event_owner();
 
@@ -323,136 +312,18 @@ def dump_char_convert_data():
 
         driver.close();
 
-        switch_to_new_tab();
+        utility.switch_to_new_tab(driver);
 
         driver.close();
 
-        return_to_first_window();
+        utility.return_to_first_window(driver);
 
 
 
-def get_jp_skill_title():
-    jp_skill_title = "";
 
-    span = driver.find_element(By.CLASS_NAME, "map-dh-an");
-    if (span.text == "日服"):
-        a_span = span.find_element(By.XPATH, "..");
-        jp_skill_title = a_span.get_attribute("title");
 
-        print(jp_skill_title);
-    return jp_skill_title;
 
-def get_tw_skill_title():
-    tw_skill_title = "";
 
-    wikitable = driver.find_element(By.CLASS_NAME, "wikitable");
-    th = wikitable.find_element(By.TAG_NAME, "th");
-
-    tw_skill_title = re.match(r"(.+).+/.+", th.text).group(1);
-
-    print(tw_skill_title);
-
-    return tw_skill_title;
-
-def get_tw_skill_effect():
-    tw_skill_effect = "";
-
-    wikitable = driver.find_element(By.CLASS_NAME, "wikitable");
-    tr = wikitable.find_elements(By.XPATH, ".//tr")[5];
-
-    td = tr.find_element(By.TAG_NAME, "td");
-
-    tw_skill_effect = td.text;
-
-    print(tw_skill_effect);
-
-    return tw_skill_effect;
-
-def get_tw_upper_skill():
-    tw_upper_skill = None;
-
-    wikitable = driver.find_element(By.CLASS_NAME, "wikitable");
-    tr = wikitable.find_elements(By.XPATH, ".//tr")[17];
-    try:
-        font = tr.find_element(By.XPATH, ".//font");
-        print("tw_upper_skill: " + font.text);
-        tw_upper_skill = font.text;
-    except:
-        pass;
-
-    return tw_upper_skill;
-
-def get_tw_lower_skill():
-    tw_lower_skill = None;
-
-    wikitable = driver.find_element(By.CLASS_NAME, "wikitable");
-    tr = wikitable.find_elements(By.XPATH, ".//tr")[16];
-    try:
-        font = tr.find_element(By.XPATH, ".//font");
-        print("tw_lower_skill: " + font.text);
-        tw_lower_skill = font.text;
-    except:
-        pass;
-
-    return tw_lower_skill;
-
-def convert_circle(text):
-    # text = text.replace('○', '◯');
-    try:
-        text = re.sub("○", "◯", text);
-    except:
-        pass;
-
-    return text;
-
-def dump_skill_convert_data():
-    driver.get("https://wiki.biligame.com/umamusume/%E7%B9%81%E4%B8%AD%E6%8A%80%E8%83%BD%E9%80%9F%E6%9F%A5%E8%A1%A8");
-    time.sleep(6);
-
-    skill_list = driver.find_elements(By.CLASS_NAME, "divsort");
-    for skill in skill_list:
-        td_list = skill.find_elements(By.XPATH, ".//td");
-
-        try:
-            if (td_list[3].text == "普通" or td_list[3].text == "传说"):
-                a = td_list[0].find_element(By.XPATH, ".//a");
-                skill_url = a.get_attribute("href");
-                open_url(skill_url);
-                switch_to_new_tab();
-                jp_skill_title = get_jp_skill_title();
-                jp_skill_title = convert_circle(jp_skill_title);
-
-                tw_skill_title = get_tw_skill_title();
-                tw_skill_title = convert_circle(tw_skill_title);
-
-                tw_skill_effect = get_tw_skill_effect();
-                tw_skill_effect = convert_circle(tw_skill_effect);
-        
-                tw_upper_skill = get_tw_upper_skill();
-                tw_upper_skill = convert_circle(tw_upper_skill);
-
-                tw_lower_skill = get_tw_lower_skill();
-                tw_lower_skill = convert_circle(tw_lower_skill);
-
-                skill_dict[jp_skill_title] = {
-                    "tw_skill_title": tw_skill_title,
-                    "tw_skill_effect": tw_skill_effect,
-                    "tw_upper_skill": tw_upper_skill,
-                    "tw_lower_skill": tw_lower_skill
-                }
-
-                json_string = json.dumps(skill_dict, indent=2, ensure_ascii=False)
-
-                utility.write_convert_data_skill(json_string);
-
-                driver.close();
-
-                return_to_first_window();
-        except:
-            return_to_first_window();
-            pass;
-
-dump_skill_convert_data();
 
 # dump_card_convert_data();
 # dump_char_convert_data();
@@ -502,7 +373,7 @@ dump_skill_convert_data();
 
 # open_jp_url();
 
-# switch_to_new_tab();
+# utility.switch_to_new_tab(driver);
 
 # got_jp_list = False;
 # jp_event_title_list = [];

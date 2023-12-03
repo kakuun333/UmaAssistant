@@ -76,7 +76,7 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 			ocr_jpn->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=");
 			break;
 		case ImageType::IMG_HENSEI_CHARACTER_NAME:
-			ocr_jpn->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=「」【】『』〈〉［］〔〕≪≫（）");
+			ocr_jpn->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
 			break;
 		}
 
@@ -97,7 +97,7 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 			ocr_tw->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=");
 			break;
 		case ImageType::IMG_HENSEI_CHARACTER_NAME:
-			ocr_tw->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=「」【】『』〈〉［］〔〕≪≫（）");
+			ocr_tw->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
 			break;
 		}
 
@@ -206,9 +206,6 @@ void Scanner::Start(std::string language)
 			DataManager* dataManager = DataManager::GetInstance();
 			WebManager* webManager = WebManager::GetInstance();
 
-
-			
-
 			_scanning = true;
 			while (global::umaswitch::Scanning)
 			{
@@ -220,9 +217,6 @@ void Scanner::Start(std::string language)
 					std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 					continue;
 				}
-				
-
-				//global::form::previewForm->pictureBox1->Image = ss->bmp_window;
 
 				///
 				/// 獲取圖片裡的文字
@@ -245,28 +239,26 @@ void Scanner::Start(std::string language)
 				//std::cout << "event_title_gray_bin_inv: " << eventText << std::endl;
 
 				eventText = this->GetScannedText(ss.event_title_gray_bin, language);
-				std::cout << "[Scanner] event_title_gray_bin: " << eventText << std::endl;
 
 				henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
-				std::cout << "[Scanner] henseiCharNameText: " << henseiCharNameText << std::endl;
 
+				if (eventText.empty() && henseiCharNameText.empty())
+				{
+					std::this_thread::sleep_for(std::chrono::milliseconds(100));
+					std::cout << u8"[Scanner] 偵測到的都是空字串" << std::endl;
+					continue;
+				}
+
+				std::cout << u8"[Scanner] event_title_gray_bin: " << eventText << std::endl;
+				std::cout << u8"[Scanner] henseiCharNameText: " << henseiCharNameText << std::endl;
 				//henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_inv, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
 				//std::cout << "henseiCharNameText_inv: " << henseiCharNameText << std::endl;
-
-
-
-
-				/*
-				
-					加上 character 相關 data 後查找的速度會變慢的原因
-					應該是查找 character 相關 data 的程序太複雜
-				
-				*/
 
 				if (_previousEventText != eventText ||
 					_previousCharacterNameText != characterNameText ||
 					_previousHenseiCharacterNameText != henseiCharNameText)
 				{
+#pragma region Looking for Current Character
 					if (dataManager->IsCurrentCharacterInfoLocked())
 					{
 						std::cout << "[Scanner] CURRENT CHARACTER LOCKED" << std::endl;
@@ -282,35 +274,33 @@ void Scanner::Start(std::string language)
 							std::cout << u8"[Scanner] 嘗試 hensei_character_name_gray_inv" << std::endl;
 							dataManager->TryGetCurrentCharacterName(henseiCharNameText);
 						}
-						//if (!dataManager->TryGetCurrentCharacterName(henseiCharNameText))
-						//{
-						//	dataManager->TryGetCurrentCharacterName(characterNameText);
-						//}
 					}
+#pragma endregion
 
-					UmaEventData charUmaEventData = dataManager->GetCurrentCharacterUmaEventData(eventText);
-					std::cout << "[Scanner] charUmaEventData.IsDataComplete: " << charUmaEventData.IsDataComplete() << std::endl;
 
-					if (charUmaEventData.IsDataComplete())
+#pragma region ScenarioEventData
+					ScenarioEventData scenarioEventData = dataManager->GetScenarioEventData(eventText);
+					if (scenarioEventData.IsDataComplete())
 					{
-						// 這裡更新 UI
 						webManager->CleanChoiceTable();
 
-						//utility::formctrl::Clear(global::form::umaForm->choicePanel); // 清除先前創建的 WinForm 物件
-						for (UmaChoice choice : charUmaEventData.Get<std::vector<UmaChoice>>(UmaEventDataType::CHOICE_LIST))
+						for (ScenarioChoice choice : scenarioEventData.event_list)
 						{
-							webManager->CreateChoice(choice.sys_choice_title, choice.sys_choice_effect);
-
-							FormDesigner::Instance->CreateChoiceTable(choice);
+							webManager->CreateChoice(utility::stdStr2system(choice.choice_title), utility::stdStr2system(choice.choice_effect));
 						}
 
-						System::String^ sys_event_owner = charUmaEventData.Get<System::String^>(UmaEventDataType::EVENT_OWNER);
-						//utility::formctrl::Text(global::form::umaForm->event_owner_textBox, sys_event_owner);
+						System::String^ sys_event_title = utility::stdStr2system(scenarioEventData.event_title);
 
-						webManager->ChangeEventOwner(sys_event_owner);
+						switch (global::config->GameServer)
+						{
+						case GameServerType::JP:
+							webManager->ChangeEventOwner("メインシナリオイベント");
+							break;
+						case GameServerType::TW:
+							webManager->ChangeEventOwner("主要劇情事件");
+							break;
+						}
 
-						System::String^ sys_event_title = charUmaEventData.Get<System::String^>(UmaEventDataType::EVENT_TITLE);
-						//utility::formctrl::Text(global::form::umaForm->event_title_textbox, sys_event_owner);
 
 						webManager->ChangeEventTitle(sys_event_title);
 
@@ -319,62 +309,90 @@ void Scanner::Start(std::string language)
 					}
 					else
 					{
-						UmaEventData sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
+						std::cout << u8"[Scanner] scenarioEventData 資料不完整" << std::endl;
 
-						if (!sapokaUmaEventData.IsDataComplete())
+
+#pragma region Character and SupportCard Event Data
+						UmaEventData charUmaEventData = dataManager->GetCurrentCharacterUmaEventData(eventText);
+						std::cout << "[Scanner] charUmaEventData.IsDataComplete: " << charUmaEventData.IsDataComplete() << std::endl;
+
+						if (charUmaEventData.IsDataComplete())
 						{
-							std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整" << std::endl;
+							// 這裡更新 UI
+							webManager->CleanChoiceTable();
 
-							eventText = this->GetScannedText(ss.event_title_gray, language);
-							std::cout << "[Scanner] event_title_gray: " << eventText << std::endl;
-							sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
+							for (UmaChoice choice : charUmaEventData.Get<std::vector<UmaChoice>>(UmaEventDataType::CHOICE_LIST))
+							{
+								webManager->CreateChoice(choice.sys_choice_title, choice.sys_choice_effect);
+							}
+
+							System::String^ sys_event_owner = charUmaEventData.Get<System::String^>(UmaEventDataType::EVENT_OWNER);
+
+							webManager->ChangeEventOwner(sys_event_owner);
+
+							System::String^ sys_event_title = charUmaEventData.Get<System::String^>(UmaEventDataType::EVENT_TITLE);
+
+							webManager->ChangeEventTitle(sys_event_title);
+
+							webManager->HiddenSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
+							webManager->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
+						}
+						else
+						{
+
+							UmaEventData sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
 
 							if (!sapokaUmaEventData.IsDataComplete())
 							{
-								std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整2" << std::endl;
+								std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整" << std::endl;
 
-								eventText = this->GetScannedText(ss.event_title_oimg, language);
-								std::cout << "[Scanner] event_title_oimg: " << eventText << std::endl;
+								eventText = this->GetScannedText(ss.event_title_gray, language);
+								std::cout << "[Scanner] event_title_gray: " << eventText << std::endl;
 								sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
 
 								if (!sapokaUmaEventData.IsDataComplete())
 								{
-									std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整3" << std::endl;
+									std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整2" << std::endl;
 
-									auto end_time = std::chrono::system_clock::now();
-									auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
-									double seconds = duration.count() * 1.0f / 1000;
-									printf("[Scanner] SCANNED [%.2fs]\n", seconds);
+									eventText = this->GetScannedText(ss.event_title_oimg, language);
+									std::cout << "[Scanner] event_title_oimg: " << eventText << std::endl;
+									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
 
-									continue;
+									if (!sapokaUmaEventData.IsDataComplete())
+									{
+										std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整3" << std::endl;
+
+										auto end_time = std::chrono::system_clock::now();
+										auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
+										double seconds = duration.count() * 1.0f / 1000;
+										printf("[Scanner] SCANNED [%.2fs]\n", seconds);
+
+										continue;
+									}
 								}
+							};
+
+							webManager->CleanChoiceTable();
+
+							for (UmaChoice choice : sapokaUmaEventData.Get<std::vector<UmaChoice>>(UmaEventDataType::CHOICE_LIST))
+							{
+								webManager->CreateChoice(choice.sys_choice_title, choice.sys_choice_effect);
 							}
 
-						};
+							System::String^ sys_event_owner = sapokaUmaEventData.Get<System::String^>(UmaEventDataType::EVENT_OWNER);
+							webManager->ChangeEventOwner(sys_event_owner);
 
-						webManager->CleanChoiceTable();
+							System::String^ sys_event_title = sapokaUmaEventData.Get<System::String^>(UmaEventDataType::EVENT_TITLE);
+							webManager->ChangeEventTitle(sys_event_title);
 
-						for (UmaChoice choice : sapokaUmaEventData.Get<std::vector<UmaChoice>>(UmaEventDataType::CHOICE_LIST))
-						{
-							webManager->CreateChoice(choice.sys_choice_title, choice.sys_choice_effect);
+							webManager->HiddenSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
+							webManager->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
 
-							FormDesigner::Instance->CreateChoiceTable(choice);
+
 						}
-
-						System::String^ sys_event_owner = sapokaUmaEventData.Get<System::String^>(UmaEventDataType::EVENT_OWNER);
-						//utility::formctrl::Text(global::form::umaForm->event_owner_textBox, sys_event_owner);
-
-						webManager->ChangeEventOwner(sys_event_owner);
-
-						System::String^ sys_event_title = sapokaUmaEventData.Get<System::String^>(UmaEventDataType::EVENT_TITLE);
-						//utility::formctrl::Text(global::form::umaForm->event_title_textbox, sys_event_owner);
-
-						webManager->ChangeEventTitle(sys_event_title);
-
-
-						webManager->HiddenSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
-						webManager->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
 					}
+#pragma endregion
+
 				}
 				else
 				{

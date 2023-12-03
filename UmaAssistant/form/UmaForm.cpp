@@ -33,8 +33,6 @@ namespace UmaAssistant
 
 
 #pragma region WebBrowser
-		WebManager* webManager = WebManager::GetInstance();
-
 		// 提取 config 資料
 		System::String^ port = utility::stdStr2system(global::config->LocalServer["Port"]);
 		//json config = FileManager::GetInstance()->ReadJson(global::path::std_config);
@@ -44,8 +42,6 @@ namespace UmaAssistant
 		choiceWebBrowser->DocumentCompleted += gcnew WebBrowserDocumentCompletedEventHandler(this, &UmaForm::OnChoiceDocumentCompleted);
 		choiceWebBrowser->Navigate("http://localhost:" + port + "/choice.html");
 		characterNameWebBrowser->Navigate("http://localhost:" + port + "/character_name.html");
-
-
 #pragma endregion
 
 #pragma region DebugMode
@@ -105,13 +101,13 @@ namespace UmaAssistant
 			}
 			
 
-			this->scan_btn->Text = "停止";
+			this->scan_btn->Text = u8"停止";
 		}
 		else
 		{
 			scanner->Stop();
 
-			this->scan_btn->Text = "起動";
+			this->scan_btn->Text = u8"啓動";
 		}
 	}
 

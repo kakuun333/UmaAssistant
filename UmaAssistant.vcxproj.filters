@@ -96,6 +96,9 @@
     <ClCompile Include="UmaAssistant\global\Others.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="UmaAssistant\class\data\ScenarioEventData.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UmaAssistant\form\UmaForm.h">
@@ -195,6 +198,9 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="UmaAssistant\global\Others.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="UmaAssistant\class\data\ScenarioEventData.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

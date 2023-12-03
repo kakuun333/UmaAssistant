@@ -8,6 +8,9 @@ bool DataManager::_currentCharacterInfoLocked = false;
 nlohmann::json DataManager::event_data_jp_json;
 nlohmann::json DataManager::event_data_tw_json;
 
+nlohmann::json DataManager::scenario_event_data_jp_json;
+nlohmann::json DataManager::scenario_event_data_tw_json;
+
 std::map<std::string, std::string> DataManager::_currentCharacterInfoDict =
 {
 	// route
@@ -19,15 +22,21 @@ std::map<std::string, std::string> DataManager::_currentCharacterInfoDict =
 #pragma endregion ÀRºAÅÜ¼Æ
 
 
+
 void DataManager::InitEventDataJson()
 {
 	FileManager* fileManager = FileManager::GetInstance();
 	event_data_jp_json = fileManager->ReadJson(global::path::std_event_data_jp_json);
 	event_data_tw_json = fileManager->ReadJson(global::path::std_event_data_tw_json);
+
+	scenario_event_data_jp_json = fileManager->ReadJson(global::path::std_scenario_event_data_jp_json);
+	scenario_event_data_tw_json = fileManager->ReadJson(global::path::std_scenario_event_data_tw_json);
 }
 
 bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 {
+	bool foundCurrentCharacter = false;
+
 	json event_data_json;
 
 	switch (global::config->GameServer)
@@ -51,7 +60,7 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 	{
 		if (it.key() == "1_star")
 		{
-			oneStarThread = new std::thread([=]()
+			oneStarThread = new std::thread([=, &foundCurrentCharacter]()
 				{
 					for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
 					{
@@ -63,6 +72,7 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 						_currentCharacterInfoDict["rare"] = it.key();
 						_currentCharacterInfoDict["event_owner"] = event_owner;
 						_currentCharacterInfoLocked = true;
+						foundCurrentCharacter = true;
 
 						webManager->ChangeCharacterName(utility::stdStr2system(event_owner));
 					}
@@ -71,7 +81,7 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 		}
 		else if (it.key() == "2_star")
 		{
-			twoStarThread = new std::thread([=]()
+			twoStarThread = new std::thread([=, &foundCurrentCharacter]()
 				{
 					for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
 					{
@@ -83,6 +93,7 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 						_currentCharacterInfoDict["rare"] = it.key();
 						_currentCharacterInfoDict["event_owner"] = event_owner;
 						_currentCharacterInfoLocked = true;
+						foundCurrentCharacter = true;
 
 						webManager->ChangeCharacterName(utility::stdStr2system(event_owner));
 					}
@@ -90,7 +101,7 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 		}
 		else if (it.key() == "3_star")
 		{
-			threeStarThread = new std::thread([=]()
+			threeStarThread = new std::thread([=, &foundCurrentCharacter]()
 				{
 					for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
 					{
@@ -102,6 +113,7 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 						_currentCharacterInfoDict["rare"] = it.key();
 						_currentCharacterInfoDict["event_owner"] = event_owner;
 						_currentCharacterInfoLocked = true;
+						foundCurrentCharacter = true;
 
 						webManager->ChangeCharacterName(utility::stdStr2system(event_owner));
 					}
@@ -117,8 +129,69 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 	delete twoStarThread;
 	delete threeStarThread;
 
-	return true;
+	return foundCurrentCharacter;
 	//return !_currentCharacterInfoDict["event_owner"].empty();
+}
+
+ScenarioEventData DataManager::GetScenarioEventData(std::string scanned_text)
+{
+	json event_data_json;
+
+	switch (global::config->GameServer)
+	{
+	case GameServerType::JP:
+		event_data_json = scenario_event_data_jp_json;
+		break;
+	case GameServerType::TW:
+		event_data_json = scenario_event_data_tw_json;
+	}
+
+
+	ScenarioEventData scenarioEventData;
+
+	std::map<std::string, float> similarEventTitleList = {};
+
+	for (json::iterator it = event_data_json.begin(); it != event_data_json.end(); ++it)
+	{
+		std::string scenario_type = it.key();
+		json scenario_type_v = it.value();
+		for (json::iterator it2 = scenario_type_v.begin(); it2 != scenario_type_v.end(); ++it2)
+		{
+			std::string event_title = it2.key();
+
+			float similarity = utility::GetSimilarity(scanned_text, event_title);
+
+			if (similarity >= utility::SIMILAR_METRIC)
+			{
+				scenarioEventData.event_title = event_title;
+
+				
+
+				for (const auto& event : it2.value())
+				{
+					ScenarioChoice scenarioChoice;
+
+					for (const auto& choice : event.items())
+					{
+						if (choice.key() == "choice_title")
+						{
+							scenarioChoice.choice_title = choice.value().get<std::string>();
+							std::cout << "scenarioEvent.choice_title: " << scenarioChoice.choice_title << std::endl;
+						}
+						else
+						{
+							scenarioChoice.choice_effect = choice.value().get<std::string>();
+						}
+						//choice["choice_effect"] = scenarioEvent.choice_effect;
+					}
+					scenarioEventData.event_list.push_back(scenarioChoice);
+				}
+			}
+		}
+	}
+
+
+	return scenarioEventData;
 }
 
 UmaEventData DataManager::GetCurrentCharacterUmaEventData(std::string scanned_text)

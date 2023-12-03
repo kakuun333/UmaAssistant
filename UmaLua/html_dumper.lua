@@ -245,25 +245,6 @@ function dumper.dumpEventData(ms)
 
             }
         },
-        -- ["scenario"] = {
-        --     ["URA"] = {
-    
-        --     },
-        --     ["aoharu"] = {
-    
-        --     },
-        --     ["meikura"] = {
-    
-        --     }
-        --     ["gurarai"] = {
-    
-        --     },
-        --     ["sanmegami"] = {
-    
-        --     },
-        --     ["L'Arc"] = {
-        
-        --     }
     };
     
     local white_list = fm.getEventWhiteList();

@@ -22,7 +22,7 @@ namespace UmaAssistant {
 		UmaForm(void);
 
 
-		void InitSkillGameServer(Object^ sender, WebBrowserDocumentCompletedEventArgs^ e);
+		void OnChoiceDocumentCompleted(Object^ sender, WebBrowserDocumentCompletedEventArgs^ e);
 
 	protected:
 		/// <summary>
@@ -182,7 +182,7 @@ namespace UmaAssistant {
 			this->scan_btn->Name = L"scan_btn";
 			this->scan_btn->Size = System::Drawing::Size(95, 65);
 			this->scan_btn->TabIndex = 16;
-			this->scan_btn->Text = L"起動";
+			this->scan_btn->Text = L"啓動";
 			this->scan_btn->UseVisualStyleBackColor = false;
 			this->scan_btn->Click += gcnew System::EventHandler(this, &UmaForm::scan_btn_Click);
 			// 

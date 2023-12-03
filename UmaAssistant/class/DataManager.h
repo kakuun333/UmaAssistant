@@ -1,8 +1,12 @@
 #pragma once
 
 #include <string>
-#include "data/UmaEventData.h"
+
 #include <nlohmann/json.hpp>
+
+
+#include "data/UmaEventData.h"
+#include "data/ScenarioEventData.h"
 
 class DataManager
 {
@@ -16,8 +20,10 @@ private:
 	static bool _currentCharacterInfoLocked;
 
 	static nlohmann::json event_data_jp_json;
-
 	static nlohmann::json event_data_tw_json;
+
+	static nlohmann::json scenario_event_data_jp_json;
+	static nlohmann::json scenario_event_data_tw_json;
 public:
 	static DataManager* GetInstance()
 	{
@@ -35,6 +41,8 @@ public:
 	UmaEventData GetCurrentCharacterUmaEventData(std::string scanned_text);
 
 	UmaEventData GetSupportCardUmaEventData(std::string scanned_text);
+
+	ScenarioEventData GetScenarioEventData(std::string scanned_text);
 
 	bool TryGetCurrentCharacterName(std::string scanned_text);
 
