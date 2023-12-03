@@ -134,6 +134,8 @@ def get_event_title_list():
 
                 event_title = a.text
 
+                event_title = utility.convert_nami(event_title);
+
                 print("event_title: " + event_title);
 
                 list.append(event_title);
@@ -320,13 +322,11 @@ def dump_char_convert_data():
 
 
 
-
-
-
-
-
 # dump_card_convert_data();
-# dump_char_convert_data();
+
+
+
+dump_char_convert_data();
 
 
 

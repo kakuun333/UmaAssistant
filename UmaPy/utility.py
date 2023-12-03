@@ -79,6 +79,18 @@ def convert_skill_circle(text):
 
     return text;
 
+def convert_nami(text):
+    # event_data_jp.json 和 event_data_jp_to_tw_char.json 波浪符不一致，導致「あんし〜ん笹針師、参☆上」無法轉換成中文
+    # event_data_jp.json 的波浪〜
+    # event_data_jp_to_tw_char.json 的波浪～  
+    #
+    try:
+        text = re.sub("～", "〜", text);
+    except:
+        pass;
+
+    return text;
+
 def remove_space(str):
     str = str.replace(" ", "");
     str = str.replace("　", "");

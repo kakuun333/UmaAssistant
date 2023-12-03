@@ -376,6 +376,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -780,6 +804,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -1176,6 +1224,30 @@
               {
                 "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+20</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -1656,6 +1728,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -1904,7 +2000,7 @@
             ]
           },
           {
-            "好酷喔～！": [
+            "好酷喔〜！": [
               {
                 "choice_effect": "技能點<span class=\"status_plus_value\">+30</span>",
                 "choice_title": "ぜひ！"
@@ -2084,6 +2180,30 @@
               {
                 "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -2480,6 +2600,30 @@
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+25</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+25</span><br><span class=\"skill_hint\">『差し切り体勢』</span>的靈感Lv<span class=\"status_plus_value\">+2</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -2912,6 +3056,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -3334,6 +3502,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -3726,6 +3918,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -4102,6 +4318,30 @@
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『テンポアップ』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -4978,6 +5218,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -5398,6 +5662,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -5455,7 +5743,7 @@
           }
         ]
       },
-      "待兼唐懷瑟（鏘鏘～斜裝登場）": {
+      "待兼唐懷瑟（鏘鏘〜斜裝登場）": {
         "event": [
           {
             "新年抱負": [
@@ -5794,6 +6082,30 @@
               {
                 "choice_effect": "幹勁下降<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>隨機<span class=\"minus_condition\">『不擅長練習』</span><hr><span class=\"plus_condition\">『擅長練習◯』</span>",
                 "choice_title": "わかった、無理のない範囲でやろう"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -6246,6 +6558,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -6664,6 +7000,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -6804,42 +7164,6 @@
             ]
           },
           {
-            "賽馬娘問答☆～關係篇～": [
-              {
-                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『末脚』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
-                "choice_title": "エイシンフラッシュ"
-              },
-              {
-                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span>",
-                "choice_title": "ミホノブルボン"
-              }
-            ]
-          },
-          {
-            "賽馬娘問答☆～嗜好篇～": [
-              {
-                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span>",
-                "choice_title": "ごはん"
-              },
-              {
-                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『京都レース場◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
-                "choice_title": "パン"
-              }
-            ]
-          },
-          {
-            "賽馬娘問答☆～出身篇～": [
-              {
-                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『マイルコーナー◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
-                "choice_title": "ケンタッキー州"
-              },
-              {
-                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span>",
-                "choice_title": "テキサス州"
-              }
-            ]
-          },
-          {
             "仰望尊死！靈魂出竅！？": [
               {
                 "choice_effect": "幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><br>隨機<span class=\"plus_condition\">『天賦異稟』</span>",
@@ -6912,46 +7236,6 @@
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>",
                 "choice_title": "得意なダンスでGO！"
-              }
-            ]
-          },
-          {
-            "探訪推活～入門篇～": [
-              {
-                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>",
-                "choice_title": "ペンライト"
-              },
-              {
-                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>",
-                "choice_title": "応援うちわ"
-              }
-            ]
-          },
-          {
-            "探訪推活～極致篇～": [
-              {
-                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>",
-                "choice_title": "レースの前後だと思う"
-              },
-              {
-                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>",
-                "choice_title": "……今、デジタルが行きたい場所かな"
-              }
-            ]
-          },
-          {
-            "探訪推活～真傳篇～": [
-              {
-                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>",
-                "choice_title": "デ・ジ・たーーーん！！"
-              },
-              {
-                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>",
-                "choice_title": "キング！キング！"
-              },
-              {
-                "choice_effect": "技能點<span class=\"status_plus_value\">+30</span>",
-                "choice_title": "両手にペンライトを装備する"
               }
             ]
           },
@@ -7032,6 +7316,30 @@
               {
                 "choice_effect": "五種數値<span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+20</span><br>樫本理子的情誼量條<span class=\"status_plus_value\">+4</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -7440,6 +7748,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -7820,6 +8152,30 @@
               {
                 "choice_effect": "幹勁下降<br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_minus_value\">-5</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -8248,6 +8604,30 @@
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_minus_value\">-5</span><br>隨機幹勁下降または<span class=\"minus_condition\">『懶惰成性』</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -8700,6 +9080,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -9140,6 +9544,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -9512,6 +9940,30 @@
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+25</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『道悪◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -9960,6 +10412,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -10388,6 +10864,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -10472,7 +10972,7 @@
             ]
           },
           {
-            "一～二！": [
+            "一〜二！": [
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>",
                 "choice_title": "キレのある走りを見せてくれ！"
@@ -10784,6 +11284,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -10904,7 +11428,7 @@
             ]
           },
           {
-            "一～二！": [
+            "一〜二！": [
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>",
                 "choice_title": "キレのある走りを見せてくれ！"
@@ -11184,6 +11708,30 @@
               {
                 "choice_effect": "五種數値3種を<span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+20</span><br>劇本NPC的情誼量條<span class=\"status_plus_value\">+4</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -11656,6 +12204,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -12056,6 +12628,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -12444,6 +13040,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -12820,6 +13440,30 @@
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『テンポアップ』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -13784,6 +14428,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -14300,6 +14968,30 @@
               {
                 "choice_effect": "G1：<br>五種數値中隨機選兩種<span class=\"status_plus_value\">+4</span><br>技能點<span class=\"status_plus_value\">+25</span><hr>G2~G3：<br>五種數値中隨機選兩種<span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+20</span><hr>op：<br>技能點<span class=\"status_plus_value\">+10</span><hr>共通：<br>體力<span class=\"status_minus_value\">-15</span>or<span class=\"status_minus_value\">-25</span>or<span class=\"status_minus_value\">-35</span><br>隨機『バ場状況や出場したレース場に関係するスキル的靈感』取得",
                 "choice_title": "次はシチーが引き離す番"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -15156,6 +15848,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -15632,6 +16348,30 @@
               {
                 "choice_effect": "幹勁下降",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -16116,6 +16856,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -16504,6 +17268,30 @@
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_minus_value\">-5</span><br>隨機幹勁下降または<span class=\"minus_condition\">『懶惰成性』</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -16936,6 +17724,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -17336,6 +18148,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -17428,14 +18264,6 @@
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>",
                 "choice_title": "繰り返し練習あるのみ"
-              }
-            ]
-          },
-          {
-            "Connect Live☆～後續～": [
-              {
-                "choice_effect": "北海道達成時：<br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『札幌/函館レース場◯』</span>的靈感Lv<span class=\"status_plus_value\">+5</span><br><span class=\"skill_hint\">『與粉絲的約定・北海道』</span>がなくなる<hr>北東達成時：<br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『福島/新潟レース場◯』</span>的靈感Lv<span class=\"status_plus_value\">+5</span><br><span class=\"skill_hint\">『與粉絲的約定・東北』</span>がなくなる<hr>小倉達成時：<br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『小倉レース場◯』</span>的靈感Lv<span class=\"status_plus_value\">+5</span><br><span class=\"skill_hint\">『與粉絲的約定・小倉』</span>がなくなる<hr>関西達成時：<br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『京都/阪神レース場◯』</span>的靈感Lv<span class=\"status_plus_value\">+5</span><br><span class=\"skill_hint\">『與粉絲的約定・關西』</span>がなくなる<hr>中山達成時：<br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『中山レース場◯』</span>的靈感Lv<span class=\"status_plus_value\">+5</span><br><span class=\"skill_hint\">『與粉絲的約定・中山』</span>がなくなる<hr>川崎達成時：<br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『川崎レース場◯』</span>的靈感Lv<span class=\"status_plus_value\">+5</span><br><span class=\"skill_hint\">『ファンとの約束・川崎』</span>がなくなる",
-                "choice_title": "無選項"
               }
             ]
           },
@@ -17796,6 +18624,30 @@
               {
                 "choice_effect": "五種數値<span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+20</span><br>劇本NPC的情誼量條<span class=\"status_plus_value\">+4</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -18224,6 +19076,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -18364,7 +19240,7 @@
             ]
           },
           {
-            "驗證～真的有貓咪語嗎？": [
+            "驗證〜真的有貓咪語嗎？": [
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>",
                 "choice_title": "セイウンスカイの本気も見たい"
@@ -18696,6 +19572,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -18872,7 +19772,7 @@
             ]
           },
           {
-            "驗證～真的有貓咪語嗎？": [
+            "驗證〜真的有貓咪語嗎？": [
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>",
                 "choice_title": "セイウンスカイの本気も見たい"
@@ -19196,6 +20096,30 @@
               {
                 "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4</span><br>技能點<span class=\"status_plus_value\">+25</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+20</span><hr>op：<br>技能點<span class=\"status_plus_value\">+10</span><hr>共通：<br>體力<span class=\"status_minus_value\">-15</span>or<span class=\"status_minus_value\">-25</span>or<span class=\"status_minus_value\">-35</span><br>隨機『バ場状況や出場したレース場に関係するスキル的靈感』取得",
                 "choice_title": "次は絶対にはめてみせよう！"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -19688,6 +20612,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -20136,6 +21084,30 @@
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+25</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+25</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+25</span><br>技能點<span class=\"status_plus_value\">+20</span><br><span class=\"skill_hint\">『ありったけ』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><br><span class=\"skill_hint\">『真っ向勝負』</span>的靈感Lv<span class=\"status_plus_value\">+2</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -20600,6 +21572,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -20736,18 +21732,6 @@
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>",
                 "choice_title": "……『表現力のダンス』かな！"
-              }
-            ]
-          },
-          {
-            "王者之戰～拉麵篇～": [
-              {
-                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+5</span>",
-                "choice_title": "……レースで見せてほしいな！"
-              },
-              {
-                "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><hr>失敗時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_minus_value\">-5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br><span class=\"minus_condition\">『體重過胖』</span>",
-                "choice_title": "わかった、見届けよう"
               }
             ]
           },
@@ -20992,6 +21976,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -21128,18 +22136,6 @@
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>",
                 "choice_title": "……『表現力のダンス』かな！"
-              }
-            ]
-          },
-          {
-            "王者之戰～拉麵篇～": [
-              {
-                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+5</span>",
-                "choice_title": "……レースで見せてほしいな！"
-              },
-              {
-                "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><hr>失敗時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_minus_value\">-5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br><span class=\"minus_condition\">『體重過胖』</span>",
-                "choice_title": "わかった、見届けよう"
               }
             ]
           },
@@ -21376,6 +22372,30 @@
               {
                 "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+20</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -21764,7 +22784,7 @@
             ]
           },
           {
-            "帝皇的餘裕～♪": [
+            "帝皇的餘裕〜♪": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br>幹勁下降<br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_minus_value\">-5</span>",
                 "choice_title": "無選項"
@@ -21784,6 +22804,30 @@
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+30</span><br><span class=\"skill_hint\">『栄養補給』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -22164,7 +23208,7 @@
             ]
           },
           {
-            "帝皇的餘裕～♪": [
+            "帝皇的餘裕〜♪": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br>幹勁下降<br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_minus_value\">-6</span>",
                 "choice_title": "無選項"
@@ -22184,6 +23228,30 @@
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+30</span><br><span class=\"skill_hint\">『栄養補給』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -22320,7 +23388,7 @@
             ]
           },
           {
-            "把指甲畫得超級無敵漂亮吧～！": [
+            "把指甲畫得超級無敵漂亮吧〜！": [
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span>",
                 "choice_title": "無理せずにな"
@@ -22576,6 +23644,30 @@
               {
                 "choice_effect": "技能點<span class=\"status_plus_value\">+120</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -23004,6 +24096,30 @@
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+20</span><br>技能點<span class=\"status_plus_value\">+20</span><br><span class=\"skill_hint\">『早仕掛け』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><hr><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span>20<hr><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -23480,6 +24596,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -23896,6 +25036,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -24132,7 +25296,7 @@
             ]
           },
           {
-            "好酷喔～！": [
+            "好酷喔〜！": [
               {
                 "choice_effect": "技能點<span class=\"status_plus_value\">+30</span>",
                 "choice_title": "ぜひ！"
@@ -24304,6 +25468,30 @@
               {
                 "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -24972,18 +26160,6 @@
             ]
           },
           {
-            "變高變大吧～！": [
-              {
-                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span>",
-                "choice_title": "寛容さとか？"
-              },
-              {
-                "choice_effect": "體力<span class=\"status_plus_value\">+15</span>",
-                "choice_title": "精神を鍛えるとか……"
-              }
-            ]
-          },
-          {
             "大大方方地走吧！": [
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+20</span><br>隨機<span class=\"plus_condition\">『天賦異稟』</span>",
@@ -25172,10 +26348,26 @@
             ]
           },
           {
-            "請好好抓牢喔～☆": [
+            "安心〜竹針師登☆場": [
               {
-                "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_minus_value\">-5</span><br>隨機幹勁下降または<span class=\"minus_condition\">『懶惰成性』</span>",
-                "choice_title": "無選項"
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -25672,6 +26864,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -26108,6 +27324,30 @@
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_minus_value\">-5</span><br>隨機幹勁下降または<span class=\"minus_condition\">『懶惰成性』</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -26760,6 +28000,30 @@
               {
                 "choice_effect": "五種數値<span class=\"status_plus_value\">+1</span><br>技能點<span class=\"status_plus_value\">+35</span><br>劇本NPC的情誼量條<span class=\"status_plus_value\">+4</span>",
                 "choice_title": "6位以下(憧れの先へ)"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -27420,6 +28684,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -27812,6 +29100,30 @@
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+25</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+25</span><br><span class=\"skill_hint\">『差し切り体勢』</span>的靈感Lv<span class=\"status_plus_value\">+2</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -28240,6 +29552,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -28660,6 +29996,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -29024,6 +30384,30 @@
               {
                 "choice_effect": "幹勁下降",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -29412,6 +30796,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -29672,7 +31080,7 @@
             ]
           },
           {
-            "那漸濃的情意，啊啊～有傳達給你嗎": [
+            "那漸濃的情意，啊啊〜有傳達給你嗎": [
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>",
                 "choice_title": "アンコール！"
@@ -29852,6 +31260,30 @@
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_minus_value\">-5</span><br>隨機幹勁下降または<span class=\"minus_condition\">『懶惰成性』</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -30276,6 +31708,30 @@
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_minus_value\">-5</span><br>隨機幹勁下降または<span class=\"minus_condition\">『懶惰成性』</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -30756,6 +32212,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -30876,18 +32356,6 @@
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+15</span>",
                 "choice_title": "それが達成の秘訣か"
-              }
-            ]
-          },
-          {
-            "我有辦法照顧妹妹的～！": [
-              {
-                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>",
-                "choice_title": "早速リベンジだ！"
-              },
-              {
-                "choice_effect": "<span class=\"skill_hint\">『路況差勁◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
-                "choice_title": "お世話されるのも君のスキルかも……"
               }
             ]
           },
@@ -31164,14 +32632,6 @@
             ]
           },
           {
-            "份量真多～！": [
-              {
-                "choice_effect": "幹勁下降<br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_minus_value\">-5</span>",
-                "choice_title": "無選項"
-              }
-            ]
-          },
-          {
             "高速動腦的奇幻故事": [
               {
                 "choice_effect": "幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><br>隨機<span class=\"plus_condition\">『天賦異稟』</span>",
@@ -31184,6 +32644,30 @@
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_minus_value\">-5</span><br>隨機幹勁下降または<span class=\"minus_condition\">『懶惰成性』</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -31616,6 +33100,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -32000,6 +33508,30 @@
             ]
           },
           {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
+              }
+            ]
+          },
+          {
             "抽獎試手氣！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>",
@@ -32368,6 +33900,30 @@
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br>幹勁下降<br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_minus_value\">-5</span><br>隨機<span class=\"minus_condition\">『懶惰成性』</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },
@@ -32772,6 +34328,30 @@
               {
                 "choice_effect": "京都レース6勝以上：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\"><span class=\"skill_hint\">『京都レース場◯』</span></span>的靈感Lv<span class=\"status_plus_value\">+2</span><br><span class=\"skill_hint\">『良バ場◯』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><hr>京都レース3~5勝：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\"><span class=\"skill_hint\">『京都レース場◯』</span></span>的靈感Lv<span class=\"status_plus_value\">+2</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全ステータス<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>",
+                "choice_title": "強いウマ娘になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:<span class=\"skill_hint\">『コーナー回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降",
+                "choice_title": "レースで勝てる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力の最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>バッドコンディションが治る<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>",
+                "choice_title": "元気で健康になれる秘孔を狙う"
+              },
+              {
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降",
+                "choice_title": "魅力アップの秘孔を狙う"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "不安なのでやめておく"
               }
             ]
           },

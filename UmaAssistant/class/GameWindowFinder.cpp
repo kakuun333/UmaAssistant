@@ -62,29 +62,15 @@ void GameWindowFinder::CreateFindGameWindowThread()
 				if (FindWindow(nullptr, utility::string2wstring(global::config->GameWindowName).c_str()))
 				{
 					_currentGameWindow = FindWindow(nullptr, utility::string2wstring(global::config->GameWindowName).c_str());
-					std::cout << u8"[WindowFinder] GameWindow: " << global::config->GameWindowName << std::endl;
+					//std::cout << u8"[GameWindowFinder] GameWindow: " << global::config->GameWindowName << std::endl;
 					utility::formctrl::Text(global::form::umaForm->game_window_status_label, "已找到遊戲視窗");
 					utility::formctrl::ForeColor(global::form::umaForm->game_window_status_label, 0, 255, 0);
 				}
-				//if (FindWindow(nullptr, _gameWindowDict[GameWindowType::DMM]))
-				//{
-				//	_currentGameWindow = FindWindow(nullptr, _gameWindowDict[GameWindowType::DMM]);
-				//	//std::cout << u8"[WindowFinder] GameWindow: umamusume" << std::endl;
-				//	utility::formctrl::Text(global::form::umaForm->game_window_status_label, "已找到遊戲視窗");
-				//	utility::formctrl::ForeColor(global::form::umaForm->game_window_status_label, 0, 255, 0);
-				//}
-				//else if (FindWindow(nullptr, _gameWindowDict[GameWindowType::BLUE_STACKS]))
-				//{
-				//	_currentGameWindow = FindWindow(nullptr, _gameWindowDict[GameWindowType::BLUE_STACKS]);
-				//	//std::cout << u8"[WindowFinder] GameWindow: umamusume" << std::endl;
-				//	utility::formctrl::Text(global::form::umaForm->game_window_status_label, "已找到遊戲視窗");
-				//	utility::formctrl::ForeColor(global::form::umaForm->game_window_status_label, 0, 255, 0);
-				//}
 				else
 				{
 					_currentGameWindow = NULL;
 					_currentGameWindowName = NULL_GAME_WINDOW_NAME;
-					//std::cout << u8"[WindowFinder] 未找到遊戲視窗" << std::endl;
+					//std::cout << u8"[GameWindowFinder] 未找到遊戲視窗" << std::endl;
 					utility::formctrl::Text(global::form::umaForm->game_window_status_label, "未找到遊戲視窗");
 					utility::formctrl::ForeColor(global::form::umaForm->game_window_status_label, 255, 0, 0);
 				}

@@ -275,6 +275,7 @@ def convert_to_event_data_tw(convert_data):
     for owner_type, owner_type_v in event_data_jp.items():
         for rare, rare_v in owner_type_v.items():
             for jp_event_owner, jp_event_owner_v in rare_v.items():
+                # if jp_event_owner in convert_data:
                 if jp_event_owner in convert_data:
                     event_data_tw[owner_type][rare][convert_data[jp_event_owner]["tw_event_owner"]] = {};
                     event_data_tw[owner_type][rare][convert_data[jp_event_owner]["tw_event_owner"]]["event"] = [];

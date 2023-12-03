@@ -235,7 +235,7 @@
     "白仁嫉妒了？": [
       {
         "choice_title": "桜餅を買ってこようか？",
-        "choice_effect": "五種數值を<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+4</span>"
       },
       {
         "choice_title": "代わりにご馳走できるものはない？",
@@ -497,7 +497,7 @@
     "驚愕！來自理事長的驚喜！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "パターン1：\n五種數值<span class=\"status_plus_value\">+7</span>\n技能點<span class=\"status_plus_value\">+50</span>\nパターン2：\n固有技能Lv<span class=\"status_plus_value\">+1</span>"
+        "choice_effect": "パターン1：\n五種數値<span class=\"status_plus_value\">+7</span>\n技能點<span class=\"status_plus_value\">+50</span>\nパターン2：\n固有技能Lv<span class=\"status_plus_value\">+1</span>"
       }
     ],
     "如沸騰和燃燒般火熱": [
@@ -509,43 +509,43 @@
     "迎向巔峰賽第一戰": [
       {
         "choice_title": "無選項",
-        "choice_effect": "効果なし"
+        "choice_effect": "無效果"
       }
     ],
     "巔峰賽第一戰結束後": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數值<span class=\"status_plus_value\">+10</span>\n技能點<span class=\"status_plus_value\">+30</span>"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span>\n技能點<span class=\"status_plus_value\">+30</span>"
       }
     ],
     "巔峰賽開幕！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "効果なし"
+        "choice_effect": "無效果"
       }
     ],
     "迎向巔峰賽第三戰": [
       {
         "choice_title": "無選項",
-        "choice_effect": "効果なし"
+        "choice_effect": "無效果"
       }
     ],
     "巔峰賽第三戰結束後": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數值<span class=\"status_plus_value\">+10</span>\n技能點<span class=\"status_plus_value\">+30</span>"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span>\n技能點<span class=\"status_plus_value\">+30</span>"
       }
     ],
     "迎向巔峰賽第二戰": [
       {
         "choice_title": "無選項",
-        "choice_effect": "効果なし"
+        "choice_effect": "無效果"
       }
     ],
     "巔峰賽第二戰結束後": [
       {
         "choice_title": "無選項",
-        "choice_effect": "効果なし"
+        "choice_effect": "無效果"
       }
     ],
     "高貴的香氣": [
@@ -593,19 +593,19 @@
     "獲選最優秀經典級賽馬娘！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數值<span class=\"status_plus_value\">+5</span>\n技能點<span class=\"status_plus_value\">+30</span>\n<span class=\"skill_hint\">『綺羅星』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>\n固有技能のLv<span class=\"status_plus_value\">+1</span>"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>\n技能點<span class=\"status_plus_value\">+30</span>\n<span class=\"skill_hint\">『綺羅星』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>\n固有技能のLv<span class=\"status_plus_value\">+1</span>"
       }
     ],
     "獲選最優秀資深級賽馬娘！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數值<span class=\"status_plus_value\">+10</span>\n技能點<span class=\"status_plus_value\">+30</span>\n固有技能のLv<span class=\"status_plus_value\">+1</span>"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span>\n技能點<span class=\"status_plus_value\">+30</span>\n固有技能のLv<span class=\"status_plus_value\">+1</span>"
       }
     ],
     "獲選最優秀新手級賽馬娘！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數值中隨機選一種<span class=\"status_plus_value\">+10</span>\n技能點<span class=\"status_plus_value\">+20</span>\n固有技能のLv<span class=\"status_plus_value\">+1</span>"
+        "choice_effect": "五種數値中隨機選一種<span class=\"status_plus_value\">+10</span>\n技能點<span class=\"status_plus_value\">+20</span>\n固有技能のLv<span class=\"status_plus_value\">+1</span>"
       }
     ],
     "各自有不同的作風": [
@@ -701,7 +701,7 @@
     "最強是為了某人存在": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數值<span class=\"status_plus_value\">+5~7</span>\n技能點<span class=\"status_plus_value\">+30~50</span>\n<span class=\"skill_hint\">『綺羅星』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+5~7</span>\n技能點<span class=\"status_plus_value\">+30~50</span>\n<span class=\"skill_hint\">『綺羅星』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
       }
     ],
     "達成！優異的偉大成就！": [
@@ -713,13 +713,13 @@
     "達成！優秀的表現！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數值中隨機選兩種<span class=\"status_plus_value\">+5</span>"
+        "choice_effect": "五種數値中隨機選兩種<span class=\"status_plus_value\">+5</span>"
       }
     ],
     "達成！無敵的大突破！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數值中隨機選兩種<span class=\"status_plus_value\">+10~15</span>"
+        "choice_effect": "五種數値中隨機選兩種<span class=\"status_plus_value\">+10~15</span>"
       }
     ],
     "無論是招數還是把戲？": [
@@ -815,7 +815,7 @@
     "專業度不輸訓練員的……？": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數值<span class=\"status_plus_value\">+5</span>\n技能點<span class=\"status_plus_value\">+30</span>"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>\n技能點<span class=\"status_plus_value\">+30</span>"
       }
     ],
     "追尋謎樣的天才玩家！": [
@@ -1007,13 +1007,13 @@
     "夢想的彼端": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數值<span class=\"status_plus_value\">+10</span>\n技能點<span class=\"status_plus_value\">+40</span>\n<span class=\"skill_hint\">『一番星』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span>\n技能點<span class=\"status_plus_value\">+40</span>\n<span class=\"skill_hint\">『一番星』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
       }
     ],
     "負面謠言？": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數值<span class=\"status_plus_value\">+6</span>\n技能點<span class=\"status_plus_value\">+40</span>"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+6</span>\n技能點<span class=\"status_plus_value\">+40</span>"
       }
     ],
     "一碗拉麵，並行練跑一次": [
