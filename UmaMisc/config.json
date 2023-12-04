@@ -1,4 +1,10 @@
 {
+  "AlwaysOnTop": true,
+  "AutoMouseClick": true,
+  "AutoMouseClickKey": {
+    "VK": 6,
+    "WinFormButton": 16777216
+  },
   "DebugMode": true,
   "GameServer": 1,
   "GameWindow": 1,

@@ -12,9 +12,12 @@ public:
 	Config();
 
 	bool DebugMode;
+	bool AlwaysOnTop;
+	bool AutoMouseClick;
 	int GameServer;
 	int GameWindow;
 	std::string GameWindowName;
+	std::map<std::string, int> AutoMouseClickKey;
 	std::map<std::string, std::string> LocalServer;
 
 	void Update();

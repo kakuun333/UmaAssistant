@@ -58,6 +58,7 @@ using json = nlohmann::json;
 #include "class/ConsoleManager.h"
 #include "class/PyManager.h"
 #include "class/Config.h"
+#include "class/AutoMouseClicker.h"
 
 // lua
 #include "class/LuaManager.h"

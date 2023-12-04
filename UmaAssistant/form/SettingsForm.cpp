@@ -96,7 +96,7 @@ namespace UmaAssistant
 		/*System::Resources::ResourceManager^ resources = gcnew System::Resources::ResourceManager(L"UmaAssistant.UmaAssistant.form.SettingsForm",
 			System::Reflection::Assembly::GetExecutingAssembly());*/
 
-			// 註冊 FormClosing 事件
+		// 註冊 FormClosing 事件
 		this->FormClosing += gcnew FormClosingEventHandler(this, &SettingsForm::FormClosingHandler);
 
 		// 初始化 serverPortTextBox->Text
@@ -109,11 +109,10 @@ namespace UmaAssistant
 		// 註冊 TextChanged 事件
 		serverPortTextBox->TextChanged += gcnew EventHandler(this, &SettingsForm::serverPortTextBox_TextChanged);
 
-
 		//
-		// RadioButtons
+		// 初始化 RadioButtons
 		//
-#pragma region GameServerType
+#pragma region 初始化 GameServerType
 		// 從 config 初始化 Checked
 		switch (global::config->GameServer)
 		{
@@ -129,7 +128,7 @@ namespace UmaAssistant
 		jp_server_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::GameServerRadioButtonChanged);
 		tw_server_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::GameServerRadioButtonChanged);
 #pragma endregion
-#pragma region GameWindow
+#pragma region 初始化 GameWindow
 		// 從 config 初始化 Checked
 		switch (global::config->GameWindow)
 		{
@@ -144,6 +143,30 @@ namespace UmaAssistant
 		// 註冊 CheckedChanged 事件
 		dmm_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::GameWindowRadioButtonChanged);
 		blue_stacks_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::GameWindowRadioButtonChanged);
+#pragma endregion
+
+
+#pragma region 初始化 AutoMouseClick
+		String^ buttonName = Enum::GetName(static_cast<System::Windows::Forms::MouseButtons>(global::config->AutoMouseClickKey["WinFormButton"]).GetType(),
+			static_cast<System::Windows::Forms::MouseButtons>(global::config->AutoMouseClickKey["WinFormButton"]));
+
+		autoMouseClickKey_textBox->Text = buttonName;
+
+
+		AutoMouseClicker* autoMouseClicker = AutoMouseClicker::GetInstance();
+
+		switch (global::config->AutoMouseClick)
+		{
+		case true:
+			autoMouceClick_checkBox->Checked = true;
+			autoMouseClicker->Start();
+			break;
+		case false:
+			autoMouceClick_checkBox->Checked = false;
+			autoMouseClicker->Stop();
+			break;
+		}
+
 #pragma endregion
 	}
 
@@ -220,5 +243,102 @@ namespace UmaAssistant
 			System::Drawing::Point currentFormPos = PointToScreen(System::Drawing::Point(e->X, e->Y));
 			this->Location = System::Drawing::Point(currentFormPos.X - dragOffset.X, currentFormPos.Y - dragOffset.Y);
 		}
+	}
+
+	System::Void SettingsForm::alwaysOnTop_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
+	{
+		CheckBox^ checkbox = dynamic_cast<CheckBox^>(sender);
+
+		if (checkbox->Checked)
+		{
+			global::form::umaForm->TopMost = checkbox->Checked;
+			this->TopMost = checkbox->Checked;
+
+			// config
+			global::config->AlwaysOnTop = checkbox->Checked;
+		}
+		else
+		{
+			global::form::umaForm->TopMost = checkbox->Checked;
+			this->TopMost = checkbox->Checked;
+
+			// config
+			global::config->AlwaysOnTop = checkbox->Checked;
+		}
+
+		global::config->WriteToJson();
+	}
+
+	System::Void SettingsForm::autoMouseClickKey_textBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
+	{
+		//String^ buttonName = Enum::GetName(e->KeyCode.GetType(), e->KeyCode);
+
+		//this->autoMouseClickKey_textBox->Text = buttonName;
+
+		//global::config->AutoMouseClickKey = (int)e->KeyCode;
+
+		//global::config->WriteToJson();
+	}
+
+	System::Void SettingsForm::autoMouseClickKey_textBox_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
+	{
+		String^ buttonName = Enum::GetName(e->Button.GetType(), e->Button);
+		this->autoMouseClickKey_textBox->Text = buttonName;
+
+
+		switch (e->Button)
+		{
+		case Windows::Forms::MouseButtons::Left:
+			global::config->AutoMouseClickKey["VK"] = VK_LBUTTON;
+			//this->autoMouseClickKey_textBox->Text = "Left";
+			break;
+		case Windows::Forms::MouseButtons::Right:
+			global::config->AutoMouseClickKey["VK"] = VK_RBUTTON;
+			//this->autoMouseClickKey_textBox->Text = "Right";
+			break;
+		case Windows::Forms::MouseButtons::Middle:
+			global::config->AutoMouseClickKey["VK"] = VK_MBUTTON;
+			//this->autoMouseClickKey_textBox->Text = "Middle";
+			break;
+		case Windows::Forms::MouseButtons::XButton1:
+			global::config->AutoMouseClickKey["VK"] = VK_XBUTTON1;
+			//this->autoMouseClickKey_textBox->Text = "XButton1";
+			break;
+		case Windows::Forms::MouseButtons::XButton2:
+			global::config->AutoMouseClickKey["VK"] = VK_XBUTTON2;
+			//this->autoMouseClickKey_textBox->Text = "XButton2";
+			break;
+		default:
+			global::config->AutoMouseClickKey["VK"] = 0x07; // 保留
+		
+			//this->autoMouseClickKey_textBox->Text = "Unknown";
+			break;
+		}
+
+		global::config->AutoMouseClickKey["WinFormButton"] = static_cast<int>(e->Button);
+
+
+		// config
+		global::config->WriteToJson();
+	}
+
+	System::Void SettingsForm::autoMouceClick_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
+	{
+		CheckBox^ checkbox = dynamic_cast<CheckBox^>(sender);
+		AutoMouseClicker* autoMouseClicker = AutoMouseClicker::GetInstance();
+
+		if (checkbox->Checked)
+		{
+			autoMouseClicker->Start();
+			global::config->AutoMouseClick = checkbox->Checked;
+		}
+		else
+		{
+			autoMouseClicker->Stop();
+			global::config->AutoMouseClick = checkbox->Checked;
+		}
+
+		// config
+		global::config->WriteToJson();
 	}
 }

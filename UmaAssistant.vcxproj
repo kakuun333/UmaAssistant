@@ -145,6 +145,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="UmaAssistant\class\AutoMouseClicker.cpp" />
     <ClCompile Include="UmaAssistant\class\data\ScenarioEventData.cpp" />
     <ClCompile Include="UmaAssistant\class\Config.cpp" />
     <ClCompile Include="UmaAssistant\class\ConsoleManager.cpp" />
@@ -175,6 +176,7 @@
     <ClCompile Include="UmaAssistant\class\GameWindowFinder.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="UmaAssistant\class\AutoMouseClicker.h" />
     <ClInclude Include="UmaAssistant\class\data\ScenarioEventData.h" />
     <ClInclude Include="UmaAssistant\class\Config.h" />
     <ClInclude Include="UmaAssistant\class\ConsoleManager.h" />

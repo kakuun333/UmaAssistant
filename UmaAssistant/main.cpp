@@ -82,10 +82,17 @@ int main(array<String^>^ args)
 	* 不知道為什麼放在 SettingsForm 的構造函數裡面 nlohmann::json 會報錯
 	* 所以在這裡初始化
 	*/
-	if (global::config->DebugMode == true)
+	if (global::config->DebugMode)
 		global::form::settingsForm->debugMode_checkBox->Checked = true;
 	else
 		global::form::settingsForm->debugMode_checkBox->Checked = false;
+	/*
+	*  初始化 CheckBox
+	*/
+	if (global::config->AlwaysOnTop)
+		global::form::settingsForm->alwaysOnTop_checkBox->Checked = true;
+	else
+		global::form::settingsForm->alwaysOnTop_checkBox->Checked = false;
 #pragma endregion
 
 #pragma region 初始化 GameWindowFinder
