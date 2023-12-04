@@ -285,7 +285,9 @@ namespace UmaAssistant
 		String^ buttonName = Enum::GetName(e->Button.GetType(), e->Button);
 		this->autoMouseClickKey_textBox->Text = buttonName;
 
-
+		//
+		// https://learn.microsoft.com/zh-tw/windows/win32/inputdev/virtual-key-codes
+		//
 		switch (e->Button)
 		{
 		case Windows::Forms::MouseButtons::Left:

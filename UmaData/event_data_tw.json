@@ -41283,11 +41283,11 @@
           {
             "冽心燃灼焰": [
               {
-                "choice_effect": "中山慶典的情誼量條<span class=\"status_plus_value\">+10</span><br>※選択肢で連続イベント3が分岐する",
+                "choice_effect": "中山慶典的情誼量條<span class=\"status_plus_value\">+10</span><br>※連續事件三會依照選擇而有所不同",
                 "choice_title": "相手が気づくのを待つしかないと思う"
               },
               {
-                "choice_effect": "中山慶典的情誼量條<span class=\"status_plus_value\">+10</span><br>※選択肢で連続イベント3が分岐する",
+                "choice_effect": "中山慶典的情誼量條<span class=\"status_plus_value\">+10</span><br>※連續事件三會依照選擇而有所不同",
                 "choice_title": "直に感じさせるとか？"
               }
             ]
@@ -41296,11 +41296,11 @@
             "在絕望中閃耀": [
               {
                 "choice_effect": "成功時：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+20</span><br><span class=\"skill_hint\">『博打打ち』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>中山慶典的情誼量條<span class=\"status_plus_value\">+5</span><br><hr>失敗時：<br>技能點<span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『あやしげな作戦』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
-                "choice_title": "2回目で上選択<br>(※成功率高め)"
+                "choice_title": "連續事件二選上面<br>(※成功率較高)"
               },
               {
                 "choice_effect": "成功時：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+20</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+20</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+20</span><br>技能點<span class=\"status_plus_value\">+30</span><br><span class=\"skill_hint\">『博打打ち』</span>的靈感Lv<span class=\"status_plus_value\">+3</span><br>中山慶典的情誼量條<span class=\"status_plus_value\">+5</span><br><hr>失敗時：<br>技能點<span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『あやしげな作戦』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
-                "choice_title": "2回目で下選択<br>(※成功率低め)"
+                "choice_title": "連續事件二選下面<br>(※成功率較低)"
               }
             ]
           },
