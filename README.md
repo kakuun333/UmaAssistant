@@ -15,10 +15,13 @@ https://opencv.org/
 - JSON for Modern C++  
 https://github.com/nlohmann/json
 
+- The Programming Language Lua  
+https://www.lua.org
+
 ### Lua
 - dkjson - JSON Module for Lua  
 http://dkolf.de/src/dkjson-lua.fsl/home
 
 ### Python
-- Selenium
+- Selenium  
 https://www.selenium.dev
