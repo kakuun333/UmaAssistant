@@ -112,7 +112,6 @@ int main(array<String^>^ args)
 	// 中止 LocalServer
 	LocalServer::Instance->Stop();
 
-
 	ConsoleManager::GetInstance()->Disable();
 
 	RemoveFontResourceW(utility::string2wstring(global::path::std_MochiyPopOne).c_str());
