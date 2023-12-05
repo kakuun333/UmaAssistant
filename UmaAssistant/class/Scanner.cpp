@@ -241,8 +241,7 @@ void Scanner::Start(std::string language)
 				//std::cout << "event_title_gray_bin_inv: " << eventText << std::endl;
 
 				eventText = this->GetScannedText(ss.event_title_gray_bin, language);
-
-				henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
+				henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
 
 				if (eventText.empty() && henseiCharNameText.empty())
 				{
@@ -253,8 +252,7 @@ void Scanner::Start(std::string language)
 
 				std::cout << u8"[Scanner] event_title_gray_bin: " << eventText << std::endl;
 				std::cout << u8"[Scanner] henseiCharNameText: " << henseiCharNameText << std::endl;
-				//henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_inv, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
-				//std::cout << "henseiCharNameText_inv: " << henseiCharNameText << std::endl;
+
 
 				if (_previousEventText != eventText ||
 					_previousCharacterNameText != characterNameText ||
@@ -265,12 +263,14 @@ void Scanner::Start(std::string language)
 					{
 						if (!dataManager->TryGetCurrentCharacterName(henseiCharNameText))
 						{
-							std::cout << u8"[Scanner] TryGetCurrentCharacterName 失敗" << std::endl;
+							henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin_inv, language);
+							std::cout << "[Scanner] hensei_character_name_gray_bin_inv: " << henseiCharNameText << std::endl;
 
-							henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_inv, language);
-							std::cout << "[Scanner] hensei_character_name_gray_inv: " << henseiCharNameText << std::endl;
-							std::cout << u8"[Scanner] 嘗試 hensei_character_name_gray_inv" << std::endl;
-							dataManager->TryGetCurrentCharacterName(henseiCharNameText);
+							if (!dataManager->TryGetCurrentCharacterName(henseiCharNameText))
+							{
+								henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
+								std::cout << "[Scanner] hensei_character_name_gray_bin: " << henseiCharNameText << std::endl;
+							}
 						}
 					}
 					else

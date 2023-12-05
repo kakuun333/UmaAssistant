@@ -80,8 +80,10 @@ public:
 	static cv::Mat event_icon;
 
 	static cv::Mat sentaku_character_name;
+
 	static cv::Mat hensei_character_name_gray;
-	static cv::Mat hensei_character_name_gray_inv;
+	static cv::Mat hensei_character_name_gray_bin;
+	static cv::Mat hensei_character_name_gray_bin_inv;
 
 	static cv::Mat syousai_character_name_gray_bin;
 };
