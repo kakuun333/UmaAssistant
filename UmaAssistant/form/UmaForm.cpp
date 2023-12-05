@@ -57,14 +57,7 @@ namespace UmaAssistant
 		}
 #pragma endregion
 
-
-
-
-
 	}
-
-
-
 
 
 	System::Void UmaForm::test_btn_Click(System::Object^ sender, System::EventArgs^ e)
@@ -73,16 +66,13 @@ namespace UmaAssistant
 
 		//utility::IsSimilar(u8"灰簾石の瞳", u8"色雇五のだ睡");
 
-		std::cout << utility::GetSimilarity(u8"安心一竹針師登女場", u8"安心～竹針師登☆場") << std::endl;
+		std::cout << "Similarity: " << utility::GetSimilarity(u8"競賽獲勝!", u8"競賽獲勝！") << std::endl;
 
 		//utility::GetCharacterNameSimilarity(u8"キセキの白星オグリキャップ", u8"オグリキャップ（キセキの白星）");
 	}
 
 	System::Void UmaForm::scan_btn_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-
-
-
 		Scanner* scanner = Scanner::GetInstance();
 
 		FileManager* fileManager = FileManager::GetInstance();

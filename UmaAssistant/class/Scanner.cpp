@@ -73,7 +73,7 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 		switch (imgType)
 		{
 		case ImageType::IMG_EVENT_TITLE:
-			ocr_jpn->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=");
+			ocr_jpn->SetVariable("tessedit_char_blacklist", u8"@#$%^&*_-+<>()[]{}|/\\`~0123456789†.,:;；=");
 			//ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 			break;
 		case ImageType::IMG_HENSEI_CHARACTER_NAME:
@@ -96,7 +96,7 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 		switch (imgType)
 		{
 		case ImageType::IMG_EVENT_TITLE:
-			ocr_tw->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=");
+			ocr_tw->SetVariable("tessedit_char_blacklist", u8"@#$%^&*_-+<>()[]{}|/\\`~0123456789†.,:;；=");
 			break;
 		case ImageType::IMG_HENSEI_CHARACTER_NAME:
 			ocr_tw->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");

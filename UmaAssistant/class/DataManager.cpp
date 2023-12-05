@@ -198,6 +198,7 @@ ScenarioEventData DataManager::GetScenarioEventData(std::string scanned_text)
 
 UmaEventData DataManager::GetCurrentCharacterUmaEventData(std::string scanned_text)
 {
+
 	json event_data_json;
 
 	switch (global::config->GameServer)
@@ -227,6 +228,7 @@ UmaEventData DataManager::GetCurrentCharacterUmaEventData(std::string scanned_te
 			{
 				//std::cout << "Event Title: " << choice.key() << std::endl;
 				float similarity = utility::GetSimilarity(scanned_text, choice.key());
+
 
 				if (similarity >= utility::SIMILAR_METRIC)
 				{

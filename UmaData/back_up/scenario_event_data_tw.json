@@ -152,6 +152,16 @@
         "choice_effect": "<span class=\"skill_hint\">『準備突圍』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
       }
     ],
+    "「全力」＆「普通」的減重方法！": [
+      {
+        "choice_title": "『全力』で！",
+        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+6</span>"
+      },
+      {
+        "choice_title": "ふ、『普通』でお願いします……",
+        "choice_effect": "<span class=\"skill_hint\">『努力不懈』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+      }
+    ],
     "以「退學」為賭注的對決": [
       {
         "choice_title": "ヒット！カードをもう1枚！",
@@ -497,7 +507,7 @@
     "驚愕！來自理事長的驚喜！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "パターン1：\n五種數値<span class=\"status_plus_value\">+7</span>\n技能點<span class=\"status_plus_value\">+50</span>\nパターン2：\n固有技能Lv<span class=\"status_plus_value\">+1</span>"
+        "choice_effect": "情況一：\n五種數値<span class=\"status_plus_value\">+7</span>\n技能點<span class=\"status_plus_value\">+50</span>\n情況二：\n固有技能Lv<span class=\"status_plus_value\">+1</span>"
       }
     ],
     "如沸騰和燃燒般火熱": [
@@ -593,7 +603,7 @@
     "獲選最優秀經典級賽馬娘！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>\n技能點<span class=\"status_plus_value\">+30</span>\n<span class=\"skill_hint\">『綺羅星』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>\n固有技能のLv<span class=\"status_plus_value\">+1</span>"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>\n技能點<span class=\"status_plus_value\">+30</span>\n<span class=\"skill_hint\">『璀璨繁星』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>\n固有技能のLv<span class=\"status_plus_value\">+1</span>"
       }
     ],
     "獲選最優秀資深級賽馬娘！": [
@@ -701,7 +711,7 @@
     "最強是為了某人存在": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數値<span class=\"status_plus_value\">+5~7</span>\n技能點<span class=\"status_plus_value\">+30~50</span>\n<span class=\"skill_hint\">『綺羅星』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+5~7</span>\n技能點<span class=\"status_plus_value\">+30~50</span>\n<span class=\"skill_hint\">『璀璨繁星』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
       }
     ],
     "達成！優異的偉大成就！": [
@@ -1007,7 +1017,7 @@
     "夢想的彼端": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span>\n技能點<span class=\"status_plus_value\">+40</span>\n<span class=\"skill_hint\">『一番星』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span>\n技能點<span class=\"status_plus_value\">+40</span>\n<span class=\"skill_hint\">『一等星』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
       }
     ],
     "負面謠言？": [
