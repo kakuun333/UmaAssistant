@@ -36,5 +36,30 @@ function utility.deepcopy(otable)
     return tmp;
 end
 
+function utility.readfile(path)
+    local file = io.open(path, "r");
+
+    if file then
+        local content = file:read("*a");
+        file:close();
+
+        return content;
+    else
+        print("Error opening file.")''
+        return nil;
+    end
+end
+
+function utility.writefile(path, str)
+    local file = io.open(path, "w");
+
+    if file then
+        local content = file:write(str);
+        file:close();
+    else
+        print("Error writing file.")''
+    end
+end
+
 
 return utility;

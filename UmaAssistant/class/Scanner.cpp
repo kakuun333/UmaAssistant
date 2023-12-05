@@ -74,9 +74,11 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 		{
 		case ImageType::IMG_EVENT_TITLE:
 			ocr_jpn->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=");
+			//ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 			break;
 		case ImageType::IMG_HENSEI_CHARACTER_NAME:
 			ocr_jpn->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
+			//ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_BLOCK);
 			break;
 		}
 
@@ -245,7 +247,7 @@ void Scanner::Start(std::string language)
 				if (eventText.empty() && henseiCharNameText.empty())
 				{
 					std::this_thread::sleep_for(std::chrono::milliseconds(100));
-					std::cout << u8"[Scanner] 偵測到的都是空字串" << std::endl;
+					std::cout << u8"[Scanner] 都是空字串" << std::endl;
 					continue;
 				}
 
@@ -259,26 +261,31 @@ void Scanner::Start(std::string language)
 					_previousHenseiCharacterNameText != henseiCharNameText)
 				{
 #pragma region Looking for Current Character
-					if (dataManager->IsCurrentCharacterInfoLocked())
-					{
-						std::cout << "[Scanner] CURRENT CHARACTER LOCKED" << std::endl;
-					}
-					else
+					if (!dataManager->IsCurrentCharacterInfoLocked())
 					{
 						if (!dataManager->TryGetCurrentCharacterName(henseiCharNameText))
 						{
 							std::cout << u8"[Scanner] TryGetCurrentCharacterName 失敗" << std::endl;
-							
+
 							henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_inv, language);
 							std::cout << "[Scanner] hensei_character_name_gray_inv: " << henseiCharNameText << std::endl;
 							std::cout << u8"[Scanner] 嘗試 hensei_character_name_gray_inv" << std::endl;
 							dataManager->TryGetCurrentCharacterName(henseiCharNameText);
 						}
 					}
+					else
+					{
+						std::cout << "[Scanner] CURRENT CHARACTER LOCKED" << std::endl;
+					}
 #pragma endregion
 
 
 #pragma region ScenarioEventData
+					/*
+					* 有時候名字很像的事件名稱會先偵測到 scenarioEventData ，但是正確的事件在 sapokaUmaEventData
+					* 為了避免先偵測到 scenarioEventData ，應該要先比較 similarity 再判斷要更新的事件是
+					* scenarioEventData 還是 sapokaUmaEventData
+					*/
 					ScenarioEventData scenarioEventData = dataManager->GetScenarioEventData(eventText);
 					if (scenarioEventData.IsDataComplete())
 					{
@@ -294,10 +301,10 @@ void Scanner::Start(std::string language)
 						switch (global::config->GameServer)
 						{
 						case GameServerType::JP:
-							webManager->ChangeEventOwner("メインシナリオイベント");
+							webManager->ChangeEventOwner(u8"メインシナリオイベント");
 							break;
 						case GameServerType::TW:
-							webManager->ChangeEventOwner("主要劇情事件");
+							webManager->ChangeEventOwner(u8"主要劇情事件");
 							break;
 						}
 

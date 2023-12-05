@@ -246,7 +246,7 @@ const double Screenshot::GetWhitePixelRatio(cv::Mat img)
 	const int imgPixelCount = img.cols * img.rows;
 	const double whitePixelRatio = static_cast<double>(whitePixelCount) / static_cast<double>(imgPixelCount);
 
-	std::cout << "whitePixelRatio: " << whitePixelRatio << std::endl;
+	//std::cout << "whitePixelRatio: " << whitePixelRatio << std::endl;
 
 	return whitePixelRatio;
 }

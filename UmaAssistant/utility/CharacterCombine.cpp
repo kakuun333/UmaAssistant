@@ -3,7 +3,7 @@
 namespace utility
 {
 	/// <summary>
-	/// 將兩個 const char* 和在一起變成一個 const char*
+	/// 將兩個 const char* 合在一起變成一個 const char*
 	/// </summary>
 	/// <param name="str1"></param>
 	/// <param name="str2"></param>

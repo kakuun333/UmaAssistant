@@ -46,6 +46,7 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 		break;
 	case GameServerType::TW:
 		event_data_json = event_data_tw_json;
+		break;
 	}
 
 
@@ -121,9 +122,11 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 		}
 	}
 
+
 	oneStarThread->join();
 	twoStarThread->join();
 	threeStarThread->join();
+
 
 	delete oneStarThread;
 	delete twoStarThread;
