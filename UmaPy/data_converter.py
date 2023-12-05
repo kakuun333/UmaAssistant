@@ -10,6 +10,9 @@ scenario_event_data_jp = utility.read_json_file(r"../UmaData/scenario_event_data
 # translation_data
 translation_data = utility.read_json_file(r"../UmaData/translation_data.json");
 
+# missed_data
+missed_data = utility.read_json_file(r"../UmaData/missed_data.json");
+
 # convert_data
 char_convert_data = utility.read_json_file(r"../UmaData/event_data_jp_to_tw_char.json");
 card_convert_data = utility.read_json_file(r"../UmaData/event_data_jp_to_tw_card.json");
@@ -171,7 +174,8 @@ def convert_to_event_data_tw(convert_data):
     for owner_type, owner_type_v in event_data_jp.items():
         for rare, rare_v in owner_type_v.items():
             for jp_event_owner, jp_event_owner_v in rare_v.items():
-                # if jp_event_owner in convert_data:
+                if (jp_event_owner in missed_data["jp_to_tw"]["event_owner"]):
+                    jp_event_owner = missed_data["jp_to_tw"]["event_owner"][jp_event_owner];
                 if jp_event_owner in convert_data:
                     event_data_tw[owner_type][rare][convert_data[jp_event_owner]["tw_event_owner"]] = {};
                     event_data_tw[owner_type][rare][convert_data[jp_event_owner]["tw_event_owner"]]["event"] = [];
@@ -180,6 +184,8 @@ def convert_to_event_data_tw(convert_data):
                     for event in jp_event_owner_v["event"]:
                         tw_event_obj = {};
                         for jp_event_title, jp_event_title_v in event.items():
+                            if (jp_event_title in missed_data["jp_to_tw"]["event_title"]):
+                                jp_event_title = missed_data["jp_to_tw"]["event_title"][jp_event_title];
                             if jp_event_title in convert_data[jp_event_owner]["event_title_dict"]:
                                 tw_event_obj[convert_data[jp_event_owner]["event_title_dict"][jp_event_title]] = []
                                 # event_data_tw[owner_type][rare][convert_data[jp_event_owner]["tw_event_owner"]]["event"].append()
@@ -213,6 +219,8 @@ utility.write_file("../UmaData/event_data_tw.json", json_string);
 def convert_to_scenario_event_data_tw(convert_data):
     for scenario_type, scenario_type_v in scenario_event_data_jp.items():
         for jp_event_title, jp_event_title_v in scenario_type_v.items():
+            if (jp_event_title in missed_data["jp_to_tw"]["event_title"]):
+                jp_event_title = missed_data["jp_to_tw"]["event_title"][jp_event_title];
             if jp_event_title in convert_data:
                 scenario_event_data_tw[scenario_type][convert_data[jp_event_title]["tw_event_title"]] = [];
                 for choice in jp_event_title_v:

@@ -35886,6 +35886,18 @@
                 "choice_title": "パワーかな"
               }
             ]
+          },
+          {
+            "Oh！Tonight．派對☆": [
+              {
+                "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br>大樹快車的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "遠回りして全力ダッシュだ！"
+              },
+              {
+                "choice_effect": "<span class=\"skill_hint\">『準備突圍』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>大樹快車的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "集団をかき分けるイメージで走ろう！"
+              }
+            ]
           }
         ]
       },
@@ -36331,6 +36343,18 @@
       },
       "魯道夫象徵（特雷森學園）": {
         "event": [
+          {
+            "「皇帝」的激勵": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br>魯道夫象徵的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "レースに向けて軽めのスピード練習"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br>技能點<span class=\"status_plus_value\">+30</span><br>魯道夫象徵的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "ハードな展開に備え、あえて重めの調整"
+              }
+            ]
+          },
           {
             "學生會會長的思緒": [
               {
@@ -38993,6 +39017,62 @@
               {
                 "choice_effect": "<span class=\"skill_hint\">『幸運7』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>島川喬登的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "別の活用法を探す"
+              }
+            ]
+          }
+        ]
+      },
+      "大樹快車（Hands up, crook!）": {
+        "event": [
+          {
+            "教條之一：絕對不能疏於舉辦派對": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+7</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+7</span><br>大樹快車的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "教訓之二：絕對不能放棄拍攝": [
+              {
+                "choice_effect": "成功時：<br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『一哩彎道◯』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><br>大樹快車的情誼量條<span class=\"status_plus_value\">+5</span><hr>失敗時：<br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br>連續事件將結束",
+                "choice_title": "演技の才能もあるんだな！"
+              },
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br>大樹快車的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "俺に何か手伝えることはある？"
+              }
+            ]
+          },
+          {
+            "教訓之三：活在當下": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『一哩支配者』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>大樹快車的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "Yes！Let's抱抱☆": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br>大樹快車的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "スピードかな"
+              },
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br>大樹快車的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "パワーかな"
+              }
+            ]
+          },
+          {
+            "Oh！Tonight．派對☆": [
+              {
+                "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br>大樹快車的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "遠回りして全力ダッシュだ！"
+              },
+              {
+                "choice_effect": "<span class=\"skill_hint\">『準備突圍』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>大樹快車的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "集団をかき分けるイメージで走ろう！"
               }
             ]
           }
@@ -42957,6 +43037,22 @@
             ]
           },
           {
+            "一起鍛鍊吧": [
+              {
+                "choice_effect": "成功時：<br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+4</span><br>技能點<span class=\"status_plus_value\">+4</span><br>齊聚於王座之人的情誼量條<span class=\"status_plus_value\">+5</span><hr>失敗時：<br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+4</span><br>齊聚於王座之人的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "<span class=\"special_choice_title\">読書で走りの知識を深めようか<hr>L'Arcで発生時：<br>(育成ウマ娘名)の写真を送る</span>"
+              },
+              {
+                "choice_effect": "成功時：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+4</span><br>技能點<span class=\"status_plus_value\">+4</span><br>齊聚於王座之人的情誼量條<span class=\"status_plus_value\">+5</span><hr>失敗時：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+4</span><br>齊聚於王座之人的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "<span class=\"special_choice_title\">やっぱり併走かな！<hr>L'Arcで発生時：<br>トレーニングの様子を動画に撮る</span>"
+              },
+              {
+                "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+4</span><br>齊聚於王座之人的情誼量條<span class=\"status_plus_value\">+5</span><hr>失敗時：<br>技能點<span class=\"status_plus_value\">+4</span><br>齊聚於王座之人的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "<span class=\"special_choice_title\">しっかりテクニックを磨いていこう<hr>L'Arcで発生時：<br>ここは文字の力！文章で表現しよう</span>"
+              }
+            ]
+          },
+          {
             "出行·东海帝皇": [
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+20~24</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+20~24</span><br>技能點<span class=\"status_plus_value\">+20~24</span>",
@@ -42973,6 +43069,18 @@
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+15~18</span><br>齊聚於王座之人的情誼量條<span class=\"status_plus_value\">+2</span>",
                 "choice_title": "早くその未来を見たいな"
+              }
+            ]
+          },
+          {
+            "「皇帝」的激勵": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10~12</span><br>齊聚於王座之人的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "レースに向けて軽めのスピード練習"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br>技能點<span class=\"status_plus_value\">+30~36</span><br>齊聚於王座之人的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "ハードな展開に備え、あえて重めの調整"
               }
             ]
           },

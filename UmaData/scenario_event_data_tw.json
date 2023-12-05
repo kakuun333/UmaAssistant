@@ -152,6 +152,16 @@
         "choice_effect": "<span class=\"skill_hint\">『準備突圍』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
       }
     ],
+    "「全力」＆「普通」的減重方法！": [
+      {
+        "choice_title": "『全力』で！",
+        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+6</span>"
+      },
+      {
+        "choice_title": "ふ、『普通』でお願いします……",
+        "choice_effect": "<span class=\"skill_hint\">『努力不懈』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+      }
+    ],
     "以「退學」為賭注的對決": [
       {
         "choice_title": "ヒット！カードをもう1枚！",
