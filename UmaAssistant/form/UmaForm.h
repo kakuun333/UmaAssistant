@@ -1,6 +1,10 @@
 ﻿#pragma once
 
+#include <Windows.h>
+
 #include "../global/Path.h"
+
+#include "../utility/CharacterConvert.h"
 
 namespace UmaAssistant {
 

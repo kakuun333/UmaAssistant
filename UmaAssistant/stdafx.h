@@ -38,8 +38,6 @@ using namespace msclr::interop;
 #include <nlohmann/json.hpp>
 using json = nlohmann::json;
 
-#include <libxml/HTMLparser.h>
-
 // tesseract
 #include <tesseract/baseapi.h>
 #include <leptonica/allheaders.h>

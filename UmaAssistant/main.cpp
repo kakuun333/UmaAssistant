@@ -113,19 +113,10 @@ int main(array<String^>^ args)
 	LocalServer::Instance->Stop();
 
 
-	int result = RemoveFontResourceW(utility::string2wstring(global::path::std_MochiyPopOne).c_str());
+	ConsoleManager::GetInstance()->Disable();
 
-	if (result != 0)
-	{
-		// RemoveFontResourceW 執行成功
-		printf(u8"RemoveFontResourceW 成功\n");
-	}
-	else
-	{
-		// RemoveFontResourceW 執行失敗
-		// 使用 GetLastError() 函數獲取訊息
-		printf(u8"RemoveFontResourceW 失敗，錯誤碼：%d\n", GetLastError());
-	}
+	RemoveFontResourceW(utility::string2wstring(global::path::std_MochiyPopOne).c_str());
+
 
 #pragma endregion
 	return 0;

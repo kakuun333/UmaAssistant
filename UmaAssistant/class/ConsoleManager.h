@@ -8,6 +8,7 @@ private:
 
 	static bool _isExist;
 
+	static BOOL _CtrlHandler(DWORD fdwCtrlType);
 public:
 	static ConsoleManager* GetInstance()
 	{

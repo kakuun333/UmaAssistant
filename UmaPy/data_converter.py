@@ -210,7 +210,8 @@ def convert_choice_effect_jp_to_tw(choice_effect, jp_event_owner = None, tw_even
     for jp, tw in choice_effect_jp_to_tw_dict.items():
         if (jp == "スタミナ"):
             choice_effect = re.sub(rf'{jp}(?!キープ)', tw, choice_effect, flags=re.IGNORECASE);
-
+        elif (jp == "スピード"):
+            choice_effect = re.sub(rf'{jp}(?!スター)', tw, choice_effect, flags=re.IGNORECASE);
         else:
             choice_effect = re.sub(jp, tw, choice_effect, flags=re.IGNORECASE);
 
