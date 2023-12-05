@@ -208,7 +208,7 @@ void Scanner::Start(std::string language)
 			DataManager* dataManager = DataManager::GetInstance();
 			WebManager* webManager = WebManager::GetInstance();
 
-			_scanning = true;
+			this->_scanning = true;
 			while (global::umaswitch::Scanning)
 			{
 				auto start_time = std::chrono::system_clock::now();
@@ -280,75 +280,77 @@ void Scanner::Start(std::string language)
 #pragma endregion
 
 
-#pragma region ScenarioEventData
-					/*
-					* 有時候名字很像的事件名稱會先偵測到 scenarioEventData ，但是正確的事件在 sapokaUmaEventData
-					* 為了避免先偵測到 scenarioEventData ，應該要先比較 similarity 再判斷要更新的事件是
-					* scenarioEventData 還是 sapokaUmaEventData
-					*/
-					ScenarioEventData scenarioEventData = dataManager->GetScenarioEventData(eventText);
-					if (scenarioEventData.IsDataComplete())
+
+
+#pragma region Character Event Data
+					UmaEventData charUmaEventData = dataManager->GetCurrentCharacterUmaEventData(eventText);
+					std::cout << "[Scanner] charUmaEventData.IsDataComplete: " << charUmaEventData.IsDataComplete() << std::endl;
+
+					if (charUmaEventData.IsDataComplete())
 					{
+						// 這裡更新 UI
 						webManager->CleanChoiceTable();
 
-						for (ScenarioChoice choice : scenarioEventData.event_list)
+						for (UmaChoice choice : charUmaEventData.Get<std::vector<UmaChoice>>(UmaEventDataType::CHOICE_LIST))
 						{
-							webManager->CreateChoice(utility::stdStr2system(choice.choice_title), utility::stdStr2system(choice.choice_effect));
+							webManager->CreateChoice(choice.sys_choice_title, choice.sys_choice_effect);
 						}
 
-						System::String^ sys_event_title = utility::stdStr2system(scenarioEventData.event_title);
+						System::String^ sys_event_owner = charUmaEventData.Get<System::String^>(UmaEventDataType::EVENT_OWNER);
 
-						switch (global::config->GameServer)
-						{
-						case GameServerType::JP:
-							webManager->ChangeEventOwner(u8"メインシナリオイベント");
-							break;
-						case GameServerType::TW:
-							webManager->ChangeEventOwner(u8"主要劇情事件");
-							break;
-						}
+						webManager->ChangeEventOwner(sys_event_owner);
 
+						System::String^ sys_event_title = charUmaEventData.Get<System::String^>(UmaEventDataType::EVENT_TITLE);
 
 						webManager->ChangeEventTitle(sys_event_title);
 
 						webManager->HiddenSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
 						webManager->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
+#pragma endregion
 					}
 					else
 					{
-						std::cout << u8"[Scanner] scenarioEventData 資料不完整" << std::endl;
+						/*
+						* 有時候名字很像的事件名稱會先偵測到 scenarioEventData ，但是正確的事件在 sapokaUmaEventData
+						* 為了避免先偵測到 scenarioEventData ，應該要先比較 similarity 再判斷要更新的事件是
+						* scenarioEventData 還是 sapokaUmaEventData
+						*/
+						ScenarioEventData scenarioEventData = dataManager->GetScenarioEventData(eventText);
+						UmaEventData sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
 
 
-#pragma region Character and SupportCard Event Data
-						UmaEventData charUmaEventData = dataManager->GetCurrentCharacterUmaEventData(eventText);
-						std::cout << "[Scanner] charUmaEventData.IsDataComplete: " << charUmaEventData.IsDataComplete() << std::endl;
-
-						if (charUmaEventData.IsDataComplete())
+						if (scenarioEventData.similarity > sapokaUmaEventData.similarity)
 						{
-							// 這裡更新 UI
+							if (!scenarioEventData.IsDataComplete()) continue;
+
 							webManager->CleanChoiceTable();
 
-							for (UmaChoice choice : charUmaEventData.Get<std::vector<UmaChoice>>(UmaEventDataType::CHOICE_LIST))
+							for (ScenarioChoice choice : scenarioEventData.event_list)
 							{
-								webManager->CreateChoice(choice.sys_choice_title, choice.sys_choice_effect);
+								webManager->CreateChoice(utility::stdStr2system(choice.choice_title), utility::stdStr2system(choice.choice_effect));
 							}
 
-							System::String^ sys_event_owner = charUmaEventData.Get<System::String^>(UmaEventDataType::EVENT_OWNER);
+							System::String^ sys_event_title = utility::stdStr2system(scenarioEventData.event_title);
 
-							webManager->ChangeEventOwner(sys_event_owner);
-
-							System::String^ sys_event_title = charUmaEventData.Get<System::String^>(UmaEventDataType::EVENT_TITLE);
+							switch (global::config->GameServer)
+							{
+							case GameServerType::JP:
+								webManager->ChangeEventOwner(u8"メインシナリオイベント");
+								break;
+							case GameServerType::TW:
+								webManager->ChangeEventOwner(u8"主要劇情事件");
+								break;
+							}
 
 							webManager->ChangeEventTitle(sys_event_title);
 
 							webManager->HiddenSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
 							webManager->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
+
+							std::cout << u8"[Scanner] scenarioEventData 資料不完整" << std::endl;
 						}
 						else
 						{
-
-							UmaEventData sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
-
 							if (!sapokaUmaEventData.IsDataComplete())
 							{
 								std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整" << std::endl;
@@ -394,12 +396,8 @@ void Scanner::Start(std::string language)
 
 							webManager->HiddenSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
 							webManager->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
-
-
 						}
 					}
-#pragma endregion
-
 				}
 				else
 				{
@@ -426,7 +424,7 @@ void Scanner::Start(std::string language)
 
 				std::this_thread::sleep_for(std::chrono::milliseconds(100));
 			}
-			_scanning = false;
+			this->_scanning = false;
 
 			
 		});

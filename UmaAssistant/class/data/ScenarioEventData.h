@@ -14,6 +14,8 @@ class ScenarioEventData
 {
 
 public:
+	float similarity;
+
 	std::string event_title;
 	std::vector<ScenarioChoice> event_list;
 

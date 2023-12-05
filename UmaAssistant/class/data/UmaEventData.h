@@ -43,7 +43,7 @@ public:
 class UmaEventData
 {
 public:
-	//std::string article_id;
+	float similarity;
 
 	std::string event_owner;
 	gcroot<System::String^> sys_event_owner;

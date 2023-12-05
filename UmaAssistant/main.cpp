@@ -43,10 +43,10 @@ int main(array<String^>^ args)
 		ConsoleManager::GetInstance()->Enable();
 	}
 #pragma endregion
-
+#pragma region 初始化字型
 	// 加載字型
 	AddFontResourceW(utility::string2wstring(global::path::std_MochiyPopOne).c_str());
-
+#pragma endregion
 
 
 	// 初始化 Scanner

@@ -152,8 +152,6 @@ ScenarioEventData DataManager::GetScenarioEventData(std::string scanned_text)
 
 	ScenarioEventData scenarioEventData;
 
-	std::map<std::string, float> similarEventTitleList = {};
-
 	for (json::iterator it = event_data_json.begin(); it != event_data_json.end(); ++it)
 	{
 		std::string scenario_type = it.key();
@@ -168,6 +166,7 @@ ScenarioEventData DataManager::GetScenarioEventData(std::string scanned_text)
 			{
 				scenarioEventData.event_title = event_title;
 
+				scenarioEventData.similarity = similarity;
 				
 
 				for (const auto& event : it2.value())
@@ -418,6 +417,10 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 				{
 					// choice.key() == event_title
 					if (choice.key() != maxElement->first) continue;
+
+					float similarity = maxElement->second;
+
+					umaEventData.similarity = similarity;
 
 					umaEventData.event_owner = it2.key();
 					umaEventData.sys_event_owner = utility::stdStr2system(umaEventData.event_owner);
