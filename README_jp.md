@@ -21,6 +21,9 @@ https://opencv.org/
 - JSON for Modern C++  
 https://github.com/nlohmann/json
 
+- curl    
+https://curl.se
+
 - The Programming Language Lua  
 https://www.lua.org
 
