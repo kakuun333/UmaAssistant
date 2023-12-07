@@ -17,6 +17,7 @@
 #include <functional>
 #include <locale>
 #include <codecvt>
+#include <algorithm>
 
 
 // Gdi+
@@ -57,6 +58,7 @@ using json = nlohmann::json;
 #include "class/PyManager.h"
 #include "class/Config.h"
 #include "class/AutoMouseClicker.h"
+#include "class/UmaTimer.h"
 
 // lua
 #include "class/LuaManager.h"
@@ -68,6 +70,7 @@ using json = nlohmann::json;
 // data
 #include "class/data/UmaEventData.h"
 #include "class/data/ScenarioEventData.h"
+#include "class/data/UmaEventRoute.h"
 
 /*			utility			*/
 #include "utility/CharacterConvert.h"

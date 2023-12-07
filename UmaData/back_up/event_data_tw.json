@@ -7824,6 +7824,18 @@
             ]
           },
           {
+            "Curren's Black": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+15</span>",
+                "choice_title": "黒はなにものにも染まらない色"
+              },
+              {
+                "choice_effect": "<span class=\"skill_hint\">『干擾』</span>的靈感Lv<span class=\"status_plus_value\">+2</span>",
+                "choice_title": "黒は他の色を引き立てる色"
+              }
+            ]
+          },
+          {
             "Rush Rush Rush Curren！": [
               {
                 "choice_effect": "成功時：<br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+30</span><br>隨機<span class=\"plus_condition\">『天賦異稟』</span><hr>失敗時：<br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+15</span>",
@@ -42799,11 +42811,11 @@
           {
             "預兆的夜晚": [
               {
-                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+10</span><br>中山慶典的情誼量條<span class=\"status_plus_value\">+5</span><br>※選択肢で連続イベント3が分岐",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+10</span><br>中山慶典的情誼量條<span class=\"status_plus_value\">+5</span><br>※連續事件三會依照選擇而有所不同",
                 "choice_title": "見過ごせない！俺が君の代わりになる！"
               },
               {
-                "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br>技能點<span class=\"status_plus_value\">+5</span><br>中山慶典的情誼量條<span class=\"status_plus_value\">+5</span><br>※選択肢で連続イベント3が分岐",
+                "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br>技能點<span class=\"status_plus_value\">+5</span><br>中山慶典的情誼量條<span class=\"status_plus_value\">+5</span><br>※連續事件三會依照選擇而有所不同",
                 "choice_title": "全力で逃げるぞ！"
               }
             ]

@@ -4,7 +4,6 @@
 
 #include <nlohmann/json.hpp>
 
-
 #include "data/UmaEventData.h"
 #include "data/ScenarioEventData.h"
 

@@ -12,17 +12,7 @@ tesseract::TessBaseAPI* Scanner::ocr_tw = nullptr;
 
 #pragma endregion
 
-/*
-	類型轉換
-	utf8 => utf16 => System::String^
-*/
-
-Scanner::Scanner()
-{
-
-}
-
-
+#include <tesseract/baseapi.h>
 void Scanner::InitOcrJpn()
 {
 	std::thread initThread([]()
@@ -31,7 +21,7 @@ void Scanner::InitOcrJpn()
 
 			ocr->Init(global::path::c_tessdata_best, "jpn", tesseract::OEM_DEFAULT); // 日文 "jpn"、繁體中文 "chi_tra"
 
-			ocr->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=");
+			//ocr->SetVariable("tessedit_char_blacklist", u8"!@$%^&*_-+<>?()[]{}|/\\`0123456789†.,:;；=");
 
 			ocr->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_LINE*//*tesseract::PSM_SINGLE_BLOCK*/);
 
@@ -49,7 +39,7 @@ void Scanner::InitOcrTw()
 
 			ocr->Init(global::path::c_tessdata_best, "chi_tra", tesseract::OEM_DEFAULT); // 日文 "jpn"、繁體中文 "chi_tra"
 
-			ocr->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=");
+			//ocr->SetVariable("tessedit_char_blacklist", u8"!@$%^&*_-+<>?()[]{}|/\\`0123456789†.,:;；=");
 
 			ocr->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_LINE*//*tesseract::PSM_SINGLE_BLOCK*/);
 
@@ -61,8 +51,78 @@ void Scanner::InitOcrTw()
 
 
 #pragma region 私人函數
+
+void Scanner::UpdateSapokaChoice(WebManager* webManager, UmaEventData sapokaUmaEventData)
+{
+	webManager->CleanChoiceTable();
+
+	for (UmaChoice choice : sapokaUmaEventData.Get<std::vector<UmaChoice>>(UmaEventDataType::CHOICE_LIST))
+	{
+		webManager->CreateChoice(choice.sys_choice_title, choice.sys_choice_effect);
+	}
+
+	System::String^ sys_event_owner = utility::stdStr2system(sapokaUmaEventData.Get<std::string>(UmaEventDataType::EVENT_OWNER));
+	webManager->ChangeEventOwner(sys_event_owner);
+
+	System::String^ sys_event_title = utility::stdStr2system(sapokaUmaEventData.Get<std::string>(UmaEventDataType::EVENT_TITLE));
+	webManager->ChangeEventTitle(sys_event_title);
+
+	webManager->HiddenSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
+	webManager->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
+}
+
+void Scanner::UpdateCharChoice(WebManager* webManager, UmaEventData charUmaEventData)
+{
+	// 這裡更新 UI
+	webManager->CleanChoiceTable();
+
+	for (UmaChoice choice : charUmaEventData.Get<std::vector<UmaChoice>>(UmaEventDataType::CHOICE_LIST))
+	{
+		webManager->CreateChoice(choice.sys_choice_title, choice.sys_choice_effect);
+	}
+
+	System::String^ sys_event_owner = utility::stdStr2system(charUmaEventData.Get<std::string>(UmaEventDataType::EVENT_OWNER));
+	webManager->ChangeEventOwner(sys_event_owner);
+
+	System::String^ sys_event_title = utility::stdStr2system(charUmaEventData.Get<std::string>(UmaEventDataType::EVENT_TITLE));
+	webManager->ChangeEventTitle(sys_event_title);
+
+	webManager->HiddenSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
+	webManager->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
+}
+
+void Scanner::UpdateScenarioChoice(WebManager* webManager, ScenarioEventData scenarioEventData)
+{
+	webManager->CleanChoiceTable();
+
+	for (ScenarioChoice choice : scenarioEventData.event_list)
+	{
+		webManager->CreateChoice(utility::stdStr2system(choice.choice_title), utility::stdStr2system(choice.choice_effect));
+	}
+
+	System::String^ sys_event_title = utility::stdStr2system(scenarioEventData.event_title);
+
+	switch (global::config->GameServer)
+	{
+	case GameServerType::JP:
+		webManager->ChangeEventOwner(u8"メインシナリオイベント");
+		break;
+	case GameServerType::TW:
+		webManager->ChangeEventOwner(u8"主要劇情事件");
+		break;
+	}
+
+	webManager->ChangeEventTitle(sys_event_title);
+
+	webManager->HiddenSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
+	webManager->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
+}
+
+
 std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageType imgType = ImageType::IMG_EVENT_TITLE)
 {
+	std::unique_lock<std::mutex> lock(ocrMutex);
+
 	char* utf8;
 
 	//ocr_jpn->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_LINE*//*tesseract::PSM_SINGLE_BLOCK*/);
@@ -73,7 +133,7 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 		switch (imgType)
 		{
 		case ImageType::IMG_EVENT_TITLE:
-			ocr_jpn->SetVariable("tessedit_char_blacklist", u8"@#$%^&*_-+<>()[]{}|/\\`~0123456789†.,:;；=");
+			ocr_jpn->SetVariable("tessedit_char_blacklist", u8"@$%^&*_-+<>()[]{}|/\\`0123456789†.,:;；=");
 			//ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 			break;
 		case ImageType::IMG_HENSEI_CHARACTER_NAME:
@@ -86,9 +146,9 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 		//ocr_jpn->SetImage(image.data, image.size().width, image.size().height, image.channels(), image.step);
 		ocr_jpn->SetImage(image.data, image.cols, image.rows, 1, image.cols);
 
+		// 進行文字辨識
 		ocr_jpn->Recognize(0);
 
-		// 進行文字辨識
 		utf8 = ocr_jpn->GetUTF8Text();
 		break;
 
@@ -96,10 +156,12 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 		switch (imgType)
 		{
 		case ImageType::IMG_EVENT_TITLE:
-			ocr_tw->SetVariable("tessedit_char_blacklist", u8"@#$%^&*_-+<>()[]{}|/\\`~0123456789†.,:;；=");
+			ocr_tw->SetVariable("tessedit_char_blacklist", u8"@$%^&*_-+<>()[]{}|/\\`0123456789†.,:;；=");
+			//ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 			break;
 		case ImageType::IMG_HENSEI_CHARACTER_NAME:
 			ocr_tw->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
+			//ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_BLOCK);
 			break;
 		}
 
@@ -107,17 +169,17 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 		//ocr_jpn->SetImage(image.data, image.size().width, image.size().height, image.channels(), image.step);
 		ocr_tw->SetImage(image.data, image.cols, image.rows, 1, image.cols);
 
+		// 進行文字辨識
 		ocr_tw->Recognize(0);
 
-		// 進行文字辨識
 		utf8 = ocr_tw->GetUTF8Text();
 		break;
 	}
 
 
 
-	std::string stdString(utf8);
-	std::string result = utility::RemoveSpace(stdString);
+	std::string std_string = utf8;
+	std::string result = utility::RemoveSpace(std_string);
 
 
 #pragma region 釋放記憶體
@@ -125,6 +187,7 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 	delete[] utf8;
 #pragma endregion 釋放記憶體
 
+	lock.unlock();
 	return result;
 }
 
@@ -192,7 +255,6 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 #pragma endregion 私人函數
 
 
-
 void Scanner::Start(std::string language)
 {
 	if (global::umaswitch::Scanning)
@@ -211,21 +273,22 @@ void Scanner::Start(std::string language)
 			this->_scanning = true;
 			while (global::umaswitch::Scanning)
 			{
-				auto start_time = std::chrono::system_clock::now();
-				//std::unique_ptr<Screenshot> ss(new Screenshot());
+				std::unique_ptr<UmaTimer> timer = std::make_unique<UmaTimer>();
+				timer->Start();
+
 				Screenshot ss;
+
 				if (!ss.IsDataComplete())
 				{
 					std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 					continue;
 				}
 
+
 				///
 				/// 獲取圖片裡的文字
 				/// 
-				std::string eventText;
-				std::string characterNameText;
-				std::string henseiCharNameText;
+				std::string eventText, /*characterNameText,*/ henseiCharNameText;
 
 
 				//eventText = this->GetScannedText(ss.event_title_oimg, language);
@@ -240,38 +303,51 @@ void Scanner::Start(std::string language)
 				//eventText = this->GetScannedText(ss.event_title_gray_bin_inv, language);
 				//std::cout << "event_title_gray_bin_inv: " << eventText << std::endl;
 
-				eventText = this->GetScannedText(ss.event_title_gray_bin, language);
-				henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
 
-				if (eventText.empty() && henseiCharNameText.empty())
+				//eventText = this->GetScannedText(ss.event_title_gray_bin, language);
+				//henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
+
+
+				std::unique_ptr<std::thread> tryCharThread;
+
+
+				eventText = this->GetScannedText(ss.event_title_gray_bin, language);
+
+				if (eventText.empty() && dataManager->IsCurrentCharacterInfoLocked())
 				{
-					std::this_thread::sleep_for(std::chrono::milliseconds(100));
 					std::cout << u8"[Scanner] 都是空字串" << std::endl;
+					std::this_thread::sleep_for(std::chrono::milliseconds(100));
 					continue;
 				}
 
 				std::cout << u8"[Scanner] event_title_gray_bin: " << eventText << std::endl;
-				std::cout << u8"[Scanner] henseiCharNameText: " << henseiCharNameText << std::endl;
-
-
+				
 				if (_previousEventText != eventText ||
-					_previousCharacterNameText != characterNameText ||
+					//_previousCharacterNameText != characterNameText ||
 					_previousHenseiCharacterNameText != henseiCharNameText)
 				{
 #pragma region Looking for Current Character
+
+					
+
+
 					if (!dataManager->IsCurrentCharacterInfoLocked())
 					{
-						if (!dataManager->TryGetCurrentCharacterName(henseiCharNameText))
-						{
-							henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin_inv, language);
-							std::cout << "[Scanner] hensei_character_name_gray_bin_inv: " << henseiCharNameText << std::endl;
+						
 
-							if (!dataManager->TryGetCurrentCharacterName(henseiCharNameText))
+						tryCharThread = std::make_unique<std::thread>([=, &henseiCharNameText]()
 							{
 								henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
-								std::cout << "[Scanner] hensei_character_name_gray_bin: " << henseiCharNameText << std::endl;
-							}
-						}
+								if (!henseiCharNameText.empty()) std::cout << u8"[Scanner] hensei_character_name_gray: " << henseiCharNameText << std::endl;
+
+								if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) return;
+
+								henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin_inv, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
+								if (!henseiCharNameText.empty()) std::cout << "[Scanner] hensei_character_name_gray_bin_inv: " << henseiCharNameText << std::endl;
+
+								dataManager->TryGetCurrentCharacterName(henseiCharNameText);
+							});
+						//tryThread->join();
 					}
 					else
 					{
@@ -284,118 +360,64 @@ void Scanner::Start(std::string language)
 
 #pragma region Character Event Data
 					UmaEventData charUmaEventData = dataManager->GetCurrentCharacterUmaEventData(eventText);
-					std::cout << "[Scanner] charUmaEventData.IsDataComplete: " << charUmaEventData.IsDataComplete() << std::endl;
-
 					if (charUmaEventData.IsDataComplete())
 					{
-						// 這裡更新 UI
-						webManager->CleanChoiceTable();
-
-						for (UmaChoice choice : charUmaEventData.Get<std::vector<UmaChoice>>(UmaEventDataType::CHOICE_LIST))
-						{
-							webManager->CreateChoice(choice.sys_choice_title, choice.sys_choice_effect);
-						}
-
-						System::String^ sys_event_owner = charUmaEventData.Get<System::String^>(UmaEventDataType::EVENT_OWNER);
-
-						webManager->ChangeEventOwner(sys_event_owner);
-
-						System::String^ sys_event_title = charUmaEventData.Get<System::String^>(UmaEventDataType::EVENT_TITLE);
-
-						webManager->ChangeEventTitle(sys_event_title);
-
-						webManager->HiddenSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
-						webManager->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
-#pragma endregion
+						this->UpdateCharChoice(webManager, charUmaEventData);
 					}
 					else
+#pragma endregion
 					{
 						/*
 						* 有時候名字很像的事件名稱會先偵測到 scenarioEventData ，但是正確的事件在 sapokaUmaEventData
 						* 為了避免先偵測到 scenarioEventData ，應該要先比較 similarity 再判斷要更新的事件是
 						* scenarioEventData 還是 sapokaUmaEventData
 						*/
-						ScenarioEventData scenarioEventData = dataManager->GetScenarioEventData(eventText);
-						UmaEventData sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
 
+						std::unique_ptr<std::thread> sapokaThread, scenarioThread;
 
-						if (scenarioEventData.similarity > sapokaUmaEventData.similarity)
-						{
-							if (!scenarioEventData.IsDataComplete()) continue;
+						UmaEventData sapokaUmaEventData;
+						ScenarioEventData scenarioEventData;
 
-							webManager->CleanChoiceTable();
-
-							for (ScenarioChoice choice : scenarioEventData.event_list)
+						sapokaThread = std::make_unique<std::thread>([=, &eventText, &sapokaUmaEventData]()
 							{
-								webManager->CreateChoice(utility::stdStr2system(choice.choice_title), utility::stdStr2system(choice.choice_effect));
-							}
+								sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
 
-							System::String^ sys_event_title = utility::stdStr2system(scenarioEventData.event_title);
+								if (sapokaUmaEventData.IsDataComplete()) return;
 
-							switch (global::config->GameServer)
-							{
-							case GameServerType::JP:
-								webManager->ChangeEventOwner(u8"メインシナリオイベント");
-								break;
-							case GameServerType::TW:
-								webManager->ChangeEventOwner(u8"主要劇情事件");
-								break;
-							}
-
-							webManager->ChangeEventTitle(sys_event_title);
-
-							webManager->HiddenSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
-							webManager->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
-
-							std::cout << u8"[Scanner] scenarioEventData 資料不完整" << std::endl;
-						}
-						else
-						{
-							if (!sapokaUmaEventData.IsDataComplete())
-							{
 								std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整" << std::endl;
 
 								eventText = this->GetScannedText(ss.event_title_gray, language);
 								std::cout << "[Scanner] event_title_gray: " << eventText << std::endl;
 								sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
 
-								if (!sapokaUmaEventData.IsDataComplete())
-								{
-									std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整2" << std::endl;
+								if (sapokaUmaEventData.IsDataComplete()) return;
 
-									eventText = this->GetScannedText(ss.event_title_oimg, language);
-									std::cout << "[Scanner] event_title_oimg: " << eventText << std::endl;
-									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
+								std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整2" << std::endl;
 
-									if (!sapokaUmaEventData.IsDataComplete())
-									{
-										std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整3" << std::endl;
+								eventText = this->GetScannedText(ss.event_title_oimg, language);
+								std::cout << "[Scanner] event_title_oimg: " << eventText << std::endl;
+								sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
 
-										auto end_time = std::chrono::system_clock::now();
-										auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
-										double seconds = duration.count() * 1.0f / 1000;
-										printf("[Scanner] SCANNED [%.2fs]\n", seconds);
+								if (sapokaUmaEventData.IsDataComplete()) return;
 
-										continue;
-									}
-								}
-							};
+								std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整3" << std::endl;
+							});
 
-							webManager->CleanChoiceTable();
-
-							for (UmaChoice choice : sapokaUmaEventData.Get<std::vector<UmaChoice>>(UmaEventDataType::CHOICE_LIST))
+						scenarioThread = std::make_unique<std::thread>([=, &scenarioEventData]()
 							{
-								webManager->CreateChoice(choice.sys_choice_title, choice.sys_choice_effect);
-							}
+								scenarioEventData = dataManager->GetScenarioEventData(eventText);
+							});
 
-							System::String^ sys_event_owner = sapokaUmaEventData.Get<System::String^>(UmaEventDataType::EVENT_OWNER);
-							webManager->ChangeEventOwner(sys_event_owner);
+						sapokaThread->join();
+						scenarioThread->join();
 
-							System::String^ sys_event_title = sapokaUmaEventData.Get<System::String^>(UmaEventDataType::EVENT_TITLE);
-							webManager->ChangeEventTitle(sys_event_title);
-
-							webManager->HiddenSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
-							webManager->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
+						if (sapokaUmaEventData.similarity > scenarioEventData.similarity)
+						{
+							if (sapokaUmaEventData.IsDataComplete()) this->UpdateSapokaChoice(webManager, sapokaUmaEventData);
+						}
+						else
+						{
+							if (scenarioEventData.IsDataComplete()) this->UpdateScenarioChoice(webManager, scenarioEventData);
 						}
 					}
 				}
@@ -404,21 +426,20 @@ void Scanner::Start(std::string language)
 					std::cout << u8"[Scanner] 偵測結果與上次一致" << std::endl;
 				}
 
+
+				// 如果有 tryCharThread 就等待它執行完畢
+				if (tryCharThread != nullptr && tryCharThread->joinable()) tryCharThread->join();
+
+
 				//
 				// 更新上次辨識到的文字
 				//
-				_previousEventText = eventText; 
-				_previousCharacterNameText = characterNameText;
+				_previousEventText = eventText;
+				//_previousCharacterNameText = characterNameText;
 				_previousHenseiCharacterNameText = henseiCharNameText;
 
-				// 記錄結束時間
-				auto end_time = std::chrono::system_clock::now();
-
-				// 計算執行時間（毫秒）
-				auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
-
-				// 將時間差轉換為秒
-				double seconds = duration.count() * 1.0f / 1000;
+				
+				double seconds = timer->Stop();
 
 				printf("[Scanner] SCANNED [%.2fs]\n", seconds);
 
@@ -426,7 +447,7 @@ void Scanner::Start(std::string language)
 			}
 			this->_scanning = false;
 
-			
+
 		});
 
 	scanThread.detach();

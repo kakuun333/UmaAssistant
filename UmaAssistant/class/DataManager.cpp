@@ -232,6 +232,7 @@ UmaEventData DataManager::GetCurrentCharacterUmaEventData(std::string scanned_te
 
 				if (similarity >= utility::SIMILAR_METRIC)
 				{
+
 					similarEventTitleList.emplace(choice.key(), similarity);
 				}
 			}
@@ -258,6 +259,10 @@ UmaEventData DataManager::GetCurrentCharacterUmaEventData(std::string scanned_te
 			{
 				// choice.key() == event_title
 				if (choice.key() != maxElement->first) continue;
+
+				float similarity = maxElement->second;
+
+				umaEventData.similarity = similarity;
 
 				umaEventData.event_owner = _currentCharacterInfoDict["event_owner"];
 				umaEventData.sys_event_owner = utility::stdStr2system(umaEventData.event_owner);
@@ -289,6 +294,7 @@ UmaEventData DataManager::GetCurrentCharacterUmaEventData(std::string scanned_te
 	return umaEventData;
 }
 
+
 UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 {
 	json event_data_json;
@@ -305,7 +311,7 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 
 	UmaEventData umaEventData;
 
-	std::map<std::string, float> similarEventTitleList = {};
+	std::vector<UmaEventRoute> similarDataList = {};
 
 
 	std::thread* rStarThread = nullptr;
@@ -318,7 +324,7 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 		// it == rare;
 		if (it.key() == "R")
 		{
-			rStarThread = new std::thread([=, &similarEventTitleList]()
+			rStarThread = new std::thread([=, &similarDataList]()
 				{
 					for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
 					{
@@ -333,7 +339,14 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 
 								if (similarity >= utility::SIMILAR_METRIC)
 								{
-									similarEventTitleList.emplace(choice.key(), similarity);
+									UmaEventRoute eventRoute;
+
+									eventRoute.rare = it.key();
+									eventRoute.event_owner = it2.key();
+									eventRoute.event_title = choice.key();
+									eventRoute.similarity = similarity;
+
+									similarDataList.push_back(eventRoute);
 								}
 							}
 						}
@@ -342,7 +355,7 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 		}
 		else if (it.key() == "SR")
 		{
-			srStarThread = new std::thread([=, &similarEventTitleList]()
+			srStarThread = new std::thread([=, &similarDataList]()
 				{
 					for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
 					{
@@ -357,7 +370,14 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 
 								if (similarity >= utility::SIMILAR_METRIC)
 								{
-									similarEventTitleList.emplace(choice.key(), similarity);
+									UmaEventRoute eventRoute;
+
+									eventRoute.rare = it.key();
+									eventRoute.event_owner = it2.key();
+									eventRoute.event_title = choice.key();
+									eventRoute.similarity = similarity;
+
+									similarDataList.push_back(eventRoute);
 								}
 							}
 						}
@@ -366,7 +386,7 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 		}
 		else if (it.key() == "SSR")
 		{
-			ssrStarThread = new std::thread([=, &similarEventTitleList]()
+			ssrStarThread = new std::thread([=, &similarDataList]()
 				{
 					for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
 					{
@@ -381,7 +401,14 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 
 								if (similarity >= utility::SIMILAR_METRIC)
 								{
-									similarEventTitleList.emplace(choice.key(), similarity);
+									UmaEventRoute eventRoute;
+
+									eventRoute.rare = it.key();
+									eventRoute.event_owner = it2.key();
+									eventRoute.event_title = choice.key();
+									eventRoute.similarity = similarity;
+
+									similarDataList.push_back(eventRoute);
 								}
 							}
 						}
@@ -394,70 +421,301 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 	srStarThread->join();
 	ssrStarThread->join();
 
-	if (similarEventTitleList.empty()) return umaEventData;
-
-	auto maxElement = std::max_element(
-		similarEventTitleList.begin(), similarEventTitleList.end(),
-		[](const auto& p1, const auto& p2)
-		{
-			//std::cout << "first: " << p1.first << "second: " << p1.second << std::endl;
-			return p1.second < p2.second;
-		}
-	);
-
-	for (json::iterator it = event_data_json["support_card"].begin(); it != event_data_json["support_card"].end(); ++it)
-	{
-		// it == rare;
-
-		for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
-		{
-			// it2 == event_owner;
-
-			for (const auto& event : it2.value()["event"])
-			{
-				for (const auto& choice : event.items())
-				{
-					// choice.key() == event_title
-					if (choice.key() != maxElement->first) continue;
-
-					float similarity = maxElement->second;
-
-					umaEventData.similarity = similarity;
-
-					umaEventData.event_owner = it2.key();
-					umaEventData.sys_event_owner = utility::stdStr2system(umaEventData.event_owner);
-
-					UmaEvent umaEvent;
-					umaEvent.event_title = choice.key();
-					umaEvent.sys_event_title = utility::stdStr2system(umaEvent.event_title);
-
-					for (const auto& choice_info : choice.value())
-					{
-						// choice_info["choice_title"]
-						// choice_info["choice_effect"]
-
-						UmaChoice umaChoice;
-						umaChoice.choice_title = choice_info["choice_title"].get<std::string>();
-						umaChoice.sys_choice_title = utility::stdStr2system(umaChoice.choice_title);
-
-						umaChoice.choice_effect = choice_info["choice_effect"].get<std::string>();
-						umaChoice.sys_choice_effect = utility::stdStr2system(umaChoice.choice_effect);
-
-						umaEvent.choice_list.push_back(umaChoice);
-					}
-
-					umaEventData.event_list.push_back(umaEvent);
-				}
-			}
-		}
-	}
-
 	delete rStarThread;
 	delete srStarThread;
 	delete ssrStarThread;
 
+	if (similarDataList.empty()) return umaEventData;
+
+	// 使用 std::max_element 找到最大的 similarity
+	auto maxElement = std::max_element(similarDataList.begin(), similarDataList.end(),
+		[](const UmaEventRoute& route1, const UmaEventRoute& route2)
+		{
+			return route1.similarity < route2.similarity;
+		}
+	);
+
+	auto& event_array = event_data_json["support_card"][maxElement->rare][maxElement->event_owner]["event"];
+	for (const auto& event : event_array)
+	{
+		std::string event_title = event.begin().key();
+		if (event_title == maxElement->event_title)
+		{
+			UmaEvent umaEvent;
+
+			umaEventData.similarity = maxElement->similarity;
+
+			umaEventData.event_owner = maxElement->event_owner;
+			umaEventData.sys_event_owner = utility::stdStr2system(umaEventData.event_owner);
+
+			umaEvent.event_title = maxElement->event_title;
+			umaEvent.sys_event_title = utility::stdStr2system(umaEvent.event_title);
+
+			for (const auto& choice_info : event.begin().value())
+			{
+				UmaChoice umaChoice;
+
+				umaChoice.choice_title = choice_info["choice_title"].get<std::string>();
+				umaChoice.sys_choice_title = utility::stdStr2system(umaChoice.choice_title);
+
+				umaChoice.choice_effect = choice_info["choice_effect"].get<std::string>();
+				umaChoice.sys_choice_effect = utility::stdStr2system(umaChoice.choice_effect);
+
+				umaEvent.choice_list.push_back(umaChoice);
+			}
+
+			umaEventData.event_list.push_back(umaEvent);
+			break;
+		}
+	}
+
+
+	//for (const auto& choice_info : event_data_json["support_card"][maxElement->rare][maxElement->event_owner]["event"][maxElement->event_title])
+	//{
+	//	std::cout << choice_info["choice_title"].get<std::string>() << std::endl;
+	//}
+
+	//for (json::iterator it = event_data_json["support_card"][maxElement->rare][maxElement->event_owner]["event"][maxElement->event_title].begin();
+	//	it != event_data_json["support_card"][maxElement->rare][maxElement->event_owner]["event"][maxElement->event_title].end(); ++it)
+	//{
+	//	std::cout << it.key() << std::endl;
+
+	//	//UmaChoice umaChoice;
+
+	//	//umaEventData.similarity = maxElement->similarity;
+
+	//	//umaEventData.event_owner = maxElement->event_owner;
+	//	//umaEventData.sys_event_owner = utility::stdStr2system(umaEventData.event_owner);
+
+	//	//umaEvent.event_title = maxElement->event_title;
+	//	//umaEvent.sys_event_title = utility::stdStr2system(umaEvent.event_title);
+
+	//	//for (const auto& choice_info : it.value())
+	//	//{
+	//	//	// choice_info["choice_title"]
+	//	//	// choice_info["choice_effect"]
+
+	//	//	
+	//	//	umaChoice.choice_title = choice_info["choice_title"].get<std::string>();
+	//	//	umaChoice.sys_choice_title = utility::stdStr2system(umaChoice.choice_title);
+
+	//	//	umaChoice.choice_effect = choice_info["choice_effect"].get<std::string>();
+	//	//	umaChoice.sys_choice_effect = utility::stdStr2system(umaChoice.choice_effect);
+
+	//	//}
+
+	//	//umaEvent.choice_list.push_back(umaChoice);
+	//}
+
+	
+
+
 	return umaEventData;
 }
+
+
+//UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
+//{
+//	json event_data_json;
+//
+//	switch (global::config->GameServer)
+//	{
+//	case GameServerType::JP:
+//		event_data_json = event_data_jp_json;
+//		break;
+//	case GameServerType::TW:
+//		event_data_json = event_data_tw_json;
+//	}
+//
+//
+//	UmaEventData umaEventData;
+//	float highestSimilarity = 0.0f;
+//
+//	std::thread* rStarThread = nullptr;
+//	std::thread* srStarThread = nullptr;
+//	std::thread* ssrStarThread = nullptr;
+//
+//
+//
+//	for (json::iterator it = event_data_json["support_card"].begin(); it != event_data_json["support_card"].end(); ++it)
+//	{
+//		// it == rare;
+//		if (it.key() == "R")
+//		{
+//			rStarThread = new std::thread([=, &umaEventData, &highestSimilarity]()
+//				{
+//					for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
+//					{
+//						// it2.key() == event_owner;
+//
+//						for (const auto& event : it2.value()["event"])
+//						{
+//							for (const auto& choice : event.items())
+//							{
+//								std::string event_title = choice.key();
+//								float similarity = utility::GetSimilarity(scanned_text, event_title.c_str());
+//
+//								if (similarity < utility::SIMILAR_METRIC) continue;
+//
+//								highestSimilarity = std::max(similarity, highestSimilarity);
+//
+//								if (similarity < highestSimilarity) continue;
+//
+//								if (!umaEventData.event_list.empty())
+//								{
+//									for (auto _event : umaEventData.event_list)
+//									{
+//										_event.choice_list.clear();
+//									}
+//									umaEventData.event_list.clear();
+//								}
+//
+//								umaEventData.similarity = similarity;
+//								umaEventData.event_owner = it2.key();
+//
+//								UmaEvent umaEvent;
+//								umaEvent.event_title = choice.key();
+//
+//								for (const auto& choice_info : choice.value())
+//								{
+//									UmaChoice umaChoice;
+//									umaChoice.choice_title = choice_info["choice_title"].get<std::string>();
+//									umaChoice.choice_effect = choice_info["choice_effect"].get<std::string>();
+//
+//									umaChoice.sys_choice_title = utility::stdStr2system(umaChoice.choice_title);
+//									umaChoice.sys_choice_effect = utility::stdStr2system(umaChoice.choice_effect);
+//
+//									umaEvent.choice_list.push_back(umaChoice);
+//								}
+//
+//								umaEventData.event_list.push_back(umaEvent);
+//							}
+//						}
+//					}
+//				});
+//		}
+//		else if (it.key() == "SR")
+//		{
+//			srStarThread = new std::thread([=, &umaEventData, &highestSimilarity]()
+//				{
+//					for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
+//					{
+//						// it2.key() == event_owner;
+//
+//						for (const auto& event : it2.value()["event"])
+//						{
+//							for (const auto& choice : event.items())
+//							{
+//								std::string event_title = choice.key();
+//								float similarity = utility::GetSimilarity(scanned_text, event_title.c_str());
+//
+//								if (similarity < utility::SIMILAR_METRIC) continue;
+//
+//								highestSimilarity = std::max(similarity, highestSimilarity);
+//
+//								if (similarity < highestSimilarity) continue;
+//
+//								if (!umaEventData.event_list.empty())
+//								{
+//									for (auto _event : umaEventData.event_list)
+//									{
+//										_event.choice_list.clear();
+//									}
+//									umaEventData.event_list.clear();
+//								}
+//
+//								umaEventData.similarity = similarity;
+//								umaEventData.event_owner = it2.key();
+//
+//								UmaEvent umaEvent;
+//								umaEvent.event_title = choice.key();
+//
+//								for (const auto& choice_info : choice.value())
+//								{
+//									UmaChoice umaChoice;
+//									umaChoice.choice_title = choice_info["choice_title"].get<std::string>();
+//									umaChoice.choice_effect = choice_info["choice_effect"].get<std::string>();
+//
+//									umaChoice.sys_choice_title = utility::stdStr2system(umaChoice.choice_title);
+//									umaChoice.sys_choice_effect = utility::stdStr2system(umaChoice.choice_effect);
+//
+//									umaEvent.choice_list.push_back(umaChoice);
+//								}
+//
+//								umaEventData.event_list.push_back(umaEvent);
+//							}
+//						}
+//					}
+//				});
+//		}
+//		else if (it.key() == "SSR")
+//		{
+//			ssrStarThread = new std::thread([=, &umaEventData, &highestSimilarity]()
+//				{
+//					for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
+//					{
+//						// it2.key() == event_owner;
+//
+//						for (const auto& event : it2.value()["event"])
+//						{
+//							for (const auto& choice : event.items())
+//							{
+//								std::string event_title = choice.key();
+//								float similarity = utility::GetSimilarity(scanned_text, event_title.c_str());
+//
+//								if (similarity < utility::SIMILAR_METRIC) continue;
+//
+//								highestSimilarity = std::max(similarity, highestSimilarity);
+//
+//								if (similarity < highestSimilarity) continue;
+//
+//								if (!umaEventData.event_list.empty())
+//								{
+//									for (auto _event : umaEventData.event_list)
+//									{
+//										_event.choice_list.clear();
+//									}
+//									umaEventData.event_list.clear();
+//								}
+//
+//								umaEventData.similarity = similarity;
+//								umaEventData.event_owner = it2.key();
+//
+//								UmaEvent umaEvent;
+//								umaEvent.event_title = choice.key();
+//
+//								for (const auto& choice_info : choice.value())
+//								{
+//									UmaChoice umaChoice;
+//									umaChoice.choice_title = choice_info["choice_title"].get<std::string>();
+//									umaChoice.choice_effect = choice_info["choice_effect"].get<std::string>();
+//
+//									umaChoice.sys_choice_title = utility::stdStr2system(umaChoice.choice_title);
+//									umaChoice.sys_choice_effect = utility::stdStr2system(umaChoice.choice_effect);
+//
+//									umaEvent.choice_list.push_back(umaChoice);
+//								}
+//
+//								umaEventData.event_list.push_back(umaEvent);
+//							}
+//						}
+//					}
+//				});
+//		}
+//	}
+//
+//
+//	rStarThread->join();
+//	srStarThread->join();
+//	ssrStarThread->join();
+//
+//
+//	delete rStarThread;
+//	delete srStarThread;
+//	delete ssrStarThread;
+//
+//	return umaEventData;
+//}
 
 UmaEventData DataManager::GetUmaEventDataFromJson(std::string scanned_text)
 {

@@ -292,6 +292,7 @@ Screenshot::Screenshot()
 
 	// event_title
 	this->GetEventTitleImage();
+	
 
 	// character_name
 	this->GetHenseiCharacterNameImage();
@@ -357,7 +358,10 @@ void Screenshot::GetEventTitleImage()
 	this->ResizeImage(event_title_gray_bin, 2);
 	cv::cvtColor(event_title_gray_bin, event_title_gray_bin, cv::COLOR_BGR2GRAY);
 	cv::threshold(event_title_gray_bin, event_title_gray_bin, thresh/*230*/, 255, cv::THRESH_BINARY);
+	//std::cout << "test: " << this->GetWhitePixelRatio(event_title_gray_bin) << std::endl; // WhitePixelRatio: 0.215815
+
 	//std::cout << "[WhitePixelRatio] event_title_gray_bin: " << this->GetWhitePixelRatio(event_title_gray_bin) << std::endl;
+
 	// event_title_gray_bin_inv 裁切->放大+去鋸齒->灰值化->二值化//
 	event_title_gray_bin_inv = oimg.clone();
 	this->CropImage(event_title_gray_bin_inv, ImageType::IMG_EVENT_TITLE);
