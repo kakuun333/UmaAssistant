@@ -221,6 +221,9 @@
     <ClInclude Include="UmaAssistant\class\data\UmaEventRoute.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+    <ClInclude Include="UmaAssistant\enum\JpServerLangType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="UmaWeb\index.html" />

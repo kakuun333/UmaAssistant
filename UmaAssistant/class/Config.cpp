@@ -14,9 +14,11 @@ void Config::Update()
 
 	AutoMouseClick = json_config["AutoMouseClick"].empty() ? false : json_config["AutoMouseClick"].get<bool>();
 
-	GameServer = json_config["GameServer"].empty() ? GameServerType::JP : json_config["GameServer"].get<int>();
+	GameServer = json_config["GameServer"].empty() ? static_cast<int>(GameServerType::JP) : json_config["GameServer"].get<int>();
 
-	GameWindow = json_config["GameWindow"].empty() ? GameWindowType::DMM : json_config["GameWindow"].get<int>();
+	GameWindow = json_config["GameWindow"].empty() ? static_cast<int>(GameWindowType::DMM) : json_config["GameWindow"].get<int>();
+
+	JpServerLang = json_config["JpServerLang"].empty() ? static_cast<int>(JpServerLangType::JP) : json_config["JpServerLang"].get<int>();
 
 	GameWindowName = json_config["GameWindowName"].empty() ? NULL_GAME_WINDOW_NAME : json_config["GameWindowName"].get<std::string>();
 
@@ -37,6 +39,7 @@ void Config::WriteToJson()
 	json_config["AutoMouseClick"] = this->AutoMouseClick;
 	json_config["GameServer"] = this->GameServer;
 	json_config["GameWindow"] = this->GameWindow;
+	json_config["JpServerLang"] = this->JpServerLang;
 	json_config["GameWindowName"] = this->GameWindowName;
 	json_config["AutoMouseClickKey"]["VK"] = this->AutoMouseClickKey["VK"];
 	json_config["AutoMouseClickKey"]["WinFormButton"] = this->AutoMouseClickKey["WinFormButton"];

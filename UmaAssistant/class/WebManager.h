@@ -28,6 +28,8 @@ public:
 
 	void ChangeCharacterName(System::String^ characterName);
 
-	void ChangeSkillGameServer(System::String^ gameServer);
+	void ChangeSkillGameServer(int gameServer);
+
+	void ChangeJpServerLang(int jpServerLangType);
 };
 

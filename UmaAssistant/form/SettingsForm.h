@@ -31,6 +31,8 @@ namespace UmaAssistant
 
 		void GameWindowRadioButtonChanged(Object^ sender, EventArgs^ e);
 
+		void JpServerLangRadioButtonChanged(Object^ sender, EventArgs^ e);
+
 	protected:
 		/// <summary>
 		/// 清除任何使用中的資源。
@@ -83,6 +85,14 @@ namespace UmaAssistant
 	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel1;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel3;
 	private: System::Windows::Forms::TextBox^ autoMouseClickKey_textBox;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel4;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel52;
+
+	private: System::Windows::Forms::RadioButton^ jpServerLang_tw_radioBtn;
+
+	private: System::Windows::Forms::RadioButton^ jpServerLang_jp_radioBtn;
+
+	private: System::Windows::Forms::Label^ label4;
 
 	public:
 	private:
@@ -118,11 +128,18 @@ namespace UmaAssistant
 			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->tableLayoutPanel3 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->autoMouseClickKey_textBox = (gcnew System::Windows::Forms::TextBox());
+			this->tableLayoutPanel4 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->tableLayoutPanel52 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->jpServerLang_tw_radioBtn = (gcnew System::Windows::Forms::RadioButton());
+			this->jpServerLang_jp_radioBtn = (gcnew System::Windows::Forms::RadioButton());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->icon_pictureBox))->BeginInit();
 			this->tableLayoutPanel1->SuspendLayout();
 			this->tableLayoutPanel2->SuspendLayout();
 			this->flowLayoutPanel1->SuspendLayout();
 			this->tableLayoutPanel3->SuspendLayout();
+			this->tableLayoutPanel4->SuspendLayout();
+			this->tableLayoutPanel52->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// update_event_data_jp_btn1
@@ -248,7 +265,7 @@ namespace UmaAssistant
 			this->label1->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->label1->Location = System::Drawing::Point(11, 173);
+			this->label1->Location = System::Drawing::Point(3, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(177, 24);
 			this->label1->TabIndex = 28;
@@ -259,12 +276,13 @@ namespace UmaAssistant
 			this->serverPortTextBox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)),
 				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(81)));
 			this->serverPortTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->serverPortTextBox->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->serverPortTextBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->serverPortTextBox->Location = System::Drawing::Point(194, 173);
+			this->serverPortTextBox->Location = System::Drawing::Point(196, 3);
 			this->serverPortTextBox->MaxLength = 5;
 			this->serverPortTextBox->Name = L"serverPortTextBox";
-			this->serverPortTextBox->Size = System::Drawing::Size(63, 24);
+			this->serverPortTextBox->Size = System::Drawing::Size(61, 24);
 			this->serverPortTextBox->TabIndex = 29;
 			this->serverPortTextBox->Text = L"12345";
 			// 
@@ -424,7 +442,7 @@ namespace UmaAssistant
 			this->flowLayoutPanel1->Controls->Add(this->update_event_data_jp_btn1);
 			this->flowLayoutPanel1->Controls->Add(this->update_skill_data_jp_btn1);
 			this->flowLayoutPanel1->FlowDirection = System::Windows::Forms::FlowDirection::TopDown;
-			this->flowLayoutPanel1->Location = System::Drawing::Point(9, 250);
+			this->flowLayoutPanel1->Location = System::Drawing::Point(6, 309);
 			this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
 			this->flowLayoutPanel1->Size = System::Drawing::Size(368, 164);
 			this->flowLayoutPanel1->TabIndex = 39;
@@ -439,7 +457,7 @@ namespace UmaAssistant
 				128)));
 			this->tableLayoutPanel3->Controls->Add(this->autoMouceClick_checkBox, 0, 0);
 			this->tableLayoutPanel3->Controls->Add(this->autoMouseClickKey_textBox, 1, 0);
-			this->tableLayoutPanel3->Location = System::Drawing::Point(9, 207);
+			this->tableLayoutPanel3->Location = System::Drawing::Point(6, 266);
 			this->tableLayoutPanel3->Name = L"tableLayoutPanel3";
 			this->tableLayoutPanel3->RowCount = 1;
 			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
@@ -461,19 +479,95 @@ namespace UmaAssistant
 			this->autoMouseClickKey_textBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &SettingsForm::autoMouseClickKey_textBox_KeyDown);
 			this->autoMouseClickKey_textBox->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &SettingsForm::autoMouseClickKey_textBox_MouseDown);
 			// 
+			// tableLayoutPanel4
+			// 
+			this->tableLayoutPanel4->BackColor = System::Drawing::Color::Transparent;
+			this->tableLayoutPanel4->ColumnCount = 2;
+			this->tableLayoutPanel4->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel4->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				67)));
+			this->tableLayoutPanel4->Controls->Add(this->label1, 0, 0);
+			this->tableLayoutPanel4->Controls->Add(this->serverPortTextBox, 1, 0);
+			this->tableLayoutPanel4->Location = System::Drawing::Point(6, 230);
+			this->tableLayoutPanel4->Name = L"tableLayoutPanel4";
+			this->tableLayoutPanel4->RowCount = 1;
+			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel4->Size = System::Drawing::Size(260, 33);
+			this->tableLayoutPanel4->TabIndex = 41;
+			// 
+			// tableLayoutPanel52
+			// 
+			this->tableLayoutPanel52->BackColor = System::Drawing::Color::Transparent;
+			this->tableLayoutPanel52->ColumnCount = 2;
+			this->tableLayoutPanel52->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				36)));
+			this->tableLayoutPanel52->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				64)));
+			this->tableLayoutPanel52->Controls->Add(this->jpServerLang_jp_radioBtn, 0, 0);
+			this->tableLayoutPanel52->Controls->Add(this->jpServerLang_tw_radioBtn, 1, 0);
+			this->tableLayoutPanel52->Location = System::Drawing::Point(12, 193);
+			this->tableLayoutPanel52->Name = L"tableLayoutPanel52";
+			this->tableLayoutPanel52->RowCount = 1;
+			this->tableLayoutPanel52->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 100)));
+			this->tableLayoutPanel52->Size = System::Drawing::Size(225, 34);
+			this->tableLayoutPanel52->TabIndex = 43;
+			// 
+			// jpServerLang_tw_radioBtn
+			// 
+			this->jpServerLang_tw_radioBtn->AutoSize = true;
+			this->jpServerLang_tw_radioBtn->BackColor = System::Drawing::Color::Transparent;
+			this->jpServerLang_tw_radioBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
+				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
+			this->jpServerLang_tw_radioBtn->Location = System::Drawing::Point(84, 3);
+			this->jpServerLang_tw_radioBtn->Name = L"jpServerLang_tw_radioBtn";
+			this->jpServerLang_tw_radioBtn->Size = System::Drawing::Size(92, 28);
+			this->jpServerLang_tw_radioBtn->TabIndex = 31;
+			this->jpServerLang_tw_radioBtn->Text = L"繁體中文";
+			this->jpServerLang_tw_radioBtn->UseVisualStyleBackColor = false;
+			// 
+			// jpServerLang_jp_radioBtn
+			// 
+			this->jpServerLang_jp_radioBtn->AutoSize = true;
+			this->jpServerLang_jp_radioBtn->BackColor = System::Drawing::Color::Transparent;
+			this->jpServerLang_jp_radioBtn->Checked = true;
+			this->jpServerLang_jp_radioBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
+				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
+			this->jpServerLang_jp_radioBtn->Location = System::Drawing::Point(3, 3);
+			this->jpServerLang_jp_radioBtn->Name = L"jpServerLang_jp_radioBtn";
+			this->jpServerLang_jp_radioBtn->Size = System::Drawing::Size(60, 28);
+			this->jpServerLang_jp_radioBtn->TabIndex = 30;
+			this->jpServerLang_jp_radioBtn->TabStop = true;
+			this->jpServerLang_jp_radioBtn->Text = L"日文";
+			this->jpServerLang_jp_radioBtn->UseVisualStyleBackColor = false;
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->BackColor = System::Drawing::Color::Transparent;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
+			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
+				static_cast<System::Int32>(static_cast<System::Byte>(151)));
+			this->label4->Location = System::Drawing::Point(12, 166);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(122, 24);
+			this->label4->TabIndex = 42;
+			this->label4->Text = L"日服文本語言：";
+			// 
 			// SettingsForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(380, 420);
+			this->ClientSize = System::Drawing::Size(380, 480);
+			this->Controls->Add(this->tableLayoutPanel52);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->tableLayoutPanel4);
 			this->Controls->Add(this->tableLayoutPanel3);
 			this->Controls->Add(this->flowLayoutPanel1);
 			this->Controls->Add(this->tableLayoutPanel2);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->serverPortTextBox);
-			this->Controls->Add(this->label1);
 			this->Controls->Add(this->app_name_label);
 			this->Controls->Add(this->icon_pictureBox);
 			this->Controls->Add(this->minimize_btn);
@@ -495,6 +589,10 @@ namespace UmaAssistant
 			this->flowLayoutPanel1->PerformLayout();
 			this->tableLayoutPanel3->ResumeLayout(false);
 			this->tableLayoutPanel3->PerformLayout();
+			this->tableLayoutPanel4->ResumeLayout(false);
+			this->tableLayoutPanel4->PerformLayout();
+			this->tableLayoutPanel52->ResumeLayout(false);
+			this->tableLayoutPanel52->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

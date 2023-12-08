@@ -11,7 +11,7 @@ def write_convert_data_card(json_string):
     os.chdir(script_dir);
 
     # 寫入 event_data_tw.json
-    with open(r"../UmaData/event_data_jp_to_tw_card.json", "w+", encoding="utf-8") as json_file:
+    with open(r"../UmaData/event_data_jp_cvt_tw_card.json", "w+", encoding="utf-8") as json_file:
         json_file.write(json_string);
 
 def write_convert_data_char(json_string):
@@ -21,7 +21,7 @@ def write_convert_data_char(json_string):
     os.chdir(script_dir);
 
     # 寫入 event_data_tw.json
-    with open(r"../UmaData/event_data_jp_to_tw_char.json", "w+", encoding="utf-8") as json_file:
+    with open(r"../UmaData/event_data_jp_cvt_tw_char.json", "w+", encoding="utf-8") as json_file:
         json_file.write(json_string);
 
 def write_convert_data_skill(json_string):
@@ -31,7 +31,7 @@ def write_convert_data_skill(json_string):
     os.chdir(script_dir);
 
     # 寫入 event_data_tw.json
-    with open(r"../UmaData/skill_data_jp_to_tw.json", "w+", encoding="utf-8") as json_file:
+    with open(r"../UmaData/skill_data_jp_cvt_tw.json", "w+", encoding="utf-8") as json_file:
         json_file.write(json_string);
 
 def write_file(path, string):

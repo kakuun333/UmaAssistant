@@ -43,8 +43,14 @@ void WebManager::HiddenSkillContent()
 	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "hiddenSkillHintContent", param);
 }
 
-void WebManager::ChangeSkillGameServer(System::String^ gameServer)
+void WebManager::ChangeSkillGameServer(int gameServer)
 {
 	array<Object^>^ param = gcnew array<Object^> { gameServer };
 	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "changeSkillGameServer", param);
+}
+
+void WebManager::ChangeJpServerLang(int jpServerLangType)
+{
+	array<Object^>^ param = gcnew array<Object^> { jpServerLangType };
+	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "changeJpServerLang", param);
 }

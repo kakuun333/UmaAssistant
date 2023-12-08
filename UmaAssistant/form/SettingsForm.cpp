@@ -48,13 +48,37 @@ namespace UmaAssistant
 			// 如果 RadioButton 被選中
 			if (radioButton == tw_server_radio_btn)
 			{
-				global::config->GameServer = GameServerType::TW;
-				webManager->ChangeSkillGameServer("tw");
+				global::config->GameServer = static_cast<int>(GameServerType::TW);
+				webManager->ChangeSkillGameServer(static_cast<int>(GameServerType::TW));
 			}
 			else if (radioButton == jp_server_radio_btn)
 			{
-				global::config->GameServer = GameServerType::JP;
-				webManager->ChangeSkillGameServer("jp");
+				global::config->GameServer = static_cast<int>(GameServerType::JP);
+				webManager->ChangeSkillGameServer(static_cast<int>(GameServerType::JP));
+			}
+		}
+
+		global::config->WriteToJson();
+	}
+
+	void SettingsForm::JpServerLangRadioButtonChanged(Object^ sender, EventArgs^ e)
+	{
+		RadioButton^ radioButton = dynamic_cast<RadioButton^>(sender);
+
+		WebManager* webManager = WebManager::GetInstance();
+
+		if (radioButton != nullptr && radioButton->Checked)
+		{
+			// 如果 RadioButton 被選中
+			if (radioButton == jpServerLang_tw_radioBtn)
+			{
+				global::config->JpServerLang = static_cast<int>(GameServerType::TW);
+				webManager->ChangeJpServerLang(static_cast<int>(GameServerType::TW));
+			}
+			else if (radioButton == jpServerLang_jp_radioBtn)
+			{
+				global::config->JpServerLang = static_cast<int>(GameServerType::JP);
+				webManager->ChangeJpServerLang(static_cast<int>(GameServerType::JP));
 			}
 		}
 
@@ -65,19 +89,16 @@ namespace UmaAssistant
 	{
 		RadioButton^ radioButton = dynamic_cast<RadioButton^>(sender);
 
-		FileManager* fileManager = FileManager::GetInstance();
-		json config = fileManager->ReadJson(global::path::std_config);
-
 		if (radioButton != nullptr && radioButton->Checked)
 		{
 			// 如果 RadioButton 被選中
 			if (radioButton == dmm_radio_btn)
 			{
-				global::config->GameWindow = GameWindowType::DMM;
+				global::config->GameWindow = static_cast<int>(GameWindowType::DMM);
 			}
 			else if (radioButton == blue_stacks_radio_btn)
 			{
-				global::config->GameWindow = GameWindowType::BLUE_STACKS;
+				global::config->GameWindow = static_cast<int>(GameWindowType::BLUE_STACKS);
 			}
 		}
 
@@ -116,10 +137,10 @@ namespace UmaAssistant
 		// 從 config 初始化 Checked
 		switch (global::config->GameServer)
 		{
-		case GameServerType::JP:
+		case static_cast<int>(GameServerType::JP):
 			jp_server_radio_btn->Checked = true;
 			break;
-		case GameServerType::TW:
+		case static_cast<int>(GameServerType::TW):
 			tw_server_radio_btn->Checked = true;
 			break;
 		}
@@ -132,10 +153,10 @@ namespace UmaAssistant
 		// 從 config 初始化 Checked
 		switch (global::config->GameWindow)
 		{
-		case GameWindowType::DMM:
+		case static_cast<int>(GameWindowType::DMM):
 			dmm_radio_btn->Checked = true;
 			break;
-		case GameWindowType::BLUE_STACKS:
+		case static_cast<int>(GameWindowType::BLUE_STACKS):
 			blue_stacks_radio_btn->Checked = true;
 			break;
 		}
@@ -144,7 +165,22 @@ namespace UmaAssistant
 		dmm_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::GameWindowRadioButtonChanged);
 		blue_stacks_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::GameWindowRadioButtonChanged);
 #pragma endregion
+#pragma region 初始化 JpServerLangType
+		// 從 config 初始化 Checked
+		switch (global::config->JpServerLang)
+		{
+		case static_cast<int>(JpServerLangType::JP):
+			jpServerLang_jp_radioBtn->Checked = true;
+			break;
+		case static_cast<int>(JpServerLangType::TW):
+			jpServerLang_tw_radioBtn->Checked = true;
+			break;
+		}
 
+		// 註冊 CheckedChanged 事件
+		jpServerLang_jp_radioBtn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::JpServerLangRadioButtonChanged);
+		jpServerLang_tw_radioBtn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::JpServerLangRadioButtonChanged);
+#pragma endregion
 
 #pragma region 初始化 AutoMouseClick
 		String^ buttonName = Enum::GetName(static_cast<System::Windows::Forms::MouseButtons>(global::config->AutoMouseClickKey["WinFormButton"]).GetType(),

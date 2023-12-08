@@ -16,6 +16,7 @@ public:
 	bool AutoMouseClick;
 	int GameServer;
 	int GameWindow;
+	int JpServerLang;
 	std::string GameWindowName;
 	std::map<std::string, int> AutoMouseClickKey;
 	std::map<std::string, std::string> LocalServer;

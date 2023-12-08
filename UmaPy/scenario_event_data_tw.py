@@ -31,4 +31,4 @@ for div in div_list:
 
 
 json_string = json.dumps(scenario_event_tw_dict, indent=2, ensure_ascii=False);
-utility.write_file("../UmaData/scenario_event_data_jp_to_tw.json", json_string);
+utility.write_file("../UmaData/scenario_event_data_jp_cvt_tw.json", json_string);

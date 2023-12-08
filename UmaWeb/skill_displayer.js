@@ -71,9 +71,16 @@ function updateSkillContent() {
             // skill json
             skill_data = null;
 
-            if (SkillGameServer == "jp") {
-                skill_data = skill_data_jp;
-            } else if (SkillGameServer == "tw") {
+            if (GameServer == GameServerType.jp) {
+                
+                // 判斷日服文本語言
+                if (JpServerLang == JpServerLangType.jp) {
+                    skill_data = skill_data_jp;
+                } else if (JpServerLang == JpServerLangType.tw) {
+                    skill_data = skill_data_jp_trans_tw;
+                }
+                
+            } else if (GameServer == GameServerType.tw) {
                 skill_data = skill_data_tw;
             }
 
@@ -184,18 +191,29 @@ function hiddenSkillHintContent() {
 }
 
 function changeSkillGameServer(gameServer) {
-    //
-    //  SkillGameServer:
-    //  "jp", "tw"
-    //
-    SkillGameServer = gameServer;
+    GameServer = gameServer;
 }
 
+function changeJpServerLang(language) {
+    JpServerLang = language;
+}
+
+const GameServerType = {
+    jp: 0,
+    tw: 1,
+};
+const JpServerLangType = {
+    jp: 0,
+    tw: 1,
+}
 
 let skill_data_jp = null;
 let skill_data_tw = null;
+let skill_data_jp_trans_tw = null;
 
-let SkillGameServer = "jp";
+
+let GameServer = GameServerType.jp;
+let JpServerLang = JpServerLangType.jp;
 
 readJson("../UmaData/skill_data_jp.json", function(jsonData){
     skill_data_jp = jsonData;
@@ -203,6 +221,10 @@ readJson("../UmaData/skill_data_jp.json", function(jsonData){
 
 readJson("../UmaData/skill_data_tw.json", function(jsonData){
     skill_data_tw = jsonData;
+});
+
+readJson("../UmaData/skill_data_jp_trans_tw.json", function(jsonData){
+    skill_data_jp_trans_tw = jsonData;
 });
 
 

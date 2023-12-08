@@ -88,6 +88,7 @@ using json = nlohmann::json;
 #include "enum/FilePathType.h"
 #include "enum/GameServerType.h"
 #include "enum/GameWindowType.h"
+#include "enum/JpServerLangType.h"
 
 
 /*			global			*/

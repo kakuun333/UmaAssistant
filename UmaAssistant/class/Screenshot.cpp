@@ -52,14 +52,14 @@ cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 
 	switch (global::config->GameWindow)
 	{
-	case GameWindowType::DMM:
+	case static_cast<int>(GameWindowType::DMM):
 		gameWidth = rcClient.right - rcClient.left - DMM_FIX_GAME_WIDTH;
 		gameHeight = rcClient.bottom - rcClient.top;
 		gamePosX = rcWindow.left + DMM_FIX_GAME_WIDTH;
 		gamePosY = rcWindow.top + DMM_FIX_GAME_POS_Y;
 		break;
 
-	case GameWindowType::BLUE_STACKS:
+	case static_cast<int>(GameWindowType::BLUE_STACKS):
 		gameWidth = rcClient.right - rcClient.left - BLUE_STACKS_FIX_GAME_WIDTH;
 		gameHeight = rcClient.bottom - rcClient.top - BLUE_STACKS_FIX_GAME_HEIGHT;
 		gamePosX = rcWindow.left + BLUE_STACKS_FIX_GAME_POS_X;
@@ -126,7 +126,7 @@ void Screenshot::CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPatt
 
 	switch (global::config->GameWindow)
 	{
-	case GameWindowType::DMM:
+	case static_cast<int>(GameWindowType::DMM):
 		switch (imgType)
 		{
 		case IMG_EVENT_TITLE:
@@ -172,7 +172,7 @@ void Screenshot::CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPatt
 		}
 		break;
 
-	case GameWindowType::BLUE_STACKS:
+	case static_cast<int>(GameWindowType::BLUE_STACKS):
 		switch (imgType)
 		{
 		case IMG_EVENT_TITLE:

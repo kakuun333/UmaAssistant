@@ -12,15 +12,24 @@ namespace UmaAssistant
 {
 	void UmaForm::OnChoiceDocumentCompleted(System::Object^ sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^ e)
 	{
-		// 初始化 skill_displayer.js 中的 SkillGameServer 變數
+		// 初始化 skill_displayer.js 中的 let GameServer 變數
 		WebManager* webManager = WebManager::GetInstance();
-		if (global::config->GameServer == GameServerType::JP)
+		if (global::config->GameServer == static_cast<int>(GameServerType::JP))
 		{
-			webManager->ChangeSkillGameServer("jp");
+			webManager->ChangeSkillGameServer(static_cast<int>(GameServerType::JP));
 		}
-		else if (global::config->GameServer == GameServerType::TW)
+		else if (global::config->GameServer == static_cast<int>(GameServerType::TW))
 		{
-			webManager->ChangeSkillGameServer("tw");
+			webManager->ChangeSkillGameServer(static_cast<int>(GameServerType::TW));
+		}
+		// 初始化 skill_displayer.js 中的 let JpServerLang 變數
+		if (global::config->JpServerLang == static_cast<int>(JpServerLangType::JP))
+		{
+			webManager->ChangeJpServerLang(static_cast<int>(JpServerLangType::JP));
+		}
+		else if (global::config->JpServerLang == static_cast<int>(JpServerLangType::TW))
+		{
+			webManager->ChangeJpServerLang(static_cast<int>(JpServerLangType::TW));
 		}
 	}
 
@@ -81,12 +90,12 @@ namespace UmaAssistant
 		{
 			switch (config["GameServer"].get<int>())
 			{
-			case GameServerType::JP:
+			case static_cast<int>(GameServerType::JP):
 				scanner->Start("jpn");
 				
 				std::cout << "scanner GameServer: JP" << std::endl;
 				break;
-			case GameServerType::TW:
+			case static_cast<int>(GameServerType::TW):
 				scanner->Start("chi_tra");
 				std::cout << "scanner GameServer: TW" << std::endl;
 				break;

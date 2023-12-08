@@ -57,6 +57,9 @@ namespace global
 		extern std::string std_event_data_jp_json;
 		extern std::string std_skill_data_jp_json;
 		extern std::string std_scenario_event_data_jp_json;
+
+		// jp server translation data
+		extern std::string std_event_data_jp_trans_tw_json;
 		
 
 		extern std::string std_event_data_tw_json;

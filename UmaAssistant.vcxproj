@@ -190,6 +190,7 @@
     <ClInclude Include="UmaAssistant\enum\GameWindowType.h" />
     <ClInclude Include="UmaAssistant\enum\ImageType.h" />
     <ClInclude Include="UmaAssistant\enum\GameServerType.h" />
+    <ClInclude Include="UmaAssistant\enum\JpServerLangType.h" />
     <ClInclude Include="UmaAssistant\global\Others.h" />
     <ClInclude Include="UmaAssistant\utility\CharacterCompare.h" />
     <ClInclude Include="UmaAssistant\utility\FormControl.h" />

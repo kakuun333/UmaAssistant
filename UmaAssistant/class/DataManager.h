@@ -21,6 +21,8 @@ private:
 	static nlohmann::json event_data_jp_json;
 	static nlohmann::json event_data_tw_json;
 
+	static nlohmann::json event_data_jp_trans_tw_json;
+
 	static nlohmann::json scenario_event_data_jp_json;
 	static nlohmann::json scenario_event_data_tw_json;
 public:
@@ -35,7 +37,7 @@ public:
 
 	static void InitEventDataJson();
 
-	UmaEventData GetUmaEventDataFromJson(std::string scanned_text);
+	//UmaEventData GetUmaEventDataFromJson(std::string scanned_text);
 
 	UmaEventData GetCurrentCharacterUmaEventData(std::string scanned_text);
 

@@ -53,9 +53,14 @@ namespace global
 		std::string std_skill_data_jp_json				 = std_UmaData + "\\skill_data_jp.json";
 		std::string std_scenario_event_data_jp_json		 = std_UmaData + "\\scenario_event_data_jp.json";
 
+		// jp server translation data
+		std::string std_event_data_jp_trans_tw_json		 = std_UmaData + "\\event_data_jp_trans_tw.json";
+
 		std::string std_event_data_tw_json				 = std_UmaData + "\\event_data_tw.json";
 		std::string std_skill_data_tw_json				 = std_UmaData + "\\skill_data_tw.json";
 		std::string std_scenario_event_data_tw_json		 = std_UmaData + "\\scenario_event_data_tw.json";
+
+
 
 		std::string std_similar_char_list_json			 = std_UmaData + "\\similar_char_list.json";
 

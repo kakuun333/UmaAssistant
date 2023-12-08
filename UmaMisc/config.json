@@ -9,6 +9,7 @@
   "GameServer": 0,
   "GameWindow": 0,
   "GameWindowName": "umamusume",
+  "JpServerLang": 1,
   "LocalServer": {
     "Port": "7777"
   }

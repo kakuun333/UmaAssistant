@@ -104,10 +104,10 @@ void Scanner::UpdateScenarioChoice(WebManager* webManager, ScenarioEventData sce
 
 	switch (global::config->GameServer)
 	{
-	case GameServerType::JP:
+	case static_cast<int>(GameServerType::JP):
 		webManager->ChangeEventOwner(u8"メインシナリオイベント");
 		break;
-	case GameServerType::TW:
+	case static_cast<int>(GameServerType::TW):
 		webManager->ChangeEventOwner(u8"主要劇情事件");
 		break;
 	}
@@ -123,13 +123,13 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 {
 	std::unique_lock<std::mutex> lock(ocrMutex);
 
-	char* utf8;
+	char* utf8 = nullptr;
 
 	//ocr_jpn->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_LINE*//*tesseract::PSM_SINGLE_BLOCK*/);
 
 	switch (global::config->GameServer)
 	{
-	case GameServerType::JP:
+	case static_cast<int>(GameServerType::JP):
 		switch (imgType)
 		{
 		case ImageType::IMG_EVENT_TITLE:
@@ -152,15 +152,16 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 		utf8 = ocr_jpn->GetUTF8Text();
 		break;
 
-	case GameServerType::TW:
+	case static_cast<int>(GameServerType::TW):
 		switch (imgType)
 		{
 		case ImageType::IMG_EVENT_TITLE:
 			ocr_tw->SetVariable("tessedit_char_blacklist", u8"@$%^&*_-+<>()[]{}|/\\`0123456789†.,:;；=");
-			//ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
+			ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 			break;
 		case ImageType::IMG_HENSEI_CHARACTER_NAME:
 			ocr_tw->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
+			ocr_tw->SetPageSegMode(tesseract::PSM_AUTO);
 			//ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_BLOCK);
 			break;
 		}
@@ -176,10 +177,7 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 		break;
 	}
 
-
-
-	std::string std_string = utf8;
-	std::string result = utility::RemoveSpace(std_string);
+	std::string result = utility::RemoveSpace(utf8);
 
 
 #pragma region 釋放記憶體
@@ -259,7 +257,7 @@ void Scanner::Start(std::string language)
 {
 	if (global::umaswitch::Scanning)
 	{
-		std::cout << "[Scanner] 必須先停止掃描 Scanner::Stop()" << std::endl;
+		std::cout << u8"[Scanner] 必須先停止掃描 Scanner::Stop()" << std::endl;
 		return;
 	}
 
@@ -327,10 +325,6 @@ void Scanner::Start(std::string language)
 					_previousHenseiCharacterNameText != henseiCharNameText)
 				{
 #pragma region Looking for Current Character
-
-					
-
-
 					if (!dataManager->IsCurrentCharacterInfoLocked())
 					{
 						
