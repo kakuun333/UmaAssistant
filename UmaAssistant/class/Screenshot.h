@@ -56,6 +56,8 @@ private:
 
 	void GetSyousaiCharacterName();
 
+	bool IsWindowCovered(HWND hwnd);
+
 public:
 	Screenshot();
 

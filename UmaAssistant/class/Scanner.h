@@ -36,6 +36,7 @@ private:
 
 	std::mutex ocrMutex;  // 用於保護 OCR 物件
 
+
 	std::string GetScannedText(cv::Mat image, std::string language, ImageType imgType);
 
 	void UpdateSapokaChoice(WebManager* webManager, UmaEventData sapokaUmaEventData);

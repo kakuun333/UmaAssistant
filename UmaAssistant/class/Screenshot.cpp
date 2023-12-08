@@ -1,5 +1,7 @@
 ﻿#include "../stdafx.h"
 
+#pragma region 靜態變數
+// event_title
 cv::Mat Screenshot::oimg;
 cv::Mat Screenshot::event_title_oimg;
 cv::Mat Screenshot::event_title_resize;
@@ -7,17 +9,55 @@ cv::Mat Screenshot::event_title_gray;
 cv::Mat Screenshot::event_title_gray_bin;
 cv::Mat Screenshot::event_title_gray_bin_inv;
 
+// event_icon
 cv::Mat Screenshot::event_icon;
 
+// sentaku_character_name
 cv::Mat Screenshot::sentaku_character_name;
 
+// hensei_character_name
 cv::Mat Screenshot::hensei_character_name_gray;
 cv::Mat Screenshot::hensei_character_name_gray_bin;
 cv::Mat Screenshot::hensei_character_name_gray_bin_inv;
 
-
+// syousai_character_name
 cv::Mat Screenshot::syousai_character_name_gray_bin;
+#pragma endregion
 
+bool Screenshot::IsWindowCovered(HWND gameHWND)
+{
+	RECT gameWindowRect;
+	if (GetWindowRect(gameHWND, &gameWindowRect))
+	{
+		// 檢查視窗是否可見
+		if (IsWindowVisible(gameHWND))
+		{
+			// 檢查視窗是否被其他視窗覆蓋
+			HWND hwndBehind = GetWindow(gameHWND, GW_HWNDPREV);
+			RECT behindRect;
+			while (hwndBehind != NULL)
+			{
+				if (IsWindowVisible(hwndBehind))
+				{
+					// 更新 behindRect
+					GetWindowRect(hwndBehind, &behindRect);
+
+					// 如果 gameWindowRect 和 behindRect 交會
+					if (IntersectRect(&behindRect, &gameWindowRect, &behindRect))
+					{
+						// 視窗被其他視窗覆蓋
+						return true;
+					}
+				}
+				// 更新 hwndBehind
+				hwndBehind = GetWindow(hwndBehind, GW_HWNDPREV);
+			}
+		}
+	}
+
+	// 視窗未被覆蓋
+	return false;
+}
 
 cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 {
@@ -25,6 +65,26 @@ cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 	//if (gameHWND == NULL) { std::cout << u8"找不到遊戲視窗" << std::endl; return cv::Mat(); }
 	HWND gameHWND = GameWindowFinder::GetInstance()->GetCurrentGameWindow();
 	if (gameHWND == NULL) return cv::Mat();
+
+	if (this->IsWindowCovered(gameHWND))
+	{
+		std::cout << u8"視窗被覆蓋" << std::endl;
+		return cv::Mat();
+	}
+
+
+
+	// 獲取遊戲視窗的 ClientRect 和 WindowRect
+	RECT rcWindow; GetWindowRect(gameHWND, &rcWindow);
+	RECT rcClient; GetClientRect(gameHWND, &rcClient);
+	//printf("[Client] left: %d, right: %d, top: %d, bottom: %d\n", rcClient.left, rcClient.right, rcClient.top, rcClient.bottom);
+	//printf("[Window] left: %d, right: %d, top: %d, bottom: %d\n", rcWindow.left, rcWindow.right, rcWindow.top, rcWindow.bottom);
+	if (rcClient.left <= 0 && rcClient.right <= 0 && rcClient.top <= 0 && rcClient.bottom <= 0)
+	{
+		std::cout << u8"視窗被最小化" << std::endl;
+		return cv::Mat();
+	}
+	
 
 	
 	HDC hwindowDC, hwindowCompatibleDC;
@@ -38,9 +98,7 @@ cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 	hwindowCompatibleDC = CreateCompatibleDC(hwindowDC);
 	SetStretchBltMode(hwindowCompatibleDC, COLORONCOLOR);
 
-	// 獲取遊戲視窗的 ClientRect 和 WindowRect
-	RECT rcClient; GetClientRect(gameHWND, &rcClient);
-	RECT rcWindow; GetWindowRect(gameHWND, &rcWindow);
+
 
 #ifdef UMA_DEBUG
 	Debug::WriteLine("[Client] left: {0}, right: {1}, top: {2}, bottom: {3}", rcClient.left, rcClient.right, rcClient.top, rcClient.bottom);
