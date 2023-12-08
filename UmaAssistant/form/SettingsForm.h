@@ -44,8 +44,11 @@ namespace UmaAssistant
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ update_event_data_jp_btn1;
-	private: System::Windows::Forms::Button^ update_skill_data_jp_btn1;
+	public: System::Windows::Forms::Button^ update_event_data_jp_btn1;
+	protected:
+	public: System::Windows::Forms::Button^ update_skill_data_jp_btn1;
+
+
 
 	private: System::Windows::Forms::Button^ minimize_btn;
 	private: System::Windows::Forms::Button^ close_form_btn;

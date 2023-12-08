@@ -83,9 +83,17 @@ int main(array<String^>^ args)
 	* 所以在這裡初始化
 	*/
 	if (global::config->DebugMode)
+	{
 		global::form::settingsForm->debugMode_checkBox->Checked = true;
+		global::form::settingsForm->update_event_data_jp_btn1->Visible = true;
+		global::form::settingsForm->update_skill_data_jp_btn1->Visible = true;
+	}
 	else
+	{
 		global::form::settingsForm->debugMode_checkBox->Checked = false;
+		global::form::settingsForm->update_event_data_jp_btn1->Visible = false;
+		global::form::settingsForm->update_skill_data_jp_btn1->Visible = false;
+	}
 	/*
 	*  初始化 CheckBox
 	*/

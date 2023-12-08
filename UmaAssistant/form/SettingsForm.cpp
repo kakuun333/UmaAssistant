@@ -216,7 +216,8 @@ namespace UmaAssistant
 			global::config->DebugMode = true;
 			global::form::umaForm->test_btn->Visible = true;
 			global::form::umaForm->screenshot_preview_btn->Visible = true;
-			
+			update_event_data_jp_btn1->Visible = true;
+			update_skill_data_jp_btn1->Visible = true;
 
 			consoleManager->Enable();
 		}
@@ -225,6 +226,9 @@ namespace UmaAssistant
 			global::config->DebugMode = false;
 			global::form::umaForm->test_btn->Visible = false;
 			global::form::umaForm->screenshot_preview_btn->Visible = false;
+
+			update_event_data_jp_btn1->Visible = false;
+			update_skill_data_jp_btn1->Visible = false;
 
 
 			consoleManager->Disable();

@@ -138,7 +138,7 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 			break;
 		case ImageType::IMG_HENSEI_CHARACTER_NAME:
 			ocr_jpn->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
-			//ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_BLOCK);
+			//ocr_jpn->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_BLOCK*/);
 			break;
 		}
 
@@ -157,12 +157,11 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 		{
 		case ImageType::IMG_EVENT_TITLE:
 			ocr_tw->SetVariable("tessedit_char_blacklist", u8"@$%^&*_-+<>()[]{}|/\\`0123456789†.,:;；=");
-			ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
+			//ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 			break;
 		case ImageType::IMG_HENSEI_CHARACTER_NAME:
 			ocr_tw->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
-			ocr_tw->SetPageSegMode(tesseract::PSM_AUTO);
-			//ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_BLOCK);
+			//ocr_tw->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_BLOCK*/);
 			break;
 		}
 
@@ -311,11 +310,44 @@ void Scanner::Start(std::string language)
 
 				eventText = this->GetScannedText(ss.event_title_gray_bin, language);
 
+				/*
+				* 如果 eventText 是空字串就再用其他圖片比較
+				* 如果還是空字串才算是真的空字串
+				*/
 				if (eventText.empty() && dataManager->IsCurrentCharacterInfoLocked())
 				{
-					std::cout << u8"[Scanner] 都是空字串" << std::endl;
-					std::this_thread::sleep_for(std::chrono::milliseconds(100));
-					continue;
+					std::unique_ptr<std::thread> test, test2;
+
+					std::string gray_event_text, oimg_event_text;
+
+					test = std::make_unique<std::thread>([=, &eventText, &gray_event_text]()
+						{
+							
+							gray_event_text = this->GetScannedText(ss.event_title_gray, language);
+							if (eventText.empty() && !gray_event_text.empty())
+							{
+								eventText = gray_event_text;
+							}
+						});
+
+					test2 = std::make_unique<std::thread>([=, &eventText, &oimg_event_text]()
+						{
+							oimg_event_text = this->GetScannedText(ss.event_title_oimg, language);
+							if (eventText.empty() && !oimg_event_text.empty())
+							{
+								eventText = oimg_event_text;
+							}
+						});
+
+					test->join();
+					test2->join();
+
+					if (gray_event_text.empty() && oimg_event_text.empty())
+					{
+						std::cout << u8"[Scanner] 都是空字串" << std::endl;
+						std::this_thread::sleep_for(std::chrono::milliseconds(100));
+						continue;
+					}
 				}
 
 				std::cout << u8"[Scanner] event_title_gray_bin: " << eventText << std::endl;
