@@ -12,5 +12,6 @@
   "JpServerLang": 1,
   "LocalServer": {
     "Port": "7777"
-  }
+  },
+  "ScanInterval": 100
 }

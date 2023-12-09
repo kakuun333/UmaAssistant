@@ -15,7 +15,7 @@ namespace UmaAssistant
 		this->Hide();
 	}
 
-	void SettingsForm::serverPortTextBox_KeyPress(Object^ sender, KeyPressEventArgs^ e)
+	void SettingsForm::DigitOnly_TextBox_KeyPress(Object^ sender, KeyPressEventArgs^ e)
 	{
 		// 允許數字、退格鍵和刪除鍵
 		if (!Char::IsDigit(e->KeyChar) && e->KeyChar != 8 && e->KeyChar != 127)
@@ -26,15 +26,26 @@ namespace UmaAssistant
 
 	void SettingsForm::serverPortTextBox_TextChanged(Object^ sender, EventArgs^ e)
 	{
-		String^ text = serverPortTextBox->Text;
+		TextBox^ textbox = dynamic_cast<TextBox^>(sender);
 		
-		if (text->Length >= 4)
+		if (textbox->Text->Length >= 4)
 		{
-			global::config->LocalServer["Port"] = utility::systemStr2std(text);
+			global::config->LocalServer["Port"] = utility::systemStr2std(textbox->Text);
 
 			global::config->WriteToJson();
 		}
+	}
 
+	void SettingsForm::scanInterval_textBox_TextChanged(Object^ sender, EventArgs^ e)
+	{
+		TextBox^ textbox = dynamic_cast<TextBox^>(sender);
+
+		if (textbox->Text->Length >= 1)
+		{
+			global::config->ScanInterval = System::Convert::ToInt32(textbox->Text);
+
+			global::config->WriteToJson();
+		}
 	}
 
 	void SettingsForm::GameServerRadioButtonChanged(Object^ sender, EventArgs^ e)
@@ -120,15 +131,17 @@ namespace UmaAssistant
 		// 註冊 FormClosing 事件
 		this->FormClosing += gcnew FormClosingEventHandler(this, &SettingsForm::FormClosingHandler);
 
-		// 初始化 serverPortTextBox->Text
-
+		// 初始化 TextBox 的 Text
 		serverPortTextBox->Text = utility::stdStr2system(global::config->LocalServer["Port"]);
+		scanInterval_textBox->Text = System::Convert::ToString(global::config->ScanInterval);
 
 		// 註冊 KeyPress 事件
-		serverPortTextBox->KeyPress += gcnew KeyPressEventHandler(this, &SettingsForm::serverPortTextBox_KeyPress);
+		serverPortTextBox->KeyPress += gcnew KeyPressEventHandler(this, &SettingsForm::DigitOnly_TextBox_KeyPress);
+		scanInterval_textBox->KeyPress += gcnew KeyPressEventHandler(this, &SettingsForm::DigitOnly_TextBox_KeyPress);
 
 		// 註冊 TextChanged 事件
 		serverPortTextBox->TextChanged += gcnew EventHandler(this, &SettingsForm::serverPortTextBox_TextChanged);
+		scanInterval_textBox->TextChanged += gcnew EventHandler(this, &SettingsForm::scanInterval_textBox_TextChanged);
 
 		//
 		// 初始化 RadioButtons

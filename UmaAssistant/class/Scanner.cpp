@@ -176,15 +176,15 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 		break;
 	}
 
-	std::string result = utility::RemoveSpace(utf8);
+	lock.unlock();
 
+	std::string result = utility::RemoveSpace(utf8);
 
 #pragma region 釋放記憶體
 	//ocr->End();
 	delete[] utf8;
 #pragma endregion 釋放記憶體
 
-	lock.unlock();
 	return result;
 }
 
@@ -362,7 +362,7 @@ void Scanner::Start(std::string language)
 					if (gray_event_text.empty() && oimg_event_text.empty())
 					{
 						std::cout << u8"[Scanner] 都是空字串" << std::endl;
-						std::this_thread::sleep_for(std::chrono::milliseconds(100));
+						std::this_thread::sleep_for(std::chrono::milliseconds(global::config->ScanInterval));
 						continue;
 					}
 				}
@@ -515,7 +515,7 @@ void Scanner::Start(std::string language)
 
 				printf("[Scanner] SCANNED [%.2fs]\n", seconds);
 
-				std::this_thread::sleep_for(std::chrono::milliseconds(100));
+				std::this_thread::sleep_for(std::chrono::milliseconds(global::config->ScanInterval));
 			}
 			this->_scanning = false;
 

@@ -94,9 +94,6 @@ cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 	}
 
 
-	
-
-	
 	HDC hwindowDC, hwindowCompatibleDC;
 
 	int height, width, srcheight, srcwidth, xsrc, ysrc;
@@ -108,12 +105,6 @@ cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 	hwindowCompatibleDC = CreateCompatibleDC(hwindowDC);
 	SetStretchBltMode(hwindowCompatibleDC, COLORONCOLOR);
 
-
-
-#ifdef UMA_DEBUG
-	Debug::WriteLine("[Client] left: {0}, right: {1}, top: {2}, bottom: {3}", rcClient.left, rcClient.right, rcClient.top, rcClient.bottom);
-	Debug::WriteLine("[Window] left: {0}, right: {1}, top: {2}, bottom: {3}", rcWindow.left, rcWindow.right, rcWindow.top, rcWindow.bottom);
-#endif
 
 	int gameWidth, gameHeight, gamePosX, gamePosY = 0;
 
@@ -313,11 +304,15 @@ void Screenshot::ResizeImage(cv::Mat& img, float scale_factor = 2.0 /*放大倍�
 
 const double Screenshot::GetWhitePixelRatio(cv::Mat img)
 {
+	/*
+	* 真機伶黑色婚紗 thresh: 160, whitePixelRatio: 0.572825
+	*/
+
 	const int whitePixelCount = cv::countNonZero(img);
 	const int imgPixelCount = img.cols * img.rows;
 	const double whitePixelRatio = static_cast<double>(whitePixelCount) / static_cast<double>(imgPixelCount);
 
-	//std::cout << "whitePixelRatio: " << whitePixelRatio << std::endl;
+	std::cout << "whitePixelRatio: " << whitePixelRatio << std::endl;
 
 	return whitePixelRatio;
 }

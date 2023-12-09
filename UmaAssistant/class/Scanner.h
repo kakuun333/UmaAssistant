@@ -34,8 +34,8 @@ private:
 
 	static tesseract::TessBaseAPI* ocr_tw;
 
-	std::mutex ocrMutex;  // 用於保護 OCR 物件
-
+	// 互斥鎖。用於保護 OCR 物件
+	std::mutex ocrMutex;
 
 	std::string GetScannedText(cv::Mat image, std::string language, ImageType imgType);
 

@@ -20,6 +20,8 @@ void Config::Update()
 
 	JpServerLang = json_config["JpServerLang"].empty() ? static_cast<int>(JpServerLangType::JP) : json_config["JpServerLang"].get<int>();
 
+	ScanInterval = json_config["ScanInterval"].empty() ? DEFAULT_SCAN_INTERVAL : json_config["ScanInterval"].get<int>();
+
 	GameWindowName = json_config["GameWindowName"].empty() ? NULL_GAME_WINDOW_NAME : json_config["GameWindowName"].get<std::string>();
 
 	AutoMouseClickKey["VK"] = json_config["AutoMouseClickKey"]["VK"].empty() ? VK_XBUTTON2 : json_config["AutoMouseClickKey"]["VK"].get<int>();
@@ -40,6 +42,7 @@ void Config::WriteToJson()
 	json_config["GameServer"] = this->GameServer;
 	json_config["GameWindow"] = this->GameWindow;
 	json_config["JpServerLang"] = this->JpServerLang;
+	json_config["ScanInterval"] = this->ScanInterval;
 	json_config["GameWindowName"] = this->GameWindowName;
 	json_config["AutoMouseClickKey"]["VK"] = this->AutoMouseClickKey["VK"];
 	json_config["AutoMouseClickKey"]["WinFormButton"] = this->AutoMouseClickKey["WinFormButton"];
