@@ -60,6 +60,7 @@ using json = nlohmann::json;
 #include "class/AutoMouseClicker.h"
 #include "class/UmaTimer.h"
 
+
 // lua
 #include "class/LuaManager.h"
 

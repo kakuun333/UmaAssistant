@@ -316,31 +316,48 @@ void Scanner::Start(std::string language)
 				*/
 				if (eventText.empty() && dataManager->IsCurrentCharacterInfoLocked())
 				{
-					std::unique_ptr<std::thread> test, test2;
+					std::unique_ptr<std::thread> testThread, test2Thread;
 
 					std::string gray_event_text, oimg_event_text;
 
-					test = std::make_unique<std::thread>([=, &eventText, &gray_event_text]()
-						{
-							
-							gray_event_text = this->GetScannedText(ss.event_title_gray, language);
-							if (eventText.empty() && !gray_event_text.empty())
+					try
+					{
+						testThread = std::make_unique<std::thread>([=, &eventText, &gray_event_text]()
 							{
-								eventText = gray_event_text;
-							}
-						});
-
-					test2 = std::make_unique<std::thread>([=, &eventText, &oimg_event_text]()
-						{
-							oimg_event_text = this->GetScannedText(ss.event_title_oimg, language);
-							if (eventText.empty() && !oimg_event_text.empty())
+								gray_event_text = this->GetScannedText(ss.event_title_gray, language);
+								if (eventText.empty() && !gray_event_text.empty())
+								{
+									eventText = gray_event_text;
+								}
+							});
+					}
+					catch (const std::exception& e)
+					{
+						std::cerr << u8"[exception] 捕捉 testThread 區塊的 exception: " << e.what() << std::endl;
+						std::cout << u8"已終止 Scanner 運作" << std::endl;
+						return;
+					}
+					try
+					{
+						test2Thread = std::make_unique<std::thread>([=, &eventText, &oimg_event_text]()
 							{
-								eventText = oimg_event_text;
-							}
-						});
+								oimg_event_text = this->GetScannedText(ss.event_title_oimg, language);
+								if (eventText.empty() && !oimg_event_text.empty())
+								{
+									eventText = oimg_event_text;
+								}
+							});
+					}
+					catch (const std::exception& e)
+					{
+						std::cerr << u8"[exception] 捕捉 test2Thread 區塊的 exception: " << e.what() << std::endl;
+						std::cout << u8"已終止 Scanner 運作" << std::endl;
+						return;
+					}
 
-					test->join();
-					test2->join();
+					testThread->join();
+					test2Thread->join();
+
 
 					if (gray_event_text.empty() && oimg_event_text.empty())
 					{
@@ -360,19 +377,27 @@ void Scanner::Start(std::string language)
 					if (!dataManager->IsCurrentCharacterInfoLocked())
 					{
 						
+						try
+						{
+							tryCharThread = std::make_unique<std::thread>([=, &henseiCharNameText]()
+								{
+									henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
+									if (!henseiCharNameText.empty()) std::cout << u8"[Scanner] hensei_character_name_gray: " << henseiCharNameText << std::endl;
 
-						tryCharThread = std::make_unique<std::thread>([=, &henseiCharNameText]()
-							{
-								henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
-								if (!henseiCharNameText.empty()) std::cout << u8"[Scanner] hensei_character_name_gray: " << henseiCharNameText << std::endl;
+									if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) return;
 
-								if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) return;
+									henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin_inv, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
+									if (!henseiCharNameText.empty()) std::cout << "[Scanner] hensei_character_name_gray_bin_inv: " << henseiCharNameText << std::endl;
 
-								henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin_inv, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
-								if (!henseiCharNameText.empty()) std::cout << "[Scanner] hensei_character_name_gray_bin_inv: " << henseiCharNameText << std::endl;
-
-								dataManager->TryGetCurrentCharacterName(henseiCharNameText);
-							});
+									dataManager->TryGetCurrentCharacterName(henseiCharNameText);
+								});
+						}
+						catch (const std::exception& e)
+						{
+							std::cerr << u8"[exception] 捕捉 tryCharThread 區塊的 exception: " << e.what() << std::endl;
+							std::cout << u8"已終止 Scanner 運作" << std::endl;
+							return;
+						}
 						//tryThread->join();
 					}
 					else
@@ -404,35 +429,56 @@ void Scanner::Start(std::string language)
 						UmaEventData sapokaUmaEventData;
 						ScenarioEventData scenarioEventData;
 
-						sapokaThread = std::make_unique<std::thread>([=, &eventText, &sapokaUmaEventData]()
-							{
-								sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
 
-								if (sapokaUmaEventData.IsDataComplete()) return;
+						try
+						{
+							sapokaThread = std::make_unique<std::thread>([=, &eventText, &sapokaUmaEventData]()
+								{
+									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
 
-								std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整" << std::endl;
+									if (sapokaUmaEventData.IsDataComplete()) return;
 
-								eventText = this->GetScannedText(ss.event_title_gray, language);
-								std::cout << "[Scanner] event_title_gray: " << eventText << std::endl;
-								sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
+									std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整" << std::endl;
 
-								if (sapokaUmaEventData.IsDataComplete()) return;
+									eventText = this->GetScannedText(ss.event_title_gray, language);
+									std::cout << "[Scanner] event_title_gray: " << eventText << std::endl;
+									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
 
-								std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整2" << std::endl;
+									if (sapokaUmaEventData.IsDataComplete()) return;
 
-								eventText = this->GetScannedText(ss.event_title_oimg, language);
-								std::cout << "[Scanner] event_title_oimg: " << eventText << std::endl;
-								sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
+									std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整2" << std::endl;
 
-								if (sapokaUmaEventData.IsDataComplete()) return;
+									eventText = this->GetScannedText(ss.event_title_oimg, language);
+									std::cout << "[Scanner] event_title_oimg: " << eventText << std::endl;
+									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
 
-								std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整3" << std::endl;
-							});
+									if (sapokaUmaEventData.IsDataComplete()) return;
 
-						scenarioThread = std::make_unique<std::thread>([=, &scenarioEventData]()
-							{
-								scenarioEventData = dataManager->GetScenarioEventData(eventText);
-							});
+									std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整3" << std::endl;
+								});
+						}
+						catch (const std::exception& e)
+						{
+							std::cerr << u8"[exception] 捕捉 sapokaThread 區塊的 exception: " << e.what() << std::endl;
+							std::cout << u8"已終止 Scanner 運作" << std::endl;
+							return;
+						}
+
+						try
+						{
+							scenarioThread = std::make_unique<std::thread>([=, &scenarioEventData]()
+								{
+									scenarioEventData = dataManager->GetScenarioEventData(eventText);
+								});
+						}
+						catch (const std::exception& e)
+						{
+							std::cerr << u8"[exception] 捕捉 scenarioThread 區塊的 exception: " << e.what() << std::endl;
+							std::cout << u8"已終止 Scanner 運作" << std::endl;
+							return;
+						}
+
+
 
 						sapokaThread->join();
 						scenarioThread->join();

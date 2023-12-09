@@ -44,6 +44,7 @@ private:
 	void UpdateCharChoice(WebManager* webManager, UmaEventData charUmaEventData);
 
 	void UpdateScenarioChoice(WebManager* webManager, ScenarioEventData scenarioEventData);
+
 public:
 	static Scanner* GetInstance()
 	{

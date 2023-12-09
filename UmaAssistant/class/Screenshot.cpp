@@ -77,13 +77,23 @@ cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 	// 獲取遊戲視窗的 ClientRect 和 WindowRect
 	RECT rcWindow; GetWindowRect(gameHWND, &rcWindow);
 	RECT rcClient; GetClientRect(gameHWND, &rcClient);
+
 	//printf("[Client] left: %d, right: %d, top: %d, bottom: %d\n", rcClient.left, rcClient.right, rcClient.top, rcClient.bottom);
 	//printf("[Window] left: %d, right: %d, top: %d, bottom: %d\n", rcWindow.left, rcWindow.right, rcWindow.top, rcWindow.bottom);
+
+	if (rcClient.left != 0 || rcClient.top != 0)
+	{
+		printf(u8"遊戲視窗的 reClient 發生異常！有可能視窗正在被關閉。reClient.left: %d, reClient.top: %d", rcClient.left, rcClient.top);
+		return cv::Mat();
+	}
+
 	if (rcClient.left <= 0 && rcClient.right <= 0 && rcClient.top <= 0 && rcClient.bottom <= 0)
 	{
 		std::cout << u8"視窗被最小化" << std::endl;
 		return cv::Mat();
 	}
+
+
 	
 
 	
