@@ -39722,6 +39722,46 @@
           }
         ]
       },
+      "大德太陽（派對玩咖與派對之夜！）": {
+        "event": [
+          {
+            "#bff #Party!": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br>大德太陽的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "よろたん！ウェ～イ！"
+              },
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br>大德太陽的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "え、俺も！？"
+              }
+            ]
+          },
+          {
+            "笑容Forever": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br>大德太陽的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "そこは気合いでこらえて！"
+              },
+              {
+                "choice_effect": "<span class=\"skill_hint\">『伏兵◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>大德太陽的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "一旦気を静めよう"
+              }
+            ]
+          },
+          {
+            "遭遇太陽☆": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br>大德太陽的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "覚悟を決めて熱唱する"
+              },
+              {
+                "choice_effect": "<span class=\"plus_condition\">『備受矚目』</span><br>大德太陽的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "合いの手で盛り上がる"
+              }
+            ]
+          }
+        ]
+      },
       "島川喬登（nail on Turf）": {
         "event": [
           {
@@ -40588,6 +40628,50 @@
               {
                 "choice_effect": "<span class=\"plus_condition\">『討人喜歡◯』</span><br>東商變革的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "もう1度スズメを探しに行こう"
+              }
+            ]
+          }
+        ]
+      },
+      "榮進閃耀（0500準時起床）": {
+        "event": [
+          {
+            "身為一位好的管理者": [
+              {
+                "choice_effect": "最大體力値<span class=\"status_plus_value\">+4</span><br>體力<span class=\"status_plus_value\">+10</span><br>幹勁提升",
+                "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "身為好朋友該有的樣子": [
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+20</span><br><span class=\"skill_hint\">『尾段加速』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
+                "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "應對突發狀況的方式": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br>榮進閃耀的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "いっそ自分で作るのはどうだろう"
+              },
+              {
+                "choice_effect": "<span class=\"skill_hint\">『徹底鎖定◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>榮進閃耀的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "取り扱ってる店を他に探すのはどうだろう"
+              }
+            ]
+          },
+          {
+            "預料之外的午餐": [
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br>榮進閃耀的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "折角だし食べたことのないものを食べたら？"
+              },
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+5</span><br>榮進閃耀的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "なら急いでメニューを考え直すしかないな"
               }
             ]
           }
@@ -43550,6 +43634,58 @@
           }
         ]
       },
+      "伏特加（伏特加之道）": {
+        "event": [
+          {
+            "順從自己的心": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span><br>伏特加的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "向夕陽立下輝煌誓言": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+15</span><br>技能點<span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『上昇氣流』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>伏特加的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "要留在紀錄中喔？": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+25</span><br>技能點<span class=\"status_plus_value\">+30</span><br><span class=\"skill_hint\">『好轉歇息』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><br>伏特加的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "憧憬的那句話": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br>伏特加的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "見た目をワイルドにしてみたら？"
+              },
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+15</span><br>伏特加的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "ワイルドなポーズをとってみたら？"
+              }
+            ]
+          },
+          {
+            "大街上的強敵": [
+              {
+                "choice_effect": "<span class=\"skill_hint\">『避開力竭賽馬娘』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>伏特加的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "脇道を使う"
+              },
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+15</span><br>伏特加的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "全力疾走で向かう"
+              }
+            ]
+          }
+        ]
+      },
       "隊伍＜天狼星＞（一起繼續創造的回憶）": {
         "event": [
           {
@@ -43561,7 +43697,7 @@
             ]
           },
           {
-            "出行·特别周": [
+            "出行・特别周": [
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+6</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+6</span><br>＜天狼星＞隊的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "無選項"
@@ -43665,7 +43801,7 @@
             ]
           },
           {
-            "出行·目白麦昆": [
+            "出行・目白麦昆": [
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+3</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+3</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+3</span><br>＜天狼星＞隊的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "無理しないようにな"
@@ -43677,7 +43813,7 @@
             ]
           },
           {
-            "出行·米浴": [
+            "出行・米浴": [
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10~12</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5~6</span><br>＜天狼星＞隊的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "構わないよ"
@@ -43689,7 +43825,7 @@
             ]
           },
           {
-            "出行·胜利奖券": [
+            "出行・胜利奖券": [
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5~6</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5~6</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5~6</span><br>＜天狼星＞隊的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "一緒に併走してあげるのは？"
@@ -43701,7 +43837,7 @@
             ]
           },
           {
-            "出行·成田白仁": [
+            "出行・成田白仁": [
               {
                 "choice_effect": "<span class=\"skill_hint\">『第二體力條』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>＜天狼星＞隊的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "ここで全力を出さない方がいいぞ"
@@ -43713,7 +43849,7 @@
             ]
           },
           {
-            "出行·无声铃鹿": [
+            "出行・无声铃鹿": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+10~13</span><br>幹勁提升<br>＜天狼星＞隊的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "美味しいものを食べるべきだ"
@@ -44530,6 +44666,50 @@
           }
         ]
       },
+      "勝利獎券（B．N．Winner!!）": {
+        "event": [
+          {
+            "之後幾天，所有人肌肉痠痛！": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『努力不懈』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>勝利獎券的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "We are BNW！！": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+20</span><br><span class=\"skill_hint\">『熟練轉換』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><br>勝利獎券的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "全．力．競．速！！": [
+              {
+                "choice_effect": "<span class=\"skill_hint\">『居中彎道◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>勝利獎券的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "手すりショートカットだ！"
+              },
+              {
+                "choice_effect": "技能點<span class=\"status_plus_value\">+30</span><br>勝利獎券的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "相手の動きを予想してみるとか"
+              }
+            ]
+          },
+          {
+            "全．力．肌．肉！！": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+15</span><br>勝利獎券的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "わかる！とことんやりたい"
+              },
+              {
+                "choice_effect": "幹勁提升<br>技能點<span class=\"status_plus_value\">+15</span><br>勝利獎券的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "スポーツドリンクを渡す"
+              }
+            ]
+          }
+        ]
+      },
       "櫻花驀進王（爆快！最快！花之風暴！）": {
         "event": [
           {
@@ -45341,7 +45521,7 @@
       "齊聚於王座之人（尊崇敬愛）": {
         "event": [
           {
-            "出行·鲁道夫象征": [
+            "出行・鲁道夫象征": [
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5~6</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+15~18</span><br>技能點<span class=\"status_plus_value\">+5~6</span><br><span class=\"skill_hint\">『情熱ゾーン：齊聚於王座之人』</span><br><span class=\"minus_condition\">『睡眠不足』</span>が治る<br><span class=\"minus_condition\">『懶惰成性』</span>が治る<br>齊聚於王座之人的情誼量條<span class=\"status_plus_value\">+5</span><br>齊聚於王座之人とお出かけできるよう",
                 "choice_title": "無選項"
@@ -45381,7 +45561,7 @@
             ]
           },
           {
-            "出行·东海帝皇": [
+            "出行・东海帝皇": [
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+20~24</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+20~24</span><br>技能點<span class=\"status_plus_value\">+20~24</span>",
                 "choice_title": "無選項"

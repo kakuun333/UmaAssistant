@@ -91,6 +91,14 @@ def convert_nami(text):
 
     return text;
 
+def replace(text, original, replace):
+    try:
+        text = re.sub(original, replace, text);
+    except:
+        pass;
+
+    return text;
+
 def remove_space(str):
     str = str.replace(" ", "");
     str = str.replace("　", "");
