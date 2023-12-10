@@ -6,8 +6,19 @@
   <a href="./README_jp.md">日本語</a>
 </p>
 
-## 介紹
+## 簡介
 本軟體會自動辨識 DMM 版、BlueStacks 模擬器視窗中賽馬娘的事件，並給予可能的選項效果、提供選項效果中技能的詳細資訊。
+
+## 功能介紹
+### 事件選項效果
+![052953](https://github.com/kakuun333/UmaAssistant/assets/81919641/27ca31f8-8f27-499e-ab3f-8a3b3b70c40a)
+### 技能預覽
+- 白技能  
+![053007](https://github.com/kakuun333/UmaAssistant/assets/81919641/33f1f0ad-58b8-42a3-9232-22a019686354)
+- 金技能  
+![065204](https://github.com/kakuun333/UmaAssistant/assets/81919641/7b5bec42-0325-4710-af0b-45e12b23c05d)
+
+
 ## 使用方法
 ### 1. 設定  
 ![044407](https://github.com/kakuun333/UmaAssistant/assets/81919641/505abc27-60bd-4ad4-8f39-cbb948ffff79)
@@ -30,7 +41,11 @@
 ![0](https://github.com/kakuun333/UmaAssistant/assets/81919641/2a936e17-8f0c-4007-97b4-8b4c2614f28b)
 
 ### 4. 尋找目前培育的馬娘  
-按右下角的![option_button](https://github.com/kakuun333/UmaAssistant/assets/81919641/05802803-bdbb-4693-a0fe-be969ef93c87)後，選擇「編成情報」，此時「目前培育的馬娘」應該要更新為「編成情報」所顯示的馬娘名稱，如果沒有更新的話，請嘗試縮放遊戲視窗。  
+> [!WARNING]
+> 更換培育的馬娘時，請務必先清除先前的馬娘。  
+> ![065617](https://github.com/kakuun333/UmaAssistant/assets/81919641/5dd14128-ff69-449e-af8a-4592bae91de1)
+
+按右下角的![option_button](https://github.com/kakuun333/UmaAssistant/assets/81919641/05802803-bdbb-4693-a0fe-be969ef93c87)後，選擇「編成情報」，等待`1~2`秒後「目前培育的馬娘」應該要更新為「編成情報」所顯示的馬娘名稱，如果沒有更新的話，請嘗試縮放遊戲視窗。  
 ![2](https://github.com/kakuun333/UmaAssistant/assets/81919641/3fbd26b7-b934-4c1c-9cbd-a03689066d71)  
 ![3](https://github.com/kakuun333/UmaAssistant/assets/81919641/b9173e1d-24cb-42b8-9e2c-647e69c03de4)  
 ![4](https://github.com/kakuun333/UmaAssistant/assets/81919641/47bd9b44-7d26-46fb-bdda-75e0ebbab2c7)  
