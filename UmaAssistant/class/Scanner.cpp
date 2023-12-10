@@ -1,4 +1,5 @@
 ﻿#include "../stdafx.h"
+#include <tesseract/baseapi.h>
 
 # pragma region 初始化靜態變數
 Scanner* Scanner::_instance = nullptr;
@@ -9,10 +10,9 @@ bool Scanner::_scanning = false;
 
 tesseract::TessBaseAPI* Scanner::ocr_jpn = nullptr;
 tesseract::TessBaseAPI* Scanner::ocr_tw = nullptr;
-
 #pragma endregion
 
-#include <tesseract/baseapi.h>
+
 void Scanner::InitOcrJpn()
 {
 	std::thread initThread([]()
@@ -143,8 +143,7 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 		}
 
 		// 設置圖片到 ocr
-		//ocr_jpn->SetImage(image.data, image.size().width, image.size().height, image.channels(), image.step);
-		ocr_jpn->SetImage(image.data, image.cols, image.rows, 1, image.cols);
+		ocr_jpn->SetImage(image.data, image.cols, image.rows, 1, image.step);
 
 		// 進行文字辨識
 		ocr_jpn->Recognize(0);
@@ -157,17 +156,16 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 		{
 		case ImageType::IMG_EVENT_TITLE:
 			ocr_tw->SetVariable("tessedit_char_blacklist", u8"@$%^&*_-+<>()[]{}|/\\`0123456789†.,:;；=");
-			//ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
+			ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 			break;
 		case ImageType::IMG_HENSEI_CHARACTER_NAME:
 			ocr_tw->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
-			//ocr_tw->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_BLOCK*/);
+			ocr_tw->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_BLOCK*/);
 			break;
 		}
 
 		// 設置圖片到 ocr
-		//ocr_jpn->SetImage(image.data, image.size().width, image.size().height, image.channels(), image.step);
-		ocr_tw->SetImage(image.data, image.cols, image.rows, 1, image.cols);
+		ocr_tw->SetImage(image.data, image.cols, image.rows, 1, image.step);
 
 		// 進行文字辨識
 		ocr_tw->Recognize(0);
@@ -183,70 +181,10 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 #pragma region 釋放記憶體
 	//ocr->End();
 	delete[] utf8;
-#pragma endregion 釋放記憶體
+#pragma endregion
 
 	return result;
 }
-
-//std::string Scanner::GetCharacterName(const char* imgPath, const char* language)
-//{
-//	// 讀取圖片
-//	Pix* image = pixRead(imgPath);
-//
-//	// 設置圖片到 ocr
-//	ocr_jpn_character->SetImage(image);
-//
-//	// 進行文字辨識
-//	char* utf8 = ocr_jpn_character->GetUTF8Text();
-//
-//	std::string stdString(utf8);
-//	std::string result = utility::RemoveSpace(stdString);
-//
-//	//// utf8 轉 utf16
-//	//wchar_t* utf16 = utility::utf8to16(utf8);
-//	//// wchar_t 轉 System::String^
-//	//System::String^ scanResult = marshal_as<System::String^>(utf16);
-//	//// 去除空白鍵
-//	//System::String^ removed_space = utility::RemoveSpace(scanResult);
-//
-//#pragma region 釋放記憶體
-//	//ocr->End();
-//	delete[] utf8;
-//	pixDestroy(&image);
-//#pragma endregion 釋放記憶體
-//
-//	return result;
-//}
-//
-//std::string Scanner::GetHenseiCharacterName(const char* imgPath, const char* language)
-//{
-//	// 讀取圖片
-//	Pix* image = pixRead(imgPath);
-//
-//	// 設置圖片到 ocr
-//	ocr_jpn_hensei_char->SetImage(image);
-//
-//	// 進行文字辨識
-//	char* utf8 = ocr_jpn_hensei_char->GetUTF8Text();
-//
-//	std::string stdString(utf8);
-//	std::string result = utility::RemoveSpace(stdString);
-//
-//	//// utf8 轉 utf16
-//	//wchar_t* utf16 = utility::utf8to16(utf8);
-//	//// wchar_t 轉 System::String^
-//	//System::String^ scanResult = marshal_as<System::String^>(utf16);
-//	//// 去除空白鍵
-//	//System::String^ removed_space = utility::RemoveSpace(scanResult);
-//
-//#pragma region 釋放記憶體
-//	//ocr->End();
-//	delete[] utf8;
-//	pixDestroy(&image);
-//#pragma endregion 釋放記憶體
-//
-//	return result;
-//}
 
 
 #pragma endregion 私人函數
@@ -256,7 +194,7 @@ void Scanner::Start(std::string language)
 {
 	if (global::umaswitch::Scanning)
 	{
-		std::cout << u8"[Scanner] 必須先停止掃描 Scanner::Stop()" << std::endl;
+		std::cout << u8"[Scanner] 必須先停止掃描 Scanner::GetInstance()->Stop()" << std::endl;
 		return;
 	}
 
@@ -318,7 +256,7 @@ void Scanner::Start(std::string language)
 				{
 					std::unique_ptr<std::thread> testThread, test2Thread;
 
-					std::string gray_event_text, oimg_event_text;
+					std::string gray_event_text, resize_event_text;
 
 					try
 					{
@@ -331,26 +269,30 @@ void Scanner::Start(std::string language)
 								}
 							});
 					}
-					catch (const std::exception& e)
+					catch (System::Exception^ ex)
 					{
-						std::cerr << u8"[exception] 捕捉 testThread 區塊的 exception: " << e.what() << std::endl;
+						std::cout << u8"[exception] 捕捉到 testThread 區塊的 exception" << std::endl;
+						System::Console::WriteLine("Caught exception: " + ex->Message);
 						std::cout << u8"已終止 Scanner 運作" << std::endl;
 						return;
 					}
+
+
 					try
 					{
-						test2Thread = std::make_unique<std::thread>([=, &eventText, &oimg_event_text]()
+						test2Thread = std::make_unique<std::thread>([=, &eventText, &resize_event_text]()
 							{
-								oimg_event_text = this->GetScannedText(ss.event_title_oimg, language);
-								if (eventText.empty() && !oimg_event_text.empty())
+								resize_event_text = this->GetScannedText(ss.event_title_resize, language);
+								if (eventText.empty() && !resize_event_text.empty())
 								{
-									eventText = oimg_event_text;
+									eventText = resize_event_text;
 								}
 							});
 					}
-					catch (const std::exception& e)
+					catch (System::Exception^ ex)
 					{
-						std::cerr << u8"[exception] 捕捉 test2Thread 區塊的 exception: " << e.what() << std::endl;
+						std::cout << u8"[exception] 捕捉到 test2Thread 區塊的 exception" << std::endl;
+						System::Console::WriteLine("Caught exception: " + ex->Message);
 						std::cout << u8"已終止 Scanner 運作" << std::endl;
 						return;
 					}
@@ -359,7 +301,7 @@ void Scanner::Start(std::string language)
 					test2Thread->join();
 
 
-					if (gray_event_text.empty() && oimg_event_text.empty())
+					if (gray_event_text.empty() && resize_event_text.empty())
 					{
 						std::cout << u8"[Scanner] 都是空字串" << std::endl;
 						std::this_thread::sleep_for(std::chrono::milliseconds(global::config->ScanInterval));
@@ -392,13 +334,13 @@ void Scanner::Start(std::string language)
 									dataManager->TryGetCurrentCharacterName(henseiCharNameText);
 								});
 						}
-						catch (const std::exception& e)
+						catch (System::Exception^ ex)
 						{
-							std::cerr << u8"[exception] 捕捉 tryCharThread 區塊的 exception: " << e.what() << std::endl;
+							std::cout << u8"[exception] 捕捉到 tryCharThread 區塊的 exception" << std::endl;
+							System::Console::WriteLine("Caught exception: " + ex->Message);
 							std::cout << u8"已終止 Scanner 運作" << std::endl;
 							return;
 						}
-						//tryThread->join();
 					}
 					else
 					{
@@ -429,56 +371,64 @@ void Scanner::Start(std::string language)
 						UmaEventData sapokaUmaEventData;
 						ScenarioEventData scenarioEventData;
 
+						bool sapokaFoundData = false;
+						bool scenarioFoundData = false;
 
 						try
 						{
 							sapokaThread = std::make_unique<std::thread>([=, &eventText, &sapokaUmaEventData]()
 								{
-									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
+									std::string tmpText = eventText;
 
-									if (sapokaUmaEventData.IsDataComplete()) return;
+									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(tmpText);
+
+									if (sapokaUmaEventData.IsDataComplete()) { eventText = tmpText; return; }
+									if (scenarioFoundData) return;
 
 									std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整" << std::endl;
 
-									eventText = this->GetScannedText(ss.event_title_gray, language);
-									std::cout << "[Scanner] event_title_gray: " << eventText << std::endl;
-									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
+									tmpText = this->GetScannedText(ss.event_title_gray, language);
+									std::cout << "[Scanner] event_title_gray: " << tmpText << std::endl;
+									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(tmpText);
 
-									if (sapokaUmaEventData.IsDataComplete()) return;
+									if (sapokaUmaEventData.IsDataComplete()) { eventText = tmpText; return; }
+									if (scenarioFoundData) return;
 
 									std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整2" << std::endl;
 
-									eventText = this->GetScannedText(ss.event_title_oimg, language);
-									std::cout << "[Scanner] event_title_oimg: " << eventText << std::endl;
-									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
+									tmpText = this->GetScannedText(ss.event_title_resize, language);
+									std::cout << "[Scanner] event_title_resize: " << tmpText << std::endl;
+									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(tmpText);
 
-									if (sapokaUmaEventData.IsDataComplete()) return;
+									if (sapokaUmaEventData.IsDataComplete()) { eventText = tmpText; return; }
+									if (scenarioFoundData) return;
 
 									std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整3" << std::endl;
 								});
 						}
-						catch (const std::exception& e)
+						catch (System::Exception^ ex)
 						{
-							std::cerr << u8"[exception] 捕捉 sapokaThread 區塊的 exception: " << e.what() << std::endl;
+							std::cout << u8"[exception] 捕捉到 sapokaThread 區塊的 exception" << std::endl;
+							System::Console::WriteLine("Caught exception: " + ex->Message);
 							std::cout << u8"已終止 Scanner 運作" << std::endl;
 							return;
 						}
 
 						try
 						{
-							scenarioThread = std::make_unique<std::thread>([=, &scenarioEventData]()
+							scenarioThread = std::make_unique<std::thread>([=, &scenarioEventData, &scenarioFoundData]()
 								{
 									scenarioEventData = dataManager->GetScenarioEventData(eventText);
+									if (scenarioEventData.IsDataComplete()) scenarioFoundData = true;
 								});
 						}
-						catch (const std::exception& e)
+						catch (System::Exception^ ex)
 						{
-							std::cerr << u8"[exception] 捕捉 scenarioThread 區塊的 exception: " << e.what() << std::endl;
+							std::cout << u8"[exception] 捕捉到 scenarioThread 區塊的 exception" << std::endl;
+							System::Console::WriteLine("Caught exception: " + ex->Message);
 							std::cout << u8"已終止 Scanner 運作" << std::endl;
 							return;
 						}
-
-
 
 						sapokaThread->join();
 						scenarioThread->join();

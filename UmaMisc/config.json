@@ -6,9 +6,9 @@
     "WinFormButton": 16777216
   },
   "DebugMode": true,
-  "GameServer": 0,
-  "GameWindow": 0,
-  "GameWindowName": "umamusume",
+  "GameServer": 1,
+  "GameWindow": 1,
+  "GameWindowName": "BlueStacks App Player 1",
   "JpServerLang": 1,
   "LocalServer": {
     "Port": "7777"

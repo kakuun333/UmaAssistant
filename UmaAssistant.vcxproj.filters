@@ -224,6 +224,9 @@
     <ClInclude Include="UmaAssistant\enum\JpServerLangType.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="UmaWeb\index.html" />
@@ -238,5 +241,15 @@
     <EmbeddedResource Include="PreviewForm.resx">
       <Filter>資源檔</Filter>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="UmaMisc\Image\UmaAssistant\uma_icon_32px.ico">
+      <Filter>資源檔</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UmaAssistant.rc">
+      <Filter>資源檔</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

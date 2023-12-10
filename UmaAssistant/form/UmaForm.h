@@ -70,6 +70,8 @@ namespace UmaAssistant {
 
 	private: System::Windows::Forms::Label^ app_name_label;
 	private: System::Windows::Forms::Button^ select_window_btn;
+	private: System::Windows::Forms::Label^ label1;
+
 
 
 
@@ -98,6 +100,7 @@ namespace UmaAssistant {
 			this->game_window_status_label = (gcnew System::Windows::Forms::Label());
 			this->app_name_label = (gcnew System::Windows::Forms::Label());
 			this->select_window_btn = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->icon_pictureBox))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -276,7 +279,7 @@ namespace UmaAssistant {
 			this->game_window_status_label->AutoSize = true;
 			this->game_window_status_label->BackColor = System::Drawing::Color::Transparent;
 			this->game_window_status_label->ForeColor = System::Drawing::Color::Red;
-			this->game_window_status_label->Location = System::Drawing::Point(164, 10);
+			this->game_window_status_label->Location = System::Drawing::Point(165, 12);
 			this->game_window_status_label->Name = L"game_window_status_label";
 			this->game_window_status_label->Size = System::Drawing::Size(107, 20);
 			this->game_window_status_label->TabIndex = 8;
@@ -289,7 +292,7 @@ namespace UmaAssistant {
 			this->app_name_label->BackColor = System::Drawing::Color::Transparent;
 			this->app_name_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->app_name_label->Location = System::Drawing::Point(39, 9);
+			this->app_name_label->Location = System::Drawing::Point(36, 2);
 			this->app_name_label->Name = L"app_name_label";
 			this->app_name_label->Size = System::Drawing::Size(123, 20);
 			this->app_name_label->TabIndex = 25;
@@ -315,11 +318,25 @@ namespace UmaAssistant {
 			this->select_window_btn->UseVisualStyleBackColor = false;
 			this->select_window_btn->Click += gcnew System::EventHandler(this, &UmaForm::select_window_btn_Click);
 			// 
+			// label1
+			// 
+			this->label1->Anchor = System::Windows::Forms::AnchorStyles::Left;
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
+				static_cast<System::Int32>(static_cast<System::Byte>(151)));
+			this->label1->Location = System::Drawing::Point(36, 19);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(58, 20);
+			this->label1->TabIndex = 27;
+			this->label1->Text = L"v1.0.0";
+			// 
 			// UmaForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(560, 550);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->select_window_btn);
 			this->Controls->Add(this->app_name_label);
 			this->Controls->Add(this->game_window_status_label);

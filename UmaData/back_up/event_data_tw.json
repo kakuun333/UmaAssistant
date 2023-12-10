@@ -4200,7 +4200,7 @@
           {
             "經過三冠之後": [
               {
-                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『テンポ提升』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『加快節奏』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
                 "choice_title": "無選項"
               }
             ]
@@ -15190,7 +15190,7 @@
           {
             "無盡之路": [
               {
-                "choice_effect": "<span class=\"skill_hint\">『テンポ提升』</span>的靈感Lv<span class=\"status_plus_value\">+2</span>",
+                "choice_effect": "<span class=\"skill_hint\">『加快節奏』</span>的靈感Lv<span class=\"status_plus_value\">+2</span>",
                 "choice_title": "これからも磨き続けないとだな"
               },
               {
@@ -18154,7 +18154,7 @@
           {
             "創舉！我是霸王！？": [
               {
-                "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+20</span><br><span class=\"skill_hint\">『準備突圍』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br><span class=\"skill_hint\">『テンポ提升』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
+                "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+20</span><br><span class=\"skill_hint\">『準備突圍』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br><span class=\"skill_hint\">『加快節奏』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
                 "choice_title": "無選項"
               }
             ]
@@ -19442,7 +19442,7 @@
           {
             "謊話幫不上任何忙": [
               {
-                "choice_effect": "<span class=\"skill_hint\">『ペース提升』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
+                "choice_effect": "<span class=\"skill_hint\">『加速步調』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
                 "choice_title": "さらに勢いを出せれば誤魔化せたかも"
               },
               {
@@ -24858,7 +24858,7 @@
           {
             "八重的勝利是無敵的證明": [
               {
-                "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『ペース提升』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br><span class=\"skill_hint\">『尾段加速』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
+                "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『加速步調』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br><span class=\"skill_hint\">『尾段加速』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
                 "choice_title": "無選項"
               }
             ]
@@ -28354,7 +28354,7 @@
           {
             "經過三冠之後": [
               {
-                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『テンポ提升』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『加快節奏』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
                 "choice_title": "無選項"
               }
             ]
@@ -36046,7 +36046,7 @@
           {
             "「有時贈品更加吸引人心」": [
               {
-                "choice_effect": "情況一(チーター)：<br>技能點<span class=\"status_plus_value\">+30</span><br><span class=\"skill_hint\">『テンポ提升』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><hr>情況二(プラングホーン)：<br>體力<span class=\"status_plus_value\">+16</span>(調査中)<hr>パターン3(イルカ)：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>",
+                "choice_effect": "情況一(チーター)：<br>技能點<span class=\"status_plus_value\">+30</span><br><span class=\"skill_hint\">『加快節奏』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><hr>情況二(プラングホーン)：<br>體力<span class=\"status_plus_value\">+16</span>(調査中)<hr>パターン3(イルカ)：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>",
                 "choice_title": "無選項"
               }
             ]
@@ -37261,7 +37261,7 @@
                 "choice_title": "練習あるのみ！"
               },
               {
-                "choice_effect": "<span class=\"skill_hint\">『テンポ提升』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>成田路的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_effect": "<span class=\"skill_hint\">『加快節奏』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>成田路的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "あえて曲のテンポを上げてみては？"
               }
             ]
@@ -37658,7 +37658,7 @@
           {
             "（好吃的）雞婆": [
               {
-                "choice_effect": "<span class=\"skill_hint\">『ペース提升』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>優秀素質的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_effect": "<span class=\"skill_hint\">『加速步調』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>優秀素質的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "大根おろしで食べるペースアップ！"
               },
               {
@@ -40242,7 +40242,7 @@
           {
             "（好吃的）雞婆": [
               {
-                "choice_effect": "<span class=\"skill_hint\">『ペース提升』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>優秀素質的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_effect": "<span class=\"skill_hint\">『加速步調』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>優秀素質的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "大根おろしで食べるペースアップ！"
               },
               {
@@ -41583,7 +41583,7 @@
           {
             "（好吃的）雞婆": [
               {
-                "choice_effect": "<span class=\"skill_hint\">『ペース提升』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>優秀素質的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_effect": "<span class=\"skill_hint\">『加速步調』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>優秀素質的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "大根おろしで食べるペースアップ！"
               },
               {
@@ -42179,7 +42179,7 @@
           {
             "這就是所謂的害羞": [
               {
-                "choice_effect": "成功時：<br>技能點<span class=\"status_plus_value\">+25</span><br><span class=\"skill_hint\">『ペース提升』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>待兼唐懷瑟的情誼量條<span class=\"status_plus_value\">+5</span><hr>失敗時：<br>技能點<span class=\"status_plus_value\">+15</span><br>待兼唐懷瑟的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_effect": "成功時：<br>技能點<span class=\"status_plus_value\">+25</span><br><span class=\"skill_hint\">『加速步調』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>待兼唐懷瑟的情誼量條<span class=\"status_plus_value\">+5</span><hr>失敗時：<br>技能點<span class=\"status_plus_value\">+15</span><br>待兼唐懷瑟的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "無選項"
               }
             ]
@@ -42329,6 +42329,62 @@
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span><br>氣槽的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "この量をさばくなら、相当急がないと……"
+              }
+            ]
+          }
+        ]
+      },
+      "天狼星象徵（Escorte étoile）": {
+        "event": [
+          {
+            "擁有象徵之名的人": [
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br>天狼星象徵的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "1着おめでとう！"
+              },
+              {
+                "choice_effect": "技能點<span class=\"status_plus_value\">+30</span><br><span class=\"skill_hint\">『遊戲到此為止了！』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>天狼星象徵的情誼量條<span class=\"status_plus_value\">+5</span><br>連續事件將結束",
+                "choice_title": "噂通りの実力だった"
+              }
+            ]
+          },
+          {
+            "如果是自由之身": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『居中的訣竅◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>天狼星象徵的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "不對等的天秤": [
+              {
+                "choice_effect": "成功時：<br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+30</span><br><span class=\"skill_hint\">『起死回生』</span>的靈感Lv<span class=\"status_plus_value\">+3</span><br>天狼星象徵的情誼量條<span class=\"status_plus_value\">+5</span><hr>失敗時：<br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『機不可失』</span>的靈感Lv<span class=\"status_plus_value\">+3</span><br>天狼星象徵的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "要我教你嗎？": [
+              {
+                "choice_effect": "體力<span class=\"status_minus_value\">-5</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+20</span><br>天狼星象徵的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "自力で頑張る"
+              },
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span><br>天狼星象徵的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "教えてもらう"
+              }
+            ]
+          },
+          {
+            "要我幫你嗎？": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span><br><span class=\"skill_hint\">『干擾』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>天狼星象徵的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "お願いします、返してください！"
+              },
+              {
+                "choice_effect": "技能點<span class=\"status_plus_value\">+15</span><br>天狼星象徵的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "懇願はしない"
               }
             ]
           }
@@ -42599,7 +42655,7 @@
           {
             "（好吃的）雞婆": [
               {
-                "choice_effect": "<span class=\"skill_hint\">『ペース提升』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>優秀素質的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_effect": "<span class=\"skill_hint\">『加速步調』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>優秀素質的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "大根おろしで食べるペースアップ！"
               },
               {
@@ -43007,7 +43063,7 @@
           {
             "令人意外的一面": [
               {
-                "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+15~18</span><br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10~12</span><br><span class=\"skill_hint\">『ペース提升』</span>的靈感Lv<span class=\"status_plus_value\">+3</span><br>樫本理子的情誼量條<span class=\"status_plus_value\">+10</span><br>樫本理子とお出かけできるよう<br>※數値會根據支援效果有所變動<hr>失敗時：<span class=\"skill_hint\">『喜歡獨處◯』</span>的靈感Lv<span class=\"status_plus_value\">+5</span><br>樫本理子的情誼量條<span class=\"status_minus_value\">-10</span><br>樫本理子とお出かけできなくなる",
+                "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+15~18</span><br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10~12</span><br><span class=\"skill_hint\">『加速步調』</span>的靈感Lv<span class=\"status_plus_value\">+3</span><br>樫本理子的情誼量條<span class=\"status_plus_value\">+10</span><br>樫本理子とお出かけできるよう<br>※數値會根據支援效果有所變動<hr>失敗時：<span class=\"skill_hint\">『喜歡獨處◯』</span>的靈感Lv<span class=\"status_plus_value\">+5</span><br>樫本理子的情誼量條<span class=\"status_minus_value\">-10</span><br>樫本理子とお出かけできなくなる",
                 "choice_title": "まずは体力をつけてみては？"
               },
               {
@@ -44023,7 +44079,7 @@
                 "choice_title": "練習あるのみ！"
               },
               {
-                "choice_effect": "<span class=\"skill_hint\">『テンポ提升』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>成田路的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_effect": "<span class=\"skill_hint\">『加快節奏』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>成田路的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "あえて曲のテンポを上げてみては？"
               }
             ]
@@ -44179,7 +44235,7 @@
           {
             "池塘的霸主": [
               {
-                "choice_effect": "成功：<br>最大體力値<span class=\"status_plus_value\">+4</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『テンポ提升』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>成田白仁的情誼量條<span class=\"status_plus_value\">+5</span><hr>失敗：<br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br>成田白仁的情誼量條<span class=\"status_minus_value\">-5</span>",
+                "choice_effect": "成功：<br>最大體力値<span class=\"status_plus_value\">+4</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『加快節奏』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>成田白仁的情誼量條<span class=\"status_plus_value\">+5</span><hr>失敗：<br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br>成田白仁的情誼量條<span class=\"status_minus_value\">-5</span>",
                 "choice_title": "(すごいオーラだ！)"
               },
               {
@@ -45175,7 +45231,7 @@
           {
             "令人意外的一面": [
               {
-                "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+15</span>～19<br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>～13<br><span class=\"skill_hint\">『ペース提升』</span>的靈感Lv<span class=\"status_plus_value\">+3</span><br>樫本理子的情誼量條<span class=\"status_plus_value\">+12</span><br>樫本理子とお出かけできるよう<br>※數値會根據支援效果有所變動<hr>失敗時：<span class=\"skill_hint\">『喜歡獨處◯』</span>的靈感Lv<span class=\"status_plus_value\">+5</span><br>樫本理子的情誼量條<span class=\"status_minus_value\">-10</span><br>樫本理子とお出かけできなくなる",
+                "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+15</span>～19<br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>～13<br><span class=\"skill_hint\">『加速步調』</span>的靈感Lv<span class=\"status_plus_value\">+3</span><br>樫本理子的情誼量條<span class=\"status_plus_value\">+12</span><br>樫本理子とお出かけできるよう<br>※數値會根據支援效果有所變動<hr>失敗時：<span class=\"skill_hint\">『喜歡獨處◯』</span>的靈感Lv<span class=\"status_plus_value\">+5</span><br>樫本理子的情誼量條<span class=\"status_minus_value\">-10</span><br>樫本理子とお出かけできなくなる",
                 "choice_title": "まずは体力をつけてみては？"
               },
               {
@@ -45265,6 +45321,62 @@
               {
                 "choice_effect": "<span class=\"skill_hint\">『逆時針◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>無聲鈴鹿的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "その左回りにコツが隠されてるのかも"
+              }
+            ]
+          }
+        ]
+      },
+      "名將怒濤（想飛奔出去的心情）": {
+        "event": [
+          {
+            "霸王的危機！？": [
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>名將怒濤的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "まごころが通じたんだろう"
+              },
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span><br><span class=\"skill_hint\">『中距離彎道◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>名將怒濤的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "放っておいたら何が起きていたんだろう"
+              }
+            ]
+          },
+          {
+            "餐券事件": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+3</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+3</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "咩咩團的新團員": [
+              {
+                "choice_effect": "成功時：<br>體力<span class=\"status_minus_value\">-20</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\"><span class=\"skill_hint\">『致勝曲調』</span></span>的靈感Lv<span class=\"status_plus_value\">+3</span><br>名將怒濤的情誼量條<span class=\"status_plus_value\">+5</span><br>失敗時：<br>體力<span class=\"status_minus_value\">-20</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span><br><span class=\"skill_hint\"><span class=\"skill_hint\">『致勝曲調』</span></span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>名將怒濤的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "請……買根胡蘿蔔！": [
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span><br>名將怒濤的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "トレセン学園に掛け合ってみよう"
+              },
+              {
+                "choice_effect": "<span class=\"skill_hint\">『前列彎道◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>名將怒濤的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "人の多いところで呼び込みをしよう"
+              }
+            ]
+          },
+          {
+            "我……要改革": [
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>やる気<span class=\"status_plus_value\">+1</span><br>名將怒濤的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "まずは揺るぎない自信を見習おう"
+              },
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+15</span><br>名將怒濤的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "まずはあのバイタリティを見習おう"
               }
             ]
           }
@@ -45443,7 +45555,7 @@
                 "choice_title": "買いもの帰り？"
               },
               {
-                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『テンポ提升』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><br>大和赤驥的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『加快節奏』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><br>大和赤驥的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "……どうかしたのか？"
               }
             ]

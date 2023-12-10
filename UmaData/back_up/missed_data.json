@@ -14,7 +14,9 @@
             "Currens Black": "Curren's Black"
         },
         "event_owner": {
-            "タイキシャトル（Hands up crook!）": "タイキシャトル（Hands up, crook!）"
+            "タイキシャトル（Hands up crook!）": "タイキシャトル（Hands up, crook!）",
+            "メイショウドトウ（飛びも出ぬべき心地すれ）": "メイショウドトウ（飛びも出でぬべき心地すれ）",
+            "シリウスシンボリ（Escorte etoile）": "シリウスシンボリ（Escorte étoile）"
         }
     }
 }

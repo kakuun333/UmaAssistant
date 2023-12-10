@@ -178,6 +178,7 @@
     <ClCompile Include="UmaAssistant\class\data\UmaEventRoute.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="resource.h" />
     <ClInclude Include="UmaAssistant\class\AutoMouseClicker.h" />
     <ClInclude Include="UmaAssistant\class\data\ScenarioEventData.h" />
     <ClInclude Include="UmaAssistant\class\Config.h" />
@@ -239,6 +240,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="UmaWeb\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="UmaMisc\Image\UmaAssistant\uma_icon_32px.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UmaAssistant.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

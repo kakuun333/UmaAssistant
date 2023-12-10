@@ -42334,6 +42334,62 @@
           }
         ]
       },
+      "天狼星象徵（Escorte étoile）": {
+        "event": [
+          {
+            "擁有象徵之名的人": [
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br>天狼星象徵的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "1着おめでとう！"
+              },
+              {
+                "choice_effect": "技能點<span class=\"status_plus_value\">+30</span><br><span class=\"skill_hint\">『遊戲到此為止了！』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>天狼星象徵的情誼量條<span class=\"status_plus_value\">+5</span><br>連續事件將結束",
+                "choice_title": "噂通りの実力だった"
+              }
+            ]
+          },
+          {
+            "如果是自由之身": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『居中的訣竅◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>天狼星象徵的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "不對等的天秤": [
+              {
+                "choice_effect": "成功時：<br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+30</span><br><span class=\"skill_hint\">『起死回生』</span>的靈感Lv<span class=\"status_plus_value\">+3</span><br>天狼星象徵的情誼量條<span class=\"status_plus_value\">+5</span><hr>失敗時：<br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『機不可失』</span>的靈感Lv<span class=\"status_plus_value\">+3</span><br>天狼星象徵的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "要我教你嗎？": [
+              {
+                "choice_effect": "體力<span class=\"status_minus_value\">-5</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+20</span><br>天狼星象徵的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "自力で頑張る"
+              },
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span><br>天狼星象徵的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "教えてもらう"
+              }
+            ]
+          },
+          {
+            "要我幫你嗎？": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span><br><span class=\"skill_hint\">『干擾』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>天狼星象徵的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "お願いします、返してください！"
+              },
+              {
+                "choice_effect": "技能點<span class=\"status_plus_value\">+15</span><br>天狼星象徵的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "懇願はしない"
+              }
+            ]
+          }
+        ]
+      },
       "西野花（將思念裝進小小的杯中）": {
         "event": [
           {
@@ -45265,6 +45321,62 @@
               {
                 "choice_effect": "<span class=\"skill_hint\">『逆時針◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>無聲鈴鹿的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "その左回りにコツが隠されてるのかも"
+              }
+            ]
+          }
+        ]
+      },
+      "名將怒濤（想飛奔出去的心情）": {
+        "event": [
+          {
+            "霸王的危機！？": [
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>名將怒濤的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "まごころが通じたんだろう"
+              },
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span><br><span class=\"skill_hint\">『中距離彎道◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>名將怒濤的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "放っておいたら何が起きていたんだろう"
+              }
+            ]
+          },
+          {
+            "餐券事件": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+3</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+3</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+10</span>",
+                "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "咩咩團的新團員": [
+              {
+                "choice_effect": "成功時：<br>體力<span class=\"status_minus_value\">-20</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\"><span class=\"skill_hint\">『致勝曲調』</span></span>的靈感Lv<span class=\"status_plus_value\">+3</span><br>名將怒濤的情誼量條<span class=\"status_plus_value\">+5</span><br>失敗時：<br>體力<span class=\"status_minus_value\">-20</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span><br><span class=\"skill_hint\"><span class=\"skill_hint\">『致勝曲調』</span></span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>名將怒濤的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "請……買根胡蘿蔔！": [
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span><br>名將怒濤的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "トレセン学園に掛け合ってみよう"
+              },
+              {
+                "choice_effect": "<span class=\"skill_hint\">『前列彎道◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>名將怒濤的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "人の多いところで呼び込みをしよう"
+              }
+            ]
+          },
+          {
+            "我……要改革": [
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>やる気<span class=\"status_plus_value\">+1</span><br>名將怒濤的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "まずは揺るぎない自信を見習おう"
+              },
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+15</span><br>名將怒濤的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "まずはあのバイタリティを見習おう"
               }
             ]
           }

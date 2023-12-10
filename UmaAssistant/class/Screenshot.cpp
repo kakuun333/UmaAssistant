@@ -93,10 +93,18 @@ cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 		return cv::Mat();
 	}
 
+	if (rcClient.right - rcClient.left > rcClient.bottom - rcClient.top)
+	{
+		std::cout << u8"視窗處於橫向狀態" << std::endl;
+		return cv::Mat();
+	}
 
-	HDC hwindowDC, hwindowCompatibleDC;
 
 	int height, width, srcheight, srcwidth, xsrc, ysrc;
+
+
+
+	HDC hwindowDC, hwindowCompatibleDC;
 	HBITMAP hbwindow;
 	cv::Mat cvmat;
 	BITMAPINFOHEADER bi;
@@ -107,6 +115,7 @@ cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 
 
 	int gameWidth, gameHeight, gamePosX, gamePosY = 0;
+
 
 
 	switch (global::config->GameWindow)
@@ -237,14 +246,14 @@ void Screenshot::CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPatt
 		case IMG_EVENT_TITLE:
 			if (IsEventIcon(event_icon))
 			{
-				crop_x = img_width - (img_width * 0.787);
+				crop_x = img_width - (img_width * 0.785);
 				crop_y = img_height - (img_height * 0.813);
 				crop_width = img_width - (img_width * 0.45);
 				crop_height = img_height - (img_height * 0.97);
 			}
 			else
 			{
-				crop_x = img_width - (img_width * 0.86);
+				crop_x = img_width - (img_width * 0.855);
 				crop_y = img_height - (img_height * 0.813);
 				crop_width = img_width - (img_width * 0.4);
 				crop_height = img_height - (img_height * 0.97);
@@ -291,6 +300,114 @@ void Screenshot::CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPatt
 	img = croppedImg;
 }
 
+void Screenshot::SetEventTitleBound(cv::Mat& img)
+{
+	/*
+	假設一個字佔 0.015 whitePixelRatio
+
+	[GetEventTitleBound] 0.0494271
+	[Scanner] event_title_gray_bin: ー敬にて
+
+	[GetEventTitleBound] textBound: 0.825316
+	[GetEventTitleBound] whitePixelRatio: 0.123797
+	[Scanner] event_title_gray_bin: タ暮れにひと勝負
+
+
+	[GetEventTitleBound] whitePixelRatio: 0.161974
+	*/
+	const double WHITE_PIXEL_RATIO = this->GetWhitePixelRatio(img);
+
+	// 一個字大概佔的 whitePixelRatio
+	double single_char_white_pixel_ratio;
+
+
+	// 一個字大概佔的圖片大小
+	double single_char_img_width_ratio;
+
+	// 獲取圖片大小
+	float img_width = img.cols;
+	float img_height = img.rows;
+
+	int crop_x = 0; // 起始 X 座標
+	int crop_y = 0; // 起始 Y 座標
+	int crop_width = 0; // 裁切寬度
+
+	int textCount;
+	double textBound;
+	cv::Rect rect;
+
+	switch (global::config->GameWindow)
+	{
+	case static_cast<int>(GameWindowType::DMM):
+		single_char_white_pixel_ratio = 0.015;
+		single_char_img_width_ratio = 0.06;
+
+		textCount = WHITE_PIXEL_RATIO / single_char_white_pixel_ratio;
+		textBound = single_char_img_width_ratio * textCount;
+
+		if (textBound > 1) return; // 無視 whitePixelRatio 太大的情況，以防 cv::Exception
+
+		if (IsEventIcon(event_icon))
+		{
+			crop_width = img_width - (img_width * (textBound - single_char_img_width_ratio));
+		}
+		else
+		{
+			crop_width = img_width - (img_width * textBound);
+		}
+
+		// 使用 cv::Rect 定義裁切區域
+		rect = cv::Rect(crop_x, crop_y, crop_width, img_height);
+
+		// 進行圖片裁切
+		img = img(rect);
+
+		// 裁切其他圖片
+		event_title_resize = event_title_resize(rect);
+		event_title_gray = event_title_gray(rect);
+		event_title_gray_bin_inv = event_title_gray_bin_inv(rect);
+		break;
+	case static_cast<int>(GameWindowType::BLUE_STACKS):
+		single_char_white_pixel_ratio = 0.016;
+		single_char_img_width_ratio = 0.06;
+
+		textCount = WHITE_PIXEL_RATIO / single_char_white_pixel_ratio;
+		textBound = single_char_img_width_ratio * textCount;
+
+		if (textBound > 1) return; // 無視 whitePixelRatio 太大的情況，以防 cv::Exception
+
+		if (IsEventIcon(event_icon))
+		{
+			crop_width = img_width - (img_width * (textBound - single_char_img_width_ratio));
+		}
+		else
+		{
+			crop_width = img_width - (img_width * textBound);
+		}
+
+		// 使用 cv::Rect 定義裁切區域
+		rect = cv::Rect(crop_x, crop_y, crop_width, img_height);
+
+		// 進行圖片裁切
+		img = img(rect);
+
+		// 裁切其他圖片
+		event_title_resize = event_title_resize(rect);
+		event_title_gray = event_title_gray(rect);
+		event_title_gray_bin_inv = event_title_gray_bin_inv(rect);
+		break;
+	}
+
+
+
+
+
+
+	std::cout << "[GetEventTitleBound] textCount: " << textCount << std::endl;
+	std::cout << "[GetEventTitleBound] textBound: " << textBound << std::endl;
+	std::cout << "[GetEventTitleBound] whitePixelRatio: " << WHITE_PIXEL_RATIO << std::endl;
+}
+
 
 
 void Screenshot::ResizeImage(cv::Mat& img, float scale_factor = 2.0 /*放大倍數*/, cv::InterpolationFlags interpolationFlag = cv::INTER_LINEAR/*INTER_LINEAR*/)
@@ -304,15 +421,13 @@ void Screenshot::ResizeImage(cv::Mat& img, float scale_factor = 2.0 /*放大倍�
 
 const double Screenshot::GetWhitePixelRatio(cv::Mat img)
 {
-	/*
-	* 真機伶黑色婚紗 thresh: 160, whitePixelRatio: 0.572825
-	*/
+
 
 	const int whitePixelCount = cv::countNonZero(img);
 	const int imgPixelCount = img.cols * img.rows;
 	const double whitePixelRatio = static_cast<double>(whitePixelCount) / static_cast<double>(imgPixelCount);
 
-	std::cout << "whitePixelRatio: " << whitePixelRatio << std::endl;
+	//std::cout << "whitePixelRatio: " << whitePixelRatio << std::endl;
 
 	return whitePixelRatio;
 }
@@ -338,9 +453,9 @@ const double Screenshot::GetBlackPixelRatio(cv::Mat img)
 bool Screenshot::IsEventIcon(cv::Mat img)
 {
 	/*
-	クリオグリ whitePixelRatio: 0.799745
+	* クリオグリ whitePixelRatio: 0.799745
+	* 真機伶黑色婚紗 thresh: 160, whitePixelRatio: 0.572825
 	*/
-
 	return this->GetWhitePixelRatio(img) > EVENT_ICON_METRIC;
 }
 
@@ -349,16 +464,42 @@ Screenshot::Screenshot()
 	oimg = this->hwnd2mat();
 	if (oimg.empty()) return;
 
-
 	// event_icon
-	this->GetEventIconImage(); // 優先獲取 EventIconImage
+	try
+	{
+		this->GetEventIconImage(); // 優先獲取 EventIconImage
+	}
+	catch (System::Exception^ ex)
+	{
+		System::Console::WriteLine("GetEventIconImage Caught exception: " + ex->Message);
+	}
+	
 
 	// event_title
-	this->GetEventTitleImage();
+	try
+	{
+		this->GetEventTitleImage();
+	}
+	catch (System::Exception^ ex)
+	{
+		System::Console::WriteLine("GetEventTitleImage Caught exception: " + ex->Message);
+	}
+	
 	
 
 	// character_name
-	this->GetHenseiCharacterNameImage();
+	try
+	{
+		this->GetHenseiCharacterNameImage();
+	}
+	catch (System::Exception^ ex)
+	{
+		System::Console::WriteLine("GetHenseiCharacterNameImage Caught exception: " + ex->Message);
+	}
+	
+
+
+
 	//this->GetSyousaiCharacterName();
 }
 
@@ -421,9 +562,7 @@ void Screenshot::GetEventTitleImage()
 	this->ResizeImage(event_title_gray_bin, 2);
 	cv::cvtColor(event_title_gray_bin, event_title_gray_bin, cv::COLOR_BGR2GRAY);
 	cv::threshold(event_title_gray_bin, event_title_gray_bin, thresh/*230*/, 255, cv::THRESH_BINARY);
-	//std::cout << "test: " << this->GetWhitePixelRatio(event_title_gray_bin) << std::endl; // WhitePixelRatio: 0.215815
 
-	//std::cout << "[WhitePixelRatio] event_title_gray_bin: " << this->GetWhitePixelRatio(event_title_gray_bin) << std::endl;
 
 	// event_title_gray_bin_inv 裁切->放大+去鋸齒->灰值化->二值化//
 	event_title_gray_bin_inv = oimg.clone();
@@ -431,10 +570,9 @@ void Screenshot::GetEventTitleImage()
 	this->ResizeImage(event_title_gray_bin_inv, 2);
 	cv::cvtColor(event_title_gray_bin_inv, event_title_gray_bin_inv, cv::COLOR_BGR2GRAY);
 	cv::threshold(event_title_gray_bin_inv, event_title_gray_bin_inv, thresh/*230*/, 255, cv::THRESH_BINARY_INV);
-	//std::cout << "[BlackPixelRatio] event_title_gray_bin_inv: " << this->GetBlackPixelRatio(event_title_gray_bin_inv) << std::endl;
 
 
-	
+	this->SetEventTitleBound(event_title_gray_bin);
 }
 
 void Screenshot::GetEventIconImage()

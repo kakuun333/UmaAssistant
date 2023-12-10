@@ -58,6 +58,8 @@ private:
 
 	bool IsWindowCovered(HWND hwnd);
 
+	void SetEventTitleBound(cv::Mat& img);
+
 public:
 	Screenshot();
 
