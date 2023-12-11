@@ -44,7 +44,7 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 ## 常見問題
 Q. 為什麼我的`UmaAssistant.exe`無法啟動？  
 A.
-1. 請確定[系統規格](https://github.com/kakuun333/UmaAssistant#%E7%B3%BB%E7%B5%B1%E7%92%B0%E5%A2%83)符合上述標準。
+1. 請確定[系統規格](https://github.com/kakuun333/UmaAssistant?tab=readme-ov-file#%E7%B3%BB%E7%B5%B1%E8%A6%8F%E6%A0%BC)符合上述標準。
 2. 請確定[檔案路徑](https://github.com/kakuun333/UmaAssistant#%E6%AA%94%E6%A1%88%E8%B7%AF%E5%BE%91)符合上述標準。
 3. 請確定電腦上已經安裝了[必須安裝的套件](https://github.com/kakuun333/UmaAssistant#%E5%BF%85%E9%A0%88%E5%AE%89%E8%A3%9D%E7%9A%84%E5%A5%97%E4%BB%B6)  
 ![145447](https://github.com/kakuun333/UmaAssistant/assets/81919641/0d36b572-a610-40d3-8a75-39e80eb31203)
@@ -95,8 +95,8 @@ A. 請檢查設定是否正確、嘗試縮放遊戲視窗。
 
 
 ## 免責聲明
-- 本軟體只在按下`啟動`時進行特定視窗的截圖操作和遊戲事件、遊戲角色相關的辨識操作之後立即銷毀特定視窗的截圖，不會收集任何個人資訊。  
-- 因使用本軟體而造成的任何類型的損失全部歸於個人責任，作者不負任何責任。
+- 本軟體只在按下`啟動`時進行特定視窗的截圖操作和遊戲事件、遊戲角色相關的辨識操作之後立即銷毀特定視窗的截圖，並且此類操作不會收集任何個人資訊。  
+- 因使用本軟體而造成任何類型的損失全部歸於個人責任，作者不負任何責任。
 - 作者不負任何本軟體後續更新的責任。
  
 ## 使用的函式庫
