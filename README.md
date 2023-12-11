@@ -107,6 +107,7 @@ A. 請檢查設定是否正確、嘗試縮放遊戲視窗。
 
 ## 版權聲明
 Copyright (C) 2023 kakuun333
+作者編寫的原始碼全部屬於`GPL-3.0 license`
 
 ## 授權條例
 [GPL-3.0 license](https://github.com/kakuun333/UmaAssistant?tab=GPL-3.0-1-ov-file#)
