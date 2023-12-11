@@ -49,11 +49,13 @@ A.
 3. 請確定電腦上已經安裝了[必須安裝的套件](https://github.com/kakuun333/UmaAssistant#%E5%BF%85%E9%A0%88%E5%AE%89%E8%A3%9D%E7%9A%84%E5%A5%97%E4%BB%B6)  
 ![145447](https://github.com/kakuun333/UmaAssistant/assets/81919641/0d36b572-a610-40d3-8a75-39e80eb31203)
 
-Q. 為什麼我無法辨識「目前培育的馬娘」？  
-A. 請檢查設定是否正確、嘗試縮放遊戲視窗。  
-
-Q. 為什麼我無法辨識事件？  
-A. 請檢查設定是否正確、嘗試縮放遊戲視窗。  
+Q. 為什麼我無法辨識「目前培育的馬娘」或「事件」？  
+A. 
+1. 請檢查設定是否正確。
+2. 請檢查是否選取了對應的視窗名稱。
+3. 嘗試縮放遊戲視窗。
+4. 如果是`BlueStacks`模擬器的話，可以嘗試重開模擬器試試看。
+5. 如果上述的方法皆無效果，請參考[問題回報](https://github.com/kakuun333/UmaAssistant#%E5%95%8F%E9%A1%8C%E5%9B%9E%E5%A0%B1)。  
 
 ## 使用方法
 ### 0. 開啟程式  
@@ -107,6 +109,9 @@ A. 請檢查設定是否正確、嘗試縮放遊戲視窗。
 ![2](https://github.com/kakuun333/UmaAssistant/assets/81919641/3fbd26b7-b934-4c1c-9cbd-a03689066d71)  
 ![3](https://github.com/kakuun333/UmaAssistant/assets/81919641/b9173e1d-24cb-42b8-9e2c-647e69c03de4)  
 ![4](https://github.com/kakuun333/UmaAssistant/assets/81919641/47bd9b44-7d26-46fb-bdda-75e0ebbab2c7)  
+
+## UmaData
+暫時不提供
 
 ## 問題回報
 有任何問題請到 [Issues](https://github.com/kakuun333/UmaAssistant/issues) 中提出。  
