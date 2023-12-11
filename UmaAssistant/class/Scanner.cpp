@@ -245,7 +245,8 @@ void Scanner::Start(std::string language)
 				///
 				/// 獲取圖片裡的文字
 				/// 
-				std::string eventText /*characterNameText,*/;
+				/*std::string characterNameText;*/
+				std::string eventText = "INIT_EVENT_TEXT";
 				std::string henseiCharNameText = "INIT_HENSEI_CHAR_NAME_TEXT";
 
 				//eventText = this->GetScannedText(ss.event_title_oimg, language);
@@ -382,7 +383,6 @@ void Scanner::Start(std::string language)
 #pragma endregion
 				}
 
-
 				if (_previousEventText != eventText)
 				{
 					if (!charUmaEventData.IsDataComplete())
@@ -480,10 +480,11 @@ void Scanner::Start(std::string language)
 				// 更新上次辨識到的文字
 				//
 				_previousEventText = eventText;
-				std::cout << "_previousEventText: " << _previousEventText << std::endl;
 				//_previousCharacterNameText = characterNameText;
 				_previousHenseiCharacterNameText = henseiCharNameText;
-				std::cout << "_previousHenseiCharacterNameText: " << _previousHenseiCharacterNameText << std::endl;
+
+				std::cout << "[Scanner] _previousEventText: " << _previousEventText << std::endl;
+				std::cout << "[Scanner] _previousHenseiCharacterNameText: " << _previousHenseiCharacterNameText << std::endl;
 
 				
 				double seconds = timer->Stop();

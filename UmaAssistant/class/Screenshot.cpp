@@ -66,13 +66,11 @@ cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 	HWND gameHWND = GameWindowFinder::GetInstance()->GetCurrentGameWindow();
 	if (gameHWND == NULL) return cv::Mat();
 
-	if (this->IsWindowCovered(gameHWND))
-	{
-		std::cout << u8"視窗被覆蓋" << std::endl;
-		return cv::Mat();
-	}
-
-
+	//if (this->IsWindowCovered(gameHWND))
+	//{
+	//	std::cout << u8"視窗被覆蓋" << std::endl;
+	//	return cv::Mat();
+	//}
 
 	// 獲取遊戲視窗的 ClientRect 和 WindowRect
 	RECT rcWindow; GetWindowRect(gameHWND, &rcWindow);
