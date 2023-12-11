@@ -18,6 +18,28 @@
 - 金技能  
 ![065204](https://github.com/kakuun333/UmaAssistant/assets/81919641/7b5bec42-0325-4710-af0b-45e12b23c05d)
 
+## 運作環境
+
+### 系統環境
+`Windows 10 64位元 22H2`
+> [!WARNING]
+> 32 位元無法運行。
+
+### 檔案路徑
+> [!WARNING]
+> 檔案路徑只能是半形英文  
+> 正確示範：  
+> D:\UmaAssistant\UmaAssistant.exe  
+> 錯誤示範：  
+> D:\うまうま\UmaAssistant.exe（不可以有日文假名）  
+> D:\馬娘\UmaAssistant.exe（不可以有中文字）  
+> D:\ＵｍａＡｓｓｉｓｔａｎｔ\UmaAssistant.exe （不可以有全形英文）
+
+### 必須安裝的套件  
+Microsoft Visual C++ Redistributable Package  
+https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
+> [!IMPORTANT]
+> 架構請選擇`X64`，下載到的安裝檔應該要是`vc_redist.x64.exe`。
 
 ## 使用方法
 ### 1. 設定  
