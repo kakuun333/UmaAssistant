@@ -100,8 +100,7 @@ A. 請檢查設定是否正確、嘗試縮放遊戲視窗。
 - 作者不負任何本軟體後續更新的責任。
 
 ## 問題回報
-有任何問題請到`Issue`或是下方`Discord`伺服器中提出。  
-![Discord Banner 4](https://discordapp.com/api/guilds/1180922259146281053/widget.png?style=banner4)
+有任何問題請到`Issue`中提出。  
 
 
 ## 使用的函式庫
@@ -113,7 +112,7 @@ https://github.com/tesseract-ocr/tesseract
 - OpenCV  
 https://opencv.org/
 
-- JSON for Modern C++  
+- nlohmann - JSON for Modern C++  
 https://github.com/nlohmann/json
 
 - curl    
