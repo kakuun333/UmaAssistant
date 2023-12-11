@@ -63,11 +63,11 @@ A.
 ![171217](https://github.com/kakuun333/UmaAssistant/assets/81919641/35dad315-a214-4908-a57d-f6807c8f7c87)
 
 ### 1. 設定  
-![040744](https://github.com/kakuun333/UmaAssistant/assets/81919641/3bf289f9-b097-4270-a922-4b28d9d7e295)
+![044407](https://github.com/kakuun333/UmaAssistant/assets/81919641/505abc27-60bd-4ad4-8f39-cbb948ffff79)  
+![040744](https://github.com/kakuun333/UmaAssistant/assets/81919641/3bf289f9-b097-4270-a922-4b28d9d7e295)  
 > [!NOTE]
 > 設定檔將保存在`UmaMisc\config.json`。
 
-![044407](https://github.com/kakuun333/UmaAssistant/assets/81919641/505abc27-60bd-4ad4-8f39-cbb948ffff79)
 
 - 伺服器：請選擇適當的伺服器，選錯伺服器將無法辨識事件。
 
@@ -79,7 +79,7 @@ A.
 
 - 本地伺服器埠口：`localhost`的`port`，如果你不知道這是什麼的話則不須改動，如果你有需要請自行改動後重開程式。
 
-- 滑鼠連點：按住指定的`滑鼠按鍵`會高速連點滑鼠左鍵，鬆開後停止連點。  
+- 滑鼠連點：按住指定的`滑鼠按鍵`會以`10毫秒`一次的速度點擊滑鼠左鍵，鬆開後停止連點。  
 > [!IMPORTANT]
 > 滑鼠連點需要以系統管理員身分執行`UmaAssistant.exe`才會有效果。
 
