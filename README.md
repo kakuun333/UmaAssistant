@@ -56,6 +56,10 @@ Q. 為什麼我無法辨識事件？
 A. 請檢查設定是否正確、嘗試縮放遊戲視窗。  
 
 ## 使用方法
+### 0. 開啟程式  
+開啟資料夾中的`UmaAssistant.exe`  
+![171217](https://github.com/kakuun333/UmaAssistant/assets/81919641/35dad315-a214-4908-a57d-f6807c8f7c87)
+
 ### 1. 設定  
 ![040744](https://github.com/kakuun333/UmaAssistant/assets/81919641/3bf289f9-b097-4270-a922-4b28d9d7e295)
 > [!NOTE]
