@@ -19,11 +19,16 @@ void Scanner::InitOcrJpn()
 		{
 			tesseract::TessBaseAPI* ocr = new tesseract::TessBaseAPI(); // 初始化 Tesseract
 
-			ocr->Init(global::path::c_tessdata_best, "jpn", tesseract::OEM_DEFAULT); // 日文 "jpn"、繁體中文 "chi_tra"
+			ocr->Init(global::path::std_tessdata_best.c_str(), "jpn", tesseract::OEM_DEFAULT); // 日文 "jpn"、繁體中文 "chi_tra"
 
 			//ocr->SetVariable("tessedit_char_blacklist", u8"!@$%^&*_-+<>?()[]{}|/\\`0123456789†.,:;；=");
 
+			// 省略 OSD
+			//ocr->SetVariable("load_system_dawg", "F");
+			//ocr->SetVariable("load_freq_dawg", "F");
+
 			ocr->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_LINE*//*tesseract::PSM_SINGLE_BLOCK*/);
+
 
 			ocr_jpn = ocr;
 		});
@@ -37,9 +42,13 @@ void Scanner::InitOcrTw()
 		{
 			tesseract::TessBaseAPI* ocr = new tesseract::TessBaseAPI(); // 初始化 Tesseract
 
-			ocr->Init(global::path::c_tessdata_best, "chi_tra", tesseract::OEM_DEFAULT); // 日文 "jpn"、繁體中文 "chi_tra"
+			ocr->Init(global::path::std_tessdata_best.c_str(), "chi_tra", tesseract::OEM_DEFAULT); // 日文 "jpn"、繁體中文 "chi_tra"
 
 			//ocr->SetVariable("tessedit_char_blacklist", u8"!@$%^&*_-+<>?()[]{}|/\\`0123456789†.,:;；=");
+
+			// 省略 OSD
+			//ocr->SetVariable("load_system_dawg", "F");
+			//ocr->SetVariable("load_freq_dawg", "F");
 
 			ocr->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_LINE*//*tesseract::PSM_SINGLE_BLOCK*/);
 
@@ -58,7 +67,7 @@ void Scanner::UpdateSapokaChoice(WebManager* webManager, UmaEventData sapokaUmaE
 
 	for (UmaChoice choice : sapokaUmaEventData.Get<std::vector<UmaChoice>>(UmaEventDataType::CHOICE_LIST))
 	{
-		webManager->CreateChoice(choice.sys_choice_title, choice.sys_choice_effect);
+		webManager->CreateChoice(utility::stdStr2system(choice.choice_title), utility::stdStr2system(choice.choice_effect));
 	}
 
 	System::String^ sys_event_owner = utility::stdStr2system(sapokaUmaEventData.Get<std::string>(UmaEventDataType::EVENT_OWNER));
@@ -78,7 +87,7 @@ void Scanner::UpdateCharChoice(WebManager* webManager, UmaEventData charUmaEvent
 
 	for (UmaChoice choice : charUmaEventData.Get<std::vector<UmaChoice>>(UmaEventDataType::CHOICE_LIST))
 	{
-		webManager->CreateChoice(choice.sys_choice_title, choice.sys_choice_effect);
+		webManager->CreateChoice(utility::stdStr2system(choice.choice_title), utility::stdStr2system(choice.choice_effect));
 	}
 
 	System::String^ sys_event_owner = utility::stdStr2system(charUmaEventData.Get<std::string>(UmaEventDataType::EVENT_OWNER));
@@ -123,6 +132,7 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 {
 	std::unique_lock<std::mutex> lock(ocrMutex);
 
+	int charCount = 0;
 	char* utf8 = nullptr;
 
 	//ocr_jpn->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_LINE*//*tesseract::PSM_SINGLE_BLOCK*/);
@@ -134,11 +144,11 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 		{
 		case ImageType::IMG_EVENT_TITLE:
 			ocr_jpn->SetVariable("tessedit_char_blacklist", u8"@$%^&*_-+<>()[]{}|/\\`0123456789†.,:;；=");
-			//ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
+			ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 			break;
 		case ImageType::IMG_HENSEI_CHARACTER_NAME:
 			ocr_jpn->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
-			//ocr_jpn->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_BLOCK*/);
+			ocr_jpn->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_BLOCK*/);
 			break;
 		}
 
@@ -174,14 +184,26 @@ std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageTy
 		break;
 	}
 
-	lock.unlock();
-
 	std::string result = utility::RemoveSpace(utf8);
 
 #pragma region 釋放記憶體
 	//ocr->End();
 	delete[] utf8;
 #pragma endregion
+
+	lock.unlock();
+
+	if (utility::IsRepeatingString(result, 4))
+	{
+		std::cout << u8"[Scanner] 連續且重複的字符過多 result: " << result << std::endl;
+		return std::string();
+	}
+
+	if (utility::HasBlackListedString(result))
+	{
+		std::cout << u8"[Scanner] 檢查到含有黑名單字串 result: " << result << std::endl;
+		return std::string();
+	}
 
 	return result;
 }
@@ -223,8 +245,8 @@ void Scanner::Start(std::string language)
 				///
 				/// 獲取圖片裡的文字
 				/// 
-				std::string eventText, /*characterNameText,*/ henseiCharNameText;
-
+				std::string eventText /*characterNameText,*/;
+				std::string henseiCharNameText = "INIT_HENSEI_CHAR_NAME_TEXT";
 
 				//eventText = this->GetScannedText(ss.event_title_oimg, language);
 				//std::cout << "event_title_oimg: " << eventText << std::endl;
@@ -244,7 +266,7 @@ void Scanner::Start(std::string language)
 
 
 				std::unique_ptr<std::thread> tryCharThread;
-
+				UmaEventData charUmaEventData;
 
 				eventText = this->GetScannedText(ss.event_title_gray_bin, language);
 
@@ -300,7 +322,6 @@ void Scanner::Start(std::string language)
 					testThread->join();
 					test2Thread->join();
 
-
 					if (gray_event_text.empty() && resize_event_text.empty())
 					{
 						std::cout << u8"[Scanner] 都是空字串" << std::endl;
@@ -311,14 +332,13 @@ void Scanner::Start(std::string language)
 
 				std::cout << u8"[Scanner] event_title_gray_bin: " << eventText << std::endl;
 				
-				if (_previousEventText != eventText ||
-					//_previousCharacterNameText != characterNameText ||
-					_previousHenseiCharacterNameText != henseiCharNameText)
+				
+
+				if (_previousHenseiCharacterNameText != henseiCharNameText)
 				{
 #pragma region Looking for Current Character
 					if (!dataManager->IsCurrentCharacterInfoLocked())
 					{
-						
 						try
 						{
 							tryCharThread = std::make_unique<std::thread>([=, &henseiCharNameText]()
@@ -331,6 +351,11 @@ void Scanner::Start(std::string language)
 									henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin_inv, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
 									if (!henseiCharNameText.empty()) std::cout << "[Scanner] hensei_character_name_gray_bin_inv: " << henseiCharNameText << std::endl;
 
+									if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) return;
+
+									henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
+									if (!henseiCharNameText.empty()) std::cout << "[Scanner] hensei_character_name_gray_bin: " << henseiCharNameText << std::endl;
+
 									dataManager->TryGetCurrentCharacterName(henseiCharNameText);
 								});
 						}
@@ -341,24 +366,26 @@ void Scanner::Start(std::string language)
 							std::cout << u8"已終止 Scanner 運作" << std::endl;
 							return;
 						}
+
 					}
 					else
 					{
 						std::cout << "[Scanner] CURRENT CHARACTER LOCKED" << std::endl;
+
+						charUmaEventData = dataManager->GetCurrentCharacterUmaEventData(eventText);
+						if (charUmaEventData.IsDataComplete())
+						{
+							this->UpdateCharChoice(webManager, charUmaEventData);
+						}
+
 					}
 #pragma endregion
+				}
 
 
-
-
-#pragma region Character Event Data
-					UmaEventData charUmaEventData = dataManager->GetCurrentCharacterUmaEventData(eventText);
-					if (charUmaEventData.IsDataComplete())
-					{
-						this->UpdateCharChoice(webManager, charUmaEventData);
-					}
-					else
-#pragma endregion
+				if (_previousEventText != eventText)
+				{
+					if (!charUmaEventData.IsDataComplete())
 					{
 						/*
 						* 有時候名字很像的事件名稱會先偵測到 scenarioEventData ，但是正確的事件在 sapokaUmaEventData
@@ -371,37 +398,30 @@ void Scanner::Start(std::string language)
 						UmaEventData sapokaUmaEventData;
 						ScenarioEventData scenarioEventData;
 
-						bool sapokaFoundData = false;
-						bool scenarioFoundData = false;
-
 						try
 						{
 							sapokaThread = std::make_unique<std::thread>([=, &eventText, &sapokaUmaEventData]()
 								{
-									std::string tmpText = eventText;
 
-									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(tmpText);
+									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
 
-									if (sapokaUmaEventData.IsDataComplete()) { eventText = tmpText; return; }
-									if (scenarioFoundData) return;
+									if (sapokaUmaEventData.IsDataComplete()) return;
 
 									std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整" << std::endl;
 
-									tmpText = this->GetScannedText(ss.event_title_gray, language);
-									std::cout << "[Scanner] event_title_gray: " << tmpText << std::endl;
-									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(tmpText);
+									eventText = this->GetScannedText(ss.event_title_gray, language);
+									std::cout << "[Scanner] event_title_gray: " << eventText << std::endl;
+									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
 
-									if (sapokaUmaEventData.IsDataComplete()) { eventText = tmpText; return; }
-									if (scenarioFoundData) return;
+									if (sapokaUmaEventData.IsDataComplete()) { eventText = eventText; return; }
 
 									std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整2" << std::endl;
 
-									tmpText = this->GetScannedText(ss.event_title_resize, language);
-									std::cout << "[Scanner] event_title_resize: " << tmpText << std::endl;
-									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(tmpText);
+									eventText = this->GetScannedText(ss.event_title_gray_bin_inv, language);
+									std::cout << "[Scanner] event_title_gray_bin_inv: " << eventText << std::endl;
+									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
 
-									if (sapokaUmaEventData.IsDataComplete()) { eventText = tmpText; return; }
-									if (scenarioFoundData) return;
+									if (sapokaUmaEventData.IsDataComplete()) { eventText = eventText; return; }
 
 									std::cout << u8"[Scanner] sapokaUmaEventData 資料不完整3" << std::endl;
 								});
@@ -416,10 +436,9 @@ void Scanner::Start(std::string language)
 
 						try
 						{
-							scenarioThread = std::make_unique<std::thread>([=, &scenarioEventData, &scenarioFoundData]()
+							scenarioThread = std::make_unique<std::thread>([=, &scenarioEventData]()
 								{
 									scenarioEventData = dataManager->GetScenarioEventData(eventText);
-									if (scenarioEventData.IsDataComplete()) scenarioFoundData = true;
 								});
 						}
 						catch (System::Exception^ ex)
@@ -430,8 +449,11 @@ void Scanner::Start(std::string language)
 							return;
 						}
 
+
 						sapokaThread->join();
 						scenarioThread->join();
+
+
 
 						if (sapokaUmaEventData.similarity > scenarioEventData.similarity)
 						{
@@ -441,6 +463,7 @@ void Scanner::Start(std::string language)
 						{
 							if (scenarioEventData.IsDataComplete()) this->UpdateScenarioChoice(webManager, scenarioEventData);
 						}
+
 					}
 				}
 				else
@@ -457,8 +480,10 @@ void Scanner::Start(std::string language)
 				// 更新上次辨識到的文字
 				//
 				_previousEventText = eventText;
+				std::cout << "_previousEventText: " << _previousEventText << std::endl;
 				//_previousCharacterNameText = characterNameText;
 				_previousHenseiCharacterNameText = henseiCharNameText;
+				std::cout << "_previousHenseiCharacterNameText: " << _previousHenseiCharacterNameText << std::endl;
 
 				
 				double seconds = timer->Stop();

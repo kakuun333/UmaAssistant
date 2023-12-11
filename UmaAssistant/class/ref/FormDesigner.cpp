@@ -48,7 +48,7 @@ System::Void FormDesigner::CreateChoiceTable(UmaChoice choice)
 	choice_title_textbox->Multiline = true;
 	choice_title_textbox->ReadOnly = true;
 
-	choice_title_textbox->Text = utility::FormNewLineFormat(choice.sys_choice_title); // utility::stdStr2system(choice.choice_title);
+	choice_title_textbox->Text = utility::FormNewLineFormat(utility::stdStr2system(choice.choice_title)); // utility::stdStr2system(choice.choice_title);
 
 	choice_title_textbox->Size = System::Drawing::Size(366, 25);
 
@@ -73,7 +73,7 @@ System::Void FormDesigner::CreateChoiceTable(UmaChoice choice)
 	choice_effect_textbox->Multiline = true;
 	choice_effect_textbox->ReadOnly = true;
 
-	choice_effect_textbox->Text = utility::FormNewLineFormat(choice.sys_choice_effect); //"\r\n" + utility::stdStr2system(choice.choice_effect);
+	choice_effect_textbox->Text = utility::FormNewLineFormat(utility::stdStr2system(choice.choice_title)); //"\r\n" + utility::stdStr2system(choice.choice_effect);
 
 	choice_effect_textbox->Size = System::Drawing::Size(373, 50);
 

@@ -556,23 +556,30 @@ void Screenshot::GetEventTitleImage()
 	cv::cvtColor(event_title_gray, event_title_gray, cv::COLOR_BGR2GRAY);
 
 	// event_title_gray_bin 裁切->放大+去鋸齒->灰值化->二值化//
-	int thresh = 200/*210*/;
+	int thresh = 208/*210*/;
 	event_title_gray_bin = oimg.clone();
 	this->CropImage(event_title_gray_bin, ImageType::IMG_EVENT_TITLE, ImagePattern::EVENT_TITLE_GRAY_BIN);
 	this->ResizeImage(event_title_gray_bin, 2);
 	cv::cvtColor(event_title_gray_bin, event_title_gray_bin, cv::COLOR_BGR2GRAY);
 	cv::threshold(event_title_gray_bin, event_title_gray_bin, thresh/*230*/, 255, cv::THRESH_BINARY);
 
+	//if (GetWhitePixelRatio(event_title_gray_bin) > 0.5)
+	//{
+	//	std::cout << u8"可能不是事件" << std::endl;
+	//	_isEventTitle = false;
+	//}
 
-	// event_title_gray_bin_inv 裁切->放大+去鋸齒->灰值化->二值化//
+	
+
+	// event_title_gray_bin_inv 裁切->放大+去鋸齒->灰值化->二值化-//
 	event_title_gray_bin_inv = oimg.clone();
 	this->CropImage(event_title_gray_bin_inv, ImageType::IMG_EVENT_TITLE);
-	this->ResizeImage(event_title_gray_bin_inv, 2);
+	this->ResizeImage(event_title_gray_bin_inv, 1.5);
 	cv::cvtColor(event_title_gray_bin_inv, event_title_gray_bin_inv, cv::COLOR_BGR2GRAY);
 	cv::threshold(event_title_gray_bin_inv, event_title_gray_bin_inv, thresh/*230*/, 255, cv::THRESH_BINARY_INV);
 
 
-	this->SetEventTitleBound(event_title_gray_bin);
+	//this->SetEventTitleBound(event_title_gray_bin);
 }
 
 void Screenshot::GetEventIconImage()
@@ -607,46 +614,14 @@ void Screenshot::GetHenseiCharacterNameImage()
 	this->CropImage(hensei_character_name_gray_bin, ImageType::IMG_HENSEI_CHARACTER_NAME);
 	this->ResizeImage(hensei_character_name_gray_bin, 1.2);
 	cv::cvtColor(hensei_character_name_gray_bin, hensei_character_name_gray_bin, cv::COLOR_BGR2GRAY);
-	cv::threshold(hensei_character_name_gray_bin, hensei_character_name_gray_bin, 120/*230*/, 255, cv::THRESH_BINARY);
+	cv::threshold(hensei_character_name_gray_bin, hensei_character_name_gray_bin, 150/*120*/, 255, cv::THRESH_BINARY);
 
 	// hensei_character_name_bin_inv //
 	hensei_character_name_gray_bin_inv = oimg.clone();
 	this->CropImage(hensei_character_name_gray_bin_inv, ImageType::IMG_HENSEI_CHARACTER_NAME);
 	this->ResizeImage(hensei_character_name_gray_bin_inv, 1.2);
 	cv::cvtColor(hensei_character_name_gray_bin_inv, hensei_character_name_gray_bin_inv, cv::COLOR_BGR2GRAY);
-	cv::threshold(hensei_character_name_gray_bin_inv, hensei_character_name_gray_bin_inv, 150/*230*/, 255, cv::THRESH_BINARY);
+	cv::threshold(hensei_character_name_gray_bin_inv, hensei_character_name_gray_bin_inv, 160/*130*/, 255, cv::THRESH_BINARY);
 	hensei_character_name_gray_bin_inv = cv::Scalar::all(255) - hensei_character_name_gray_bin_inv; // 反轉顏色
 	
 }
-
-
-//void Screenshot::GetCharacterNameImage()
-//{
-//	cv::Mat oimg = cv::imread((cv::String)global::path::c_screenshot);
-//
-//	// 灰度化
-//	cv::cvtColor(oimg, oimg, cv::COLOR_BGR2GRAY);
-//
-//	// 二值化
-//	cv::threshold(oimg, oimg, 230/*230*/, 255, cv::THRESH_BINARY);
-//
-//
-//#pragma region 裁切圖片
-//	int img_width = oimg.cols;
-//	int img_height = oimg.rows;
-//	int crop_x = img_width - (img_width * 0.96); // 起始 X 座標
-//	int crop_y = img_height - (img_height * 0.693); // 起始 Y 座標
-//	int crop_width = img_width - (img_width * 0.6); // 裁切寬度
-//	int crop_height = img_height - (img_height * 0.96); // 裁切高度
-//
-//	// 使用 cv::Rect 定義裁切區域
-//	cv::Rect rect(crop_x, crop_y, crop_width, crop_height);
-//
-//	// 進行圖片裁切
-//	cv::Mat croppedImage = oimg(rect);
-//#pragma endregion 裁切圖片
-//
-//	cv::imwrite((cv::String)global::path::c_screenshot_character_name, croppedImage);
-//}
-//
-//

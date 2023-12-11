@@ -294,7 +294,7 @@ namespace utility
 
 	bool HasSimilarChar(std::string strChar)
 	{
-		json json = FileManager::GetInstance()->ReadJson(global::path::c_similar_char_list_json);
+		json json = FileManager::GetInstance()->ReadJson(global::path::std_similar_char_list_json);
 
 		//std::cout << "========== Start ==========" << std::endl;
 		for (const auto& similarCharArr : json)
@@ -313,7 +313,7 @@ namespace utility
 
 	std::vector<std::string> GetSimilarCharList(std::string strChar)
 	{
-		json json = FileManager::GetInstance()->ReadJson(global::path::c_similar_char_list_json);
+		json json = FileManager::GetInstance()->ReadJson(global::path::std_similar_char_list_json);
 
 		std::vector<std::string> similarCharList = {};
 		int trueArrIdx = -1;
@@ -693,56 +693,109 @@ namespace utility
 
 	float GetCharacterNameSimilarity(std::string scannedName, std::string jsonDataName)
 	{
-		//
-		// scannedName  キセキの白星オグリキャップ
-		// jsonDataName オグリキャップ（キセキの白星）
+		/*
 
-		float similarity = NOT_SIMILAR;
+		scannedName				キセキの白星オグリキャップ
+		jsonDataName			オグリキャップ（キセキの白星）
+		json_replaced_name		キセキの白星オグリキャップ
 
-		// 定義正規表達式模式，使用捕獲組
+		*/
+
+		// 定義正規表達式 pattern，捕獲角色名稱和別名
 		std::regex pattern(u8"(.+?)（(.+?)）");
 
 		// 使用 std::regex_replace 來替換字符串
-		std::string replaced_name = std::regex_replace(jsonDataName, pattern, "$2$1");
+		std::string json_replaced_name = std::regex_replace(jsonDataName, pattern, "$2$1");
+
+		float similarity = GetSimilarity(scannedName, json_replaced_name);
+
+		/* 
+		// 舊的程式碼，先保留起來
 
 		int scanned_count = CountUTF8Char(scannedName);
-		int replaced_count = CountUTF8Char(replaced_name);
+		int replaced_count = CountUTF8Char(json_replaced_name);
 		float totalCount = scanned_count > replaced_count ? scanned_count : replaced_count;
 
 		std::vector<std::string> scanned_char_list = utility::SplitJpnChar(scannedName);
-		std::vector<std::string> replaced_char_list = utility::SplitJpnChar(replaced_name);
+		std::vector<std::string> json_replaced_char_list = utility::SplitJpnChar(json_replaced_name);
 
-		int firstSameCount = GetSameCount(scanned_char_list, replaced_char_list);
-
+		int firstSameCount = GetSameCount(scanned_char_list, json_replaced_char_list);
 
 		if (firstSameCount <= 1) return NOT_SIMILAR;
-
-
-		//std::cout << 111 << std::endl;
 
 		std::cout << "firstSameCount: " << firstSameCount << std::endl;
 		std::cout << "totalCount: " << totalCount << std::endl;
 		std::cout << "similarity: " << firstSameCount / totalCount * 100 << std::endl;
 		std::cout << "SIMILAR_METRIC: " << SIMILAR_METRIC << std::endl;
+
 		if ((firstSameCount / totalCount) * 100 >= SIMILAR_METRIC)
 		{
-			//std::cout << 222 << std::endl;
 			similarity = (firstSameCount / totalCount) * 100;
 
 			std::cout << similarity << std::endl;
 		}
-		//std::cout << 333 << std::endl;
+		*/
+
+
 
 		return similarity;
 	}
 
 
 
+	bool IsRepeatingString(std::string scanned_text, int repeat_limit = 3)
+	{
+		int repeat_count = 0;
+
+		std::vector<std::string> text_list = SplitJpnChar(scanned_text);
+
+		for (auto it = text_list.begin(); it != text_list.end(); ++it)
+		{
+			
+			std::string std_char = *it;  // 獲取當前迭代的值
+			std::string next_std_char;
 
 
+			// 獲取下次迭代的值
+			++it;
+			if (it != text_list.end())
+			{
+				next_std_char = *it;
+				//std::cout << "Current: " << std_char << ", Next: " << next_std_char << std::endl;
+			}
+			--it;  // 將迭代器回退到原本的位置
 
+			if (std_char == next_std_char)
+				++repeat_count;
+			else
+				repeat_count = 0;
 
+			if (repeat_count >= repeat_limit)
+			{
+				return true;
+			}
+		}
 
+		return false;
+	}
+
+	bool HasBlackListedString(std::string scanned_text)
+	{
+		json black_listed_string_arr = FileManager::GetInstance()->ReadJson(global::path::std_black_listed_string_json);
+
+		for (const auto str : black_listed_string_arr)
+		{
+			std::regex pattern(str);
+			std::smatch match;
+			if (std::regex_search(scanned_text, match, pattern))
+			{
+				std::cout << u8"匹配到黑名單字串: " << match[0] << std::endl;
+				return true;
+			}
+		}
+
+		return false;
+	}
 
 
 }

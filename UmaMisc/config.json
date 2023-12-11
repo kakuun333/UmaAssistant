@@ -1,6 +1,6 @@
 {
-  "AlwaysOnTop": true,
-  "AutoMouseClick": true,
+  "AlwaysOnTop": false,
+  "AutoMouseClick": false,
   "AutoMouseClickKey": {
     "VK": 6,
     "WinFormButton": 16777216
@@ -9,7 +9,7 @@
   "GameServer": 1,
   "GameWindow": 1,
   "GameWindowName": "BlueStacks App Player 1",
-  "JpServerLang": 1,
+  "JpServerLang": 0,
   "LocalServer": {
     "Port": "7777"
   },

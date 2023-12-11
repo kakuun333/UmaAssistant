@@ -38,6 +38,8 @@ class Screenshot
 private:
 	cv::Mat hwnd2mat(HWND hwnd);
 
+	bool _isEventTitle = true;
+
 	void CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPattern);
 
 	void ResizeImage(cv::Mat& img, float scale_factor /*©ñ¤j­¿¼Æ*/, cv::InterpolationFlags interpolationFlag);
@@ -69,8 +71,12 @@ public:
 	{
 		if (oimg.empty()) return false;
 
-
 		return true;
+	}
+
+	inline bool IsEventTitle()
+	{
+		return _isEventTitle;
 	}
 
 	//static std::map<std::string, cv::Mat> img_dict

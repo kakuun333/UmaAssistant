@@ -40,4 +40,8 @@ namespace utility
 	float GetSimilarity(std::string str1, std::string str2);
 
 	float GetCharacterNameSimilarity(std::string scannedName, std::string jsonDataName);
+
+	bool IsRepeatingString(std::string scanned_text, int repeat_limit);
+
+	bool HasBlackListedString(std::string scanned_text);
 }

@@ -24,7 +24,8 @@ namespace global
 		gcroot<System::String^> screenshot_event		 = umaTemp + "\\screenshot_event.png";
 
 		/*		std::string		*//*		std::string		*//*		std::string		*/
-		std::string std_currentDir						 = utility::GetCurrentDir();  // char ªº CurrentDirectory
+		//std::string std_currentDir						 = utility::GetCurrentDir();  // char ªº CurrentDirectory
+		std::string std_currentDir						 = utility::systemStr2std(currentDir);
 
 		// UmaPy
 		std::string std_umaPy = std_currentDir + "\\UmaPy";
@@ -60,34 +61,13 @@ namespace global
 		std::string std_skill_data_tw_json				 = std_UmaData + "\\skill_data_tw.json";
 		std::string std_scenario_event_data_tw_json		 = std_UmaData + "\\scenario_event_data_tw.json";
 
-
-
 		std::string std_similar_char_list_json			 = std_UmaData + "\\similar_char_list.json";
+
+		std::string std_black_listed_string_json		 = std_UmaData + "\\black_listed_string.json";
 
 		// UmaLua
 		std::string std_UmaLua							 = std_currentDir + "\\UmaLua";
 		std::string std_update_event_data_lua			 = std_UmaLua + "\\update_event_data.lua";
 		std::string std_update_skill_data_lua			 = std_UmaLua + "\\update_skill_data.lua";
-
-
-		/*		const char*		*//*		const char*		*//*		const char*		*/
-		const char* c_currentDir						= utility::GetCurrentDir();  // char ªº CurrentDirectory
-		
-		// UmaTemp
-		const char* c_UmaTemp							= utility::CombineChar(c_currentDir, "\\UmaTemp");
-		const char* c_screenshot						= utility::CombineChar(c_UmaTemp, "\\screenshot.png");
-		const char* c_screenshot_event					= utility::CombineChar(c_UmaTemp, "\\screenshot_event.png");
-		const char* c_screenshot_character_name			= utility::CombineChar(c_UmaTemp, "\\screenshot_character_name.png");
-		const char* c_screenshot_hensei_character_name	= utility::CombineChar(c_UmaTemp, "\\screenshot_hensei_character_name.png");
-
-		// tessdata
-		const char* c_tessdata							= utility::CombineChar(c_currentDir, "\\tessdata");
-		const char* c_tessdata_best						= utility::CombineChar(c_currentDir, "\\tessdata\\best");
-
-		// UmaData
-		const char* c_UmaData							= utility::CombineChar(c_currentDir, "\\UmaData");
-		const char* c_event_data_jp_json				= utility::CombineChar(c_UmaData, "\\event_data_jp.json");
-		const char* c_skill_data_jp_json				= utility::CombineChar(c_UmaData, "\\skill_data_jp.json");
-		const char* c_similar_char_list_json			= utility::CombineChar(c_UmaData, "\\similar_char_list.json");
 	}
 };

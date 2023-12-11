@@ -60,13 +60,12 @@ using json = nlohmann::json;
 #include "class/AutoMouseClicker.h"
 #include "class/UmaTimer.h"
 
-
-// lua
-#include "class/LuaManager.h"
-
 // ¨ü±±
 #include "class/ref/FormDesigner.h"
 #include "class/ref/FormController.h"
+
+// lua
+#include "class/LuaManager.h"
 
 // data
 #include "class/data/UmaEventData.h"
@@ -102,7 +101,7 @@ using json = nlohmann::json;
 
 
 
-/*			.Net			*/
+/*			.NET			*/
 using namespace System;
 using namespace System::Collections;
 using namespace System::Collections::Generic;

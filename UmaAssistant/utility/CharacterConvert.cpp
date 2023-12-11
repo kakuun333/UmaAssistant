@@ -20,6 +20,8 @@ namespace utility
 
 		std::string std_string(c_utf8);
 
+		delete[] c_utf8;
+
 		return std_string;
 	}
 
@@ -32,6 +34,8 @@ namespace utility
 		wchar_t* c_utf16 = utf8to16(utf8);
 
 		System::String^ sys_str = msclr::interop::marshal_as<System::String^>(c_utf16);
+
+		delete[] c_utf16;
 
 		return sys_str;
 	}
@@ -63,9 +67,6 @@ namespace utility
 
 		// 返回
 		return utf16Buffer;
-
-		// 釋放記憶體
-		delete[] utf16Buffer;
 	}
 
 	char* utf16to8(wchar_t* utf16)
@@ -81,9 +82,6 @@ namespace utility
 
 		// 返回
 		return utf8Buffer;
-
-		// 釋放記憶體
-		delete[] utf8Buffer;
 	}
 
 	char* utf16to8(System::String^ sys_string)
@@ -95,7 +93,7 @@ namespace utility
 
 		// 把 char 轉成 wchar_t
 		wchar_t* utf16 = char2wchar(c_str);
-		
+
 		// 獲取需要的緩衝區大小
 		int len = WideCharToMultiByte(CP_UTF8, 0, utf16, -1, NULL, 0, NULL, NULL);
 
@@ -105,10 +103,9 @@ namespace utility
 		// 執行轉換
 		WideCharToMultiByte(CP_UTF8, 0, utf16, -1, utf8Buffer, len, NULL, NULL);
 
+		delete[] utf16;
+
 		// 返回
 		return utf8Buffer;
-
-		// 釋放記憶體
-		delete[] utf8Buffer;
 	}
 }

@@ -84,7 +84,9 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 						// it2.key() == event_owner;
 
 						std::string event_owner = it2.key();
+
 						if (utility::SIMILAR_METRIC > utility::GetCharacterNameSimilarity(scanned_text, event_owner)) continue;
+						std::cout << "FOUND CHARACTER: " << event_owner << std::endl;
 
 						_currentCharacterInfoDict["rare"] = it.key();
 						_currentCharacterInfoDict["event_owner"] = event_owner;
@@ -105,7 +107,9 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 						// it2.key() == event_owner;
 
 						std::string event_owner = it2.key();
+
 						if (utility::SIMILAR_METRIC > utility::GetCharacterNameSimilarity(scanned_text, event_owner)) continue;
+						std::cout << "FOUND CHARACTER: " << event_owner << std::endl;
 
 						_currentCharacterInfoDict["rare"] = it.key();
 						_currentCharacterInfoDict["event_owner"] = event_owner;
@@ -125,7 +129,9 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 						// it2.key() == event_owner;
 
 						std::string event_owner = it2.key();
+
 						if (utility::SIMILAR_METRIC > utility::GetCharacterNameSimilarity(scanned_text, event_owner)) continue;
+						std::cout << "FOUND CHARACTER: " << event_owner << std::endl;
 
 						_currentCharacterInfoDict["rare"] = it.key();
 						_currentCharacterInfoDict["event_owner"] = event_owner;
@@ -154,6 +160,8 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 
 ScenarioEventData DataManager::GetScenarioEventData(std::string scanned_text)
 {
+	if (scanned_text.empty()) return ScenarioEventData();
+
 	json event_data_json;
 
 	switch (global::config->GameServer)
@@ -214,6 +222,7 @@ ScenarioEventData DataManager::GetScenarioEventData(std::string scanned_text)
 
 UmaEventData DataManager::GetCurrentCharacterUmaEventData(std::string scanned_text)
 {
+	if (scanned_text.empty()) return UmaEventData();
 
 	json event_data_json;
 
@@ -240,7 +249,7 @@ UmaEventData DataManager::GetCurrentCharacterUmaEventData(std::string scanned_te
 
 
 	umaEventData.event_owner = _currentCharacterInfoDict["event_owner"];
-	umaEventData.sys_event_owner = utility::stdStr2system(_currentCharacterInfoDict["event_owner"]);
+	//umaEventData.sys_event_owner = utility::stdStr2system(_currentCharacterInfoDict["event_owner"]);
 
 	std::map<std::string, float> similarEventTitleList = {};
 
@@ -290,11 +299,11 @@ UmaEventData DataManager::GetCurrentCharacterUmaEventData(std::string scanned_te
 				umaEventData.similarity = similarity;
 
 				umaEventData.event_owner = _currentCharacterInfoDict["event_owner"];
-				umaEventData.sys_event_owner = utility::stdStr2system(umaEventData.event_owner);
+				//umaEventData.sys_event_owner = utility::stdStr2system(umaEventData.event_owner);
 
 				UmaEvent umaEvent;
 				umaEvent.event_title = choice.key();
-				umaEvent.sys_event_title = utility::stdStr2system(umaEvent.event_title);
+				//umaEvent.sys_event_title = utility::stdStr2system(umaEvent.event_title);
 
 				for (const auto& choice_info : choice.value())
 				{
@@ -303,10 +312,10 @@ UmaEventData DataManager::GetCurrentCharacterUmaEventData(std::string scanned_te
 
 					UmaChoice umaChoice;
 					umaChoice.choice_title = choice_info["choice_title"].get<std::string>();
-					umaChoice.sys_choice_title = utility::stdStr2system(umaChoice.choice_title);
+					//umaChoice.sys_choice_title = utility::stdStr2system(umaChoice.choice_title);
 
 					umaChoice.choice_effect = choice_info["choice_effect"].get<std::string>();
-					umaChoice.sys_choice_effect = utility::stdStr2system(umaChoice.choice_effect);
+					//umaChoice.sys_choice_effect = utility::stdStr2system(umaChoice.choice_effect);
 
 					umaEvent.choice_list.push_back(umaChoice);
 				}
@@ -322,6 +331,8 @@ UmaEventData DataManager::GetCurrentCharacterUmaEventData(std::string scanned_te
 
 UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 {
+	if (scanned_text.empty()) return UmaEventData();
+
 	json event_data_json;
 
 	switch (global::config->GameServer)
@@ -455,9 +466,7 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 	srStarThread->join();
 	ssrStarThread->join();
 
-	delete rStarThread;
-	delete srStarThread;
-	delete ssrStarThread;
+
 
 	if (similarDataList.empty()) return umaEventData;
 
@@ -480,20 +489,20 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 			umaEventData.similarity = maxElement->similarity;
 
 			umaEventData.event_owner = maxElement->event_owner;
-			umaEventData.sys_event_owner = utility::stdStr2system(umaEventData.event_owner);
+			//umaEventData.sys_event_owner = utility::stdStr2system(umaEventData.event_owner);
 
 			umaEvent.event_title = maxElement->event_title;
-			umaEvent.sys_event_title = utility::stdStr2system(umaEvent.event_title);
+			//umaEvent.sys_event_title = utility::stdStr2system(umaEvent.event_title);
 
 			for (const auto& choice_info : event.begin().value())
 			{
 				UmaChoice umaChoice;
 
 				umaChoice.choice_title = choice_info["choice_title"].get<std::string>();
-				umaChoice.sys_choice_title = utility::stdStr2system(umaChoice.choice_title);
+				//umaChoice.sys_choice_title = utility::stdStr2system(umaChoice.choice_title);
 
 				umaChoice.choice_effect = choice_info["choice_effect"].get<std::string>();
-				umaChoice.sys_choice_effect = utility::stdStr2system(umaChoice.choice_effect);
+				//umaChoice.sys_choice_effect = utility::stdStr2system(umaChoice.choice_effect);
 
 				umaEvent.choice_list.push_back(umaChoice);
 			}
@@ -502,6 +511,10 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 			break;
 		}
 	}
+
+	delete rStarThread;
+	delete srStarThread;
+	delete ssrStarThread;
 
 
 	//for (const auto& choice_info : event_data_json["support_card"][maxElement->rare][maxElement->event_owner]["event"][maxElement->event_title])

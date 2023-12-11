@@ -68,30 +68,11 @@ namespace global
 
 		extern std::string std_similar_char_list_json;
 
+		extern std::string std_black_listed_string_json;
+
 		// UmaLua
 		extern std::string std_update_event_data_lua;
 		extern std::string std_update_skill_data_lua;
-
-
-
-		/*		const char*		*/
-		extern const char* c_currentDir; // char ªº CurrentDirectory
-
-		extern const char* c_UmaTemp;
-		extern const char* c_screenshot;
-		extern const char* c_screenshot_event;
-		extern const char* c_screenshot_character_name;
-		extern const char* c_screenshot_hensei_character_name;
-
-		extern const char* c_tessdata;
-		extern const char* c_tessdata_best;
-
-		extern const char* c_UmaData;
-		extern const char* c_event_data_jp_json;
-		extern const char* c_skill_data_jp_json;
-		extern const char* c_similar_char_list_json;
-
-
 	}
 };
 
