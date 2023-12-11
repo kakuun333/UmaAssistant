@@ -93,7 +93,6 @@ A. 請檢查設定是否正確、嘗試縮放遊戲視窗。
 ![3](https://github.com/kakuun333/UmaAssistant/assets/81919641/b9173e1d-24cb-42b8-9e2c-647e69c03de4)  
 ![4](https://github.com/kakuun333/UmaAssistant/assets/81919641/47bd9b44-7d26-46fb-bdda-75e0ebbab2c7)  
 
-
 ## 免責聲明
 - 本軟體只在按下`啟動`時進行特定視窗的截圖操作和遊戲事件、遊戲角色相關的辨識操作之後立即銷毀特定視窗的截圖，並且此類操作不會收集任何個人資訊。  
 - 因使用本軟體而造成任何類型的損失全部歸於個人責任，作者不負任何責任。
@@ -101,6 +100,12 @@ A. 請檢查設定是否正確、嘗試縮放遊戲視窗。
 
 ## 問題回報
 有任何問題請到`Issue`中提出。  
+
+## 版權聲明
+Copyright (C) 2023 kakuun333
+
+## 授權條例
+[GPL-3.0 license](https://github.com/kakuun333/UmaAssistant?tab=GPL-3.0-1-ov-file#)
 
 
 ## 使用的函式庫
