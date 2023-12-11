@@ -112,6 +112,8 @@ Copyright (C) 2023 kakuun333
 ## 授權條例
 [GPL-3.0 license](https://github.com/kakuun333/UmaAssistant?tab=GPL-3.0-1-ov-file#)
 
+## 建置方式  
+暫時不提供
 
 ## 使用的函式庫
 
