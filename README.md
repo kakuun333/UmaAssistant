@@ -83,13 +83,14 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 
 
 #### 方法一
-適用於還沒開始培育的情況。  
-在配置支援卡的畫面按下「育成開始！」等待`1~2`秒後「目前培育的馬娘」應該要更新為「最終確認」所顯示的馬娘名稱，如果沒有更新的話，請嘗試縮放遊戲視窗。  
+`適用於還沒開始培育的情況。`  
+在配置支援卡的畫面按下「育成開始！」等待`1~2`秒後「目前培育的馬娘」應該要更新為「最終確認」所顯示的馬娘名稱，如果沒有更新的話，請參考[常見問題](https://github.com/kakuun333/UmaAssistant#%E5%B8%B8%E8%A6%8B%E5%95%8F%E9%A1%8C)  
 ![195346](https://github.com/kakuun333/UmaAssistant/assets/81919641/301e784a-acd3-48b3-9431-69086cec6df0)  
 ![195532](https://github.com/kakuun333/UmaAssistant/assets/81919641/5b9f2dbf-e5bf-4d5c-8d07-a89344d041f0)  
 
 #### 方法二
-按右下角的![option_button](https://github.com/kakuun333/UmaAssistant/assets/81919641/05802803-bdbb-4693-a0fe-be969ef93c87)後，選擇「編成情報」，等待`1~2`秒後「目前培育的馬娘」應該要更新為「編成情報」所顯示的馬娘名稱，如果沒有更新的話，請嘗試縮放遊戲視窗。  
+`適用於已經開始培育的情況。`
+按右下角的![option_button](https://github.com/kakuun333/UmaAssistant/assets/81919641/05802803-bdbb-4693-a0fe-be969ef93c87)後，選擇「編成情報」，等待`1~2`秒後「目前培育的馬娘」應該要更新為「編成情報」所顯示的馬娘名稱，如果沒有更新的話，請參考[常見問題](https://github.com/kakuun333/UmaAssistant#%E5%B8%B8%E8%A6%8B%E5%95%8F%E9%A1%8C)  
 ![2](https://github.com/kakuun333/UmaAssistant/assets/81919641/3fbd26b7-b934-4c1c-9cbd-a03689066d71)  
 ![3](https://github.com/kakuun333/UmaAssistant/assets/81919641/b9173e1d-24cb-42b8-9e2c-647e69c03de4)  
 ![4](https://github.com/kakuun333/UmaAssistant/assets/81919641/47bd9b44-7d26-46fb-bdda-75e0ebbab2c7)  
@@ -107,8 +108,8 @@ A.
 1. 請檢查設定是否正確。
 2. 請檢查是否選取了對應的視窗名稱。
 3. 嘗試縮放遊戲視窗。
-4. 如果是`BlueStacks`模擬器的話，可以嘗試重開模擬器試試看。
-5. 如果上述的方法皆無效果，請參考[問題回報](https://github.com/kakuun333/UmaAssistant#%E5%95%8F%E9%A1%8C%E5%9B%9E%E5%A0%B1)。  
+> [!NOTE]
+> 如果上述的方法皆無效果，有大概率是程式的邏輯有疏失或資料不完整，請參考[問題回報](https://github.com/kakuun333/UmaAssistant#%E5%95%8F%E9%A1%8C%E5%9B%9E%E5%A0%B1)。  
 
 ## 問題回報
 有任何問題請到 [Issues](https://github.com/kakuun333/UmaAssistant/issues) 中提出。  
