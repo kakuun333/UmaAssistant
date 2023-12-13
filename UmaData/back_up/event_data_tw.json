@@ -18516,6 +18516,38 @@
             ]
           },
           {
+            "龍金城的使者": [
+              {
+                "choice_effect": "技能點<span class=\"status_plus_value\">+15</span>",
+                "choice_title": "<span class=\"special_choice_title\">ゴールドシップを好きに遊ばせてあげよう<hr>L'Arcで発生時：<br>(声、かけてみようかな……)</span>"
+              },
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+20</span>",
+                "choice_title": "<span class=\"special_choice_title\">なんとかゴールドシップをなだめよう<hr>L'Arcで発生時：<br>(もうちょっと会話を聞いてみよう)</span>"
+              }
+            ]
+          },
+          {
+            "海之家（族）": [
+              {
+                "choice_effect": "成功時：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+20</span><br><span class=\"skill_hint\">『傾注一切』</span>的靈感Lv<span class=\"status_plus_value\">+3</span><hr>失敗時：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>",
+                "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "阿船的海產勇者傳說": [
+              {
+                "choice_effect": "<span class=\"skill_hint\">『夏賽馬娘◯』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><br>隨機<span class=\"plus_condition\">『擅長練習◯』</span>",
+                "choice_title": "<span class=\"special_choice_title\">まさかライトだけであれほどのパワーが……<hr>L'Arcで発生時：<br>俺も、その時を楽しみにしています</span>"
+              },
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+20</span><br>隨機<span class=\"plus_condition\">『擅長練習◯』</span>",
+                "choice_title": "<span class=\"special_choice_title\">勝負服もきっとパワーアップしたな<hr>L'Arcで発生時：<br>ええ、きっと1着で駆け抜けますよ</span>"
+              }
+            ]
+          },
+          {
             "左邊沒有黑痣的樣子": [
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>",
@@ -37326,7 +37358,32 @@
         ]
       },
       "愛麗數碼（特雷森學園）": {
-        "event": []
+        "event": [
+          {
+            "賽馬娘缺乏症！": [
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br>愛麗數碼的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "大事をとって帰ったら？"
+              },
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br>愛麗數碼的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "今からでも参加できるはず！"
+              }
+            ]
+          },
+          {
+            "為了感動不懼風雨！": [
+              {
+                "choice_effect": "<span class=\"skill_hint\">『下雨天◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>愛麗數碼的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "無理すると風邪ひくぞ"
+              },
+              {
+                "choice_effect": "<span class=\"skill_hint\">『路況差勁◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>愛麗數碼的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "真剣なんだな！"
+              }
+            ]
+          }
+        ]
       },
       "待兼唐懷瑟（特雷森學園）": {
         "event": [
@@ -37733,10 +37790,60 @@
         ]
       },
       "黃金城市（特雷森學園）": {
-        "event": []
+        "event": [
+          {
+            "08：36/睡過頭，糟糕": [
+              {
+                "choice_effect": "幹勁下降<br>技能點<span class=\"status_plus_value\">+45</span><br>黃金城市的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "もうすぐ始業時間なんじゃ……"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span><br>黃金城市的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "焦っても仕方ないしな"
+              }
+            ]
+          },
+          {
+            "13：12/午休，必須拿出幹勁": [
+              {
+                "choice_effect": "技能點<span class=\"status_plus_value\">+30</span><br>黃金城市的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "まずは目の前のことに集中しよう"
+              },
+              {
+                "choice_effect": "<span class=\"skill_hint\">『稍微休息』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>黃金城市的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "栄養ドリンクいる？"
+              }
+            ]
+          }
+        ]
       },
       "菱曙（特雷森學園）": {
-        "event": []
+        "event": [
+          {
+            "盡情☆享用吧♪": [
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>菱曙的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "少し休憩したら？"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_minus_value\">-5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+15</span><br>菱曙的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "ずいぶんと力を入れてついてるしな……"
+              }
+            ]
+          },
+          {
+            "儘管☆交給我吧♪": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br>菱曙的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "整地車を押して移動させられる？"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_minus_value\">-15</span><br><span class=\"skill_hint\">『短途檔位』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><br>菱曙的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "コースを走って整地をお願い！"
+              }
+            ]
+          }
+        ]
       },
       "成田大進（特雷森學園）": {
         "event": [
@@ -39327,7 +39434,32 @@
         ]
       },
       "菱亞馬遜（特雷森學園）": {
-        "event": []
+        "event": [
+          {
+            "菱亞姐姐奮鬥記～問題兒童篇～": [
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span><br>菱亞馬遜的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "挟み撃ちにして捕まえよう"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+5</span><br>菱亞馬遜的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "グラウンドまで誘導しよう"
+              }
+            ]
+          },
+          {
+            "菱亞姐姐奮鬥記～追到天涯海角篇～": [
+              {
+                "choice_effect": "<span class=\"skill_hint\">『使後追遲疑』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>菱亞馬遜的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "気迫でライバルを圧倒する"
+              },
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+15</span><br>菱亞馬遜的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "大きく外側から攻めてみる"
+              }
+            ]
+          }
+        ]
       },
       "空中神宮（特雷森學園）": {
         "event": [
@@ -40082,6 +40214,30 @@
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『下雪天◯』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><br>黃金城市的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "人に頼るのもたまにはいいよな"
+              }
+            ]
+          },
+          {
+            "08：36/睡過頭，糟糕": [
+              {
+                "choice_effect": "幹勁下降<br>技能點<span class=\"status_plus_value\">+45</span><br>黃金城市的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "もうすぐ始業時間なんじゃ……"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span><br>黃金城市的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "焦っても仕方ないしな"
+              }
+            ]
+          },
+          {
+            "13：12/午休，必須拿出幹勁": [
+              {
+                "choice_effect": "技能點<span class=\"status_plus_value\">+30</span><br>黃金城市的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "まずは目の前のことに集中しよう"
+              },
+              {
+                "choice_effect": "<span class=\"skill_hint\">『稍微休息』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>黃金城市的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "栄養ドリンクいる？"
               }
             ]
           }
@@ -41804,6 +41960,30 @@
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『慧眼』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><br>黃金城市的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "08：36/睡過頭，糟糕": [
+              {
+                "choice_effect": "幹勁下降<br>技能點<span class=\"status_plus_value\">+45</span><br>黃金城市的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "もうすぐ始業時間なんじゃ……"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span><br>黃金城市的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "焦っても仕方ないしな"
+              }
+            ]
+          },
+          {
+            "13：12/午休，必須拿出幹勁": [
+              {
+                "choice_effect": "技能點<span class=\"status_plus_value\">+30</span><br>黃金城市的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "まずは目の前のことに集中しよう"
+              },
+              {
+                "choice_effect": "<span class=\"skill_hint\">『稍微休息』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>黃金城市的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "栄養ドリンクいる？"
               }
             ]
           }

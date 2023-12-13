@@ -176,6 +176,7 @@
     <ClCompile Include="UmaAssistant\class\GameWindowFinder.cpp" />
     <ClCompile Include="UmaAssistant\class\UmaTimer.cpp" />
     <ClCompile Include="UmaAssistant\class\data\UmaEventRoute.cpp" />
+    <ClCompile Include="UmaAssistant\class\UmaLog.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
@@ -223,6 +224,7 @@
     <ClInclude Include="UmaAssistant\class\GameWindowFinder.h" />
     <ClInclude Include="UmaAssistant\class\UmaTimer.h" />
     <ClInclude Include="UmaAssistant\class\data\UmaEventRoute.h" />
+    <ClInclude Include="UmaAssistant\class\UmaLog.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PreviewForm.resx" />

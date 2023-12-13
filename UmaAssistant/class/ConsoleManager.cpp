@@ -60,6 +60,8 @@ void ConsoleManager::Enable()
 		// 處理錯誤
 		perror("freopen_s");
 	}
+
+
 	//if (freopen("CONOUT$", "w", stdout) == nullptr)
 	//{
 	//	// 處理打開文件失敗的情況

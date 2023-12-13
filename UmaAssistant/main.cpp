@@ -1,5 +1,6 @@
 ﻿//#include "form/UmaForm.h"
 #include <Windows.h>
+#include <fstream>
 
 #include "global/Path.h"
 #include "global/FormManager.h"
@@ -13,6 +14,7 @@
 #include "class/LocalServer.h"
 #include "class/WebManager.h"
 //#include "class/PyManager.h"
+#include "class/UmaLog.h"
 
 
 #include <nlohmann/json.hpp>
@@ -34,6 +36,9 @@ int main(array<String^>^ args)
 {
 	// 初始化 config
 	global::config->Update();
+
+
+	UmaLog::init(global::path::std_UmaTemp + "\\UmaLog.txt");
 
 #pragma region 初始化 Console
 	/*

@@ -1,14 +1,14 @@
 {
-  "AlwaysOnTop": false,
+  "AlwaysOnTop": true,
   "AutoMouseClick": false,
   "AutoMouseClickKey": {
     "VK": 6,
     "WinFormButton": 16777216
   },
   "DebugMode": true,
-  "GameServer": 1,
-  "GameWindow": 1,
-  "GameWindowName": "BlueStacks App Player 1",
+  "GameServer": 0,
+  "GameWindow": 0,
+  "GameWindowName": "umamusume",
   "JpServerLang": 0,
   "LocalServer": {
     "Port": "7777"

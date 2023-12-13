@@ -68,16 +68,15 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 
 	WebManager* webManager = WebManager::GetInstance();
 
-	std::thread* oneStarThread = nullptr;
-	std::thread* twoStarThread = nullptr;
-	std::thread* threeStarThread = nullptr;
-
+	std::unique_ptr<std::thread> oneStarThread;
+	std::unique_ptr<std::thread> twoStarThread;
+	std::unique_ptr<std::thread> threeStarThread;
 
 	for (json::iterator it = event_data_json["character"].begin(); it != event_data_json["character"].end(); ++it) // it.value() == characterRare
 	{
 		if (it.key() == "1_star")
 		{
-			oneStarThread = new std::thread([=, &foundCurrentCharacter]()
+			oneStarThread = std::make_unique<std::thread>([=, &foundCurrentCharacter]()
 				{
 					for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
 					{
@@ -96,11 +95,10 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 						webManager->ChangeCharacterName(utility::stdStr2system(event_owner));
 					}
 				});
-
 		}
 		else if (it.key() == "2_star")
 		{
-			twoStarThread = new std::thread([=, &foundCurrentCharacter]()
+			twoStarThread = std::make_unique<std::thread>([=, &foundCurrentCharacter]()
 				{
 					for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
 					{
@@ -122,7 +120,7 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 		}
 		else if (it.key() == "3_star")
 		{
-			threeStarThread = new std::thread([=, &foundCurrentCharacter]()
+			threeStarThread = std::make_unique<std::thread>([=, &foundCurrentCharacter]()
 				{
 					for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
 					{
@@ -148,11 +146,6 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 	oneStarThread->join();
 	twoStarThread->join();
 	threeStarThread->join();
-
-
-	delete oneStarThread;
-	delete twoStarThread;
-	delete threeStarThread;
 
 	return foundCurrentCharacter;
 	//return !_currentCharacterInfoDict["event_owner"].empty();
@@ -358,10 +351,9 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 
 	std::vector<UmaEventRoute> similarDataList = {};
 
-
-	std::thread* rStarThread = nullptr;
-	std::thread* srStarThread = nullptr;
-	std::thread* ssrStarThread = nullptr;
+	std::unique_ptr<std::thread> rStarThread;
+	std::unique_ptr<std::thread> srStarThread;
+	std::unique_ptr<std::thread> ssrStarThread;
 
 
 	for (json::iterator it = event_data_json["support_card"].begin(); it != event_data_json["support_card"].end(); ++it)
@@ -369,7 +361,7 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 		// it == rare;
 		if (it.key() == "R")
 		{
-			rStarThread = new std::thread([=, &similarDataList]()
+			rStarThread = std::make_unique<std::thread>([=, &similarDataList]()
 				{
 					for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
 					{
@@ -400,7 +392,7 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 		}
 		else if (it.key() == "SR")
 		{
-			srStarThread = new std::thread([=, &similarDataList]()
+			srStarThread = std::make_unique<std::thread>([=, &similarDataList]()
 				{
 					for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
 					{
@@ -431,7 +423,7 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 		}
 		else if (it.key() == "SSR")
 		{
-			ssrStarThread = new std::thread([=, &similarDataList]()
+			ssrStarThread = std::make_unique<std::thread>([=, &similarDataList]()
 				{
 					for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
 					{
@@ -511,11 +503,6 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 			break;
 		}
 	}
-
-	delete rStarThread;
-	delete srStarThread;
-	delete ssrStarThread;
-
 
 	//for (const auto& choice_info : event_data_json["support_card"][maxElement->rare][maxElement->event_owner]["event"][maxElement->event_title])
 	//{

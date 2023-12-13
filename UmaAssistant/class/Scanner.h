@@ -17,16 +17,15 @@
 #include "../enum/ImageType.h"
 
 
+const std::string INIT_EVENT_TITLE_TEXT = "INIT_EVENT_TITLE_TEXT";
+const std::string INIT_HENSEI_CHAR_NAME_TEXT = "INIT_HENSEI_CHAR_NAME_TEXT";
+
 class Scanner
 {
 private:
 	Scanner() {};
 
 	static Scanner* _instance;
-
-	static std::string _previousEventText;
-	static std::string _previousCharacterNameText;
-	static std::string _previousHenseiCharacterNameText;
 
 	static bool _scanning;
 
@@ -44,6 +43,12 @@ private:
 	void UpdateCharChoice(WebManager* webManager, UmaEventData charUmaEventData);
 
 	void UpdateScenarioChoice(WebManager* webManager, ScenarioEventData scenarioEventData);
+
+	std::string _previousEventText = INIT_EVENT_TITLE_TEXT;
+	std::string _previousCharacterNameText;
+	std::string _previousHenseiCharNameText = INIT_HENSEI_CHAR_NAME_TEXT;
+
+	bool _updatedChoice = false;
 
 public:
 	static Scanner* GetInstance()

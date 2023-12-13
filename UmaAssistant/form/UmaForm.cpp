@@ -75,7 +75,7 @@ namespace UmaAssistant
 
 		//utility::IsSimilar(u8"灰簾石の瞳", u8"色雇五のだ睡");
 
-		std::cout << "Similarity: " << utility::GetSimilarity(u8"競賽獲勝!", u8"競賽獲勝！") << std::endl;
+		//std::cout << "Similarity: " << utility::GetSimilarity(u8"競賽獲勝!", u8"競賽獲勝！") << std::endl;
 
 		//utility::GetCharacterNameSimilarity(u8"キセキの白星オグリキャップ", u8"オグリキャップ（キセキの白星）");
 	}
@@ -83,8 +83,9 @@ namespace UmaAssistant
 	System::Void UmaForm::scan_btn_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		Scanner* scanner = Scanner::GetInstance();
-
 		FileManager* fileManager = FileManager::GetInstance();
+		UmaLog* umalog = UmaLog::GetInstance();
+
 		json config = fileManager->ReadJson(global::path::std_config);
 		if (!global::umaswitch::Scanning)
 		{
@@ -92,12 +93,11 @@ namespace UmaAssistant
 			{
 			case static_cast<int>(GameServerType::JP):
 				scanner->Start("jpn");
-				
-				std::cout << "scanner GameServer: JP" << std::endl;
+				umalog->print("[Scanner] GameServer: JP");
 				break;
 			case static_cast<int>(GameServerType::TW):
 				scanner->Start("chi_tra");
-				std::cout << "scanner GameServer: TW" << std::endl;
+				umalog->print("[Scanner] GameServer: TW");
 				break;
 			}
 			

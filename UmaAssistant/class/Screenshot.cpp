@@ -24,6 +24,9 @@ cv::Mat Screenshot::hensei_character_name_gray_bin_inv;
 cv::Mat Screenshot::syousai_character_name_gray_bin;
 #pragma endregion
 
+
+
+
 bool Screenshot::IsWindowCovered(HWND gameHWND)
 {
 	RECT gameWindowRect;
@@ -59,8 +62,12 @@ bool Screenshot::IsWindowCovered(HWND gameHWND)
 	return false;
 }
 
+
+
 cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 {
+	UmaLog* umalog = UmaLog::GetInstance();
+
 	//HWND gameHWND = FindWindow(nullptr, L"umamusume");
 	//if (gameHWND == NULL) { std::cout << u8"找不到遊戲視窗" << std::endl; return cv::Mat(); }
 	HWND gameHWND = GameWindowFinder::GetInstance()->GetCurrentGameWindow();
@@ -81,19 +88,20 @@ cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 
 	if (rcClient.left != 0 || rcClient.top != 0)
 	{
-		printf(u8"遊戲視窗的 reClient 發生異常！有可能視窗正在被關閉。reClient.left: %d, reClient.top: %d", rcClient.left, rcClient.top);
+		//printf(u8"遊戲視窗的 reClient 發生異常！有可能視窗正在被關閉。rcClient.left: %d, rcClient.top: %d", rcClient.left, rcClient.top);
+		umalog->print(u8"遊戲視窗的 reClient 發生異常！有可能視窗正在被關閉。reClient.left: ", rcClient.left, "rcClient.top: ", rcClient.top);
 		return cv::Mat();
 	}
 
 	if (rcClient.left <= 0 && rcClient.right <= 0 && rcClient.top <= 0 && rcClient.bottom <= 0)
 	{
-		std::cout << u8"視窗被最小化" << std::endl;
+		umalog->print(u8"視窗被最小化");
 		return cv::Mat();
 	}
 
 	if (rcClient.right - rcClient.left > rcClient.bottom - rcClient.top)
 	{
-		std::cout << u8"視窗處於橫向狀態" << std::endl;
+		umalog->print(u8"視窗處於橫向狀態");
 		return cv::Mat();
 	}
 
@@ -462,14 +470,20 @@ Screenshot::Screenshot()
 	oimg = this->hwnd2mat();
 	if (oimg.empty()) return;
 
+	UmaLog* umalog = UmaLog::GetInstance();
+
 	// event_icon
 	try
 	{
 		this->GetEventIconImage(); // 優先獲取 EventIconImage
 	}
+	catch (const std::exception& e)
+	{
+		umalog->print("[std::exception] GetEventIconImage:", e.what());
+	}
 	catch (System::Exception^ ex)
 	{
-		System::Console::WriteLine("GetEventIconImage Caught exception: " + ex->Message);
+		umalog->print("[System::Exception] GetEventIconImage: ", utility::systemStr2std(ex->Message));
 	}
 	
 
@@ -478,10 +492,15 @@ Screenshot::Screenshot()
 	{
 		this->GetEventTitleImage();
 	}
+	catch (const std::exception& e)
+	{
+		umalog->print("[std::exception] GetEventTitleImage:", e.what());
+	}
 	catch (System::Exception^ ex)
 	{
-		System::Console::WriteLine("GetEventTitleImage Caught exception: " + ex->Message);
+		umalog->print("[System::Exception] GetEventTitleImage: ", utility::systemStr2std(ex->Message));
 	}
+	
 	
 	
 
@@ -490,9 +509,13 @@ Screenshot::Screenshot()
 	{
 		this->GetHenseiCharacterNameImage();
 	}
+	catch (const std::exception& e)
+	{
+		umalog->print("[std::exception] GetHenseiCharacterNameImage:", e.what());
+	}
 	catch (System::Exception^ ex)
 	{
-		System::Console::WriteLine("GetHenseiCharacterNameImage Caught exception: " + ex->Message);
+		umalog->print("[System::Exception] GetHenseiCharacterNameImage: ", utility::systemStr2std(ex->Message));
 	}
 	
 

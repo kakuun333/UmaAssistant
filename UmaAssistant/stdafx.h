@@ -59,6 +59,7 @@ using json = nlohmann::json;
 #include "class/Config.h"
 #include "class/AutoMouseClicker.h"
 #include "class/UmaTimer.h"
+#include "class/UmaLog.h"
 
 // ¨ü±±
 #include "class/ref/FormDesigner.h"
