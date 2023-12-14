@@ -2,9 +2,9 @@
 
 ## 文檔語言｜ドキュメント言語
 <p align="center">
-  <a href="./README.md">繁體中文</a> |
-  <a href="./README_jp.md">日本語</a>
+  <a href="./README.md">繁體中文</a>｜<a href="./README_jp.md">日本語</a>
 </p>
+
 
 ## 簡介
 本軟體會自動辨識 DMM 版、BlueStacks 模擬器視窗中賽馬娘的事件，並給予可能的選項效果、提供選項效果中技能的詳細資訊。
@@ -13,9 +13,9 @@
 ### 事件選項效果
 ![052953](https://github.com/kakuun333/UmaAssistant/assets/81919641/27ca31f8-8f27-499e-ab3f-8a3b3b70c40a)
 ### 技能預覽
-- 白技能  
+#### 白技能  
 ![053007](https://github.com/kakuun333/UmaAssistant/assets/81919641/33f1f0ad-58b8-42a3-9232-22a019686354)
-- 金技能  
+#### 金技能  
 ![065204](https://github.com/kakuun333/UmaAssistant/assets/81919641/7b5bec42-0325-4710-af0b-45e12b23c05d)
 
 ## 運作環境
@@ -51,7 +51,7 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 ![123107](https://github.com/kakuun333/UmaAssistant/assets/81919641/c9b3b850-6fc8-49a2-8478-1be5147df02f)
 
 > [!NOTE]
-> 設定檔將保存在`UmaMisc\config.json`。
+> 設定檔將保存在`UmaMisc/config.json`。
 
 
 - 伺服器：請選擇適當的伺服器，選錯伺服器將無法辨識事件。
@@ -72,7 +72,7 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 
 - 輸出偵錯日誌：開啟後會把日誌輸出到`UmaTemp/UmaLog.txt`，每一次啟動程式都會刪除上一個`UmaLog.txt`，如果你願意的話可以勾選此選項，遇到問題要回報時可以附上`UmaLog.txt`，這樣可以更好地判斷問題出在哪裡。
 
-- Debug模式：基本上是開發者做使用的。
+- Debug模式：基本上只給開發者做使用。
 
 ### 2. 選取遊戲視窗  
 按下「選取視窗」，選擇對應的遊戲視窗名稱，之後應該要看到「已找到遊戲視窗」。
@@ -88,13 +88,15 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 
 
 #### 方法一
-`適用於還沒開始培育的情況。`  
+> **適用於還沒開始培育的情況。**
+
 在配置支援卡的畫面按下「育成開始！」等待`1~2`秒後「目前培育的馬娘」應該要更新為「最終確認」所顯示的馬娘名稱，如果沒有更新的話，請參考[常見問題](https://github.com/kakuun333/UmaAssistant#%E5%B8%B8%E8%A6%8B%E5%95%8F%E9%A1%8C)  
 ![195346](https://github.com/kakuun333/UmaAssistant/assets/81919641/301e784a-acd3-48b3-9431-69086cec6df0)  
 ![195532](https://github.com/kakuun333/UmaAssistant/assets/81919641/5b9f2dbf-e5bf-4d5c-8d07-a89344d041f0)  
 
 #### 方法二
-`適用於已經開始培育的情況。`
+> **適用於已經開始培育的情況。**
+
 按右下角的![option_button](https://github.com/kakuun333/UmaAssistant/assets/81919641/05802803-bdbb-4693-a0fe-be969ef93c87)後，選擇「編成情報」，等待`1~2`秒後「目前培育的馬娘」應該要更新為「編成情報」所顯示的馬娘名稱，如果沒有更新的話，請參考[常見問題](https://github.com/kakuun333/UmaAssistant#%E5%B8%B8%E8%A6%8B%E5%95%8F%E9%A1%8C)  
 ![2](https://github.com/kakuun333/UmaAssistant/assets/81919641/3fbd26b7-b934-4c1c-9cbd-a03689066d71)  
 ![3](https://github.com/kakuun333/UmaAssistant/assets/81919641/b9173e1d-24cb-42b8-9e2c-647e69c03de4)  
