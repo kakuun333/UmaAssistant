@@ -4858,6 +4858,18 @@
             ]
           },
           {
+            "欸，我的打工……這麼糟嗎？": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span>",
+                "choice_title": "肉体労働！"
+              },
+              {
+                "choice_effect": "<span class=\"skill_hint\">『阪神賽場◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
+                "choice_title": "焼きそば調理！"
+              }
+            ]
+          },
+          {
             "暴飲暴食無罪！": [
               {
                 "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+5</span>",
@@ -18408,6 +18420,18 @@
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>",
                 "choice_title": "『JAM・奇跡の弾倉』"
+              }
+            ]
+          },
+          {
+            "欸，我的打工……這麼糟嗎？": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span>",
+                "choice_title": "肉体労働！"
+              },
+              {
+                "choice_effect": "<span class=\"skill_hint\">『阪神賽場◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
+                "choice_title": "焼きそば調理！"
               }
             ]
           },
@@ -39002,11 +39026,11 @@
           {
             "尋找興趣": [
               {
-                "choice_effect": "體力<span class=\"status_plus_value\">+20~28</span><br>幹勁提升<br>技能點<span class=\"status_plus_value\">+15~18</span><br>桐生院トレーナー的情誼量條<span class=\"status_plus_value\">+5</span><br>可以與桐生院訓練師出門<br>※數値會根據支援效果有所變動",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20~28</span><br>幹勁提升<br>技能點<span class=\"status_plus_value\">+15~18</span><br>桐生院訓練師的情誼量條<span class=\"status_plus_value\">+5</span><br>可以與桐生院訓練師出門<br>※數値會根據支援效果有所變動",
                 "choice_title": "ございます！"
               },
               {
-                "choice_effect": "幹勁下降<br><span class=\"skill_hint\">『喜歡獨處◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>桐生院トレーナー的情誼量條<span class=\"status_minus_value\">-5</span>",
+                "choice_effect": "幹勁下降<br><span class=\"skill_hint\">『喜歡獨處◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>桐生院訓練師的情誼量條<span class=\"status_minus_value\">-5</span>",
                 "choice_title": "特には･･････"
               }
             ]
@@ -39022,7 +39046,7 @@
           {
             "同期的桐生院訓練員": [
               {
-                "choice_effect": "幹勁提升<br>技能點<span class=\"status_plus_value\">+15~18</span><br>桐生院トレーナー的情誼量條<span class=\"status_plus_value\">+5</span><br>※數値會根據支援效果有所變動",
+                "choice_effect": "幹勁提升<br>技能點<span class=\"status_plus_value\">+15~18</span><br>桐生院訓練師的情誼量條<span class=\"status_plus_value\">+5</span><br>※數値會根據支援效果有所變動",
                 "choice_title": "無選項"
               }
             ]
@@ -39030,7 +39054,7 @@
           {
             "辛苦了！": [
               {
-                "choice_effect": "隨機幹勁提升<br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+3</span><br>桐生院トレーナー的情誼量條<span class=\"status_plus_value\">+5</span><br>※発生条件:桐生院葵と同じ練習後に隨機発生",
+                "choice_effect": "隨機幹勁提升<br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+3</span><br>桐生院訓練師的情誼量條<span class=\"status_plus_value\">+5</span><br>※発生条件:桐生院葵と同じ練習後に隨機発生",
                 "choice_title": "無選項"
               }
             ]
@@ -39046,11 +39070,11 @@
           {
             "訓練員心得「力求不斷改善指導內容」": [
               {
-                "choice_effect": "體力<span class=\"status_plus_value\">+10~14</span><br>技能點<span class=\"status_plus_value\">+15~18</span><br>桐生院トレーナー的情誼量條<span class=\"status_plus_value\">+5</span><br>※數値會根據支援效果有所變動",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10~14</span><br>技能點<span class=\"status_plus_value\">+15~18</span><br>桐生院訓練師的情誼量條<span class=\"status_plus_value\">+5</span><br>※數値會根據支援效果有所變動",
                 "choice_title": "あまり無理はなさらずに"
               },
               {
-                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5~6</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5~6</span><br>桐生院トレーナー的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5~6</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5~6</span><br>桐生院訓練師的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "『トレーナー白書』見てみたいです"
               }
             ]
@@ -40888,11 +40912,11 @@
           {
             "尋找興趣": [
               {
-                "choice_effect": "體力<span class=\"status_plus_value\">+20~30</span><br>幹勁提升<br>技能點<span class=\"status_plus_value\">+15~19</span><br>桐生院トレーナー的情誼量條<span class=\"status_plus_value\">+5</span><br>可以與桐生院訓練師出門<br>※數値會根據支援效果有所變動",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20~30</span><br>幹勁提升<br>技能點<span class=\"status_plus_value\">+15~19</span><br>桐生院訓練師的情誼量條<span class=\"status_plus_value\">+5</span><br>可以與桐生院訓練師出門<br>※數値會根據支援效果有所變動",
                 "choice_title": "ございます！"
               },
               {
-                "choice_effect": "幹勁下降<br><span class=\"skill_hint\">『喜歡獨處◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>桐生院トレーナー的情誼量條<span class=\"status_minus_value\">-5</span>",
+                "choice_effect": "幹勁下降<br><span class=\"skill_hint\">『喜歡獨處◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>桐生院訓練師的情誼量條<span class=\"status_minus_value\">-5</span>",
                 "choice_title": "特には……"
               }
             ]
@@ -40908,7 +40932,7 @@
           {
             "同期的桐生院訓練員": [
               {
-                "choice_effect": "幹勁提升<br>技能點<span class=\"status_plus_value\">+15~39</span><br>桐生院トレーナー的情誼量條<span class=\"status_plus_value\">+5~10</span><br>※シナリオリンク、數値會根據支援效果有所變動",
+                "choice_effect": "幹勁提升<br>技能點<span class=\"status_plus_value\">+15~39</span><br>桐生院訓練師的情誼量條<span class=\"status_plus_value\">+5~10</span><br>※シナリオリンク、數値會根據支援效果有所變動",
                 "choice_title": "無選項"
               }
             ]
@@ -40916,7 +40940,7 @@
           {
             "辛苦了！": [
               {
-                "choice_effect": "幹勁提升<br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+3</span><br>桐生院トレーナー的情誼量條<span class=\"status_plus_value\">+5~7</span><br>※発生条件:桐生院葵と同じ練習後に隨機発生、シナリオリンクにより数値が変動",
+                "choice_effect": "幹勁提升<br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+3</span><br>桐生院訓練師的情誼量條<span class=\"status_plus_value\">+5~7</span><br>※発生条件:桐生院葵と同じ練習後に隨機発生、シナリオリンクにより数値が変動",
                 "choice_title": "無選項"
               }
             ]
@@ -40932,11 +40956,11 @@
           {
             "訓練員心得「力求不斷改善指導內容」": [
               {
-                "choice_effect": "體力<span class=\"status_plus_value\">+10~15</span><br>技能點<span class=\"status_plus_value\">+15~19</span><br>桐生院トレーナー的情誼量條<span class=\"status_plus_value\">+5</span><br>※數値會根據支援效果有所變動",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10~15</span><br>技能點<span class=\"status_plus_value\">+15~19</span><br>桐生院訓練師的情誼量條<span class=\"status_plus_value\">+5</span><br>※數値會根據支援效果有所變動",
                 "choice_title": "あまり無理はなさらずに"
               },
               {
-                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5~6</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5~6</span><br>桐生院トレーナー的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5~6</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5~6</span><br>桐生院訓練師的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "『トレーナー白書』見てみたいです"
               }
             ]
@@ -43802,7 +43826,7 @@
           {
             "辛苦了": [
               {
-                "choice_effect": "隨機幹勁提升<br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+3</span><br>樫本理子的情誼量條<span class=\"status_plus_value\">+5~7</span><br>※発生条件:樫本理子と同じ練習後に隨機発生",
+                "choice_effect": "隨機幹勁提升<br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+3</span><br>樫本理子的情誼量條<span class=\"status_plus_value\">+5~7</span><br>※發生條件：與樫本理子一起練習後隨機發生",
                 "choice_title": "無選項"
               }
             ]
@@ -45970,7 +45994,7 @@
           {
             "辛苦了": [
               {
-                "choice_effect": "隨機幹勁提升<br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+3</span><br>樫本理子的情誼量條<span class=\"status_plus_value\">+5~7</span><br>※発生条件:樫本理子と同じ練習後に隨機発生",
+                "choice_effect": "隨機幹勁提升<br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+3</span><br>樫本理子的情誼量條<span class=\"status_plus_value\">+5~7</span><br>※發生條件：與樫本理子一起練習後隨機發生",
                 "choice_title": "無選項"
               }
             ]

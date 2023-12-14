@@ -278,7 +278,11 @@ void Scanner::Start(std::string language)
 				UmaEventData sapokaUmaEventData;
 				ScenarioEventData scenarioEventData;
 
-				eventText = this->GetScannedText(ss.event_title_gray_bin, language);
+				if (ss.IsEventTitle())
+				{
+					eventText = this->GetScannedText(ss.event_title_gray_bin, language);
+				}
+				
 
 				if (!dataManager->IsCurrentCharacterInfoLocked())
 				{
@@ -292,7 +296,7 @@ void Scanner::Start(std::string language)
 				* 如果 eventText 是空字串就再用其他圖片比較
 				* 如果還是空字串才算是真的空字串
 				*/
-				if (eventText.empty() && dataManager->IsCurrentCharacterInfoLocked())
+				if (eventText.empty() && dataManager->IsCurrentCharacterInfoLocked() && ss.IsEventTitle())
 				{
 					std::unique_ptr<std::thread> testThread, test2Thread;
 
@@ -370,7 +374,7 @@ void Scanner::Start(std::string language)
 											henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin_inv, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
 											if (!henseiCharNameText.empty()) umalog->print(u8"[Scanner] hensei_character_name_gray_bin_inv: ", henseiCharNameText);
 											
-
+											std::unique_lock<std::mutex> lock(dataMutex); // 以防萬一
 											if (!foundHenseiChar)
 											{
 												if (dataManager->TryGetCurrentCharacterName(henseiCharNameText))
@@ -383,7 +387,7 @@ void Scanner::Start(std::string language)
 											henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
 											if (!henseiCharNameText.empty()) umalog->print(u8"[Scanner] hensei_character_name_gray_bin: ", henseiCharNameText);
 											
-
+											std::unique_lock<std::mutex> lock(dataMutex); // 以防萬一
 											if (!foundHenseiChar)
 											{
 												if (dataManager->TryGetCurrentCharacterName(henseiCharNameText))
@@ -421,12 +425,14 @@ void Scanner::Start(std::string language)
 				}
 #pragma endregion
 
-				if (_previousEventText != eventText)
+
+#pragma region 尋找 character 或 sapoka 或 scenario 的事件
+				if (_previousEventText != eventText && ss.IsEventTitle())
 				{
 					_updatedChoice = false;
 
 
-#pragma region 更新 CharChoice
+					// 更新 CharChoice
 					if (dataManager->IsCurrentCharacterInfoLocked())
 					{
 						charUmaEventData = dataManager->GetCurrentCharacterUmaEventData(eventText);
@@ -437,7 +443,7 @@ void Scanner::Start(std::string language)
 							_updatedChoice = true;
 						}
 					}
-#pragma endregion
+
 
 					if (!charUmaEventData.IsDataComplete())
 					{
@@ -566,7 +572,7 @@ void Scanner::Start(std::string language)
 
 					}
 				}
-				else if (_previousEventText == eventText && _updatedChoice == false)
+				else if (_previousEventText == eventText && _updatedChoice == false && ss.IsEventTitle())
 				{
 					charUmaEventData = dataManager->GetCurrentCharacterUmaEventData(eventText);
 					sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
@@ -596,6 +602,7 @@ void Scanner::Start(std::string language)
 				{
 					umalog->print(u8"[Scanner] eventText 偵測結果與上次一致");
 				}
+#pragma endregion
 
 
 				// 如果有 tryCharThread 就等待它執行完畢

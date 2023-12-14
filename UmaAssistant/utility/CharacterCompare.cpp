@@ -32,11 +32,14 @@ namespace utility
 
 	std::vector<std::string> SplitJpnChar(std::string input)
 	{
-		//if (input.size() < UTF8_CHAR_SIZE * 1)
-		//{
-		//	std::cout << u8"文字長度不足一個字" << std::endl;
-		//	return std::vector<std::string>::;
-		//}
+		const int MINIMUM_UTF8_CHAR_COUNT = 2;
+
+		// 文字大小不足 MINIMUM_CHAR_COUNT 個 utf-8
+		if (input.length() < UTF8_CHAR_BYTE * MINIMUM_UTF8_CHAR_COUNT)
+		{
+			//std::cout << u8"文字大小不足 " << MINIMUM_UTF8_CHAR_COUNT << " 個 utf-8" << std::endl;
+			return std::vector<std::string>();
+		}
 
 		std::string currentChar;
 		std::vector<std::string> char_list;
@@ -386,7 +389,6 @@ namespace utility
 			std::vector<std::string> jpnchar_list_1 = utility::SplitJpnChar(str1);
 			std::vector<std::string> jpnchar_list_2 = utility::SplitJpnChar(str2);
 
-
 			int firstSameCount = GetSameCount(jpnchar_list_1, jpnchar_list_2);
 			if (firstSameCount <= 0) return false;
 			if ((firstSameCount / totalCount) * 100 < SIMILAR_METRIC) return false;
@@ -532,6 +534,7 @@ namespace utility
 			std::vector<std::string> jpnchar_list_1 = utility::SplitJpnChar(str1);
 			std::vector<std::string> jpnchar_list_2 = utility::SplitJpnChar(str2);
 
+			if (jpnchar_list_1.empty() || jpnchar_list_2.empty()) return NOT_SIMILAR;
 
 			int firstSameCount = GetSameCount(jpnchar_list_1, jpnchar_list_2);
 			if (firstSameCount <= 0) return NOT_SIMILAR;
@@ -585,6 +588,8 @@ namespace utility
 
 			std::vector<std::string> jpnchar_list_1 = utility::SplitJpnChar(str1);
 			std::vector<std::string> jpnchar_list_2 = utility::SplitJpnChar(str2);
+
+			if (jpnchar_list_1.empty() || jpnchar_list_2.empty()) return NOT_SIMILAR;
 
 			int firstSameCount = GetSameCount(jpnchar_list_1, jpnchar_list_2);
 
@@ -643,6 +648,8 @@ namespace utility
 
 			std::vector<std::string> jpnchar_list_1 = utility::SplitJpnChar(str1);
 			std::vector<std::string> jpnchar_list_2 = utility::SplitJpnChar(str2);
+
+			if (jpnchar_list_1.empty() || jpnchar_list_2.empty()) return NOT_SIMILAR;
 
 			int firstSameCount = GetSameCount(jpnchar_list_2, jpnchar_list_1);
 

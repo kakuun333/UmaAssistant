@@ -85,12 +85,17 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 						std::string event_owner = it2.key();
 
 						if (utility::SIMILAR_METRIC > utility::GetCharacterNameSimilarity(scanned_text, event_owner)) continue;
+
+						// 以防萬一，加上互斥鎖保護共享資源
+						std::unique_lock<std::mutex> lock(dataMutex); 
+						foundCurrentCharacter = true;
+						lock.unlock();
+
 						std::cout << "FOUND CHARACTER: " << event_owner << std::endl;
 
 						_currentCharacterInfoDict["rare"] = it.key();
 						_currentCharacterInfoDict["event_owner"] = event_owner;
 						_currentCharacterInfoLocked = true;
-						foundCurrentCharacter = true;
 
 						webManager->ChangeCharacterName(utility::stdStr2system(event_owner));
 					}
@@ -107,12 +112,17 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 						std::string event_owner = it2.key();
 
 						if (utility::SIMILAR_METRIC > utility::GetCharacterNameSimilarity(scanned_text, event_owner)) continue;
+
+						// 以防萬一，加上互斥鎖保護共享資源
+						std::unique_lock<std::mutex> lock(dataMutex);
+						foundCurrentCharacter = true;
+						lock.unlock();
+
 						std::cout << "FOUND CHARACTER: " << event_owner << std::endl;
 
 						_currentCharacterInfoDict["rare"] = it.key();
 						_currentCharacterInfoDict["event_owner"] = event_owner;
 						_currentCharacterInfoLocked = true;
-						foundCurrentCharacter = true;
 
 						webManager->ChangeCharacterName(utility::stdStr2system(event_owner));
 					}
@@ -129,12 +139,17 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 						std::string event_owner = it2.key();
 
 						if (utility::SIMILAR_METRIC > utility::GetCharacterNameSimilarity(scanned_text, event_owner)) continue;
+
+						// 以防萬一，加上互斥鎖保護共享資源
+						std::unique_lock<std::mutex> lock(dataMutex); 
+						foundCurrentCharacter = true;
+						lock.unlock();
+
 						std::cout << "FOUND CHARACTER: " << event_owner << std::endl;
 
 						_currentCharacterInfoDict["rare"] = it.key();
 						_currentCharacterInfoDict["event_owner"] = event_owner;
 						_currentCharacterInfoLocked = true;
-						foundCurrentCharacter = true;
 
 						webManager->ChangeCharacterName(utility::stdStr2system(event_owner));
 					}
@@ -383,7 +398,9 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 									eventRoute.event_title = choice.key();
 									eventRoute.similarity = similarity;
 
+									std::unique_lock<std::mutex> lock(dataMutex);
 									similarDataList.push_back(eventRoute);
+									lock.unlock();
 								}
 							}
 						}
@@ -414,7 +431,9 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 									eventRoute.event_title = choice.key();
 									eventRoute.similarity = similarity;
 
+									std::unique_lock<std::mutex> lock(dataMutex);
 									similarDataList.push_back(eventRoute);
+									lock.unlock();
 								}
 							}
 						}
@@ -445,7 +464,9 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 									eventRoute.event_title = choice.key();
 									eventRoute.similarity = similarity;
 
+									std::unique_lock<std::mutex> lock(dataMutex);
 									similarDataList.push_back(eventRoute);
+									lock.unlock();
 								}
 							}
 						}

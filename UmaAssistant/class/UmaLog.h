@@ -39,6 +39,8 @@ public:
 
 	static void init(std::string logFilePath)
 	{
+		if (_file.is_open()) return;
+
 		// 先刪除之前的 UmaLog.txt
 		std::ifstream file(logFilePath);
 		if (file.good())
@@ -52,9 +54,10 @@ public:
 		_file = std::fstream(logFilePath, std::ios::out | std::ios::app);
 	}
 
-	void close()
+	static void close()
 	{
-		_file.close();
+		if (_file.is_open())
+			_file.close();
 	}
 
 	// https://cpprefjp.github.io/lang/cpp11/variadic_templates.html

@@ -35,6 +35,8 @@ private:
 
 	// 互斥鎖。用於保護 OCR 物件
 	std::mutex ocrMutex;
+	
+	std::mutex dataMutex;
 
 	std::string GetScannedText(cv::Mat image, std::string language, ImageType imgType);
 

@@ -21,19 +21,24 @@ namespace UmaAssistant
 	public:
 		SettingsForm(void);
 
+		// Form
 		void FormClosingHandler(Object^ sender, FormClosingEventArgs^ e);
 
+		// TextBox
 		void DigitOnly_TextBox_KeyPress(Object^ sender, KeyPressEventArgs^ e);
-
 		void serverPortTextBox_TextChanged(Object^ sender, EventArgs^ e);
-
 		void scanInterval_textBox_TextChanged(Object^ sender, EventArgs^ e);
 
+		// RadioButton
 		void GameServerRadioButtonChanged(Object^ sender, EventArgs^ e);
-
 		void GameWindowRadioButtonChanged(Object^ sender, EventArgs^ e);
-
 		void JpServerLangRadioButtonChanged(Object^ sender, EventArgs^ e);
+
+		// CheckBox
+		void alwaysOnTop_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+		void debugMode_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+		void autoMouceClick_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+		void outputLogFile_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 
 	protected:
 		/// <summary>
@@ -83,8 +88,6 @@ namespace UmaAssistant
 
 	private: System::Windows::Forms::Label^ label3;
 	public: System::Windows::Forms::CheckBox^ autoMouceClick_checkBox;
-	private:
-
 	public: System::Windows::Forms::CheckBox^ alwaysOnTop_checkBox;
 
 	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel1;
@@ -102,11 +105,10 @@ namespace UmaAssistant
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::TextBox^ scanInterval_textBox;
 	private: System::Windows::Forms::Label^ label6;
+	public: System::Windows::Forms::CheckBox^ outputLogFile_checkBox;
+	private:
 
-
-
-
-	public:
+	public: System::Windows::Forms::Button^ default_btn;
 	private:
 		System::Drawing::Point dragOffset;
 
@@ -138,6 +140,7 @@ namespace UmaAssistant
 			this->autoMouceClick_checkBox = (gcnew System::Windows::Forms::CheckBox());
 			this->alwaysOnTop_checkBox = (gcnew System::Windows::Forms::CheckBox());
 			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->outputLogFile_checkBox = (gcnew System::Windows::Forms::CheckBox());
 			this->tableLayoutPanel3 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->autoMouseClickKey_textBox = (gcnew System::Windows::Forms::TextBox());
 			this->tableLayoutPanel4 = (gcnew System::Windows::Forms::TableLayoutPanel());
@@ -149,6 +152,7 @@ namespace UmaAssistant
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->scanInterval_textBox = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->default_btn = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->icon_pictureBox))->BeginInit();
 			this->tableLayoutPanel1->SuspendLayout();
 			this->tableLayoutPanel2->SuspendLayout();
@@ -170,9 +174,9 @@ namespace UmaAssistant
 			this->update_event_data_jp_btn1->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->update_event_data_jp_btn1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->update_event_data_jp_btn1->Location = System::Drawing::Point(3, 71);
+			this->update_event_data_jp_btn1->Location = System::Drawing::Point(3, 105);
 			this->update_event_data_jp_btn1->Name = L"update_event_data_jp_btn1";
-			this->update_event_data_jp_btn1->Size = System::Drawing::Size(360, 40);
+			this->update_event_data_jp_btn1->Size = System::Drawing::Size(240, 40);
 			this->update_event_data_jp_btn1->TabIndex = 0;
 			this->update_event_data_jp_btn1->Text = L"更新 event_data_jp.json";
 			this->update_event_data_jp_btn1->UseVisualStyleBackColor = false;
@@ -189,9 +193,9 @@ namespace UmaAssistant
 			this->update_skill_data_jp_btn1->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->update_skill_data_jp_btn1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->update_skill_data_jp_btn1->Location = System::Drawing::Point(3, 117);
+			this->update_skill_data_jp_btn1->Location = System::Drawing::Point(3, 151);
 			this->update_skill_data_jp_btn1->Name = L"update_skill_data_jp_btn1";
-			this->update_skill_data_jp_btn1->Size = System::Drawing::Size(360, 40);
+			this->update_skill_data_jp_btn1->Size = System::Drawing::Size(240, 40);
 			this->update_skill_data_jp_btn1->TabIndex = 1;
 			this->update_skill_data_jp_btn1->Text = L"更新 skill_data_jp.json";
 			this->update_skill_data_jp_btn1->UseVisualStyleBackColor = false;
@@ -267,13 +271,12 @@ namespace UmaAssistant
 			this->debugMode_checkBox->FlatAppearance->CheckedBackColor = System::Drawing::Color::Black;
 			this->debugMode_checkBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->debugMode_checkBox->Location = System::Drawing::Point(3, 37);
+			this->debugMode_checkBox->Location = System::Drawing::Point(3, 71);
 			this->debugMode_checkBox->Name = L"debugMode_checkBox";
 			this->debugMode_checkBox->Size = System::Drawing::Size(121, 28);
 			this->debugMode_checkBox->TabIndex = 27;
 			this->debugMode_checkBox->Text = L"Debug 模式";
 			this->debugMode_checkBox->UseVisualStyleBackColor = false;
-			this->debugMode_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::debugMode_checkBox_CheckedChanged);
 			// 
 			// label1
 			// 
@@ -433,7 +436,6 @@ namespace UmaAssistant
 			this->autoMouceClick_checkBox->TabIndex = 36;
 			this->autoMouceClick_checkBox->Text = L"滑鼠連點";
 			this->autoMouceClick_checkBox->UseVisualStyleBackColor = false;
-			this->autoMouceClick_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::autoMouceClick_checkBox_CheckedChanged);
 			// 
 			// alwaysOnTop_checkBox
 			// 
@@ -449,20 +451,35 @@ namespace UmaAssistant
 			this->alwaysOnTop_checkBox->TabIndex = 37;
 			this->alwaysOnTop_checkBox->Text = L"顯示在最上層";
 			this->alwaysOnTop_checkBox->UseVisualStyleBackColor = false;
-			this->alwaysOnTop_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::alwaysOnTop_checkBox_CheckedChanged);
 			// 
 			// flowLayoutPanel1
 			// 
 			this->flowLayoutPanel1->BackColor = System::Drawing::Color::Transparent;
 			this->flowLayoutPanel1->Controls->Add(this->alwaysOnTop_checkBox);
+			this->flowLayoutPanel1->Controls->Add(this->outputLogFile_checkBox);
 			this->flowLayoutPanel1->Controls->Add(this->debugMode_checkBox);
 			this->flowLayoutPanel1->Controls->Add(this->update_event_data_jp_btn1);
 			this->flowLayoutPanel1->Controls->Add(this->update_skill_data_jp_btn1);
 			this->flowLayoutPanel1->FlowDirection = System::Windows::Forms::FlowDirection::TopDown;
 			this->flowLayoutPanel1->Location = System::Drawing::Point(6, 364);
 			this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
-			this->flowLayoutPanel1->Size = System::Drawing::Size(368, 164);
+			this->flowLayoutPanel1->Size = System::Drawing::Size(247, 204);
 			this->flowLayoutPanel1->TabIndex = 39;
+			// 
+			// outputLogFile_checkBox
+			// 
+			this->outputLogFile_checkBox->AutoSize = true;
+			this->outputLogFile_checkBox->BackColor = System::Drawing::Color::Transparent;
+			this->outputLogFile_checkBox->FlatAppearance->BorderSize = 0;
+			this->outputLogFile_checkBox->FlatAppearance->CheckedBackColor = System::Drawing::Color::Black;
+			this->outputLogFile_checkBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
+				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
+			this->outputLogFile_checkBox->Location = System::Drawing::Point(3, 37);
+			this->outputLogFile_checkBox->Name = L"outputLogFile_checkBox";
+			this->outputLogFile_checkBox->Size = System::Drawing::Size(125, 28);
+			this->outputLogFile_checkBox->TabIndex = 38;
+			this->outputLogFile_checkBox->Text = L"輸出偵錯日誌";
+			this->outputLogFile_checkBox->UseVisualStyleBackColor = false;
 			// 
 			// tableLayoutPanel3
 			// 
@@ -633,14 +650,34 @@ namespace UmaAssistant
 			this->label6->TabIndex = 45;
 			this->label6->Text = L"毫秒";
 			// 
+			// default_btn
+			// 
+			this->default_btn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)), static_cast<System::Int32>(static_cast<System::Byte>(60)),
+				static_cast<System::Int32>(static_cast<System::Byte>(81)));
+			this->default_btn->FlatAppearance->BorderSize = 0;
+			this->default_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
+				static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
+			this->default_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->default_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
+			this->default_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
+				static_cast<System::Int32>(static_cast<System::Byte>(151)));
+			this->default_btn->Location = System::Drawing::Point(259, 528);
+			this->default_btn->Name = L"default_btn";
+			this->default_btn->Size = System::Drawing::Size(109, 40);
+			this->default_btn->TabIndex = 45;
+			this->default_btn->Text = L"恢復預設値";
+			this->default_btn->UseVisualStyleBackColor = false;
+			this->default_btn->Click += gcnew System::EventHandler(this, &SettingsForm::default_btn_Click);
+			// 
 			// SettingsForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(380, 540);
+			this->ClientSize = System::Drawing::Size(380, 580);
 			this->Controls->Add(this->tableLayoutPanel5);
 			this->Controls->Add(this->tableLayoutPanel52);
 			this->Controls->Add(this->label4);
+			this->Controls->Add(this->default_btn);
 			this->Controls->Add(this->tableLayoutPanel4);
 			this->Controls->Add(this->tableLayoutPanel3);
 			this->Controls->Add(this->flowLayoutPanel1);
@@ -693,14 +730,9 @@ namespace UmaAssistant
 	private: System::Void SettingsFormMouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
 	private: System::Void SettingsFormMouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
 
-	private: System::Void debugMode_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-
-	private: System::Void alwaysOnTop_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-
 	private: System::Void autoMouseClickKey_textBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
-
 	private: System::Void autoMouseClickKey_textBox_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
+	private: System::Void default_btn_Click(System::Object^ sender, System::EventArgs^ e);
 
-	private: System::Void autoMouceClick_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 };
 }

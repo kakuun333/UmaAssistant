@@ -16,6 +16,7 @@ public:
 	bool DebugMode;
 	bool AlwaysOnTop;
 	bool AutoMouseClick;
+	bool OutputLogFile;
 	int GameServer;
 	int GameWindow;
 	int JpServerLang;

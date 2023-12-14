@@ -7,6 +7,8 @@
 #include "data/UmaEventData.h"
 #include "data/ScenarioEventData.h"
 
+#include <mutex>
+
 class DataManager
 {
 private:
@@ -25,6 +27,8 @@ private:
 
 	static nlohmann::json scenario_event_data_jp_json;
 	static nlohmann::json scenario_event_data_tw_json;
+
+	std::mutex dataMutex;
 public:
 	static DataManager* GetInstance()
 	{

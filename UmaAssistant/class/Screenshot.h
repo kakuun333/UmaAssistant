@@ -18,6 +18,7 @@ constexpr inline int BLUE_STACKS_FIX_GAME_POS_Y = 36;
 
 constexpr inline double EVENT_ICON_METRIC = 0.55/*0.73*/;
 
+constexpr inline double IS_EVENT_TITLE_METRIC = 0.3;
 
 enum ImagePattern
 {

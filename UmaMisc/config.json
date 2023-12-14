@@ -1,17 +1,18 @@
 {
   "AlwaysOnTop": true,
-  "AutoMouseClick": false,
+  "AutoMouseClick": true,
   "AutoMouseClickKey": {
     "VK": 6,
     "WinFormButton": 16777216
   },
   "DebugMode": true,
-  "GameServer": 0,
-  "GameWindow": 0,
-  "GameWindowName": "umamusume",
+  "GameServer": 1,
+  "GameWindow": 1,
+  "GameWindowName": "D:\\Cpp\\Projects\\UmaAssistant\\UmaTemp\\UmaLog.txt - Notepad++",
   "JpServerLang": 0,
   "LocalServer": {
     "Port": "7777"
   },
+  "OutputLogFile": true,
   "ScanInterval": 100
 }

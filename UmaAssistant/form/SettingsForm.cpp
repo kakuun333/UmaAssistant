@@ -6,116 +6,6 @@
 
 namespace UmaAssistant
 {
-	void SettingsForm::FormClosingHandler(Object^ sender, FormClosingEventArgs^ e)
-	{
-		// 取消關閉操作，避免 form 被自動釋放
-		e->Cancel = true;
-
-		// 隱藏視窗
-		this->Hide();
-	}
-
-	void SettingsForm::DigitOnly_TextBox_KeyPress(Object^ sender, KeyPressEventArgs^ e)
-	{
-		// 允許數字、退格鍵和刪除鍵
-		if (!Char::IsDigit(e->KeyChar) && e->KeyChar != 8 && e->KeyChar != 127)
-		{
-			e->Handled = true; // 阻止不允許的字符輸入
-		}
-	}
-
-	void SettingsForm::serverPortTextBox_TextChanged(Object^ sender, EventArgs^ e)
-	{
-		TextBox^ textbox = dynamic_cast<TextBox^>(sender);
-		
-		if (textbox->Text->Length >= 4)
-		{
-			global::config->LocalServer["Port"] = utility::systemStr2std(textbox->Text);
-
-			global::config->WriteToJson();
-		}
-	}
-
-	void SettingsForm::scanInterval_textBox_TextChanged(Object^ sender, EventArgs^ e)
-	{
-		TextBox^ textbox = dynamic_cast<TextBox^>(sender);
-
-		if (textbox->Text->Length >= 1)
-		{
-			global::config->ScanInterval = System::Convert::ToInt32(textbox->Text);
-
-			global::config->WriteToJson();
-		}
-	}
-
-	void SettingsForm::GameServerRadioButtonChanged(Object^ sender, EventArgs^ e)
-	{
-		RadioButton^ radioButton = dynamic_cast<RadioButton^>(sender);
-
-		WebManager* webManager = WebManager::GetInstance();
-
-		if (radioButton != nullptr && radioButton->Checked)
-		{
-			// 如果 RadioButton 被選中
-			if (radioButton == tw_server_radio_btn)
-			{
-				global::config->GameServer = static_cast<int>(GameServerType::TW);
-				webManager->ChangeSkillGameServer(static_cast<int>(GameServerType::TW));
-			}
-			else if (radioButton == jp_server_radio_btn)
-			{
-				global::config->GameServer = static_cast<int>(GameServerType::JP);
-				webManager->ChangeSkillGameServer(static_cast<int>(GameServerType::JP));
-			}
-		}
-
-		global::config->WriteToJson();
-	}
-
-	void SettingsForm::JpServerLangRadioButtonChanged(Object^ sender, EventArgs^ e)
-	{
-		RadioButton^ radioButton = dynamic_cast<RadioButton^>(sender);
-
-		WebManager* webManager = WebManager::GetInstance();
-
-		if (radioButton != nullptr && radioButton->Checked)
-		{
-			// 如果 RadioButton 被選中
-			if (radioButton == jpServerLang_tw_radioBtn)
-			{
-				global::config->JpServerLang = static_cast<int>(GameServerType::TW);
-				webManager->ChangeJpServerLang(static_cast<int>(GameServerType::TW));
-			}
-			else if (radioButton == jpServerLang_jp_radioBtn)
-			{
-				global::config->JpServerLang = static_cast<int>(GameServerType::JP);
-				webManager->ChangeJpServerLang(static_cast<int>(GameServerType::JP));
-			}
-		}
-
-		global::config->WriteToJson();
-	}
-
-	void SettingsForm::GameWindowRadioButtonChanged(Object^ sender, EventArgs^ e)
-	{
-		RadioButton^ radioButton = dynamic_cast<RadioButton^>(sender);
-
-		if (radioButton != nullptr && radioButton->Checked)
-		{
-			// 如果 RadioButton 被選中
-			if (radioButton == dmm_radio_btn)
-			{
-				global::config->GameWindow = static_cast<int>(GameWindowType::DMM);
-			}
-			else if (radioButton == blue_stacks_radio_btn)
-			{
-				global::config->GameWindow = static_cast<int>(GameWindowType::BLUE_STACKS);
-			}
-		}
-
-		global::config->WriteToJson();
-	}
-
 
 	SettingsForm::SettingsForm(void)
 	{
@@ -217,9 +107,126 @@ namespace UmaAssistant
 		}
 
 #pragma endregion
+#pragma region 初始化 checkBox
+		this->alwaysOnTop_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::alwaysOnTop_checkBox_CheckedChanged);
+		this->autoMouceClick_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::autoMouceClick_checkBox_CheckedChanged);
+		this->debugMode_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::debugMode_checkBox_CheckedChanged);
+		this->outputLogFile_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::outputLogFile_checkBox_CheckedChanged);
+#pragma endregion
 	}
 
-	System::Void SettingsForm::debugMode_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
+
+	void SettingsForm::FormClosingHandler(Object^ sender, FormClosingEventArgs^ e)
+	{
+		// 取消關閉操作，避免 form 被自動釋放
+		e->Cancel = true;
+
+		// 隱藏視窗
+		this->Hide();
+	}
+
+	void SettingsForm::DigitOnly_TextBox_KeyPress(Object^ sender, KeyPressEventArgs^ e)
+	{
+		// 允許數字、退格鍵和刪除鍵
+		if (!Char::IsDigit(e->KeyChar) && e->KeyChar != 8 && e->KeyChar != 127)
+		{
+			e->Handled = true; // 阻止不允許的字符輸入
+		}
+	}
+
+	void SettingsForm::serverPortTextBox_TextChanged(Object^ sender, EventArgs^ e)
+	{
+		TextBox^ textbox = dynamic_cast<TextBox^>(sender);
+
+		if (textbox->Text->Length >= 4)
+		{
+			global::config->LocalServer["Port"] = utility::systemStr2std(textbox->Text);
+
+			global::config->WriteToJson();
+		}
+	}
+
+	void SettingsForm::scanInterval_textBox_TextChanged(Object^ sender, EventArgs^ e)
+	{
+		TextBox^ textbox = dynamic_cast<TextBox^>(sender);
+
+		if (textbox->Text->Length >= 1)
+		{
+			global::config->ScanInterval = System::Convert::ToInt32(textbox->Text);
+
+			global::config->WriteToJson();
+		}
+	}
+
+	void SettingsForm::GameServerRadioButtonChanged(Object^ sender, EventArgs^ e)
+	{
+		RadioButton^ radioButton = dynamic_cast<RadioButton^>(sender);
+
+		WebManager* webManager = WebManager::GetInstance();
+
+		if (radioButton != nullptr && radioButton->Checked)
+		{
+			// 如果 RadioButton 被選中
+			if (radioButton == tw_server_radio_btn)
+			{
+				global::config->GameServer = static_cast<int>(GameServerType::TW);
+				webManager->ChangeSkillGameServer(static_cast<int>(GameServerType::TW));
+			}
+			else if (radioButton == jp_server_radio_btn)
+			{
+				global::config->GameServer = static_cast<int>(GameServerType::JP);
+				webManager->ChangeSkillGameServer(static_cast<int>(GameServerType::JP));
+			}
+		}
+
+		global::config->WriteToJson();
+	}
+
+	void SettingsForm::JpServerLangRadioButtonChanged(Object^ sender, EventArgs^ e)
+	{
+		RadioButton^ radioButton = dynamic_cast<RadioButton^>(sender);
+
+		WebManager* webManager = WebManager::GetInstance();
+
+		if (radioButton != nullptr && radioButton->Checked)
+		{
+			// 如果 RadioButton 被選中
+			if (radioButton == jpServerLang_tw_radioBtn)
+			{
+				global::config->JpServerLang = static_cast<int>(GameServerType::TW);
+				webManager->ChangeJpServerLang(static_cast<int>(GameServerType::TW));
+			}
+			else if (radioButton == jpServerLang_jp_radioBtn)
+			{
+				global::config->JpServerLang = static_cast<int>(GameServerType::JP);
+				webManager->ChangeJpServerLang(static_cast<int>(GameServerType::JP));
+			}
+		}
+
+		global::config->WriteToJson();
+	}
+
+	void SettingsForm::GameWindowRadioButtonChanged(Object^ sender, EventArgs^ e)
+	{
+		RadioButton^ radioButton = dynamic_cast<RadioButton^>(sender);
+
+		if (radioButton != nullptr && radioButton->Checked)
+		{
+			// 如果 RadioButton 被選中
+			if (radioButton == dmm_radio_btn)
+			{
+				global::config->GameWindow = static_cast<int>(GameWindowType::DMM);
+			}
+			else if (radioButton == blue_stacks_radio_btn)
+			{
+				global::config->GameWindow = static_cast<int>(GameWindowType::BLUE_STACKS);
+			}
+		}
+
+		global::config->WriteToJson();
+	}
+
+	void SettingsForm::debugMode_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
 	{
 		ConsoleManager* consoleManager = ConsoleManager::GetInstance();
 
@@ -249,6 +256,97 @@ namespace UmaAssistant
 
 
 		global::config->WriteToJson();
+	}
+
+	void SettingsForm::autoMouceClick_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
+	{
+		CheckBox^ checkbox = dynamic_cast<CheckBox^>(sender);
+		AutoMouseClicker* autoMouseClicker = AutoMouseClicker::GetInstance();
+
+		if (checkbox->Checked)
+		{
+			autoMouseClicker->Start();
+			global::config->AutoMouseClick = checkbox->Checked;
+		}
+		else
+		{
+			autoMouseClicker->Stop();
+			global::config->AutoMouseClick = checkbox->Checked;
+		}
+
+		// config
+		global::config->WriteToJson();
+	}
+
+	void SettingsForm::alwaysOnTop_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
+	{
+		CheckBox^ checkbox = dynamic_cast<CheckBox^>(sender);
+
+		if (checkbox->Checked)
+		{
+			global::form::umaForm->TopMost = checkbox->Checked;
+			this->TopMost = checkbox->Checked;
+
+			// config
+			global::config->AlwaysOnTop = checkbox->Checked;
+		}
+		else
+		{
+			global::form::umaForm->TopMost = checkbox->Checked;
+			this->TopMost = checkbox->Checked;
+
+			// config
+			global::config->AlwaysOnTop = checkbox->Checked;
+		}
+
+		global::config->WriteToJson();
+	}
+
+	void SettingsForm::outputLogFile_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
+	{
+		CheckBox^ checkbox = dynamic_cast<CheckBox^>(sender);
+
+		if (checkbox->Checked)
+		{
+			global::config->OutputLogFile = true;
+			UmaLog::init(global::path::std_UmaTemp + "\\UmaLog.txt");
+		}
+		else
+		{
+			global::config->OutputLogFile = false;
+			UmaLog::close();
+		}
+
+		global::config->WriteToJson();
+	}
+
+	System::Void SettingsForm::default_btn_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->debugMode_checkBox->Checked = false;
+		this->alwaysOnTop_checkBox->Checked = false;
+		this->autoMouceClick_checkBox->Checked = false;
+		this->outputLogFile_checkBox->Checked = false;
+
+		// GameServer
+		this->jp_server_radio_btn->Checked = true;
+
+		// GameWindow
+		this->dmm_radio_btn->Checked = true;
+
+		// JpServerLang
+		this->jpServerLang_jp_radioBtn->Checked = true;
+
+		// AutoMouseClickKey
+		this->autoMouseClickKey_textBox->Text = "XButton2";
+		global::config->AutoMouseClickKey["VK"] = VK_XBUTTON2;
+		global::config->AutoMouseClickKey["WinFormButton"] = static_cast<int>(System::Windows::Forms::MouseButtons::XButton2);
+
+		// ScanInterval
+		this->scanInterval_textBox->Text = "100";
+
+		// LocalServer
+		this->serverPortTextBox->Text = "7777";
+
 	}
 
 	System::Void SettingsForm::update_event_data_jp_btn_Click(System::Object^ sender, System::EventArgs^ e)
@@ -296,30 +394,6 @@ namespace UmaAssistant
 			System::Drawing::Point currentFormPos = PointToScreen(System::Drawing::Point(e->X, e->Y));
 			this->Location = System::Drawing::Point(currentFormPos.X - dragOffset.X, currentFormPos.Y - dragOffset.Y);
 		}
-	}
-
-	System::Void SettingsForm::alwaysOnTop_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
-	{
-		CheckBox^ checkbox = dynamic_cast<CheckBox^>(sender);
-
-		if (checkbox->Checked)
-		{
-			global::form::umaForm->TopMost = checkbox->Checked;
-			this->TopMost = checkbox->Checked;
-
-			// config
-			global::config->AlwaysOnTop = checkbox->Checked;
-		}
-		else
-		{
-			global::form::umaForm->TopMost = checkbox->Checked;
-			this->TopMost = checkbox->Checked;
-
-			// config
-			global::config->AlwaysOnTop = checkbox->Checked;
-		}
-
-		global::config->WriteToJson();
 	}
 
 	System::Void SettingsForm::autoMouseClickKey_textBox_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e)
@@ -372,26 +446,6 @@ namespace UmaAssistant
 
 		global::config->AutoMouseClickKey["WinFormButton"] = static_cast<int>(e->Button);
 
-
-		// config
-		global::config->WriteToJson();
-	}
-
-	System::Void SettingsForm::autoMouceClick_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
-	{
-		CheckBox^ checkbox = dynamic_cast<CheckBox^>(sender);
-		AutoMouseClicker* autoMouseClicker = AutoMouseClicker::GetInstance();
-
-		if (checkbox->Checked)
-		{
-			autoMouseClicker->Start();
-			global::config->AutoMouseClick = checkbox->Checked;
-		}
-		else
-		{
-			autoMouseClicker->Stop();
-			global::config->AutoMouseClick = checkbox->Checked;
-		}
 
 		// config
 		global::config->WriteToJson();

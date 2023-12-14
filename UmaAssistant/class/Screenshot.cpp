@@ -500,6 +500,8 @@ Screenshot::Screenshot()
 	{
 		umalog->print("[System::Exception] GetEventTitleImage: ", utility::systemStr2std(ex->Message));
 	}
+
+	
 	
 	
 	
@@ -559,6 +561,8 @@ void Screenshot::ShowImage()
 
 void Screenshot::GetEventTitleImage()
 {
+	UmaLog* umalog = UmaLog::GetInstance();
+
 	// event_title_oimg //
 	event_title_oimg = oimg.clone();
 	this->CropImage(event_title_oimg, ImageType::IMG_EVENT_TITLE);
@@ -566,7 +570,7 @@ void Screenshot::GetEventTitleImage()
 
 	// event_title_resize //
 	event_title_resize = oimg.clone();
-	this->CropImage(event_title_resize, ImageType::IMG_EVENT_TITLE);
+	this->CropImage(event_title_resize, ImageType::IMG_EVENT_TITLE);	
 	this->ResizeImage(event_title_resize, 2);
 	//std::cout << "event_title_resize whiteRatio: " << this->GetWhitePixelRatio(event_title_resize) << std::endl;
 
@@ -584,11 +588,21 @@ void Screenshot::GetEventTitleImage()
 	cv::cvtColor(event_title_gray_bin, event_title_gray_bin, cv::COLOR_BGR2GRAY);
 	cv::threshold(event_title_gray_bin, event_title_gray_bin, thresh/*230*/, 255, cv::THRESH_BINARY);
 
-	//if (GetWhitePixelRatio(event_title_gray_bin) > 0.5)
-	//{
-	//	std::cout << u8"可能不是事件" << std::endl;
-	//	_isEventTitle = false;
-	//}
+	double event_title_gray_bin_WPR = GetWhitePixelRatio(event_title_gray_bin);
+	std::cout << "[Screenshot] event_title_gray_bin_WPR: " << event_title_gray_bin_WPR << std::endl;
+	if (event_title_gray_bin_WPR > IS_EVENT_TITLE_METRIC || event_title_gray_bin_WPR == 0)
+	{
+		/*
+		* WPR: 0.12677
+		* [Scanner] event_title_gray_bin:  ボナペティポカブフランス料理
+		* 
+		* WPR: 0.276314
+		* [Screenshot] 可能不是事件
+		* [Scanner] event_title_gray_bin:  交感走力の限界突破に関する買的研
+		*/
+		umalog->print(u8"[Screenshot] 可能不是事件");
+		_isEventTitle = false;
+	}
 
 	
 
@@ -635,14 +649,14 @@ void Screenshot::GetHenseiCharacterNameImage()
 	this->CropImage(hensei_character_name_gray_bin, ImageType::IMG_HENSEI_CHARACTER_NAME);
 	this->ResizeImage(hensei_character_name_gray_bin, 1.2);
 	cv::cvtColor(hensei_character_name_gray_bin, hensei_character_name_gray_bin, cv::COLOR_BGR2GRAY);
-	cv::threshold(hensei_character_name_gray_bin, hensei_character_name_gray_bin, 150/*120*/, 255, cv::THRESH_BINARY);
+	cv::threshold(hensei_character_name_gray_bin, hensei_character_name_gray_bin, 170/*120*/, 255, cv::THRESH_BINARY);
 
 	// hensei_character_name_bin_inv //
 	hensei_character_name_gray_bin_inv = oimg.clone();
 	this->CropImage(hensei_character_name_gray_bin_inv, ImageType::IMG_HENSEI_CHARACTER_NAME);
 	this->ResizeImage(hensei_character_name_gray_bin_inv, 1.2);
 	cv::cvtColor(hensei_character_name_gray_bin_inv, hensei_character_name_gray_bin_inv, cv::COLOR_BGR2GRAY);
-	cv::threshold(hensei_character_name_gray_bin_inv, hensei_character_name_gray_bin_inv, 160/*130*/, 255, cv::THRESH_BINARY);
+	cv::threshold(hensei_character_name_gray_bin_inv, hensei_character_name_gray_bin_inv, 175/*130*/, 255, cv::THRESH_BINARY);
 	hensei_character_name_gray_bin_inv = cv::Scalar::all(255) - hensei_character_name_gray_bin_inv; // 反轉顏色
 	
 }

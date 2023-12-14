@@ -38,8 +38,6 @@ int main(array<String^>^ args)
 	global::config->Update();
 
 
-	UmaLog::init(global::path::std_UmaTemp + "\\UmaLog.txt");
-
 #pragma region 初始化 Console
 	/*
 	* 如果 DebugMode 有開啟就創建 Console
@@ -83,10 +81,14 @@ int main(array<String^>^ args)
 	global::form::settingsForm = settingsForm;
 	global::form::previewForm = previewForm;
 #pragma endregion
-#pragma region 初始化 SettingsForm 的 debugMode_checkBox
+#pragma region 初始化 checkBox
 	/*
 	* 不知道為什麼放在 SettingsForm 的構造函數裡面 nlohmann::json 會報錯
 	* 所以在這裡初始化
+	*/
+
+	/*
+	*  初始化 CheckBox
 	*/
 	if (global::config->DebugMode)
 	{
@@ -100,13 +102,24 @@ int main(array<String^>^ args)
 		global::form::settingsForm->update_event_data_jp_btn1->Visible = false;
 		global::form::settingsForm->update_skill_data_jp_btn1->Visible = false;
 	}
-	/*
-	*  初始化 CheckBox
-	*/
+
 	if (global::config->AlwaysOnTop)
+	{
 		global::form::settingsForm->alwaysOnTop_checkBox->Checked = true;
+	}
 	else
+	{
 		global::form::settingsForm->alwaysOnTop_checkBox->Checked = false;
+	}
+
+	if (global::config->OutputLogFile)
+	{
+		global::form::settingsForm->outputLogFile_checkBox->Checked = true;
+	}
+	else
+	{
+		global::form::settingsForm->outputLogFile_checkBox->Checked = false;
+	}
 #pragma endregion
 
 #pragma region 初始化 GameWindowFinder
