@@ -23312,6 +23312,18 @@
             ]
           },
           {
+            "「都市女孩」現在的心情♪": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+20</span>",
+                "choice_title": "トレーニングシューズかな"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+15</span>",
+                "choice_title": "甘いものかな？"
+              }
+            ]
+          },
+          {
             "無懈可擊的黃金美景": [
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br>隨機<span class=\"plus_condition\">『備受矚目』</span>",
