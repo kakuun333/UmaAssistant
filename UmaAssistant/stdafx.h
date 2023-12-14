@@ -3,7 +3,7 @@
 //#define UMA_DEBUG
 
 
-/*			C++ ¨ç¼Æ®w			*/
+/*			C++ std			*/
 #include <Windows.h>
 #include <iostream>
 #include <fstream>
@@ -45,6 +45,7 @@ using json = nlohmann::json;
 
 // opencv
 #include <opencv2/opencv.hpp>
+
 
 /*			class			*/	
 #include "class/Screenshot.h"

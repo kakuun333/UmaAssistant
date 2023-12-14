@@ -1,8 +1,13 @@
 #pragma once
 
-#include "../enum/ImageType.h"
-#include <opencv2/opencv.hpp>
+// C++ std
 #include <map>
+
+// opencv
+#include <opencv2/opencv.hpp>
+
+// enum
+#include "../enum/ImageType.h"
 
 using namespace System;
 using namespace System::Drawing;
