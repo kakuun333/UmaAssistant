@@ -342,10 +342,10 @@ namespace UmaAssistant
 		global::config->AutoMouseClickKey["WinFormButton"] = static_cast<int>(System::Windows::Forms::MouseButtons::XButton2);
 
 		// ScanInterval
-		this->scanInterval_textBox->Text = "100";
+		this->scanInterval_textBox->Text = System::Convert::ToString(DEFAULT_SCAN_INTERVAL);
 
 		// LocalServer
-		this->serverPortTextBox->Text = "7777";
+		this->serverPortTextBox->Text = utility::stdStr2system(DEFAULT_LOCAL_SERVER_PORT);
 
 	}
 

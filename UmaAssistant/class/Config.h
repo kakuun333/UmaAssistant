@@ -6,6 +6,8 @@
 
 constexpr inline int DEFAULT_SCAN_INTERVAL = 100; // ²@¬í
 
+const std::string DEFAULT_LOCAL_SERVER_PORT = "5854";
+
 class Config
 {
 private:

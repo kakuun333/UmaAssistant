@@ -27,7 +27,7 @@ void Config::Update()
 	AutoMouseClickKey["VK"] = json_config["AutoMouseClickKey"]["VK"].empty() ? VK_XBUTTON2 : json_config["AutoMouseClickKey"]["VK"].get<int>();
 	AutoMouseClickKey["WinFormButton"] = json_config["AutoMouseClickKey"]["WinFormButton"].empty() ? (int)System::Windows::Forms::MouseButtons::XButton2 : json_config["AutoMouseClickKey"]["WinFormButton"].get<int>();
 
-	LocalServer["Port"] = json_config["LocalServer"]["Port"].empty() ? "7777" : json_config["LocalServer"]["Port"].get<std::string>();
+	LocalServer["Port"] = json_config["LocalServer"]["Port"].empty() ? DEFAULT_LOCAL_SERVER_PORT : json_config["LocalServer"]["Port"].get<std::string>();
 }
 
 void Config::WriteToJson()
