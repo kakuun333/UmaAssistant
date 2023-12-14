@@ -44,11 +44,12 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 ## 使用方法
 ### 0. 開啟程式  
 開啟資料夾中的`UmaAssistant.exe`  
-![171217](https://github.com/kakuun333/UmaAssistant/assets/81919641/35dad315-a214-4908-a57d-f6807c8f7c87)
+![171217](https://github.com/kakuun333/UmaAssistant/assets/81919641/35dad315-a214-4908-a57d-f6807c8f7c87)  
 
 ### 1. 設定  
 ![044407](https://github.com/kakuun333/UmaAssistant/assets/81919641/505abc27-60bd-4ad4-8f39-cbb948ffff79)  
-![040744](https://github.com/kakuun333/UmaAssistant/assets/81919641/3bf289f9-b097-4270-a922-4b28d9d7e295)  
+![123107](https://github.com/kakuun333/UmaAssistant/assets/81919641/c9b3b850-6fc8-49a2-8478-1be5147df02f)
+
 > [!NOTE]
 > 設定檔將保存在`UmaMisc\config.json`。
 
@@ -67,7 +68,11 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 > [!IMPORTANT]
 > 滑鼠連點需要以系統管理員身分執行`UmaAssistant.exe`才會有效果。
 
-- 顯示在最上層：讓程式的視窗一直保持在最上層。  
+- 顯示在最上層：讓程式的視窗一直保持在最上層。
+
+- 輸出偵錯日誌：開啟後會把日誌輸出到`UmaTemp/UmaLog.txt`，每一次啟動程式都會刪除上一個`UmaLog.txt`，如果你願意的話可以勾選此選項，遇到問題要回報時可以附上`UmaLog.txt`，這樣可以更好地判斷問題出在哪裡。
+
+- Debug模式：基本上是開發者做使用的。
 
 ### 2. 選取遊戲視窗  
 按下「選取視窗」，選擇對應的遊戲視窗名稱，之後應該要看到「已找到遊戲視窗」。
@@ -109,7 +114,7 @@ A.
 2. 請檢查是否選取了對應的視窗名稱。
 3. 嘗試縮放遊戲視窗。
 > [!NOTE]
-> 如果上述的方法皆無效果，有大概率是程式的邏輯有疏失或資料不完整，請參考[問題回報](https://github.com/kakuun333/UmaAssistant#%E5%95%8F%E9%A1%8C%E5%9B%9E%E5%A0%B1)。  
+> 如果上述的方法皆無效果，有大概率是`UmaData`中的資料不完整或程式的邏輯有疏失，請參考[問題回報](https://github.com/kakuun333/UmaAssistant#%E5%95%8F%E9%A1%8C%E5%9B%9E%E5%A0%B1)。  
 
 ## 問題回報
 有任何問題請到 [Issues](https://github.com/kakuun333/UmaAssistant/issues) 中提出。  
@@ -126,9 +131,6 @@ Copyright (C) 2023 kakuun333
 
 ## 授權條例
 [GPL-3.0 license](https://github.com/kakuun333/UmaAssistant?tab=GPL-3.0-1-ov-file#)
-
-## 建置方式  
-暫時不提供
 
 ## 使用的函式庫
 
