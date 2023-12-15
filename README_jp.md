@@ -34,7 +34,7 @@ https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist
 > [!IMPORTANT]
 > アーキテクチャは`X64`を選んでください、ダウンロードしたファイル名は`vc_redist.x64.exe`のはずです。
 
-### 使い方
+## 使い方
 ### 0. プログラムを開く  
 フォルダー内の`UmaAssistant.exe`を開いてください。  
 ![171217](https://github.com/kakuun333/UmaAssistant/assets/81919641/35dad315-a214-4908-a57d-f6807c8f7c87)  
@@ -45,7 +45,7 @@ https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist
 > 設定ファイルは`UmaMisc/config.json`に保存されます。
 
 
-## 使用ライブラリ
+## 使用したライブラリ
 
 ### C++
 - Tesseract OCR  
