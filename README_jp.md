@@ -21,7 +21,7 @@
 ## 稼働環境
 
 ### OSスペック
-`Window 10 64bit 22H2`
+`Windows 10 64bit 22H2`
 > [!WARNING]
 > 32bit は実行できません。
 
@@ -31,7 +31,7 @@
 > 正解：  
 > `D:\UmaAssistant\UmaAssistant.exe`  
 > 不正解：  
-> `D:\うまうま\UmaAssistant.exe`（仮名があります）  
+> `D:\うまウマ\UmaAssistant.exe`（仮名があります）  
 > `D:\馬娘\UmaAssistant.exe`（漢字があります）  
 > `D:\ＵｍａＡｓｓｉｓｔａｎｔ\UmaAssistant.exe` （全角英字があります）
 
@@ -57,7 +57,28 @@ https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist
 ![053013](https://github.com/kakuun333/UmaAssistant/assets/81919641/35fd057d-9b34-4383-acda-52f1d5707529)
 
 #### 色んな設定
-![045450](https://github.com/kakuun333/UmaAssistant/assets/81919641/ea5f43f1-cfb4-43b6-990a-8cab4af6bad5)
+![072601](https://github.com/kakuun333/UmaAssistant/assets/81919641/3c2af5d1-2653-471d-8b03-16c49928d5de)
+
+- ゲームサーバー：基本的に`日本`でOKです、`台湾・香港`は KOMOE TECHNOLOGY 株式会社が代理運営しているウマ娘のサーバーです。
+
+- ウィンドウタイプ：DMM版は`DMM`で、エミュレータは`BlueStacks`にしか対応していません、フルスクリーンで遊ばないでください、文字検出ができなくなりますので。
+
+- 検出した選択肢効果の言語(日本サーバーのみ)：基本的に`日本語`でOKです、`中国語（台湾）`は一部の選択肢効果とスキル詳細を中国語（台湾）に翻訳されます。
+
+- スキャン間隔：一回スキャンした作業が終わった時から、次の作業を実行するまでの時間です、自分の`CPU`の性能に合わせて調整してください。
+
+- ローカルサーバーポート番号：`localhost`の`port`です、基本的にデフォルトでOKです、必要な方は自分で調整したあと、ソフトを再起動してください。
+
+- マウス連打：指定した`マウスボタン`をホールドすると、プログラムは`10ms`一回のスピードでマウスの左ボタンをクリックします、指定した`マウスボタン`を手放したら連打が中止されます。  
+> [!IMPORTANT]
+> マウス連打は`UmaAssistant.exe`を「管理者として実行」でなければなりません。
+
+- 最前面に表示する：このソフトのウィンドウを最前面に表示されるようにする。
+
+- デバッグログを記録する：デバッグログを`UmaTemp/UmaLog.txt`に出力します。ソフトを再起動するとこの前の`UmaLog.txt`がリセットされます、もし良ければバグ報告の時に、`UmaLog.txt`を付けると助かります。
+
+- デバッグモード：開発者向けのモードです。
+
 
 ### 2. ゲームウィンドウを選ぶ  
 「ウィンドウ選択」をクリックして、ゲームウィンドウと相応なものを選んだあと、赤い文字が緑の「ゲームウィンドウが見つけました」になるはずです。  
@@ -81,15 +102,15 @@ https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist
 ## よくある質問
 Q. なぜ`UmaAssistant.exe`は実行できないでしょうか？  
 A.
-1. [OSスペック](https://github.com/kakuun333/UmaAssistant?tab=readme-ov-file#%E7%B3%BB%E7%B5%B1%E8%A6%8F%E6%A0%BC)が合っているかどうかを確認してください。
+1. [OSスペック](https://github.com/kakuun333/UmaAssistant/blob/main/README_jp.md#os%E3%82%B9%E3%83%9A%E3%83%83%E3%82%AF)が合っているかどうかを確認してください。
 2. [ファイルパス](https://github.com/kakuun333/UmaAssistant/blob/main/README_jp.md#%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%83%91%E3%82%B9)が合っているかどうかを確認してください。
 3. [必要なパッケージ](https://github.com/kakuun333/UmaAssistant/blob/main/README_jp.md#%E5%BF%85%E8%A6%81%E3%81%AA%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8)がインストールされているかどうかを確認してください。  
 ![145447](https://github.com/kakuun333/UmaAssistant/assets/81919641/0d36b572-a610-40d3-8a75-39e80eb31203)
 
 Q. なぜ「育成しているウマ娘」或は「イベント」が検出できないでしょうか？  
 A. 
-1. 設定の正しさをチェックしてください。
-2. ゲームウィンドウを選んだかどうかをチェックしてください。
+1. 設定が合っているかどうかを確認してください。
+2. ゲームウィンドウを選んだかどうかを確認してください。
 3. ゲームウィンドウのサイズを拡大・縮小してみてください。
 > [!NOTE]
 > 上記の解決方法が効かなかった場合、十中八九`UmaData`のデータが不完全、あるいはプログラムに不具合が発生したのかもしれません。  
@@ -98,6 +119,17 @@ A.
 ## バグ報告
 イベントが検出できないバグ、育成しているウマ娘が検出できないバグ或はプログラムの不具合がありましたら  
 [Issues](https://github.com/kakuun333/UmaAssistant/issues) に提出していただけると助かります。  
+
+## 免責
+- このソフトは`スキャン`を押した時に、使用者が指定した画面からスクリーンショットを撮ってゲーム内の文字を検出するに関わる作業がおこなわれます。これらに関する作業は個人情報などをとりません、作業を終えた直後にスクリーンショットが壊滅されます。  
+- このソフトで何かの損失がありましたら、全て自己責任でお願いします。
+- 著作者は続きのアップデートの責任を負いません。
+
+## 著作権
+Copyright (C) 2023 kakuun333  
+
+## ライセンス
+[GPL-3.0 license](https://github.com/kakuun333/UmaAssistant?tab=GPL-3.0-1-ov-file#)
 
 ## 使用したライブラリ
 
