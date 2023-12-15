@@ -19,6 +19,8 @@
 
 
 ## 稼働環境
+
+### OSスペック
 `Window 10 64bit 22H2`
 > [!WARNING]
 > 32bit は実行できません。
@@ -79,9 +81,9 @@ https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist
 ## よくある質問
 Q. なぜ`UmaAssistant.exe`は実行できないでしょうか？  
 A.
-1. 請確定[系統規格](https://github.com/kakuun333/UmaAssistant?tab=readme-ov-file#%E7%B3%BB%E7%B5%B1%E8%A6%8F%E6%A0%BC)符合上述標準。
-2. 請確定[檔案路徑](https://github.com/kakuun333/UmaAssistant#%E6%AA%94%E6%A1%88%E8%B7%AF%E5%BE%91)符合上述標準。
-3. 請確定電腦上已經安裝了[必須安裝的套件](https://github.com/kakuun333/UmaAssistant#%E5%BF%85%E9%A0%88%E5%AE%89%E8%A3%9D%E7%9A%84%E5%A5%97%E4%BB%B6)  
+1. [OSスペック](https://github.com/kakuun333/UmaAssistant?tab=readme-ov-file#%E7%B3%BB%E7%B5%B1%E8%A6%8F%E6%A0%BC)が合っているかどうかを確認してください。
+2. [ファイルパス](https://github.com/kakuun333/UmaAssistant/blob/main/README_jp.md#%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%83%91%E3%82%B9)が合っているかどうかを確認してください。
+3. [必要なパッケージ](https://github.com/kakuun333/UmaAssistant/blob/main/README_jp.md#%E5%BF%85%E8%A6%81%E3%81%AA%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8)がインストールされているかどうかを確認してください。  
 ![145447](https://github.com/kakuun333/UmaAssistant/assets/81919641/0d36b572-a610-40d3-8a75-39e80eb31203)
 
 Q. なぜ「育成しているウマ娘」或は「イベント」が検出できないでしょうか？  
@@ -91,7 +93,7 @@ A.
 3. ゲームウィンドウのサイズを拡大・縮小してみてください。
 > [!NOTE]
 > 上記の解決方法が効かなかった場合、十中八九`UmaData`のデータが不完全、あるいはプログラムに不具合が発生したのかもしれません。  
-> もしバグを見つけた場合、このプロジェクトに貢ぎたいのだとしたら、[バグ報告](https://github.com/kakuun333/UmaAssistant#%E5%95%8F%E9%A1%8C%E5%9B%9E%E5%A0%B1)をご参照していただけると幸いです。  
+> もしバグを見つけた場合、このプロジェクトに貢ぎたいのだとしたら、[バグ報告](https://github.com/kakuun333/UmaAssistant/blob/main/README_jp.md#%E3%83%90%E3%82%B0%E5%A0%B1%E5%91%8A)をご参照していただけると幸いです。  
 
 ## バグ報告
 イベントが検出できないバグ、育成しているウマ娘が検出できないバグ或はプログラムの不具合がありましたら  
