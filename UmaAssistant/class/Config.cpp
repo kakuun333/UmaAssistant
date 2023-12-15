@@ -15,6 +15,7 @@ void Config::Update()
 	OutputLogFile = json_config["OutputLogFile"].empty() ? false : json_config["OutputLogFile"].get<bool>();
 
 	// int
+	SoftwareLanguage = json_config["SoftwareLanguage"].empty() ? static_cast<int>(SoftwareLanguageType::TW) : json_config["SoftwareLanguage"].get<int>();
 	GameServer = json_config["GameServer"].empty() ? static_cast<int>(GameServerType::JP) : json_config["GameServer"].get<int>();
 	GameWindow = json_config["GameWindow"].empty() ? static_cast<int>(GameWindowType::DMM) : json_config["GameWindow"].get<int>();
 	JpServerLang = json_config["JpServerLang"].empty() ? static_cast<int>(JpServerLangType::JP) : json_config["JpServerLang"].get<int>();
@@ -41,6 +42,7 @@ void Config::WriteToJson()
 	json_config["AutoMouseClick"] = this->AutoMouseClick;
 	json_config["OutputLogFile"] = this->OutputLogFile;
 
+	json_config["SoftwareLanguage"] = this->SoftwareLanguage;
 	json_config["GameServer"] = this->GameServer;
 	json_config["GameWindow"] = this->GameWindow;
 	json_config["JpServerLang"] = this->JpServerLang;

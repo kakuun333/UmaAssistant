@@ -5,3 +5,21 @@ function changeCharacterName(characterName) {
 }
 
 
+
+function changeCharacterNameTitleLang(softwareLang) {
+    let character_name_title = document.getElementById("title_character_name");
+
+    const JP = 0;
+    const TW = 1;
+
+    switch (softwareLang) {
+    case TW:
+        character_name_title.innerHTML = "目前培育的馬娘";
+        character_name_title.style.fontSize = "0.9em";
+        break;
+    case JP:
+        character_name_title.innerHTML = "育成しているウマ娘";
+        character_name_title.style.fontSize = "0.88em";
+        break;
+    }
+}

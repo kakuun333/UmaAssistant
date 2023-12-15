@@ -42,6 +42,25 @@ function cleanChoiceTable() {
     }
 }
 
+function changeTableHeaderLang(softwareLang) {
+    let title_event_owner = document.getElementById("title_event_owner");
+    let title_event_title = document.getElementById("title_event_title");
+
+    const JP = 0;
+    const TW = 1;
+
+    switch (softwareLang) {
+    case TW:
+        title_event_owner.innerHTML = "事件所有者";
+        title_event_title.innerHTML = "事件名稱";
+        break;
+    case JP:
+        title_event_owner.innerHTML = "イベント所有者";
+        title_event_title.innerHTML = "イベント";
+        break;
+    }
+}
+
 
 // function setCustomScroll() {
 //     let content = document.getElementById("content");

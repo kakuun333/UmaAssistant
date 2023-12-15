@@ -14,23 +14,47 @@ namespace UmaAssistant
 	{
 		// 初始化 skill_displayer.js 中的 let GameServer 變數
 		WebManager* webManager = WebManager::GetInstance();
-		if (global::config->GameServer == static_cast<int>(GameServerType::JP))
+
+
+		// GameServer
+		switch (global::config->GameServer)
 		{
+		case static_cast<int>(GameServerType::JP):
 			webManager->ChangeSkillGameServer(static_cast<int>(GameServerType::JP));
-		}
-		else if (global::config->GameServer == static_cast<int>(GameServerType::TW))
-		{
+			break;
+
+		case static_cast<int>(GameServerType::TW):
 			webManager->ChangeSkillGameServer(static_cast<int>(GameServerType::TW));
+			break;
 		}
-		// 初始化 skill_displayer.js 中的 let JpServerLang 變數
-		if (global::config->JpServerLang == static_cast<int>(JpServerLangType::JP))
+
+		// JpServerLang
+		switch (global::config->JpServerLang)
 		{
-			webManager->ChangeJpServerLang(static_cast<int>(JpServerLangType::JP));
+		case static_cast<int>(GameServerType::JP):
+			webManager->ChangeJpServerLang(static_cast<int>(GameServerType::JP));
+			break;
+
+		case static_cast<int>(GameServerType::TW):
+			webManager->ChangeJpServerLang(static_cast<int>(GameServerType::TW));
+			break;
 		}
-		else if (global::config->JpServerLang == static_cast<int>(JpServerLangType::TW))
+
+
+		// SoftwareLanguage
+		switch (global::config->SoftwareLanguage)
 		{
-			webManager->ChangeJpServerLang(static_cast<int>(JpServerLangType::TW));
+		case static_cast<int>(GameServerType::JP):
+			webManager->ChangeCharacterNameTitleLang(static_cast<int>(SoftwareLanguageType::JP));
+			webManager->ChangeTableHeaderLang(static_cast<int>(SoftwareLanguageType::JP));
+			break;
+
+		case static_cast<int>(GameServerType::TW):
+			webManager->ChangeCharacterNameTitleLang(static_cast<int>(SoftwareLanguageType::TW));
+			webManager->ChangeTableHeaderLang(static_cast<int>(SoftwareLanguageType::TW));
+			break;
 		}
+
 	}
 
 	UmaForm::UmaForm(void) // UmaForm 的建構函數
@@ -101,14 +125,29 @@ namespace UmaAssistant
 				break;
 			}
 			
-
-			this->scan_btn->Text = u8"停止";
+			switch (global::config->SoftwareLanguage)
+			{
+			case static_cast<int>(SoftwareLanguageType::JP):
+				this->scan_btn->Text = u8"ストップ";
+				break;
+			case static_cast<int>(SoftwareLanguageType::TW):
+				this->scan_btn->Text = u8"停止";
+				break;
+			}
 		}
 		else
 		{
 			scanner->Stop();
 
-			this->scan_btn->Text = u8"啓動";
+			switch (global::config->SoftwareLanguage)
+			{
+			case static_cast<int>(SoftwareLanguageType::JP):
+				this->scan_btn->Text = u8"スキャン";
+				break;
+			case static_cast<int>(SoftwareLanguageType::TW):
+				this->scan_btn->Text = u8"啓動";
+				break;
+			}
 		}
 	}
 

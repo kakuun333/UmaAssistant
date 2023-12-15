@@ -91,6 +91,7 @@ using json = nlohmann::json;
 #include "enum/GameServerType.h"
 #include "enum/GameWindowType.h"
 #include "enum/JpServerLangType.h"
+#include "enum/SoftwareLanguageType.h"
 
 
 /*			global			*/

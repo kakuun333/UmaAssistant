@@ -73,13 +73,13 @@ int main(array<String^>^ args)
 #pragma endregion
 #pragma region 初始化 Form
 	UmaAssistant::UmaForm^ umaForm = gcnew UmaAssistant::UmaForm();
-	UmaAssistant::SettingsForm^ settingsForm = gcnew UmaAssistant::SettingsForm();
 	UmaAssistant::PreviewForm^ previewForm = gcnew UmaAssistant::PreviewForm();
+	UmaAssistant::SettingsForm^ settingsForm = gcnew UmaAssistant::SettingsForm();
 
 	// FormManager
 	global::form::umaForm = umaForm;
-	global::form::settingsForm = settingsForm;
 	global::form::previewForm = previewForm;
+	global::form::settingsForm = settingsForm;
 #pragma endregion
 #pragma region 初始化 checkBox
 	/*
@@ -90,35 +90,38 @@ int main(array<String^>^ args)
 	/*
 	*  初始化 CheckBox
 	*/
-	if (global::config->DebugMode)
+	switch (global::config->DebugMode)
 	{
-		global::form::settingsForm->debugMode_checkBox->Checked = true;
-		global::form::settingsForm->update_event_data_jp_btn1->Visible = true;
-		global::form::settingsForm->update_skill_data_jp_btn1->Visible = true;
-	}
-	else
-	{
-		global::form::settingsForm->debugMode_checkBox->Checked = false;
-		global::form::settingsForm->update_event_data_jp_btn1->Visible = false;
-		global::form::settingsForm->update_skill_data_jp_btn1->Visible = false;
-	}
-
-	if (global::config->AlwaysOnTop)
-	{
-		global::form::settingsForm->alwaysOnTop_checkBox->Checked = true;
-	}
-	else
-	{
-		global::form::settingsForm->alwaysOnTop_checkBox->Checked = false;
+	case true:
+		global::form::settingsForm->debugMode_checkBox->Checked = global::config->DebugMode;
+		global::form::settingsForm->update_event_data_jp_btn1->Visible = global::config->DebugMode;
+		global::form::settingsForm->update_skill_data_jp_btn1->Visible = global::config->DebugMode;
+		break;
+	case false:
+		global::form::settingsForm->debugMode_checkBox->Checked = global::config->DebugMode;
+		global::form::settingsForm->update_event_data_jp_btn1->Visible = global::config->DebugMode;
+		global::form::settingsForm->update_skill_data_jp_btn1->Visible = global::config->DebugMode;
+		break;
 	}
 
-	if (global::config->OutputLogFile)
+	switch (global::config->AlwaysOnTop)
 	{
-		global::form::settingsForm->outputLogFile_checkBox->Checked = true;
+	case true:
+		global::form::settingsForm->alwaysOnTop_checkBox->Checked = global::config->AlwaysOnTop;
+		break;
+	case false:
+		global::form::settingsForm->alwaysOnTop_checkBox->Checked = global::config->AlwaysOnTop;
+		break;
 	}
-	else
+
+	switch (global::config->OutputLogFile)
 	{
-		global::form::settingsForm->outputLogFile_checkBox->Checked = false;
+	case true:
+		global::form::settingsForm->outputLogFile_checkBox->Checked = global::config->OutputLogFile;
+		break;
+	case false:
+		global::form::settingsForm->outputLogFile_checkBox->Checked = global::config->OutputLogFile;
+		break;
 	}
 #pragma endregion
 
@@ -130,9 +133,21 @@ int main(array<String^>^ args)
 	GameWindowFinder::GetInstance()->CreateFindGameWindowThread();
 #pragma endregion
 
+#pragma region 初始化語言
+	switch (global::config->SoftwareLanguage)
+	{
+	case static_cast<int>(GameServerType::JP):
+		global::form::settingsForm->ChangeSoftwareLanguage(SoftwareLanguageType::JP);
+		break;
+
+	case static_cast<int>(GameServerType::TW):
+		global::form::settingsForm->ChangeSoftwareLanguage(SoftwareLanguageType::TW);
+		break;
+	}
+#pragma endregion
+
 
 	Application::Run(umaForm); // 啟動主要的 Form (UmaForm)
-
 
 
 #pragma region 釋放資源

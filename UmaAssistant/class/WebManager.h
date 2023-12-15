@@ -31,5 +31,9 @@ public:
 	void ChangeSkillGameServer(int gameServer);
 
 	void ChangeJpServerLang(int jpServerLangType);
+
+	void ChangeCharacterNameTitleLang(int softwareLangType);
+
+	void ChangeTableHeaderLang(int softwareLangType);
 };
 

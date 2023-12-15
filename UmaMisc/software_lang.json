@@ -1,0 +1,51 @@
+{
+	"tw": {
+        "game_server_type_label": "遊戲伺服器：",
+        "jp_server_radio_btn": "日服",
+        "tw_server_radio_btn": "繁中服",
+        "window_type_label": "視窗類型",
+        "jp_server_lang_label": "日服文本語言",
+        "jpServerLang_jp_radio_btn": "日文",
+        "jpServerLang_tw_radio_btn": "繁體中文",
+        "scan_interval_label": "辨識事件間隔時間",
+        "scan_interval_ms_label": "毫秒",
+        "local_server_port_label": "本地伺服器埠口(Port)",
+        "autoMouceClick_checkBox": "滑鼠連點",
+        "alwaysOnTop_checkBox": "顯示在最上層",
+        "outputLogFile_checkBox": "輸出偵錯日誌",
+        "debugMode_checkBox": "Debug 模式",
+        "default_btn": "恢復預設値",
+
+
+        "select_window_btn": "選取視窗",
+        "scan_btn": "啓動",
+        "clean_current_character_btn": "清除角色",
+
+        "select_window_label": "請選擇遊戲視窗：",
+        "title_select_window_label": "選取視窗"
+    },
+    "jp": {
+        "game_server_type_label": "ゲームサーバー：",
+        "jp_server_radio_btn": "日本",
+        "tw_server_radio_btn": "台湾・香港サーバー",
+        "window_type_label": "ゲームウィンドウ型：",
+        "jp_server_lang_label": "検出した選択肢効果の言語(日本サーバーのみ)：",
+        "jpServerLang_jp_radio_btn": "日本語",
+        "jpServerLang_tw_radio_btn": "中国語（台湾）",
+        "scan_interval_label": "スキャン間隔",
+        "scan_interval_ms_label": "ms",
+        "local_server_port_label": "ローカルサーバーポート番号",
+        "autoMouceClick_checkBox": "マウス連打",
+        "alwaysOnTop_checkBox": "最前面表示にする",
+        "outputLogFile_checkBox": "デバッグログを記録する",
+        "debugMode_checkBox": "デバッグモード",
+        "default_btn": "デフォルト",
+        
+        "select_window_btn": "ウィンドウ選択",
+        "scan_btn": "スキャン",
+        "clean_current_character_btn": "削除する",
+
+        "select_window_label": "ゲームウィンドウを選択してください：",
+        "title_select_window_label": "ウィンドウ選択"
+    }
+}

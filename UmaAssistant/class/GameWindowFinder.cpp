@@ -1,4 +1,4 @@
-#include "../stdafx.h"
+ï»¿#include "../stdafx.h"
 
 GameWindowFinder* GameWindowFinder::_instance = nullptr;
 
@@ -8,8 +8,8 @@ std::map<std::string, HWND> GameWindowFinder::_windowDict = {};
 
 
 /*
-* ¦pªG¥ÎªÅªº std::string ªº¸Ü·|§ä¨ì¦W¦r¬OªÅªº HWND
-* ©Ò¥H¨Ï¥Î "NULL_GAME_WINDOW_NAME_UMA_ASSISTANT" °µ¥N´À
+* å¦‚æœç”¨ç©ºçš„ std::string çš„è©±æœƒæ‰¾åˆ°åå­—æ˜¯ç©ºçš„ HWND
+* æ‰€ä»¥ä½¿ç”¨ "NULL_GAME_WINDOW_NAME_UMA_ASSISTANT" åšä»£æ›¿
 */
 std::string GameWindowFinder::_currentGameWindowName = NULL_GAME_WINDOW_NAME;
 
@@ -21,7 +21,7 @@ void GameWindowFinder::EnumWindow()
 	HWND window = GetTopWindow(GetDesktopWindow());
 	do
 	{
-		// ¸õ¹L¬İ¤£¨£ªºµøµ¡
+		// è·³éçœ‹ä¸è¦‹çš„è¦–çª—
 		if (!IsWindowVisible(window))
 			continue;
 
@@ -35,8 +35,8 @@ void GameWindowFinder::EnumWindow()
 		if (utf8name.empty())
 			continue;
 
-		if (utf8name == u8"³]©w" ||
-			utf8name == u8"¤pºâ½L" ||
+		if (utf8name == u8"è¨­å®š" ||
+			utf8name == u8"å°ç®—ç›¤" ||
 			utf8name == u8"Program Manager" ||
 			utf8name == u8"Microsoft Text Input Application")
 			continue;
@@ -63,15 +63,35 @@ void GameWindowFinder::CreateFindGameWindowThread()
 				{
 					_currentGameWindow = FindWindow(nullptr, utility::string2wstring(global::config->GameWindowName).c_str());
 					//std::cout << u8"[GameWindowFinder] GameWindow: " << global::config->GameWindowName << std::endl;
-					utility::formctrl::Text(global::form::umaForm->game_window_status_label, "¤w§ä¨ì¹CÀ¸µøµ¡");
+
+					switch (global::config->SoftwareLanguage)
+					{
+					case static_cast<int>(SoftwareLanguageType::JP):
+						utility::formctrl::Text(global::form::umaForm->game_window_status_label, u8"ã‚²ãƒ¼ãƒ ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒè¦‹ã¤ã‘ã¾ã—ãŸ");
+						break;
+					case static_cast<int>(SoftwareLanguageType::TW):
+						utility::formctrl::Text(global::form::umaForm->game_window_status_label, u8"å·²æ‰¾åˆ°éŠæˆ²è¦–çª—");
+						break;
+					}
+					
 					utility::formctrl::ForeColor(global::form::umaForm->game_window_status_label, 0, 255, 0);
 				}
 				else
 				{
 					_currentGameWindow = NULL;
 					_currentGameWindowName = NULL_GAME_WINDOW_NAME;
-					//std::cout << u8"[GameWindowFinder] ¥¼§ä¨ì¹CÀ¸µøµ¡" << std::endl;
-					utility::formctrl::Text(global::form::umaForm->game_window_status_label, "¥¼§ä¨ì¹CÀ¸µøµ¡");
+					//std::cout << u8"[GameWindowFinder] æœªæ‰¾åˆ°éŠæˆ²è¦–çª—" << std::endl;
+
+					switch (global::config->SoftwareLanguage)
+					{
+					case static_cast<int>(SoftwareLanguageType::JP):
+						utility::formctrl::Text(global::form::umaForm->game_window_status_label, u8"ã‚²ãƒ¼ãƒ ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“");
+						break;
+					case static_cast<int>(SoftwareLanguageType::TW):
+						utility::formctrl::Text(global::form::umaForm->game_window_status_label, u8"æœªæ‰¾åˆ°éŠæˆ²è¦–çª—");
+						break;
+					}
+					
 					utility::formctrl::ForeColor(global::form::umaForm->game_window_status_label, 255, 0, 0);
 				}
 				std::this_thread::sleep_for(std::chrono::milliseconds(1000));

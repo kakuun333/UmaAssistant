@@ -8,11 +8,12 @@
   "DebugMode": false,
   "GameServer": 0,
   "GameWindow": 0,
-  "GameWindowName": "",
+  "GameWindowName": "fewaggwagawgaf",
   "JpServerLang": 0,
   "LocalServer": {
     "Port": "5854"
   },
   "OutputLogFile": false,
-  "ScanInterval": 100
+  "ScanInterval": 100,
+  "SoftwareLanguage": 0
 }

@@ -54,3 +54,15 @@ void WebManager::ChangeJpServerLang(int jpServerLangType)
 	array<Object^>^ param = gcnew array<Object^> { jpServerLangType };
 	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "changeJpServerLang", param);
 }
+
+void WebManager::ChangeCharacterNameTitleLang(int softwareLangType)
+{
+	array<Object^>^ param = gcnew array<Object^> { softwareLangType };
+	FormController::Instance->InvokeScript(global::form::umaForm->characterNameWebBrowser, "changeCharacterNameTitleLang", param);
+}
+
+void WebManager::ChangeTableHeaderLang(int softwareLangType)
+{
+	array<Object^>^ param = gcnew array<Object^> { softwareLangType };
+	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "changeTableHeaderLang", param);
+}

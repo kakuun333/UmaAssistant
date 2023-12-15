@@ -278,10 +278,11 @@ namespace UmaAssistant {
 			this->game_window_status_label->Anchor = System::Windows::Forms::AnchorStyles::Left;
 			this->game_window_status_label->AutoSize = true;
 			this->game_window_status_label->BackColor = System::Drawing::Color::Transparent;
+			this->game_window_status_label->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 9.5F));
 			this->game_window_status_label->ForeColor = System::Drawing::Color::Red;
-			this->game_window_status_label->Location = System::Drawing::Point(165, 12);
+			this->game_window_status_label->Location = System::Drawing::Point(159, 11);
 			this->game_window_status_label->Name = L"game_window_status_label";
-			this->game_window_status_label->Size = System::Drawing::Size(107, 20);
+			this->game_window_status_label->Size = System::Drawing::Size(100, 19);
 			this->game_window_status_label->TabIndex = 8;
 			this->game_window_status_label->Text = L"未找到遊戲視窗";
 			// 

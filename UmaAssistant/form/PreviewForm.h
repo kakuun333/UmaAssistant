@@ -37,11 +37,15 @@ namespace UmaAssistant {
 			}
 		}
 	public: System::Windows::Forms::ListBox^ window_listbox;
-	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ select_window_label;
+	public:
+
 	private: System::Windows::Forms::PictureBox^ icon_pictureBox;
 	private: System::Windows::Forms::Button^ minimize_btn;
 	private: System::Windows::Forms::Button^ close_form_btn;
-	private: System::Windows::Forms::Label^ app_name_label;
+	private: System::Windows::Forms::Label^ title_select_window_label;
+
+
 	public:
 
 	private:
@@ -61,11 +65,11 @@ namespace UmaAssistant {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(PreviewForm::typeid));
 			this->window_listbox = (gcnew System::Windows::Forms::ListBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->select_window_label = (gcnew System::Windows::Forms::Label());
 			this->icon_pictureBox = (gcnew System::Windows::Forms::PictureBox());
 			this->minimize_btn = (gcnew System::Windows::Forms::Button());
 			this->close_form_btn = (gcnew System::Windows::Forms::Button());
-			this->app_name_label = (gcnew System::Windows::Forms::Label());
+			this->title_select_window_label = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->icon_pictureBox))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -84,18 +88,18 @@ namespace UmaAssistant {
 			this->window_listbox->Size = System::Drawing::Size(410, 374);
 			this->window_listbox->TabIndex = 0;
 			// 
-			// label2
+			// select_window_label
 			// 
-			this->label2->AutoSize = true;
-			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
-			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
-				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->label2->Location = System::Drawing::Point(8, 50);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(138, 24);
-			this->label2->TabIndex = 33;
-			this->label2->Text = L"請選擇遊戲視窗：";
+			this->select_window_label->AutoSize = true;
+			this->select_window_label->BackColor = System::Drawing::Color::Transparent;
+			this->select_window_label->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
+			this->select_window_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
+				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
+			this->select_window_label->Location = System::Drawing::Point(8, 50);
+			this->select_window_label->Name = L"select_window_label";
+			this->select_window_label->Size = System::Drawing::Size(138, 24);
+			this->select_window_label->TabIndex = 33;
+			this->select_window_label->Text = L"請選擇遊戲視窗：";
 			// 
 			// icon_pictureBox
 			// 
@@ -146,29 +150,29 @@ namespace UmaAssistant {
 			this->close_form_btn->UseVisualStyleBackColor = false;
 			this->close_form_btn->Click += gcnew System::EventHandler(this, &PreviewForm::close_form_btn_Click);
 			// 
-			// app_name_label
+			// title_select_window_label
 			// 
-			this->app_name_label->AutoSize = true;
-			this->app_name_label->BackColor = System::Drawing::Color::Transparent;
-			this->app_name_label->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
-			this->app_name_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
-				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->app_name_label->Location = System::Drawing::Point(42, 9);
-			this->app_name_label->Name = L"app_name_label";
-			this->app_name_label->Size = System::Drawing::Size(74, 24);
-			this->app_name_label->TabIndex = 37;
-			this->app_name_label->Text = L"選取視窗";
+			this->title_select_window_label->AutoSize = true;
+			this->title_select_window_label->BackColor = System::Drawing::Color::Transparent;
+			this->title_select_window_label->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
+			this->title_select_window_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
+				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
+			this->title_select_window_label->Location = System::Drawing::Point(42, 9);
+			this->title_select_window_label->Name = L"title_select_window_label";
+			this->title_select_window_label->Size = System::Drawing::Size(74, 24);
+			this->title_select_window_label->TabIndex = 37;
+			this->title_select_window_label->Text = L"選取視窗";
 			// 
 			// PreviewForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(434, 461);
-			this->Controls->Add(this->app_name_label);
+			this->Controls->Add(this->title_select_window_label);
 			this->Controls->Add(this->icon_pictureBox);
 			this->Controls->Add(this->minimize_btn);
 			this->Controls->Add(this->close_form_btn);
-			this->Controls->Add(this->label2);
+			this->Controls->Add(this->select_window_label);
 			this->Controls->Add(this->window_listbox);
 			this->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;

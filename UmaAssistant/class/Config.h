@@ -19,6 +19,7 @@ public:
 	bool AlwaysOnTop;
 	bool AutoMouseClick;
 	bool OutputLogFile;
+	int SoftwareLanguage;
 	int GameServer;
 	int GameWindow;
 	int JpServerLang;

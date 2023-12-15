@@ -14,6 +14,9 @@ namespace UmaAssistant
 		//TODO:  在此加入建構函式程式碼
 		//
 
+		WebManager* webManager = WebManager::GetInstance();
+
+
 		// 更改 .resx 檔的路徑為 UmaAssistant/UmaAssistant/form
 		/*System::Resources::ResourceManager^ resources = gcnew System::Resources::ResourceManager(L"UmaAssistant.UmaAssistant.form.SettingsForm",
 			System::Reflection::Assembly::GetExecutingAssembly());*/
@@ -36,6 +39,21 @@ namespace UmaAssistant
 		//
 		// 初始化 RadioButtons
 		//
+#pragma region 初始化 SoftwareLanguage
+		switch (global::config->SoftwareLanguage)
+		{
+		case static_cast<int>(GameServerType::JP):
+			software_lang_jp_radio_btn->Checked = true;
+			break;
+
+		case static_cast<int>(GameServerType::TW):
+			software_lang_tw_radio_btn->Checked = true;
+			break;
+		}
+
+		software_lang_jp_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::SoftwareLangRadioButtonChanged);
+		software_lang_tw_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::SoftwareLangRadioButtonChanged);
+#pragma endregion
 #pragma region 初始化 GameServerType
 		// 從 config 初始化 Checked
 		switch (global::config->GameServer)
@@ -73,16 +91,16 @@ namespace UmaAssistant
 		switch (global::config->JpServerLang)
 		{
 		case static_cast<int>(JpServerLangType::JP):
-			jpServerLang_jp_radioBtn->Checked = true;
+			jpServerLang_jp_radio_btn->Checked = true;
 			break;
 		case static_cast<int>(JpServerLangType::TW):
-			jpServerLang_tw_radioBtn->Checked = true;
+			jpServerLang_tw_radio_btn->Checked = true;
 			break;
 		}
 
 		// 註冊 CheckedChanged 事件
-		jpServerLang_jp_radioBtn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::JpServerLangRadioButtonChanged);
-		jpServerLang_tw_radioBtn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::JpServerLangRadioButtonChanged);
+		jpServerLang_jp_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::JpServerLangRadioButtonChanged);
+		jpServerLang_tw_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::JpServerLangRadioButtonChanged);
 #pragma endregion
 
 #pragma region 初始化 AutoMouseClick
@@ -191,12 +209,12 @@ namespace UmaAssistant
 		if (radioButton != nullptr && radioButton->Checked)
 		{
 			// 如果 RadioButton 被選中
-			if (radioButton == jpServerLang_tw_radioBtn)
+			if (radioButton == jpServerLang_tw_radio_btn)
 			{
 				global::config->JpServerLang = static_cast<int>(GameServerType::TW);
 				webManager->ChangeJpServerLang(static_cast<int>(GameServerType::TW));
 			}
-			else if (radioButton == jpServerLang_jp_radioBtn)
+			else if (radioButton == jpServerLang_jp_radio_btn)
 			{
 				global::config->JpServerLang = static_cast<int>(GameServerType::JP);
 				webManager->ChangeJpServerLang(static_cast<int>(GameServerType::JP));
@@ -222,6 +240,116 @@ namespace UmaAssistant
 				global::config->GameWindow = static_cast<int>(GameWindowType::BLUE_STACKS);
 			}
 		}
+
+		global::config->WriteToJson();
+	}
+
+	void SettingsForm::TraverseControls(Control^ control, array<System::String^>^ sys_str_arr)
+	{
+		System::String^ controlName = sys_str_arr[0];
+		System::String^ controlTransText = sys_str_arr[1];
+
+		for each (Control ^ childControl in control->Controls)
+		{
+			if (controlName == childControl->Name)
+			{
+				childControl->Text = controlTransText;
+			}
+
+			// 如果控制元件還有子控制元件，遞迴遍歷
+			if (childControl->Controls->Count > 0)
+			{
+				this->TraverseControls(childControl, sys_str_arr);
+			}
+		}
+	}
+
+	void SettingsForm::ChangeSoftwareLanguage(SoftwareLanguageType langType)
+	{
+		FileManager* fileManager = FileManager::GetInstance();
+		json langData = fileManager->ReadJson(global::path::std_umaMisc + "\\software_lang.json");
+
+		switch (static_cast<int>(langType))
+		{
+		case static_cast<int>(SoftwareLanguageType::JP):
+			for (json::iterator it = langData["jp"].begin(); it != langData["jp"].end(); ++it)
+			{
+				std::string form_obj_name = it.key();
+				std::string trans_name = it.value().get<std::string>();
+
+				array<System::String^>^ sys_str_arr =
+				{
+					utility::stdStr2system(form_obj_name),
+					utility::stdStr2system(trans_name),
+				};
+
+				this->TraverseControls(this, sys_str_arr);
+				this->TraverseControls(global::form::umaForm, sys_str_arr);
+				this->TraverseControls(global::form::previewForm, sys_str_arr);
+			}
+			break;
+		case static_cast<int>(SoftwareLanguageType::TW):
+			for (json::iterator it = langData["tw"].begin(); it != langData["tw"].end(); ++it)
+			{
+				std::string form_obj_name = it.key();
+				std::string trans_name = it.value().get<std::string>();
+
+				array<System::String^>^ sys_str_arr =
+				{
+					utility::stdStr2system(form_obj_name),
+					utility::stdStr2system(trans_name),
+				};
+
+				this->TraverseControls(this, sys_str_arr);
+				this->TraverseControls(global::form::umaForm, sys_str_arr);
+				this->TraverseControls(global::form::previewForm, sys_str_arr);
+			}
+			break;
+		}
+	}
+
+	void SettingsForm::SoftwareLangRadioButtonChanged(Object^ sender, EventArgs^ e)
+	{
+		RadioButton^ radioButton = dynamic_cast<RadioButton^>(sender);
+
+		if (_changingSoftwareLang)
+		{
+			radioButton->Checked = !radioButton->Checked;
+			return;
+		}
+		else
+		{
+			_changingSoftwareLang = true;
+		}
+		
+
+		WebManager* webManager = WebManager::GetInstance();
+
+
+		if (radioButton != nullptr && radioButton->Checked)
+		{
+			// 如果 RadioButton 被選中
+			if (radioButton == software_lang_jp_radio_btn)
+			{
+				global::config->SoftwareLanguage = static_cast<int>(SoftwareLanguageType::JP);
+
+				this->ChangeSoftwareLanguage(SoftwareLanguageType::JP);
+
+				webManager->ChangeCharacterNameTitleLang(static_cast<int>(SoftwareLanguageType::JP));
+				webManager->ChangeTableHeaderLang(static_cast<int>(SoftwareLanguageType::JP));
+			}
+			else if (radioButton == software_lang_tw_radio_btn)
+			{
+				global::config->SoftwareLanguage = static_cast<int>(SoftwareLanguageType::TW);
+
+				this->ChangeSoftwareLanguage(SoftwareLanguageType::TW);
+
+				webManager->ChangeCharacterNameTitleLang(static_cast<int>(SoftwareLanguageType::TW));
+				webManager->ChangeTableHeaderLang(static_cast<int>(SoftwareLanguageType::TW));
+			}
+		}
+
+		_changingSoftwareLang = false;
 
 		global::config->WriteToJson();
 	}
@@ -327,6 +455,9 @@ namespace UmaAssistant
 		this->autoMouceClick_checkBox->Checked = false;
 		this->outputLogFile_checkBox->Checked = false;
 
+		// SoftwareLanguage
+		this->software_lang_tw_radio_btn->Checked = true;
+
 		// GameServer
 		this->jp_server_radio_btn->Checked = true;
 
@@ -334,7 +465,7 @@ namespace UmaAssistant
 		this->dmm_radio_btn->Checked = true;
 
 		// JpServerLang
-		this->jpServerLang_jp_radioBtn->Checked = true;
+		this->jpServerLang_jp_radio_btn->Checked = true;
 
 		// AutoMouseClickKey
 		this->autoMouseClickKey_textBox->Text = "XButton2";
