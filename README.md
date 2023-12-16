@@ -118,7 +118,7 @@ A.
 > 如果上述的方法皆無效果，有大概率是`UmaData`中的資料不完整或程式的邏輯有疏失，請參考[問題回報](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E5%95%8F%E9%A1%8C%E5%9B%9E%E5%A0%B1)。  
 
 ## 問題回報
-有任何問題請到 [Issues](https://github.com/kakuun333/UmaAssistant/issues) 或者[社群]()中回報，非常感謝！  
+有任何問題請到 **[Issues](https://github.com/kakuun333/UmaAssistant/issues)** 或者 **[社群](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E7%A4%BE%E7%BE%A4)** 中回報，非常感謝！  
 
 ## 社群
 作者有為這個專案運營一個 Discord 伺服器，在這個伺服器裡會第一時間通知本軟體的最新資訊、也可以在這個伺服器裡輕鬆地提交問題回報。  
