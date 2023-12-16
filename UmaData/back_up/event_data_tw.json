@@ -23312,6 +23312,18 @@
             ]
           },
           {
+            "「都市女孩」現在的心情♪": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+20</span>",
+                "choice_title": "トレーニングシューズかな"
+              },
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+15</span>",
+                "choice_title": "甘いものかな？"
+              }
+            ]
+          },
+          {
             "無懈可擊的黃金美景": [
               {
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br>隨機<span class=\"plus_condition\">『備受矚目』</span>",
@@ -46164,6 +46176,66 @@
               {
                 "choice_effect": "技能點<span class=\"status_plus_value\">+30</span><br>成田大進的情誼量條<span class=\"status_plus_value\">+5</span>",
                 "choice_title": "無理はよくない"
+              }
+            ]
+          }
+        ]
+      },
+      "愛麗數碼（同處的幸福）": {
+        "event": [
+          {
+            "阿宅的美學": [
+              {
+                "choice_effect": "技能點<span class=\"status_plus_value\">+30</span><br>愛麗數碼的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "無選項"
+              }
+            ]
+          },
+          {
+            "阿宅的責任": [
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『補充營養』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>愛麗數碼的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "でも推しのお願いなんだよね？"
+              },
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『集中力』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>愛麗數碼的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "もっと自信を持って！"
+              }
+            ]
+          },
+          {
+            "阿宅的推活": [
+              {
+                "choice_effect": "大成功：<br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+15</span><br>技能點<span class=\"status_plus_value\">+20</span><br><span class=\"skill_hint\"><span class=\"skill_hint\">『目標是最前排！』</span></span>的靈感Lv<span class=\"status_plus_value\">+3</span><hr>成功：<br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\"><span class=\"skill_hint\">『目標是最前排！』</span></span>的靈感Lv<span class=\"status_plus_value\">+1</span>",
+                "choice_title": "さすがウマ娘オタク……"
+              },
+              {
+                "choice_effect": "大成功：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+35</span><br><span class=\"skill_hint\"><span class=\"skill_hint\">『喜愛賽馬娘』</span></span>的靈感Lv<span class=\"status_plus_value\">+5</span><br>愛麗數碼的情誼量條<span class=\"status_plus_value\">+5</span><hr>成功：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+35</span><br><span class=\"skill_hint\"><span class=\"skill_hint\">『喜愛賽馬娘』</span></span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>愛麗數碼的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "憧れは自分の力になるもんな"
+              }
+            ]
+          },
+          {
+            "賽馬娘缺乏症！": [
+              {
+                "choice_effect": "體力<span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br>愛麗數碼的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "大事をとって帰ったら？"
+              },
+              {
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br>愛麗數碼的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "今からでも参加できるはず！"
+              }
+            ]
+          },
+          {
+            "為了感動不懼風雨！": [
+              {
+                "choice_effect": "<span class=\"skill_hint\">『下雨天◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>愛麗數碼的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "無理すると風邪ひくぞ"
+              },
+              {
+                "choice_effect": "<span class=\"skill_hint\">『路況差勁◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>愛麗數碼的情誼量條<span class=\"status_plus_value\">+5</span>",
+                "choice_title": "真剣なんだな！"
               }
             ]
           }
