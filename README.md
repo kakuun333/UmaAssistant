@@ -128,10 +128,10 @@ A.
 
 ## 版權聲明
 Copyright (C) 2023 kakuun333  
-作者編寫的原始碼全部屬於`GPL-3.0 license`
 
 ## 授權條例
-[GPL-3.0 license](https://github.com/kakuun333/UmaAssistant?tab=GPL-3.0-1-ov-file#)
+作者編寫的原始碼全部屬於[GPL-3.0 license](https://github.com/kakuun333/UmaAssistant?tab=GPL-3.0-1-ov-file#)  
+`UmaData`中的資料只允許用於個人用途，不允許用於商業或其他性質的用途。  
 
 ## 使用的函式庫
 
