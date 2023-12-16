@@ -32,8 +32,8 @@ public:
 
 	void ChangeJpServerLang(int jpServerLangType);
 
-	void ChangeCharacterNameTitleLang(int softwareLangType);
+	void ChangeCharacterNameBrowserLang(int softwareLangType);
 
-	void ChangeTableHeaderLang(int softwareLangType);
+	void ChangeChoiceBrowserLang(int softwareLangType);
 };
 

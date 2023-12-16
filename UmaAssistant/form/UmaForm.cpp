@@ -45,13 +45,13 @@ namespace UmaAssistant
 		switch (global::config->SoftwareLanguage)
 		{
 		case static_cast<int>(GameServerType::JP):
-			webManager->ChangeCharacterNameTitleLang(static_cast<int>(SoftwareLanguageType::JP));
-			webManager->ChangeTableHeaderLang(static_cast<int>(SoftwareLanguageType::JP));
+			webManager->ChangeCharacterNameBrowserLang(static_cast<int>(SoftwareLanguageType::JP));
+			webManager->ChangeChoiceBrowserLang(static_cast<int>(SoftwareLanguageType::JP));
 			break;
 
 		case static_cast<int>(GameServerType::TW):
-			webManager->ChangeCharacterNameTitleLang(static_cast<int>(SoftwareLanguageType::TW));
-			webManager->ChangeTableHeaderLang(static_cast<int>(SoftwareLanguageType::TW));
+			webManager->ChangeCharacterNameBrowserLang(static_cast<int>(SoftwareLanguageType::TW));
+			webManager->ChangeChoiceBrowserLang(static_cast<int>(SoftwareLanguageType::TW));
 			break;
 		}
 

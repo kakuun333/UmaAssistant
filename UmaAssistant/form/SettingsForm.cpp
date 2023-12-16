@@ -249,7 +249,7 @@ namespace UmaAssistant
 		System::String^ controlName = sys_str_arr[0];
 		System::String^ controlTransText = sys_str_arr[1];
 
-		for each (Control ^ childControl in control->Controls)
+		for each (Control^ childControl in control->Controls)
 		{
 			if (controlName == childControl->Name)
 			{
@@ -335,8 +335,8 @@ namespace UmaAssistant
 
 				this->ChangeSoftwareLanguage(SoftwareLanguageType::JP);
 
-				webManager->ChangeCharacterNameTitleLang(static_cast<int>(SoftwareLanguageType::JP));
-				webManager->ChangeTableHeaderLang(static_cast<int>(SoftwareLanguageType::JP));
+				webManager->ChangeCharacterNameBrowserLang(static_cast<int>(SoftwareLanguageType::JP));
+				webManager->ChangeChoiceBrowserLang(static_cast<int>(SoftwareLanguageType::JP));
 			}
 			else if (radioButton == software_lang_tw_radio_btn)
 			{
@@ -344,8 +344,8 @@ namespace UmaAssistant
 
 				this->ChangeSoftwareLanguage(SoftwareLanguageType::TW);
 
-				webManager->ChangeCharacterNameTitleLang(static_cast<int>(SoftwareLanguageType::TW));
-				webManager->ChangeTableHeaderLang(static_cast<int>(SoftwareLanguageType::TW));
+				webManager->ChangeCharacterNameBrowserLang(static_cast<int>(SoftwareLanguageType::TW));
+				webManager->ChangeChoiceBrowserLang(static_cast<int>(SoftwareLanguageType::TW));
 			}
 		}
 

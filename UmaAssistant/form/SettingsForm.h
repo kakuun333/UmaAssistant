@@ -753,10 +753,10 @@ namespace UmaAssistant
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->software_lang_tw_radio_btn->Location = System::Drawing::Point(143, 3);
 			this->software_lang_tw_radio_btn->Name = L"software_lang_tw_radio_btn";
-			this->software_lang_tw_radio_btn->Size = System::Drawing::Size(125, 24);
+			this->software_lang_tw_radio_btn->Size = System::Drawing::Size(83, 24);
 			this->software_lang_tw_radio_btn->TabIndex = 31;
 			this->software_lang_tw_radio_btn->TabStop = true;
-			this->software_lang_tw_radio_btn->Text = L"中国語（台湾）";
+			this->software_lang_tw_radio_btn->Text = L"繁體中文";
 			this->software_lang_tw_radio_btn->UseVisualStyleBackColor = false;
 			// 
 			// SettingsForm

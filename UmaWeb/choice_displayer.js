@@ -25,38 +25,55 @@ function createChoice(choice_title, choice_effect) {
 }
 
 function changeEventTitle(text) {
-    let event_title = document.getElementById("event_title");
+    const event_title = document.getElementById("event_title");
     event_title.innerHTML = text;
 }
 
 function changeEventOwner(text) {
-    let event_owner = document.getElementById("event_owner");
+    const event_owner = document.getElementById("event_owner");
     event_owner.innerHTML = text;
 }
 
 // 清除所有選項
 function cleanChoiceTable() {
-    let choice_table = document.getElementById("choice_table");
+    const choice_table = document.getElementById("choice_table");
     while (choice_table.firstChild) {
         choice_table.removeChild(choice_table.firstChild);
     }
 }
 
-function changeTableHeaderLang(softwareLang) {
-    let title_event_owner = document.getElementById("title_event_owner");
-    let title_event_title = document.getElementById("title_event_title");
+function changeChoiceBrowserLang(softwareLang) {
+    const event_owner_title = document.getElementById("event_owner_title");
+    const event_title_title = document.getElementById("event_title_title");
+    const skill_pt_title = document.getElementById("skill_pt_title");
+    const skill_effect_title = document.getElementById("skill_effect_title");
+    const upper_skill_title = document.getElementById("upper_skill_title");
+    const lower_skill_title = document.getElementById("lower_skill_title");
+    
 
     const JP = 0;
     const TW = 1;
 
     switch (softwareLang) {
     case TW:
-        title_event_owner.innerHTML = "事件所有者";
-        title_event_title.innerHTML = "事件名稱";
+        event_owner_title.innerHTML = "事件所有者";
+        event_title_title.innerHTML = "事件名稱";
+        
+        // skill_content
+        skill_pt_title.innerHTML = "所需技能點";
+        skill_effect_title.innerHTML = "效果";
+        upper_skill_title.innerHTML = "上位技能";
+        lower_skill_title.innerHTML = "下位技能";
         break;
     case JP:
-        title_event_owner.innerHTML = "イベント所有者";
-        title_event_title.innerHTML = "イベント";
+        event_owner_title.innerHTML = "イベント所有者";
+        event_title_title.innerHTML = "イベント";
+
+        // skill_content
+        skill_pt_title.innerHTML = "スキルpt";
+        skill_effect_title.innerHTML = "效果";
+        upper_skill_title.innerHTML = "上位スキル";
+        lower_skill_title.innerHTML = "下位スキル";
         break;
     }
 }

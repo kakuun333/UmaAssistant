@@ -6,8 +6,8 @@ function changeCharacterName(characterName) {
 
 
 
-function changeCharacterNameTitleLang(softwareLang) {
-    let character_name_title = document.getElementById("title_character_name");
+function changeCharacterNameBrowserLang(softwareLang) {
+    let character_name_title = document.getElementById("character_name_title");
 
     const JP = 0;
     const TW = 1;

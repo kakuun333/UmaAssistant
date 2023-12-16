@@ -55,14 +55,14 @@ void WebManager::ChangeJpServerLang(int jpServerLangType)
 	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "changeJpServerLang", param);
 }
 
-void WebManager::ChangeCharacterNameTitleLang(int softwareLangType)
+void WebManager::ChangeCharacterNameBrowserLang(int softwareLangType)
 {
 	array<Object^>^ param = gcnew array<Object^> { softwareLangType };
-	FormController::Instance->InvokeScript(global::form::umaForm->characterNameWebBrowser, "changeCharacterNameTitleLang", param);
+	FormController::Instance->InvokeScript(global::form::umaForm->characterNameWebBrowser, "changeCharacterNameBrowserLang", param);
 }
 
-void WebManager::ChangeTableHeaderLang(int softwareLangType)
+void WebManager::ChangeChoiceBrowserLang(int softwareLangType)
 {
 	array<Object^>^ param = gcnew array<Object^> { softwareLangType };
-	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "changeTableHeaderLang", param);
+	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "changeChoiceBrowserLang", param);
 }
