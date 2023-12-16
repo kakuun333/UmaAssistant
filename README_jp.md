@@ -124,7 +124,7 @@ A.
 
 ## バグ報告
 イベントが検出できないバグ、育成しているウマ娘が検出できないバグ或はプログラムの不具合がありましたら  
-[Issues](https://github.com/kakuun333/UmaAssistant/issues) に又は[コミュニティー]()に提出していただけると助かります。  
+[Issues](https://github.com/kakuun333/UmaAssistant/issues) に又は[コミュニティー](https://github.com/kakuun333/UmaAssistant/blob/main/README_jp.md#%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%83%86%E3%82%A3%E3%83%BC)に提出していただけると助かります。  
 
 ## コミュニティー
 著作者が運営している Discord サーバーがあります、このサーバーにソフトの最新情報を通知し、バグ報告を楽にするためにつくりました。  
