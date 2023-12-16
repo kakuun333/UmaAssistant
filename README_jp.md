@@ -135,7 +135,8 @@ A.
 Copyright (C) 2023 kakuun333  
 
 ## ライセンス
-[GPL-3.0 license](https://github.com/kakuun333/UmaAssistant?tab=GPL-3.0-1-ov-file#)
+著作者が書いたソースコードは[GPL-3.0 license](https://github.com/kakuun333/UmaAssistant?tab=GPL-3.0-1-ov-file#)とします。  
+`UmaData`フォルダー中のデータは著作者が書いたものではないものも含まれていますので、個人的な目的以外で利用することを禁止します。
 
 ## 使用したライブラリ
 
