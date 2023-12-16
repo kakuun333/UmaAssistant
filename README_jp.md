@@ -51,13 +51,13 @@ https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist
 > `UmaMisc/config.json`に設定ファイルが保存されます。
 
 #### ソフトを日本語に変換する
-まず、「設定」をクリックします。  
+まず「設定」をクリックします。  
 ![044407](https://github.com/kakuun333/UmaAssistant/assets/81919641/505abc27-60bd-4ad4-8f39-cbb948ffff79)  
 「ソフト言語」を日本語に変換します。  
-![053013](https://github.com/kakuun333/UmaAssistant/assets/81919641/35fd057d-9b34-4383-acda-52f1d5707529)
+![053013](https://github.com/kakuun333/UmaAssistant/assets/81919641/87bb3818-c4a1-4f9f-b3ee-92fcd9bf8b6e)
 
 #### 色んな設定
-![072601](https://github.com/kakuun333/UmaAssistant/assets/81919641/3c2af5d1-2653-471d-8b03-16c49928d5de)
+![072601](https://github.com/kakuun333/UmaAssistant/assets/81919641/83c61f76-30f1-4dd0-a2fa-623eceff8058)
 
 - ゲームサーバー：基本的に`日本`でOKです、`台湾・香港`は KOMOE TECHNOLOGY 株式会社が代理運営しているウマ娘のサーバーです。
 
