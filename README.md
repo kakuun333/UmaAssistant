@@ -1,10 +1,7 @@
 # UmaAssistant
 
 ## 文檔語言｜ドキュメント言語
-<p align="center">
-  <a href="./README.md">繁體中文</a>｜<a href="./README_jp.md">日本語</a>
-</p>
-
+### [繁體中文](./README.md)｜[日本語](./README_jp.md)
 
 ## 簡介
 本軟體會自動辨識 DMM 版、BlueStacks 模擬器視窗中賽馬娘的事件，並給予可能的選項效果、提供選項效果中技能的詳細資訊。
@@ -48,11 +45,13 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 
 ### 1. 設定  
 ![044407](https://github.com/kakuun333/UmaAssistant/assets/81919641/505abc27-60bd-4ad4-8f39-cbb948ffff79)  
-![123107](https://github.com/kakuun333/UmaAssistant/assets/81919641/c9b3b850-6fc8-49a2-8478-1be5147df02f)
+
+
 
 > [!NOTE]
 > 設定檔將保存在`UmaMisc/config.json`。
 
+- 軟體語言：本軟體`UI`的語言。
 
 - 伺服器：請選擇適當的伺服器，選錯伺服器將無法辨識事件。
 
@@ -90,14 +89,14 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 #### 方法一
 > **適用於還沒開始培育的情況。**
 
-在配置支援卡的畫面按下「育成開始！」等待`1~2`秒後「目前培育的馬娘」應該要更新為「最終確認」所顯示的馬娘名稱，如果沒有更新的話，請參考[常見問題](https://github.com/kakuun333/UmaAssistant#%E5%B8%B8%E8%A6%8B%E5%95%8F%E9%A1%8C)  
+在配置支援卡的畫面按下「育成開始！」等待`1~2`秒後「目前培育的馬娘」應該要更新為「最終確認」所顯示的馬娘名稱，如果沒有更新的話，請參考[常見問題](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E5%B8%B8%E8%A6%8B%E5%95%8F%E9%A1%8C)  
 ![195346](https://github.com/kakuun333/UmaAssistant/assets/81919641/301e784a-acd3-48b3-9431-69086cec6df0)  
 ![195532](https://github.com/kakuun333/UmaAssistant/assets/81919641/5b9f2dbf-e5bf-4d5c-8d07-a89344d041f0)  
 
 #### 方法二
 > **適用於已經開始培育的情況。**
 
-按右下角的![option_button](https://github.com/kakuun333/UmaAssistant/assets/81919641/05802803-bdbb-4693-a0fe-be969ef93c87)後，選擇「編成情報」，等待`1~2`秒後「目前培育的馬娘」應該要更新為「編成情報」所顯示的馬娘名稱，如果沒有更新的話，請參考[常見問題](https://github.com/kakuun333/UmaAssistant#%E5%B8%B8%E8%A6%8B%E5%95%8F%E9%A1%8C)  
+按右下角的![option_button](https://github.com/kakuun333/UmaAssistant/assets/81919641/05802803-bdbb-4693-a0fe-be969ef93c87)後，選擇「編成情報」，等待`1~2`秒後「目前培育的馬娘」應該要更新為「編成情報」所顯示的馬娘名稱，如果沒有更新的話，請參考[常見問題](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E5%B8%B8%E8%A6%8B%E5%95%8F%E9%A1%8C)  
 ![2](https://github.com/kakuun333/UmaAssistant/assets/81919641/3fbd26b7-b934-4c1c-9cbd-a03689066d71)  
 ![3](https://github.com/kakuun333/UmaAssistant/assets/81919641/b9173e1d-24cb-42b8-9e2c-647e69c03de4)  
 ![4](https://github.com/kakuun333/UmaAssistant/assets/81919641/47bd9b44-7d26-46fb-bdda-75e0ebbab2c7)  
@@ -105,9 +104,9 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 ## 常見問題
 Q. 為什麼我的`UmaAssistant.exe`無法啟動？  
 A.
-1. 請確定[系統規格](https://github.com/kakuun333/UmaAssistant?tab=readme-ov-file#%E7%B3%BB%E7%B5%B1%E8%A6%8F%E6%A0%BC)符合上述標準。
-2. 請確定[檔案路徑](https://github.com/kakuun333/UmaAssistant#%E6%AA%94%E6%A1%88%E8%B7%AF%E5%BE%91)符合上述標準。
-3. 請確定電腦上已經安裝了[必須安裝的套件](https://github.com/kakuun333/UmaAssistant#%E5%BF%85%E9%A0%88%E5%AE%89%E8%A3%9D%E7%9A%84%E5%A5%97%E4%BB%B6)  
+1. 請確定[系統規格](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E7%B3%BB%E7%B5%B1%E8%A6%8F%E6%A0%BC)符合上述標準。
+2. 請確定[檔案路徑](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E6%AA%94%E6%A1%88%E8%B7%AF%E5%BE%91)符合上述標準。
+3. 請確定電腦上已經安裝了[必須安裝的套件](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E5%BF%85%E9%A0%88%E5%AE%89%E8%A3%9D%E7%9A%84%E5%A5%97%E4%BB%B6)  
 ![145447](https://github.com/kakuun333/UmaAssistant/assets/81919641/0d36b572-a610-40d3-8a75-39e80eb31203)
 
 Q. 為什麼我無法辨識「目前培育的馬娘」或「事件」？  
@@ -116,7 +115,7 @@ A.
 2. 請檢查是否選取了對應的視窗名稱。
 3. 嘗試縮放遊戲視窗。
 > [!NOTE]
-> 如果上述的方法皆無效果，有大概率是`UmaData`中的資料不完整或程式的邏輯有疏失，請參考[問題回報](https://github.com/kakuun333/UmaAssistant#%E5%95%8F%E9%A1%8C%E5%9B%9E%E5%A0%B1)。  
+> 如果上述的方法皆無效果，有大概率是`UmaData`中的資料不完整或程式的邏輯有疏失，請參考[問題回報](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E5%95%8F%E9%A1%8C%E5%9B%9E%E5%A0%B1)。  
 
 ## 問題回報
 有任何問題請到 [Issues](https://github.com/kakuun333/UmaAssistant/issues) 中提出。  
