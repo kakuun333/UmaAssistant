@@ -131,7 +131,7 @@ Copyright (C) 2023 kakuun333
 
 ## 授權條例
 作者編寫的原始碼全部屬於[GPL-3.0 license](https://github.com/kakuun333/UmaAssistant?tab=GPL-3.0-1-ov-file#)  
-`UmaData`中的資料只允許用於個人用途，不允許用於商業或其他性質的用途。  
+`UmaData`資料夾中的資料有包含不是作者編寫的資料，所以只允許用於個人用途，不允許用於商業或其他性質的用途。  
 
 ## 使用的函式庫
 
