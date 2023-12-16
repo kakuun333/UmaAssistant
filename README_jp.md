@@ -89,6 +89,12 @@ https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist
 ![053930](https://github.com/kakuun333/UmaAssistant/assets/81919641/0ea9cbbe-b424-4e47-99ad-684f86660702)
 
 ### 4. 育成しているウマ娘を検出する  
+> [!WARNING]
+> 育成しているウマ娘を変更している際、必ずこの前検出したウマ娘を削除してください。  
+> ![082441](https://github.com/kakuun333/UmaAssistant/assets/81919641/76a9ce47-e8d6-4188-845d-516e004d9034)
+
+
+
 右下の![option_button](https://github.com/kakuun333/UmaAssistant/assets/81919641/05802803-bdbb-4693-a0fe-be969ef93c87)をクリックして「編成情報」を選びます。  
 ![2](https://github.com/kakuun333/UmaAssistant/assets/81919641/3fbd26b7-b934-4c1c-9cbd-a03689066d71)  
 ![3](https://github.com/kakuun333/UmaAssistant/assets/81919641/b9173e1d-24cb-42b8-9e2c-647e69c03de4)  
