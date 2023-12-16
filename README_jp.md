@@ -90,7 +90,7 @@ https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist
 
 ### 4. 育成しているウマ娘を検出する  
 > [!WARNING]
-> 育成しているウマ娘を変更している際、必ずこの前検出したウマ娘を削除してください。  
+> 育成しているウマ娘を変えた際、必ずこの前検出したウマ娘を削除してください。  
 > ![082441](https://github.com/kakuun333/UmaAssistant/assets/81919641/76a9ce47-e8d6-4188-845d-516e004d9034)
 
 
@@ -100,7 +100,7 @@ https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist
 ![3](https://github.com/kakuun333/UmaAssistant/assets/81919641/b9173e1d-24cb-42b8-9e2c-647e69c03de4)  
 
 `1~2`秒を待った後、「育成しているウマ娘」はアップデートされるはずです。  
-アップデートされていない場合、[よくある質問](https://github.com/kakuun333/UmaAssistant#%E5%B8%B8%E8%A6%8B%E5%95%8F%E9%A1%8C)をご参照ください。  
+アップデートされていない場合、[よくある質問](https://github.com/kakuun333/UmaAssistant/blob/main/README_jp.md#%E3%82%88%E3%81%8F%E3%81%82%E3%82%8B%E8%B3%AA%E5%95%8F)をご参照ください。  
 ![055347](https://github.com/kakuun333/UmaAssistant/assets/81919641/02eb6b40-6ccd-4d2f-9439-6a0582559c50)
 
 
