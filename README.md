@@ -118,7 +118,12 @@ A.
 > 如果上述的方法皆無效果，有大概率是`UmaData`中的資料不完整或程式的邏輯有疏失，請參考[問題回報](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E5%95%8F%E9%A1%8C%E5%9B%9E%E5%A0%B1)。  
 
 ## 問題回報
-有任何問題請到 [Issues](https://github.com/kakuun333/UmaAssistant/issues) 中提出。  
+有任何問題請到 [Issues](https://github.com/kakuun333/UmaAssistant/issues) 或者[社群]()中回報，非常感謝！  
+
+## 社群
+作者有為這個專案運營一個 Discord 伺服器，在這個伺服器裡會第一時間通知本軟體的最新資訊、也可以在這個伺服器裡輕鬆地提交問題回報。  
+**[加入 Discord 伺服器](https://discord.gg/JzT5fpjarM)**  
+![Discord Banner 2](https://discordapp.com/api/guilds/1180922259146281053/widget.png?style=banner2)  
 
 ## 免責聲明
 - 本軟體只在按下`啟動`時進行特定視窗的截圖操作和遊戲事件、遊戲角色相關的辨識操作之後立即銷毀特定視窗的截圖，並且此類操作不會收集任何個人資訊。  
