@@ -8,12 +8,12 @@
 
 ## 功能介紹
 ### 事件選項效果
-![052953](https://github.com/kakuun333/UmaAssistant/assets/81919641/27ca31f8-8f27-499e-ab3f-8a3b3b70c40a)
+![1](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1.png)
 ### 技能預覽
 #### 白技能  
-![053007](https://github.com/kakuun333/UmaAssistant/assets/81919641/33f1f0ad-58b8-42a3-9232-22a019686354)
+![2](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/2.png)
 #### 金技能  
-![065204](https://github.com/kakuun333/UmaAssistant/assets/81919641/7b5bec42-0325-4710-af0b-45e12b23c05d)
+![3](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/3.png)
 
 ## 運作環境
 
@@ -41,11 +41,11 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 ## 使用方法
 ### 0. 開啟程式  
 開啟資料夾中的`UmaAssistant.exe`  
-![171217](https://github.com/kakuun333/UmaAssistant/assets/81919641/35dad315-a214-4908-a57d-f6807c8f7c87)  
+![exe_img](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/image/exe_img.png)  
 
 ### 1. 設定  
-![044407](https://github.com/kakuun333/UmaAssistant/assets/81919641/505abc27-60bd-4ad4-8f39-cbb948ffff79)  
-
+![4](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/4.png)  
+![5](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/5.png)  
 
 
 > [!NOTE]
@@ -75,31 +75,31 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 
 ### 2. 選取遊戲視窗  
 按下「選取視窗」，選擇對應的遊戲視窗名稱，之後應該要看到「已找到遊戲視窗」。
-![1](https://github.com/kakuun333/UmaAssistant/assets/81919641/39438b25-0ce2-4863-9bc1-72155a0704f6)
+![6](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/6.png)
 
 ### 3. 啟動事件辨識  
-![0](https://github.com/kakuun333/UmaAssistant/assets/81919641/2a936e17-8f0c-4007-97b4-8b4c2614f28b)
+![7](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/7.png)
 
 ### 4. 尋找目前培育的馬娘  
 > [!WARNING]
 > 更換培育的馬娘時，請務必先清除先前的馬娘。  
-> ![065617](https://github.com/kakuun333/UmaAssistant/assets/81919641/5dd14128-ff69-449e-af8a-4592bae91de1)
+> ![8](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/8.png)
 
 
 #### 方法一
 > **適用於還沒開始培育的情況。**
 
 在配置支援卡的畫面按下「育成開始！」等待`1~2`秒後「目前培育的馬娘」應該要更新為「最終確認」所顯示的馬娘名稱，如果沒有更新的話，請參考[常見問題](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E5%B8%B8%E8%A6%8B%E5%95%8F%E9%A1%8C)  
-![195346](https://github.com/kakuun333/UmaAssistant/assets/81919641/301e784a-acd3-48b3-9431-69086cec6df0)  
-![195532](https://github.com/kakuun333/UmaAssistant/assets/81919641/5b9f2dbf-e5bf-4d5c-8d07-a89344d041f0)  
+![9](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/9.png)  
+![10](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/10.png)  
 
 #### 方法二
 > **適用於已經開始培育的情況。**
 
-按右下角的![option_button](https://github.com/kakuun333/UmaAssistant/assets/81919641/05802803-bdbb-4693-a0fe-be969ef93c87)後，選擇「編成情報」，等待`1~2`秒後「目前培育的馬娘」應該要更新為「編成情報」所顯示的馬娘名稱，如果沒有更新的話，請參考[常見問題](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E5%B8%B8%E8%A6%8B%E5%95%8F%E9%A1%8C)  
-![2](https://github.com/kakuun333/UmaAssistant/assets/81919641/3fbd26b7-b934-4c1c-9cbd-a03689066d71)  
-![3](https://github.com/kakuun333/UmaAssistant/assets/81919641/b9173e1d-24cb-42b8-9e2c-647e69c03de4)  
-![4](https://github.com/kakuun333/UmaAssistant/assets/81919641/47bd9b44-7d26-46fb-bdda-75e0ebbab2c7)  
+按右下角的![option_button](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/image/option_button.png)後，選擇「編成情報」，等待`1~2`秒後「目前培育的馬娘」應該要更新為「編成情報」所顯示的馬娘名稱，如果沒有更新的話，請參考[常見問題](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E5%B8%B8%E8%A6%8B%E5%95%8F%E9%A1%8C)  
+![11](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/11.png)  
+![12](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/12.png)  
+![13](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/13.png)  
 
 ## 常見問題
 Q. 為什麼我的`UmaAssistant.exe`無法啟動？  
@@ -107,7 +107,7 @@ A.
 1. 請確定[系統規格](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E7%B3%BB%E7%B5%B1%E8%A6%8F%E6%A0%BC)符合上述標準。
 2. 請確定[檔案路徑](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E6%AA%94%E6%A1%88%E8%B7%AF%E5%BE%91)符合上述標準。
 3. 請確定電腦上已經安裝了[必須安裝的套件](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E5%BF%85%E9%A0%88%E5%AE%89%E8%A3%9D%E7%9A%84%E5%A5%97%E4%BB%B6)  
-![145447](https://github.com/kakuun333/UmaAssistant/assets/81919641/0d36b572-a610-40d3-8a75-39e80eb31203)
+![vc_redist](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/image/vc_redist.png)
 
 Q. 為什麼我無法辨識「目前培育的馬娘」或「事件」？  
 A. 
