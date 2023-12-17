@@ -31,12 +31,16 @@ enum ImagePattern
 
 	O_IMG,
 
+	EVENT_ICON,
+
 	EVENT_TITLE_OIMG,
 	EVENT_TITLE_GRAY,
 	EVENT_TITLE_GRAY_BIN,
 	EVENT_TITLE_GRAY_BIN_INV,
 
-	EVENT_ICON,
+	HENSEI_CHAR_GRAY,
+	HENSEI_CHAR_GRAY_BIN,
+	HENSEI_CHAR_GRAY_BIN_INV,
 };
 
 class Screenshot
@@ -48,7 +52,7 @@ private:
 
 	void CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPattern);
 
-	void ResizeImage(cv::Mat& img, float scale_factor /*放大倍數*/, cv::InterpolationFlags interpolationFlag);
+	void ResizeImage(cv::Mat& img, float scale_factor /*放大倍數*/, cv::InterpolationFlags interpolationFlag = cv::INTER_LINEAR/*INTER_LINEAR*/);
 
 	const double GetWhitePixelRatio(cv::Mat img);
 
@@ -73,6 +77,7 @@ public:
 
 	static void ShowImage();
 
+
 	inline bool IsDataComplete()
 	{
 		if (oimg.empty()) return false;
@@ -84,6 +89,8 @@ public:
 	{
 		return _isEventTitle;
 	}
+
+	void ResetCharacterImage(cv::Mat& img, float scale_factor, ImagePattern imgPattern);
 
 	//static std::map<std::string, cv::Mat> img_dict
 	static cv::Mat oimg;

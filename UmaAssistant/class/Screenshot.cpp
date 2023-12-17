@@ -62,8 +62,6 @@ bool Screenshot::IsWindowCovered(HWND gameHWND)
 	return false;
 }
 
-
-
 cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 {
 	UmaLog* umalog = UmaLog::GetInstance();
@@ -183,7 +181,6 @@ cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 
 	return cvmat;
 }
-
 
 void Screenshot::CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPattern = ImagePattern::IMG_PATTERN_NONE)
 {
@@ -414,9 +411,7 @@ void Screenshot::SetEventTitleBound(cv::Mat& img)
 	std::cout << "[GetEventTitleBound] whitePixelRatio: " << WHITE_PIXEL_RATIO << std::endl;
 }
 
-
-
-void Screenshot::ResizeImage(cv::Mat& img, float scale_factor = 2.0 /*放大倍數*/, cv::InterpolationFlags interpolationFlag = cv::INTER_LINEAR/*INTER_LINEAR*/)
+void Screenshot::ResizeImage(cv::Mat& img, float scale_factor = 2.0 /*放大倍數*/, cv::InterpolationFlags interpolationFlag)
 {
 	// 計算放大後的寬和高
 	int new_width = static_cast<int>(img.cols * scale_factor);
@@ -641,22 +636,46 @@ void Screenshot::GetHenseiCharacterNameImage()
 	// hensei_character_name_bin //
 	hensei_character_name_gray = oimg.clone();
 	this->CropImage(hensei_character_name_gray, ImageType::IMG_HENSEI_CHARACTER_NAME);
-	this->ResizeImage(hensei_character_name_gray, 1.2);
+	this->ResizeImage(hensei_character_name_gray, 1.0);
 	cv::cvtColor(hensei_character_name_gray, hensei_character_name_gray, cv::COLOR_BGR2GRAY);
 
 	// hensei_character_name_gray_bin //
 	hensei_character_name_gray_bin = oimg.clone();
 	this->CropImage(hensei_character_name_gray_bin, ImageType::IMG_HENSEI_CHARACTER_NAME);
-	this->ResizeImage(hensei_character_name_gray_bin, 1.2);
+	this->ResizeImage(hensei_character_name_gray_bin, 1.0);
 	cv::cvtColor(hensei_character_name_gray_bin, hensei_character_name_gray_bin, cv::COLOR_BGR2GRAY);
 	cv::threshold(hensei_character_name_gray_bin, hensei_character_name_gray_bin, 170/*120*/, 255, cv::THRESH_BINARY);
 
 	// hensei_character_name_bin_inv //
 	hensei_character_name_gray_bin_inv = oimg.clone();
 	this->CropImage(hensei_character_name_gray_bin_inv, ImageType::IMG_HENSEI_CHARACTER_NAME);
-	this->ResizeImage(hensei_character_name_gray_bin_inv, 1.2);
+	this->ResizeImage(hensei_character_name_gray_bin_inv, 1.0);
 	cv::cvtColor(hensei_character_name_gray_bin_inv, hensei_character_name_gray_bin_inv, cv::COLOR_BGR2GRAY);
 	cv::threshold(hensei_character_name_gray_bin_inv, hensei_character_name_gray_bin_inv, 175/*130*/, 255, cv::THRESH_BINARY);
 	hensei_character_name_gray_bin_inv = cv::Scalar::all(255) - hensei_character_name_gray_bin_inv; // 反轉顏色
 	
+}
+
+void Screenshot::ResetCharacterImage(cv::Mat& img, float scale_factor, ImagePattern imgPattern)
+{
+	switch (imgPattern)
+	{
+	case ImagePattern::HENSEI_CHAR_GRAY_BIN:
+		img = oimg.clone();
+		this->CropImage(img, ImageType::IMG_HENSEI_CHARACTER_NAME);
+		this->ResizeImage(img, scale_factor);
+		cv::cvtColor(img, img, cv::COLOR_BGR2GRAY);
+		cv::threshold(img, img, 170/*120*/, 255, cv::THRESH_BINARY);
+		break;
+
+	case ImagePattern::HENSEI_CHAR_GRAY_BIN_INV:
+		img = oimg.clone();
+		this->CropImage(img, ImageType::IMG_HENSEI_CHARACTER_NAME);
+		this->ResizeImage(img, scale_factor);
+		cv::cvtColor(img, img, cv::COLOR_BGR2GRAY);
+		cv::threshold(img, img, 175/*130*/, 255, cv::THRESH_BINARY);
+		img = cv::Scalar::all(255) - img; // 反轉顏色
+		break;
+	}
+
 }

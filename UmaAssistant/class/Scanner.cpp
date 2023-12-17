@@ -363,35 +363,54 @@ void Scanner::Start(std::string language)
 					{
 						try
 						{
-							tryCharThread = std::make_unique<std::thread>([=, &henseiCharNameText]()
+							tryCharThread = std::make_unique<std::thread>([=, &ss, &henseiCharNameText]()
 								{
 									bool foundHenseiChar = false;
 
+									const int TRY_RESIZE_COUNT = 10;
+									const float SCALE_FACTOR = 0.1;
+
 									if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) return;
 
-									std::unique_ptr<std::thread> gray_bin_invThread = std::make_unique<std::thread>([=, &henseiCharNameText, &foundHenseiChar]()
+									std::unique_ptr<std::thread> gray_bin_invThread = std::make_unique<std::thread>([=, &ss, &henseiCharNameText, &foundHenseiChar]()
 										{
+											std::unique_lock<std::mutex> lock(dataMutex); // 以防萬一，先上鎖
+
 											henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin_inv, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
 											if (!henseiCharNameText.empty()) umalog->print(u8"[Scanner] hensei_character_name_gray_bin_inv: ", henseiCharNameText);
 											
-											std::unique_lock<std::mutex> lock(dataMutex); // 以防萬一
-											if (!foundHenseiChar)
+											if (foundHenseiChar) return;
+
+											if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) { foundHenseiChar = true; return; }
+
+											float currentScale = 1;
+											for (int i = 0; i < TRY_RESIZE_COUNT; ++i)
 											{
-												if (dataManager->TryGetCurrentCharacterName(henseiCharNameText))
-													foundHenseiChar = true;
+												currentScale += SCALE_FACTOR;
+												ss.ResetCharacterImage(ss.hensei_character_name_gray_bin_inv, currentScale, ImagePattern::HENSEI_CHAR_GRAY_BIN);
+												henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin_inv, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
+												if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) { foundHenseiChar = true; return; }
 											}
 										});
 									
-									std::unique_ptr<std::thread> gray_binThread = std::make_unique<std::thread>([=, &henseiCharNameText, &foundHenseiChar]()
+									std::unique_ptr<std::thread> gray_binThread = std::make_unique<std::thread>([=, &ss, &henseiCharNameText, &foundHenseiChar]()
 										{
+											std::unique_lock<std::mutex> lock(dataMutex); // 以防萬一，先上鎖
+
 											henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
 											if (!henseiCharNameText.empty()) umalog->print(u8"[Scanner] hensei_character_name_gray_bin: ", henseiCharNameText);
 											
-											std::unique_lock<std::mutex> lock(dataMutex); // 以防萬一
-											if (!foundHenseiChar)
+											if (foundHenseiChar) return;
+
+											if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) { foundHenseiChar = true; return; }
+
+											float currentScale = 1;
+											for (int i = 0; i < TRY_RESIZE_COUNT; ++i)
 											{
-												if (dataManager->TryGetCurrentCharacterName(henseiCharNameText))
-													foundHenseiChar = true;
+												currentScale += SCALE_FACTOR;
+												ss.ResetCharacterImage(ss.hensei_character_name_gray_bin, currentScale, ImagePattern::HENSEI_CHAR_GRAY_BIN);
+												henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
+												if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) { foundHenseiChar = true; return; }
 											}
 										});
 
@@ -462,7 +481,7 @@ void Scanner::Start(std::string language)
 								{
 									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
 
-									if (sapokaUmaEventData.IsDataComplete()) return;
+									if (sapokaUmaEventData.IsDataComplete()) { _previousEventText = eventText; return; }
 
 									umalog->print(u8"[Scanner] sapokaUmaEventData 資料不完整");
 
@@ -470,7 +489,7 @@ void Scanner::Start(std::string language)
 									umalog->print(u8"[Scanner] event_title_gray: ", eventText);
 									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
 
-									if (sapokaUmaEventData.IsDataComplete()) return;
+									if (sapokaUmaEventData.IsDataComplete()) { _previousEventText = eventText; return; }
 
 									umalog->print(u8"[Scanner] sapokaUmaEventData 資料不完整2");
 
@@ -478,7 +497,7 @@ void Scanner::Start(std::string language)
 									umalog->print(u8"[Scanner] event_title_gray_bin_inv: ", eventText);
 									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
 
-									if (sapokaUmaEventData.IsDataComplete()) return;
+									if (sapokaUmaEventData.IsDataComplete()) { _previousEventText = eventText; return; }
 
 									umalog->print(u8"[Scanner] sapokaUmaEventData 資料不完整3");
 								}
@@ -503,6 +522,10 @@ void Scanner::Start(std::string language)
 								try
 								{
 									scenarioEventData = dataManager->GetScenarioEventData(eventText);
+									if (scenarioEventData.IsDataComplete())
+									{
+										_previousEventText = eventText;
+									}
 								}
 								catch (const std::exception& e)
 								{
@@ -612,7 +635,7 @@ void Scanner::Start(std::string language)
 				//
 				// 更新上次辨識到的文字
 				//
-				_previousEventText = eventText;
+				
 				//_previousCharacterNameText = characterNameText;
 				_previousHenseiCharNameText = henseiCharNameText;
 
