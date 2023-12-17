@@ -8,14 +8,14 @@
 
 ## 機能紹介
 ### イベント選択肢効果  
-![051248](https://github.com/kakuun333/UmaAssistant/assets/81919641/f1cd2ae4-9147-4920-9422-7cab1882cd00)
+![051248](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/jp_doc/051248.png)
 
 ### スキルプレビュー
 
 #### 白スキル  
-![051326](https://github.com/kakuun333/UmaAssistant/assets/81919641/f0ac239f-74da-4d60-843a-94c62a933520)  
+![051326](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/jp_doc/051326.png)  
 #### 金スキル  
-![052103](https://github.com/kakuun333/UmaAssistant/assets/81919641/456ca2e3-fd03-4693-9ad8-3beff15914d7)  
+![052103](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/jp_doc/052103.png)  
 
 
 ## 稼働環境
@@ -44,7 +44,7 @@ https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist
 ## 使い方
 ### 0. ソフトを起動させる  
 フォルダー内の`UmaAssistant.exe`を実行してください。  
-![171217](https://github.com/kakuun333/UmaAssistant/assets/81919641/35dad315-a214-4908-a57d-f6807c8f7c87)  
+![171217](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/image/exe_img.png)  
 
 ### 1. 設定
 > [!NOTE]
@@ -52,12 +52,12 @@ https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist
 
 #### ソフトを日本語に変換する
 まず「設定」をクリックします。  
-![044407](https://github.com/kakuun333/UmaAssistant/assets/81919641/505abc27-60bd-4ad4-8f39-cbb948ffff79)  
+![044407](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/jp_doc/083155.png)  
 「ソフト言語」を日本語に変換します。  
-![053013](https://github.com/kakuun333/UmaAssistant/assets/81919641/87bb3818-c4a1-4f9f-b3ee-92fcd9bf8b6e)
+![053013](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/jp_doc/053013.png)
 
 #### 色んな設定
-![072601](https://github.com/kakuun333/UmaAssistant/assets/81919641/83c61f76-30f1-4dd0-a2fa-623eceff8058)
+![072601](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/jp_doc/072601.png)
 
 - ゲームサーバー：基本的に`日本`でOKです、`台湾・香港`は KOMOE TECHNOLOGY 株式会社が代理運営しているウマ娘のサーバーです。
 
@@ -82,26 +82,26 @@ https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist
 
 ### 2. ゲームウィンドウを選ぶ  
 「ウィンドウ選択」をクリックして、ゲームウィンドウと相応なものを選んだあと、赤い文字が緑の「ゲームウィンドウが見つけました」になるはずです。  
-![053553](https://github.com/kakuun333/UmaAssistant/assets/81919641/f4ad616b-de1d-4041-8609-e3eedaadb07f)
+![053553](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/jp_doc/053553.png)
 
 
 ### 3. スキャンする  
-![053930](https://github.com/kakuun333/UmaAssistant/assets/81919641/0ea9cbbe-b424-4e47-99ad-684f86660702)
+![053930](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/jp_doc/053930.png)
 
 ### 4. 育成しているウマ娘を検出する  
 > [!WARNING]
 > 育成しているウマ娘を変えた際、必ずこの前検出したウマ娘を削除してください。  
-> ![082441](https://github.com/kakuun333/UmaAssistant/assets/81919641/76a9ce47-e8d6-4188-845d-516e004d9034)
+> ![082441](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/jp_doc/082441.png)
 
 
 
-右下の![option_button](https://github.com/kakuun333/UmaAssistant/assets/81919641/05802803-bdbb-4693-a0fe-be969ef93c87)をクリックして「編成情報」を選びます。  
-![2](https://github.com/kakuun333/UmaAssistant/assets/81919641/3fbd26b7-b934-4c1c-9cbd-a03689066d71)  
-![3](https://github.com/kakuun333/UmaAssistant/assets/81919641/b9173e1d-24cb-42b8-9e2c-647e69c03de4)  
+右下の![option_button](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/image/option_button.png)をクリックして「編成情報」を選びます。  
+![2](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/2.png)  
+![3](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/3.png)  
 
 `1~2`秒を待った後、「育成しているウマ娘」はアップデートされるはずです。  
 アップデートされていない場合、[よくある質問](https://github.com/kakuun333/UmaAssistant/blob/main/README_jp.md#%E3%82%88%E3%81%8F%E3%81%82%E3%82%8B%E8%B3%AA%E5%95%8F)をご参照ください。  
-![055347](https://github.com/kakuun333/UmaAssistant/assets/81919641/02eb6b40-6ccd-4d2f-9439-6a0582559c50)
+![055347](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/jp_doc/055347.png)
 
 
 
@@ -111,7 +111,7 @@ A.
 1. [OSスペック](https://github.com/kakuun333/UmaAssistant/blob/main/README_jp.md#os%E3%82%B9%E3%83%9A%E3%83%83%E3%82%AF)が合っているかどうかを確認してください。
 2. [ファイルパス](https://github.com/kakuun333/UmaAssistant/blob/main/README_jp.md#%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%83%91%E3%82%B9)が合っているかどうかを確認してください。
 3. [必要なパッケージ](https://github.com/kakuun333/UmaAssistant/blob/main/README_jp.md#%E5%BF%85%E8%A6%81%E3%81%AA%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8)がインストールされているかどうかを確認してください。  
-![145447](https://github.com/kakuun333/UmaAssistant/assets/81919641/0d36b572-a610-40d3-8a75-39e80eb31203)
+![145447](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/image/vc_redist.png)
 
 Q. なぜ「育成しているウマ娘」或は「イベント」が検出できないでしょうか？  
 A. 
