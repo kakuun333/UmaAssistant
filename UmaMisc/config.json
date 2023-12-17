@@ -5,9 +5,9 @@
     "VK": 6,
     "WinFormButton": 16777216
   },
-  "DebugMode": false,
-  "GameServer": 1,
-  "GameWindow": 1,
+  "DebugMode": true,
+  "GameServer": 0,
+  "GameWindow": 0,
   "GameWindowName": "BlueStacks App Player 1",
   "JpServerLang": 0,
   "LocalServer": {

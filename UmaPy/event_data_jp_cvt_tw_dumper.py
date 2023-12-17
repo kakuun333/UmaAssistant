@@ -329,11 +329,10 @@ def dump_char_convert_data():
         utility.return_to_first_window(driver);
 
 
+# 獲取支援卡資料
+dump_card_convert_data();
 
-# dump_card_convert_data();
-
-
-
+# 獲取角色資料
 dump_char_convert_data();
 
 

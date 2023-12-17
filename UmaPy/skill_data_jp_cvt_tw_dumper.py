@@ -93,19 +93,19 @@ def dump_skill_convert_data():
                 utility.open_url(driver, skill_url);
                 utility.switch_to_new_tab(driver);
                 jp_skill_title = get_jp_skill_title();
-                jp_skill_title = utility.convert_circle(jp_skill_title);
+                jp_skill_title = utility.replace(jp_skill_title, "○", "◯");
 
                 tw_skill_title = get_tw_skill_title();
-                tw_skill_title = utility.convert_circle(tw_skill_title);
+                tw_skill_title = utility.replace(tw_skill_title, "○", "◯");
 
                 tw_skill_effect = get_tw_skill_effect();
-                tw_skill_effect = utility.convert_circle(tw_skill_effect);
+                tw_skill_effect = utility.replace(tw_skill_effect, "○", "◯");
         
                 tw_upper_skill = get_tw_upper_skill();
-                tw_upper_skill = utility.convert_circle(tw_upper_skill);
+                tw_upper_skill = utility.replace(tw_upper_skill, "○", "◯");
 
                 tw_lower_skill = get_tw_lower_skill();
-                tw_lower_skill = utility.convert_circle(tw_lower_skill);
+                tw_lower_skill = utility.replace(tw_lower_skill, "○", "◯");
 
                 skill_dict[jp_skill_title] = {
                     "tw_skill_title": tw_skill_title,
