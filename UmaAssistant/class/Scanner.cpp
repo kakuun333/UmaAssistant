@@ -459,6 +459,7 @@ void Scanner::Start(std::string language)
 						{
 							this->UpdateCharChoice(webManager, charUmaEventData);
 							umalog->print(u8"[Scanner] 成功更新 CharChoice");
+							_previousEventText = eventText;
 							_updatedChoice = true;
 						}
 					}
@@ -522,10 +523,7 @@ void Scanner::Start(std::string language)
 								try
 								{
 									scenarioEventData = dataManager->GetScenarioEventData(eventText);
-									if (scenarioEventData.IsDataComplete())
-									{
-										_previousEventText = eventText;
-									}
+									if (scenarioEventData.IsDataComplete()) { _previousEventText = eventText; return; }
 								}
 								catch (const std::exception& e)
 								{
