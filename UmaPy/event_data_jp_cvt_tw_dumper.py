@@ -144,6 +144,8 @@ def get_event_title_list():
 
                 event_title = utility.replace(event_title, "　", "");
 
+                event_title = utility.replace(event_title, "〜", "～");
+
                 print("event_title: " + event_title);
 
                 list.append(event_title);
@@ -177,6 +179,8 @@ def get_tw_char_event_owner():
     pattern = re.compile("【(.+)】(.+)");
 
     tw_char_event_owner = re.sub(pattern, r"\2（\1）", a.text);
+
+    tw_char_event_owner = utility.replace("繁/米浴（Make up Vampire!）", "米浴（Make up Vampire!）")
 
     print(tw_char_event_owner);
 

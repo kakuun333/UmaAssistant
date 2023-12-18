@@ -33,12 +33,14 @@ private:
 
 	static tesseract::TessBaseAPI* ocr_tw;
 
+	static tesseract::TessBaseAPI* ocr_eng;
+
 	// 互斥鎖。用於保護 OCR 物件
 	std::mutex ocrMutex;
 	
 	std::mutex dataMutex;
 
-	std::string GetScannedText(cv::Mat image, std::string language, ImageType imgType);
+	std::string GetScannedText(cv::Mat image, ImageType imgType = ImageType::IMG_EVENT_TITLE, bool englishMode = false);
 
 	void UpdateSapokaChoice(WebManager* webManager, UmaEventData sapokaUmaEventData);
 
@@ -65,6 +67,8 @@ public:
 	static void InitOcrJpn();
 
 	static void InitOcrTw();
+
+	static void InitOcrEng();
 
 	void Start(std::string language = "jpn");
 

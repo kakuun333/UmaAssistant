@@ -111,6 +111,9 @@
     <ClCompile Include="UmaAssistant\class\UmaLog.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="UmaAssistant\class\data\UmaGetCharData.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UmaAssistant\form\UmaForm.h">
@@ -234,6 +237,9 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="UmaAssistant\enum\SoftwareLanguageType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="UmaAssistant\class\data\UmaGetCharData.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

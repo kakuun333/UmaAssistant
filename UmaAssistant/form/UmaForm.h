@@ -328,9 +328,9 @@ namespace UmaAssistant {
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->label1->Location = System::Drawing::Point(36, 19);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(58, 20);
+			this->label1->Size = System::Drawing::Size(56, 20);
 			this->label1->TabIndex = 27;
-			this->label1->Text = L"v1.0.0";
+			this->label1->Text = L"v1.0.1";
 			// 
 			// UmaForm
 			// 

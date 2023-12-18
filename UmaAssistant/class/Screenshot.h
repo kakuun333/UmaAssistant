@@ -41,6 +41,7 @@ enum ImagePattern
 	HENSEI_CHAR_GRAY,
 	HENSEI_CHAR_GRAY_BIN,
 	HENSEI_CHAR_GRAY_BIN_INV,
+	HENSEI_CHAR_ANOTHER_NAME_GRAY,
 };
 
 class Screenshot
@@ -90,7 +91,7 @@ public:
 		return _isEventTitle;
 	}
 
-	void ResetCharacterImage(cv::Mat& img, float scale_factor, ImagePattern imgPattern);
+	void ResetCharacterImage(cv::Mat& img, ImagePattern imgPattern, float scale_factor, int thresh_factor = NULL);
 
 	//static std::map<std::string, cv::Mat> img_dict
 	static cv::Mat oimg;
@@ -107,6 +108,7 @@ public:
 	static cv::Mat hensei_character_name_gray;
 	static cv::Mat hensei_character_name_gray_bin;
 	static cv::Mat hensei_character_name_gray_bin_inv;
+	static cv::Mat hensei_character_another_name_gray;
 
 	static cv::Mat syousai_character_name_gray_bin;
 };

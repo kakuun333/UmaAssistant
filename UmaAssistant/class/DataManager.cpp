@@ -43,8 +43,7 @@ void DataManager::InitEventDataJson()
 
 bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 {
-	bool foundCurrentCharacter = false;
-
+	bool foundChar = false;
 	json event_data_json;
 
 	switch (global::config->GameServer)
@@ -65,6 +64,8 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 		break;
 	}
 
+	// event_owner		
+	std::vector<UmaGetCharData> similarCharList = {};
 
 	WebManager* webManager = WebManager::GetInstance();
 
@@ -76,94 +77,126 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 	{
 		if (it.key() == "1_star")
 		{
-			oneStarThread = std::make_unique<std::thread>([=, &foundCurrentCharacter]()
+			oneStarThread = std::make_unique<std::thread>([=, &similarCharList]()
 				{
 					for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
 					{
 						// it2.key() == event_owner;
 
+						std::string rare = it.key();
 						std::string event_owner = it2.key();
 
-						if (utility::SIMILAR_METRIC > utility::GetCharacterNameSimilarity(scanned_text, event_owner)) continue;
+						float similarity = utility::GetCharacterNameSimilarity(scanned_text, event_owner);
 
-						// 以防萬一，加上互斥鎖保護共享資源
+						if (utility::SIMILAR_METRIC > similarity) continue;
+						UmaGetCharData umaGetCharData;
+						umaGetCharData.event_owner = event_owner;
+						umaGetCharData.rare = rare;
+						umaGetCharData.similarity = similarity;
+
+					// 以防萬一，加上互斥鎖保護共享資源
 						std::unique_lock<std::mutex> lock(dataMutex); 
-						foundCurrentCharacter = true;
+						similarCharList.push_back(umaGetCharData);
 						lock.unlock();
 
 						std::cout << "FOUND CHARACTER: " << event_owner << std::endl;
-
-						_currentCharacterInfoDict["rare"] = it.key();
-						_currentCharacterInfoDict["event_owner"] = event_owner;
-						_currentCharacterInfoLocked = true;
-
-						webManager->ChangeCharacterName(utility::stdStr2system(event_owner));
 					}
 				});
 		}
 		else if (it.key() == "2_star")
 		{
-			twoStarThread = std::make_unique<std::thread>([=, &foundCurrentCharacter]()
+			twoStarThread = std::make_unique<std::thread>([=, &similarCharList]()
 				{
 					for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
 					{
 						// it2.key() == event_owner;
 
+						std::string rare = it.key();
 						std::string event_owner = it2.key();
 
-						if (utility::SIMILAR_METRIC > utility::GetCharacterNameSimilarity(scanned_text, event_owner)) continue;
+						float similarity = utility::GetCharacterNameSimilarity(scanned_text, event_owner);
+
+						if (utility::SIMILAR_METRIC > similarity) continue;
+						UmaGetCharData umaGetCharData;
+						umaGetCharData.event_owner = event_owner;
+						umaGetCharData.rare = rare;
+						umaGetCharData.similarity = similarity;
 
 						// 以防萬一，加上互斥鎖保護共享資源
 						std::unique_lock<std::mutex> lock(dataMutex);
-						foundCurrentCharacter = true;
+						similarCharList.push_back(umaGetCharData);
 						lock.unlock();
 
 						std::cout << "FOUND CHARACTER: " << event_owner << std::endl;
-
-						_currentCharacterInfoDict["rare"] = it.key();
-						_currentCharacterInfoDict["event_owner"] = event_owner;
-						_currentCharacterInfoLocked = true;
-
-						webManager->ChangeCharacterName(utility::stdStr2system(event_owner));
 					}
 				});
 		}
 		else if (it.key() == "3_star")
 		{
-			threeStarThread = std::make_unique<std::thread>([=, &foundCurrentCharacter]()
+			threeStarThread = std::make_unique<std::thread>([=, &similarCharList]()
 				{
 					for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
 					{
 						// it2.key() == event_owner;
 
+						std::string rare = it.key();
 						std::string event_owner = it2.key();
 
-						if (utility::SIMILAR_METRIC > utility::GetCharacterNameSimilarity(scanned_text, event_owner)) continue;
+						float similarity = utility::GetCharacterNameSimilarity(scanned_text, event_owner);
+
+						if (utility::SIMILAR_METRIC > similarity) continue;
+						UmaGetCharData umaGetCharData;
+						umaGetCharData.event_owner = event_owner;
+						umaGetCharData.rare = rare;
+						umaGetCharData.similarity = similarity;
 
 						// 以防萬一，加上互斥鎖保護共享資源
-						std::unique_lock<std::mutex> lock(dataMutex); 
-						foundCurrentCharacter = true;
+						std::unique_lock<std::mutex> lock(dataMutex);
+						similarCharList.push_back(umaGetCharData);
 						lock.unlock();
 
 						std::cout << "FOUND CHARACTER: " << event_owner << std::endl;
-
-						_currentCharacterInfoDict["rare"] = it.key();
-						_currentCharacterInfoDict["event_owner"] = event_owner;
-						_currentCharacterInfoLocked = true;
-
-						webManager->ChangeCharacterName(utility::stdStr2system(event_owner));
 					}
 				});
 		}
 	}
 
 
+
+	//_currentCharacterInfoDict["rare"] = it.key();
+//_currentCharacterInfoDict["event_owner"] = event_owner;
+//_currentCharacterInfoLocked = true;
+
+//webManager->ChangeCharacterName(utility::stdStr2system(event_owner));
+
+
+
 	oneStarThread->join();
 	twoStarThread->join();
 	threeStarThread->join();
 
-	return foundCurrentCharacter;
-	//return !_currentCharacterInfoDict["event_owner"].empty();
+
+	if (similarCharList.empty()) return false;
+
+	// 使用 std::max_element 找到最大的 similarity
+	auto maxElement = std::max_element(similarCharList.begin(), similarCharList.end(),
+		[](const UmaGetCharData& data1, const UmaGetCharData& data2)
+		{
+			return data1.similarity < data2.similarity;
+		}
+	);
+
+	if (maxElement != similarCharList.end())
+	{
+		_currentCharacterInfoDict["rare"] = maxElement->rare;
+		_currentCharacterInfoDict["event_owner"] = maxElement->event_owner;
+		_currentCharacterInfoLocked = true;
+		foundChar = true;
+		webManager->ChangeCharacterName(utility::stdStr2system(maxElement->event_owner));
+	}
+	
+
+	return foundChar;
 }
 
 ScenarioEventData DataManager::GetScenarioEventData(std::string scanned_text)

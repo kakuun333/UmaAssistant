@@ -7,6 +7,7 @@ Scanner* Scanner::_instance = nullptr;
 bool Scanner::_scanning = false;
 tesseract::TessBaseAPI* Scanner::ocr_jpn = nullptr;
 tesseract::TessBaseAPI* Scanner::ocr_tw = nullptr;
+tesseract::TessBaseAPI* Scanner::ocr_eng = nullptr;
 #pragma endregion
 
 
@@ -54,6 +55,24 @@ void Scanner::InitOcrTw()
 
 	initThread.detach();
 }
+
+void Scanner::InitOcrEng()
+{
+	std::thread initThread([]()
+		{
+			tesseract::TessBaseAPI* ocr = new tesseract::TessBaseAPI(); // 初始化 Tesseract
+
+			ocr->Init(global::path::std_tessdata_best.c_str(), "eng", tesseract::OEM_LSTM_ONLY/*OEM_DEFAULT*/);
+			ocr->SetVariable("tessedit_char_whitelist", u8"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-!.");
+
+			ocr->SetPageSegMode(/*tesseract::PSM_AUTO*/tesseract::PSM_SINGLE_LINE/*tesseract::PSM_SINGLE_BLOCK*/);
+
+			ocr_eng = ocr;
+		});
+
+	initThread.detach();
+}
+
 
 
 #pragma region 私人函數
@@ -125,64 +144,76 @@ void Scanner::UpdateScenarioChoice(WebManager* webManager, ScenarioEventData sce
 }
 
 
-std::string Scanner::GetScannedText(cv::Mat image, std::string language, ImageType imgType = ImageType::IMG_EVENT_TITLE)
+std::string Scanner::GetScannedText(cv::Mat image, ImageType imgType, bool englishMode)
 {
 	std::unique_lock<std::mutex> lock(ocrMutex);
 
 	UmaLog* umalog = UmaLog::GetInstance();
 
-
 	int charCount = 0;
 	char* utf8 = nullptr;
 
-	//ocr_jpn->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_LINE*//*tesseract::PSM_SINGLE_BLOCK*/);
-
-	switch (global::config->GameServer)
+	switch (englishMode)
 	{
-	case static_cast<int>(GameServerType::JP):
-		switch (imgType)
-		{
-		case ImageType::IMG_EVENT_TITLE:
-			ocr_jpn->SetVariable("tessedit_char_blacklist", u8"@$%^&*_-+<>()[]{}|/\\`0123456789†.,:;；=");
-			ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
-			break;
-		case ImageType::IMG_HENSEI_CHARACTER_NAME:
-			ocr_jpn->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
-			ocr_jpn->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_BLOCK*/);
-			break;
-		}
-
+	case true:
 		// 設置圖片到 ocr
-		ocr_jpn->SetImage(image.data, image.cols, image.rows, 1, image.step);
+		ocr_eng->SetImage(image.data, image.cols, image.rows, 1, image.step);
 
 		// 進行文字辨識
-		ocr_jpn->Recognize(0);
+		ocr_eng->Recognize(0);
 
-		utf8 = ocr_jpn->GetUTF8Text();
+		utf8 = ocr_eng->GetUTF8Text();
 		break;
-
-	case static_cast<int>(GameServerType::TW):
-		switch (imgType)
+	case false:
+		switch (global::config->GameServer)
 		{
-		case ImageType::IMG_EVENT_TITLE:
-			ocr_tw->SetVariable("tessedit_char_blacklist", u8"@$%^&*_-+<>()[]{}|/\\`0123456789†.,:;；=");
-			ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
+		case static_cast<int>(GameServerType::JP):
+			switch (imgType)
+			{
+			case ImageType::IMG_EVENT_TITLE:
+				ocr_jpn->SetVariable("tessedit_char_blacklist", u8"@$%^&*_-+<>()[]{}|/\\`0123456789†.,:;；=");
+				ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
+				break;
+			case ImageType::IMG_HENSEI_CHARACTER_NAME:
+				ocr_jpn->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|\\`~†.,:;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
+				ocr_jpn->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_BLOCK*/);
+				break;
+			}
+
+			// 設置圖片到 ocr
+			ocr_jpn->SetImage(image.data, image.cols, image.rows, 1, image.step);
+
+			// 進行文字辨識
+			ocr_jpn->Recognize(0);
+
+			utf8 = ocr_jpn->GetUTF8Text();
 			break;
-		case ImageType::IMG_HENSEI_CHARACTER_NAME:
-			ocr_tw->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|/\\`~0123456789†.,:;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
-			ocr_tw->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_BLOCK*/);
+
+		case static_cast<int>(GameServerType::TW):
+			switch (imgType)
+			{
+			case ImageType::IMG_EVENT_TITLE:
+				ocr_tw->SetVariable("tessedit_char_blacklist", u8"@$%^&*_-+<>()[]{}|/\\`0123456789†.,:;；=");
+				ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
+				break;
+			case ImageType::IMG_HENSEI_CHARACTER_NAME:
+				ocr_tw->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|\\`~†.,:;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
+				ocr_tw->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_BLOCK*/);
+				break;
+			}
+
+			// 設置圖片到 ocr
+			ocr_tw->SetImage(image.data, image.cols, image.rows, 1, image.step);
+
+			// 進行文字辨識
+			ocr_tw->Recognize(0);
+
+			utf8 = ocr_tw->GetUTF8Text();
 			break;
 		}
-
-		// 設置圖片到 ocr
-		ocr_tw->SetImage(image.data, image.cols, image.rows, 1, image.step);
-
-		// 進行文字辨識
-		ocr_tw->Recognize(0);
-
-		utf8 = ocr_tw->GetUTF8Text();
-		break;
 	}
+
+
 
 	std::string result = utility::RemoveSpace(utf8);
 
@@ -280,17 +311,16 @@ void Scanner::Start(std::string language)
 
 				if (ss.IsEventTitle())
 				{
-					eventText = this->GetScannedText(ss.event_title_gray_bin, language);
+					eventText = this->GetScannedText(ss.event_title_gray_bin);
 				}
 				
 
 				if (!dataManager->IsCurrentCharacterInfoLocked())
 				{
-					henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
+					henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray, ImageType::IMG_HENSEI_CHARACTER_NAME);
 
 					umalog->print(u8"[Scanner] hensei_character_name_gray: ", henseiCharNameText);
 				}
-				
 
 				/*
 				* 如果 eventText 是空字串就再用其他圖片比較
@@ -306,7 +336,7 @@ void Scanner::Start(std::string language)
 					{
 						testThread = std::make_unique<std::thread>([=, &eventText, &gray_event_text]()
 							{
-								gray_event_text = this->GetScannedText(ss.event_title_gray, language);
+								gray_event_text = this->GetScannedText(ss.event_title_gray);
 								if (eventText.empty() && !gray_event_text.empty())
 								{
 									eventText = gray_event_text;
@@ -326,7 +356,7 @@ void Scanner::Start(std::string language)
 					{
 						test2Thread = std::make_unique<std::thread>([=, &eventText, &resize_event_text]()
 							{
-								resize_event_text = this->GetScannedText(ss.event_title_resize, language);
+								resize_event_text = this->GetScannedText(ss.event_title_resize);
 								if (eventText.empty() && !resize_event_text.empty())
 								{
 									eventText = resize_event_text;
@@ -367,16 +397,58 @@ void Scanner::Start(std::string language)
 								{
 									bool foundHenseiChar = false;
 
-									const int TRY_RESIZE_COUNT = 10;
+									const int TRY_RESIZE_COUNT = 5/*10*/;
 									const float SCALE_FACTOR = 0.1;
+									const int THRESH_FACTOR = 1;
 
 									if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) return;
+
+									//std::unique_ptr<std::thread> grayThread = std::make_unique<std::thread>([=, &ss, &henseiCharNameText, &foundHenseiChar]()
+									//	{
+									//		std::unique_lock<std::mutex> lock(dataMutex); // 以防萬一，先上鎖
+
+									//		henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
+									//		if (!henseiCharNameText.empty()) umalog->print(u8"[Scanner] hensei_character_name_gray: ", henseiCharNameText);
+
+									//		if (foundHenseiChar) return;
+
+									//		if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) { foundHenseiChar = true; return; }
+
+									//		float currentScale = 1;
+									//		for (int i = 0; i < TRY_RESIZE_COUNT; ++i)
+									//		{
+									//			currentScale += SCALE_FACTOR;
+									//			ss.ResetCharacterImage(ss.hensei_character_name_gray, currentScale, ImagePattern::HENSEI_CHAR_GRAY);
+									//			henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
+									//			if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) { foundHenseiChar = true; return; }
+									//		}
+									//	});
+
+									std::unique_ptr<std::thread> englishThread = std::make_unique<std::thread>([=, &ss, &henseiCharNameText, &foundHenseiChar]()
+										{
+											std::unique_lock<std::mutex> lock(dataMutex); // 以防萬一，先上鎖
+
+											henseiCharNameText = this->GetScannedText(ss.hensei_character_another_name_gray, ImageType::IMG_HENSEI_CHARACTER_NAME, true);
+											if (!henseiCharNameText.empty()) umalog->print(u8"[Scanner] ENGLISH hensei_character_another_name: ", henseiCharNameText);
+											if (foundHenseiChar) return;
+
+											if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) { foundHenseiChar = true; return; }
+
+											//float currentScale = 1;
+											//for (int i = 0; i < TRY_RESIZE_COUNT; ++i)
+											//{
+											//	currentScale += SCALE_FACTOR;
+											//	ss.ResetCharacterImage(ss.hensei_character_another_name_gray, ImagePattern::HENSEI_CHAR_ANOTHER_NAME_GRAY, currentScale);
+											//	henseiCharNameText = this->GetScannedText(ss.hensei_character_another_name_gray, ImageType::IMG_HENSEI_CHARACTER_ANOTHER_NAME, true);
+											//	if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) { foundHenseiChar = true; return; }
+											//}
+										});
 
 									std::unique_ptr<std::thread> gray_bin_invThread = std::make_unique<std::thread>([=, &ss, &henseiCharNameText, &foundHenseiChar]()
 										{
 											std::unique_lock<std::mutex> lock(dataMutex); // 以防萬一，先上鎖
 
-											henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin_inv, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
+											henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin_inv, ImageType::IMG_HENSEI_CHARACTER_NAME);
 											if (!henseiCharNameText.empty()) umalog->print(u8"[Scanner] hensei_character_name_gray_bin_inv: ", henseiCharNameText);
 											
 											if (foundHenseiChar) return;
@@ -386,9 +458,10 @@ void Scanner::Start(std::string language)
 											float currentScale = 1;
 											for (int i = 0; i < TRY_RESIZE_COUNT; ++i)
 											{
+												if (foundHenseiChar) return;
 												currentScale += SCALE_FACTOR;
-												ss.ResetCharacterImage(ss.hensei_character_name_gray_bin_inv, currentScale, ImagePattern::HENSEI_CHAR_GRAY_BIN);
-												henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin_inv, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
+												ss.ResetCharacterImage(ss.hensei_character_name_gray_bin_inv, ImagePattern::HENSEI_CHAR_GRAY_BIN, currentScale);
+												henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin_inv, ImageType::IMG_HENSEI_CHARACTER_NAME);
 												if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) { foundHenseiChar = true; return; }
 											}
 										});
@@ -397,7 +470,7 @@ void Scanner::Start(std::string language)
 										{
 											std::unique_lock<std::mutex> lock(dataMutex); // 以防萬一，先上鎖
 
-											henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
+											henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin, ImageType::IMG_HENSEI_CHARACTER_NAME);
 											if (!henseiCharNameText.empty()) umalog->print(u8"[Scanner] hensei_character_name_gray_bin: ", henseiCharNameText);
 											
 											if (foundHenseiChar) return;
@@ -407,13 +480,15 @@ void Scanner::Start(std::string language)
 											float currentScale = 1;
 											for (int i = 0; i < TRY_RESIZE_COUNT; ++i)
 											{
+												if (foundHenseiChar) return;
 												currentScale += SCALE_FACTOR;
-												ss.ResetCharacterImage(ss.hensei_character_name_gray_bin, currentScale, ImagePattern::HENSEI_CHAR_GRAY_BIN);
-												henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
+												ss.ResetCharacterImage(ss.hensei_character_name_gray_bin, ImagePattern::HENSEI_CHAR_GRAY_BIN_INV, currentScale);
+												henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray_bin, ImageType::IMG_HENSEI_CHARACTER_NAME);
 												if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) { foundHenseiChar = true; return; }
 											}
 										});
 
+									englishThread->join();
 									gray_bin_invThread->join();
 									gray_binThread->join();
 								});
@@ -486,7 +561,7 @@ void Scanner::Start(std::string language)
 
 									umalog->print(u8"[Scanner] sapokaUmaEventData 資料不完整");
 
-									eventText = this->GetScannedText(ss.event_title_gray, language);
+									eventText = this->GetScannedText(ss.event_title_gray);
 									umalog->print(u8"[Scanner] event_title_gray: ", eventText);
 									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
 
@@ -494,7 +569,7 @@ void Scanner::Start(std::string language)
 
 									umalog->print(u8"[Scanner] sapokaUmaEventData 資料不完整2");
 
-									eventText = this->GetScannedText(ss.event_title_gray_bin_inv, language);
+									eventText = this->GetScannedText(ss.event_title_gray_bin_inv);
 									umalog->print(u8"[Scanner] event_title_gray_bin_inv: ", eventText);
 									sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
 

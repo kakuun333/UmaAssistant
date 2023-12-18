@@ -73,6 +73,7 @@ using json = nlohmann::json;
 #include "class/data/UmaEventData.h"
 #include "class/data/ScenarioEventData.h"
 #include "class/data/UmaEventRoute.h"
+#include "class/data/UmaGetCharData.h"
 
 /*			utility			*/
 #include "utility/CharacterConvert.h"

@@ -56,6 +56,7 @@ int main(array<String^>^ args)
 	// 初始化 Scanner
 	Scanner::InitOcrJpn();
 	Scanner::InitOcrTw();
+	Scanner::InitOcrEng();
 
 	// 初始化 DataManager
 	DataManager::InitEventDataJson();
