@@ -424,6 +424,7 @@ void Scanner::Start(std::string language)
 									//		}
 									//	});
 
+
 									std::unique_ptr<std::thread> englishThread = std::make_unique<std::thread>([=, &ss, &henseiCharNameText, &foundHenseiChar]()
 										{
 											std::unique_lock<std::mutex> lock(dataMutex); // 以防萬一，先上鎖
@@ -443,6 +444,8 @@ void Scanner::Start(std::string language)
 											//	if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) { foundHenseiChar = true; return; }
 											//}
 										});
+
+
 
 									std::unique_ptr<std::thread> gray_bin_invThread = std::make_unique<std::thread>([=, &ss, &henseiCharNameText, &foundHenseiChar]()
 										{

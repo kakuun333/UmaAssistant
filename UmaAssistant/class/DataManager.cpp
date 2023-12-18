@@ -88,13 +88,22 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 
 						float similarity = utility::GetCharacterNameSimilarity(scanned_text, event_owner);
 
-						if (utility::SIMILAR_METRIC > similarity) continue;
+						switch (global::config->GameServer)
+						{
+						case static_cast<int>(GameServerType::JP):
+							if (utility::JP_CHAR_SIMILAR_METRIC > similarity) continue;
+							break;
+						case static_cast<int>(GameServerType::TW):
+							if (utility::SIMILAR_METRIC > similarity) continue;
+							break;
+						}
+						
 						UmaGetCharData umaGetCharData;
 						umaGetCharData.event_owner = event_owner;
 						umaGetCharData.rare = rare;
 						umaGetCharData.similarity = similarity;
 
-					// 以防萬一，加上互斥鎖保護共享資源
+						// 以防萬一，加上互斥鎖保護共享資源
 						std::unique_lock<std::mutex> lock(dataMutex); 
 						similarCharList.push_back(umaGetCharData);
 						lock.unlock();
@@ -116,7 +125,16 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 
 						float similarity = utility::GetCharacterNameSimilarity(scanned_text, event_owner);
 
-						if (utility::SIMILAR_METRIC > similarity) continue;
+						switch (global::config->GameServer)
+						{
+						case static_cast<int>(GameServerType::JP):
+							if (utility::JP_CHAR_SIMILAR_METRIC > similarity) continue;
+							break;
+						case static_cast<int>(GameServerType::TW):
+							if (utility::SIMILAR_METRIC > similarity) continue;
+							break;
+						}
+
 						UmaGetCharData umaGetCharData;
 						umaGetCharData.event_owner = event_owner;
 						umaGetCharData.rare = rare;
@@ -144,7 +162,16 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 
 						float similarity = utility::GetCharacterNameSimilarity(scanned_text, event_owner);
 
-						if (utility::SIMILAR_METRIC > similarity) continue;
+						switch (global::config->GameServer)
+						{
+						case static_cast<int>(GameServerType::JP):
+							if (utility::JP_CHAR_SIMILAR_METRIC > similarity) continue;
+							break;
+						case static_cast<int>(GameServerType::TW):
+							if (utility::SIMILAR_METRIC > similarity) continue;
+							break;
+						}
+
 						UmaGetCharData umaGetCharData;
 						umaGetCharData.event_owner = event_owner;
 						umaGetCharData.rare = rare;

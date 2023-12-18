@@ -235,6 +235,12 @@ void Screenshot::CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPatt
 			crop_width = img_width - (img_width * 0.55);
 			crop_height = img_height - (img_height * 0.948);
 			break;
+		case IMG_HENSEI_CHARACTER_ANOTHER_NAME:
+			crop_x = img_width - (img_width * 0.76);
+			crop_y = img_height - (img_height * 0.845);
+			crop_width = img_width - (img_width * 0.6);
+			crop_height = img_height - (img_height * 0.975);
+			break;
 		case IMG_SYOUSAI_CHARACTER_NAME:
 			crop_x = img_width - (img_width * 0.75);
 			crop_y = img_height - (img_height * 0.845);
@@ -542,17 +548,17 @@ void Screenshot::ShowImage()
 	//// event_title ////
 	//cv::imshow("event_title_oimg", event_title_oimg);
 	//cv::imshow("event_title_resize", event_title_resize);
-	//cv::imshow("event_title_gray", event_title_gray);
-	//cv::imshow("event_title_gray_bin", event_title_gray_bin);
-	//cv::imshow("event_title_gray_bin_inv", event_title_gray_bin_inv);
+	cv::imshow("event_title_gray", event_title_gray);
+	cv::imshow("event_title_gray_bin", event_title_gray_bin);
+	cv::imshow("event_title_gray_bin_inv", event_title_gray_bin_inv);
 
 	//// event_icon ////
-	//cv::imshow("event_icon", event_icon);
+	cv::imshow("event_icon", event_icon);
 
 	//// character_name ////
 	//cv::imshow("hensei_character_name_oimg", hensei_character_name_gray_bin);
-	//cv::imshow("hensei_character_name_gray", hensei_character_name_gray);
-	//cv::imshow("hensei_character_name_gray_inv", hensei_character_name_gray_bin_inv);
+	cv::imshow("hensei_character_name_gray", hensei_character_name_gray);
+	cv::imshow("hensei_character_name_gray_inv", hensei_character_name_gray_bin_inv);
 
 	cv::imshow("hensei_character_another_name_gray", hensei_character_another_name_gray);
 
@@ -665,7 +671,7 @@ void Screenshot::GetHenseiCharacterNameImage()
 	
 	hensei_character_another_name_gray = oimg.clone();
 	this->CropImage(hensei_character_another_name_gray, ImageType::IMG_HENSEI_CHARACTER_ANOTHER_NAME);
-	this->ResizeImage(hensei_character_another_name_gray, 1.2);
+	this->ResizeImage(hensei_character_another_name_gray, 1.0);
 	cv::cvtColor(hensei_character_another_name_gray, hensei_character_another_name_gray, cv::COLOR_BGR2GRAY);
 	cv::threshold(hensei_character_another_name_gray, hensei_character_another_name_gray, 175/*130*/, 255, cv::THRESH_BINARY);
 }
