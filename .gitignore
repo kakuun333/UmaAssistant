@@ -8,6 +8,6 @@ python312.dll
 UmaPy/__pycache__
 UmaPy/umaenv
 Release
-Release.zip
+*.zip
 *.rar
 UmaLua/test.lua
