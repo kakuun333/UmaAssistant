@@ -3,6 +3,11 @@
 ## 文檔語言｜ドキュメント言語
 ### [繁體中文](./README.md)｜[日本語](./README_jp.md)
 
+## 社群
+### 作者有為這個專案運營一個 Discord 伺服器，在這個伺服器裡會第一時間通知本軟體的最新資訊、也可以在這個伺服器裡輕鬆地提交問題回報。  
+### **[加入 Discord 伺服器](https://discord.gg/JzT5fpjarM)**  
+![Discord Banner 2](https://discordapp.com/api/guilds/1180922259146281053/widget.png?style=banner2)  
+
 ## 簡介
 本軟體會自動辨識 DMM 版、BlueStacks 模擬器視窗中賽馬娘的事件，並給予可能的選項效果、提供選項效果中技能的詳細資訊。
 
@@ -120,11 +125,6 @@ A.
 
 ## 問題回報
 有任何問題請到 **[Issues](https://github.com/kakuun333/UmaAssistant/issues)** 或者 **[社群](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E7%A4%BE%E7%BE%A4)** 中回報，非常感謝！  
-
-## 社群
-作者有為這個專案運營一個 Discord 伺服器，在這個伺服器裡會第一時間通知本軟體的最新資訊、也可以在這個伺服器裡輕鬆地提交問題回報。  
-**[加入 Discord 伺服器](https://discord.gg/JzT5fpjarM)**  
-![Discord Banner 2](https://discordapp.com/api/guilds/1180922259146281053/widget.png?style=banner2)  
 
 ## 免責聲明
 - 本軟體只在按下`啟動`時對使用者指定的視窗做截圖和遊戲事件、遊戲角色相關的辨識操作之後立即銷毀指定視窗的截圖，並且此類操作不會收集任何個人資訊。  
