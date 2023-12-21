@@ -79,6 +79,11 @@ function changeChoiceBrowserLang(softwareLang) {
 }
 
 
+
+
+
+
+
 // function setCustomScroll() {
 //     let content = document.getElementById("content");
 //     let custom_scroll = document.getElementById("custom_scroll");

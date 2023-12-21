@@ -22,11 +22,24 @@ namespace UmaAssistant {
 	/// </summary>
 	public ref class UmaForm : public System::Windows::Forms::Form
 	{
+	private:
+		// 私人變數
+		bool draggingForm = false;
+		bool _openedSelectCharacter = false;
+		System::Drawing::Point dragOffset;
 	public:
 		UmaForm(void);
 
 
 		void OnChoiceDocumentCompleted(Object^ sender, WebBrowserDocumentCompletedEventArgs^ e);
+
+		void OnSelectCharacterDocumentCompleted(Object^ sender, WebBrowserDocumentCompletedEventArgs^ e);
+
+		System::Void Character_IMG_Clicked(System::Object^ sender, System::Windows::Forms::HtmlElementEventArgs^ e);
+
+		void UmaForm::UpdateIMGClickEvent();
+
+	public: System::Windows::Forms::WebBrowser^ select_character_webBrowser;
 
 	protected:
 		/// <summary>
@@ -48,8 +61,7 @@ namespace UmaAssistant {
 		/// <summary>
 		/// 設計工具所需的變數。
 		/// </summary>
-		bool draggingForm = false;
-		System::Drawing::Point dragOffset;
+
 
 
 	private: System::Windows::Forms::Button^ close_form_btn;
@@ -70,9 +82,8 @@ namespace UmaAssistant {
 
 	private: System::Windows::Forms::Label^ app_name_label;
 	private: System::Windows::Forms::Button^ select_window_btn;
-	private: System::Windows::Forms::Label^ label1;
-
-
+	private: System::Windows::Forms::Label^ version_label;
+	public: System::Windows::Forms::Button^ select_character_btn;
 
 
 	public: System::Windows::Forms::WebBrowser^ choiceWebBrowser;
@@ -100,7 +111,9 @@ namespace UmaAssistant {
 			this->game_window_status_label = (gcnew System::Windows::Forms::Label());
 			this->app_name_label = (gcnew System::Windows::Forms::Label());
 			this->select_window_btn = (gcnew System::Windows::Forms::Button());
-			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->version_label = (gcnew System::Windows::Forms::Label());
+			this->select_character_btn = (gcnew System::Windows::Forms::Button());
+			this->select_character_webBrowser = (gcnew System::Windows::Forms::WebBrowser());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->icon_pictureBox))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -205,9 +218,9 @@ namespace UmaAssistant {
 			this->screenshot_preview_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->screenshot_preview_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->screenshot_preview_btn->Location = System::Drawing::Point(357, 42);
+			this->screenshot_preview_btn->Location = System::Drawing::Point(312, 42);
 			this->screenshot_preview_btn->Name = L"screenshot_preview_btn";
-			this->screenshot_preview_btn->Size = System::Drawing::Size(95, 65);
+			this->screenshot_preview_btn->Size = System::Drawing::Size(63, 65);
 			this->screenshot_preview_btn->TabIndex = 17;
 			this->screenshot_preview_btn->Text = L"截圖預覽";
 			this->screenshot_preview_btn->UseVisualStyleBackColor = false;
@@ -230,9 +243,9 @@ namespace UmaAssistant {
 			this->test_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->test_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->test_btn->Location = System::Drawing::Point(458, 42);
+			this->test_btn->Location = System::Drawing::Point(381, 42);
 			this->test_btn->Name = L"test_btn";
-			this->test_btn->Size = System::Drawing::Size(95, 65);
+			this->test_btn->Size = System::Drawing::Size(91, 65);
 			this->test_btn->TabIndex = 21;
 			this->test_btn->Text = L"測試";
 			this->test_btn->UseVisualStyleBackColor = false;
@@ -319,25 +332,55 @@ namespace UmaAssistant {
 			this->select_window_btn->UseVisualStyleBackColor = false;
 			this->select_window_btn->Click += gcnew System::EventHandler(this, &UmaForm::select_window_btn_Click);
 			// 
-			// label1
+			// version_label
 			// 
-			this->label1->Anchor = System::Windows::Forms::AnchorStyles::Left;
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
+			this->version_label->Anchor = System::Windows::Forms::AnchorStyles::Left;
+			this->version_label->AutoSize = true;
+			this->version_label->BackColor = System::Drawing::Color::Transparent;
+			this->version_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->label1->Location = System::Drawing::Point(36, 19);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(56, 20);
-			this->label1->TabIndex = 27;
-			this->label1->Text = L"v1.0.1";
+			this->version_label->Location = System::Drawing::Point(36, 19);
+			this->version_label->Name = L"version_label";
+			this->version_label->Size = System::Drawing::Size(58, 20);
+			this->version_label->TabIndex = 27;
+			this->version_label->Text = L"v1.0.0";
+			// 
+			// select_character_btn
+			// 
+			this->select_character_btn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(81)));
+			this->select_character_btn->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"select_character_btn.BackgroundImage")));
+			this->select_character_btn->FlatAppearance->BorderSize = 0;
+			this->select_character_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
+				static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
+			this->select_character_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->select_character_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
+			this->select_character_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
+				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
+			this->select_character_btn->Location = System::Drawing::Point(478, 42);
+			this->select_character_btn->Name = L"select_character_btn";
+			this->select_character_btn->Size = System::Drawing::Size(75, 65);
+			this->select_character_btn->TabIndex = 28;
+			this->select_character_btn->Text = L"選擇角色";
+			this->select_character_btn->UseVisualStyleBackColor = false;
+			this->select_character_btn->Click += gcnew System::EventHandler(this, &UmaForm::select_character_btn_Click);
+			// 
+			// select_character_webBrowser
+			// 
+			this->select_character_webBrowser->Location = System::Drawing::Point(563, 42);
+			this->select_character_webBrowser->MinimumSize = System::Drawing::Size(20, 20);
+			this->select_character_webBrowser->Name = L"select_character_webBrowser";
+			this->select_character_webBrowser->Size = System::Drawing::Size(489, 496);
+			this->select_character_webBrowser->TabIndex = 29;
 			// 
 			// UmaForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(560, 550);
-			this->Controls->Add(this->label1);
+			this->Controls->Add(this->select_character_webBrowser);
+			this->Controls->Add(this->select_character_btn);
+			this->Controls->Add(this->version_label);
 			this->Controls->Add(this->select_window_btn);
 			this->Controls->Add(this->app_name_label);
 			this->Controls->Add(this->game_window_status_label);
@@ -378,5 +421,6 @@ namespace UmaAssistant {
 	private: System::Void test_btn_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void clean_current_character_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void select_window_btn_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void select_character_btn_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

@@ -8,6 +8,9 @@ event_data_jp = utility.read_json_file(r"../UmaData/event_data_jp.json");
 skill_data_jp = utility.read_json_file(r"../UmaData/skill_data_jp.json");
 scenario_event_data_jp = utility.read_json_file(r"../UmaData/scenario_event_data_jp.json");
 
+# select_character_data
+select_character_data = utility.read_json_file(r"../UmaData/select_character_data.json");
+
 # translation_data
 translation_data = utility.read_json_file(r"../UmaData/translation_data.json");
 
@@ -119,7 +122,7 @@ def convert_choice_effect_jp_to_tw(choice_effect, jp_event_owner = None, tw_even
                 for match in jp_skill_title_match:
                     jp_skill_title = match[0];
 
-                    print(jp_skill_title);
+                    # print(jp_skill_title); #######################################################################
                     try:
                         tw_skill_title = skill_convert_data[jp_skill_title]["tw_skill_title"];
                         
@@ -153,7 +156,31 @@ def convert_choice_title_jp_to_tw(choice_title):
 
 
 
+##### select_character_data.json #####
+def jp_owner_to_tw_owner():
+    for jp_event_owner, jp_event_owner_v in char_convert_data.items():
+        
+        for origin_name, cvt_name in missed_data["jp_to_tw"]["event_owner"].items():
+            if (jp_event_owner == cvt_name):
+                jp_event_owner = origin_name;
 
+        for idx, char_data in enumerate(select_character_data):
+
+            if (char_data["jp_event_owner"] == jp_event_owner):
+                select_character_data[idx]["tw_event_owner"] = jp_event_owner_v["tw_event_owner"];
+                # tmp_dict = {};
+                # tmp_dict["icon"] = char_data["icon"];
+                # tmp_dict["jp_event_owner"] = char_data["jp_event_owner"];
+                # tmp_dict["tw_event_owner"] = char_name_v["tw_event_owner"];
+
+                # new_select_character_data.append(tmp_dict);
+
+
+jp_owner_to_tw_owner();
+
+json_string = json.dumps(select_character_data, indent=2, ensure_ascii=False);
+
+utility.write_file("../UmaData/select_character_data.json", json_string);
 
 
 ##### skill_data_tw.json #####

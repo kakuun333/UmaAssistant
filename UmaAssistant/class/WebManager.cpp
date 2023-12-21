@@ -66,3 +66,10 @@ void WebManager::ChangeChoiceBrowserLang(int softwareLangType)
 	array<Object^>^ param = gcnew array<Object^> { softwareLangType };
 	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "changeChoiceBrowserLang", param);
 }
+
+void WebManager::test()
+{
+	Object^ result = global::form::umaForm->choiceWebBrowser->Document->InvokeScript("test");
+
+	std::cout << utility::systemStr2std(result->ToString()) << std::endl;
+}

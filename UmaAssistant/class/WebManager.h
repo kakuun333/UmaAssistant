@@ -35,5 +35,7 @@ public:
 	void ChangeCharacterNameBrowserLang(int softwareLangType);
 
 	void ChangeChoiceBrowserLang(int softwareLangType);
+
+	void test();
 };
 

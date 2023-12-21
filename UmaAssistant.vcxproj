@@ -149,6 +149,7 @@
     <ClCompile Include="UmaAssistant\class\data\ScenarioEventData.cpp" />
     <ClCompile Include="UmaAssistant\class\Config.cpp" />
     <ClCompile Include="UmaAssistant\class\ConsoleManager.cpp" />
+    <ClCompile Include="UmaAssistant\class\DesktopDuplication.cpp" />
     <ClCompile Include="UmaAssistant\class\LocalServer.cpp" />
     <ClCompile Include="UmaAssistant\class\FileManager.cpp" />
     <ClCompile Include="UmaAssistant\class\ref\FormController.cpp" />
@@ -165,7 +166,6 @@
     <ClCompile Include="UmaAssistant\form\SettingsForm.cpp" />
     <ClCompile Include="UmaAssistant\class\LuaManager.cpp" />
     <ClCompile Include="UmaAssistant\main.cpp" />
-    <ClCompile Include="UmaAssistant\utility\Pathfinder.cpp" />
     <ClCompile Include="UmaAssistant\global\Path.cpp" />
     <ClCompile Include="UmaAssistant\utility\CharacterCombine.cpp" />
     <ClCompile Include="UmaAssistant\class\Scanner.cpp" />
@@ -178,6 +178,8 @@
     <ClCompile Include="UmaAssistant\class\data\UmaEventRoute.cpp" />
     <ClCompile Include="UmaAssistant\class\UmaLog.cpp" />
     <ClCompile Include="UmaAssistant\class\data\UmaGetCharData.cpp" />
+    <ClCompile Include="UmaAssistant\class\UmaDataUpdater.cpp" />
+    <ClCompile Include="UmaAssistant\class\URLManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
@@ -185,6 +187,7 @@
     <ClInclude Include="UmaAssistant\class\data\ScenarioEventData.h" />
     <ClInclude Include="UmaAssistant\class\Config.h" />
     <ClInclude Include="UmaAssistant\class\ConsoleManager.h" />
+    <ClInclude Include="UmaAssistant\class\DesktopDuplication.h" />
     <ClInclude Include="UmaAssistant\class\LocalServer.h" />
     <ClInclude Include="UmaAssistant\class\FileManager.h" />
     <ClInclude Include="UmaAssistant\class\ref\FormController.h" />
@@ -213,7 +216,6 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="UmaAssistant\class\LuaManager.h" />
-    <ClInclude Include="UmaAssistant\utility\Pathfinder.h" />
     <ClInclude Include="UmaAssistant\global\Path.h" />
     <ClInclude Include="UmaAssistant\utility\CharacterCombine.h" />
     <ClInclude Include="UmaAssistant\class\Scanner.h" />
@@ -228,6 +230,8 @@
     <ClInclude Include="UmaAssistant\class\data\UmaEventRoute.h" />
     <ClInclude Include="UmaAssistant\class\UmaLog.h" />
     <ClInclude Include="UmaAssistant\class\data\UmaGetCharData.h" />
+    <ClInclude Include="UmaAssistant\class\UmaDataUpdater.h" />
+    <ClInclude Include="UmaAssistant\class\URLManager.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PreviewForm.resx" />

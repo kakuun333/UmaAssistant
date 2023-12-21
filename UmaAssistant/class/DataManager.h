@@ -51,6 +51,8 @@ public:
 
 	bool TryGetCurrentCharacterName(std::string scanned_text);
 
+	bool SetCurrentCharacterInfoDict(std::string event_owner);
+
 	inline bool IsCurrentCharacterInfoLocked()
 	{
 		return _currentCharacterInfoLocked;

@@ -23,7 +23,48 @@ std::map<std::string, std::string> DataManager::_currentCharacterInfoDict =
 };
 #pragma endregion ÀRºAÅÜ¼Æ
 
+bool DataManager::SetCurrentCharacterInfoDict(std::string event_owner)
+{
+	if (event_owner.empty()) return false;
 
+	json event_data_json;
+
+	switch (global::config->GameServer)
+	{
+	case static_cast<int>(GameServerType::JP):
+		switch (global::config->JpServerLang)
+		{
+		case static_cast<int>(JpServerLangType::JP):
+			event_data_json = event_data_jp_json;
+			break;
+		case static_cast<int>(JpServerLangType::TW):
+			event_data_json = event_data_jp_trans_tw_json;
+			break;
+		}
+		break;
+	case static_cast<int>(GameServerType::TW):
+		event_data_json = event_data_tw_json;
+		break;
+	}
+
+	for (json::iterator it = event_data_json["character"].begin(); it != event_data_json["character"].end(); ++it)
+	{
+		std::string rare = it.key();
+
+		for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
+		{
+			std::string json_event_owner = it2.key();
+			if (json_event_owner == event_owner)
+			{
+				_currentCharacterInfoDict["rare"] = rare;
+				_currentCharacterInfoDict["event_owner"] = json_event_owner;
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
 
 void DataManager::InitEventDataJson()
 {

@@ -33,9 +33,6 @@
     <ClCompile Include="UmaAssistant\global\Path.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="UmaAssistant\utility\Pathfinder.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="UmaAssistant\class\LuaManager.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
@@ -114,6 +111,15 @@
     <ClCompile Include="UmaAssistant\class\data\UmaGetCharData.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="UmaAssistant\class\UmaDataUpdater.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="UmaAssistant\class\URLManager.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="UmaAssistant\class\DesktopDuplication.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UmaAssistant\form\UmaForm.h">
@@ -132,9 +138,6 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="UmaAssistant\global\Path.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="UmaAssistant\utility\Pathfinder.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="UmaAssistant\class\LuaManager.h">
@@ -240,6 +243,15 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="UmaAssistant\class\data\UmaGetCharData.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="UmaAssistant\class\UmaDataUpdater.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="UmaAssistant\class\URLManager.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="UmaAssistant\class\DesktopDuplication.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

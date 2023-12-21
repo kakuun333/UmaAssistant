@@ -1,10 +1,13 @@
 #pragma once
 
+
 //#define UMA_DEBUG
 
 
-/*			C++ std			*/
+/*			Windows API			*/
 #include <Windows.h>
+
+/*			C++ std			*/
 #include <iostream>
 #include <fstream>
 #include <memory>
@@ -61,6 +64,9 @@ using json = nlohmann::json;
 #include "class/AutoMouseClicker.h"
 #include "class/UmaTimer.h"
 #include "class/UmaLog.h"
+#include "class/UmaDataUpdater.h"
+#include "class/DesktopDuplication.h"
+#include "class/URLManager.h"
 
 // ¨ü±±
 #include "class/ref/FormDesigner.h"
@@ -80,7 +86,6 @@ using json = nlohmann::json;
 #include "utility/CharacterCombine.h"
 #include "utility/CharacterFilter.h"
 #include "utility/CharacterCompare.h"
-#include "utility/Pathfinder.h"
 #include "utility/FormControl.h"
 
 /*			enum			*/
@@ -106,7 +111,7 @@ using json = nlohmann::json;
 
 
 /*			.NET			*/
-using namespace System;
+//using namespace System;
 using namespace System::Collections;
 using namespace System::Collections::Generic;
 //using namespace System::ComponentModel;

@@ -1,7 +1,7 @@
 local pe = {
     reset           = "\27[0m",
     bold            = "\27[1m",
-    blur            = "\27[2m", -- does not works in some terminals. 不是所有終端機都有效果。
+    blur            = "\27[2m", -- 不是所有終端機都有效果。
 
     underscore      = "\27[4m",
     us              = "\27[4m",

@@ -100,7 +100,7 @@ function dumper.dumpSkillData(ms)
 
         --[[
             SkillData 不完整的原因最有可能是因為
-            刻意篩選到固有技能和進化技能
+            刻意篩選掉固有技能和進化技能
         ]]
         if skill_color == nil or skill_rare == nil or skill_name == nil or skill_dict == nil then
             console:print(pe.yellow.."[警告] SkillData 不完整！ white_id:" ..tostring(white_id).."\nskill_color: "..tostring(skill_color).."\nskill_rare: "..tostring(skill_rare).."\nskill_name: "..tostring(skill_name).."\nskill_dict: "..tostring(skill_dict)..pe.reset)

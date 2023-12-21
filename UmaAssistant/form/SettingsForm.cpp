@@ -478,6 +478,10 @@ namespace UmaAssistant
 		// LocalServer
 		this->serverPortTextBox->Text = utility::stdStr2system(DEFAULT_LOCAL_SERVER_PORT);
 
+		// GameWindowName
+		global::config->GameWindowName = NULL_GAME_WINDOW_NAME;
+
+		global::config->WriteToJson();
 	}
 
 	System::Void SettingsForm::update_event_data_jp_btn_Click(System::Object^ sender, System::EventArgs^ e)

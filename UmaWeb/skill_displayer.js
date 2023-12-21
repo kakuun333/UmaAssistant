@@ -171,9 +171,7 @@ function readJson(jsonPath, callback) {
             if (xhr.status === STATUS_SUCCESS) {
                 // 解析 JSON
                 let jsonData = JSON.parse(xhr.responseText);
-                
                 callback(jsonData);
-    
             } else {
                 console.error('Error:', xhr.statusText);
             }

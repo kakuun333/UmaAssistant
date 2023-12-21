@@ -1,15 +1,10 @@
 ﻿#include "../stdafx.h"
 
-//#using <System.dll>
-//#using <System.Net.dll>
-
-
-
-
-
 
 namespace UmaAssistant
 {
+	
+
 	void UmaForm::OnChoiceDocumentCompleted(System::Object^ sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^ e)
 	{
 		// 初始化 skill_displayer.js 中的 let GameServer 變數
@@ -54,8 +49,152 @@ namespace UmaAssistant
 			webManager->ChangeChoiceBrowserLang(static_cast<int>(SoftwareLanguageType::TW));
 			break;
 		}
+	}
+
+	void UmaForm::OnSelectCharacterDocumentCompleted(Object^ sender, WebBrowserDocumentCompletedEventArgs^ e)
+	{
+		WebBrowser^ webBrowser = dynamic_cast<WebBrowser^>(sender);
+
 
 	}
+
+	System::Void UmaForm::Character_IMG_Clicked(System::Object^ sender, System::Windows::Forms::HtmlElementEventArgs^ e)
+	{
+		DataManager* dataManager = DataManager::GetInstance();
+		WebManager* webManager = WebManager::GetInstance();
+		UmaLog* umalog = UmaLog::GetInstance();
+
+		// 在這裡處理按鈕被點擊的邏輯
+		HtmlElement^ element = safe_cast<HtmlElement^>(sender);
+		System::String^ altValue = element->GetAttribute("alt");
+		
+		Regex^ jp_pattern = gcnew Regex("<jp_event_owner>(.+)</jp_event_owner>");
+		Regex^ tw_pattern = gcnew Regex("<tw_event_owner>(.+)</tw_event_owner>");
+
+		Match^ match;
+
+		switch (global::config->GameServer)
+		{
+		case static_cast<int>(GameServerType::JP):
+			match = jp_pattern->Match(altValue);
+			if (match->Success)
+			{
+				dataManager->SetCurrentCharacterInfoLock(false);
+				webManager->ChangeCharacterName("");
+				
+				System::String^ sys_event_owner = match->Groups[1]->Value;
+				std::string std_event_owner = utility::systemStr2std(sys_event_owner);
+
+				umalog->print("[UmaForm] matched: ", std_event_owner);
+
+				if (dataManager->SetCurrentCharacterInfoDict(std_event_owner))
+				{
+					umalog->print("[UmaForm] FOUND SELECT CHARACTER");
+					dataManager->SetCurrentCharacterInfoLock(true);
+					webManager->ChangeCharacterName(sys_event_owner);
+				}
+				else
+				{
+					umalog->print("[UmaForm] NOT FOUND SELECT CHARACTER");
+					std::cout << "FALSE" << std::endl;
+				}
+			}
+			else
+			{
+				umalog->print("[UmaForm] NOT MATCHED SELECT CHARACTER NAME");
+			}
+			break;
+		case static_cast<int>(GameServerType::TW):
+			match = tw_pattern->Match(altValue);
+			if (match->Success)
+			{
+				dataManager->SetCurrentCharacterInfoLock(false);
+				webManager->ChangeCharacterName("");
+
+				System::String^ sys_event_owner = match->Groups[1]->Value;
+				std::string std_event_owner = utility::systemStr2std(sys_event_owner);
+
+				umalog->print("[UmaForm] matched: ", std_event_owner);
+
+				if (dataManager->SetCurrentCharacterInfoDict(std_event_owner))
+				{
+					umalog->print("[UmaForm] FOUND SELECT CHARACTER");
+					dataManager->SetCurrentCharacterInfoLock(true);
+					webManager->ChangeCharacterName(sys_event_owner);
+				}
+				else
+				{
+					umalog->print("[UmaForm] NOT FOUND SELECT CHARACTER");
+					std::cout << "FALSE" << std::endl;
+				}
+			}
+			else
+			{
+				umalog->print("[UmaForm] NOT MATCHED SELECT CHARACTER NAME");
+			}
+			break;
+		}
+	}
+
+	void UmaForm::UpdateIMGClickEvent()
+	{
+		// 在 DocumentCompleted 事件中為 <img class="character_icon" /> 添加 Click 事件
+		for each (HtmlElement^ element in this->select_character_webBrowser->Document->All)
+		{
+			/*
+			HtmlElement->TagName 都是大寫
+			要獲取 tag 的 class 需要用 "className"
+			*/
+
+			if (element->TagName == "IMG" && element->GetAttribute("className") == "character_icon")
+			{
+				element->Click -= gcnew HtmlElementEventHandler(this, &UmaForm::Character_IMG_Clicked);
+				element->Click += gcnew HtmlElementEventHandler(this, &UmaForm::Character_IMG_Clicked);
+			}
+		}
+	}
+
+	System::Void UmaForm::select_character_btn_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		Button^ button = dynamic_cast<Button^>(sender);
+
+		switch (_openedSelectCharacter)
+		{
+		case true:
+			_openedSelectCharacter = false;
+
+			switch (global::config->SoftwareLanguage)
+			{
+			case static_cast<int>(SoftwareLanguageType::JP):
+				button->Text = u8"キャラ選択";
+				break;
+			case static_cast<int>(SoftwareLanguageType::TW):
+				button->Text = u8"選擇角色";
+				break;
+			}
+			
+			this->Size = System::Drawing::Size(560, this->Size.Height);
+			break;
+
+		case false:
+			_openedSelectCharacter = true;
+
+			switch (global::config->SoftwareLanguage)
+			{
+			case static_cast<int>(SoftwareLanguageType::JP):
+				button->Text = u8"折りたたむ";
+				break;
+			case static_cast<int>(SoftwareLanguageType::TW):
+				button->Text = u8"收回";
+				break;
+			}
+			
+			this->Size = System::Drawing::Size(1060, this->Size.Height);
+			this->UpdateIMGClickEvent();
+			break;
+		}
+	}
+
 
 	UmaForm::UmaForm(void) // UmaForm 的建構函數
 	{
@@ -72,9 +211,16 @@ namespace UmaAssistant
 
 		//System::String^ port = utility::stdStr2system(config["LocalServer"]["Port"].get<std::string>());
 
+		// choice.html
 		choiceWebBrowser->DocumentCompleted += gcnew WebBrowserDocumentCompletedEventHandler(this, &UmaForm::OnChoiceDocumentCompleted);
 		choiceWebBrowser->Navigate("http://localhost:" + port + "/choice.html");
+		
+		// character_name.html
 		characterNameWebBrowser->Navigate("http://localhost:" + port + "/character_name.html");
+
+		// select_character.html
+		select_character_webBrowser->DocumentCompleted += gcnew WebBrowserDocumentCompletedEventHandler(this, &UmaForm::OnSelectCharacterDocumentCompleted);
+		select_character_webBrowser->Navigate("http://localhost:" + port + "/select_character.html");
 #pragma endregion
 
 #pragma region DebugMode
@@ -102,6 +248,13 @@ namespace UmaAssistant
 		//std::cout << "Similarity: " << utility::GetSimilarity(u8"競賽獲勝!", u8"競賽獲勝！") << std::endl;
 
 		//utility::GetCharacterNameSimilarity(u8"キセキの白星オグリキャップ", u8"オグリキャップ（キセキの白星）");
+
+
+		/* UmaDataUpdater */
+		//UmaDataUpdater::GetInstance()->Update();
+
+
+
 	}
 
 	System::Void UmaForm::scan_btn_Click(System::Object^ sender, System::EventArgs^ e)

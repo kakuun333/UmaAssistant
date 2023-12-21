@@ -4,6 +4,16 @@ import json
 
 ##### file #####
 
+def write_json(file_path, json_string):
+    # 獲取腳本所在的路徑
+    script_dir = os.path.dirname(os.path.abspath(__file__));
+    # 設置當前的路徑為腳本所在的路徑
+    os.chdir(script_dir);
+
+    # 寫入 event_data_tw.json
+    with open(file_path, "w+", encoding="utf-8") as json_file:
+        json_file.write(json_string);
+
 def write_convert_data_card(json_string):
     # 獲取腳本所在的路徑
     script_dir = os.path.dirname(os.path.abspath(__file__));
