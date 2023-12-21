@@ -10125,6 +10125,494 @@
           }
         ]
       },
+      "愛慕織姬（Starry Nocturne）": {
+        "event": [
+          {
+            "新年抱負": [
+              {
+                "choice_title": "元気が出そうなホットスナック",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+25</span>"
+              },
+              {
+                "choice_title": "リラックスできそうなインスタントスープ",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20</span>"
+              },
+              {
+                "choice_title": "頭が冴えそうなスイーツ",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+20</span>"
+              }
+            ]
+          },
+          {
+            "新年參拜": [
+              {
+                "choice_title": "（めいっぱい健康でいられますように！）",
+                "choice_effect": "體力<span class=\"status_plus_value\">+30</span>"
+              },
+              {
+                "choice_title": "（たくさんレースで活躍できますように）",
+                "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+              },
+              {
+                "choice_title": "（多くの楽しみを見つけられますように）",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+35</span>"
+              }
+            ]
+          },
+          {
+            "舞蹈練習": [
+              {
+                "choice_title": "じゃあ、俺が代わりに言うよ",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "やってみる価値はある",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "必殺．專家織姬": [
+              {
+                "choice_title": "これが“仕事人”の力……！",
+                "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+20</span>"
+              },
+              {
+                "choice_title": "根気のいる仕事だもんな",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "同寢室的妹妹令人沒輒": [
+              {
+                "choice_title": "善は急げだ！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "力を借りてみよう",
+                "choice_effect": "體力<span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "雲層彼端，宇宙彼方": [
+              {
+                "choice_title": "力になれたみたいだな",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span>"
+              },
+              {
+                "choice_title": "観測のコツを伝えてあげたら？",
+                "choice_effect": "<span class=\"skill_hint\">『進攻時機超群』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+              }
+            ]
+          },
+          {
+            "織姬做的三明治": [
+              {
+                "choice_title": "無難な具材を勧める",
+                "choice_effect": "<span class=\"skill_hint\">『直線靈巧』</span>的靈感Lv<span class=\"status_plus_value\">+2</span>"
+              },
+              {
+                "choice_title": "珍品（肉）を勧めてみる！",
+                "choice_effect": "大成功時：<br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『直線一口氣』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><hr>成功時：<br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><hr>失敗時：<br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br>幹勁下降"
+              },
+              {
+                "choice_title": "珍品（魚）を勧めてみる！",
+                "choice_effect": "大成功時：<br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『中距離直線◯』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><hr>成功時：<br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span><hr>失敗時：<br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span><br>幹勁下降"
+              },
+              {
+                "choice_title": "珍品（野菜）を勧めてみる！",
+                "choice_effect": "大成功時：<br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『隱藏身影』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><hr>成功時：<br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><hr>失敗時：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br>幹勁下降"
+              }
+            ]
+          },
+          {
+            "保重身體！": [
+              {
+                "choice_title": "焦りに流されないことも強さだよ",
+                "choice_effect": "幹勁下降<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-5</span><br>隨機<span class=\"minus_condition\">『不擅長練習』</span>"
+              },
+              {
+                "choice_title": "君らしいな",
+                "choice_effect": "幹勁下降<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>隨機<span class=\"minus_condition\">『不擅長練習』</span><hr><span class=\"plus_condition\">『擅長練習◯』</span>"
+              }
+            ]
+          },
+          {
+            "嚴禁逞強！": [
+              {
+                "choice_title": "今は治療に専念しよう",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>幹勁下降三階<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>五種數値中隨機選兩種<span class=\"status_minus_value\">-10</span><br>隨機<span class=\"minus_condition\">『不擅長練習』</span>"
+              },
+              {
+                "choice_title": "トレーニングできる方法を考えよう",
+                "choice_effect": "幹勁下降三階<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>五種數値中隨機選兩種<span class=\"status_minus_value\">-10</span><br><span class=\"minus_condition\">『不擅長練習』</span><hr>體力<span class=\"status_plus_value\">+10</span><br><span class=\"plus_condition\">『擅長練習◯』</span>"
+              }
+            ]
+          },
+          {
+            "額外的自主訓練": [
+              {
+                "choice_title": "付き合うよ",
+                "choice_effect": "體力<span class=\"status_minus_value\">-5</span><br>當前選擇的訓練的數値<span class=\"status_plus_value\">+5</span><br>與劇本NPC相應的情誼量條<span class=\"status_plus_value\">+5</span><br>URA 秋川理事長<br>青春盃 乙名史記者"
+              },
+              {
+                "choice_title": "明日のために力を残そう",
+                "choice_effect": "體力<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "柔軟蓬鬆的甜點": [
+              {
+                "choice_title": "食べすぎないようにな",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "（このまま思う存分食べてもらおう）",
+                "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><hr>失敗時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_minus_value\">-5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br><span class=\"minus_condition\">『體重過胖』</span>"
+              }
+            ]
+          },
+          {
+            "感受我的情感吧": [
+              {
+                "choice_title": "モデルの仕事もやれそうだな",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+20</span>"
+              },
+              {
+                "choice_title": "出来上がるのが楽しみだ",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+20</span>"
+              }
+            ]
+          },
+          {
+            "靜靜地互通心意": [
+              {
+                "choice_title": "運命的なものがあるのかも",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+20</span>"
+              },
+              {
+                "choice_title": "いい友人だな",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+20</span>"
+              }
+            ]
+          },
+          {
+            "唯一的使命": [
+              {
+                "choice_title": "俺も、できる事を一緒に頑張るよ",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br>隨機<span class=\"plus_condition\">『討人喜歡◯』</span>"
+              },
+              {
+                "choice_title": "唯一、ではないと思う",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+20</span><br>隨機<span class=\"plus_condition\">『討人喜歡◯』</span>"
+              }
+            ]
+          },
+          {
+            "那只是我該做的": [
+              {
+                "choice_title": "わかる！『かっけー』よな！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "ここは俺に任せて",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "終於願意收下的事物": [
+              {
+                "choice_title": "次の“オペラ”も楽しみだな",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "その花、どこに飾ろうか",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "目頭が熱くなるなぁ……",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "蓬鬆度審美眼光": [
+              {
+                "choice_title": "子羊のためにはなった",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "他の事にも応用できたり？",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "夢寐以求的景象": [
+              {
+                "choice_title": "でも楽しかったな",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "いい姉妹だな",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "愛慕織姬登場！": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+120</span>"
+              }
+            ]
+          },
+          {
+            "騷動的軒轅十四": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "無效果"
+              }
+            ]
+          },
+          {
+            "起飛吧，飛馬座": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "無效果"
+              }
+            ]
+          },
+          {
+            "不可思議的彗星": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "拉滿弓的南河三": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "命運的雙子星": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "無效果"
+              }
+            ]
+          },
+          {
+            "直到第谷超新星升起為止": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "以此星光為嚮導": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "名為九九世代的群星": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "3段階：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+20</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+20</span><br>技能點<span class=\"status_plus_value\">+20</span><br><span class=\"skill_hint\">『後追直線◯』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><br><span class=\"skill_hint\"><span class=\"skill_hint\"><span class=\"skill_hint\">『後追彎道◯』</span></span></span>的靈感Lv<span class=\"status_plus_value\">+2</span><hr>2段階：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+12</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+12</span><br><span class=\"skill_hint\"><span class=\"skill_hint\"><span class=\"skill_hint\">『後追彎道◯』</span></span></span>的靈感Lv<span class=\"status_plus_value\">+2</span><hr>1段階：<br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+11</span><br><span class=\"skill_hint\"><span class=\"skill_hint\"><span class=\"skill_hint\">『後追彎道◯』</span></span></span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+              }
+            ]
+          },
+          {
+            "展信愉快，給「我」自己": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+20</span>"
+              }
+            ]
+          },
+          {
+            "視觸感如命": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁下降"
+              }
+            ]
+          },
+          {
+            "黑咖啡是我的良伴": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br>幹勁下降"
+              }
+            ]
+          },
+          {
+            "可以的話希望大家安靜觀賞": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁下降<br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_minus_value\">-5</span>"
+              }
+            ]
+          },
+          {
+            "若在夜晚相逢": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><br>隨機<span class=\"plus_condition\">『天賦異稟』</span>"
+              }
+            ]
+          },
+          {
+            "不能放著不管！": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_minus_value\">-5</span><br>隨機幹勁下降或者<span class=\"minus_condition\">『懶惰成性』</span>"
+              }
+            ]
+          },
+          {
+            "競賽獲勝！": [
+              {
+                "choice_title": "おめでとう！",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+8</span><br>技能點<span class=\"status_plus_value\">+35</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><hr>共通：<br>體力<span class=\"status_minus_value\">-15</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              },
+              {
+                "choice_title": "まだまだこれから！",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+8</span><br>技能點<span class=\"status_plus_value\">+35</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><hr>共通：<br>體力<span class=\"status_minus_value\">-5</span>或<span class=\"status_minus_value\">-10</span>或<span class=\"status_minus_value\">-20</span>或<span class=\"status_minus_value\">-30</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              }
+            ]
+          },
+          {
+            "競賽上榜": [
+              {
+                "choice_title": "いい走りだったぞ！",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5~8</span><br>技能點<span class=\"status_plus_value\">+40~45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4~6</span><br>技能點<span class=\"status_plus_value\">+30~45</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+2~4</span><br>技能點<span class=\"status_plus_value\">+20~45</span><hr>共通：<br>體力<span class=\"status_minus_value\">-20</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              },
+              {
+                "choice_title": "次こそ勝とう！",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5~8</span><br>技能點<span class=\"status_plus_value\">+40~45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4~6</span><br>技能點<span class=\"status_plus_value\">+30~45</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+2~4</span><br>技能點<span class=\"status_plus_value\">+20~45</span><hr>共通：<br>體力<span class=\"status_minus_value\">-10</span>或<span class=\"status_minus_value\">-30</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              }
+            ]
+          },
+          {
+            "競賽敗北": [
+              {
+                "choice_title": "ここから、上り詰めよう！",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4</span><br>技能點<span class=\"status_plus_value\">+25</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+20</span><hr>op：<br>技能點<span class=\"status_plus_value\">+10</span><hr>共通：<br>體力<span class=\"status_minus_value\">-25</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              },
+              {
+                "choice_title": "こんなところで立ち止まるのか？",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4</span><br>技能點<span class=\"status_plus_value\">+25</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+20</span><hr>op：<br>技能點<span class=\"status_plus_value\">+10</span><hr>共通：<br>體力<span class=\"status_minus_value\">-15</span>或<span class=\"status_minus_value\">-25</span>或<span class=\"status_minus_value\">-35</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_title": "強いウマ娘になれる秘孔を狙う",
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全數値<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>"
+              },
+              {
+                "choice_title": "レースで勝てる秘孔を狙う",
+                "choice_effect": "成功時:<span class=\"skill_hint\">『彎道回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降"
+              },
+              {
+                "choice_title": "元気で健康になれる秘孔を狙う",
+                "choice_effect": "成功時:體力的最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>負面狀態會被治好<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>"
+              },
+              {
+                "choice_title": "魅力アップの秘孔を狙う",
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降"
+              },
+              {
+                "choice_title": "不安なのでやめておく",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "抽獎試手氣！": [
+              {
+                "choice_title": "特賞(温泉旅行券)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "1等(特上にんじんハンバーグ)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "2等(にんじん山盛り)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br>五種數値<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "3等(にんじん1本)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20</span>"
+              },
+              {
+                "choice_title": "はずれ",
+                "choice_effect": "幹勁下降"
+              }
+            ]
+          },
+          {
+            "粉絲信": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁提升<br>技能點<span class=\"status_plus_value\">+30</span>"
+              }
+            ]
+          },
+          {
+            "夏季集訓（第二年）結束": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "五種數値中隨機選三種<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "夏季集訓（第三年）結束": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "五種數値中隨機選三種<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "這次一定要獲勝！": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁提升"
+              }
+            ]
+          },
+          {
+            "下次不會輸了！": [
+              {
+                "choice_title": "上選択肢",
+                "choice_effect": "幹勁提升<br>技能點<span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "下選択肢",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『伏兵◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>隨機獲得負面技能"
+              }
+            ]
+          }
+        ]
+      },
       "小栗帽（奇蹟白星）": {
         "event": [
           {
@@ -34141,6 +34629,514 @@
           }
         ]
       },
+      "美妙姿勢（Noble Seamair）": {
+        "event": [
+          {
+            "新年抱負": [
+              {
+                "choice_title": "先着10名限定福袋",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+25</span>"
+              },
+              {
+                "choice_title": "よりどりパン詰め合わせ福袋",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20</span>"
+              },
+              {
+                "choice_title": "おもちゃ福袋",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+20</span>"
+              }
+            ]
+          },
+          {
+            "新年參拜": [
+              {
+                "choice_title": "お正月お料理堪能コース",
+                "choice_effect": "體力<span class=\"status_plus_value\">+30</span>"
+              },
+              {
+                "choice_title": "成長祈願！詣でまくりコース",
+                "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+              },
+              {
+                "choice_title": "飛び道具！？滝行コース",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+35</span>"
+              }
+            ]
+          },
+          {
+            "Who Will Escort Me？": [
+              {
+                "choice_title": "『天皇賞（秋）』",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br>最終目標が天皇賞(秋)"
+              },
+              {
+                "choice_title": "『エリザベス女王杯』",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span><br>最終目標がエリザベス女王杯"
+              },
+              {
+                "choice_title": "『マイルCS』",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br>最終目標がマイルCS"
+              },
+              {
+                "choice_title": "『有馬記念』",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br>最終目標が有馬記念"
+              }
+            ]
+          },
+          {
+            "舞蹈練習": [
+              {
+                "choice_title": "踊りを見られる日が楽しみだよ",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "ファインらしさも取り入れてみたら？",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "殿下的華麗嗜好": [
+              {
+                "choice_title": "力強さに圧倒されて……",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "学びが多い会だなぁと思って",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "殿下與充滿刺激的茶會": [
+              {
+                "choice_title": "さすがの切り替えスピード……！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "スタミナが続く限り、楽しもう！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "來自遠方的花": [
+              {
+                "choice_title": "2人で作った料理とか？",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span>"
+              },
+              {
+                "choice_title": "未来のレースの挑戦状を封入する",
+                "choice_effect": "<span class=\"skill_hint\">『前列彎道◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+              }
+            ]
+          },
+          {
+            "Love Ramen": [
+              {
+                "choice_title": "チャーシュー麺",
+                "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+15</span><hr>失敗時：<br>體力<span class=\"status_plus_value\">+30</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_minus_value\">-10</span><br>技能點<span class=\"status_plus_value\">+5</span><br><span class=\"minus_condition\">『體重過胖』</span>"
+              },
+              {
+                "choice_title": "油そば",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+20</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "担々麺",
+                "choice_effect": "<span class=\"skill_hint\">『傾注一切』</span>的靈感Lv<span class=\"status_plus_value\">+3</span>"
+              }
+            ]
+          },
+          {
+            "保重身體！": [
+              {
+                "choice_title": "4、しっかり休む！",
+                "choice_effect": "幹勁下降<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-5</span><br>隨機<span class=\"minus_condition\">『不擅長練習』</span>"
+              },
+              {
+                "choice_title": "……わかった、練習再開を目指そう",
+                "choice_effect": "幹勁下降<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>隨機<span class=\"minus_condition\">『不擅長練習』</span><hr><span class=\"plus_condition\">『擅長練習◯』</span>"
+              }
+            ]
+          },
+          {
+            "嚴禁逞強！": [
+              {
+                "choice_title": "それは許可できない",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>幹勁下降三階<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>五種數値中隨機選兩種<span class=\"status_minus_value\">-10</span><br>隨機<span class=\"minus_condition\">『不擅長練習』</span>"
+              },
+              {
+                "choice_title": "……無理はしないようにな",
+                "choice_effect": "幹勁下降三階<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>五種數値中隨機選兩種<span class=\"status_minus_value\">-10</span><br><span class=\"minus_condition\">『不擅長練習』</span><hr>體力<span class=\"status_plus_value\">+10</span><br><span class=\"plus_condition\">『擅長練習◯』</span>"
+              }
+            ]
+          },
+          {
+            "額外的自主訓練": [
+              {
+                "choice_title": "いいよ！",
+                "choice_effect": "體力<span class=\"status_minus_value\">-5</span><br>當前選擇的訓練的數値<span class=\"status_plus_value\">+5</span><br>與劇本NPC相應的情誼量條<span class=\"status_plus_value\">+5</span><br>URA 秋川理事長<br>青春盃 乙名史記者"
+              },
+              {
+                "choice_title": "無理をさせるわけには……",
+                "choice_effect": "體力<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "懷念的愛爾蘭料理": [
+              {
+                "choice_title": "レースに支障が出たら送り主も悲しむかも",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "しっかり食べよう！",
+                "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><hr>失敗時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_minus_value\">-5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br><span class=\"minus_condition\">『體重過胖』</span>"
+              }
+            ]
+          },
+          {
+            "約定的酢漿草": [
+              {
+                "choice_title": "きっと覚悟は伝わったよ！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+20</span>"
+              },
+              {
+                "choice_title": "いつも以上にカッコよかったよ",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+20</span>"
+              }
+            ]
+          },
+          {
+            "寵溺殿下": [
+              {
+                "choice_title": "じゃあとことん『今』を楽しもう！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "だったらもっと甘えさせたい！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+20</span>"
+              }
+            ]
+          },
+          {
+            "殿下與電影觀賞會": [
+              {
+                "choice_title": "意外なものが好きなんだな",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br>隨機<span class=\"plus_condition\">『備受矚目』</span>"
+              },
+              {
+                "choice_title": "別の映画も見た方がいいかも……",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span><br>隨機<span class=\"plus_condition\">『備受矚目』</span>"
+              }
+            ]
+          },
+          {
+            "這種情境很浪漫吧？": [
+              {
+                "choice_title": "おみそれしました！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "ちょっと反則技な気も……",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "異國之地充滿驚奇": [
+              {
+                "choice_title": "気を使わせているような……",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "そう……かな！？",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "辛苦你了": [
+              {
+                "choice_title": "こちらこそ！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "仰せのままに",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "よ、よし……もっと頑張る……！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "殿下參加義賣會！": [
+              {
+                "choice_title": "バザーは楽しめた？",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "頼もしい護衛だったな",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "殿下，接觸推崇文化": [
+              {
+                "choice_title": "ファインだって誰かの推しだよ",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "ファインには推しはいる？",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "Fork in the Road": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "無效果"
+              }
+            ]
+          },
+          {
+            "This Is Who I Am": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "My Dear……": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "無效果"
+              }
+            ]
+          },
+          {
+            "Fellow Students": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "Destiny": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "Such Sweet Sorrow...": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "無效果"
+              }
+            ]
+          },
+          {
+            "Rain or Shine, I'm Fine!": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+20</span>"
+              }
+            ]
+          },
+          {
+            "名指導": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span><br>隨機<span class=\"plus_condition\">『擅長練習◯』</span>"
+              }
+            ]
+          },
+          {
+            "即使能記在心裡……": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁下降"
+              }
+            ]
+          },
+          {
+            "無法擺脫的習慣": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br>幹勁下降"
+              }
+            ]
+          },
+          {
+            "必須提出建議": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁下降<br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_minus_value\">-5</span>"
+              }
+            ]
+          },
+          {
+            "More Fun！": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br>隨機1種類のステータス<span class=\"status_plus_value\">+10</span><br>隨機4種類のトレーニングが行えなくなる"
+              }
+            ]
+          },
+          {
+            "高貴的代打！": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><br>隨機<span class=\"plus_condition\">『天賦異稟』</span>"
+              }
+            ]
+          },
+          {
+            "先仔細聽完再說……♪": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_minus_value\">-5</span><br>隨機幹勁下降或者<span class=\"minus_condition\">『懶惰成性』</span>"
+              }
+            ]
+          },
+          {
+            "競賽獲勝！": [
+              {
+                "choice_title": "また1つ素敵な思い出が増えたな！",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+8</span><br>技能點<span class=\"status_plus_value\">+35</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><hr>共通：<br>體力<span class=\"status_minus_value\">-15</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              },
+              {
+                "choice_title": "次も期待してるぞ",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+8</span><br>技能點<span class=\"status_plus_value\">+35</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><hr>共通：<br>體力<span class=\"status_minus_value\">-5</span>或<span class=\"status_minus_value\">-10</span>或<span class=\"status_minus_value\">-20</span>或<span class=\"status_minus_value\">-30</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              }
+            ]
+          },
+          {
+            "競賽上榜": [
+              {
+                "choice_title": "トレーニングの成果は出ていたぞ！",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5~8</span><br>技能點<span class=\"status_plus_value\">+40~45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4~6</span><br>技能點<span class=\"status_plus_value\">+30~45</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+2~4</span><br>技能點<span class=\"status_plus_value\">+20~45</span><hr>共通：<br>體力<span class=\"status_minus_value\">-20</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              },
+              {
+                "choice_title": "まだまだ改善点が多い",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5~8</span><br>技能點<span class=\"status_plus_value\">+40~45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4~6</span><br>技能點<span class=\"status_plus_value\">+30~45</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+2~4</span><br>技能點<span class=\"status_plus_value\">+20~45</span><hr>共通：<br>體力<span class=\"status_minus_value\">-10</span>或<span class=\"status_minus_value\">-30</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              }
+            ]
+          },
+          {
+            "競賽敗北": [
+              {
+                "choice_title": "確かに……！",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4</span><br>技能點<span class=\"status_plus_value\">+25</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+20</span><hr>op：<br>技能點<span class=\"status_plus_value\">+10</span><hr>共通：<br>體力<span class=\"status_minus_value\">-25</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              },
+              {
+                "choice_title": "じゃあビシバシ鍛えないとな",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4</span><br>技能點<span class=\"status_plus_value\">+25</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+20</span><hr>op：<br>技能點<span class=\"status_plus_value\">+10</span><hr>共通：<br>體力<span class=\"status_minus_value\">-15</span>或<span class=\"status_minus_value\">-25</span>或<span class=\"status_minus_value\">-35</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_title": "強いウマ娘になれる秘孔を狙う",
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全數値<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>"
+              },
+              {
+                "choice_title": "レースで勝てる秘孔を狙う",
+                "choice_effect": "成功時:<span class=\"skill_hint\">『彎道回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降"
+              },
+              {
+                "choice_title": "元気で健康になれる秘孔を狙う",
+                "choice_effect": "成功時:體力的最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>負面狀態會被治好<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>"
+              },
+              {
+                "choice_title": "魅力アップの秘孔を狙う",
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降"
+              },
+              {
+                "choice_title": "不安なのでやめておく",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "抽獎試手氣！": [
+              {
+                "choice_title": "特賞(温泉旅行券)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "1等(特上にんじんハンバーグ)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "2等(にんじん山盛り)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br>五種數値<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "3等(にんじん1本)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20</span>"
+              },
+              {
+                "choice_title": "はずれ",
+                "choice_effect": "幹勁下降"
+              }
+            ]
+          },
+          {
+            "粉絲信": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁提升<br>技能點<span class=\"status_plus_value\">+30</span>"
+              }
+            ]
+          },
+          {
+            "夏季集訓（第二年）結束": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "五種數値中隨機選三種<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "夏季集訓（第三年）結束": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "五種數値中隨機選三種<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "這次一定要獲勝！": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁提升"
+              }
+            ]
+          },
+          {
+            "下次不會輸了！": [
+              {
+                "choice_title": "上選択肢",
+                "choice_effect": "幹勁提升<br>技能點<span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "下選択肢",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『伏兵◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>隨機獲得負面技能"
+              }
+            ]
+          }
+        ]
+      },
       "目白阿爾丹（Clinochlore Line）": {
         "event": [
           {
@@ -36053,6 +37049,458 @@
           }
         ]
       },
+      "琵琶晨光（聖夜紅袍頌歌）": {
+        "event": [
+          {
+            "額外的自主訓練": [
+              {
+                "choice_title": "俺も付き合うよ",
+                "choice_effect": "體力<span class=\"status_minus_value\">-5</span><br>當前選擇的訓練的數値<span class=\"status_plus_value\">+5</span><br>與劇本NPC相應的情誼量條<span class=\"status_plus_value\">+5</span><br>URA 秋川理事長<br>青春盃 乙名史記者"
+              },
+              {
+                "choice_title": "ライバルなら、信じてあげよう",
+                "choice_effect": "體力<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "與狂暴之龍的攻防": [
+              {
+                "choice_title": "近場で済ませた方が……",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "まあ、関西に行ったついでなら",
+                "choice_effect": "「阪神レース場〇」的靈感Lv<span class=\"status_plus_value\">+1</span>"
+              }
+            ]
+          },
+          {
+            "新年抱負": [
+              {
+                "choice_title": "理論",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+25</span>"
+              },
+              {
+                "choice_title": "食事",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20</span>"
+              },
+              {
+                "choice_title": "技術",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+20</span>"
+              }
+            ]
+          },
+          {
+            "舞蹈練習": [
+              {
+                "choice_title": "本人に聞こう",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "一緒に踊ってみたら？",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "料理與姊妹的回憶": [
+              {
+                "choice_title": "力がつく栄養いっぱいのカレー",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "スタミナがつく肉厚のハンバーグ",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "新年參拜": [
+              {
+                "choice_title": "ハヤヒデが元気でいられますように",
+                "choice_effect": "體力<span class=\"status_plus_value\">+30</span>"
+              },
+              {
+                "choice_title": "勝利をつかむために能力を上げたい",
+                "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+              },
+              {
+                "choice_title": "たくさん技術を磨きたい",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+35</span>"
+              }
+            ]
+          },
+          {
+            "她的嶄新一面": [
+              {
+                "choice_title": "行き先が絞れそうなスイープを探そう",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "探す場所が多そうなマーベラスを探そう",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "保重身體！": [
+              {
+                "choice_title": "今は休んでほしい(夏合宿中：きっちり休ませる)",
+                "choice_effect": "幹勁下降<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-5</span><br>隨機<span class=\"minus_condition\">『不擅長練習』</span>"
+              },
+              {
+                "choice_title": "……無理と判断したら、止めるからな(夏合宿中：頑張らせる)",
+                "choice_effect": "幹勁下降<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>隨機<span class=\"minus_condition\">『不擅長練習』</span><hr><span class=\"plus_condition\">『擅長練習◯』</span>"
+              }
+            ]
+          },
+          {
+            "嚴禁逞強！": [
+              {
+                "choice_title": "保健室に戻ろう(夏合宿中：とにかく労わる)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>幹勁下降三階<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>五種數値中隨機選兩種<span class=\"status_minus_value\">-10</span><br>隨機<span class=\"minus_condition\">『不擅長練習』</span>"
+              },
+              {
+                "choice_title": "……歩くなら、一緒に！(夏合宿中：厳しくいく！)",
+                "choice_effect": "幹勁下降三階<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>五種數値中隨機選兩種<span class=\"status_minus_value\">-10</span><br><span class=\"minus_condition\">『不擅長練習』</span><hr>體力<span class=\"status_plus_value\">+10</span><br><span class=\"plus_condition\">『擅長練習◯』</span>"
+              }
+            ]
+          },
+          {
+            "拜託了，大姐姐！": [
+              {
+                "choice_title": "ハヤヒデの選んだ色っぽいマニキュア",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+15</span>"
+              },
+              {
+                "choice_title": "タイシンの選んだクールな耳飾り",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+15</span>"
+              }
+            ]
+          },
+          {
+            "幫手登場！": [
+              {
+                "choice_title": "1日だけ体験してみたら？",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+15</span><br>隨機<span class=\"plus_condition\">『天賦異稟』</span>"
+              },
+              {
+                "choice_title": "妹を見てもらうっていう条件で入ったら？",
+                "choice_effect": "<span class=\"skill_hint\">『後來居上』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><br>隨機<span class=\"plus_condition\">『天賦異稟』</span>"
+              }
+            ]
+          },
+          {
+            "另一顆明星": [
+              {
+                "choice_title": "インパクトで勝負！後ろ姿だ！",
+                "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+30</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『冬賽馬娘◯』</span>的靈感Lv<span class=\"status_plus_value\">+2</span>"
+              },
+              {
+                "choice_title": "主役らしく普通に渡そう",
+                "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br>技能點<span class=\"status_plus_value\">+20</span><br><span class=\"skill_hint\">『冬賽馬娘◯』</span>的靈感Lv<span class=\"status_plus_value\">+2</span>"
+              }
+            ]
+          },
+          {
+            "關於遊戲的實踐證明": [
+              {
+                "choice_title": "有名パズルゲーム",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "コアなレースゲーム",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "在咖啡廳閱讀": [
+              {
+                "choice_title": "素敵な趣味だな",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "他にもおすすめの店があれば教えて",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "捉迷藏大師": [
+              {
+                "choice_title": "俺が鬼をやるよ",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "ビワハヤヒデが鬼な！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "緊急簡報": [
+              {
+                "choice_title": "君だからこその説得力だった",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "君の理論はこころに響くな",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "こっちまで勇気をもらったよ",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "立分明暗": [
+              {
+                "choice_title": "あの店にも武器になるものがあればいいのに",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "宣伝を手伝うことならできるかも",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "當下的描述": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "回憶的過往原則": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "這就是事實": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "同儕效應": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "名指導": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br>隨機<span class=\"plus_condition\">『擅長練習◯』</span>"
+              }
+            ]
+          },
+          {
+            "方程式的作者": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "我們的方式": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+10</span><span class=\"skill_hint\">『「直線加速」』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+              }
+            ]
+          },
+          {
+            "膨脹的憂鬱": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_minus_value\">-5</span><br>隨機幹勁下降或者<span class=\"minus_condition\">『懶惰成性』</span>"
+              }
+            ]
+          },
+          {
+            "重視營養……？": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁下降<br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_minus_value\">-5</span>"
+              }
+            ]
+          },
+          {
+            "突發狀況在預料之外": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁下降<br>體力<span class=\"status_minus_value\">-10</span>"
+              }
+            ]
+          },
+          {
+            "你們如果在看著的話": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><br>隨機<span class=\"plus_condition\">『天賦異稟』</span>"
+              }
+            ]
+          },
+          {
+            "髮型狂想曲": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>幹勁下降<br>劇本NPC的情誼量條<span class=\"status_minus_value\">-5</span>"
+              }
+            ]
+          },
+          {
+            "被扭曲的方程式": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20</span><br><span class=\"skill_hint\">『阪神賽場◯』</span>的靈感Lv<span class=\"status_plus_value\">+2</span>"
+              }
+            ]
+          },
+          {
+            "競賽獲勝！": [
+              {
+                "choice_title": "おめでとう！",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+8</span><br>技能點<span class=\"status_plus_value\">+35</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><hr>共通：<br>體力<span class=\"status_minus_value\">-15</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              },
+              {
+                "choice_title": "まだ一歩、だ",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+8</span><br>技能點<span class=\"status_plus_value\">+35</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><hr>共通：<br>體力<span class=\"status_minus_value\">-5</span>或<span class=\"status_minus_value\">-10</span>或<span class=\"status_minus_value\">-20</span>或<span class=\"status_minus_value\">-30</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              }
+            ]
+          },
+          {
+            "競賽上榜": [
+              {
+                "choice_title": "……いい部分もあったぞ！",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5~8</span><br>技能點<span class=\"status_plus_value\">+40~45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4~6</span><br>技能點<span class=\"status_plus_value\">+30~45</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+2~4</span><br>技能點<span class=\"status_plus_value\">+20~45</span><hr>共通：<br>體力<span class=\"status_minus_value\">-20</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              },
+              {
+                "choice_title": "君の言う通りだ",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5~8</span><br>技能點<span class=\"status_plus_value\">+40~45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4~6</span><br>技能點<span class=\"status_plus_value\">+30~45</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+2~4</span><br>技能點<span class=\"status_plus_value\">+20~45</span><hr>共通：<br>體力<span class=\"status_minus_value\">-10</span>或<span class=\"status_minus_value\">-30</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              }
+            ]
+          },
+          {
+            "競賽敗北": [
+              {
+                "choice_title": "君なら修正できる",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4</span><br>技能點<span class=\"status_plus_value\">+25</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+20</span><hr>op：<br>技能點<span class=\"status_plus_value\">+10</span><hr>共通：<br>體力<span class=\"status_minus_value\">-25</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              },
+              {
+                "choice_title": "頭でっかちになってるぞ！",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4</span><br>技能點<span class=\"status_plus_value\">+25</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+20</span><hr>op：<br>技能點<span class=\"status_plus_value\">+10</span><hr>共通：<br>體力<span class=\"status_minus_value\">-15</span>或<span class=\"status_minus_value\">-25</span>或<span class=\"status_minus_value\">-35</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_title": "強いウマ娘になれる秘孔を狙う",
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全數値<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>"
+              },
+              {
+                "choice_title": "レースで勝てる秘孔を狙う",
+                "choice_effect": "成功時:<span class=\"skill_hint\">『彎道回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降"
+              },
+              {
+                "choice_title": "元気で健康になれる秘孔を狙う",
+                "choice_effect": "成功時:體力的最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>負面狀態會被治好<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>"
+              },
+              {
+                "choice_title": "魅力アップの秘孔を狙う",
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降"
+              },
+              {
+                "choice_title": "不安なのでやめておく",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "抽獎試手氣！": [
+              {
+                "choice_title": "特賞(温泉旅行券)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "1等(特上にんじんハンバーグ)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "2等(にんじん山盛り)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br>五種數値<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "3等(にんじん1本)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20</span>"
+              },
+              {
+                "choice_title": "はずれ",
+                "choice_effect": "幹勁下降"
+              }
+            ]
+          },
+          {
+            "粉絲信": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁提升<br>技能點<span class=\"status_plus_value\">+30</span>"
+              }
+            ]
+          },
+          {
+            "夏季集訓（第二年）結束": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "五種數値中隨機選三種<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "夏季集訓（第三年）結束": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "五種數値中隨機選三種<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "這次一定要獲勝！": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁提升"
+              }
+            ]
+          },
+          {
+            "下次不會輸了！": [
+              {
+                "choice_title": "上選択肢",
+                "choice_effect": "幹勁提升<br>技能點<span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "下選択肢",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『伏兵◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>隨機獲得負面技能"
+              }
+            ]
+          }
+        ]
+      },
       "好歌劇（初晴．湛藍絢爛）": {
         "event": [
           {
@@ -36936,6 +38384,498 @@
               {
                 "choice_title": "次はシチーが引き離す番",
                 "choice_effect": "G1：<br>五種數値中隨機選兩種<span class=\"status_plus_value\">+4</span><br>技能點<span class=\"status_plus_value\">+25</span><hr>G2~G3：<br>五種數値中隨機選兩種<span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+20</span><hr>op：<br>技能點<span class=\"status_plus_value\">+10</span><hr>共通：<br>體力<span class=\"status_minus_value\">-15</span>或<span class=\"status_minus_value\">-25</span>或<span class=\"status_minus_value\">-35</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_title": "強いウマ娘になれる秘孔を狙う",
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全數値<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>"
+              },
+              {
+                "choice_title": "レースで勝てる秘孔を狙う",
+                "choice_effect": "成功時:<span class=\"skill_hint\">『彎道回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降"
+              },
+              {
+                "choice_title": "元気で健康になれる秘孔を狙う",
+                "choice_effect": "成功時:體力的最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>負面狀態會被治好<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>"
+              },
+              {
+                "choice_title": "魅力アップの秘孔を狙う",
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降"
+              },
+              {
+                "choice_title": "不安なのでやめておく",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "抽獎試手氣！": [
+              {
+                "choice_title": "特賞(温泉旅行券)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "1等(特上にんじんハンバーグ)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "2等(にんじん山盛り)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br>五種數値<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "3等(にんじん1本)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20</span>"
+              },
+              {
+                "choice_title": "はずれ",
+                "choice_effect": "幹勁下降"
+              }
+            ]
+          },
+          {
+            "粉絲信": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁提升<br>技能點<span class=\"status_plus_value\">+30</span>"
+              }
+            ]
+          },
+          {
+            "夏季集訓（第二年）結束": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "五種數値中隨機選三種<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "夏季集訓（第三年）結束": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "五種數値中隨機選三種<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "這次一定要獲勝！": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁提升"
+              }
+            ]
+          },
+          {
+            "下次不會輸了！": [
+              {
+                "choice_title": "上選択肢",
+                "choice_effect": "幹勁提升<br>技能點<span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "下選択肢",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『伏兵◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>隨機獲得負面技能"
+              }
+            ]
+          }
+        ]
+      },
+      "目白善信（Line Breakthrough）": {
+        "event": [
+          {
+            "新年抱負": [
+              {
+                "choice_title": "畑仕事",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+25</span>"
+              },
+              {
+                "choice_title": "セレショで爆買い",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20</span>"
+              },
+              {
+                "choice_title": "カフェでお茶",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+20</span>"
+              }
+            ]
+          },
+          {
+            "新年參拜": [
+              {
+                "choice_title": "ダイタクヘリオスの女神",
+                "choice_effect": "體力<span class=\"status_plus_value\">+30</span>"
+              },
+              {
+                "choice_title": "パリピの始祖",
+                "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+              },
+              {
+                "choice_title": "ビリヤード神",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+30</span>"
+              }
+            ]
+          },
+          {
+            "舞蹈練習": [
+              {
+                "choice_title": "深刻に考えず、さっきくらい楽しく踊ろう",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "一緒に振り付けの意味を考えよう",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "善信的粉絲見面會！？": [
+              {
+                "choice_title": "ファンも体力勝負だな",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "罪作りだなぁ〜",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "煩惱諮詢專家的日常": [
+              {
+                "choice_title": "せっかくだし、ちょっと走ろうか？",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "相乗効果ってやつだな",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "為了善信！": [
+              {
+                "choice_title": "うちのパーマーをもっと褒めてくれ！",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "次期生徒会長にまっしぐらだな！",
+                "choice_effect": "<span class=\"skill_hint\">『領頭的訣竅◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+              }
+            ]
+          },
+          {
+            "終極選擇": [
+              {
+                "choice_title": "メジロドーベルを助けに行こう！",
+                "choice_effect": "成功時：<br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+25</span><br>技能點<span class=\"status_plus_value\">+15</span><hr>失敗時：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+15</span><br>技能點<span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "メジロブライトを迎えに行こう！",
+                "choice_effect": "成功時：<br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+25</span><br>技能點<span class=\"status_plus_value\">+15</span><hr>失敗時：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+15</span><br>技能點<span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "保重身體！": [
+              {
+                "choice_title": "やっぱり念の為休もう",
+                "choice_effect": "幹勁下降<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-5</span><br>隨機<span class=\"minus_condition\">『不擅長練習』</span>"
+              },
+              {
+                "choice_title": "……もう少しだけ、やるか！",
+                "choice_effect": "幹勁下降<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>隨機<span class=\"minus_condition\">『不擅長練習』</span><hr><span class=\"plus_condition\">『擅長練習◯』</span>"
+              }
+            ]
+          },
+          {
+            "嚴禁逞強！": [
+              {
+                "choice_title": "しっかり治して、自由に走ろう",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>幹勁下降三階<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>五種數値中隨機選兩種<span class=\"status_minus_value\">-10</span><br>隨機<span class=\"minus_condition\">『不擅長練習』</span>"
+              },
+              {
+                "choice_title": "……もう少し続けてみるか",
+                "choice_effect": "幹勁下降三階<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>五種數値中隨機選兩種<span class=\"status_minus_value\">-10</span><br><span class=\"minus_condition\">『不擅長練習』</span><hr>體力<span class=\"status_plus_value\">+10</span><br><span class=\"plus_condition\">『擅長練習◯』</span>"
+              }
+            ]
+          },
+          {
+            "額外的自主訓練": [
+              {
+                "choice_title": "もう少し走ってみるか！",
+                "choice_effect": "體力<span class=\"status_minus_value\">-5</span><br>當前選擇的訓練的數値<span class=\"status_plus_value\">+5</span><br>與劇本NPC相應的情誼量條<span class=\"status_plus_value\">+5</span><br>URA 秋川理事長<br>青春盃 乙名史記者"
+              },
+              {
+                "choice_title": "別の形で発散させよう",
+                "choice_effect": "體力<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "天使還是惡魔": [
+              {
+                "choice_title": "負けるな天使！",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "共に魔界に堕ちよう……",
+                "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><hr>失敗時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_minus_value\">-5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br><span class=\"minus_condition\">『體重過胖』</span>"
+              }
+            ]
+          },
+          {
+            "因為是重要的地方": [
+              {
+                "choice_title": "逃げにも色々あるんだな",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+20</span>"
+              },
+              {
+                "choice_title": "友人想いだな",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+20</span>"
+              }
+            ]
+          },
+          {
+            "即使被雨淋溼": [
+              {
+                "choice_title": "急いで帰ろう！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+20</span>"
+              },
+              {
+                "choice_title": "雨宿りがてら、お茶でもしていく？",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "驀進！爆速領頭！引擎全開！": [
+              {
+                "choice_title": "この際、とことん付き合ってみるしか……",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+20</span><br>隨機<span class=\"plus_condition\">『討人喜歡◯』</span>"
+              },
+              {
+                "choice_title": "目的地を決めてあげたほうがいいのかも",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+20</span><br>隨機<span class=\"plus_condition\">『討人喜歡◯』</span>"
+              }
+            ]
+          },
+          {
+            "牛奶與挽救": [
+              {
+                "choice_title": "俺も嬉しいよ！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "最強の売り子だな……！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+15</span>"
+              }
+            ]
+          },
+          {
+            "感情的障礙區": [
+              {
+                "choice_title": "君を支えるのが生きがいなんだから",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "俺たちらしい関係でいい",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "煙火與更加接近": [
+              {
+                "choice_title": "もっと甘えていいくらいだよ",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "寄り添い合い、支え合っていこう！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "こちらこそ、ありがとう",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "在繪本的引導下": [
+              {
+                "choice_title": "その時は、絵本にサインしてな！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "いい絵本になりそうだな",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "距離感天才": [
+              {
+                "choice_title": "なかなかできる事じゃない",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "勉強になったよ",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "目白善信登場！": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+120</span>"
+              }
+            ]
+          },
+          {
+            "神級前輩": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "無效果"
+              }
+            ]
+          },
+          {
+            "來過派對玩咖生活吧☆": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "三冠要怎麼辦啊！？": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "往月球跳躍吧！": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "張開吧☆我們的翅膀！": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<span class=\"skill_hint\">『同理心』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+              }
+            ]
+          },
+          {
+            "危機 of the 好麻吉": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "頭抬得太高了！！！！！": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『強勢領頭』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+              }
+            ]
+          },
+          {
+            "遲來的逃亡者": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+20</span>"
+              }
+            ]
+          },
+          {
+            "名指導": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br>隨機<span class=\"plus_condition\">『擅長練習◯』</span>"
+              }
+            ]
+          },
+          {
+            "錯過午休時間": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁下降"
+              }
+            ]
+          },
+          {
+            "潛伏於公園的陷阱": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br>幹勁下降"
+              }
+            ]
+          },
+          {
+            "課後輔導是長距離賽道": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁下降<br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_minus_value\">-5</span>"
+              }
+            ]
+          },
+          {
+            "辣妹們的必勝法": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><br>隨機<span class=\"plus_condition\">『天賦異稟』</span>"
+              }
+            ]
+          },
+          {
+            "得助人一臂之力才行……": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br>幹勁下降<br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_minus_value\">-5</span><br>隨機<span class=\"minus_condition\">『懶惰成性』</span>"
+              }
+            ]
+          },
+          {
+            "競賽獲勝！": [
+              {
+                "choice_title": "めちゃくちゃアガった！",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+8</span><br>技能點<span class=\"status_plus_value\">+35</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><hr>共通：<br>體力<span class=\"status_minus_value\">-15</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              },
+              {
+                "choice_title": "次もさらに\"自由\"に走っていこう！",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+8</span><br>技能點<span class=\"status_plus_value\">+35</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><hr>共通：<br>體力<span class=\"status_minus_value\">-5</span>或<span class=\"status_minus_value\">-10</span>或<span class=\"status_minus_value\">-20</span>或<span class=\"status_minus_value\">-30</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              }
+            ]
+          },
+          {
+            "競賽上榜": [
+              {
+                "choice_title": "でも、確実に成長してる！",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5~8</span><br>技能點<span class=\"status_plus_value\">+40~45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4~6</span><br>技能點<span class=\"status_plus_value\">+30~45</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+2~4</span><br>技能點<span class=\"status_plus_value\">+20~45</span><hr>共通：<br>體力<span class=\"status_minus_value\">-20</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              },
+              {
+                "choice_title": "次こそ、迷いを振り切ろう！",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5~8</span><br>技能點<span class=\"status_plus_value\">+40~45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4~6</span><br>技能點<span class=\"status_plus_value\">+30~45</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+2~4</span><br>技能點<span class=\"status_plus_value\">+20~45</span><hr>共通：<br>體力<span class=\"status_minus_value\">-10</span>或<span class=\"status_minus_value\">-30</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              }
+            ]
+          },
+          {
+            "競賽敗北": [
+              {
+                "choice_title": "俺がついてるぞ！",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4</span><br>技能點<span class=\"status_plus_value\">+25</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+20</span><hr>op：<br>技能點<span class=\"status_plus_value\">+10</span><hr>共通：<br>體力<span class=\"status_minus_value\">-25</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              },
+              {
+                "choice_title": "……その気持ちに嘘はないか？",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4</span><br>技能點<span class=\"status_plus_value\">+25</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+20</span><hr>op：<br>技能點<span class=\"status_plus_value\">+10</span><hr>共通：<br>體力<span class=\"status_minus_value\">-15</span>或<span class=\"status_minus_value\">-25</span>或<span class=\"status_minus_value\">-35</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
               }
             ]
           },
@@ -40837,6 +42777,486 @@
           }
         ]
       },
+      "曼哈頓咖啡（Creeping Black）": {
+        "event": [
+          {
+            "新年抱負": [
+              {
+                "choice_title": "水魚の気分を味わう",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+25</span>"
+              },
+              {
+                "choice_title": "コーヒーを楽しんでもらう",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20</span>"
+              },
+              {
+                "choice_title": "街をブラブラ",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+20</span>"
+              }
+            ]
+          },
+          {
+            "新年參拜": [
+              {
+                "choice_title": "星光の癒やし",
+                "choice_effect": "體力<span class=\"status_plus_value\">+30</span>"
+              },
+              {
+                "choice_title": "全身のウロコ",
+                "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+              },
+              {
+                "choice_title": "往き去りし者の叡智",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+30</span>"
+              }
+            ]
+          },
+          {
+            "舞蹈練習": [
+              {
+                "choice_title": "明るくやってみよう",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "曲をバラードに変えてみよう",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "漆黑的咖啡師": [
+              {
+                "choice_title": "長く深く余韻が残るもの",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "爽やかですっと飲めるもの",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "心跳加速的怪奇現象探索之旅": [
+              {
+                "choice_title": "ズバッと諦める",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "徹夜で見回ろう",
+                "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+20</span>"
+              }
+            ]
+          },
+          {
+            "惡魔的細語": [
+              {
+                "choice_title": "実験を受ける！",
+                "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+15</span><hr>失敗時：<br>體力<span class=\"status_minus_value\">-15</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "……断る！",
+                "choice_effect": "成功時：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span><hr>失敗時：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "保重身體！": [
+              {
+                "choice_title": "無理はさせられない(夏合宿中:きっちり休ませる)",
+                "choice_effect": "幹勁下降<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-5</span><br>隨機<span class=\"minus_condition\">『不擅長練習』</span>"
+              },
+              {
+                "choice_title": "……わかった(夏合宿中:頑張らせる)",
+                "choice_effect": "幹勁下降<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>隨機<span class=\"minus_condition\">『不擅長練習』</span><hr><span class=\"plus_condition\">『擅長練習◯』</span>"
+              }
+            ]
+          },
+          {
+            "嚴禁逞強！": [
+              {
+                "choice_title": "ケガをしたまま走らせることはできない(夏合宿中：とにかく労わる)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>幹勁下降三階<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>五種數値中隨機選兩種<span class=\"status_minus_value\">-10</span><br>隨機<span class=\"minus_condition\">『不擅長練習』</span>"
+              },
+              {
+                "choice_title": "ガッツだな！(夏合宿中：厳しくいく！)",
+                "choice_effect": "幹勁下降三階<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>五種數値中隨機選兩種<span class=\"status_minus_value\">-10</span><br><span class=\"minus_condition\">『不擅長練習』</span><hr>體力<span class=\"status_plus_value\">+10</span><br><span class=\"plus_condition\">『擅長練習◯』</span>"
+              }
+            ]
+          },
+          {
+            "額外的自主訓練": [
+              {
+                "choice_title": "いってらっしゃい！",
+                "choice_effect": "體力<span class=\"status_minus_value\">-5</span><br>當前選擇的訓練的數値<span class=\"status_plus_value\">+5</span><br>與劇本NPC相應的情誼量條<span class=\"status_plus_value\">+5</span><br>URA 秋川理事長<br>青春盃 乙名史記者"
+              },
+              {
+                "choice_title": "遅いから、今度にしない？",
+                "choice_effect": "體力<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "吃飽飽的溫柔": [
+              {
+                "choice_title": "俺にも分けてもらっていいかな？",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "全部食べて、元気いっぱいになろう！",
+                "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><hr>失敗時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_minus_value\">-5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br><span class=\"minus_condition\">『體重過胖』</span>"
+              }
+            ]
+          },
+          {
+            "我等了，好久、好久……": [
+              {
+                "choice_title": "降りる",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+20</span>"
+              },
+              {
+                "choice_title": "乗っている",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+20</span>"
+              }
+            ]
+          },
+          {
+            "影中人": [
+              {
+                "choice_title": "君の姿が消えたように見えた",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+20</span>"
+              },
+              {
+                "choice_title": "その勝負服は、影と関係がある？",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "於夢幻世界中": [
+              {
+                "choice_title": "お化け屋敷に入ろう",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+20</span><br>隨機<span class=\"plus_condition\">『討人喜歡◯』</span>"
+              },
+              {
+                "choice_title": "観覧車に乗ろう",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+20</span><br>隨機<span class=\"plus_condition\">『討人喜歡◯』</span>"
+              }
+            ]
+          },
+          {
+            "只屬於我的咖啡": [
+              {
+                "choice_title": "飲めるのが楽しみだな",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "全部自分で作るなんてすごいね",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+15</span>"
+              }
+            ]
+          },
+          {
+            "只屬於你的喜好": [
+              {
+                "choice_title": "カフェの好きな味が飲んでみたい",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "せっかくだから全部飲む",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "只屬於我們的口味": [
+              {
+                "choice_title": "こんな美味しいコーヒー初めてだ",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "素敵な時間をありがとう",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "俺もカフェに、コーヒーを淹れてあげたい",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "不一樣的咖啡廳": [
+              {
+                "choice_title": "『ミラクル☆ミルクカフェ』で",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "『モコモコ♪うさぴょんパフェ』で",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "如同百鬼夜行": [
+              {
+                "choice_title": "ここは正直に話そう",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "怖がらせないよう、伏せておこう",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "曼哈頓咖啡登場！": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+120</span>"
+              }
+            ]
+          },
+          {
+            "靈障": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "引退": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "放棄": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "別離": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "魔女": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "不知疲累的神秘": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "長距離レース2~3勝：<br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\"><span class=\"skill_hint\"><span class=\"skill_hint\">『長距離直線◯』</span></span></span>的靈感Lv<span class=\"status_plus_value\">+1</span><hr>長距離レース4~5勝：<br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\"><span class=\"skill_hint\"><span class=\"skill_hint\">『長距離直線◯』</span></span></span>的靈感Lv<span class=\"status_plus_value\">+2</span><hr>長距離レース6勝以上：<br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\"><span class=\"skill_hint\"><span class=\"skill_hint\">『長距離直線◯』</span></span></span>的靈感Lv<span class=\"status_plus_value\">+2</span><br><span class=\"skill_hint\">『長距離彎道◯』</span>的靈感Lv<span class=\"status_plus_value\">+2</span>"
+              }
+            ]
+          },
+          {
+            "靜默的繼承者": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+20</span>"
+              }
+            ]
+          },
+          {
+            "名指導": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br>隨機<span class=\"plus_condition\">『擅長練習◯』</span>"
+              }
+            ]
+          },
+          {
+            "待「豆」不來": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁下降"
+              }
+            ]
+          },
+          {
+            "紅茶陷阱？": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br>幹勁下降"
+              }
+            ]
+          },
+          {
+            "擅於傾聽": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_minus_value\">-5</span><br>幹勁下降"
+              }
+            ]
+          },
+          {
+            "夜晚的另一邊": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁提升<br><span class=\"minus_condition\">『睡眠不足』</span>が治る"
+              }
+            ]
+          },
+          {
+            "依賴朋友": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><br>隨機<span class=\"plus_condition\">『天賦異稟』</span>"
+              }
+            ]
+          },
+          {
+            "夢境行者": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_minus_value\">-5</span><br>隨機幹勁下降或者<span class=\"minus_condition\">『懶惰成性』</span>"
+              }
+            ]
+          },
+          {
+            "競賽獲勝！": [
+              {
+                "choice_title": "俺もだ！",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+8</span><br>技能點<span class=\"status_plus_value\">+35</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><hr>共通：<br>體力<span class=\"status_minus_value\">-15</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              },
+              {
+                "choice_title": "油断しないようにな",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+8</span><br>技能點<span class=\"status_plus_value\">+35</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><hr>共通：<br>體力<span class=\"status_minus_value\">-5</span>或<span class=\"status_minus_value\">-10</span>或<span class=\"status_minus_value\">-20</span>或<span class=\"status_minus_value\">-30</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              }
+            ]
+          },
+          {
+            "競賽上榜": [
+              {
+                "choice_title": "次こそ1着だ！",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5~8</span><br>技能點<span class=\"status_plus_value\">+40~45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4~6</span><br>技能點<span class=\"status_plus_value\">+30~45</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+2~4</span><br>技能點<span class=\"status_plus_value\">+20~45</span><hr>共通：<br>體力<span class=\"status_minus_value\">-20</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              },
+              {
+                "choice_title": "もっと頑張らないとな",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5~8</span><br>技能點<span class=\"status_plus_value\">+40~45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4~6</span><br>技能點<span class=\"status_plus_value\">+30~45</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+2~4</span><br>技能點<span class=\"status_plus_value\">+20~45</span><hr>共通：<br>體力<span class=\"status_minus_value\">-10</span>或<span class=\"status_minus_value\">-30</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              }
+            ]
+          },
+          {
+            "競賽敗北": [
+              {
+                "choice_title": "次の事を考えよう！",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4</span><br>技能點<span class=\"status_plus_value\">+25</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+20</span><hr>op：<br>技能點<span class=\"status_plus_value\">+10</span><hr>共通：<br>體力<span class=\"status_minus_value\">-25</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              },
+              {
+                "choice_title": "負けたままでいいのか？",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4</span><br>技能點<span class=\"status_plus_value\">+25</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+20</span><hr>op：<br>技能點<span class=\"status_plus_value\">+10</span><hr>共通：<br>體力<span class=\"status_minus_value\">-15</span>或<span class=\"status_minus_value\">-25</span>或<span class=\"status_minus_value\">-35</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_title": "強いウマ娘になれる秘孔を狙う",
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全數値<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>"
+              },
+              {
+                "choice_title": "レースで勝てる秘孔を狙う",
+                "choice_effect": "成功時:<span class=\"skill_hint\">『彎道回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降"
+              },
+              {
+                "choice_title": "元気で健康になれる秘孔を狙う",
+                "choice_effect": "成功時:體力的最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>負面狀態會被治好<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>"
+              },
+              {
+                "choice_title": "魅力アップの秘孔を狙う",
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降"
+              },
+              {
+                "choice_title": "不安なのでやめておく",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "抽獎試手氣！": [
+              {
+                "choice_title": "特賞(温泉旅行券)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "1等(特上にんじんハンバーグ)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "2等(にんじん山盛り)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br>五種數値<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "3等(にんじん1本)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20</span>"
+              },
+              {
+                "choice_title": "はずれ",
+                "choice_effect": "幹勁下降"
+              }
+            ]
+          },
+          {
+            "粉絲信": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁提升<br>技能點<span class=\"status_plus_value\">+30</span>"
+              }
+            ]
+          },
+          {
+            "夏季集訓（第二年）結束": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "五種數値中隨機選三種<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "夏季集訓（第三年）結束": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "五種數値中隨機選三種<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "這次一定要獲勝！": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁提升"
+              }
+            ]
+          },
+          {
+            "下次不會輸了！": [
+              {
+                "choice_title": "上選択肢",
+                "choice_effect": "幹勁提升<br>技能點<span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "下選択肢",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『伏兵◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>隨機獲得負面技能"
+              }
+            ]
+          }
+        ]
+      },
       "里見光鑽（Natural Brilliance）": {
         "event": [
           {
@@ -41244,6 +43664,486 @@
               {
                 "choice_title": "無選項",
                 "choice_effect": "幹勁提升"
+              }
+            ]
+          },
+          {
+            "安心〜竹針師登☆場": [
+              {
+                "choice_title": "強いウマ娘になれる秘孔を狙う",
+                "choice_effect": "成功時:五種數値<span class=\"status_plus_value\">+20</span><hr>失敗時:幹勁下降<br>全數値<span class=\"status_minus_value\">-15</span><br><span class=\"minus_condition\">『睡眠不足』</span>"
+              },
+              {
+                "choice_title": "レースで勝てる秘孔を狙う",
+                "choice_effect": "成功時:<span class=\"skill_hint\">『彎道回復◯』</span>取得<br><span class=\"skill_hint\">『直線回復』</span>取得<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降"
+              },
+              {
+                "choice_title": "元気で健康になれる秘孔を狙う",
+                "choice_effect": "成功時:體力的最大値<span class=\"status_plus_value\">+12</span><br>體力<span class=\"status_plus_value\">+40</span><br>負面狀態會被治好<hr>失敗時:體力<span class=\"status_minus_value\">-20</span><br>幹勁下降<br><span class=\"minus_condition\">『不擅長練習』</span>"
+              },
+              {
+                "choice_title": "魅力アップの秘孔を狙う",
+                "choice_effect": "成功時:體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br><span class=\"plus_condition\">『討人喜歡◯』</span><hr>失敗時:體力<span class=\"status_minus_value\">-10</span><br>幹勁下降"
+              },
+              {
+                "choice_title": "不安なのでやめておく",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "抽獎試手氣！": [
+              {
+                "choice_title": "特賞(温泉旅行券)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "1等(特上にんじんハンバーグ)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "2等(にんじん山盛り)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20</span><br>幹勁提升<br>五種數値<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "3等(にんじん1本)",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20</span>"
+              },
+              {
+                "choice_title": "はずれ",
+                "choice_effect": "幹勁下降"
+              }
+            ]
+          },
+          {
+            "粉絲信": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁提升<br>技能點<span class=\"status_plus_value\">+30</span>"
+              }
+            ]
+          },
+          {
+            "夏季集訓（第二年）結束": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "五種數値中隨機選三種<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "夏季集訓（第三年）結束": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "五種數値中隨機選三種<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "這次一定要獲勝！": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁提升"
+              }
+            ]
+          },
+          {
+            "下次不會輸了！": [
+              {
+                "choice_title": "上選択肢",
+                "choice_effect": "幹勁提升<br>技能點<span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "下選択肢",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『伏兵◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>隨機獲得負面技能"
+              }
+            ]
+          }
+        ]
+      },
+      "優秀素質（RUN＆WIN）": {
+        "event": [
+          {
+            "有何不可？": [
+              {
+                "choice_title": "……減量は甘くないぞ？",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "よいではないか～、よいではないか～",
+                "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><hr>失敗時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_minus_value\">-5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br><span class=\"minus_condition\">『體重過胖』</span>"
+              }
+            ]
+          },
+          {
+            "如暴風雨般的救星": [
+              {
+                "choice_title": "まずは作戦を練らないと",
+                "choice_effect": "<span class=\"skill_hint\">『解讀力』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+              },
+              {
+                "choice_title": "いいな！特訓あるのみだ！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "雨天的遊戲": [
+              {
+                "choice_title": "……みんなで出来るゲームとか？",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "みんなで鬼ごっこ！",
+                "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "我又不適合這種的": [
+              {
+                "choice_title": "それよりさっき見てた可愛い服は？",
+                "choice_effect": "體力<span class=\"status_plus_value\">+5</span><br>幹勁提升"
+              },
+              {
+                "choice_title": "ぜひ！けど友だちはいいのか？",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "額外的自主訓練": [
+              {
+                "choice_title": "……追加トレーニングしよう！",
+                "choice_effect": "體力<span class=\"status_minus_value\">-5</span><br>當前選擇的訓練的數値<span class=\"status_plus_value\">+5</span><br>與劇本NPC相應的情誼量條<span class=\"status_plus_value\">+5</span><br>URA 秋川理事長<br>青春盃 乙名史記者"
+              },
+              {
+                "choice_title": "こっちも全力で休もう",
+                "choice_effect": "體力<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "舞蹈練習": [
+              {
+                "choice_title": "彼女の意志を尊重する",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "センターの練習を勧める",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "新年抱負": [
+              {
+                "choice_title": "常に考えてトレーニングをしよう！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+25</span>"
+              },
+              {
+                "choice_title": "健康志向で食事にも気を使う！",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20</span>"
+              },
+              {
+                "choice_title": "ひとつ飛びぬけた特技を身につける！",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+20</span>"
+              }
+            ]
+          },
+          {
+            "保重身體！": [
+              {
+                "choice_title": "ごめん、でも心配で",
+                "choice_effect": "幹勁下降<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-5</span><br>隨機<span class=\"minus_condition\">『不擅長練習』</span>"
+              },
+              {
+                "choice_title": "……わかった、ネイチャを信じる！",
+                "choice_effect": "幹勁下降<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>隨機<span class=\"minus_condition\">『不擅長練習』</span><hr><span class=\"plus_condition\">『擅長練習◯』</span>"
+              }
+            ]
+          },
+          {
+            "嚴禁逞強！": [
+              {
+                "choice_title": "全力で看病するッ！！",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>幹勁下降三階<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>五種數値中隨機選兩種<span class=\"status_minus_value\">-10</span><br>隨機<span class=\"minus_condition\">『不擅長練習』</span>"
+              },
+              {
+                "choice_title": "……本当に、大丈夫なんだね？",
+                "choice_effect": "幹勁下降三階<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>五種數値中隨機選兩種<span class=\"status_minus_value\">-10</span><br><span class=\"minus_condition\">『不擅長練習』</span><hr>體力<span class=\"status_plus_value\">+10</span><br><span class=\"plus_condition\">『擅長練習◯』</span>"
+              }
+            ]
+          },
+          {
+            "新年參拜": [
+              {
+                "choice_title": "ナイスネイチャが健康でありますように",
+                "choice_effect": "體力<span class=\"status_plus_value\">+30</span>"
+              },
+              {
+                "choice_title": "ナイスネイチャがもっと強くなれますように",
+                "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+              },
+              {
+                "choice_title": "ナイスネイチャの特技が増えますように",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+35</span>"
+              }
+            ]
+          },
+          {
+            "用影片聲援！": [
+              {
+                "choice_title": "お姉ちゃんらしい応援",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span>"
+              },
+              {
+                "choice_title": "かわいく元気な応援",
+                "choice_effect": "<span class=\"skill_hint\">『努力不懈』</span>的靈感Lv<span class=\"status_plus_value\">+2</span>"
+              }
+            ]
+          },
+          {
+            "妳的聲援": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br>隨機<span class=\"plus_condition\">『擅長練習◯』</span>"
+              }
+            ]
+          },
+          {
+            "在業餘棒球聲援！": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁提升<br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+20</span><br>技能點<span class=\"status_plus_value\">+20</span><br><span class=\"skill_hint\">『無畏之心』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+              }
+            ]
+          },
+          {
+            "媽媽打來的電話": [
+              {
+                "choice_title": "お母さんは喜んでくれるよ！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "むしろいいと思う！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "去看魚吧": [
+              {
+                "choice_title": "イルカショー",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "……最恐・怖い魚展示！！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "照映出的思緒": [
+              {
+                "choice_title": "やってみないとわからないぞ",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "じゃあ、俺が行ってくる！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "黃昏的苦澀甜蜜": [
+              {
+                "choice_title": "そうだね",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "無理して笑うことはない",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "よし！気晴らしに行こう！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "我偶爾也會……": [
+              {
+                "choice_title": "そんなことない！頑張ろう！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "いい練習になると思う",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "素質，看招！": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br>幹勁下降"
+              }
+            ]
+          },
+          {
+            "多管閒事的家人們": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "揮之不去的「三」": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁下降"
+              }
+            ]
+          },
+          {
+            "讓我振奮的事物": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "王座的背後": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "永別了，我的療癒": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁下降<br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_minus_value\">-5</span>"
+              }
+            ]
+          },
+          {
+            "那顆星星的名字是……": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁提升兩階<br>五種數値<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><br>隨機<span class=\"plus_condition\">『天賦異稟』</span>"
+              }
+            ]
+          },
+          {
+            "優秀素質登場！": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "技能點<span class=\"status_plus_value\">+120</span>"
+              }
+            ]
+          },
+          {
+            "銅牌收藏家的目標": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_minus_value\">-5</span><br>隨機幹勁下降或者<span class=\"minus_condition\">『懶惰成性』</span>"
+              }
+            ]
+          },
+          {
+            "素質in目白": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "閃閃亮亮": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "這個第一是我的！": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+20</span>"
+              }
+            ]
+          },
+          {
+            "因為決定要努力": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+25</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+25</span><br><span class=\"skill_hint\">『尾段加速』</span>的靈感Lv<span class=\"status_plus_value\">+2</span>"
+              }
+            ]
+          },
+          {
+            "經驗總有一天會成為力量": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "無效果"
+              }
+            ]
+          },
+          {
+            "要來一點魷魚乾嗎？": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "1回目：<br>體力<span class=\"status_plus_value\">+5</span><br>五種數値中隨機選一種<span class=\"status_plus_value\">+5</span><hr>2回目：<br>體力<span class=\"status_plus_value\">+10</span><br>五種數値中隨機選一種<span class=\"status_plus_value\">+10</span><hr>3回目：<br>體力<span class=\"status_plus_value\">+20</span><br>五種數値中隨機選一種<span class=\"status_plus_value\">+15</span><hr>4回目<br>體力<span class=\"status_plus_value\">+30</span><br>五種數値中隨機選一種<span class=\"status_plus_value\">+20</span><hr>5回目<br>體力<span class=\"status_plus_value\">+45</span><br>五種數値中隨機選一種<span class=\"status_plus_value\">+25</span>"
+              }
+            ]
+          },
+          {
+            "競賽獲勝！": [
+              {
+                "choice_title": "君が強いから勝てたんだよ",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+8</span><br>技能點<span class=\"status_plus_value\">+35</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><hr>共通：<br>體力<span class=\"status_minus_value\">-15</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              },
+              {
+                "choice_title": "次は実力で勝てたって言おう",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+8</span><br>技能點<span class=\"status_plus_value\">+35</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><hr>共通：<br>體力<span class=\"status_minus_value\">-5</span>或<span class=\"status_minus_value\">-10</span>或<span class=\"status_minus_value\">-20</span>或<span class=\"status_minus_value\">-30</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              }
+            ]
+          },
+          {
+            "競賽上榜": [
+              {
+                "choice_title": "もっと誇っていい！",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5~8</span><br>技能點<span class=\"status_plus_value\">+40~45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4~6</span><br>技能點<span class=\"status_plus_value\">+30~45</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+2~4</span><br>技能點<span class=\"status_plus_value\">+20~45</span><hr>共通：<br>體力<span class=\"status_minus_value\">-20</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              },
+              {
+                "choice_title": "この辺で満足か？",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5~8</span><br>技能點<span class=\"status_plus_value\">+40~45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4~6</span><br>技能點<span class=\"status_plus_value\">+30~45</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+2~4</span><br>技能點<span class=\"status_plus_value\">+20~45</span><hr>共通：<br>體力<span class=\"status_minus_value\">-10</span>或<span class=\"status_minus_value\">-30</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              }
+            ]
+          },
+          {
+            "競賽敗北": [
+              {
+                "choice_title": "うん、ネイチャなら大丈夫！",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4</span><br>技能點<span class=\"status_plus_value\">+25</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+20</span><hr>op：<br>技能點<span class=\"status_plus_value\">+10</span><hr>共通：<br>體力<span class=\"status_minus_value\">-25</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              },
+              {
+                "choice_title": "悔しさを誤魔化さないで",
+                "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+4</span><br>技能點<span class=\"status_plus_value\">+25</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+20</span><hr>op：<br>技能點<span class=\"status_plus_value\">+10</span><hr>共通：<br>體力<span class=\"status_minus_value\">-15</span>或<span class=\"status_minus_value\">-25</span>或<span class=\"status_minus_value\">-35</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
+              }
+            ]
+          },
+          {
+            "「符合自己風格」的結果": [
+              {
+                "choice_title": "目標以外のレースで3着",
+                "choice_effect": "五種數値中隨機選三種<span class=\"status_plus_value\">+3</span><br>技能點<span class=\"status_plus_value\">+65</span>"
               }
             ]
           },
