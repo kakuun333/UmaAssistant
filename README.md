@@ -111,10 +111,20 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 > **直接選擇角色**
 
 > [!NOTE]
-> 角色名稱會依照選擇的遊戲伺服器發生變化。
+> 1. 不需要先清除角色。  
+> 2. 角色名稱會依照選擇的遊戲伺服器發生變化。  
+> 3. 遊戲伺服器選擇繁中服並且點選繁中服沒有的角色「目前培育的馬娘」會直接變空白。  
 
+**開啟選擇角色**  
 ![14](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/14.png)  
+
+**點選正在培育的馬娘**  
+如果成功匹配的話「目前培育的馬娘」將會更新成對應的角色名稱。
 ![15](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/15.png)  
+
+**查詢**  
+查詢功能支援`繁體中文`、`平假名`、`片假名`。  
+如果角色的別名有`英文`、`數字`、`標點符號`的話也可以用來查詢。  
 ![16](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/16.png)  
 
 
