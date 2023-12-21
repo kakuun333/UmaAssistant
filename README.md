@@ -107,6 +107,17 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 ![12](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/12.png)  
 ![13](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/13.png)  
 
+#### 方法三
+> **直接選擇角色**
+
+> [!NOTE]
+> 角色名稱會依照選擇的遊戲伺服器發生變化。
+
+![14](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/14.png)  
+![15](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/15.png)  
+![16](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/16.png)  
+
+
 ## 常見問題
 Q. 為什麼我的`UmaAssistant.exe`無法啟動？  
 A.
