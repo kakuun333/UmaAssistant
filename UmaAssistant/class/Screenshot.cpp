@@ -122,21 +122,21 @@ cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 	int gameWidth, gameHeight, gamePosX, gamePosY = 0;
 
 
-
+	global::config->Update();
 	switch (global::config->GameWindow)
 	{
 	case static_cast<int>(GameWindowType::DMM):
-		gameWidth = rcClient.right - rcClient.left - DMM_FIX_GAME_WIDTH;
-		gameHeight = rcClient.bottom - rcClient.top;
-		gamePosX = rcWindow.left + DMM_FIX_GAME_WIDTH;
-		gamePosY = rcWindow.top + DMM_FIX_GAME_POS_Y;
+		gameWidth	= rcClient.right	- rcClient.left			- DMM_FIX_GAME_WIDTH	+ global::config->GameWindowBoundOffset["DMM"]["Width"];
+		gameHeight	= rcClient.bottom	- rcClient.top									+ global::config->GameWindowBoundOffset["DMM"]["Height"];
+		gamePosX	= rcWindow.left		+ DMM_FIX_GAME_WIDTH							+ global::config->GameWindowBoundOffset["DMM"]["X"];
+		gamePosY	= rcWindow.top		+ DMM_FIX_GAME_POS_Y							+ global::config->GameWindowBoundOffset["DMM"]["Y"];
 		break;
 
 	case static_cast<int>(GameWindowType::BLUE_STACKS):
-		gameWidth = rcClient.right - rcClient.left - BLUE_STACKS_FIX_GAME_WIDTH;
-		gameHeight = rcClient.bottom - rcClient.top - BLUE_STACKS_FIX_GAME_HEIGHT;
-		gamePosX = rcWindow.left + BLUE_STACKS_FIX_GAME_POS_X;
-		gamePosY = rcWindow.top + BLUE_STACKS_FIX_GAME_POS_Y;
+		gameWidth	= rcClient.right	- rcClient.left	-	BLUE_STACKS_FIX_GAME_WIDTH	+ global::config->GameWindowBoundOffset["BlueStacks"]["Width"];
+		gameHeight	= rcClient.bottom	- rcClient.top	-	BLUE_STACKS_FIX_GAME_HEIGHT	+ global::config->GameWindowBoundOffset["BlueStacks"]["Height"];
+		gamePosX	= rcWindow.left		+					BLUE_STACKS_FIX_GAME_POS_X	+ global::config->GameWindowBoundOffset["BlueStacks"]["X"];
+		gamePosY	= rcWindow.top		+					BLUE_STACKS_FIX_GAME_POS_Y	+ global::config->GameWindowBoundOffset["BlueStacks"]["Y"];
 		break;
 	}
 
@@ -543,14 +543,14 @@ void Screenshot::ShowImage()
 	cv::destroyAllWindows();
 
 	//// original ////
-	//cv::imshow("oimg", oimg);
+	cv::imshow("oimg", oimg);
 
 	//// event_title ////
 	//cv::imshow("event_title_oimg", event_title_oimg);
 	//cv::imshow("event_title_resize", event_title_resize);
 	cv::imshow("event_title_gray", event_title_gray);
-	cv::imshow("event_title_gray_bin", event_title_gray_bin);
-	cv::imshow("event_title_gray_bin_inv", event_title_gray_bin_inv);
+	//cv::imshow("event_title_gray_bin", event_title_gray_bin);
+	//cv::imshow("event_title_gray_bin_inv", event_title_gray_bin_inv);
 
 	//// event_icon ////
 	cv::imshow("event_icon", event_icon);
@@ -558,9 +558,8 @@ void Screenshot::ShowImage()
 	//// character_name ////
 	//cv::imshow("hensei_character_name_oimg", hensei_character_name_gray_bin);
 	cv::imshow("hensei_character_name_gray", hensei_character_name_gray);
-	cv::imshow("hensei_character_name_gray_inv", hensei_character_name_gray_bin_inv);
-
-	cv::imshow("hensei_character_another_name_gray", hensei_character_another_name_gray);
+	//cv::imshow("hensei_character_name_gray_inv", hensei_character_name_gray_bin_inv);
+	//cv::imshow("hensei_character_another_name_gray", hensei_character_another_name_gray);
 
 	//cv::imshow("syousai_character_name_gray_bin", syousai_character_name_gray_bin);
 	

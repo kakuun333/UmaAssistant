@@ -1,11 +1,13 @@
 #pragma once
 
 
+
 //#define UMA_DEBUG
 
 
 /*			Windows API			*/
 #include <Windows.h>
+
 
 /*			C++ std			*/
 #include <iostream>
@@ -65,7 +67,6 @@ using json = nlohmann::json;
 #include "class/UmaTimer.h"
 #include "class/UmaLog.h"
 #include "class/UmaDataUpdater.h"
-#include "class/DesktopDuplication.h"
 #include "class/URLManager.h"
 
 // ¨ü±±

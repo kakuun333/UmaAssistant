@@ -3,7 +3,23 @@
 
 namespace UmaAssistant
 {
-	
+	System::Void UmaForm::test_btn_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		//std::cout << utility::IsSimilar(u8"食いしん坊は伊達じゃない", u8"食いじん坊は伊達じゃよない") << std::endl;
+
+		//utility::IsSimilar(u8"灰簾石の瞳", u8"色雇五のだ睡");
+
+		//std::cout << "Similarity: " << utility::GetSimilarity(u8"競賽獲勝!", u8"競賽獲勝！") << std::endl;
+
+		//utility::GetCharacterNameSimilarity(u8"キセキの白星オグリキャップ", u8"オグリキャップ（キセキの白星）");
+
+		/* UmaDataUpdater */
+		//UmaDataUpdater::GetInstance()->Update();
+
+
+		global::config->WriteToJson();
+
+	}
 
 	void UmaForm::OnChoiceDocumentCompleted(System::Object^ sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^ e)
 	{
@@ -235,25 +251,6 @@ namespace UmaAssistant
 			screenshot_preview_btn->Visible = false;
 		}
 #pragma endregion
-
-	}
-
-
-	System::Void UmaForm::test_btn_Click(System::Object^ sender, System::EventArgs^ e)
-	{
-		//std::cout << utility::IsSimilar(u8"食いしん坊は伊達じゃない", u8"食いじん坊は伊達じゃよない") << std::endl;
-
-		//utility::IsSimilar(u8"灰簾石の瞳", u8"色雇五のだ睡");
-
-		//std::cout << "Similarity: " << utility::GetSimilarity(u8"競賽獲勝!", u8"競賽獲勝！") << std::endl;
-
-		//utility::GetCharacterNameSimilarity(u8"キセキの白星オグリキャップ", u8"オグリキャップ（キセキの白星）");
-
-
-		/* UmaDataUpdater */
-		//UmaDataUpdater::GetInstance()->Update();
-
-
 
 	}
 

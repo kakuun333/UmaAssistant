@@ -8,9 +8,12 @@ constexpr inline int DEFAULT_SCAN_INTERVAL = 100; // ²@¬í
 
 const std::string DEFAULT_LOCAL_SERVER_PORT = "5854";
 
+
 class Config
 {
 private:
+
+	std::map<std::string, int> InitGameWindowBoundOffset();
 
 public:
 	Config();
@@ -27,9 +30,12 @@ public:
 	std::string GameWindowName;
 	std::map<std::string, int> AutoMouseClickKey;
 	std::map<std::string, std::string> LocalServer;
+	std::map<std::string, std::map<std::string, int>> GameWindowBoundOffset;
 
 	void Update();
 
 	void WriteToJson();
+
+
 };
 

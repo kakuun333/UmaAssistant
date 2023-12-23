@@ -8,6 +8,20 @@
   "DebugMode": false,
   "GameServer": 0,
   "GameWindow": 0,
+  "GameWindowBoundOffset": {
+    "BlueStacks": {
+      "Height": 0,
+      "Width": 0,
+      "X": 0,
+      "Y": 0
+    },
+    "DMM": {
+      "Height": 0,
+      "Width": 0,
+      "X": 0,
+      "Y": 0
+    }
+  },
   "GameWindowName": "NULL_GAME_WINDOW_NAME_UMA_ASSISTANT",
   "JpServerLang": 0,
   "LocalServer": {
