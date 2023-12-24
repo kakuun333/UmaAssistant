@@ -5814,6 +5814,18 @@
             ]
           },
           {
+            "Hot ＆ fly！": [
+              {
+                "choice_title": "一気に使い切るのはもったいない",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "いっぱい食べて、強くなろう！",
+                "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><hr>失敗時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_minus_value\">-5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br><span class=\"minus_condition\">『體重過胖』</span>"
+              }
+            ]
+          },
+          {
             "目標是特大披薩！": [
               {
                 "choice_title": "圧をかけていこう……！",
@@ -6746,6 +6758,18 @@
               {
                 "choice_title": "思いっきり食べて“1番”を掴もう！",
                 "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><hr>失敗時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_minus_value\">-5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br><span class=\"minus_condition\">『體重過胖』</span>"
+              }
+            ]
+          },
+          {
+            "享受第一吧！": [
+              {
+                "choice_title": "他を楽しもう",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span>"
+              },
+              {
+                "choice_title": "……1番、諦める？",
+                "choice_effect": "<span class=\"skill_hint\">『不服輸』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
               }
             ]
           },
@@ -33004,6 +33028,30 @@
             ]
           },
           {
+            "想在背後「推」妳一把……": [
+              {
+                "choice_title": "か、かっこいい……！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
+              },
+              {
+                "choice_title": "君だって主人公の1人だよ",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "全力「推」愛給我推！": [
+              {
+                "choice_title": "君が思う最高の作品にしよう！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span><br>隨機<span class=\"plus_condition\">『備受矚目』</span>"
+              },
+              {
+                "choice_title": "2人で考えるっていうのはどうかな？",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+20</span><br>隨機<span class=\"plus_condition\">『備受矚目』</span>"
+              }
+            ]
+          },
+          {
             "當阿宅可是超棒的耶？": [
               {
                 "choice_title": "友情って素晴らしい！",
@@ -41844,6 +41892,18 @@
             ]
           },
           {
+            "Hot ＆ fly！": [
+              {
+                "choice_title": "一気に使い切るのはもったいない",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "いっぱい食べて、強くなろう！",
+                "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><hr>失敗時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_minus_value\">-5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br><span class=\"minus_condition\">『體重過胖』</span>"
+              }
+            ]
+          },
+          {
             "目標是特大披薩！": [
               {
                 "choice_title": "圧をかけていこう……！",
@@ -48013,6 +48073,58 @@
               {
                 "choice_title": "今も十分すごい武器を持ってるよ",
                 "choice_effect": "<span class=\"skill_hint\">『前列直線◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>東海帝皇的情誼量條<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          }
+        ]
+      },
+      "大德太陽（派對玩咖與派對之夜！）": {
+        "event": [
+          {
+            "#bff #Party!": [
+              {
+                "choice_title": "よろたん！ウェ～イ！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br>大德太陽的情誼量條<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "え、俺も！？",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br>大德太陽的情誼量條<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "#lol #Party!! #2nd": [
+              {
+                "choice_title": "逃げろ！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\"><span class=\"skill_hint\">『直線滑下』</span></span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>大德太陽的情誼量條<span class=\"status_plus_value\">+5</span><hr><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\"><span class=\"skill_hint\">『直線滑下』</span></span>的靈感Lv<span class=\"status_plus_value\">+3</span><br>大德太陽的情誼量條<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "キャッチしろ！",
+                "choice_effect": "體力<span class=\"status_plus_value\">+20</span><br><span class=\"skill_hint\">『觀察情勢』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>大德太陽的情誼量條<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "笑容Forever": [
+              {
+                "choice_title": "そこは気合いでこらえて！",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br>大德太陽的情誼量條<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "一旦気を静めよう",
+                "choice_effect": "<span class=\"skill_hint\">『伏兵◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>大德太陽的情誼量條<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "遭遇太陽☆": [
+              {
+                "choice_title": "覚悟を決めて熱唱する",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br>大德太陽的情誼量條<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "合いの手で盛り上がる",
+                "choice_effect": "<span class=\"plus_condition\">『備受矚目』</span><br>大德太陽的情誼量條<span class=\"status_plus_value\">+5</span>"
               }
             ]
           }

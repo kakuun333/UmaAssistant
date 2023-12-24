@@ -17,7 +17,7 @@ namespace UmaAssistant
 		//UmaDataUpdater::GetInstance()->Update();
 
 
-		global::config->WriteToJson();
+		//global::config->WriteToJson();
 
 	}
 

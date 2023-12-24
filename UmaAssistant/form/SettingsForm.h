@@ -785,6 +785,7 @@ namespace UmaAssistant
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"SettingsForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"SettingsForm";
 			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &SettingsForm::SettingsFormMouseDown);
 			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &SettingsForm::SettingsFormMouseMove);

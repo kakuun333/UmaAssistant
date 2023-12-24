@@ -5814,6 +5814,18 @@
             ]
           },
           {
+            "Hot ＆ fly！": [
+              {
+                "choice_title": "一気に使い切るのはもったいない",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "いっぱい食べて、強くなろう！",
+                "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><hr>失敗時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_minus_value\">-5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br><span class=\"minus_condition\">『體重過胖』</span>"
+              }
+            ]
+          },
+          {
             "目標是特大披薩！": [
               {
                 "choice_title": "圧をかけていこう……！",
@@ -6746,6 +6758,18 @@
               {
                 "choice_title": "思いっきり食べて“1番”を掴もう！",
                 "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><hr>失敗時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_minus_value\">-5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br><span class=\"minus_condition\">『體重過胖』</span>"
+              }
+            ]
+          },
+          {
+            "享受第一吧！": [
+              {
+                "choice_title": "他を楽しもう",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span>"
+              },
+              {
+                "choice_title": "……1番、諦める？",
+                "choice_effect": "<span class=\"skill_hint\">『不服輸』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
               }
             ]
           },
@@ -41840,6 +41864,18 @@
               {
                 "choice_title": "パワフルな響きだ",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "Hot ＆ fly！": [
+              {
+                "choice_title": "一気に使い切るのはもったいない",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "いっぱい食べて、強くなろう！",
+                "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><hr>失敗時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_minus_value\">-5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br><span class=\"minus_condition\">『體重過胖』</span>"
               }
             ]
           },
