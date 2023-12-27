@@ -92,10 +92,20 @@ def get_scenario_event_data_jp(scenario_type):
 
             choice_effect = add_tag_to_choice_effect(choice_effect);
 
+            # 替換 ScenarioStatus
+            # グラライ ScenarioStatus
+            choice_effect = re.sub(r'ダンス', rf'<img src="../UmaMisc/Image/ScenarioStatus/performance_Da.png">ダンス', choice_effect, flags=re.IGNORECASE);
+            choice_effect = re.sub(r'ボーカル', rf'<img src="../UmaMisc/Image/ScenarioStatus/performance_Vo.png">ボーカル', choice_effect, flags=re.IGNORECASE);
+            choice_effect = re.sub(r'パッション', rf'<img src="../UmaMisc/Image/ScenarioStatus/performance_Pa.png">パッション', choice_effect, flags=re.IGNORECASE);
+            choice_effect = re.sub(r'ビジュアル', rf'<img src="../UmaMisc/Image/ScenarioStatus/performance_Vi.png">ビジュアル', choice_effect, flags=re.IGNORECASE);
+            choice_effect = re.sub(r'メンタル', rf'<img src="../UmaMisc/Image/ScenarioStatus/performance_Me.png">メンタル', choice_effect, flags=re.IGNORECASE);
+
+
             choice_info = {
                 "choice_title": choice_title,
                 "choice_effect": choice_effect,
             }
+
 
             choice.append(choice_info);
 

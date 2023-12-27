@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 
+
+
 class ScenarioChoice
 {
 public:
@@ -14,7 +16,7 @@ class ScenarioEventData
 {
 
 public:
-	float similarity;
+	float similarity = -1;
 
 	std::string event_title;
 	std::vector<ScenarioChoice> event_list;

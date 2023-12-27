@@ -117,9 +117,6 @@
     <ClCompile Include="UmaAssistant\class\URLManager.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="UmaAssistant\class\GraphicsCapture.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UmaAssistant\form\UmaForm.h">
@@ -249,9 +246,6 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="UmaAssistant\class\URLManager.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="UmaAssistant\class\GraphicsCapture.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

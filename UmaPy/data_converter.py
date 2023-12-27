@@ -101,6 +101,10 @@ scenario_event_data_tw = {
 
 
 def convert_choice_effect_jp_to_tw(choice_effect, jp_event_owner = None, tw_event_owner = None, cvt_skill_data = True):
+    # 修正日文技能名稱
+    for incorrect_skill_title, correct_skill_title in missed_data["jp_to_tw"]["skill_title"].items():
+        choice_effect = re.sub(rf'{incorrect_skill_title}(?!◯)', correct_skill_title, choice_effect, flags=re.IGNORECASE);
+
     # 翻譯 jp 轉 tw
     for jp, tw in translation_data["jp_to_tw"]["choice_effect"].items():
         if (jp == "スタミナ"):
@@ -109,8 +113,12 @@ def convert_choice_effect_jp_to_tw(choice_effect, jp_event_owner = None, tw_even
             choice_effect = re.sub(rf'{jp}(?!スター)', tw, choice_effect, flags=re.IGNORECASE);
         elif (jp == "アップ"): # 避免替換到技能 ペースアップ、テンポアップ
             choice_effect = re.sub(rf'{jp}(?!』)', tw, choice_effect, flags=re.IGNORECASE);
+        elif (jp == "or"):
+            choice_effect = re.sub(rf'(?![a-zA-Z]){jp}(?![a-zA-Z])', tw, choice_effect, flags=re.IGNORECASE);
         else:
             choice_effect = re.sub(jp, tw, choice_effect, flags=re.IGNORECASE);
+    
+
 
     if (cvt_skill_data):
         # 技能名稱 jp 轉 tw
@@ -157,7 +165,7 @@ def convert_choice_title_jp_to_tw(choice_title):
 
 
 ##### select_character_data.json #####
-def jp_owner_to_tw_owner():
+def select_character_jp_owner_to_tw_owner():
     for jp_event_owner, jp_event_owner_v in char_convert_data.items():
         
         for origin_name, cvt_name in missed_data["jp_to_tw"]["event_owner"].items():
@@ -176,7 +184,7 @@ def jp_owner_to_tw_owner():
                 # new_select_character_data.append(tmp_dict);
 
 
-jp_owner_to_tw_owner();
+select_character_jp_owner_to_tw_owner();
 
 json_string = json.dumps(select_character_data, indent=2, ensure_ascii=False);
 

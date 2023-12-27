@@ -26,16 +26,17 @@ namespace UmaAssistant {
 		// 私人變數
 		bool draggingForm = false;
 		bool _openedSelectCharacter = false;
+
 		System::Drawing::Point dragOffset;
 	public:
 		UmaForm(void);
 
 
-		void OnChoiceDocumentCompleted(Object^ sender, WebBrowserDocumentCompletedEventArgs^ e);
+		void OnChoiceDocumentCompleted(System::Object^ sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^ e);
 
-		void OnSelectCharacterDocumentCompleted(Object^ sender, WebBrowserDocumentCompletedEventArgs^ e);
+		void OnSelectCharacterDocumentCompleted(System::Object^ sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^ e);
 
-		System::Void Character_IMG_Clicked(System::Object^ sender, System::Windows::Forms::HtmlElementEventArgs^ e);
+		void Character_IMG_Clicked(System::Object^ sender, System::Windows::Forms::HtmlElementEventArgs^ e);
 
 		void UmaForm::UpdateIMGClickEvent();
 
@@ -55,6 +56,7 @@ namespace UmaAssistant {
 
 	private: System::Windows::Forms::PictureBox^ icon_pictureBox;
 	private: System::ComponentModel::IContainer^ components;
+	private: System::Windows::Forms::Button^ close_select_character_btn;
 
 
 	private:
@@ -114,6 +116,7 @@ namespace UmaAssistant {
 			this->version_label = (gcnew System::Windows::Forms::Label());
 			this->select_character_btn = (gcnew System::Windows::Forms::Button());
 			this->select_character_webBrowser = (gcnew System::Windows::Forms::WebBrowser());
+			this->close_select_character_btn = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->icon_pictureBox))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -373,11 +376,31 @@ namespace UmaAssistant {
 			this->select_character_webBrowser->Size = System::Drawing::Size(489, 496);
 			this->select_character_webBrowser->TabIndex = 29;
 			// 
+			// close_select_character_btn
+			// 
+			this->close_select_character_btn->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->close_select_character_btn->BackColor = System::Drawing::Color::Transparent;
+			this->close_select_character_btn->FlatAppearance->BorderSize = 0;
+			this->close_select_character_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(125)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->close_select_character_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->close_select_character_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
+			this->close_select_character_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
+				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
+			this->close_select_character_btn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"close_select_character_btn.Image")));
+			this->close_select_character_btn->Location = System::Drawing::Point(771, 0);
+			this->close_select_character_btn->Name = L"close_select_character_btn";
+			this->close_select_character_btn->Size = System::Drawing::Size(40, 32);
+			this->close_select_character_btn->TabIndex = 30;
+			this->close_select_character_btn->UseVisualStyleBackColor = false;
+			this->close_select_character_btn->Click += gcnew System::EventHandler(this, &UmaForm::close_select_character_btn_Click);
+			// 
 			// UmaForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(560, 550);
+			this->Controls->Add(this->close_select_character_btn);
 			this->Controls->Add(this->select_character_webBrowser);
 			this->Controls->Add(this->select_character_btn);
 			this->Controls->Add(this->version_label);
@@ -422,5 +445,6 @@ namespace UmaAssistant {
 	private: System::Void clean_current_character_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void select_window_btn_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void select_character_btn_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void close_select_character_btn_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

@@ -378,6 +378,13 @@
         "skill_pt": "90",
         "upper_skill": "喜歡獨處◎"
       },
+      "投機取巧": {
+        "lower_skill": null,
+        "skill_effect": "在競賽時極小機率發揮更強大的實力\n使速度、力量、意志力稍微上升\n支持度低時變得容易發揮能力",
+        "skill_icon_name": "i_skill_g_n_1",
+        "skill_pt": "180",
+        "upper_skill": "賭徒"
+      },
       "同理心": {
         "lower_skill": null,
         "skill_effect": "若參加很多有同理心的\n賽馬娘的競賽，能力會稍微上升",
@@ -405,6 +412,13 @@
         "skill_icon_name": "i_skill_g_n_6",
         "skill_pt": "110",
         "upper_skill": "超級幸運7"
+      },
+      "競賽的精髓．心得": {
+        "lower_skill": null,
+        "skill_effect": "幹勁狀態為良好或絕佳時\n持久力、意志力、智力\n可能會稍微上升",
+        "skill_icon_name": "i_skill_g_n_2",
+        "skill_pt": "150",
+        "upper_skill": null
       },
       "獨行俠": {
         "lower_skill": null,
@@ -1003,6 +1017,13 @@
         "skill_pt": "130",
         "upper_skill": null
       },
+      "賭徒": {
+        "lower_skill": "投機取巧",
+        "skill_effect": "在競賽時偶爾發揮更強大的實力\n使速度、力量、意志力大幅上升\n支持度低時變得容易發揮能力",
+        "skill_icon_name": "i_skill_g_r_1",
+        "skill_pt": "180",
+        "upper_skill": null
+      },
       "順時針之鬼": {
         "lower_skill": "順時針◎",
         "skill_effect": "變得擅長順時針賽道\n速度和力量上升",
@@ -1381,6 +1402,13 @@
         "skill_pt": "110",
         "upper_skill": "視線良好！沒有異狀！"
       },
+      "不顧一切": {
+        "lower_skill": null,
+        "skill_effect": "在最後衝刺階段若位於隊列中段之後\n稍微消耗持久力使加速力略微上升\n＜居中．長距離＞",
+        "skill_icon_name": "i_skill_y_n_2",
+        "skill_pt": "180",
+        "upper_skill": "渾然忘我"
+      },
       "努力不懈": {
         "lower_skill": null,
         "skill_effect": "準備追過對手時的一段時間內\n加速力會略微上升＜作戰．居中＞",
@@ -1388,12 +1416,19 @@
         "skill_pt": "120",
         "upper_skill": "奮發圖強"
       },
+      "孜孜不倦": {
+        "lower_skill": null,
+        "skill_effect": "在競賽中期的一開始\n大幅消耗持久力\n使速度稍微上升＜作戰．領頭＞",
+        "skill_icon_name": "i_skill_y_n_1",
+        "skill_pt": "180",
+        "upper_skill": "1000％輸出！"
+      },
       "重整態勢": {
         "lower_skill": null,
         "skill_effect": "在競賽中期若位於隊列後方\n加速力會略微上升＜作戰．前列＞",
         "skill_icon_name": "i_skill_y_n_2",
         "skill_pt": "120",
-        "upper_skill": "不屈不撓"
+        "upper_skill": null
       },
       "長驅直入": {
         "lower_skill": null,
@@ -1451,6 +1486,13 @@
         "skill_pt": "160",
         "upper_skill": "賽馬娘狂粉"
       },
+      "迅猛之腳": {
+        "lower_skill": null,
+        "skill_effect": "在最後直線若位列第2之後\n且距離最前頭4身距內時\n速度稍微上升＜作戰．居中＞",
+        "skill_icon_name": "i_skill_y_n_1",
+        "skill_pt": "180",
+        "upper_skill": "最高檔速"
+      },
       "變速": {
         "lower_skill": null,
         "skill_effect": "在競賽中期若位於隊列前方\n會略微變得容易追過對手＜一哩＞",
@@ -1484,7 +1526,7 @@
         "skill_effect": "若緊跟在前方賽馬娘的後方\n會略微不易受到風阻",
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "160",
-        "upper_skill": null
+        "upper_skill": "搶到好位置了！"
       },
       "加快節奏": {
         "lower_skill": null,
@@ -1563,12 +1605,54 @@
         "skill_pt": "180",
         "upper_skill": "排行驟升！"
       },
+      "競賽的精髓．體能": {
+        "lower_skill": null,
+        "skill_effect": "在最後衝刺階段稍微消耗持久力\n使速度稍微上升",
+        "skill_icon_name": "i_skill_y_n_1",
+        "skill_pt": "150",
+        "upper_skill": null
+      },
+      "競賽的精髓．力量": {
+        "lower_skill": null,
+        "skill_effect": "在最後衝刺階段若準備追過對手\n一段時間內速度會略微上升",
+        "skill_icon_name": "i_skill_y_n_1",
+        "skill_pt": "150",
+        "upper_skill": null
+      },
+      "競賽的精髓．意志": {
+        "lower_skill": null,
+        "skill_effect": "同位競爭時\n加速力會略微上升",
+        "skill_icon_name": "i_skill_y_n_2",
+        "skill_pt": "150",
+        "upper_skill": null
+      },
+      "競賽的精髓．智慧": {
+        "lower_skill": null,
+        "skill_effect": "在競賽後半若發動2次技能\n速度會略微上升",
+        "skill_icon_name": "i_skill_y_n_1",
+        "skill_pt": "150",
+        "upper_skill": null
+      },
+      "競賽的精髓．速度": {
+        "lower_skill": null,
+        "skill_effect": "接近競賽後期時\n速度會略微上升",
+        "skill_icon_name": "i_skill_y_n_1",
+        "skill_pt": "150",
+        "upper_skill": null
+      },
       "機不可失": {
         "lower_skill": null,
         "skill_effect": "在競賽後期若位於隊列後方\n加速力會略微上升＜中距離＞",
         "skill_icon_name": "i_skill_y_n_2",
         "skill_pt": "160",
         "upper_skill": "起死回生"
+      },
+      "一飛衝天": {
+        "lower_skill": null,
+        "skill_effect": "在競賽後期若於隊列後方準備追過對手\n加速力略微上升＜短距離．一哩＞",
+        "skill_icon_name": "i_skill_y_n_2",
+        "skill_pt": "180",
+        "upper_skill": "電光石火"
       },
       "上昇氣流": {
         "lower_skill": null,
@@ -1582,7 +1666,7 @@
         "skill_effect": "在下坡速度略微上升",
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "170",
-        "upper_skill": null
+        "upper_skill": "至高的下坡強者"
       },
       "中距離彎道◎": {
         "lower_skill": "中距離彎道◯",
@@ -1696,6 +1780,20 @@
         "skill_pt": "150",
         "upper_skill": "明鏡止水"
       },
+      "衝勁": {
+        "lower_skill": null,
+        "skill_effect": "在進入競賽後期前若不暴衝並持續\n潛伏於隊列後方，會在後期的一開始\n加速力略微上升＜作戰．後追＞",
+        "skill_icon_name": "i_skill_y_n_2",
+        "skill_pt": "180",
+        "upper_skill": null
+      },
+      "只注視前方": {
+        "lower_skill": null,
+        "skill_effect": "在最後衝刺階段速度略微上升\n依照最優秀的基礎能力數值\n提高效果",
+        "skill_icon_name": "i_skill_y_n_1",
+        "skill_pt": "200",
+        "upper_skill": "超越極限"
+      },
       "積極前進": {
         "lower_skill": null,
         "skill_effect": "在競賽中期若位於隊列後方\n速度會略微上升＜中距離＞",
@@ -1724,9 +1822,23 @@
         "skill_pt": "110",
         "upper_skill": "第六感"
       },
+      "不顧後果": {
+        "lower_skill": null,
+        "skill_effect": "接近競賽後期時若位於隊列前方\n速度會略微上升＜一哩＞",
+        "skill_icon_name": "i_skill_y_n_1",
+        "skill_pt": "180",
+        "upper_skill": "義無反顧"
+      },
+      "上進心": {
+        "lower_skill": null,
+        "skill_effect": "即將進入競賽後期時，潛伏於第2之後，\n且距離最前頭2身距以內一段時間內\n速度會些微上升＜作戰．前列＞",
+        "skill_icon_name": "i_skill_y_n_1",
+        "skill_pt": "180",
+        "upper_skill": "風雲之志"
+      },
       "善後策略": {
         "lower_skill": null,
-        "skill_effect": "接近競賽後期時若位於隊列前方\n會略微容易追過對手＜短距離＞",
+        "skill_effect": "接近競賽後期時若位於隊列前方\n會略微變得容易追過對手＜短距離＞",
         "skill_icon_name": "i_skill_y_n_2",
         "skill_pt": "160",
         "upper_skill": "X計劃"
@@ -1751,6 +1863,13 @@
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "180",
         "upper_skill": "昇龍"
+      },
+      "夢想的途中": {
+        "lower_skill": null,
+        "skill_effect": "在競賽後半若位於隊列前方\n速度略微上升、加速力稍稍上升\n粉絲越多效果越高",
+        "skill_icon_name": "i_skill_y_n_8",
+        "skill_pt": "200",
+        "upper_skill": "想和你一起獲得勝利"
       },
       "大幅領先": {
         "lower_skill": null,
@@ -1778,7 +1897,7 @@
         "skill_effect": "在彎道速度稍微上升\n＜作戰．居中＞",
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "140",
-        "upper_skill": null
+        "upper_skill": "銳腳圓刃"
       },
       "居中彎道◯": {
         "lower_skill": null,
@@ -1799,7 +1918,7 @@
         "skill_effect": "在直線速度稍微上升\n＜作戰．居中＞",
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "140",
-        "upper_skill": null
+        "upper_skill": "銳腳一閃"
       },
       "居中直線◯": {
         "lower_skill": null,
@@ -1843,6 +1962,13 @@
         "skill_pt": "180",
         "upper_skill": "目標是中央站位！"
       },
+      "突圍計策": {
+        "lower_skill": null,
+        "skill_effect": "在競賽中期若位於最後方附近\n速度會略微上升\n並變得略微擅長爭搶賽道＜作戰．後追＞",
+        "skill_icon_name": "i_skill_y_n_1",
+        "skill_pt": "180",
+        "upper_skill": "突破"
+      },
       "準備突圍": {
         "lower_skill": null,
         "skill_effect": "在最後彎道略微變得容易突圍\n＜作戰．前列＞",
@@ -1856,6 +1982,13 @@
         "skill_icon_name": "i_skill_y_n_2",
         "skill_pt": "180",
         "upper_skill": "逃亡者"
+      },
+      "進攻的姿態": {
+        "lower_skill": null,
+        "skill_effect": "在競賽中期速度略微上升\n＜作戰．前列＞",
+        "skill_icon_name": "i_skill_y_n_1",
+        "skill_pt": "180",
+        "upper_skill": "勢不可擋"
       },
       "提前進攻": {
         "lower_skill": null,
@@ -1877,6 +2010,13 @@
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "170",
         "upper_skill": "全心全力"
+      },
+      "發揮本領": {
+        "lower_skill": null,
+        "skill_effect": "在即將進入競賽後期時，\n若位居領先或距離最前頭4身距內時競賽\n後期加速力略微上升＜前列．長距離＞",
+        "skill_icon_name": "i_skill_y_n_2",
+        "skill_pt": "180",
+        "upper_skill": null
       },
       "氣勢十足": {
         "lower_skill": null,
@@ -1960,7 +2100,7 @@
         "skill_effect": "在直線速度稍微上升＜短距離＞",
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "110",
-        "upper_skill": null
+        "upper_skill": "紫電一閃"
       },
       "短距離直線◯": {
         "lower_skill": null,
@@ -1976,6 +2116,13 @@
         "skill_pt": "160",
         "upper_skill": "優雅地沙浴"
       },
+      "穩健的步伐": {
+        "lower_skill": null,
+        "skill_effect": "接近後期時若位居領先或\n距離最前頭4身距以內\n速度及加速力些微上升＜前列．中距離＞",
+        "skill_icon_name": "i_skill_y_n_1",
+        "skill_pt": "170",
+        "upper_skill": "過關斬將"
+      },
       "積極應對": {
         "lower_skill": null,
         "skill_effect": "在競賽初期若位於隊列前方\n略微變得容易拉開距離\n＜一哩＞",
@@ -1989,6 +2136,13 @@
         "skill_icon_name": "i_skill_y_n_4",
         "skill_pt": "110",
         "upper_skill": "天命士"
+      },
+      "堅定不移": {
+        "lower_skill": null,
+        "skill_effect": "在最後直線若位居領先\n且後方1身距內有其他賽馬娘時\n速度稍微上升＜作戰．領頭＞",
+        "skill_icon_name": "i_skill_y_n_1",
+        "skill_pt": "180",
+        "upper_skill": "遙不可及的影子"
       },
       "璀璨繁星": {
         "lower_skill": null,
@@ -2072,7 +2226,7 @@
         "skill_effect": "在彎道速度稍微上升\n＜作戰．領頭＞",
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "140",
-        "upper_skill": null
+        "upper_skill": "陣風圓刃"
       },
       "領頭彎道◯": {
         "lower_skill": null,
@@ -2150,21 +2304,28 @@
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "160",
         "upper_skill": "對勝利的執著"
+      },
+      "咬住不放": {
+        "lower_skill": null,
+        "skill_effect": "在競賽後半若準備追過對手\n速度會略微上升＜前列/居中＞",
+        "skill_icon_name": "i_skill_y_n_1",
+        "skill_pt": "180",
+        "upper_skill": "猛追"
       }
     },
     "rare": {
+      "搶到好位置了！": {
+        "lower_skill": "滑流",
+        "skill_effect": "若緊跟在前方賽馬娘的後方\n會不易受到風阻",
+        "skill_icon_name": "i_skill_y_r_1",
+        "skill_pt": "160",
+        "upper_skill": null
+      },
       "我先失陪！": {
         "lower_skill": "遊戲到此為止了！",
         "skill_effect": "若長時間被後方的賽馬娘緊跟\n速度會上升",
         "skill_icon_name": "i_skill_y_r_1",
         "skill_pt": "160",
-        "upper_skill": null
-      },
-      "不屈不撓": {
-        "lower_skill": "重整態勢",
-        "skill_effect": "在競賽中期若位於隊列後方\n加速力會稍微上升＜作戰．前列＞",
-        "skill_icon_name": "i_skill_y_r_2",
-        "skill_pt": "120",
         "upper_skill": null
       },
       "青春燃燒．力量": {
@@ -2209,11 +2370,25 @@
         "skill_pt": "160",
         "upper_skill": null
       },
+      "勢不可擋": {
+        "lower_skill": "進攻的姿態",
+        "skill_effect": "在競賽中期速度上升\n＜作戰．前列＞",
+        "skill_icon_name": "i_skill_y_r_1",
+        "skill_pt": "180",
+        "upper_skill": null
+      },
       "賽馬娘狂粉": {
         "lower_skill": "喜愛賽馬娘",
         "skill_effect": "身邊有很多賽馬娘時\n速度會上升",
         "skill_icon_name": "i_skill_y_r_1",
         "skill_pt": "160",
+        "upper_skill": null
+      },
+      "想和你一起獲得勝利": {
+        "lower_skill": "夢想的途中",
+        "skill_effect": "在競賽後半若位於隊列前方\n速度上升、加速力略微上升\n粉絲越多效果越高",
+        "skill_icon_name": "i_skill_y_r_8",
+        "skill_pt": "200",
         "upper_skill": null
       },
       "致勝曲調": {
@@ -2265,6 +2440,13 @@
         "skill_pt": "180",
         "upper_skill": null
       },
+      "最高檔速": {
+        "lower_skill": "迅猛之腳",
+        "skill_effect": "在最後直線若位列第2之後\n且距離最前頭4身距內時\n速度大幅上升＜作戰．居中＞",
+        "skill_icon_name": "i_skill_y_r_1",
+        "skill_pt": "180",
+        "upper_skill": null
+      },
       "頂尖跑者": {
         "lower_skill": "領先的自尊",
         "skill_effect": "在競賽初期或中期\n對追過對手或競爭變得更強\n＜作戰．領頭＞",
@@ -2286,9 +2468,16 @@
         "skill_pt": "170",
         "upper_skill": null
       },
+      "突破": {
+        "lower_skill": "突圍計策",
+        "skill_effect": "在競賽中期若位於最後方附近速度會上升\n並變得擅長爭搶賽道＜作戰．後追＞",
+        "skill_icon_name": "i_skill_y_r_1",
+        "skill_pt": "180",
+        "upper_skill": null
+      },
       "X計劃": {
         "lower_skill": "善後策略",
-        "skill_effect": "接近競賽後期時若位於隊列前方\n會容易追過對手＜短距離＞",
+        "skill_effect": "接近競賽後期時若位於隊列前方\n會變得容易追過對手＜短距離＞",
         "skill_icon_name": "i_skill_y_r_2",
         "skill_pt": "160",
         "upper_skill": null
@@ -2391,6 +2580,13 @@
         "skill_pt": "160",
         "upper_skill": null
       },
+      "1000％輸出！": {
+        "lower_skill": "孜孜不倦",
+        "skill_effect": "在競賽中期的一開始\n大幅消耗持久力\n使速度大幅上升＜作戰．領頭＞",
+        "skill_icon_name": "i_skill_y_r_1",
+        "skill_pt": "180",
+        "upper_skill": null
+      },
       "奮發圖強": {
         "lower_skill": "努力不懈",
         "skill_effect": "準備追過對手時的一段時間內\n加速力會稍微上升＜作戰．居中＞",
@@ -2489,12 +2685,26 @@
         "skill_pt": "180",
         "upper_skill": null
       },
+      "過關斬將": {
+        "lower_skill": "穩健的步伐",
+        "skill_effect": "接近後期時若位居領先或\n距離最前頭4身距以內\n速度及加速力稍微上升＜前列．中距離＞",
+        "skill_icon_name": "i_skill_y_r_1",
+        "skill_pt": "170",
+        "upper_skill": null
+      },
       "怒濤的後來居上": {
         "lower_skill": "後來居上",
         "skill_effect": "在競賽後期若追過對手\n速度會上升＜長距離＞",
         "skill_icon_name": "i_skill_y_r_1",
         "skill_pt": "160",
         "upper_skill": null
+      },
+      "怪物": {
+        "lower_skill": null,
+        "skill_effect": "在即將進入競賽後期時，\n若位居領先或距離最前頭4身距內時\n競賽後期加速力上升＜前列．長距離＞",
+        "skill_icon_name": "i_skill_y_r_2",
+        "skill_pt": "180",
+        "upper_skill": "發揮本領"
       },
       "意氣昂揚": {
         "lower_skill": "腳步輕盈",
@@ -2509,6 +2719,13 @@
         "skill_icon_name": "i_skill_y_r_2",
         "skill_pt": "120",
         "upper_skill": null
+      },
+      "過人的衝勁": {
+        "lower_skill": null,
+        "skill_effect": "在進入競賽後期前若不暴衝並持續\n潛伏於隊列後方，會在後期的一開始\n加速力上升＜作戰．後追＞",
+        "skill_icon_name": "i_skill_y_r_2",
+        "skill_pt": "180",
+        "upper_skill": "衝勁"
       },
       "捲土重來": {
         "lower_skill": "重振旗鼓",
@@ -2586,11 +2803,25 @@
         "skill_pt": "150",
         "upper_skill": null
       },
+      "渾然忘我": {
+        "lower_skill": "不顧一切",
+        "skill_effect": "在最後衝刺階段若位於隊列中段之後\n稍微消耗持久力使加速力上升\n＜居中．長距離＞",
+        "skill_icon_name": "i_skill_y_r_2",
+        "skill_pt": "180",
+        "upper_skill": null
+      },
       "目標是最前排！": {
         "lower_skill": "鎖定前排",
         "skill_effect": "在競賽後期會採取\n向前衝刺的姿勢＜沙地＞",
         "skill_icon_name": "i_skill_y_r_3",
         "skill_pt": "140",
+        "upper_skill": null
+      },
+      "猛追": {
+        "lower_skill": "咬住不放",
+        "skill_effect": "在競賽後半若準備追過對手\n速度會上升＜前列/居中＞",
+        "skill_icon_name": "i_skill_y_r_1",
+        "skill_pt": "180",
         "upper_skill": null
       },
       "疾風怒濤": {
@@ -2628,11 +2859,25 @@
         "skill_pt": "160",
         "upper_skill": null
       },
+      "紫電一閃": {
+        "lower_skill": "短距離直線◎",
+        "skill_effect": "在直線速度上升＜短距離＞",
+        "skill_icon_name": "i_skill_y_r_1",
+        "skill_pt": "150",
+        "upper_skill": null
+      },
       "逃脫術": {
         "lower_skill": "疾行",
         "skill_effect": "在競賽中期變得容易往前推進\n＜作戰．領頭＞",
         "skill_icon_name": "i_skill_y_r_1",
         "skill_pt": "180",
+        "upper_skill": null
+      },
+      "至高的下坡強者": {
+        "lower_skill": "下坡靈巧",
+        "skill_effect": "下坡時速度上升",
+        "skill_icon_name": "i_skill_y_r_1",
+        "skill_pt": "170",
         "upper_skill": null
       },
       "狂野旋風": {
@@ -2663,6 +2908,13 @@
         "skill_pt": "160",
         "upper_skill": null
       },
+      "遙不可及的影子": {
+        "lower_skill": "堅定不移",
+        "skill_effect": "在最後直線若位居領先\n且後方1身距內有其他賽馬娘時\n速度大幅上升＜作戰．領頭＞",
+        "skill_icon_name": "i_skill_y_r_1",
+        "skill_pt": "180",
+        "upper_skill": null
+      },
       "迅速果斷": {
         "lower_skill": "前驅取位",
         "skill_effect": "在競賽中期速度上升\n＜作戰．居中＞",
@@ -2684,9 +2936,51 @@
         "skill_pt": "180",
         "upper_skill": null
       },
+      "義無反顧": {
+        "lower_skill": "不顧後果",
+        "skill_effect": "接近競賽後期時若位於隊列前方\n速度會上升＜一哩＞",
+        "skill_icon_name": "i_skill_y_r_1",
+        "skill_pt": "180",
+        "upper_skill": null
+      },
+      "銳腳一閃": {
+        "lower_skill": "居中直線◎",
+        "skill_effect": "在直線速度上升\n＜作戰．居中＞",
+        "skill_icon_name": "i_skill_y_r_1",
+        "skill_pt": "150",
+        "upper_skill": null
+      },
+      "銳腳圓刃": {
+        "lower_skill": "居中彎道◎",
+        "skill_effect": "在彎道速度上升\n＜作戰．居中＞",
+        "skill_icon_name": "i_skill_y_r_1",
+        "skill_pt": "150",
+        "upper_skill": null
+      },
       "短兵相接": {
         "lower_skill": "正面對決",
         "skill_effect": "在競賽後期若位於隊列前方\n加速力會上升＜作戰．前列＞",
+        "skill_icon_name": "i_skill_y_r_2",
+        "skill_pt": "180",
+        "upper_skill": null
+      },
+      "超越極限": {
+        "lower_skill": "只注視前方",
+        "skill_effect": "在最後衝刺階段速度上升\n依照最優秀的基礎能力數值\n提高效果",
+        "skill_icon_name": "i_skill_y_r_1",
+        "skill_pt": "200",
+        "upper_skill": null
+      },
+      "陣風圓刃": {
+        "lower_skill": "領頭彎道◎",
+        "skill_effect": "在彎道速度上升\n＜作戰．領頭＞",
+        "skill_icon_name": "i_skill_y_r_1",
+        "skill_pt": "150",
+        "upper_skill": null
+      },
+      "電光石火": {
+        "lower_skill": "一飛衝天",
+        "skill_effect": "在競賽後期若於隊列後方準備追過對手\n加速力上升＜短距離．一哩＞",
         "skill_icon_name": "i_skill_y_r_2",
         "skill_pt": "180",
         "upper_skill": null
@@ -2696,6 +2990,13 @@
         "skill_effect": "在競賽後期若位於隊列後方\n變得容易進行衝刺＜短距離＞",
         "skill_icon_name": "i_skill_y_r_1",
         "skill_pt": "160",
+        "upper_skill": null
+      },
+      "風雲之志": {
+        "lower_skill": "上進心",
+        "skill_effect": "即將進入競賽後期時，潛伏於第2之後，\n且距離最前頭2身距以內一段時間內\n速度會稍微上升＜作戰．前列＞",
+        "skill_icon_name": "i_skill_y_r_1",
+        "skill_pt": "180",
         "upper_skill": null
       },
       "興奮感": {

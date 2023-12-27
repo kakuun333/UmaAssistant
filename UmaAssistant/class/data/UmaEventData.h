@@ -8,6 +8,7 @@
 #include "../../enum/UmaEventDataType.h"
 
 #include "../../utility/CharacterConvert.h"
+//#include "../../utility/CharacterCompare.h"
 
 constexpr inline int NONE_INDEX = -1;
 
@@ -43,7 +44,7 @@ public:
 class UmaEventData
 {
 public:
-	float similarity;
+	float similarity = -1;
 
 	std::string event_owner;
 	//gcroot<System::String^> sys_event_owner;

@@ -10,7 +10,12 @@ driver = webdriver.Chrome();
 
 # 全局變數
 DEBUG_MODE = False;
-event_dict = {};
+
+
+
+char_cvt_data_dict = utility.read_json_file(r"../UmaData/event_data_jp_cvt_tw_char.json") or {};
+
+card_cvt_data_dict = utility.read_json_file(r"../UmaData/event_data_jp_cvt_tw_card.json") or {};
 
 """
 event_dict = {
@@ -181,8 +186,11 @@ def get_tw_char_event_owner():
     pattern = re.compile("【(.+)】(.+)");
 
     tw_char_event_owner = re.sub(pattern, r"\2（\1）", a.text);
-
-    tw_char_event_owner = utility.replace("繁/米浴（Make up Vampire!）", "米浴（Make up Vampire!）")
+    
+    try:
+        tw_char_event_owner = utility.replace("繁/米浴（Make up Vampire!）", "米浴（Make up Vampire!）")
+    except:
+        pass;
 
     print(tw_char_event_owner);
 
@@ -259,12 +267,12 @@ def dump_card_convert_data():
         event_title_dict = list_to_dict(jp_event_title_list, tw_event_title_list);
 
 
-        event_dict[jp_event_owner] = {
+        card_cvt_data_dict[jp_event_owner] = {
             "tw_event_owner": tw_event_owner,
             "event_title_dict": event_title_dict,
         }
 
-        json_string = json.dumps(event_dict, indent=2, ensure_ascii=False)
+        json_string = json.dumps(card_cvt_data_dict, indent=2, ensure_ascii=False)
 
         utility.write_convert_data_card(json_string);
 
@@ -317,12 +325,12 @@ def dump_char_convert_data():
 
         event_title_dict = list_to_dict(jp_event_title_list, tw_event_title_list);
 
-        event_dict[jp_char_event_owner] = {
+        char_cvt_data_dict[jp_char_event_owner] = {
             "tw_event_owner": tw_char_event_owner,
             "event_title_dict": event_title_dict,
         }
 
-        json_string = json.dumps(event_dict, indent=2, ensure_ascii=False)
+        json_string = json.dumps(char_cvt_data_dict, indent=2, ensure_ascii=False)
 
         utility.write_convert_data_char(json_string);
 
@@ -336,7 +344,7 @@ def dump_char_convert_data():
 
 
 # 獲取支援卡資料
-dump_card_convert_data();
+# dump_card_convert_data();
 
 # 獲取角色資料
 dump_char_convert_data();

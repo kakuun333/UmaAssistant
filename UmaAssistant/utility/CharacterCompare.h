@@ -45,4 +45,6 @@ namespace utility
 	bool IsRepeatingString(std::string scanned_text, int repeat_limit);
 
 	bool HasBlackListedString(std::string scanned_text);
+
+	bool IsStringTooLong(std::string scanned_text);
 }

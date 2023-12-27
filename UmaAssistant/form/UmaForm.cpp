@@ -19,6 +19,8 @@ namespace UmaAssistant
 
 		//global::config->WriteToJson();
 
+
+		//std::cout << utility::IsStringTooLong(u8"あああああああああああああああああああああああ") << std::endl;
 	}
 
 	void UmaForm::OnChoiceDocumentCompleted(System::Object^ sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^ e)
@@ -74,7 +76,7 @@ namespace UmaAssistant
 
 	}
 
-	System::Void UmaForm::Character_IMG_Clicked(System::Object^ sender, System::Windows::Forms::HtmlElementEventArgs^ e)
+	void UmaForm::Character_IMG_Clicked(System::Object^ sender, System::Windows::Forms::HtmlElementEventArgs^ e)
 	{
 		DataManager* dataManager = DataManager::GetInstance();
 		WebManager* webManager = WebManager::GetInstance();
@@ -170,6 +172,28 @@ namespace UmaAssistant
 		}
 	}
 
+	System::Void UmaForm::close_select_character_btn_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		Button^ button = dynamic_cast<Button^>(sender);
+
+		_openedSelectCharacter = false;
+
+		switch (global::config->SoftwareLanguage)
+		{
+		case static_cast<int>(SoftwareLanguageType::JP):
+			this->select_character_btn->Text = u8"キャラ選択";
+			break;
+		case static_cast<int>(SoftwareLanguageType::TW):
+			this->select_character_btn->Text = u8"選擇角色";
+			break;
+		}
+
+		this->Size = System::Drawing::Size(560, this->Size.Height);
+
+		this->minimize_btn->Location = System::Drawing::Point(476, 0);
+		this->close_form_btn->Location = System::Drawing::Point(521, 0);
+	}
+
 	System::Void UmaForm::select_character_btn_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		Button^ button = dynamic_cast<Button^>(sender);
@@ -189,7 +213,13 @@ namespace UmaAssistant
 				break;
 			}
 			
+
+
 			this->Size = System::Drawing::Size(560, this->Size.Height);
+
+			this->minimize_btn->Location = System::Drawing::Point(476, 0);
+			this->close_form_btn->Location = System::Drawing::Point(521, 0);
+
 			break;
 
 		case false:
@@ -205,7 +235,13 @@ namespace UmaAssistant
 				break;
 			}
 			
+
 			this->Size = System::Drawing::Size(1060, this->Size.Height);
+
+			this->minimize_btn->Location = System::Drawing::Point(476, 0);
+			this->close_form_btn->Location = System::Drawing::Point(521, 0);
+
+
 			this->UpdateIMGClickEvent();
 			break;
 		}

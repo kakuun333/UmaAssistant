@@ -15,6 +15,8 @@ fm.SKILL_WHITE_LIST_FILTERED_PATH = "./UmaData/skill_white_list_filtered.txt"; -
 fm.ARTICLE_ID_PATH = "./UmaData/article_id.txt";
 fm.ARTICLE_ID_INDEX_PATH = "./UmaData/article_id_index.txt";
 
+fm.DUMPED_EVENT_WHITE_LIST_JSON = "./UmaData/dumped_event_white_list.json";
+
 function fm.getEventBlackList()
     local tmp = {};
 
@@ -22,9 +24,7 @@ function fm.getEventBlackList()
     if file then
         local content = file:read("*all");
         local pattern = "<(%d+)>";
-        for id in string.gmatch(content, pattern) do
-            table.insert(tmp, id);
-        end
+        for id in string.gmatch(content, pattern) do table.insert(tmp, id); end
     end
 
     return tmp;
@@ -37,9 +37,7 @@ function fm.getEventWhiteList()
     if file then
         local content = file:read("*all");
         local pattern = "<(%d+)>";
-        for id in string.gmatch(content, pattern) do
-            table.insert(tmp, id);
-        end
+        for id in string.gmatch(content, pattern) do table.insert(tmp, id); end
     end
 
     return tmp;
@@ -52,9 +50,7 @@ function fm.getSkillBlackList()
     if file then
         local content = file:read("*all");
         local pattern = "<(%d+)>";
-        for id in string.gmatch(content, pattern) do
-            table.insert(tmp, id);
-        end
+        for id in string.gmatch(content, pattern) do table.insert(tmp, id); end
     end
 
     return tmp;
@@ -67,9 +63,7 @@ function fm.getSkillWhiteList()
     if file then
         local content = file:read("*all");
         local pattern = "<(%d+)>";
-        for id in string.gmatch(content, pattern) do
-            table.insert(tmp, id);
-        end
+        for id in string.gmatch(content, pattern) do table.insert(tmp, id); end
     end
 
     return tmp;
@@ -82,9 +76,7 @@ function fm.getSkillWhiteListFiltered()
     if file then
         local content = file:read("*all");
         local pattern = "<(%d+)>";
-        for id in string.gmatch(content, pattern) do
-            table.insert(tmp, id);
-        end
+        for id in string.gmatch(content, pattern) do table.insert(tmp, id); end
     end
 
     return tmp;
@@ -97,9 +89,7 @@ function fm.getArticleId()
     if file then
         local content = file:read("*all")
         local pattern = "<(%d+)>";
-        for id in string.gmatch(content, pattern) do
-            table.insert(aid_arr, id);
-        end
+        for id in string.gmatch(content, pattern) do table.insert(aid_arr, id); end
     end
 
     return aid_arr;

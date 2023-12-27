@@ -149,7 +149,6 @@
     <ClCompile Include="UmaAssistant\class\data\ScenarioEventData.cpp" />
     <ClCompile Include="UmaAssistant\class\Config.cpp" />
     <ClCompile Include="UmaAssistant\class\ConsoleManager.cpp" />
-    <ClCompile Include="UmaAssistant\class\GraphicsCapture.cpp" />
     <ClCompile Include="UmaAssistant\class\LocalServer.cpp" />
     <ClCompile Include="UmaAssistant\class\FileManager.cpp" />
     <ClCompile Include="UmaAssistant\class\ref\FormController.cpp" />
@@ -187,7 +186,6 @@
     <ClInclude Include="UmaAssistant\class\data\ScenarioEventData.h" />
     <ClInclude Include="UmaAssistant\class\Config.h" />
     <ClInclude Include="UmaAssistant\class\ConsoleManager.h" />
-    <ClInclude Include="UmaAssistant\class\GraphicsCapture.h" />
     <ClInclude Include="UmaAssistant\class\LocalServer.h" />
     <ClInclude Include="UmaAssistant\class\FileManager.h" />
     <ClInclude Include="UmaAssistant\class\ref\FormController.h" />

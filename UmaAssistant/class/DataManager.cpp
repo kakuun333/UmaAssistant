@@ -283,7 +283,7 @@ ScenarioEventData DataManager::GetScenarioEventData(std::string scanned_text)
 	}
 
 
-	ScenarioEventData scenarioEventData;
+	std::vector<ScenarioEventData> similarDataList = {};
 
 	for (json::iterator it = event_data_json.begin(); it != event_data_json.end(); ++it)
 	{
@@ -297,6 +297,8 @@ ScenarioEventData DataManager::GetScenarioEventData(std::string scanned_text)
 
 			if (similarity >= utility::SIMILAR_METRIC)
 			{
+				ScenarioEventData scenarioEventData;
+
 				scenarioEventData.event_title = event_title;
 
 				scenarioEventData.similarity = similarity;
@@ -311,19 +313,34 @@ ScenarioEventData DataManager::GetScenarioEventData(std::string scanned_text)
 						if (choice.key() == "choice_title")
 						{
 							scenarioChoice.choice_title = choice.value().get<std::string>();
-							std::cout << "scenarioEvent.choice_title: " << scenarioChoice.choice_title << std::endl;
+							//std::cout << "scenarioEvent.choice_title: " << scenarioChoice.choice_title << std::endl;
 						}
 						else
 						{
 							scenarioChoice.choice_effect = choice.value().get<std::string>();
 						}
 						//choice["choice_effect"] = scenarioEvent.choice_effect;
+
 					}
 					scenarioEventData.event_list.push_back(scenarioChoice);
 				}
+
+				similarDataList.push_back(scenarioEventData);
 			}
 		}
 	}
+
+	if (similarDataList.empty()) return ScenarioEventData();
+
+	// 使用 std::max_element 找到最大的 similarity
+	auto maxElement = std::max_element(similarDataList.begin(), similarDataList.end(),
+		[](const ScenarioEventData& data1, const ScenarioEventData& data2)
+		{
+			return data1.similarity < data2.similarity;
+		}
+	);
+
+	ScenarioEventData scenarioEventData = *maxElement;
 
 
 	return scenarioEventData;
@@ -370,6 +387,7 @@ UmaEventData DataManager::GetCurrentCharacterUmaEventData(std::string scanned_te
 			for (const auto& choice : event.items())
 			{
 				//std::cout << "Event Title: " << choice.key() << std::endl;
+
 				float similarity = utility::GetSimilarity(scanned_text, choice.key());
 
 

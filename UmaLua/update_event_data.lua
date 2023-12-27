@@ -37,10 +37,12 @@ local console = Console.new();
 
 dumper.dumpArticleIdFromSiteMap();
 dumper.dumpEventBlackWhiteList(2000);
-event_data = dumper.dumpEventData(2000);
 
-local json_string = json.encode(event_data, {
-    indent = true
-});
+dumper.dumpEventData(2000);
+-- event_data = dumper.dumpEventData(2000);
 
-utility.writefile("./UmaData/event_data_jp.json", json_string);
+-- local json_string = json.encode(event_data, {
+--     indent = true
+-- });
+
+-- utility.writefile("./UmaData/event_data_jp.json", json_string);

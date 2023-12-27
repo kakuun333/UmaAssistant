@@ -14,7 +14,7 @@ function utility.deepprint(otable, keyColor, valueColor)
             else
                 print(keyColor .. k .. pe.reset);
             end
-            
+
             utility.deepprint(v, keyColor, valueColor);
         end
     end
@@ -26,9 +26,7 @@ function utility.deepcopy(otable)
 
     if type(otable) == "table" then
         tmp = {};
-        for k, v in next, otable do
-            tmp[k] = utility.deepcopy(v)
-        end
+        for k, v in next, otable do tmp[k] = utility.deepcopy(v) end
     else
         tmp = otable;
     end
@@ -45,21 +43,31 @@ function utility.readfile(path)
 
         return content;
     else
-        print("Error opening file.")''
+        print("Error opening file.")
         return nil;
     end
 end
 
-function utility.writefile(path, str)
+function utility.writefile(path, content)
     local file = io.open(path, "w");
 
     if file then
-        local content = file:write(str);
+        local content = file:write(content);
         file:close();
     else
-        print("Error writing file.")''
+        print("Error writing file.")
     end
 end
 
+function utility.appendfile(path, content)
+    local file = io.open(path, "a");
+
+    if file then
+        local content = file:write(content);
+        file:close();
+    else
+        print("Error appending file.")
+    end
+end
 
 return utility;
