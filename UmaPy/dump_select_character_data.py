@@ -121,4 +121,4 @@ def dump_char_data(dump_icon):
 
 
 
-dump_char_data(dump_icon=False);
+dump_char_data(dump_icon=True);
