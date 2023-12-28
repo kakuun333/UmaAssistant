@@ -1,4 +1,7 @@
-# UmaAssistant
+<p align="center">
+  <img src="https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/image/uma_icon_64px.png">
+  <h1 align="center">UmaAssisant</h1>
+</p>
 
 ## 文檔語言｜ドキュメント言語
 ### [繁體中文](./README.md)｜[日本語](./README_jp.md)
@@ -9,22 +12,27 @@
 ![Discord Banner 2](https://discordapp.com/api/guilds/1180922259146281053/widget.png?style=banner2)  
 
 ## 簡介
-本軟體會自動辨識 DMM 版、BlueStacks 模擬器視窗中賽馬娘的事件，並給予可能的選項效果、提供選項效果中技能的詳細資訊。
+**本軟體會自動辨識 DMM 版、各大模擬器視窗中賽馬娘的事件，並給予可能的選項效果、提供選項效果中技能的詳細資訊。**
 
 ## 功能介紹
 ### 事件選項效果
 ![1](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1.png)
+
 ### 技能預覽
 #### 白技能  
 ![2](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/2.png)
 #### 金技能  
 ![3](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/3.png)
 
+### 劇本數值＋圖示  
+![17](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/17.png)
+
 ## 運作環境
 
 ### 系統規格
-`Windows 10 64位元 22H2`
-`Windows 11 64位元 23H2`
+`Windows 10 64位元 22H2`  
+`Windows 11 64位元 23H2`  
+其他 Windows 版本沒有測試過，說不定可以使用。
 > [!WARNING]
 > 32 位元無法運行。
 
@@ -61,7 +69,7 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 
 - 伺服器：請選擇適當的伺服器，選錯伺服器將無法辨識事件。
 
-- 視窗類型：DMM版請選`DMM`，模擬器目前只支援`BlueStacks`，模擬器請不要使用全螢幕遊玩，否則將無法辨識事件。
+- 視窗類型：DMM版請選`DMM`，模擬器目前支援`BlueStacks`、`夜神模擬器`、`雷電模擬器`，模擬器請不要使用全螢幕遊玩，解析度比例必須為`16:9`，否則將無法辨識事件。
 
 - 日服文本語言（只有在伺服器是`日服`的時候有效果）：決定了辨識到事件後給予的事件效果的語言，想看全日文選`日文`，想看繁體中文選`繁體中文`，繁體中文不會全部內容都是繁體中文，因為那樣會造成混亂。
 
@@ -87,29 +95,29 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 ![7](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/7.png)
 
 ### 4. 尋找目前培育的馬娘  
+> [!NOTE]
+> 目前推薦用[方法三：直接選擇角色](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E6%96%B9%E6%B3%95%E4%B8%89)來尋找目前培育的馬娘。
+
 > [!WARNING]
 > 更換培育的馬娘時，請務必先清除先前的馬娘。  
+> 如果使用[方法三：直接選擇角色](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E6%96%B9%E6%B3%95%E4%B8%89)則不需要清除先前的馬娘。  
 > ![8](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/8.png)
 
 
-#### 方法一
-> **適用於還沒開始培育的情況。**
+#### 方法一：適用於還沒開始培育的情況
 
 在配置支援卡的畫面按下「育成開始！」等待`1~2`秒後「目前培育的馬娘」應該要更新為「最終確認」所顯示的馬娘名稱，如果沒有更新的話，請參考[常見問題](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E5%B8%B8%E8%A6%8B%E5%95%8F%E9%A1%8C)  
 ![9](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/9.png)  
 ![10](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/10.png)  
 
-#### 方法二
-> **適用於已經開始培育的情況。**
+#### 方法二：適用於已經開始培育的情況
 
 按右下角的![option_button](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/image/option_button.png)後，選擇「編成情報」，等待`1~2`秒後「目前培育的馬娘」應該要更新為「編成情報」所顯示的馬娘名稱，如果沒有更新的話，請參考[常見問題](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E5%B8%B8%E8%A6%8B%E5%95%8F%E9%A1%8C)  
 ![11](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/11.png)  
 ![12](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/12.png)  
 ![13](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/13.png)  
 
-#### 方法三
-> **直接選擇角色**
-
+#### 方法三：直接選擇角色
 > [!NOTE]
 > 1. 不需要先清除角色。  
 > 2. 點選角色圖示後角色名稱會依照選擇的遊戲伺服器發生變化。  
@@ -140,9 +148,13 @@ Q. 為什麼我無法辨識「目前培育的馬娘」或「事件」？
 A. 
 1. 請檢查設定是否正確。
 2. 請檢查是否選取了對應的視窗名稱。
-3. 嘗試縮放遊戲視窗。
+3. 請檢查「目前培育的馬娘」是否為現在培育的馬娘。
+4. 嘗試縮放遊戲視窗。
 > [!NOTE]
 > 如果上述的方法皆無效果，有大概率是`UmaData`中的資料不完整或程式的邏輯有疏失，請參考[問題回報](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E5%95%8F%E9%A1%8C%E5%9B%9E%E5%A0%B1)。  
+
+Q. 為什麼我的程式資料夾無法刪除？（資料夾中的檔案已在其他程式開啟）  
+A. 可能是因為程式崩潰導致字型沒有被程式正確卸載，只要重新啟動電腦就可以刪除了。  
 
 ## 問題回報
 有任何問題請到 **[Issues](https://github.com/kakuun333/UmaAssistant/issues)** 或者 **[社群](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E7%A4%BE%E7%BE%A4)** 中回報，非常感謝！  
@@ -158,7 +170,7 @@ Copyright (C) 2023 kakuun333
 
 ## 授權
 作者編寫的原始碼全部屬於[GPL-3.0 license](https://github.com/kakuun333/UmaAssistant?tab=GPL-3.0-1-ov-file#)  
-`UmaData`資料夾中的資料只允許用於個人用途，不允許用於商業或其他性質的用途，因為有包含非本軟體作者編寫的資料。  
+`UmaData`資料夾中的資料只允許用於個人用途，不允許用於商業或其他性質的用途。  
 
 ## 使用的函式庫
 
