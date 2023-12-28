@@ -1,10 +1,13 @@
-# UmaAssistant
+<p align="center">
+  <img src="https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/image/uma_icon_64px.png">
+  <h1 align="center">UmaAssisant</h1>
+</p>
 
 ## 文檔語言｜ドキュメント言語
 ### [繁體中文](./README.md)｜[日本語](./README_jp.md)
 
 ## はじめに
-このソフトは自動で DMM 版と BlueStacks エミュレータのウィンドウからウマ娘のイベントを検出し、可能な選択肢効果を与え、効果中のスキル詳細を見えるようにします。
+このソフトは自動で DMM 版とAndroidエミュレータのウィンドウからウマ娘のイベントを検出し、可能な選択肢効果を与え、効果中のスキル詳細を見えるようにします。
 
 ## 機能紹介
 ### イベント選択肢効果  
@@ -21,7 +24,9 @@
 ## 稼働環境
 
 ### OSスペック
-`Windows 10 64bit 22H2`
+`Windows 10 64位元 22H2`  
+`Windows 11 64位元 23H2`  
+他の Windows バージョンは試したことないですが、もしかしたら実行できるかもしれません。
 > [!WARNING]
 > 32bit は実行できません。
 
