@@ -200,47 +200,47 @@
       },
       {
         "choice_title": "シナリオリンク発生なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "チームのハッピーエンド": [
       {
         "choice_title": "シナリオリンク発生あり",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+20</span>\nスキルPt<span class=\"status_plus_value\">+10</span>\n※ライスシャワーをリンク編成する必要がある"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+20</span>\nスキルPt<span class=\"status_plus_value\">+10</span>\n※ライスシャワーをリンク編成する必要がある"
       },
       {
         "choice_title": "シナリオリンク発生なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "チームの応援歌": [
       {
         "choice_title": "シナリオリンク発生あり",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+20</span>\nスキルpt<span class=\"status_plus_value\">+10</span>\n※ハルウララをリンク編成する必要がある"
+        "choice_effect": "根性<span class=\"status_plus_value\">+20</span>\nスキルpt<span class=\"status_plus_value\">+10</span>\n※ハルウララをリンク編成する必要がある"
       },
       {
         "choice_title": "シナリオリンク発生なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "根性<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "チームでピンチ！？": [
       {
         "choice_title": "シナリオリンク発生あり",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+20</span>\nスキルPt<span class=\"status_plus_value\">+10</span>\n※マチカネフクキタルをリンク編成する必要がある"
+        "choice_effect": "賢さ<span class=\"status_plus_value\">+20</span>\nスキルPt<span class=\"status_plus_value\">+10</span>\n※マチカネフクキタルをリンク編成する必要がある"
       },
       {
         "choice_title": "シナリオリンク発生なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "賢さ<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "樫本代理の秘密の一面": [
       {
         "choice_title": "シナリオリンク発生あり",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+20</span>\nスキルPt<span class=\"status_plus_value\">+10</span>\n※樫本理子をリンク編成する必要がある"
+        "choice_effect": "賢さ<span class=\"status_plus_value\">+20</span>\nスキルPt<span class=\"status_plus_value\">+10</span>\n※樫本理子をリンク編成する必要がある"
       },
       {
         "choice_title": "シナリオリンク発生なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "賢さ<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "樫本代理の意外な一面": [
@@ -342,7 +342,7 @@
     "甘えたがりのお年頃": [
       {
         "choice_title": "『あーん』してもらうとか",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+6</span>\n賢さ<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "『お姉ちゃん』って呼ぶのはどうだろう？",
@@ -352,7 +352,7 @@
     "アルダンからは逃げ切れない": [
       {
         "choice_title": "対処法に詳しいな、アルダン",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+6</span>\n根性<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "お大事にな、パーマー",
@@ -362,7 +362,7 @@
     "委員たちの井戸端会議": [
       {
         "choice_title": "ゴールドシップに併走してもらう？",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+6</span>\nパワー<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "風紀に対する想いをバトンにしよう！",
@@ -372,7 +372,7 @@
     "意外な美化委員": [
       {
         "choice_title": "そもそもなんで君が水やりを？",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "パワー<span class=\"status_plus_value\">+6</span>\n賢さ<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "大変そうだな、手伝うよ",
@@ -382,7 +382,7 @@
     "ヴィクトリー倶楽部、参上！": [
       {
         "choice_title": "ここはとってもいいクラブだな！",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+6</span>\n賢さ<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "2人の強さの秘訣がわかったよ",
@@ -392,7 +392,7 @@
     "同じ傘の下で": [
       {
         "choice_title": "これからはライバルだな！",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+6</span>\n根性<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "今日は盛大にお祝いだね",
@@ -412,7 +412,7 @@
     "語り合いたい！": [
       {
         "choice_title": "俺もその小説を読んでみようかな",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+6</span>\n根性<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "その本のおすすめポイントを教えて？",
@@ -422,7 +422,7 @@
     "カワイイを守りたい！": [
       {
         "choice_title": "大丈夫！守ってもらおう！",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+6</span>\nパワー<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "まずは落ち着かせるべきかも……",
@@ -432,7 +432,7 @@
     "ゴルシちゃん主催！人狼は誰だ！？": [
       {
         "choice_title": "マンハッタンカフェが人狼だ！",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "パワー<span class=\"status_plus_value\">+6</span>\n賢さ<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "サトノダイヤモンドが人狼",
@@ -442,7 +442,7 @@
     "ゴルシを治せ！？": [
       {
         "choice_title": "ナカヤマ、助けてくれ！",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+6</span>\nパワー<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "ジョーダン、なんかいい案はないか？",
@@ -452,7 +452,7 @@
     "怖くないって怖いです": [
       {
         "choice_title": "幽霊は怖いよね",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+6</span>\n根性<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "2人が幽霊平気なのはすごい……",
@@ -472,7 +472,7 @@
     "じいちゃん子たちの集い": [
       {
         "choice_title": "2人とも、おじいちゃんが大好きなんだね",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+6</span>\n賢さ<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "気持ちがこもっていれば大丈夫だよ",
@@ -482,7 +482,7 @@
     "『全力』&『普通』ダイエット！": [
       {
         "choice_title": "『全力』で！",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+6</span>\n根性<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "ふ、『普通』でお願いします……",
@@ -492,7 +492,7 @@
     "『退学』を賭けた勝負": [
       {
         "choice_title": "ヒット！カードをもう1枚！",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+6</span>\n賢さ<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "スタンド。カードをストップするしかない",
@@ -502,7 +502,7 @@
     "タイキとパールと外国語": [
       {
         "choice_title": "使う単語を変えてみたら？",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+6</span>\n賢さ<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "言葉は不要なのかも？",
@@ -512,7 +512,7 @@
     "タマモのゲームセンター奮闘記": [
       {
         "choice_title": "じゃあ俺はブルボンを！",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "根性<span class=\"status_plus_value\">+6</span>\n賢さ<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "じゃあ俺はカワカミとウララを！",
@@ -522,7 +522,7 @@
     "凸凹コンビ": [
       {
         "choice_title": "2人のコンビネーションは完ぺきだった",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "パワー<span class=\"status_plus_value\">+6</span>\n根性<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "ヒーローみたいだった",
@@ -532,7 +532,7 @@
     "ドキドキフルーツフェス": [
       {
         "choice_title": "バイトの立場を活かそう！",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+6</span>\nパワー<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "メジロの絆で助けよう",
@@ -552,7 +552,7 @@
     "ひとり暮らしの生活": [
       {
         "choice_title": "大雑把な料理も君らしさだ",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "パワー<span class=\"status_plus_value\">+6</span>\n根性<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "自由な創作料理にチャレンジしよう！",
@@ -562,7 +562,7 @@
     "ふたりと宿根草": [
       {
         "choice_title": "メジロアルダンは物知りだね",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+6</span>\nパワー<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "なんで宿根草は一度枯れるのかな",
@@ -582,7 +582,7 @@
     "ベガとスピカ": [
       {
         "choice_title": "アヤベはどの星が好き？",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+6</span>\n賢さ<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "スズカはどの星が好き？",
@@ -612,7 +612,7 @@
     "名探偵のボクにお任せ！": [
       {
         "choice_title": "どうしたんだテイオー？",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+6</span>\nスタミナ<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "何か隠してない？",
@@ -622,7 +622,7 @@
     "目が離せないお嬢様たち": [
       {
         "choice_title": "どこまでも優しいね……",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "根性<span class=\"status_plus_value\">+6</span>\n賢さ<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "もう少し世間勉強が必要かも……",
@@ -632,7 +632,7 @@
     "ワールドワイド・ウインディ": [
       {
         "choice_title": "休み時間に昼寝しよう",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+6</span>\n根性<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "ちゃんと夜に寝るべき",
@@ -642,73 +642,73 @@
     "アウトドア派ウマ娘、集う！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "やる気アップ\n<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "やる気アップ\nパワー<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "憧れの人のライバル！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+4</span>\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+4</span>\n根性<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "朝のバクシン・熱血指導っス！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+4</span>\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+4</span>\n根性<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "アタシは負けない……！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "根性<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "あたたかな誓い": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "根性<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "あっちが立てば、こっちも立つ": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "集まれ！個性の塊ズ！！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "パワー<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "あなたの星空": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "根性<span class=\"status_plus_value\">+6</span>\n賢さ<span class=\"status_plus_value\">+6</span>"
       }
     ],
     "ある晴れた日の5人": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "1番好きなこと": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+4</span>\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+4</span>\n根性<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "1番のトレーナー！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+4</span>\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "パワー<span class=\"status_plus_value\">+4</span>\n根性<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "一夜、氷雪の城": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "根性<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "妹を大切にね": [
@@ -720,13 +720,13 @@
     "色づく秋のマーベラス☆": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "根性<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "印象が強いってコト！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+6</span>\n賢さ<span class=\"status_plus_value\">+6</span>"
       }
     ],
     "占いいらずの占い師": [
@@ -738,31 +738,31 @@
     "エアコン壊れた……": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "根性<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "エブリデイがマーベラス☆★": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "賢さ<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "遠征☆イクノツアーズ": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+8</span>\n<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+8</span>\nパワー<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "オーバーライダーズ！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "屋上の常連たち": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "大人たちの慰安旅行": [
@@ -774,19 +774,19 @@
     "大人のデートはサプライズ？": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+6</span>\nパワー<span class=\"status_plus_value\">+6</span>"
       }
     ],
     "おにぎり、あたためますか！！！？": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "パワー<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "お前にはまだ早い": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+4</span>\n<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+4</span>\nパワー<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "思い出びすけっと": [
@@ -798,13 +798,13 @@
     "折り入っての頼みごと": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "体力<span class=\"status_plus_value\">+20</span>\n<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "体力<span class=\"status_plus_value\">+20</span>\nスタミナ<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "カード勝負です！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "賢さ<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "開店ッ！特別ショップ！": [
@@ -816,25 +816,25 @@
     "カフェテリア戦線異常なし": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "根性<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "奇跡の調味料？": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "やる気アップ\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "やる気アップ\n根性<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "キッチンから幸せを": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "君と分け合う焼きにんじん": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+4</span>\nスキルpt<span class=\"status_plus_value\">+20</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+4</span>\nスキルpt<span class=\"status_plus_value\">+20</span>"
       }
     ],
     "驚愕ッ！理事長のサプライズ！": [
@@ -846,7 +846,7 @@
     "ぐつぐつメラメラの熱いヤツ": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+4</span>\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "パワー<span class=\"status_plus_value\">+4</span>\n根性<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "クライマックス1戦目にむけて": [
@@ -894,43 +894,43 @@
     "高貴なる香り": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+4</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+4</span>\n賢さ<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "ゴーゴー！ヤングのお部屋☆": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "パワー<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "古書とコーヒーの縁": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "賢さ<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "コスメを選んで！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "賢さ<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "こっちの戦いは苦手です": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "賢さ<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "こども交通教室をお手伝い！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "賢さ<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "最高のクリスマスを！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "体力<span class=\"status_plus_value\">+30</span>\n<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "体力<span class=\"status_plus_value\">+30</span>\nパワー<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "最優秀クラシックウマ娘選出！": [
@@ -966,49 +966,49 @@
     "縛られる子、縛られない子": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "ジャスティス・ビコー参上！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+4</span>\n<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+4</span>\nパワー<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "充実・夏合宿計画": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "聖蹄祭の、密やかな苦悩": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+6</span>\nスキルPt<span class=\"status_plus_value\">+20</span>"
+        "choice_effect": "パワー<span class=\"status_plus_value\">+6</span>\nスキルPt<span class=\"status_plus_value\">+20</span>"
       }
     ],
     "聖夜のサプライズ": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "体力<span class=\"status_plus_value\">+30</span>\n<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "体力<span class=\"status_plus_value\">+30</span>\nスタミナ<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "先生？親？それとも……": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "賢さ<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "先輩よろしくお願いします！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "根性<span class=\"status_plus_value\">+6</span>\n賢さ<span class=\"status_plus_value\">+6</span>"
       }
     ],
     "前略・桜の下より": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "そういう時間だって必要": [
@@ -1020,25 +1020,25 @@
     "遭難！にゃんにゃんアイランド": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "体力<span class=\"status_plus_value\">+20</span>\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "体力<span class=\"status_plus_value\">+20</span>\n根性<span class=\"status_plus_value\">+6</span>"
       }
     ],
     "その星が鼓するは": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "それぞれの格言": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+4</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "根性<span class=\"status_plus_value\">+4</span>\n賢さ<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "それは鎧、それは杖、それは蹄鉄": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "♯尊敬するあなたに": [
@@ -1050,7 +1050,7 @@
     "ターゲット捕捉☆": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "体力<span class=\"status_plus_value\">+20</span>\n<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "体力<span class=\"status_plus_value\">+20</span>\nスタミナ<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "誰が為に最強は在る": [
@@ -1080,97 +1080,97 @@
     "タネも仕掛けも？": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "楽しいお茶会にしよう": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+4</span>\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+4</span>\n根性<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "たまには、ホワイトに": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "体力<span class=\"status_plus_value\">+20</span>\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "体力<span class=\"status_plus_value\">+20</span>\n根性<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "誰かのためのチョコレート": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "やる気アップ\n<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "やる気アップ\nパワー<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "小さな魔女と英雄の出会い": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "賢さ<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "父の日はパパごっこ": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "蹄鉄ならイクノにおまかせ！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "パワー<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "でこぼこトライアングル": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+4</span>\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "パワー<span class=\"status_plus_value\">+4</span>\n根性<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "デジたんがやらねば……！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+4</span>\n<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+4</span>\nパワー<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "テストでもっとステップアップ！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "賢さ<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "東西歌合戦？": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "根性<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "同室の朝は騒がしい！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+4</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+4</span>\n賢さ<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "ドキッ☆ワイルド王子と遭遇！？": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+4</span>\n<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+4</span>\nパワー<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "突然の雨！からの……": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "体力<span class=\"status_plus_value\">+20</span>\n<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "体力<span class=\"status_plus_value\">+20</span>\nスピード<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "トリックしてやるのだ！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "やる気アップ\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "やる気アップ\n賢さ<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "とりまのだべり": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "根性<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "トレーナー顔負けの……？": [
@@ -1182,115 +1182,115 @@
     "ナウ&ヤングな挑戦者": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+4</span>\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+4</span>\n根性<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "謎の天才ゲーマーを追え！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+4</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "根性<span class=\"status_plus_value\">+4</span>\n賢さ<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "夏に華咲け！天下のウマ娘！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+6</span>\nスキルpt<span class=\"status_plus_value\">+20</span>"
+        "choice_effect": "根性<span class=\"status_plus_value\">+6</span>\nスキルpt<span class=\"status_plus_value\">+20</span>"
       }
     ],
     "夏の祭典～準備は万全～": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "パワー<span class=\"status_plus_value\">+6</span>\n賢さ<span class=\"status_plus_value\">+6</span>"
       }
     ],
     "夏の夜はご用心★": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "根性<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "逃・げ・切・り？": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "年長者を大切に": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "ハードボイルド・ラーニング": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+4</span>\n<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+4</span>\nパワー<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "白昼の決闘・おはぎ譲り合い決戦": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+4</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+4</span>\n賢さ<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "畑の騎士団": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+4</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "パワー<span class=\"status_plus_value\">+4</span>\n賢さ<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "ハッピーバレンタイン♪": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "やる気アップ\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "やる気アップ\n賢さ<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "初雪、来りて": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "花を見守る者": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+20</span>"
+        "choice_effect": "賢さ<span class=\"status_plus_value\">+20</span>"
       }
     ],
     "速くて長～いフェスの1日": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "春シニア二冠の違い": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+4</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "パワー<span class=\"status_plus_value\">+4</span>\n賢さ<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "ハロウィン、よいちょ！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "やる気アップ\n<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "やる気アップ\nスピード<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "ヒーロー&ヒロイン映画の秋": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "パワー<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "ビギナー向け読書週間？": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "やる気アップ\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "やる気アップ\n賢さ<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "ヒミツの校舎裏": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "根性<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "ファル子の愛情ブレンド☆": [
@@ -1302,7 +1302,7 @@
     "フォロワー：3、から繋がる": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "袋いっぱい、頑張ったから": [
@@ -1314,25 +1314,25 @@
     "冬の祭典～原稿やらなきゃ～": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "根性<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "まあ、アイスでも食べようよ": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "賢さ<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "マチカネ部屋の人々": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+4</span>\n<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+4</span>\nパワー<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "祭囃しに思いを乗せて": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+6</span>\n賢さ<span class=\"status_plus_value\">+6</span>"
       }
     ],
     "魔法×実験=？": [
@@ -1344,49 +1344,49 @@
     "耳のお手入れは丁寧に": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">賢さ</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "賢さ<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "みんなだから、最高！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+6</span>\nパワー<span class=\"status_plus_value\">+6</span>"
       }
     ],
     "みんなでかえろ": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "みんなで楽しくBBQ！": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "メジロ家の書き初め": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "メジロのプラビでパーリナイ☆": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+6</span>\nパワー<span class=\"status_plus_value\">+6</span>"
       }
     ],
     "優雅にペアダンス": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "スピード<span class=\"status_plus_value\">+12</span>"
       }
     ],
     "雪の思い出、ユキノの想い": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+6</span>\n<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "パワー<span class=\"status_plus_value\">+6</span>\n根性<span class=\"status_plus_value\">+6</span>"
       }
     ],
     "夢の先へ": [
@@ -1410,19 +1410,19 @@
     "ラッキーのおすそわけ": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+8</span>"
+        "choice_effect": "スタミナ<span class=\"status_plus_value\">+8</span>"
       }
     ],
     "レッツはちみー♪": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "体力<span class=\"status_plus_value\">+20</span>\n<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">スタミナ</span><span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "体力<span class=\"status_plus_value\">+20</span>\nスタミナ<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "私とダンスを": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">パワー</span><span class=\"status_plus_value\">+12</span>"
+        "choice_effect": "パワー<span class=\"status_plus_value\">+12</span>"
       }
     ]
   },
@@ -1434,7 +1434,7 @@
       },
       {
         "choice_title": "激しく情熱を燃やして！盛大に歌う！",
-        "choice_effect": "パッション<span class=\"status_plus_value\">+20</span>"
+        "choice_effect": "<img src=\"../UmaMisc/Image/ScenarioStatus/performance_Pa.png\">パッション<span class=\"status_plus_value\">+20</span>"
       }
     ],
     "あなたと私を繋げるライブ": [
@@ -1462,11 +1462,11 @@
     "提案ッ！新曲プロデュース！": [
       {
         "choice_title": "ファルコンの気持ちを味わってもらうとか？",
-        "choice_effect": "パッション<span class=\"status_plus_value\">+20</span>\n理事長の絆ゲージ<span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "<img src=\"../UmaMisc/Image/ScenarioStatus/performance_Pa.png\">パッション<span class=\"status_plus_value\">+20</span>\n理事長の絆ゲージ<span class=\"status_plus_value\">+10</span>"
       },
       {
         "choice_title": "初心にかえりましょう！",
-        "choice_effect": "メンタル<span class=\"status_plus_value\">+20</span>\n理事長の絆ゲージ<span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "<img src=\"../UmaMisc/Image/ScenarioStatus/performance_Me.png\">メンタル<span class=\"status_plus_value\">+20</span>\n理事長の絆ゲージ<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "できることから": [
@@ -1476,7 +1476,7 @@
       },
       {
         "choice_title": "俺も付き合います！",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "根性<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "1stライブ、終了！": [
@@ -1566,7 +1566,7 @@
     "歌は上手ですか？": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "ボーカル<span class=\"status_plus_value\">+20</span>"
+        "choice_effect": "<img src=\"../UmaMisc/Image/ScenarioStatus/performance_Vo.png\">ボーカル<span class=\"status_plus_value\">+20</span>"
       }
     ],
     "大きな夢を叶えるために": [
@@ -1608,7 +1608,7 @@
     "揺れた心": [
       {
         "choice_title": "選択肢なし",
-        "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">根性</span><span class=\"status_plus_value\">+10</span>\nスキルPt<span class=\"status_plus_value\">+10</span>\nメンバーが加入"
+        "choice_effect": "根性<span class=\"status_plus_value\">+10</span>\nスキルPt<span class=\"status_plus_value\">+10</span>\nメンバーが加入"
       }
     ],
     "ライトが当たらない場所で": [

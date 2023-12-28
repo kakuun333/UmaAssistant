@@ -1,16 +1,4 @@
 {
-  "超遊び癖": {
-    "tw_skill_title": "超愛玩之心",
-    "tw_skill_effect": "變得非常不擅長起跑並起跑延遲\n起跑時的加速力下降\n此技能於培育結束後消失",
-    "tw_upper_skill": null,
-    "tw_lower_skill": null
-  },
-  "中距離レースへの想い": {
-    "tw_skill_title": "對中距離競賽的意志",
-    "tw_skill_effect": "變得擅長草地．中距離競賽\n此技能為活動專用",
-    "tw_upper_skill": null,
-    "tw_lower_skill": null
-  },
   "長距離レースへの想い": {
     "tw_skill_title": "對長距離競賽的意志",
     "tw_skill_effect": "變得擅長草地．長距離競賽\n此技能為活動專用",
@@ -1220,7 +1208,7 @@
   "短距離直線◎": {
     "tw_skill_title": "短距離直線◎",
     "tw_skill_effect": "在直線速度稍微上升＜短距離＞",
-    "tw_upper_skill": null,
+    "tw_upper_skill": "紫電一閃",
     "tw_lower_skill": "短距離直線◯"
   },
   "短距離直線◯": {
@@ -1228,6 +1216,12 @@
     "tw_skill_effect": "在直線速度略微上升＜短距離＞",
     "tw_upper_skill": "短距離直線◎",
     "tw_lower_skill": null
+  },
+  "紫電一閃": {
+    "tw_skill_title": "紫電一閃",
+    "tw_skill_effect": "在直線速度上升＜短距離＞",
+    "tw_upper_skill": null,
+    "tw_lower_skill": "短距離直線◎"
   },
   "短距離コーナー◎": {
     "tw_skill_title": "短距離彎道◎",
@@ -1255,13 +1249,13 @@
   },
   "プランX": {
     "tw_skill_title": "X計劃",
-    "tw_skill_effect": "接近競賽後期時若位於隊列前方\n會容易追過對手＜短距離＞",
+    "tw_skill_effect": "接近競賽後期時若位於隊列前方\n會變得容易追過對手＜短距離＞",
     "tw_upper_skill": null,
     "tw_lower_skill": "善後策略"
   },
   "善後策": {
     "tw_skill_title": "善後策略",
-    "tw_skill_effect": "接近競賽後期時若位於隊列前方\n會略微容易追過對手＜短距離＞",
+    "tw_skill_effect": "接近競賽後期時若位於隊列前方\n會略微變得容易追過對手＜短距離＞",
     "tw_upper_skill": "X計劃",
     "tw_lower_skill": null
   },
@@ -1586,7 +1580,7 @@
   "逃げコーナー◎": {
     "tw_skill_title": "領頭彎道◎",
     "tw_skill_effect": "在彎道速度稍微上升\n＜作戰．領頭＞",
-    "tw_upper_skill": null,
+    "tw_upper_skill": "陣風圓刃",
     "tw_lower_skill": "領頭彎道◯"
   },
   "逃げコーナー◯": {
@@ -1594,6 +1588,12 @@
     "tw_skill_effect": "在彎道速度略微上升\n＜作戰．領頭＞",
     "tw_upper_skill": "領頭彎道◎",
     "tw_lower_skill": null
+  },
+  "陣風円刃": {
+    "tw_skill_title": "陣風圓刃",
+    "tw_skill_effect": "在彎道速度上升\n＜作戰．領頭＞",
+    "tw_upper_skill": null,
+    "tw_lower_skill": "領頭彎道◎"
   },
   "シックスセンス": {
     "tw_skill_title": "第六感",
@@ -1709,16 +1709,10 @@
     "tw_upper_skill": "貪吃鬼",
     "tw_lower_skill": null
   },
-  "くじけぬ精神": {
-    "tw_skill_title": "不屈不撓",
-    "tw_skill_effect": "在競賽中期若位於隊列後方\n加速力會稍微上升＜作戰．前列＞",
-    "tw_upper_skill": null,
-    "tw_lower_skill": "重整態勢"
-  },
   "まき直し": {
     "tw_skill_title": "重整態勢",
     "tw_skill_effect": "在競賽中期若位於隊列後方\n加速力會略微上升＜作戰．前列＞",
-    "tw_upper_skill": "不屈不撓",
+    "tw_upper_skill": null,
     "tw_lower_skill": null
   },
   "幻惑のかく乱": {
@@ -1736,7 +1730,7 @@
   "差し直線◎": {
     "tw_skill_title": "居中直線◎",
     "tw_skill_effect": "在直線速度稍微上升\n＜作戰．居中＞",
-    "tw_upper_skill": null,
+    "tw_upper_skill": "銳腳一閃",
     "tw_lower_skill": "居中直線◯"
   },
   "差し直線◯": {
@@ -1745,10 +1739,16 @@
     "tw_upper_skill": "居中直線◎",
     "tw_lower_skill": null
   },
+  "鋭脚一閃": {
+    "tw_skill_title": "銳腳一閃",
+    "tw_skill_effect": "在直線速度上升\n＜作戰．居中＞",
+    "tw_upper_skill": null,
+    "tw_lower_skill": "居中直線◎"
+  },
   "差しコーナー◎": {
     "tw_skill_title": "居中彎道◎",
     "tw_skill_effect": "在彎道速度稍微上升\n＜作戰．居中＞",
-    "tw_upper_skill": null,
+    "tw_upper_skill": "銳腳圓刃",
     "tw_lower_skill": "居中彎道◯"
   },
   "差しコーナー◯": {
@@ -1756,6 +1756,12 @@
     "tw_skill_effect": "在彎道速度略微上升\n＜作戰．居中＞",
     "tw_upper_skill": "居中彎道◎",
     "tw_lower_skill": null
+  },
+  "鋭脚円刃": {
+    "tw_skill_title": "銳腳圓刃",
+    "tw_skill_effect": "在彎道速度上升\n＜作戰．居中＞",
+    "tw_upper_skill": null,
+    "tw_lower_skill": "居中彎道◎"
   },
   "努力家": {
     "tw_skill_title": "奮發圖強",
@@ -2030,8 +2036,14 @@
   "スリップストリーム": {
     "tw_skill_title": "滑流",
     "tw_skill_effect": "若緊跟在前方賽馬娘的後方\n會略微不易受到風阻",
-    "tw_upper_skill": null,
+    "tw_upper_skill": "搶到好位置了！",
     "tw_lower_skill": null
+  },
+  "いいとこ入った！": {
+    "tw_skill_title": "搶到好位置了！",
+    "tw_skill_effect": "若緊跟在前方賽馬娘的後方\n會不易受到風阻",
+    "tw_upper_skill": null,
+    "tw_lower_skill": "滑流"
   },
   "遊びはおしまいっ！": {
     "tw_skill_title": "遊戲到此為止了！",
@@ -2291,10 +2303,16 @@
     "tw_upper_skill": null,
     "tw_lower_skill": null
   },
+  "至高のダウンヒラー": {
+    "tw_skill_title": "至高的下坡強者",
+    "tw_skill_effect": "下坡時速度上升",
+    "tw_upper_skill": null,
+    "tw_lower_skill": "下坡靈巧"
+  },
   "下り坂巧者": {
     "tw_skill_title": "下坡靈巧",
     "tw_skill_effect": "在下坡速度略微上升",
-    "tw_upper_skill": null,
+    "tw_upper_skill": "至高的下坡強者",
     "tw_lower_skill": null
   },
   "99 Problems": {
@@ -2573,6 +2591,180 @@
     "tw_upper_skill": "大意失荊州",
     "tw_lower_skill": null
   },
+  "アンストッパブル": {
+    "tw_skill_title": "勢不可擋",
+    "tw_skill_effect": "在競賽中期速度上升\n＜作戰．前列＞",
+    "tw_upper_skill": null,
+    "tw_lower_skill": "進攻的姿態"
+  },
+  "攻めの姿勢": {
+    "tw_skill_title": "進攻的姿態",
+    "tw_skill_effect": "在競賽中期速度略微上升\n＜作戰．前列＞",
+    "tw_upper_skill": "勢不可擋",
+    "tw_lower_skill": null
+  },
+  "ブレイクスルー": {
+    "tw_skill_title": "突破",
+    "tw_skill_effect": "在競賽中期若位於最後方附近速度會上升\n並變得擅長爭搶賽道＜作戰．後追＞",
+    "tw_upper_skill": null,
+    "tw_lower_skill": "突圍計策"
+  },
+  "打開策": {
+    "tw_skill_title": "突圍計策",
+    "tw_skill_effect": "在競賽中期若位於最後方附近\n速度會略微上升\n並變得略微擅長爭搶賽道＜作戰．後追＞",
+    "tw_upper_skill": "突破",
+    "tw_lower_skill": null
+  },
+  "出力1000％！": {
+    "tw_skill_title": "1000％輸出！",
+    "tw_skill_effect": "在競賽中期的一開始\n大幅消耗持久力\n使速度大幅上升＜作戰．領頭＞",
+    "tw_upper_skill": null,
+    "tw_lower_skill": "孜孜不倦"
+  },
+  "しゃかりき": {
+    "tw_skill_title": "孜孜不倦",
+    "tw_skill_effect": "在競賽中期的一開始\n大幅消耗持久力\n使速度稍微上升＜作戰．領頭＞",
+    "tw_upper_skill": "1000％輸出！",
+    "tw_lower_skill": null
+  },
+  "電光石火": {
+    "tw_skill_title": "電光石火",
+    "tw_skill_effect": "在競賽後期若於隊列後方準備追過對手\n加速力上升＜短距離．一哩＞",
+    "tw_upper_skill": null,
+    "tw_lower_skill": "一飛衝天"
+  },
+  "一足飛び": {
+    "tw_skill_title": "一飛衝天",
+    "tw_skill_effect": "在競賽後期若於隊列後方準備追過對手\n加速力略微上升＜短距離．一哩＞",
+    "tw_upper_skill": "電光石火",
+    "tw_lower_skill": null
+  },
+  "風雲の志": {
+    "tw_skill_title": "風雲之志",
+    "tw_skill_effect": "即將進入競賽後期時，潛伏於第2之後，\n且距離最前頭2身距以內一段時間內\n速度會稍微上升＜作戰．前列＞",
+    "tw_upper_skill": null,
+    "tw_lower_skill": "上進心"
+  },
+  "向上心": {
+    "tw_skill_title": "上進心",
+    "tw_skill_effect": "即將進入競賽後期時，潛伏於第2之後，\n且距離最前頭2身距以內一段時間內\n速度會些微上升＜作戰．前列＞",
+    "tw_upper_skill": "風雲之志",
+    "tw_lower_skill": null
+  },
+  "無我夢中": {
+    "tw_skill_title": "渾然忘我",
+    "tw_skill_effect": "在最後衝刺階段若位於隊列中段之後\n稍微消耗持久力使加速力上升\n＜居中．長距離＞",
+    "tw_upper_skill": null,
+    "tw_lower_skill": "不顧一切"
+  },
+  "がむしゃら": {
+    "tw_skill_title": "不顧一切",
+    "tw_skill_effect": "在最後衝刺階段若位於隊列中段之後\n稍微消耗持久力使加速力略微上升\n＜居中．長距離＞",
+    "tw_upper_skill": "渾然忘我",
+    "tw_lower_skill": null
+  },
+  "快進撃": {
+    "tw_skill_title": "過關斬將",
+    "tw_skill_effect": "接近後期時若位居領先或\n距離最前頭4身距以內\n速度及加速力稍微上升＜前列．中距離＞",
+    "tw_upper_skill": null,
+    "tw_lower_skill": "穩健的步伐"
+  },
+  "確かな足取り": {
+    "tw_skill_title": "穩健的步伐",
+    "tw_skill_effect": "接近後期時若位居領先或\n距離最前頭4身距以內\n速度及加速力些微上升＜前列．中距離＞",
+    "tw_upper_skill": "過關斬將",
+    "tw_lower_skill": null
+  },
+  "勝負師": {
+    "tw_skill_title": "賭徒",
+    "tw_skill_effect": "在競賽時偶爾發揮更強大的實力\n使速度、力量、意志力大幅上升\n支持度低時變得容易發揮能力",
+    "tw_upper_skill": null,
+    "tw_lower_skill": "投機取巧"
+  },
+  "やまっけ": {
+    "tw_skill_title": "投機取巧",
+    "tw_skill_effect": "在競賽時極小機率發揮更強大的實力\n使速度、力量、意志力稍微上升\n支持度低時變得容易發揮能力",
+    "tw_upper_skill": "賭徒",
+    "tw_lower_skill": null
+  },
+  "トップギア": {
+    "tw_skill_title": "最高檔速",
+    "tw_skill_effect": "在最後直線若位列第2之後\n且距離最前頭4身距內時\n速度大幅上升＜作戰．居中＞",
+    "tw_upper_skill": null,
+    "tw_lower_skill": "迅猛之腳"
+  },
+  "キレる脚": {
+    "tw_skill_title": "迅猛之腳",
+    "tw_skill_effect": "在最後直線若位列第2之後\n且距離最前頭4身距內時\n速度稍微上升＜作戰．居中＞",
+    "tw_upper_skill": "最高檔速",
+    "tw_lower_skill": null
+  },
+  "踏ませぬ影": {
+    "tw_skill_title": "遙不可及的影子",
+    "tw_skill_effect": "在最後直線若位居領先\n且後方1身距內有其他賽馬娘時\n速度大幅上升＜作戰．領頭＞",
+    "tw_upper_skill": null,
+    "tw_lower_skill": "堅定不移"
+  },
+  "粘り腰": {
+    "tw_skill_title": "堅定不移",
+    "tw_skill_effect": "在最後直線若位居領先\n且後方1身距內有其他賽馬娘時\n速度稍微上升＜作戰．領頭＞",
+    "tw_upper_skill": "遙不可及的影子",
+    "tw_lower_skill": null
+  },
+  "猛追": {
+    "tw_skill_title": "猛追",
+    "tw_skill_effect": "在競賽後半若準備追過對手\n速度會上升＜前列/居中＞",
+    "tw_upper_skill": null,
+    "tw_lower_skill": "咬住不放"
+  },
+  "食らいつき": {
+    "tw_skill_title": "咬住不放",
+    "tw_skill_effect": "在競賽後半若準備追過對手\n速度會略微上升＜前列/居中＞",
+    "tw_upper_skill": "猛追",
+    "tw_lower_skill": null
+  },
+  "怪物": {
+    "tw_skill_title": "怪物",
+    "tw_skill_effect": "在即將進入競賽後期時，\n若位居領先或距離最前頭4身距內時\n競賽後期加速力上升＜前列．長距離＞",
+    "tw_upper_skill": "發揮本領",
+    "tw_lower_skill": null
+  },
+  "本領発揮": {
+    "tw_skill_title": "發揮本領",
+    "tw_skill_effect": "在即將進入競賽後期時，\n若位居領先或距離最前頭4身距內時競賽\n後期加速力略微上升＜前列．長距離＞",
+    "tw_upper_skill": null,
+    "tw_lower_skill": null
+  },
+  "抜群の切れ味": {
+    "tw_skill_title": "過人的衝勁",
+    "tw_skill_effect": "在進入競賽後期前若不暴衝並持續\n潛伏於隊列後方，會在後期的一開始\n加速力上升＜作戰．後追＞",
+    "tw_upper_skill": "衝勁",
+    "tw_lower_skill": null
+  },
+  "切れ味": {
+    "tw_skill_title": "衝勁",
+    "tw_skill_effect": "在進入競賽後期前若不暴衝並持續\n潛伏於隊列後方，會在後期的一開始\n加速力略微上升＜作戰．後追＞",
+    "tw_upper_skill": null,
+    "tw_lower_skill": null
+  },
+  "遮二無二": {
+    "tw_skill_title": "義無反顧",
+    "tw_skill_effect": "接近競賽後期時若位於隊列前方\n速度會上升＜一哩＞",
+    "tw_upper_skill": null,
+    "tw_lower_skill": "不顧後果"
+  },
+  "向こう見ず": {
+    "tw_skill_title": "不顧後果",
+    "tw_skill_effect": "接近競賽後期時若位於隊列前方\n速度會略微上升＜一哩＞",
+    "tw_upper_skill": "義無反顧",
+    "tw_lower_skill": null
+  },
+  "1番人気でヤバたん": {
+    "tw_skill_title": "超厲害的第一名支持度",
+    "tw_skill_effect": "因為看了報紙而變得幹勁十足\n稍微變得容易暴衝",
+    "tw_upper_skill": null,
+    "tw_lower_skill": null
+  },
   "アオハル燃焼・速": {
     "tw_skill_title": "青春燃燒．速度",
     "tw_skill_effect": "在競賽中期燃燒青春魂，\n競賽中隊伍成員的速度\n合計值越高，速度便隨之上升",
@@ -2645,21 +2837,63 @@
     "tw_upper_skill": "一等星",
     "tw_lower_skill": null
   },
-  "癒えない渇き": {
-    "tw_skill_title": "止不住的渴望",
-    "tw_skill_effect": "基於對競賽的渴望\n會稍微變得容易發揮能力",
+  "キミと勝ちたい": {
+    "tw_skill_title": "想和你一起獲得勝利",
+    "tw_skill_effect": "在競賽後半若位於隊列前方\n速度上升、加速力略微上升\n粉絲越多效果越高",
+    "tw_upper_skill": null,
+    "tw_lower_skill": "夢想的途中"
+  },
+  "夢の途中": {
+    "tw_skill_title": "夢想的途中",
+    "tw_skill_effect": "在競賽後半若位於隊列前方\n速度略微上升、加速力稍稍上升\n粉絲越多效果越高",
+    "tw_upper_skill": "想和你一起獲得勝利",
+    "tw_lower_skill": null
+  },
+  "限界の先へ": {
+    "tw_skill_title": "超越極限",
+    "tw_skill_effect": "在最後衝刺階段速度上升\n依照最優秀的基礎能力數值\n提高效果",
+    "tw_upper_skill": null,
+    "tw_lower_skill": "只注視前方"
+  },
+  "前だけ見据えて": {
+    "tw_skill_title": "只注視前方",
+    "tw_skill_effect": "在最後衝刺階段速度略微上升\n依照最優秀的基礎能力數值\n提高效果",
+    "tw_upper_skill": "超越極限",
+    "tw_lower_skill": null
+  },
+  "レースの真髄・速": {
+    "tw_skill_title": "競賽的精髓．速度",
+    "tw_skill_effect": "接近競賽後期時\n速度會略微上升",
     "tw_upper_skill": null,
     "tw_lower_skill": null
   },
-  "胸を張れダービーウマ娘": {
-    "tw_skill_title": "抬頭挺胸打比賽馬娘",
-    "tw_skill_effect": "因為感覺自己朝\n日本第一的賽馬娘更進一步\n而稍微變得容易發揮能力",
+  "レースの真髄・体": {
+    "tw_skill_title": "競賽的精髓．體能",
+    "tw_skill_effect": "在最後衝刺階段稍微消耗持久力\n使速度稍微上升",
     "tw_upper_skill": null,
     "tw_lower_skill": null
   },
-  "チームの一員として": {
-    "tw_skill_title": "身為隊伍的一員",
-    "tw_skill_effect": "基於絕對要在隊伍眾人\n所掛念的競賽中獲勝的心情\n而大幅變得容易發揮能力",
+  "レースの真髄・力": {
+    "tw_skill_title": "競賽的精髓．力量",
+    "tw_skill_effect": "在最後衝刺階段若準備追過對手\n一段時間內速度會略微上升",
+    "tw_upper_skill": null,
+    "tw_lower_skill": null
+  },
+  "レースの真髄・根": {
+    "tw_skill_title": "競賽的精髓．意志",
+    "tw_skill_effect": "同位競爭時\n加速力會略微上升",
+    "tw_upper_skill": null,
+    "tw_lower_skill": null
+  },
+  "レースの真髄・賢": {
+    "tw_skill_title": "競賽的精髓．智慧",
+    "tw_skill_effect": "在競賽後半若發動2次技能\n速度會略微上升",
+    "tw_upper_skill": null,
+    "tw_lower_skill": null
+  },
+  "レースの真髄・心": {
+    "tw_skill_title": "競賽的精髓．心得",
+    "tw_skill_effect": "幹勁狀態為良好或絕佳時\n持久力、意志力、智力\n可能會稍微上升",
     "tw_upper_skill": null,
     "tw_lower_skill": null
   }

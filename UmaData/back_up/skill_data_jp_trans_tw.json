@@ -394,7 +394,7 @@
       },
       "やまっけ": {
         "lower_skill": null,
-        "skill_effect": "レースでごくまれにさらなる力を発揮しスピード、パワー、根性が少し上がる。人気が低いと力を発揮しやすくなる",
+        "skill_effect": "在競賽時極小機率發揮更強大的實力\n使速度、力量、意志力稍微上升\n支持度低時變得容易發揮能力",
         "skill_icon_name": "i_skill_g_n_1",
         "skill_pt": "180",
         "upper_skill": "勝負師"
@@ -429,7 +429,7 @@
       },
       "レースの真髄・心": {
         "lower_skill": null,
-        "skill_effect": "やる気が好調か絶好調だとスタミナ、根性、賢さが少し上がる",
+        "skill_effect": "幹勁狀態為良好或絕佳時\n持久力、意志力、智力\n可能會稍微上升",
         "skill_icon_name": "i_skill_g_n_2",
         "skill_pt": "150",
         "upper_skill": null
@@ -1075,7 +1075,7 @@
       },
       "勝負師": {
         "lower_skill": "やまっけ",
-        "skill_effect": "レースでたまにさらなる力を発揮しスピード、パワー、根性がすごく上がる。人気が低いと力を発揮しやすくなる",
+        "skill_effect": "在競賽時偶爾發揮更強大的實力\n使速度、力量、意志力大幅上升\n支持度低時變得容易發揮能力",
         "skill_icon_name": "i_skill_g_r_1",
         "skill_pt": "180",
         "upper_skill": null
@@ -1481,7 +1481,7 @@
       },
       "がむしゃら": {
         "lower_skill": null,
-        "skill_effect": "ラストスパートで中団以降にいると持久力を少し使って加速力がわずかに上がる＜差し・長距離＞",
+        "skill_effect": "在最後衝刺階段若位於隊列中段之後\n稍微消耗持久力使加速力略微上升\n＜居中．長距離＞",
         "skill_icon_name": "i_skill_y_n_2",
         "skill_pt": "180",
         "upper_skill": "無我夢中"
@@ -1502,7 +1502,7 @@
       },
       "しゃかりき": {
         "lower_skill": null,
-        "skill_effect": "レース中盤始めの方に持久力をすごく使って速度を少し上げる＜作戦・逃げ＞",
+        "skill_effect": "在競賽中期的一開始\n大幅消耗持久力\n使速度稍微上升＜作戰．領頭＞",
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "180",
         "upper_skill": "出力1000％！"
@@ -1586,7 +1586,7 @@
       },
       "キレる脚": {
         "lower_skill": null,
-        "skill_effect": "最終直線で2番手以降で先頭から4バ身以内にいると速度が少し上がる＜作戦・差し＞",
+        "skill_effect": "在最後直線若位列第2之後\n且距離最前頭4身距內時\n速度稍微上升＜作戰．居中＞",
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "180",
         "upper_skill": "トップギア"
@@ -1719,35 +1719,35 @@
       },
       "レースの真髄・体": {
         "lower_skill": null,
-        "skill_effect": "ラストスパートで持久力を少し使い速度が少し上がる",
+        "skill_effect": "在最後衝刺階段稍微消耗持久力\n使速度稍微上升",
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "150",
         "upper_skill": null
       },
       "レースの真髄・力": {
         "lower_skill": null,
-        "skill_effect": "ラストスパートで追い越そうとするとしばらくの間速度がわずかに上がる",
+        "skill_effect": "在最後衝刺階段若準備追過對手\n一段時間內速度會略微上升",
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "150",
         "upper_skill": null
       },
       "レースの真髄・根": {
         "lower_skill": null,
-        "skill_effect": "追い比べをするとき加速力がわずかに上がる",
+        "skill_effect": "同位競爭時\n加速力會略微上升",
         "skill_icon_name": "i_skill_y_n_2",
         "skill_pt": "150",
         "upper_skill": null
       },
       "レースの真髄・賢": {
         "lower_skill": null,
-        "skill_effect": "レース後半にスキルを2回発動させると速度がわずかに上がる",
+        "skill_effect": "在競賽後半若發動2次技能\n速度會略微上升",
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "150",
         "upper_skill": null
       },
       "レースの真髄・速": {
         "lower_skill": null,
-        "skill_effect": "レース終盤が迫ったとき速度がわずかに上がる",
+        "skill_effect": "接近競賽後期時\n速度會略微上升",
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "150",
         "upper_skill": null
@@ -1782,7 +1782,7 @@
       },
       "一足飛び": {
         "lower_skill": null,
-        "skill_effect": "レース終盤に後方で追い抜こうとすると加速力がわずかに上がる＜短距離/マイル＞",
+        "skill_effect": "在競賽後期若於隊列後方準備追過對手\n加速力略微上升＜短距離．一哩＞",
         "skill_icon_name": "i_skill_y_n_2",
         "skill_pt": "180",
         "upper_skill": "電光石火"
@@ -1929,14 +1929,14 @@
       },
       "切れ味": {
         "lower_skill": null,
-        "skill_effect": "レース終盤突入時まで掛からず後方に控え続けていると、終盤始めの方で加速力がわずかに上がる＜作戦・追込＞",
+        "skill_effect": "在進入競賽後期前若不暴衝並持續\n潛伏於隊列後方，會在後期的一開始\n加速力略微上升＜作戰．後追＞",
         "skill_icon_name": "i_skill_y_n_2",
         "skill_pt": "180",
         "upper_skill": "抜群の切れ味"
       },
       "前だけ見据えて": {
         "lower_skill": null,
-        "skill_effect": "ラストスパートで速度がわずかに上がる<br>最も優れた基礎能力の高さに応じて効果が高まる",
+        "skill_effect": "在最後衝刺階段速度略微上升\n依照最優秀的基礎能力數值\n提高效果",
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "200",
         "upper_skill": "限界の先へ"
@@ -1978,14 +1978,14 @@
       },
       "向こう見ず": {
         "lower_skill": null,
-        "skill_effect": "レース終盤が迫ったとき前方にいると速度がわずかに上がる＜マイル＞",
+        "skill_effect": "接近競賽後期時若位於隊列前方\n速度會略微上升＜一哩＞",
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "180",
         "upper_skill": "遮二無二"
       },
       "向上心": {
         "lower_skill": null,
-        "skill_effect": "レース終盤目前、2番手以降に控えて先頭から2バ身以内だとしばらくの間速度がちょっと上がる＜作戦・先行＞",
+        "skill_effect": "即將進入競賽後期時，潛伏於第2之後，\n且距離最前頭2身距以內一段時間內\n速度會些微上升＜作戰．前列＞",
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "180",
         "upper_skill": "風雲の志"
@@ -1999,7 +1999,7 @@
       },
       "善後策": {
         "lower_skill": null,
-        "skill_effect": "接近競賽後期時若位於隊列前方\n會略微容易追過對手＜短距離＞",
+        "skill_effect": "接近競賽後期時若位於隊列前方\n會略微變得容易追過對手＜短距離＞",
         "skill_icon_name": "i_skill_y_n_2",
         "skill_pt": "160",
         "upper_skill": "プランX"
@@ -2041,7 +2041,7 @@
       },
       "夢の途中": {
         "lower_skill": null,
-        "skill_effect": "レース後半に前の方だと速度がわずかに上がり、加速力がほんのわずかに上がる。ファン数が多いほど効果が高まる",
+        "skill_effect": "在競賽後半若位於隊列前方\n速度略微上升、加速力稍稍上升\n粉絲越多效果越高",
         "skill_icon_name": "i_skill_y_n_8",
         "skill_pt": "200",
         "upper_skill": "キミと勝ちたい"
@@ -2174,7 +2174,7 @@
       },
       "打開策": {
         "lower_skill": null,
-        "skill_effect": "レース中盤に最後方付近で速度がわずかに上がり、コース取りがわずかにうまくなる＜作戦・追込＞",
+        "skill_effect": "在競賽中期若位於最後方附近\n速度會略微上升\n並變得略微擅長爭搶賽道＜作戰．後追＞",
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "180",
         "upper_skill": "ブレイクスルー"
@@ -2202,7 +2202,7 @@
       },
       "攻めの姿勢": {
         "lower_skill": null,
-        "skill_effect": "レース中盤に速度がわずかに上がる＜作戦・先行＞",
+        "skill_effect": "在競賽中期速度略微上升\n＜作戰．前列＞",
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "180",
         "upper_skill": "アンストッパブル"
@@ -2230,7 +2230,7 @@
       },
       "本領発揮": {
         "lower_skill": null,
-        "skill_effect": "レース終盤目前に先頭か先頭から4バ身以内につけると、レース終盤に加速力がわずかに上がる＜先行・長距離＞",
+        "skill_effect": "在即將進入競賽後期時，\n若位居領先或距離最前頭4身距內時競賽\n後期加速力略微上升＜前列．長距離＞",
         "skill_icon_name": "i_skill_y_n_2",
         "skill_pt": "180",
         "upper_skill": "怪物"
@@ -2356,7 +2356,7 @@
       },
       "確かな足取り": {
         "lower_skill": null,
-        "skill_effect": "終盤が迫ったとき先頭にいるか先頭から4バ身以内だと速度と加速力がちょっと上がる＜先行・中距離＞",
+        "skill_effect": "接近後期時若位居領先或\n距離最前頭4身距以內\n速度及加速力些微上升＜前列．中距離＞",
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "170",
         "upper_skill": "快進撃"
@@ -2377,7 +2377,7 @@
       },
       "粘り腰": {
         "lower_skill": null,
-        "skill_effect": "最終直線で先頭のとき後ろ1バ身以内にウマ娘がいると速度が少し上がる＜作戦・逃げ＞",
+        "skill_effect": "在最後直線若位居領先\n且後方1身距內有其他賽馬娘時\n速度稍微上升＜作戰．領頭＞",
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "180",
         "upper_skill": "踏ませぬ影"
@@ -2566,7 +2566,7 @@
       },
       "食らいつき": {
         "lower_skill": null,
-        "skill_effect": "レース後半に追い抜こうとすると速度がわずかに上がる＜先行/差し＞",
+        "skill_effect": "在競賽後半若準備追過對手\n速度會略微上升＜前列/居中＞",
         "skill_icon_name": "i_skill_y_n_1",
         "skill_pt": "180",
         "upper_skill": "猛追"
@@ -2575,7 +2575,7 @@
     "rare": {
       "いいとこ入った！": {
         "lower_skill": "スリップストリーム",
-        "skill_effect": "前のウマ娘のすぐ後ろに付けると速度が上がる",
+        "skill_effect": "若緊跟在前方賽馬娘的後方\n會不易受到風阻",
         "skill_icon_name": "i_skill_y_r_1",
         "skill_pt": "160",
         "upper_skill": null
@@ -2596,7 +2596,7 @@
       },
       "くじけぬ精神": {
         "lower_skill": "まき直し",
-        "skill_effect": "在競賽中期若位於隊列後方\n加速力會稍微上升＜作戰．前列＞",
+        "skill_effect": "レース中盤に後ろの方にいると加速力が少し上がる＜作戦・先行＞",
         "skill_icon_name": "i_skill_y_r_2",
         "skill_pt": "120",
         "upper_skill": null
@@ -2645,7 +2645,7 @@
       },
       "アンストッパブル": {
         "lower_skill": "攻めの姿勢",
-        "skill_effect": "レース中盤に速度が上がる＜作戦・先行＞",
+        "skill_effect": "在競賽中期速度上升\n＜作戰．前列＞",
         "skill_icon_name": "i_skill_y_r_1",
         "skill_pt": "180",
         "upper_skill": null
@@ -2659,7 +2659,7 @@
       },
       "キミと勝ちたい": {
         "lower_skill": "夢の途中",
-        "skill_effect": "レース後半に前の方だと速度が上がりさらに加速力がわずかに上がる。ファン数が多いほど効果が高まる",
+        "skill_effect": "在競賽後半若位於隊列前方\n速度上升、加速力略微上升\n粉絲越多效果越高",
         "skill_icon_name": "i_skill_y_r_8",
         "skill_pt": "200",
         "upper_skill": null
@@ -2715,7 +2715,7 @@
       },
       "トップギア": {
         "lower_skill": "キレる脚",
-        "skill_effect": "最終直線で2番手以降で先頭から4バ身以内にいると速度がすごく上がる＜作戦・差し＞",
+        "skill_effect": "在最後直線若位列第2之後\n且距離最前頭4身距內時\n速度大幅上升＜作戰．居中＞",
         "skill_icon_name": "i_skill_y_r_1",
         "skill_pt": "180",
         "upper_skill": null
@@ -2764,14 +2764,14 @@
       },
       "ブレイクスルー": {
         "lower_skill": "打開策",
-        "skill_effect": "レース中盤に最後方付近で速度が上がり、コース取りがうまくなる＜作戦・追込＞",
+        "skill_effect": "在競賽中期若位於最後方附近速度會上升\n並變得擅長爭搶賽道＜作戰．後追＞",
         "skill_icon_name": "i_skill_y_r_1",
         "skill_pt": "180",
         "upper_skill": null
       },
       "プランX": {
         "lower_skill": "善後策",
-        "skill_effect": "接近競賽後期時若位於隊列前方\n會容易追過對手＜短距離＞",
+        "skill_effect": "接近競賽後期時若位於隊列前方\n會變得容易追過對手＜短距離＞",
         "skill_icon_name": "i_skill_y_r_2",
         "skill_pt": "160",
         "upper_skill": null
@@ -2904,7 +2904,7 @@
       },
       "出力1000％！": {
         "lower_skill": "しゃかりき",
-        "skill_effect": "レース中盤始めの方に持久力をすごく使って速度をすごく上げる＜作戦・逃げ＞",
+        "skill_effect": "在競賽中期的一開始\n大幅消耗持久力\n使速度大幅上升＜作戰．領頭＞",
         "skill_icon_name": "i_skill_y_r_1",
         "skill_pt": "180",
         "upper_skill": null
@@ -3057,7 +3057,7 @@
       },
       "快進撃": {
         "lower_skill": "確かな足取り",
-        "skill_effect": "終盤が迫ったとき先頭にいるか先頭から4バ身以内だと速度と加速力が少し上がる＜先行・中距離＞",
+        "skill_effect": "接近後期時若位居領先或\n距離最前頭4身距以內\n速度及加速力稍微上升＜前列．中距離＞",
         "skill_icon_name": "i_skill_y_r_1",
         "skill_pt": "170",
         "upper_skill": null
@@ -3071,7 +3071,7 @@
       },
       "怪物": {
         "lower_skill": "本領発揮",
-        "skill_effect": "レース終盤目前に先頭か先頭から4バ身以内につけると、レース終盤に加速力が上がる＜先行・長距離＞",
+        "skill_effect": "在即將進入競賽後期時，\n若位居領先或距離最前頭4身距內時\n競賽後期加速力上升＜前列．長距離＞",
         "skill_icon_name": "i_skill_y_r_2",
         "skill_pt": "180",
         "upper_skill": null
@@ -3092,7 +3092,7 @@
       },
       "抜群の切れ味": {
         "lower_skill": "切れ味",
-        "skill_effect": "レース終盤突入時まで掛からず後方に控え続けていると、終盤始めの方で加速力が上がる＜作戦・追込＞",
+        "skill_effect": "在進入競賽後期前若不暴衝並持續\n潛伏於隊列後方，會在後期的一開始\n加速力上升＜作戰．後追＞",
         "skill_icon_name": "i_skill_y_r_2",
         "skill_pt": "180",
         "upper_skill": null
@@ -3203,7 +3203,7 @@
       },
       "無我夢中": {
         "lower_skill": "がむしゃら",
-        "skill_effect": "ラストスパートで中団以降にいると持久力を少し使って加速力が上がる＜差し・長距離＞",
+        "skill_effect": "在最後衝刺階段若位於隊列中段之後\n稍微消耗持久力使加速力上升\n＜居中．長距離＞",
         "skill_icon_name": "i_skill_y_r_2",
         "skill_pt": "180",
         "upper_skill": null
@@ -3217,7 +3217,7 @@
       },
       "猛追": {
         "lower_skill": "食らいつき",
-        "skill_effect": "レース後半に追い抜こうとすると速度が上がる＜先行/差し＞",
+        "skill_effect": "在競賽後半若準備追過對手\n速度會上升＜前列/居中＞",
         "skill_icon_name": "i_skill_y_r_1",
         "skill_pt": "180",
         "upper_skill": null
@@ -3287,7 +3287,7 @@
       },
       "紫電一閃": {
         "lower_skill": "短距離直線◎",
-        "skill_effect": "直線で速度が上がる＜短距離＞",
+        "skill_effect": "在直線速度上升＜短距離＞",
         "skill_icon_name": "i_skill_y_r_1",
         "skill_pt": "150",
         "upper_skill": null
@@ -3301,7 +3301,7 @@
       },
       "至高のダウンヒラー": {
         "lower_skill": "下り坂巧者",
-        "skill_effect": "下り坂で速度が上がる",
+        "skill_effect": "下坡時速度上升",
         "skill_icon_name": "i_skill_y_r_1",
         "skill_pt": "170",
         "upper_skill": null
@@ -3350,7 +3350,7 @@
       },
       "踏ませぬ影": {
         "lower_skill": "粘り腰",
-        "skill_effect": "最終直線で先頭のとき後ろ1バ身以内にウマ娘がいると速度がすごく上がる＜作戦・逃げ＞",
+        "skill_effect": "在最後直線若位居領先\n且後方1身距內有其他賽馬娘時\n速度大幅上升＜作戰．領頭＞",
         "skill_icon_name": "i_skill_y_r_1",
         "skill_pt": "180",
         "upper_skill": null
@@ -3378,21 +3378,21 @@
       },
       "遮二無二": {
         "lower_skill": "向こう見ず",
-        "skill_effect": "レース終盤が迫ったとき前方にいると速度が上がる＜マイル＞",
+        "skill_effect": "接近競賽後期時若位於隊列前方\n速度會上升＜一哩＞",
         "skill_icon_name": "i_skill_y_r_1",
         "skill_pt": "180",
         "upper_skill": null
       },
       "鋭脚一閃": {
         "lower_skill": "差し直線◎",
-        "skill_effect": "直線で速度が上がる＜作戦・差し＞",
+        "skill_effect": "在直線速度上升\n＜作戰．居中＞",
         "skill_icon_name": "i_skill_y_r_1",
         "skill_pt": "150",
         "upper_skill": null
       },
       "鋭脚円刃": {
         "lower_skill": "差しコーナー◎",
-        "skill_effect": "コーナーで速度が上がる＜作戦・差し＞",
+        "skill_effect": "在彎道速度上升\n＜作戰．居中＞",
         "skill_icon_name": "i_skill_y_r_1",
         "skill_pt": "150",
         "upper_skill": null
@@ -3406,21 +3406,21 @@
       },
       "限界の先へ": {
         "lower_skill": "前だけ見据えて",
-        "skill_effect": "ラストスパートで速度が上がる<br>最も優れた基礎能力の高さに応じて効果が高まる",
+        "skill_effect": "在最後衝刺階段速度上升\n依照最優秀的基礎能力數值\n提高效果",
         "skill_icon_name": "i_skill_y_r_1",
         "skill_pt": "200",
         "upper_skill": null
       },
       "陣風円刃": {
         "lower_skill": "逃げコーナー◎",
-        "skill_effect": "コーナーで速度が上がる＜作戦・逃げ＞",
+        "skill_effect": "在彎道速度上升\n＜作戰．領頭＞",
         "skill_icon_name": "i_skill_y_r_1",
         "skill_pt": "150",
         "upper_skill": null
       },
       "電光石火": {
         "lower_skill": "一足飛び",
-        "skill_effect": "レース終盤に後方で追い抜こうとすると加速力が上がる＜短距離/マイル＞",
+        "skill_effect": "在競賽後期若於隊列後方準備追過對手\n加速力上升＜短距離．一哩＞",
         "skill_icon_name": "i_skill_y_r_2",
         "skill_pt": "180",
         "upper_skill": null
@@ -3434,7 +3434,7 @@
       },
       "風雲の志": {
         "lower_skill": "向上心",
-        "skill_effect": "レース終盤目前、2番手以降に控えて先頭から2バ身以内だとしばらくの間速度が少し上がる＜作戦・先行＞",
+        "skill_effect": "即將進入競賽後期時，潛伏於第2之後，\n且距離最前頭2身距以內一段時間內\n速度會稍微上升＜作戰．前列＞",
         "skill_icon_name": "i_skill_y_r_1",
         "skill_pt": "180",
         "upper_skill": null
