@@ -91,7 +91,8 @@ namespace UmaAssistant
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel2;
 	private: System::Windows::Forms::RadioButton^ dmm_radio_btn;
-	private: System::Windows::Forms::RadioButton^ blue_stacks_radio_btn;
+	private: System::Windows::Forms::RadioButton^ emulator_radio_btn;
+
 	private: System::Windows::Forms::Label^ window_type_label;
 
 
@@ -158,7 +159,7 @@ namespace UmaAssistant
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->tableLayoutPanel2 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->dmm_radio_btn = (gcnew System::Windows::Forms::RadioButton());
-			this->blue_stacks_radio_btn = (gcnew System::Windows::Forms::RadioButton());
+			this->emulator_radio_btn = (gcnew System::Windows::Forms::RadioButton());
 			this->window_type_label = (gcnew System::Windows::Forms::Label());
 			this->autoMouceClick_checkBox = (gcnew System::Windows::Forms::CheckBox());
 			this->alwaysOnTop_checkBox = (gcnew System::Windows::Forms::CheckBox());
@@ -402,7 +403,7 @@ namespace UmaAssistant
 			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				59.83146F)));
 			this->tableLayoutPanel2->Controls->Add(this->dmm_radio_btn, 0, 0);
-			this->tableLayoutPanel2->Controls->Add(this->blue_stacks_radio_btn, 1, 0);
+			this->tableLayoutPanel2->Controls->Add(this->emulator_radio_btn, 1, 0);
 			this->tableLayoutPanel2->Location = System::Drawing::Point(12, 171);
 			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
 			this->tableLayoutPanel2->RowCount = 1;
@@ -425,18 +426,18 @@ namespace UmaAssistant
 			this->dmm_radio_btn->Text = L"DMM";
 			this->dmm_radio_btn->UseVisualStyleBackColor = false;
 			// 
-			// blue_stacks_radio_btn
+			// emulator_radio_btn
 			// 
-			this->blue_stacks_radio_btn->AutoSize = true;
-			this->blue_stacks_radio_btn->BackColor = System::Drawing::Color::Transparent;
-			this->blue_stacks_radio_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
+			this->emulator_radio_btn->AutoSize = true;
+			this->emulator_radio_btn->BackColor = System::Drawing::Color::Transparent;
+			this->emulator_radio_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->blue_stacks_radio_btn->Location = System::Drawing::Point(146, 3);
-			this->blue_stacks_radio_btn->Name = L"blue_stacks_radio_btn";
-			this->blue_stacks_radio_btn->Size = System::Drawing::Size(121, 24);
-			this->blue_stacks_radio_btn->TabIndex = 31;
-			this->blue_stacks_radio_btn->Text = L"BlueStacks";
-			this->blue_stacks_radio_btn->UseVisualStyleBackColor = false;
+			this->emulator_radio_btn->Location = System::Drawing::Point(146, 3);
+			this->emulator_radio_btn->Name = L"emulator_radio_btn";
+			this->emulator_radio_btn->Size = System::Drawing::Size(69, 24);
+			this->emulator_radio_btn->TabIndex = 31;
+			this->emulator_radio_btn->Text = L"模擬器";
+			this->emulator_radio_btn->UseVisualStyleBackColor = false;
 			// 
 			// window_type_label
 			// 

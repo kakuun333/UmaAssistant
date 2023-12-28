@@ -44,7 +44,7 @@ void Config::Update()
 	LocalServer["Port"] = json_config["LocalServer"]["Port"].empty() ? DEFAULT_LOCAL_SERVER_PORT : json_config["LocalServer"]["Port"].get<std::string>();
 
 	GameWindowBoundOffset["DMM"] = json_config["GameWindowBoundOffset"]["DMM"].empty() ? this->InitGameWindowBoundOffset() : json_config["GameWindowBoundOffset"]["DMM"].get<std::map<std::string, int>>();
-	GameWindowBoundOffset["BlueStacks"] = json_config["GameWindowBoundOffset"]["BlueStacks"].empty() ? this->InitGameWindowBoundOffset() : json_config["GameWindowBoundOffset"]["BlueStacks"].get<std::map<std::string, int>>();
+	GameWindowBoundOffset["Emulator"] = json_config["GameWindowBoundOffset"]["Emulator"].empty() ? this->InitGameWindowBoundOffset() : json_config["GameWindowBoundOffset"]["Emulator"].get<std::map<std::string, int>>();
 }
 
 void Config::WriteToJson()
@@ -71,7 +71,7 @@ void Config::WriteToJson()
 	json_config["LocalServer"]["Port"] = this->LocalServer["Port"];
 
 	json_config["GameWindowBoundOffset"]["DMM"] = this->GameWindowBoundOffset["DMM"];
-	json_config["GameWindowBoundOffset"]["BlueStacks"] = this->GameWindowBoundOffset["BlueStacks"];
+	json_config["GameWindowBoundOffset"]["Emulator"] = this->GameWindowBoundOffset["Emulator"];
 
 	std::string jsonString = json_config.dump(2);
 

@@ -132,11 +132,11 @@ cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 		gamePosY	= rcWindow.top		+ DMM_FIX_GAME_POS_Y							+ global::config->GameWindowBoundOffset["DMM"]["Y"];
 		break;
 
-	case static_cast<int>(GameWindowType::BLUE_STACKS):
-		gameWidth	= rcClient.right	- rcClient.left	-	BLUE_STACKS_FIX_GAME_WIDTH	+ global::config->GameWindowBoundOffset["BlueStacks"]["Width"];
-		gameHeight	= rcClient.bottom	- rcClient.top	-	BLUE_STACKS_FIX_GAME_HEIGHT	+ global::config->GameWindowBoundOffset["BlueStacks"]["Height"];
-		gamePosX	= rcWindow.left		+					BLUE_STACKS_FIX_GAME_POS_X	+ global::config->GameWindowBoundOffset["BlueStacks"]["X"];
-		gamePosY	= rcWindow.top		+					BLUE_STACKS_FIX_GAME_POS_Y	+ global::config->GameWindowBoundOffset["BlueStacks"]["Y"];
+	case static_cast<int>(GameWindowType::EMULATOR):
+		gameWidth	= rcClient.right	- rcClient.left	-	BLUE_STACKS_FIX_GAME_WIDTH	+ global::config->GameWindowBoundOffset["Emulator"]["Width"];
+		gameHeight	= rcClient.bottom	- rcClient.top	-	BLUE_STACKS_FIX_GAME_HEIGHT	+ global::config->GameWindowBoundOffset["Emulator"]["Height"];
+		gamePosX	= rcWindow.left		+					BLUE_STACKS_FIX_GAME_POS_X	+ global::config->GameWindowBoundOffset["Emulator"]["X"];
+		gamePosY	= rcWindow.top		+					BLUE_STACKS_FIX_GAME_POS_Y	+ global::config->GameWindowBoundOffset["Emulator"]["Y"];
 		break;
 	}
 
@@ -250,7 +250,7 @@ void Screenshot::CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPatt
 		}
 		break;
 
-	case static_cast<int>(GameWindowType::BLUE_STACKS):
+	case static_cast<int>(GameWindowType::EMULATOR):
 		switch (imgType)
 		{
 		case IMG_EVENT_TITLE:
@@ -383,7 +383,7 @@ void Screenshot::SetEventTitleBound(cv::Mat& img)
 		event_title_gray = event_title_gray(rect);
 		event_title_gray_bin_inv = event_title_gray_bin_inv(rect);
 		break;
-	case static_cast<int>(GameWindowType::BLUE_STACKS):
+	case static_cast<int>(GameWindowType::EMULATOR):
 		single_char_white_pixel_ratio = 0.016;
 		single_char_img_width_ratio = 0.06;
 

@@ -1054,53 +1054,53 @@
   "gurarai": {
     "集合！歌唱高手": [
       {
-        "choice_title": "ゆりかごのように……子守唄を",
+        "choice_title": "唱像搖籃般的……搖籃曲",
         "choice_effect": "體力<span class=\"status_plus_value\">+15</span>"
       },
       {
-        "choice_title": "激しく情熱を燃やして！盛大に歌う！",
+        "choice_title": "用力燃燒熱情！盛大開唱！",
         "choice_effect": "<img src=\"../UmaMisc/Image/ScenarioStatus/performance_Pa.png\">熱情<span class=\"status_plus_value\">+20</span>"
       }
     ],
     "連繫你和我的演唱會": [
       {
-        "choice_title": "『一緒に呼びかけあえる歌』か……(スマートファルコン)",
+        "choice_title": "「能互相呼喊的歌」嗎……(醒目飛鷹)",
         "choice_effect": "醒目飛鷹編組時：\n<span class=\"skill_hint\">『全速前進！』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>\n非編組時：\n<span class=\"skill_hint\">『長驅直入』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
       },
       {
-        "choice_title": "『走れることへの感謝』か……(ミホノブルボン)",
+        "choice_title": "「對可以奔跑的感謝」嗎……(美浦波旁)",
         "choice_effect": "美浦波旁編組時：\n<span class=\"skill_hint\">『全神貫注』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>\n非編組時：\n<span class=\"skill_hint\">『集中力』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
       },
       {
-        "choice_title": "『ただいま』か……(サイレンススズカ)",
+        "choice_title": "「我回來了」嗎……(無聲鈴鹿)",
         "choice_effect": "無聲鈴鹿編組時：\n<span class=\"skill_hint\">『突破者』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>\n非編組時：\n<span class=\"skill_hint\">『前途無量』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
       },
       {
-        "choice_title": "『打倒する力』か……(アグネスタキオン)",
+        "choice_title": "「打破現狀的力量」嗎……(愛麗速子)",
         "choice_effect": "愛麗速子編組時：\n<span class=\"skill_hint\">『必死的決心』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>\n非編組時：\n<span class=\"skill_hint\">『傾注一切』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
       },
       {
-        "choice_title": "『歌でつながる』か……",
+        "choice_title": "「用歌曲來連繫」嗎……",
         "choice_effect": "<span class=\"skill_hint\">『跑道的魔術師』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
       }
     ],
     "提案！製作新歌曲！": [
       {
-        "choice_title": "ファルコンの気持ちを味わってもらうとか？",
+        "choice_title": "讓對方親身感受飛鷹的心意？",
         "choice_effect": "<img src=\"../UmaMisc/Image/ScenarioStatus/performance_Pa.png\">熱情<span class=\"status_plus_value\">+20</span>\n理事長的情誼量條<span class=\"status_plus_value\">+10</span>"
       },
       {
-        "choice_title": "初心にかえりましょう！",
+        "choice_title": "回歸初心吧！",
         "choice_effect": "<img src=\"../UmaMisc/Image/ScenarioStatus/performance_Me.png\">精神<span class=\"status_plus_value\">+20</span>\n理事長的情誼量條<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "從能做的事開始": [
       {
-        "choice_title": "休憩用の飲み物を買ってきますよ",
+        "choice_title": "我去買飲料來讓你喘口氣",
         "choice_effect": "體力<span class=\"status_plus_value\">+10</span>"
       },
       {
-        "choice_title": "俺も付き合います！",
+        "choice_title": "我也陪你接受採訪吧",
         "choice_effect": "意志力<span class=\"status_plus_value\">+10</span>"
       }
     ],

@@ -5,24 +5,24 @@
     "VK": 6,
     "WinFormButton": 16777216
   },
-  "DebugMode": false,
-  "GameServer": 0,
-  "GameWindow": 0,
+  "DebugMode": true,
+  "GameServer": 1,
+  "GameWindow": 1,
   "GameWindowBoundOffset": {
-    "BlueStacks": {
+    "DMM": {
       "Height": 0,
       "Width": 0,
       "X": 0,
       "Y": 0
     },
-    "DMM": {
+    "Emulator": {
       "Height": 0,
       "Width": 0,
       "X": 0,
       "Y": 0
     }
   },
-  "GameWindowName": "NULL_GAME_WINDOW_NAME_UMA_ASSISTANT",
+  "GameWindowName": "BlueStacks App Player 1",
   "JpServerLang": 0,
   "LocalServer": {
     "Port": "5854"

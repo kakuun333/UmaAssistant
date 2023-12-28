@@ -77,14 +77,14 @@ namespace UmaAssistant
 		case static_cast<int>(GameWindowType::DMM):
 			dmm_radio_btn->Checked = true;
 			break;
-		case static_cast<int>(GameWindowType::BLUE_STACKS):
-			blue_stacks_radio_btn->Checked = true;
+		case static_cast<int>(GameWindowType::EMULATOR):
+			emulator_radio_btn->Checked = true;
 			break;
 		}
 
 		// 註冊 CheckedChanged 事件
 		dmm_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::GameWindowRadioButtonChanged);
-		blue_stacks_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::GameWindowRadioButtonChanged);
+		emulator_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::GameWindowRadioButtonChanged);
 #pragma endregion
 #pragma region 初始化 JpServerLangType
 		// 從 config 初始化 Checked
@@ -235,9 +235,9 @@ namespace UmaAssistant
 			{
 				global::config->GameWindow = static_cast<int>(GameWindowType::DMM);
 			}
-			else if (radioButton == blue_stacks_radio_btn)
+			else if (radioButton == emulator_radio_btn)
 			{
-				global::config->GameWindow = static_cast<int>(GameWindowType::BLUE_STACKS);
+				global::config->GameWindow = static_cast<int>(GameWindowType::EMULATOR);
 			}
 		}
 

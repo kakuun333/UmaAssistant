@@ -1,6 +1,6 @@
 {
 	"tw": {
-		"version_label": "v1.1.4",
+		"version_label": "v1.1.5",
 		"select_window_btn": "選取視窗",
         "scan_btn": "啓動",
         "clean_current_character_btn": "清除角色",
@@ -21,12 +21,13 @@
         "outputLogFile_checkBox": "輸出偵錯日誌",
         "debugMode_checkBox": "Debug 模式",
         "default_btn": "恢復預設値",
+		"emulator_radio_btn": "模擬器",
 
         "select_window_label": "請選擇遊戲視窗：",
         "title_select_window_label": "選取視窗"
     },
     "jp": {
-		"version_label": "v1.1.4",
+		"version_label": "v1.1.5",
 		"select_window_btn": "ウィンドウ選択",
         "scan_btn": "スキャン",
         "clean_current_character_btn": "削除する",
@@ -47,6 +48,7 @@
         "outputLogFile_checkBox": "デバッグログを記録する",
         "debugMode_checkBox": "デバッグモード",
         "default_btn": "デフォルト",
+		"emulator_radio_btn": "エミュレータ",
 
         "select_window_label": "ゲームウィンドウを選択してください：",
         "title_select_window_label": "ウィンドウ選択"

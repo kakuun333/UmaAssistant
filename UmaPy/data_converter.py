@@ -110,14 +110,13 @@ def convert_choice_effect_jp_to_tw(choice_effect, jp_event_owner = None, tw_even
         if (jp == "スタミナ"):
             choice_effect = re.sub(rf'{jp}(?!キープ)', tw, choice_effect, flags=re.IGNORECASE);
         elif (jp == "スピード"):
-            choice_effect = re.sub(rf'{jp}(?!スター)', tw, choice_effect, flags=re.IGNORECASE);
+            choice_effect = re.sub(rf'{jp}(?!スター|イーター)', tw, choice_effect, flags=re.IGNORECASE);
         elif (jp == "アップ"): # 避免替換到技能 ペースアップ、テンポアップ
             choice_effect = re.sub(rf'{jp}(?!』)', tw, choice_effect, flags=re.IGNORECASE);
         elif (jp == "or"):
             choice_effect = re.sub(rf'(?![a-zA-Z]){jp}(?![a-zA-Z])', tw, choice_effect, flags=re.IGNORECASE);
         else:
             choice_effect = re.sub(jp, tw, choice_effect, flags=re.IGNORECASE);
-    
 
 
     if (cvt_skill_data):
@@ -158,7 +157,9 @@ def convert_choice_effect_jp_to_tw(choice_effect, jp_event_owner = None, tw_even
 
 def convert_choice_title_jp_to_tw(choice_title):
     for jp, tw in translation_data["jp_to_tw"]["choice_title"].items():
-        choice_title = re.sub(jp, tw, choice_title, flags=re.IGNORECASE)
+        # 用 re.escape() 來避開正規表達式的特殊字符
+        # 例如：『ただいま』か……(サイレンススズカ) 的 ()
+        choice_title = re.sub(re.escape(jp), tw, choice_title)
 
     return choice_title;
 
@@ -329,7 +330,7 @@ def convert_to_scenario_event_data_tw(convert_data):
                     for key, value in choice.items():
                         if (key == "choice_effect"):
                             value = convert_choice_effect_jp_to_tw(value);
-                        else:
+                        elif (key == "choice_title"):
                             value = convert_choice_title_jp_to_tw(value);
 
                         tw_choice_obj[key] = value;
