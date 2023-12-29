@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/image/uma_icon_64px.png">
-  <h1 align="center">UmaAssisant</h1>
+  <h1 align="center">UmaAssistant</h1>
 </p>
 
 ## 文檔語言｜ドキュメント言語
