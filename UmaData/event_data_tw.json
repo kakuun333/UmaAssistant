@@ -28594,11 +28594,11 @@
           {
             "嚴禁逞強！": [
               {
-                "choice_title": "<待補充>(夏季集訓：總之先安慰)",
+                "choice_title": "先別急，好好休息吧(夏季集訓：總之先安慰)",
                 "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>幹勁下降三階<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>五種數値中隨機選兩種<span class=\"status_minus_value\">-10</span><br>隨機<span class=\"minus_condition\">『不擅長練習』</span>"
               },
               {
-                "choice_title": "<待補充>(夏季集訓：嚴格訓練！)",
+                "choice_title": "那就趕快養好傷，再去跑步吧！(夏季集訓：嚴格訓練！)",
                 "choice_effect": "幹勁下降三階<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>五種數値中隨機選兩種<span class=\"status_minus_value\">-10</span><br><span class=\"minus_condition\">『不擅長練習』</span><hr>體力<span class=\"status_plus_value\">+10</span><br><span class=\"plus_condition\">『擅長練習◯』</span>"
               }
             ]
@@ -39038,11 +39038,11 @@
           {
             "嚴禁逞強！": [
               {
-                "choice_title": "<待補充>(夏季集訓：總之先安慰)",
+                "choice_title": "先別急，好好休息吧(夏季集訓：總之先安慰)",
                 "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>幹勁下降三階<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>五種數値中隨機選兩種<span class=\"status_minus_value\">-10</span><br>隨機<span class=\"minus_condition\">『不擅長練習』</span>"
               },
               {
-                "choice_title": "<待補充>(夏季集訓：嚴格訓練！)",
+                "choice_title": "那就趕快養好傷，再去跑步吧！(夏季集訓：嚴格訓練！)",
                 "choice_effect": "幹勁下降三階<br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>五種數値中隨機選兩種<span class=\"status_minus_value\">-10</span><br><span class=\"minus_condition\">『不擅長練習』</span><hr>體力<span class=\"status_plus_value\">+10</span><br><span class=\"plus_condition\">『擅長練習◯』</span>"
               }
             ]
@@ -49306,11 +49306,11 @@
           {
             "可以做看看": [
               {
-                "choice_title": "体を鍛えて自信をつけよう！",
+                "choice_title": "鍛鍊身體增加自信吧！",
                 "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br>目白多伯的情誼量條<span class=\"status_plus_value\">+5</span>"
               },
               {
-                "choice_title": "鏡の前で笑顔の練習！",
+                "choice_title": "對著鏡子練習笑容吧！",
                 "choice_effect": "幹勁提升<br>技能點<span class=\"status_plus_value\">+15</span><br>目白多伯的情誼量條<span class=\"status_plus_value\">+5</span>"
               }
             ]
@@ -51863,11 +51863,11 @@
           {
             "可以做看看": [
               {
-                "choice_title": "体を鍛えて自信をつけよう！",
+                "choice_title": "鍛鍊身體增加自信吧！",
                 "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br>目白多伯的情誼量條<span class=\"status_plus_value\">+5</span>"
               },
               {
-                "choice_title": "鏡の前で笑顔の練習！",
+                "choice_title": "對著鏡子練習笑容吧！",
                 "choice_effect": "幹勁提升<br>技能點<span class=\"status_plus_value\">+15</span><br>目白多伯的情誼量條<span class=\"status_plus_value\">+5</span>"
               }
             ]
@@ -60341,11 +60341,11 @@
           {
             "可以做看看": [
               {
-                "choice_title": "体を鍛えて自信をつけよう！",
+                "choice_title": "鍛鍊身體增加自信吧！",
                 "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br>目白多伯的情誼量條<span class=\"status_plus_value\">+5</span>"
               },
               {
-                "choice_title": "鏡の前で笑顔の練習！",
+                "choice_title": "對著鏡子練習笑容吧！",
                 "choice_effect": "幹勁提升<br>技能點<span class=\"status_plus_value\">+15</span><br>目白多伯的情誼量條<span class=\"status_plus_value\">+5</span>"
               }
             ]
