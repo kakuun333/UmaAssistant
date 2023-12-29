@@ -39,6 +39,13 @@ public:
 	//gcroot<System::String^> sys_event_title;
 
 	std::vector<UmaChoice> choice_list;
+
+	inline bool empty()
+	{
+		if (event_title.empty() && choice_list.empty()) return true;
+
+		return false;
+	}
 };
 
 class UmaEventData
@@ -49,7 +56,7 @@ public:
 	std::string event_owner;
 	//gcroot<System::String^> sys_event_owner;
 
-	std::vector<UmaEvent> event_list;
+	UmaEvent umaEvent;
 
 	// 如果資料完整返回 true，不完整返回 false
 	bool IsDataComplete();
@@ -61,20 +68,14 @@ public:
 		{
 			if (dataType == UmaEventDataType::CHOICE_LIST)
 			{
-				for (const UmaEvent& _event : event_list)
-				{
-					if (_event.choice_list.empty()) continue;
-
-					return _event.choice_list;
-				}
-				//return event_list[0].choice_list;
+				return umaEvent.choice_list;
 			}
 		}
 		else if constexpr (std::is_same_v <T, std::string>)
 		{
 			if (dataType == UmaEventDataType::EVENT_TITLE)
 			{
-				return event_list[0].event_title;
+				return umaEvent.event_title;
 			}
 			else if (dataType == UmaEventDataType::EVENT_OWNER)
 			{

@@ -11,4 +11,3 @@ public:
 	std::string event_title;
 	std::string event_owner;
 };
-

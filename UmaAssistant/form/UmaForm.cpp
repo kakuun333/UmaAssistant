@@ -21,6 +21,16 @@ namespace UmaAssistant
 
 
 		//std::cout << utility::IsStringTooLong(u8"あああああああああああああああああああああああ") << std::endl;
+
+		//std::string test = u8"欸，我的打工......這麼糟嗎？";
+
+		//test = utility::ReplaceSpecialString(test);
+
+		//std::string boolean = utility::IsRepeatingString(test, 4) == true ? "true" : "false";
+
+		//std::cout << test << std::endl;
+
+		//std::cout << boolean << std::endl;
 	}
 
 	void UmaForm::OnChoiceDocumentCompleted(System::Object^ sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^ e)

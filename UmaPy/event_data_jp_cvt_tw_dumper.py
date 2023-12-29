@@ -187,7 +187,7 @@ def get_tw_char_event_owner():
 
     tw_char_event_owner = re.sub(pattern, r"\2（\1）", a.text);
     
-    try:
+    try: # 沒有用
         tw_char_event_owner = utility.replace("繁/米浴（Make up Vampire!）", "米浴（Make up Vampire!）")
     except:
         pass;

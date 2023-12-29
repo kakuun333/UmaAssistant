@@ -447,7 +447,7 @@ UmaEventData DataManager::GetCurrentCharacterUmaEventData(std::string scanned_te
 					umaEvent.choice_list.push_back(umaChoice);
 				}
 
-				umaEventData.event_list.push_back(umaEvent);
+				umaEventData.umaEvent = umaEvent;
 			}
 		}
 	}
@@ -598,15 +598,22 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 	srStarThread->join();
 	ssrStarThread->join();
 
-
-
 	if (similarDataList.empty()) return umaEventData;
 
 	// 使用 std::max_element 找到最大的 similarity
 	auto maxElement = std::max_element(similarDataList.begin(), similarDataList.end(),
 		[](const UmaEventRoute& route1, const UmaEventRoute& route2)
 		{
-			return route1.similarity < route2.similarity;
+			/*
+			用 rare.size() 來判斷支援卡的稀有度
+			"SSR" 的 byte 一定比 "SR" 還要多
+			"SR" 的 byte 一定比 "R" 還要多
+			*/
+
+			//std::cout << "route1: " << route1.rare << " size: " << route1.rare.size() << " similarity: " << route1.similarity << std::endl;
+			//std::cout << "route2: " << route2.rare << " size: " << route2.rare.size() << " similarity: " << route2.similarity << std::endl;
+
+			return (route1.similarity < route2.similarity || (route1.similarity == route2.similarity && route1.rare.size() < route2.rare.size()));
 		}
 	);
 
@@ -639,7 +646,7 @@ UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 				umaEvent.choice_list.push_back(umaChoice);
 			}
 
-			umaEventData.event_list.push_back(umaEvent);
+			umaEventData.umaEvent = umaEvent;
 			break;
 		}
 	}

@@ -171,7 +171,7 @@ std::string Scanner::GetScannedText(cv::Mat image, ImageType imgType, bool engli
 			switch (imgType)
 			{
 			case ImageType::IMG_EVENT_TITLE:
-				ocr_jpn->SetVariable("tessedit_char_blacklist", u8"@$%^*_-+<>[]{}|/\\`0123456789†:;；=");
+				ocr_jpn->SetVariable("tessedit_char_blacklist", u8"@$%^*_-+<>[]{}|/\\`†:;；=《》");
 				ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 				break;
 			case ImageType::IMG_HENSEI_CHARACTER_NAME:
@@ -193,7 +193,7 @@ std::string Scanner::GetScannedText(cv::Mat image, ImageType imgType, bool engli
 			switch (imgType)
 			{
 			case ImageType::IMG_EVENT_TITLE:
-				ocr_tw->SetVariable("tessedit_char_blacklist", u8"@$%^*_-+<>[]{}|/\\`0123456789†:;；=");
+				ocr_tw->SetVariable("tessedit_char_blacklist", u8"@$%^*_-+<>[]{}|/\\`†:;；=《》");
 				ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 				break;
 			case ImageType::IMG_HENSEI_CHARACTER_NAME:
@@ -224,7 +224,8 @@ std::string Scanner::GetScannedText(cv::Mat image, ImageType imgType, bool engli
 
 	lock.unlock();
 
-
+	// 替換某些特定的字串
+	result = utility::ReplaceSpecialString(result);
 
 	if (utility::IsRepeatingString(result, 4))
 	{
@@ -403,7 +404,7 @@ void Scanner::Start(std::string language)
 								{
 									bool foundHenseiChar = false;
 
-									const int TRY_RESIZE_COUNT = 5/*10*/;
+									const int TRY_RESIZE_COUNT = 2/*10*/;
 									const float SCALE_FACTOR = 0.1;
 									const int THRESH_FACTOR = 1;
 
@@ -638,6 +639,7 @@ void Scanner::Start(std::string language)
 								try
 								{
 									this->UpdateSapokaChoice(webManager, sapokaUmaEventData);
+									_updatedChoice = true;
 									umalog->print(u8"[Scanner] 成功更新 SapokaChoice");
 								}
 								catch (const std::exception& e)
@@ -661,6 +663,7 @@ void Scanner::Start(std::string language)
 								try
 								{
 									this->UpdateScenarioChoice(webManager, scenarioEventData);
+									_updatedChoice = true;
 									umalog->print(u8"[Scanner] 成功更新 ScenarioChoice");
 								}
 								catch (const std::exception& e)
@@ -689,20 +692,19 @@ void Scanner::Start(std::string language)
 					if (charUmaEventData.IsDataComplete())
 					{
 						this->UpdateCharChoice(webManager, charUmaEventData);
-						umalog->print(u8"[Scanner] 成功更新 CharChoice");
+						umalog->print(u8"[Scanner] else if 成功更新 CharChoice");
 						_updatedChoice = true;
 					}
-
 					else if (sapokaUmaEventData.IsDataComplete())
 					{
 						this->UpdateSapokaChoice(webManager, sapokaUmaEventData);
-						umalog->print(u8"[Scanner] 成功更新 SapokaChoice");
+						umalog->print(u8"[Scanner] else if 成功更新 SapokaChoice");
 						_updatedChoice = true;
 					}
 					else if (scenarioEventData.IsDataComplete())
 					{
 						this->UpdateScenarioChoice(webManager, scenarioEventData);
-						umalog->print(u8"[Scanner] 成功更新 ScenarioChoice");
+						umalog->print(u8"[Scanner] else if 成功更新 ScenarioChoice");
 						_updatedChoice = true;
 					}
 				}

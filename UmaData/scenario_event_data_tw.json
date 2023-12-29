@@ -1096,12 +1096,48 @@
     ],
     "從能做的事開始": [
       {
-        "choice_title": "我去買飲料來讓你喘口氣",
+        "choice_title": "我去買飲料來讓妳喘口氣",
         "choice_effect": "體力<span class=\"status_plus_value\">+10</span>"
       },
       {
-        "choice_title": "我也陪你接受採訪吧",
+        "choice_title": "我也陪妳接受採訪吧",
         "choice_effect": "意志力<span class=\"status_plus_value\">+10</span>"
+      }
+    ],
+    "1st演唱會，結束！": [
+      {
+        "choice_title": "無選項",
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span>\n根據課程次數獲得技能點\n粉絲數<span class=\"status_plus_value\">+1000</span>人\n五種表現力<span class=\"status_plus_value\">+5</span>\n※發生的效果會因演唱會結果而有所變動"
+      }
+    ],
+    "1st演唱會結束後": [
+      {
+        "choice_title": "無選項",
+        "choice_effect": "五種數値中隨機選兩種<span class=\"status_plus_value\">+10</span>\n技能點<span class=\"status_plus_value\">+20</span>\n成員加入"
+      }
+    ],
+    "2nd演唱會，結束！": [
+      {
+        "choice_title": "無選項",
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+3~10</span>\n根據課程次數獲得技能點\n粉絲數<span class=\"status_plus_value\">+200~2000</span>人\n五種表現力<span class=\"status_plus_value\">+5~10</span>\n※發生的效果會因演唱會結果而有所變動"
+      }
+    ],
+    "3rd演唱會，結束！": [
+      {
+        "choice_title": "無選項",
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+3~10</span>\n根據課程次數獲得技能點\n粉絲數<span class=\"status_plus_value\">+550~5500</span>人\n※發生的效果會因演唱會結果而有所變動"
+      }
+    ],
+    "4th演唱會，結束！": [
+      {
+        "choice_title": "無選項",
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+3~10</span>\n根據課程次數獲得技能點\n粉絲數<span class=\"status_plus_value\">+650~6500</span>人\n※發生的效果會因演唱會結果而有所變動"
+      }
+    ],
+    "新加入的演唱會協力者！": [
+      {
+        "choice_title": "無選項",
+        "choice_effect": "成員加入\n五種表現力的上限<span class=\"status_plus_value\">+50</span>\n五種表現力<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "演唱的歌曲是……": [
