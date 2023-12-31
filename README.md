@@ -21,8 +21,13 @@
 ### 技能預覽
 #### 白技能  
 ![2](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/2.png)
+![998](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/998.png)
+![1002](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1002.png)
+
 #### 金技能  
 ![3](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/3.png)
+![1003](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1003.png)
+![1004](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1004.png)
 
 ### 劇本數值＋圖示  
 ![17](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/17.png)
