@@ -29870,11 +29870,11 @@
           {
             "以競賽與美食飽餐一頓": [
               {
-                "choice_title": "早めに行って観戦場所を確保しよう",
+                "choice_title": "早點過去，佔好觀戰位置吧",
                 "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span>"
               },
               {
-                "choice_title": "レースもグルメも楽しもう！",
+                "choice_title": "比賽和美食都好好享受吧！",
                 "choice_effect": "<span class=\"skill_hint\">『中山賽場◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
               }
             ]
@@ -29998,11 +29998,11 @@
           {
             "遠勝過玩偶": [
               {
-                "choice_title": "本物が1番だ",
+                "choice_title": "本尊是最棒的",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+20</span><br>隨機<span class=\"plus_condition\">『備受矚目』</span>"
               },
               {
-                "choice_title": "ぬいぐるみは応援の形だ",
+                "choice_title": "玩偶只是一種支持",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+20</span><br>隨機<span class=\"plus_condition\">『備受矚目』</span>"
               }
             ]
@@ -40778,11 +40778,11 @@
           {
             "以競賽與美食飽餐一頓": [
               {
-                "choice_title": "早めに行って観戦場所を確保しよう",
+                "choice_title": "早點過去，佔好觀戰位置吧",
                 "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span>"
               },
               {
-                "choice_title": "レースもグルメも楽しもう！",
+                "choice_title": "比賽和美食都好好享受吧！",
                 "choice_effect": "<span class=\"skill_hint\">『中山賽場◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
               }
             ]
@@ -61565,11 +61565,11 @@
           {
             "心中常有舞台☆": [
               {
-                "choice_title": "勉強も手を抜かないで",
+                "choice_title": "唸書也別偷懶喔",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『打好基礎』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>醒目飛鷹的情誼量條<span class=\"status_plus_value\">+5</span>"
               },
               {
-                "choice_title": "夢に向かって頑張れ！",
+                "choice_title": "朝著夢想努力吧！",
                 "choice_effect": "體力<span class=\"status_plus_value\">+25</span><br><span class=\"skill_hint\">『集中力』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>醒目飛鷹的情誼量條<span class=\"status_plus_value\">+5</span><br>連續事件將結束"
               }
             ]
@@ -62621,11 +62621,11 @@
           {
             "邁出、一步": [
               {
-                "choice_title": "チラシ、ください！！",
+                "choice_title": "請給我傳單！！",
                 "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br>技能點<span class=\"status_plus_value\">+15~45</span><br>目白多伯的情誼量條<span class=\"status_plus_value\">+5</span>"
               },
               {
-                "choice_title": "一緒に配るぞ！",
+                "choice_title": "我跟妳一起發吧！",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span><br>目白多伯的情誼量條<span class=\"status_plus_value\">+5</span>"
               }
             ]
