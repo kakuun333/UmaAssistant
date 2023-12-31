@@ -35,19 +35,19 @@ def get_tw_skill_title():
 
     return tw_skill_title;
 
-def get_tw_skill_effect():
-    tw_skill_effect = "";
+def get_tw_skill_description():
+    tw_skill_description = "";
 
     wikitable = driver.find_element(By.CLASS_NAME, "wikitable");
     tr = wikitable.find_elements(By.XPATH, ".//tr")[5];
 
     td = tr.find_element(By.TAG_NAME, "td");
 
-    tw_skill_effect = td.text;
+    tw_skill_description = td.text;
 
-    print(tw_skill_effect);
+    print(tw_skill_description);
 
-    return tw_skill_effect;
+    return tw_skill_description;
 
 def get_tw_upper_skill():
     tw_upper_skill = None;
@@ -98,8 +98,8 @@ def dump_skill_convert_data():
                 tw_skill_title = get_tw_skill_title();
                 tw_skill_title = utility.replace(tw_skill_title, "○", "◯");
 
-                tw_skill_effect = get_tw_skill_effect();
-                tw_skill_effect = utility.replace(tw_skill_effect, "○", "◯");
+                tw_skill_description = get_tw_skill_description();
+                tw_skill_description = utility.replace(tw_skill_description, "○", "◯");
         
                 tw_upper_skill = get_tw_upper_skill();
                 tw_upper_skill = utility.replace(tw_upper_skill, "○", "◯");
@@ -109,7 +109,7 @@ def dump_skill_convert_data():
 
                 skill_dict[jp_skill_title] = {
                     "tw_skill_title": tw_skill_title,
-                    "tw_skill_effect": tw_skill_effect,
+                    "tw_skill_description": tw_skill_description,
                     "tw_upper_skill": tw_upper_skill,
                     "tw_lower_skill": tw_lower_skill
                 }

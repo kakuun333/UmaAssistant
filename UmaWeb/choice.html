@@ -27,8 +27,8 @@
                     <td><span id="skill_pt">110</span></td>
                 </tr>
                 <tr>
-                    <th><span id="skill_effect_title">效果</span></th>
-                    <td><span id="skill_effect">レース終盤が迫ったとき、中団以降にいると速度がわずかに上がる＜作戦・差し＞</span></td>
+                    <th><span id="skill_description_title">描述</span></th>
+                    <td><span id="skill_description">レース終盤が迫ったとき、中団以降にいると速度がわずかに上がる＜作戦・差し＞</span></td>
                 </tr>
                 <tr>
                     <th><span id="upper_skill_title">上位技能</span></th>
@@ -39,13 +39,22 @@
                     <td><span id="lower_skill"></span></td>
                 </tr>
             </tbody>
-            
+
+            <tfoot id="skill_effect_table">
+
+                <tr class="enhance_data">
+                    <th id="skill_effect_title">效果</th>
+                    <td id="skill_effect"></td>
+                </tr>
+                <tr class="enhance_data">
+                    <th id="skill_condition_title">發動條件</th>
+                    <td id="skill_condition"></td>
+                </tr>
+
+            </tfoot>
         </table>
         
     </div>
-
-    
-    
 
     <table id="info_table">
         <thead>
@@ -59,21 +68,16 @@
             </tr>
         </thead>
     </table>
+
+    <!--
+
+
+
+
+
     <table id="choice_table">
-        <!--
         <tr>
             <th class="choice_title">食事は適量が１１１１１番</th>
-        </tr>
-        <tr>
-            <td class="choice_effect"">
-                <img src="../UmaMisc/Image/Status/group.png">
-                <span class="status_speed">効果</span>
-                
-                <span class="skill_hint">『喜歡獨處◎』</span>のヒントLv<span class="status_plus_value">+5</span>
-                <span class="skill_hint">『使盡全力』</span>のヒントLv<span class="status_plus_value">+5</span>
-                <span class="skill_hint">『彎道回復◯』</span>のヒントLv<span class="status_plus_value">+5</span>
-                <img src="../UmaMisc/Image/ScenarioStatus/performance_Me.png">精神<span class="status_plus_value">+20</span><br>理事長的情誼量條<span class="status_plus_value">+10</span>
-            </td>
         </tr>
         <tr>
             <td class="choice_effect"">
@@ -83,16 +87,6 @@
                 <span class="skill_hint">『ありったけ』</span>のヒントLv<span class="status_plus_value">+5</span>
                 <span class="skill_hint">『しとやかな足取り』</span>のヒントLv<span class="status_plus_value">+5</span>
                 <span class="skill_hint">『お先に失礼っ！』</span>のヒントLv<span class="status_plus_value">+5</span>
-            </td>
-        </tr>
-        <tr>
-            <td class="choice_effect"">
-                <img src="../UmaMisc/Image/Status/group.png">
-                <span class="status_speed">効果</span>
-                
-                <span class="skill_hint">『超級幸運7』</span>のヒントLv<span class="status_plus_value">+5</span>
-                <span class="skill_hint">『細語』</span>のヒントLv<span class="status_plus_value">+5</span>
-                <span class="skill_hint">『可疑的作戰』</span>のヒントLv<span class="status_plus_value">+5</span>
             </td>
         </tr>
         <tr>
@@ -114,7 +108,53 @@
                 <span class="skill_hint">『八方にらみ』</span>のヒントLv<span class="status_plus_value">+5</span>
                 <span class="skill_hint">『まき直し』</span>のヒントLv<span class="status_plus_value">+5</span>
             </td>
-        </tr> -->
+        </tr>
+        <tr>
+            <td class="choice_effect"">
+                <img src="../UmaMisc/Image/Status/group.png">
+                <span class="status_speed">効果</span>
+                
+                <span class="skill_hint">『超級幸運7』</span>のヒントLv<span class="status_plus_value">+5</span>
+                <span class="skill_hint">『細語』</span>のヒントLv<span class="status_plus_value">+5</span>
+                <span class="skill_hint">『可疑的作戰』</span>のヒントLv<span class="status_plus_value">+5</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="choice_effect"">
+                <img src="../UmaMisc/Image/Status/group.png">
+                <span class="status_speed">効果</span>
+                
+                <span class="skill_hint">『速度之星』</span>のヒントLv<span class="status_plus_value">+5</span>
+                <span class="skill_hint">『熟練轉換』</span>のヒントLv<span class="status_plus_value">+5</span>
+                <span class="skill_hint">『短途渦輪』</span>のヒントLv<span class="status_plus_value">+5</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="choice_effect"">
+                <img src="../UmaMisc/Image/Status/group.png">
+                <span class="status_speed">効果</span>
+                
+                <span class="skill_hint">『左回り◯』</span>のヒントLv<span class="status_plus_value">+5</span>
+                <span class="skill_hint">『八方にらみ』</span>のヒントLv<span class="status_plus_value">+5</span>
+                <span class="skill_hint">『まき直し』</span>のヒントLv<span class="status_plus_value">+5</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="choice_effect"">
+                <img src="../UmaMisc/Image/Status/group.png">
+                <span class="status_speed">効果</span>
+                
+                <span class="skill_hint">『喜歡獨處◎』</span>のヒントLv<span class="status_plus_value">+5</span>
+                <span class="skill_hint">『使盡全力』</span>のヒントLv<span class="status_plus_value">+5</span>
+                <span class="skill_hint">『彎道回復◯』</span>のヒントLv<span class="status_plus_value">+5</span>
+                <img src="../UmaMisc/Image/ScenarioStatus/performance_Me.png">精神<span class="status_plus_value">+20</span><br>理事長的情誼量條<span class="status_plus_value">+10</span>
+            </td>
+        </tr>
+
+
+
+
+        -->
 
 
         <!-- <tr>

@@ -26,6 +26,10 @@ namespace UmaAssistant {
 		// 私人變數
 		bool draggingForm = false;
 		bool _openedSelectCharacter = false;
+	public: System::Windows::Forms::Label^ scan_state_label;
+	private:
+
+	private:
 
 		System::Drawing::Point dragOffset;
 	public:
@@ -117,6 +121,7 @@ namespace UmaAssistant {
 			this->select_character_btn = (gcnew System::Windows::Forms::Button());
 			this->select_character_webBrowser = (gcnew System::Windows::Forms::WebBrowser());
 			this->close_select_character_btn = (gcnew System::Windows::Forms::Button());
+			this->scan_state_label = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->icon_pictureBox))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -147,6 +152,7 @@ namespace UmaAssistant {
 			this->close_form_btn->Name = L"close_form_btn";
 			this->close_form_btn->Size = System::Drawing::Size(40, 32);
 			this->close_form_btn->TabIndex = 9;
+			this->close_form_btn->TabStop = false;
 			this->close_form_btn->UseVisualStyleBackColor = false;
 			this->close_form_btn->Click += gcnew System::EventHandler(this, &UmaForm::close_form_btn_Click);
 			// 
@@ -166,6 +172,7 @@ namespace UmaAssistant {
 			this->minimize_btn->Name = L"minimize_btn";
 			this->minimize_btn->Size = System::Drawing::Size(39, 32);
 			this->minimize_btn->TabIndex = 10;
+			this->minimize_btn->TabStop = false;
 			this->minimize_btn->UseVisualStyleBackColor = false;
 			this->minimize_btn->Click += gcnew System::EventHandler(this, &UmaForm::minimize_btn_Click);
 			// 
@@ -185,6 +192,7 @@ namespace UmaAssistant {
 			this->settings_btn->Name = L"settings_btn";
 			this->settings_btn->Size = System::Drawing::Size(95, 65);
 			this->settings_btn->TabIndex = 11;
+			this->settings_btn->TabStop = false;
 			this->settings_btn->Text = L"設定";
 			this->settings_btn->UseVisualStyleBackColor = false;
 			this->settings_btn->Click += gcnew System::EventHandler(this, &UmaForm::settings_btn_Click);
@@ -205,6 +213,7 @@ namespace UmaAssistant {
 			this->scan_btn->Name = L"scan_btn";
 			this->scan_btn->Size = System::Drawing::Size(95, 65);
 			this->scan_btn->TabIndex = 16;
+			this->scan_btn->TabStop = false;
 			this->scan_btn->Text = L"啓動";
 			this->scan_btn->UseVisualStyleBackColor = false;
 			this->scan_btn->Click += gcnew System::EventHandler(this, &UmaForm::scan_btn_Click);
@@ -225,6 +234,7 @@ namespace UmaAssistant {
 			this->screenshot_preview_btn->Name = L"screenshot_preview_btn";
 			this->screenshot_preview_btn->Size = System::Drawing::Size(63, 65);
 			this->screenshot_preview_btn->TabIndex = 17;
+			this->screenshot_preview_btn->TabStop = false;
 			this->screenshot_preview_btn->Text = L"截圖預覽";
 			this->screenshot_preview_btn->UseVisualStyleBackColor = false;
 			this->screenshot_preview_btn->Click += gcnew System::EventHandler(this, &UmaForm::screenshot_preview_btn_Click);
@@ -250,6 +260,7 @@ namespace UmaAssistant {
 			this->test_btn->Name = L"test_btn";
 			this->test_btn->Size = System::Drawing::Size(91, 65);
 			this->test_btn->TabIndex = 21;
+			this->test_btn->TabStop = false;
 			this->test_btn->Text = L"測試";
 			this->test_btn->UseVisualStyleBackColor = false;
 			this->test_btn->Click += gcnew System::EventHandler(this, &UmaForm::test_btn_Click);
@@ -285,6 +296,7 @@ namespace UmaAssistant {
 			this->clean_current_character_btn->Name = L"clean_current_character_btn";
 			this->clean_current_character_btn->Size = System::Drawing::Size(75, 45);
 			this->clean_current_character_btn->TabIndex = 24;
+			this->clean_current_character_btn->TabStop = false;
 			this->clean_current_character_btn->Text = L"清除角色";
 			this->clean_current_character_btn->UseVisualStyleBackColor = false;
 			this->clean_current_character_btn->Click += gcnew System::EventHandler(this, &UmaForm::clean_current_character_Click);
@@ -296,7 +308,7 @@ namespace UmaAssistant {
 			this->game_window_status_label->BackColor = System::Drawing::Color::Transparent;
 			this->game_window_status_label->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 9.5F));
 			this->game_window_status_label->ForeColor = System::Drawing::Color::Red;
-			this->game_window_status_label->Location = System::Drawing::Point(159, 11);
+			this->game_window_status_label->Location = System::Drawing::Point(156, 2);
 			this->game_window_status_label->Name = L"game_window_status_label";
 			this->game_window_status_label->Size = System::Drawing::Size(100, 19);
 			this->game_window_status_label->TabIndex = 8;
@@ -331,6 +343,7 @@ namespace UmaAssistant {
 			this->select_window_btn->Name = L"select_window_btn";
 			this->select_window_btn->Size = System::Drawing::Size(95, 65);
 			this->select_window_btn->TabIndex = 26;
+			this->select_window_btn->TabStop = false;
 			this->select_window_btn->Text = L"選取視窗";
 			this->select_window_btn->UseVisualStyleBackColor = false;
 			this->select_window_btn->Click += gcnew System::EventHandler(this, &UmaForm::select_window_btn_Click);
@@ -364,6 +377,7 @@ namespace UmaAssistant {
 			this->select_character_btn->Name = L"select_character_btn";
 			this->select_character_btn->Size = System::Drawing::Size(75, 65);
 			this->select_character_btn->TabIndex = 28;
+			this->select_character_btn->TabStop = false;
 			this->select_character_btn->Text = L"選擇角色";
 			this->select_character_btn->UseVisualStyleBackColor = false;
 			this->select_character_btn->Click += gcnew System::EventHandler(this, &UmaForm::select_character_btn_Click);
@@ -392,14 +406,29 @@ namespace UmaAssistant {
 			this->close_select_character_btn->Name = L"close_select_character_btn";
 			this->close_select_character_btn->Size = System::Drawing::Size(40, 32);
 			this->close_select_character_btn->TabIndex = 30;
+			this->close_select_character_btn->TabStop = false;
 			this->close_select_character_btn->UseVisualStyleBackColor = false;
 			this->close_select_character_btn->Click += gcnew System::EventHandler(this, &UmaForm::close_select_character_btn_Click);
+			// 
+			// scan_state_label
+			// 
+			this->scan_state_label->Anchor = System::Windows::Forms::AnchorStyles::Left;
+			this->scan_state_label->AutoSize = true;
+			this->scan_state_label->BackColor = System::Drawing::Color::Transparent;
+			this->scan_state_label->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 9.5F));
+			this->scan_state_label->ForeColor = System::Drawing::Color::Red;
+			this->scan_state_label->Location = System::Drawing::Point(156, 21);
+			this->scan_state_label->Name = L"scan_state_label";
+			this->scan_state_label->Size = System::Drawing::Size(100, 19);
+			this->scan_state_label->TabIndex = 31;
+			this->scan_state_label->Text = L"運作狀態：停止";
 			// 
 			// UmaForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(560, 550);
+			this->Controls->Add(this->scan_state_label);
 			this->Controls->Add(this->close_select_character_btn);
 			this->Controls->Add(this->select_character_webBrowser);
 			this->Controls->Add(this->select_character_btn);

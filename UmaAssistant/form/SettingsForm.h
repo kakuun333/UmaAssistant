@@ -37,6 +37,7 @@ namespace UmaAssistant
 		void SoftwareLangRadioButtonChanged(Object^ sender, EventArgs^ e);
 
 		// CheckBox
+		//void showEnhanceSkill_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 		void alwaysOnTop_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 		void debugMode_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 		void autoMouceClick_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
@@ -131,6 +132,8 @@ namespace UmaAssistant
 
 	private: System::Windows::Forms::RadioButton^ software_lang_jp_radio_btn;
 
+private:
+
 
 
 	private:
@@ -207,6 +210,7 @@ namespace UmaAssistant
 			this->update_event_data_jp_btn1->Name = L"update_event_data_jp_btn1";
 			this->update_event_data_jp_btn1->Size = System::Drawing::Size(240, 25);
 			this->update_event_data_jp_btn1->TabIndex = 0;
+			this->update_event_data_jp_btn1->TabStop = false;
 			this->update_event_data_jp_btn1->Text = L"更新 event_data_jp.json";
 			this->update_event_data_jp_btn1->UseVisualStyleBackColor = false;
 			this->update_event_data_jp_btn1->Click += gcnew System::EventHandler(this, &SettingsForm::update_event_data_jp_btn_Click);
@@ -226,6 +230,7 @@ namespace UmaAssistant
 			this->update_skill_data_jp_btn1->Name = L"update_skill_data_jp_btn1";
 			this->update_skill_data_jp_btn1->Size = System::Drawing::Size(240, 25);
 			this->update_skill_data_jp_btn1->TabIndex = 1;
+			this->update_skill_data_jp_btn1->TabStop = false;
 			this->update_skill_data_jp_btn1->Text = L"更新 skill_data_jp.json";
 			this->update_skill_data_jp_btn1->UseVisualStyleBackColor = false;
 			this->update_skill_data_jp_btn1->Click += gcnew System::EventHandler(this, &SettingsForm::update_skill_data_jp_btn_Click);
@@ -493,7 +498,7 @@ namespace UmaAssistant
 			this->flowLayoutPanel1->FlowDirection = System::Windows::Forms::FlowDirection::TopDown;
 			this->flowLayoutPanel1->Location = System::Drawing::Point(9, 359);
 			this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
-			this->flowLayoutPanel1->Size = System::Drawing::Size(247, 156);
+			this->flowLayoutPanel1->Size = System::Drawing::Size(247, 155);
 			this->flowLayoutPanel1->TabIndex = 39;
 			// 
 			// outputLogFile_checkBox
@@ -693,10 +698,11 @@ namespace UmaAssistant
 			this->default_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->default_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->default_btn->Location = System::Drawing::Point(262, 475);
+			this->default_btn->Location = System::Drawing::Point(262, 458);
 			this->default_btn->Name = L"default_btn";
-			this->default_btn->Size = System::Drawing::Size(109, 40);
+			this->default_btn->Size = System::Drawing::Size(109, 56);
 			this->default_btn->TabIndex = 45;
+			this->default_btn->TabStop = false;
 			this->default_btn->Text = L"恢復預設値";
 			this->default_btn->UseVisualStyleBackColor = false;
 			this->default_btn->Click += gcnew System::EventHandler(this, &SettingsForm::default_btn_Click);
@@ -764,7 +770,7 @@ namespace UmaAssistant
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(380, 520);
+			this->ClientSize = System::Drawing::Size(380, 525);
 			this->Controls->Add(this->tableLayoutPanel6);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->tableLayoutPanel5);

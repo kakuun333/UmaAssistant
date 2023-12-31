@@ -24,6 +24,7 @@ using json = nlohmann::json;
 #include <locale>
 #include <codecvt>
 
+
 using namespace System;
 using namespace System::Windows::Forms;
 using namespace System::IO;
@@ -91,6 +92,7 @@ int main(array<String^>^ args)
 	/*
 	*  初始化 CheckBox
 	*/
+
 	switch (global::config->DebugMode)
 	{
 	case true:

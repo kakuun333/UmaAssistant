@@ -100,6 +100,7 @@ public:
 	static cv::Mat event_title_gray;
 	static cv::Mat event_title_gray_bin;
 	static cv::Mat event_title_gray_bin_inv;
+	static cv::Mat event_title_gray_bin_high_thresh;
 
 	static cv::Mat event_icon;
 

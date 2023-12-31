@@ -1,3 +1,4 @@
+dumper = {};
 --[[==============================================================================================================
 html_dumper 的原則：公共函數一定會用到 GetHtmlFromUrl() 函數。
 
@@ -12,8 +13,8 @@ HTML 參考：
 %1      ：引用第一個補獲的內容
 %s      ：空白鍵
 %w      ：匹配任意數字、字母（包括大小寫）。
-==============================================================================================================]] dumper =
-    {};
+==============================================================================================================
+]]
 
 ---- 引用 ---- 引用 ---- 引用 ---- 引用 ---- 引用 ---- 引用 ---- 引用 
 
@@ -70,14 +71,14 @@ function dumper.dumpSkillData(ms)
             ["rare"] = {
                 [skill_name] = {
                     ["skill_pt"] = skill_pt,
-                    ["skill_effect"] = skill_effect,
+                    ["skill_description"] = skill_description,
                     ["upper_skill"] = nil,  --json == null
                     ["lower_skill"] = nil,
                     ["skill_icon_name"] = skill_icon,
                 },
                 [skill_name] = {
                     ["skill_pt"] = skill_pt,
-                    ["skill_effect"] = skill_effect,
+                    ["skill_description"] = skill_description,
                     ["upper_skill"] = nil,  --json == null
                     ["lower_skill"] = nil,
                     ["skill_icon_name"] = skill_icon_name,
@@ -86,7 +87,7 @@ function dumper.dumpSkillData(ms)
             ["normal"] = {
                 [skill_name] = {
                     ["skill_pt"] = skill_pt,
-                    ["skill_effect"] = skill_effect,
+                    ["skill_description"] = skill_description,
                     ["upper_skill"] = nil,  --json == null
                     ["lower_skill"] = nil,
                     ["skill_icon_name"] = skill_icon_name,

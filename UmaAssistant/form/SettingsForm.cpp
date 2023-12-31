@@ -126,6 +126,7 @@ namespace UmaAssistant
 
 #pragma endregion
 #pragma region ªì©l¤Æ checkBox
+		
 		this->alwaysOnTop_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::alwaysOnTop_checkBox_CheckedChanged);
 		this->autoMouceClick_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::autoMouceClick_checkBox_CheckedChanged);
 		this->debugMode_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::debugMode_checkBox_CheckedChanged);
@@ -354,6 +355,30 @@ namespace UmaAssistant
 		global::config->WriteToJson();
 	}
 
+	//void SettingsForm::showEnhanceSkill_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
+	//{
+	//	CheckBox^ checkbox = dynamic_cast<CheckBox^>(sender);
+
+	//	WebManager* webManager = WebManager::GetInstance();
+
+	//	if (checkbox->Checked)
+	//	{
+	//		webManager->ChangeShowEnhanceSkillData(true);
+
+	//		// config
+	//		global::config->ShowEnhanceSkill = checkbox->Checked;
+	//	}
+	//	else
+	//	{
+	//		webManager->ChangeShowEnhanceSkillData(false);
+
+	//		// config
+	//		global::config->ShowEnhanceSkill = checkbox->Checked;
+	//	}
+
+	//	global::config->WriteToJson();
+	//}
+
 	void SettingsForm::debugMode_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
 	{
 		ConsoleManager* consoleManager = ConsoleManager::GetInstance();
@@ -450,6 +475,7 @@ namespace UmaAssistant
 
 	System::Void SettingsForm::default_btn_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		//this->showEnhanceSkill_checkBox->Checked = true;
 		this->debugMode_checkBox->Checked = false;
 		this->alwaysOnTop_checkBox->Checked = false;
 		this->autoMouceClick_checkBox->Checked = false;

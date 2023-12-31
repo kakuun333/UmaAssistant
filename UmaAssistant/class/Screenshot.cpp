@@ -8,6 +8,7 @@ cv::Mat Screenshot::event_title_resize;
 cv::Mat Screenshot::event_title_gray;
 cv::Mat Screenshot::event_title_gray_bin;
 cv::Mat Screenshot::event_title_gray_bin_inv;
+cv::Mat Screenshot::event_title_gray_bin_high_thresh;
 
 // event_icon
 cv::Mat Screenshot::event_icon;
@@ -549,7 +550,7 @@ void Screenshot::ShowImage()
 	//cv::imshow("event_title_oimg", event_title_oimg);
 	//cv::imshow("event_title_resize", event_title_resize);
 	cv::imshow("event_title_gray", event_title_gray);
-	//cv::imshow("event_title_gray_bin", event_title_gray_bin);
+	cv::imshow("event_title_gray_bin", event_title_gray_bin);
 	//cv::imshow("event_title_gray_bin_inv", event_title_gray_bin_inv);
 
 	//// event_icon ////
@@ -589,8 +590,8 @@ void Screenshot::GetEventTitleImage()
 	this->ResizeImage(event_title_gray, 2);
 	cv::cvtColor(event_title_gray, event_title_gray, cv::COLOR_BGR2GRAY);
 
-	// event_title_gray_bin 裁切->放大+去鋸齒->灰值化->二值化//
-	int thresh = 208/*210*/;
+	// event_title_gray_bin 裁切 -> 放大 + 去鋸齒 -> 灰值化 -> 二值化 //
+	int thresh = 208/*208*/;
 	event_title_gray_bin = oimg.clone();
 	this->CropImage(event_title_gray_bin, ImageType::IMG_EVENT_TITLE, ImagePattern::EVENT_TITLE_GRAY_BIN);
 	this->ResizeImage(event_title_gray_bin, 2);
@@ -613,9 +614,14 @@ void Screenshot::GetEventTitleImage()
 		_isEventTitle = false;
 	}
 
+	event_title_gray_bin_high_thresh = oimg.clone();
+	this->CropImage(event_title_gray_bin_high_thresh, ImageType::IMG_EVENT_TITLE, ImagePattern::EVENT_TITLE_GRAY_BIN);
+	this->ResizeImage(event_title_gray_bin_high_thresh, 2);
+	cv::cvtColor(event_title_gray_bin_high_thresh, event_title_gray_bin_high_thresh, cv::COLOR_BGR2GRAY);
+	cv::threshold(event_title_gray_bin_high_thresh, event_title_gray_bin_high_thresh, 235/*230*/, 255, cv::THRESH_BINARY);
 	
 
-	// event_title_gray_bin_inv 裁切->放大+去鋸齒->灰值化->二值化-//
+	// event_title_gray_bin_inv 裁切 -> 放大 + 去鋸齒 -> 灰值化 -> 二值化 //
 	event_title_gray_bin_inv = oimg.clone();
 	this->CropImage(event_title_gray_bin_inv, ImageType::IMG_EVENT_TITLE);
 	this->ResizeImage(event_title_gray_bin_inv, 1.5);

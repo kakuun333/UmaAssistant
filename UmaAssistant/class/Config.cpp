@@ -22,6 +22,7 @@ void Config::Update()
 	json json_config = fileManager->ReadJson(global::path::std_config);
 
 	// bool
+	//ShowEnhanceSkill = json_config["ShowEnhanceSkill"].empty() ? true : json_config["ShowEnhanceSkill"].get<bool>();
 	DebugMode = json_config["DebugMode"].empty() ? false : json_config["DebugMode"].get<bool>();
 	AlwaysOnTop = json_config["AlwaysOnTop"].empty() ? false : json_config["AlwaysOnTop"].get<bool>();
 	AutoMouseClick = json_config["AutoMouseClick"].empty() ? false : json_config["AutoMouseClick"].get<bool>();
@@ -53,6 +54,7 @@ void Config::WriteToJson()
 
 	json json_config = fileManager->ReadJson(global::path::std_config);
 
+	//json_config["ShowEnhanceSkill"] = this->ShowEnhanceSkill;
 	json_config["DebugMode"] = this->DebugMode;
 	json_config["AlwaysOnTop"] = this->AlwaysOnTop;
 	json_config["AutoMouseClick"] = this->AutoMouseClick;

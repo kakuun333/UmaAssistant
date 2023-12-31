@@ -18,6 +18,7 @@ private:
 public:
 	Config();
 
+	//bool ShowEnhanceSkill;
 	bool DebugMode;
 	bool AlwaysOnTop;
 	bool AutoMouseClick;

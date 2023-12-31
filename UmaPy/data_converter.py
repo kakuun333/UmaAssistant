@@ -7,6 +7,7 @@ import copy
 event_data_jp = utility.read_json_file(r"../UmaData/event_data_jp.json");
 skill_data_jp = utility.read_json_file(r"../UmaData/skill_data_jp.json");
 scenario_event_data_jp = utility.read_json_file(r"../UmaData/scenario_event_data_jp.json");
+enhance_skill_data_jp = utility.read_json_file(r"../UmaData/enhance_skill_data_jp.json");
 
 # select_character_data
 select_character_data = utility.read_json_file(r"../UmaData/select_character_data.json");
@@ -23,7 +24,7 @@ card_convert_data = utility.read_json_file(r"../UmaData/event_data_jp_cvt_tw_car
 skill_convert_data = utility.read_json_file(r"../UmaData/skill_data_jp_cvt_tw.json");
 scenario_convert_data = utility.read_json_file(r"../UmaData/scenario_event_data_jp_cvt_tw.json");
 
-
+enhance_skill_data_tw = {};
 
 event_data_tw = {
     "character": {
@@ -98,6 +99,53 @@ scenario_event_data_tw = {
 
     },
 };
+
+
+
+
+# skill_effect_type 是 "skill_effect_title" or "skill_effect_data"
+def trans_enhance_skill_data_jp_to_tw(skill_effect_title, skill_effect_data):
+
+    if (skill_effect_title == "スタート時間"):
+        skill_effect_title = translation_data["jp_to_tw"]["skill_effect_title"][skill_effect_title];
+        skill_effect_data = re.sub(r"(\d+\.\d+ 倍)に補正", r"調整為 \1", skill_effect_data);
+    elif (skill_effect_title == "人気"):
+        skill_effect_title = translation_data["jp_to_tw"]["skill_effect_title"][skill_effect_title];
+        skill_effect_data = re.sub(r"(\d+)番人気", r"第\1人氣", skill_effect_data);
+
+    for jp, tw in translation_data["jp_to_tw"]["skill_effect_title"].items():
+        skill_effect_title = re.sub(jp, tw, skill_effect_title);
+
+    for jp, tw in translation_data["jp_to_tw"]["skill_effect_data"].items():
+        try:
+            skill_effect_data = re.sub(jp, tw, skill_effect_data); # TypeError: expected string or bytes-like object, got 'NoneType'
+        except:
+            pass;
+
+    return skill_effect_title, skill_effect_data;
+
+def cvt_enhance_skill_data_jp_to_tw():
+    # enhance_skill_data_jp
+    # skill_convert_data
+    for skill_name, skill_name_v in enhance_skill_data_jp.items():
+        if skill_name in skill_convert_data:
+            enhance_skill_data_tw[skill_convert_data[skill_name]["tw_skill_title"]] = {
+                "skill_effect": {},
+                "skill_condition": {},
+            };
+
+            for skill_data_type, skill_data_type_v in skill_name_v.items():
+                for skill_effect_title, skill_effect_data in skill_data_type_v.items():
+                    skill_effect_title, skill_effect_data = trans_enhance_skill_data_jp_to_tw(skill_effect_title, skill_effect_data);
+
+                    enhance_skill_data_tw[skill_convert_data[skill_name]["tw_skill_title"]][skill_data_type][skill_effect_title] = skill_effect_data;
+
+cvt_enhance_skill_data_jp_to_tw();
+
+json_string = json.dumps(enhance_skill_data_tw, indent=2, ensure_ascii=False);
+
+utility.write_file("../UmaData/enhance_skill_data_tw.json", json_string);
+
 
 
 def convert_choice_effect_jp_to_tw(choice_effect, jp_event_owner = None, tw_event_owner = None, cvt_skill_data = True):
@@ -205,8 +253,8 @@ def convert_to_skill_data_tw(convert_data):
                             skill_data_tw[color][rare][convert_data[jp_skill_title]["tw_skill_title"]][key] = convert_data[jp_skill_title]["tw_upper_skill"];
                         elif (key == "lower_skill"):
                             skill_data_tw[color][rare][convert_data[jp_skill_title]["tw_skill_title"]][key] = convert_data[jp_skill_title]["tw_lower_skill"];
-                        elif (key == "skill_effect"):
-                            skill_data_tw[color][rare][convert_data[jp_skill_title]["tw_skill_title"]][key] = convert_data[jp_skill_title]["tw_skill_effect"];
+                        elif (key == "skill_description"):
+                            skill_data_tw[color][rare][convert_data[jp_skill_title]["tw_skill_title"]][key] = convert_data[jp_skill_title]["tw_skill_description"];
                         else:
                             skill_data_tw[color][rare][convert_data[jp_skill_title]["tw_skill_title"]][key] = value;
 
@@ -300,9 +348,9 @@ def convert_to_skill_data_jp_trans_tw(convert_data):
             for jp_skill_title, jp_skill_title_v in rare_v.items():
                 skill_data_jp_trans_tw[color][rare][jp_skill_title] = {};
                 for key, value in jp_skill_title_v.items():
-                    if (key == "skill_effect"):
+                    if (key == "skill_description"):
                         try:
-                            skill_data_jp_trans_tw[color][rare][jp_skill_title][key] = convert_data[jp_skill_title]["tw_skill_effect"];
+                            skill_data_jp_trans_tw[color][rare][jp_skill_title][key] = convert_data[jp_skill_title]["tw_skill_description"];
                         except: # 沒有中文翻譯的情況
                             skill_data_jp_trans_tw[color][rare][jp_skill_title][key] = value;
                     

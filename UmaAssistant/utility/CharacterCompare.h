@@ -14,29 +14,11 @@ namespace utility
 
 	std::vector<std::string> SplitJpnChar(std::string input);
 
-	/// 從第一個 utf-8字 開始到 quantityInASet 的範圍的 utf-8字 拆分成一組，
-	/// 只要分了 n 組就會跳過 n 個 utf-8字
-	/// 例如：食いしん坊
-	/// 預設四個 utf-8字 拆分成一組，所以第一組會是「食いしん」
-	/// 基於「只要分了 n 組就會跳過 n 個 utf-8字」的規則
-	/// 所以第二組會是「いしん坊」
-	std::vector<std::string> SplitText(std::string input, int quantityInASet = 4);
+	std::vector<int> GetNonSameIndexList(std::vector<std::string>& smaller_list, std::vector<std::string>& larger_list);
 
-	std::vector<int> GetNonSameIndexList(std::vector<std::string> smaller_list, std::vector<std::string> larger_list);
+	int GetSameCount(std::vector<std::string>& smaller_list, std::vector<std::string>& larger_list);
 
-	int GetSameCount(std::vector<std::string> smaller_list, std::vector<std::string> larger_list);
-
-	int GetSameCountByMoveIdx(std::vector<std::string> smaller_list, std::vector<std::string> larger_list, std::vector<int> nonSameIdxList);
-
-	int GetSameCountBySimilarChar(std::vector<std::string> smaller_list, std::vector<std::string> larger_list);
-
-	int GetSameCountByMoveIdxSimilarChar(std::vector<std::string> smaller_list, std::vector<std::string> larger_list, std::vector<int> nonSameIdxList);
-
-	bool HasSimilarChar(std::string strChar);
-
-	std::vector<std::string> GetSimilarCharList(std::string strChar);
-
-	bool IsSimilar(std::string str1, std::string str2);
+	int GetSameCountByMoveIdx(std::vector<std::string>& smaller_list, std::vector<std::string>& larger_list, std::vector<int>& nonSameIdxList);
 
 	float GetSimilarity(std::string str1, std::string str2);
 
@@ -47,4 +29,21 @@ namespace utility
 	bool HasBlackListedString(std::string scanned_text);
 
 	bool IsStringTooLong(std::string scanned_text);
+
+#pragma region 已棄用
+	/// 從第一個 utf-8字 開始到 quantityInASet 的範圍的 utf-8字 拆分成一組，
+	/// 只要分了 n 組就會跳過 n 個 utf-8字
+	/// 例如：食いしん坊
+	/// 預設四個 utf-8字 拆分成一組，所以第一組會是「食いしん」
+	/// 基於「只要分了 n 組就會跳過 n 個 utf-8字」的規則
+	/// 所以第二組會是「いしん坊」
+	std::vector<std::string> SplitText(std::string input, int quantityInASet = 4);
+
+
+	int GetSameCountBySimilarChar(std::vector<std::string> smaller_list, std::vector<std::string> larger_list);
+	int GetSameCountByMoveIdxSimilarChar(std::vector<std::string> smaller_list, std::vector<std::string> larger_list, std::vector<int> nonSameIdxList);
+
+	std::vector<std::string> GetSimilarCharList(std::string strChar);
+	bool HasSimilarChar(std::string strChar);
+#pragma endregion
 }

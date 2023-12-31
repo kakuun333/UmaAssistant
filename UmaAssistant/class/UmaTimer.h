@@ -10,8 +10,10 @@ private:
 public:
 	UmaTimer() {}
 
+	// 開始計時
 	void Start();
 
+	// 停止計時，並回傳經過的時間
 	double Stop();
 };
 

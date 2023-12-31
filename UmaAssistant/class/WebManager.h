@@ -36,6 +36,8 @@ public:
 
 	void ChangeChoiceBrowserLang(int softwareLangType);
 
+	//void ChangeShowEnhanceSkillData(bool boolean);
+
 	void test();
 };
 

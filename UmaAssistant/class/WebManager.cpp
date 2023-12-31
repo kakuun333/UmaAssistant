@@ -67,6 +67,12 @@ void WebManager::ChangeChoiceBrowserLang(int softwareLangType)
 	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "changeChoiceBrowserLang", param);
 }
 
+//void WebManager::ChangeShowEnhanceSkillData(bool boolean)
+//{
+//	array<Object^>^ param = gcnew array<Object^> { boolean };
+//	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "changeShowEnhanceSkill", param);
+//}
+
 void WebManager::test()
 {
 	Object^ result = global::form::umaForm->choiceWebBrowser->Document->InvokeScript("test");

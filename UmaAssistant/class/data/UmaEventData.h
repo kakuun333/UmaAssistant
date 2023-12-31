@@ -26,17 +26,12 @@ class UmaChoice
 public:
 	std::string choice_title;
 	std::string choice_effect;
-
-	//gcroot<System::String^> sys_choice_title;
-	//gcroot<System::String^> sys_choice_effect;
-
 };
 
 class UmaEvent
 {
 public:
 	std::string event_title;
-	//gcroot<System::String^> sys_event_title;
 
 	std::vector<UmaChoice> choice_list;
 
@@ -54,15 +49,42 @@ public:
 	float similarity = -1;
 
 	std::string event_owner;
-	//gcroot<System::String^> sys_event_owner;
 
 	UmaEvent umaEvent;
 
 	// 如果資料完整返回 true，不完整返回 false
-	bool IsDataComplete();
+	inline bool UmaEventData::IsDataComplete()
+	{
+		//std::cout << "1" << std::endl;
+		if (this->event_owner.empty()) return false;
+
+		//std::cout << "2" << std::endl;
+
+		if (this->umaEvent.empty()) return false;
+
+		//std::cout << "3" << std::endl;
+
+		if (this->umaEvent.event_title.empty()) return false;
+		//std::cout << "4" << std::endl;
+
+		if (this->umaEvent.choice_list.empty()) return false;
+
+		//std::cout << "5" << std::endl;
+
+		for (UmaChoice choice : this->umaEvent.choice_list)
+		{
+			//std::cout << "6" << std::endl;
+			if (choice.choice_title.empty()) return false;
+			//std::cout << "7" << std::endl;
+			if (choice.choice_effect.empty()) return false;
+			//std::cout << "8" << std::endl;
+		}
+
+		return true;
+	}
 
 	template<typename T>
-	T Get(UmaEventDataType dataType, int elementIndex = NONE_INDEX)
+	T Get(UmaEventDataType dataType)
 	{
 		if constexpr (std::is_same_v<T, std::vector<UmaChoice>>)
 		{
@@ -71,7 +93,7 @@ public:
 				return umaEvent.choice_list;
 			}
 		}
-		else if constexpr (std::is_same_v <T, std::string>)
+		else if constexpr (std::is_same_v<T, std::string>)
 		{
 			if (dataType == UmaEventDataType::EVENT_TITLE)
 			{
@@ -82,23 +104,6 @@ public:
 				return event_owner;
 			}
 		}
-		//else if constexpr (std::is_same_v<T, System::String^>)
-		//{
-		//	if (dataType == UmaEventDataType::EVENT_TITLE)
-		//	{
-		//		//for (const UmaEvent& _event : event_list)
-		//		//{
-		//		//	if (_event.sys_event_title->Empty) continue;
-
-		//		//	return _event.sys_event_title;
-		//		//}
-		//		return event_list[0].sys_event_title;
-		//	}
-		//	else if(dataType == UmaEventDataType::EVENT_OWNER)
-		//	{
-		//		return sys_event_owner;
-		//	}
-		//}
 	}
 };
 

@@ -46,7 +46,7 @@ function changeChoiceBrowserLang(softwareLang) {
     const event_owner_title = document.getElementById("event_owner_title");
     const event_title_title = document.getElementById("event_title_title");
     const skill_pt_title = document.getElementById("skill_pt_title");
-    const skill_effect_title = document.getElementById("skill_effect_title");
+    const skill_description_title = document.getElementById("skill_description_title");
     const upper_skill_title = document.getElementById("upper_skill_title");
     const lower_skill_title = document.getElementById("lower_skill_title");
     
@@ -61,7 +61,7 @@ function changeChoiceBrowserLang(softwareLang) {
         
         // skill_content
         skill_pt_title.innerHTML = "所需技能點";
-        skill_effect_title.innerHTML = "效果";
+        skill_description_title.innerHTML = "描述";
         upper_skill_title.innerHTML = "上位技能";
         lower_skill_title.innerHTML = "下位技能";
         break;
@@ -71,7 +71,7 @@ function changeChoiceBrowserLang(softwareLang) {
 
         // skill_content
         skill_pt_title.innerHTML = "スキルpt";
-        skill_effect_title.innerHTML = "效果";
+        skill_description_title.innerHTML = "説明文";
         upper_skill_title.innerHTML = "上位スキル";
         lower_skill_title.innerHTML = "下位スキル";
         break;

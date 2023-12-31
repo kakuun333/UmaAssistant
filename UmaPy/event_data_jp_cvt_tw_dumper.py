@@ -149,7 +149,7 @@ def get_event_title_list():
 
                 event_title = utility.replace(event_title, "　", "");
 
-                event_title = utility.replace(event_title, "〜", "～");
+                event_title = utility.replace(event_title, "～", "〜");
 
                 event_title = utility.replace(event_title, "―", "ー"); # 信仰心と親切心が交わる時ーー
 

@@ -1,8 +1,77 @@
-function createSkillHintContent() {
-    let div = document.createElement("div");
-    div.innerHTML = "TEST";
+// function createSkillHintContent() {
+//     let div = document.createElement("div");
+//     div.innerHTML = "TEST";
+// }
+
+
+function getSize(element) {
+    let rect = element.getBoundingClientRect();
+    let width = rect.right - rect.left;
+    let height = rect.bottom - rect.top;
+
+    const tmp = {
+        width: width,
+        height: height
+    }
+
+    return tmp;
 }
 
+function cleanSkillLabelRow() {
+    const skill_effect = document.getElementById("skill_effect");
+    const skill_condition = document.getElementById("skill_condition");
+
+    // const children = skill_effect_table.children;
+
+    // for (var i = 0; i < children.length; i++) {
+    //     console.log(children[i])
+    //     if (children[i].firstChild.className != "table_row_title") {
+    //         children[i].remove();
+    //     }
+    // }
+
+    while (skill_effect.lastChild) {
+        skill_effect.removeChild(skill_effect.lastChild);
+    }
+
+    while (skill_condition.lastChild) {
+        skill_condition.removeChild(skill_condition.lastChild);
+    }
+}
+
+function createSkillLabel(skillDataType, skill_effect_title, skill_effect_data) {
+    let skill_label = null;
+
+    let targetClassName = null;
+
+    switch (skillDataType) {
+        case "skill_effect":
+            skill_label = document.getElementById("skill_effect");
+            targetClassName = "skill_effect_data";
+            break;
+        case "skill_condition":
+            skill_label = document.getElementById("skill_condition");
+            targetClassName = "skill_condition_data";
+            break;
+    }
+
+
+    // ------------------------------------- //
+    const tr = document.createElement("tr");
+    skill_label.appendChild(tr);
+
+    // ------------------------------------- //
+    const th = document.createElement("th");
+    th.className = "enhance_skill_data " + targetClassName;
+    
+    th.innerHTML = "<span>" + skill_effect_title + "</span>";
+    tr.appendChild(th);
+    
+    // ------------------------------------- //
+    const td = document.createElement("td");
+    td.innerHTML = "<span>" + skill_effect_data + "</span>";
+    tr.appendChild(td);
+}
 
 function updateSkillContent() {
     // var
@@ -11,15 +80,17 @@ function updateSkillContent() {
     // var
 
     // element
-    let skill_hint_content = document.getElementById("skill_hint_content");
-    let skill_icon = document.getElementById("skill_icon");
-    let skill_name = document.getElementById("skill_name");
-    let skill_pt = document.getElementById("skill_pt");
-    let skill_effect = document.getElementById("skill_effect");
-    let upper_skill = document.getElementById("upper_skill");
-    let lower_skill = document.getElementById("lower_skill");
-    let upper_skill_title = document.getElementById("upper_skill_title");
-    let lower_skill_title = document.getElementById("lower_skill_title");
+    const skill_hint_content = document.getElementById("skill_hint_content");
+    const skill_icon = document.getElementById("skill_icon");
+    const skill_name = document.getElementById("skill_name");
+    const skill_pt = document.getElementById("skill_pt");
+    const skill_description = document.getElementById("skill_description");
+    const upper_skill = document.getElementById("upper_skill");
+    const lower_skill = document.getElementById("lower_skill");
+    const upper_skill_title = document.getElementById("upper_skill_title");
+    const lower_skill_title = document.getElementById("lower_skill_title");
+    const skill_table = document.getElementById("skill_table");
+    const skill_effect_table = document.getElementById("skill_effect_table");
     // element
 
 
@@ -28,61 +99,39 @@ function updateSkillContent() {
         let skill_hint = skill_hint_elements[i];
         // 監聽滑鼠懸停
         skill_hint.addEventListener("mouseenter", function(event) {
-            // style
-            let mouseX = event.clientX;
-            let mouseY = event.clientY;
-
-            skill_hint_content.style.top = mouseY + 'px';
-            skill_hint_content.style.bottom = '0px';
-            skill_hint_content.style.left = mouseX + 'px';
-            skill_hint_content.style.right = '0px';
-
-            skill_hint_content.style.display = "inline";
-
-            let windowWidth = window.innerWidth;
-            let windowHeight = window.innerHeight;
-            let rect = skill_hint_content.getBoundingClientRect();
-
-            // console.log("windowWidth: " + windowWidth, "windowHeight: " + windowHeight);
-            // console.log("top: " + rect.top, "bottom: " + rect.bottom, "left: " + rect.left, "right: " + rect.right);
-
-            let content_width = rect.right - rect.left;
-            let content_height = rect.bottom - rect.top;
-            
-            if (rect.left + content_width > windowWidth) {
-                // console.log("超出視窗外！")
-                // console.log("width: " + content_width, "height: " + content_height);
-                // console.log("left: " + rect.left, "right: " + rect.right);
-                let horizontal_offset = (rect.left + content_width) - windowWidth + 17;
-                
-                skill_hint_content.style.left = parseInt(skill_hint_content.style.left) - horizontal_offset + "px";
-                skill_hint_content.style.right = parseInt(skill_hint_content.style.right) - horizontal_offset + "px";
-            }
-            if (rect.top + content_height > windowHeight) {
-                // console.log("超出視窗外！")
-                let vertical_offset = (rect.top + content_height) - windowHeight;
-
-                skill_hint_content.style.top = parseInt(skill_hint_content.style.top) - vertical_offset + "px";
-                skill_hint_content.style.bottom = parseInt(skill_hint_content.style.bottom) - vertical_offset + "px";
-            }
-            // style
-
-
             // skill json
             skill_data = null;
 
-            if (GameServer == GameServerType.jp) {
-                
-                // 判斷日服文本語言
-                if (JpServerLang == JpServerLangType.jp) {
+            switch (GameServer)
+            {
+            case GameServerType.jp:
+                switch (JpServerLang)
+                {
+                case JpServerLangType.jp:
                     skill_data = skill_data_jp;
-                } else if (JpServerLang == JpServerLangType.tw) {
+                    break;
+                case JpServerLangType.tw:
                     skill_data = skill_data_jp_trans_tw;
+                    break;
                 }
-                
-            } else if (GameServer == GameServerType.tw) {
+                break;
+
+            case GameServerType.tw:
                 skill_data = skill_data_tw;
+                break;
             }
+            // if (GameServer == GameServerType.jp) {
+                
+            //     // 判斷日服文本語言
+            //     if (JpServerLang == JpServerLangType.jp) {
+            //         skill_data = skill_data_jp;
+            //     } else if (JpServerLang == JpServerLangType.tw) {
+            //         skill_data = skill_data_jp_trans_tw;
+            //     }
+                
+            // } else if (GameServer == GameServerType.tw) {
+            //     skill_data = skill_data_tw;
+            // }
 
             for (let color in skill_data) {
                 if (skill_data.hasOwnProperty(color)) {
@@ -114,32 +163,77 @@ function updateSkillContent() {
 
                                             if (skill_info == "skill_pt") {
                                                 skill_pt.innerText = value;
-                                            } else if (skill_info == "skill_effect") {
-                                                skill_effect.innerText = value;
+                                            } else if (skill_info == "skill_description") {
+                                                skill_description.innerText = value;
                                             } else if (skill_info == "skill_icon_name") {
-                                                skill_icon.src = "../UmaMisc/Image/Skill/"+ value +".png"
+                                                skill_icon.src = "../UmaMisc/Image/Skill/" + value + ".png"
                                             } else if (skill_info == "upper_skill") {
                                                 if (value != null) {
-                                                    upper_skill_title.style.display = "inline";
-                                                    upper_skill.style.display = "inline";
+                                                    upper_skill_title.parentElement.parentElement.style.display = "table-row";
+                                                    // upper_skill_title.style.display = "inline";
+                                                    // upper_skill.style.display = "inline";
                                                     upper_skill.innerText = value;
                                                 } else {
-                                                    upper_skill_title.style.display = "none";
-                                                    upper_skill.style.display = "none";
+                                                    upper_skill_title.parentElement.parentElement.style.display = "none";
                                                 }
                                             } else if (skill_info == "lower_skill") {
                                                 if (value != null) {
-                                                    lower_skill_title.style.display = "inline";
-                                                    lower_skill.style.display = "inline";
+                                                    lower_skill_title.parentElement.parentElement.style.display = "table-row";
+                                                    // lower_skill_title.style.display = "inline";
+                                                    // lower_skill.style.display = "inline";
                                                     lower_skill.innerText = value;
                                                 } else {
-                                                    lower_skill_title.style.display = "none";
-                                                    lower_skill.style.display = "none";
+                                                    lower_skill_title.parentElement.parentElement.style.display = "none";
                                                 }
                                             }
+                                        }
 
 
-                                            
+                                        let enhance_skill_data = null;
+
+                                        switch (GameServer)
+                                        {
+                                        case GameServerType.jp:
+                                            switch (JpServerLang)
+                                            {
+                                            case JpServerLangType.jp:
+                                                enhance_skill_data = enhance_skill_data_jp;
+                                                break;
+                                            case JpServerLangType.tw:
+                                                enhance_skill_data = enhance_skill_data_jp;
+                                                break;
+                                            }
+                                            break;
+                            
+                                        case GameServerType.tw:
+                                            enhance_skill_data = enhance_skill_data_tw;
+                                            break;
+                                        }
+
+                                        cleanSkillLabelRow();
+
+                                        // 添加進階技能詳細資訊
+                                        for (let skill_data_type in enhance_skill_data[json_skill_name]) {
+                                            const skill_data_v = enhance_skill_data[json_skill_name][skill_data_type];
+
+                                            for (let skill_data_title in skill_data_v) {
+                                                const skill_data_data = skill_data_v[skill_data_title];
+                                                // console.log(skill_data_title, skill_data_data);
+
+                                                if (skill_data_data == null) continue;
+
+                                                createSkillLabel(skill_data_type, skill_data_title, skill_data_data);
+                                            }
+                                        }
+
+                                        enhance_data_list = document.querySelectorAll(".enhance_data");
+
+                                        for (let i = 0; i < enhance_data_list.length; ++i) {
+                                            if (skill_rare == "normal") {
+                                                enhance_data_list[i].style.background = "linear-gradient(to right,  rgb(255, 255, 255), rgb(214, 214, 233), rgb(248, 248, 248), rgb(248, 248, 248))";
+                                            } else if (skill_rare == "rare") {
+                                                enhance_data_list[i].style.background = "linear-gradient(to right,  rgb(255, 250, 156), rgb(254, 210, 137), rgb(255, 240, 156), rgb(255, 240, 156))";
+                                            }
                                         }
                                     }
                                 }
@@ -148,6 +242,66 @@ function updateSkillContent() {
                     }
                 }
             }
+
+            // enhance_data_list = document.querySelectorAll(".enhance_data");
+            // for (let i = 0; i < enhance_data_list.length; ++i) {
+            //     if (show_enhance_skill) {
+            //         enhance_data_list[i].style.display = "table_row";
+            //     } else {
+            //         enhance_data_list[i].style.display = "none";
+            //     }
+            // }
+            
+
+
+            // style
+            let mouseX = event.clientX;
+            let mouseY = event.clientY;
+
+            skill_hint_content.style.top = mouseY + 'px';
+            skill_hint_content.style.bottom = '0px';
+            skill_hint_content.style.left = mouseX + 'px';
+            skill_hint_content.style.right = '0px';
+
+            skill_hint_content.style.display = "inline";
+
+            let windowWidth = window.innerWidth;
+            let windowHeight = window.innerHeight;
+            let rect = skill_hint_content.getBoundingClientRect();
+
+            // console.log("windowWidth: " + windowWidth, "windowHeight: " + windowHeight);
+            // console.log("top: " + rect.top, "bottom: " + rect.bottom, "left: " + rect.left, "right: " + rect.right);
+
+            let content_width = rect.right - rect.left;
+            let content_height = rect.bottom - rect.top;
+
+            const skill_table_size = getSize(skill_table);
+
+            
+            if (rect.left + content_width > windowWidth) {
+                // console.log("超出視窗外！")
+                // console.log("width: " + content_width, "height: " + content_height);
+                // console.log("left: " + rect.left, "right: " + rect.right);
+                let horizontal_offset = (rect.left + skill_table_size.width) - windowWidth + 17;
+                
+                skill_hint_content.style.left = parseInt(skill_hint_content.style.left) - horizontal_offset + "px";
+                skill_hint_content.style.right = parseInt(skill_hint_content.style.right) - horizontal_offset + "px";
+            }
+            if (rect.top + content_height > windowHeight) {
+                // console.log("超出視窗外！")
+
+                let vertical_offset = (rect.top + skill_table_size.height) - windowHeight;
+
+                
+                skill_hint_content.style.top = parseInt(skill_hint_content.style.top) - vertical_offset + "px";
+                skill_hint_content.style.bottom = parseInt(skill_hint_content.style.bottom) - vertical_offset + "px";
+            }
+
+            // console.log(skill_table_size.width, skill_table_size.height);
+
+            // skill_hint_content.style.width = parseInt(skill_table_size.width) + "px";
+            skill_hint_content.style.height = parseInt(skill_table_size.height) + "px";
+            // style
         });
 
         // 監聽滑鼠離開
@@ -208,6 +362,8 @@ const JpServerLangType = {
 let skill_data_jp = null;
 let skill_data_tw = null;
 let skill_data_jp_trans_tw = null;
+let enhance_skill_data_jp = null;
+let enhance_skill_data_tw = null;
 
 
 let GameServer = GameServerType.jp;
@@ -223,6 +379,14 @@ readJson("../UmaData/skill_data_tw.json", function(jsonData){
 
 readJson("../UmaData/skill_data_jp_trans_tw.json", function(jsonData){
     skill_data_jp_trans_tw = jsonData;
+});
+
+readJson("../UmaData/enhance_skill_data_jp.json", function(jsonData){
+    enhance_skill_data_jp = jsonData;
+});
+
+readJson("../UmaData/enhance_skill_data_tw.json", function(jsonData){
+    enhance_skill_data_tw = jsonData;
 });
 
 

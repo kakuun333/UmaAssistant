@@ -458,6 +458,8 @@ UmaEventData DataManager::GetCurrentCharacterUmaEventData(std::string scanned_te
 
 UmaEventData DataManager::GetSupportCardUmaEventData(std::string scanned_text)
 {
+
+
 	if (scanned_text.empty()) return UmaEventData();
 
 	json event_data_json;

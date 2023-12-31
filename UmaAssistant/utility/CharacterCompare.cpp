@@ -32,14 +32,14 @@ namespace utility
 
 	std::vector<std::string> SplitJpnChar(std::string input)
 	{
-		const int MINIMUM_UTF8_CHAR_COUNT = 2;
+		//const int MINIMUM_UTF8_CHAR_COUNT = 2;
 
-		// 文字大小不足 MINIMUM_CHAR_COUNT 個 utf-8
-		if (input.length() < UTF8_CHAR_BYTE * MINIMUM_UTF8_CHAR_COUNT)
-		{
-			//std::cout << u8"文字大小不足 " << MINIMUM_UTF8_CHAR_COUNT << " 個 utf-8" << std::endl;
-			return std::vector<std::string>();
-		}
+		//// 文字大小不足 MINIMUM_CHAR_COUNT 個 utf-8
+		//if (input.length() < UTF8_CHAR_BYTE * MINIMUM_UTF8_CHAR_COUNT)
+		//{
+		//	//std::cout << u8"文字大小不足 " << MINIMUM_UTF8_CHAR_COUNT << " 個 utf-8" << std::endl;
+		//	return std::vector<std::string>();
+		//}
 
 		std::string currentChar;
 		std::vector<std::string> char_list;
@@ -119,16 +119,18 @@ namespace utility
 		return setStr_list;
 	}
 
-	std::vector<int> GetNonSameIndexList(std::vector<std::string> smaller_list, std::vector<std::string> larger_list)
+	std::vector<int> GetNonSameIndexList(std::vector<std::string>& smaller_list, std::vector<std::string>& larger_list)
 	{
+		const size_t SMALLER_LIST_SIZE = smaller_list.size();
+
 		std::vector<int> non_same_idx_list;
 
-		float sameCount = 0;
+		int sameCount = 0;
 		int char_idx = 0;
 
-		for (std::string s1 : larger_list)
+		for (const std::string& s1 : larger_list)
 		{
-			if (smaller_list.size() > char_idx)
+			if (SMALLER_LIST_SIZE > char_idx)
 			{
 				if (s1 == smaller_list[char_idx])
 				{
@@ -147,13 +149,16 @@ namespace utility
 		return non_same_idx_list;
 	}
 
-	int GetSameCount(std::vector<std::string> smaller_list, std::vector<std::string> larger_list)
+	int GetSameCount(std::vector<std::string>& smaller_list, std::vector<std::string>& larger_list)
 	{
-		float sameCount = 0;
+		const size_t SMALLER_LIST_SIZE = smaller_list.size();
+
+		int sameCount = 0;
 		int char_idx = 0;
-		for (std::string s1 : larger_list)
+
+		for (const std::string& s1 : larger_list)
 		{
-			if (smaller_list.size() > char_idx)
+			if (SMALLER_LIST_SIZE > char_idx)
 				if (s1 == smaller_list[char_idx]) ++sameCount;
 
 			++char_idx;
@@ -169,7 +174,7 @@ namespace utility
 	/// <param name="larger_list"></param>
 	/// <param name="nonSameIdxList"></param>
 	/// <returns></returns>
-	int GetSameCountByMoveIdx(std::vector<std::string> smaller_list, std::vector<std::string> larger_list, std::vector<int> nonSameIdxList)
+	int GetSameCountByMoveIdx(std::vector<std::string>& smaller_list, std::vector<std::string>& larger_list, std::vector<int>& nonSameIdxList)
 	{
 		int sameCount = 0;
 		int char_idx = 0;
@@ -356,172 +361,12 @@ namespace utility
 		return similarCharList;
 	}
 
-
-
-	/// <summary>
-	/// 已棄用
-	/// 比較兩個字串是否相似
-	/// </summary>
-	/// <param name="str1"></param>
-	/// <param name="str2"></param>
-	/// <returns></returns>
-	bool IsSimilar(std::string str1, std::string str2)
-	{
-#ifdef UMA_DEBUG
-		std::cout << "================= TEST =================" << std::endl;
-		std::cout << "str1: " << str1 << std::endl;
-		std::cout << "str2: " << str2 << std::endl;
-#endif
-
-		int str1CharCount = CountUTF8Char(str1);
-		int str2CharCount = CountUTF8Char(str2);
-
-		float similarity = 0;
-
-
-		///
-		/// 如果兩個字數一致
-		/// 
-		if (str1CharCount == str2CharCount)
-		{
-			float totalCount = str1CharCount;
-
-			std::vector<std::string> jpnchar_list_1 = utility::SplitJpnChar(str1);
-			std::vector<std::string> jpnchar_list_2 = utility::SplitJpnChar(str2);
-
-			int firstSameCount = GetSameCount(jpnchar_list_1, jpnchar_list_2);
-			if (firstSameCount <= 0) return false;
-			if ((firstSameCount / totalCount) * 100 < SIMILAR_METRIC) return false;
-
-
-
-			//int sameCountBySimilarChar = GetSameCountBySimilarChar(jpnchar_list_1, jpnchar_list_2);
-			//if (sameCountBySimilarChar > firstSameCount)
-			//{
-			//	
-			//	similarity = (sameCountBySimilarChar / totalCount) * 100;
-
-			//	std::cout << "sameCountBySimilarChar: " << sameCountBySimilarChar << std::endl;
-			//	std::cout << "similarity: " << similarity << "%" << std::endl;
-
-			//	return similarity > SIMILAR_METRIC;
-			//}
-			
-			similarity = (firstSameCount / totalCount) * 100;
-
-			std::cout << "similarity: " << similarity << "%" << std::endl;
-
-
-
-			return (similarity == SIMIALAR_MAX) || (similarity > SIMILAR_METRIC);
-		}
-		///
-		/// 如果兩個字數不同
-		/// 情況：str1CharCount < str2CharCount
-		/// 
-		else if (str1CharCount < str2CharCount)
-		{
-			/*
-			食いしん坊は伊達じゃない
-			食いじん坊は伊達じゃよない
-			*/
-			float totalCount = str2CharCount;
-
-			std::vector<std::string> jpnchar_list_1 = utility::SplitJpnChar(str1);
-			std::vector<std::string> jpnchar_list_2 = utility::SplitJpnChar(str2);
-
-			int firstSameCount = GetSameCount(jpnchar_list_1, jpnchar_list_2);
-
-			if (firstSameCount <= 0) return false;
-			if ((firstSameCount / totalCount) * 100 < SIMILAR_METRIC) return false;
-
-			std::vector<int> nonSameIdxList = GetNonSameIndexList(jpnchar_list_1, jpnchar_list_2);
-			int movedIdxCount = GetSameCountByMoveIdx(jpnchar_list_1, jpnchar_list_2, nonSameIdxList);
-			//int movedIdxSimilarCharCount = GetSameCountByMoveIdxSimilarChar(jpnchar_list_1, jpnchar_list_2, nonSameIdxList);
-
-#ifdef UMA_DEBUG
-			std::cout << "firstSameCount: " << firstSameCount << std::endl;
-			std::cout << "movedIdxCount: " << movedIdxCount << std::endl;
-#endif
-
-			//if (movedIdxSimilarCharCount > movedIdxCount)
-			//{
-			//	similarity = (movedIdxSimilarCharCount / totalCount) * 100;
-
-			//	std::cout << "similarity: " << similarity << "%" << std::endl;
-
-			//	return similarity >= SIMILAR_METRIC;
-			//}
-
-			if (movedIdxCount > firstSameCount)
-			{
-				similarity = (movedIdxCount / totalCount) * 100;
-
-				std::cout << "similarity: " << similarity << "%" << std::endl;
-
-				return similarity >= SIMILAR_METRIC;
-			}
-		}
-		///
-		/// 如果兩個字數不同
-		/// 情況：str1CharCount > str2CharCount
-		/// 
-		else if (str1CharCount > str2CharCount)
-		{
-			/*
-			食いじん坊は伊達じゃよない
-			食いしん坊は伊達じゃない
-			*/
-			float totalCount = str1CharCount;
-
-			std::vector<std::string> jpnchar_list_1 = utility::SplitJpnChar(str1);
-			std::vector<std::string> jpnchar_list_2 = utility::SplitJpnChar(str2);
-
-			int firstSameCount = GetSameCount(jpnchar_list_2, jpnchar_list_1);
-
-			if (firstSameCount <= 0) return false;
-			if ((firstSameCount / totalCount) * 100 < SIMILAR_METRIC) return false;
-
-			std::vector<int> nonSameIdxList = GetNonSameIndexList(jpnchar_list_2, jpnchar_list_1);
-			int movedIdxCount = GetSameCountByMoveIdx(jpnchar_list_2, jpnchar_list_1, nonSameIdxList);
-			//int movedIdxSimilarCharCount = GetSameCountByMoveIdxSimilarChar(jpnchar_list_2, jpnchar_list_1, nonSameIdxList);
-
-
-#ifdef UMA_DEBUG
-			std::cout << "firstSameCount: " << firstSameCount << std::endl;
-			std::cout << "movedIdxCount: " << movedIdxCount << std::endl;
-#endif
-			//if (movedIdxSimilarCharCount > movedIdxCount)
-			//{
-			//	similarity = (movedIdxSimilarCharCount / totalCount) * 100;
-
-			//	std::cout << "similarity: " << similarity << "%" << std::endl;
-
-			//	return similarity >= SIMILAR_METRIC;
-			//}
-
-
-			if (movedIdxCount > firstSameCount)
-			{
-				similarity = (movedIdxCount / totalCount) * 100;
-
-				std::cout << "similarity: " << similarity << "%" << std::endl;
-
-				return similarity >= SIMILAR_METRIC;
-			}
-
-			return false;
-		}
-	}
-
-
-
 	float GetSimilarity(std::string str1, std::string str2)
 	{
+		float similarity = NOT_SIMILAR;
+
 		if (str1 != str2)
 		{
-			float similarity = NOT_SIMILAR;
-
 			int str1CharCount = CountUTF8Char(str1);
 			int str2CharCount = CountUTF8Char(str2);
 
@@ -537,14 +382,13 @@ namespace utility
 
 				if (jpnchar_list_1.empty() || jpnchar_list_2.empty()) return NOT_SIMILAR;
 
+
 				int firstSameCount = GetSameCount(jpnchar_list_1, jpnchar_list_2);
-
-				similarity = (firstSameCount / totalCount) * 100;
-
 				if (firstSameCount <= 0) return NOT_SIMILAR;
 
-				if (similarity < SIMILAR_METRIC) return NOT_SIMILAR;
 
+				similarity = (firstSameCount / totalCount) * 100;
+				if (similarity < SIMILAR_METRIC) return NOT_SIMILAR;
 				if (firstSameCount == totalCount) return similarity;
 
 
@@ -562,8 +406,6 @@ namespace utility
 				//		return similarity;
 				//	}
 				//}
-
-
 
 
 				std::cout << "[CharacterCompare] similarity: " << similarity << "%" << std::endl;
@@ -588,8 +430,8 @@ namespace utility
 				*/
 
 				/*
-					了史みんなのオグリキャップ
-					みんなのオグリキャップ
+				了史みんなのオグリキャップ
+				みんなのオグリキャップ
 				*/
 				float totalCount = str2CharCount;
 
@@ -600,13 +442,12 @@ namespace utility
 
 				int firstSameCount = GetSameCount(jpnchar_list_1, jpnchar_list_2);
 
-				//std::cout << "firstSameCount: " << firstSameCount << std::endl;
-
 				if (firstSameCount <= 0) return NOT_SIMILAR;
 				//if ((firstSameCount / totalCount) * 100 < SIMILAR_METRIC) return NOT_SIMILAR;
 
 				std::vector<int> nonSameIdxList = GetNonSameIndexList(jpnchar_list_1, jpnchar_list_2);
 				int movedIdxCount = GetSameCountByMoveIdx(jpnchar_list_1, jpnchar_list_2, nonSameIdxList);
+
 				//int movedIdxSimilarCharCount = GetSameCountByMoveIdxSimilarChar(jpnchar_list_1, jpnchar_list_2, nonSameIdxList);
 
 				//if (movedIdxSimilarCharCount > movedIdxCount)
@@ -662,9 +503,8 @@ namespace utility
 
 				int firstSameCount = GetSameCount(jpnchar_list_2, jpnchar_list_1);
 
-				//std::cout << "firstSameCount: " << firstSameCount << std::endl;
-
 				if (firstSameCount <= 0) return NOT_SIMILAR;
+
 				//if ((firstSameCount / totalCount) * 100 < SIMILAR_METRIC) return NOT_SIMILAR;
 
 				std::vector<int> nonSameIdxList = GetNonSameIndexList(jpnchar_list_2, jpnchar_list_1);

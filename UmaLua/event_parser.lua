@@ -256,7 +256,7 @@ function parser.getSkillData(html, class)
     local skill_dict = { --[[
         [skill_name] = {
             ["skill_pt"] = skill_pt,
-            ["skill_effect"] = skill_effect,
+            ["skill_description"] = skill_description,
             ["upper_skill"] = nil,  --json == null
             ["lower_skill"] = nil,
             ["skill_icon_name"] = skill_icon_name,
@@ -270,8 +270,8 @@ function parser.getSkillData(html, class)
 
     local skill_pt = string.match(skill_html, "<th>必要Pt.-<td>(%d+)</td>");
 
-    -- skill_effect
-    local skill_effect = string.match(skill_html, "<th>効果.-<td>(.-)</td>");
+    -- skill_description
+    local skill_description = string.match(skill_html, "<th>効果.-<td>(.-)</td>");
 
     -- upper_skill
     local upper_skill = "none";
@@ -289,14 +289,14 @@ function parser.getSkillData(html, class)
     ::continue_skill_dict::
     skill_dict = skill_dict or {};
     skill_dict["skill_pt"] = skill_dict["skill_pt"] or {};
-    skill_dict["skill_effect"] = skill_dict["skill_effect"] or {};
+    skill_dict["skill_description"] = skill_dict["skill_description"] or {};
     skill_dict["upper_skill"] = skill_dict["upper_skill"] or {};
     skill_dict["lower_skill"] = skill_dict["lower_skill"] or {};
     skill_dict["skill_icon_name"] = skill_dict["skill_icon_name"] or {};
 
     skill_dict = {
         ["skill_pt"] = skill_pt,
-        ["skill_effect"] = skill_effect,
+        ["skill_description"] = skill_description,
         ["upper_skill"] = upper_skill,
         ["lower_skill"] = lower_skill,
         ["skill_icon_name"] = skill_icon_name

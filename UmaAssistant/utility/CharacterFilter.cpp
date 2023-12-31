@@ -59,6 +59,8 @@ namespace utility
 		// , -> ，
 		std::regex comma_pattern(R"(,)");
 
+		std::regex colon_pattern(R"(:)");
+
 		result = std::regex_replace(input, exclamationMark_pattern, u8"！");
 
 		result = result.empty() ? inputStr = input : inputStr = result;
@@ -78,6 +80,9 @@ namespace utility
 
 		result = result.empty() ? inputStr = input : inputStr = result;
 		result = std::regex_replace(inputStr, comma_pattern, u8"，");
+
+		result = result.empty() ? inputStr = input : inputStr = result;
+		result = std::regex_replace(inputStr, colon_pattern, u8"：");
 
 		return result;
 	}

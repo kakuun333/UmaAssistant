@@ -31,6 +31,8 @@ namespace UmaAssistant
 		//std::cout << test << std::endl;
 
 		//std::cout << boolean << std::endl;
+
+		std::cout << utility::GetSimilarity(u8"With", u8"With") << std::endl;
 	}
 
 	void UmaForm::OnChoiceDocumentCompleted(System::Object^ sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^ e)
@@ -200,8 +202,10 @@ namespace UmaAssistant
 
 		this->Size = System::Drawing::Size(560, this->Size.Height);
 
+
 		this->minimize_btn->Location = System::Drawing::Point(476, 0);
 		this->close_form_btn->Location = System::Drawing::Point(521, 0);
+
 	}
 
 	System::Void UmaForm::select_character_btn_Click(System::Object^ sender, System::EventArgs^ e)
@@ -224,7 +228,6 @@ namespace UmaAssistant
 			}
 			
 
-
 			this->Size = System::Drawing::Size(560, this->Size.Height);
 
 			this->minimize_btn->Location = System::Drawing::Point(476, 0);
@@ -244,13 +247,11 @@ namespace UmaAssistant
 				button->Text = u8"收回";
 				break;
 			}
-			
 
 			this->Size = System::Drawing::Size(1060, this->Size.Height);
 
 			this->minimize_btn->Location = System::Drawing::Point(476, 0);
 			this->close_form_btn->Location = System::Drawing::Point(521, 0);
-
 
 			this->UpdateIMGClickEvent();
 			break;
@@ -306,17 +307,22 @@ namespace UmaAssistant
 		FileManager* fileManager = FileManager::GetInstance();
 		UmaLog* umalog = UmaLog::GetInstance();
 
-		json config = fileManager->ReadJson(global::path::std_config);
 		if (!global::umaswitch::Scanning)
 		{
-			switch (config["GameServer"].get<int>())
+			if (!Scanner::IsInited())
+			{
+				umalog->print("[UmaForm] Scanner 尚未完成初始化！");
+				return;
+			}
+
+			scanner->Start();
+
+			switch (global::config->GameServer)
 			{
 			case static_cast<int>(GameServerType::JP):
-				scanner->Start("jpn");
 				umalog->print("[Scanner] GameServer: JP");
 				break;
 			case static_cast<int>(GameServerType::TW):
-				scanner->Start("chi_tra");
 				umalog->print("[Scanner] GameServer: TW");
 				break;
 			}
@@ -324,12 +330,15 @@ namespace UmaAssistant
 			switch (global::config->SoftwareLanguage)
 			{
 			case static_cast<int>(SoftwareLanguageType::JP):
+				this->scan_state_label->Text = u8"稼働狀態：稼働中";
 				this->scan_btn->Text = u8"ストップ";
 				break;
 			case static_cast<int>(SoftwareLanguageType::TW):
+				this->scan_state_label->Text = u8"運作狀態：運作中";
 				this->scan_btn->Text = u8"停止";
 				break;
 			}
+			utility::formctrl::ForeColor(this->scan_state_label, 0, 255, 0);
 		}
 		else
 		{
@@ -338,12 +347,16 @@ namespace UmaAssistant
 			switch (global::config->SoftwareLanguage)
 			{
 			case static_cast<int>(SoftwareLanguageType::JP):
+				this->scan_state_label->Text = u8"稼働狀態：停止";
 				this->scan_btn->Text = u8"スキャン";
 				break;
 			case static_cast<int>(SoftwareLanguageType::TW):
+				this->scan_state_label->Text = u8"運作狀態：停止";
 				this->scan_btn->Text = u8"啓動";
 				break;
 			}
+
+			utility::formctrl::ForeColor(this->scan_state_label, 255, 0, 0);
 		}
 	}
 
