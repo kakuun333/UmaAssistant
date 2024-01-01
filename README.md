@@ -23,6 +23,8 @@
 ![2](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/2.png)
 ![998](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/998.png)
 ![1002](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1002.png)
+![1005](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1005.png)
+![1006](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1006.png)
 
 #### 金技能  
 ![3](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/3.png)
