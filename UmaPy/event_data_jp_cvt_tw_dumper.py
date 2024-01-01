@@ -11,6 +11,10 @@ driver = webdriver.Chrome();
 # 全局變數
 DEBUG_MODE = False;
 
+class UmaDataType:
+    CHARACTER = 0,
+    SAPOKA = 1
+
 
 
 char_cvt_data_dict = utility.read_json_file(r"../UmaData/event_data_jp_cvt_tw_char.json") or {};
@@ -343,11 +347,100 @@ def dump_char_convert_data():
         utility.return_to_first_window(driver);
 
 
-# 獲取支援卡資料
+def dump_single_cvt_data(umaDataType, tw_data_url):
+    driver.get(tw_data_url);
+    time.sleep(6);
+
+    if (umaDataType == UmaDataType.CHARACTER):
+        tw_char_event_owner = get_tw_char_event_owner();
+
+
+        got_tw_list = False;
+        tw_event_title_list = [];
+        while (not got_tw_list):
+            tw_event_title_list = get_event_title_list();
+            if (len(tw_event_title_list) != 0):
+                got_tw_list = True;
+            time.sleep(0.25);
+
+        open_jp_url();
+
+        utility.switch_to_new_tab(driver);
+
+        jp_char_event_owner = get_jp_char_event_owner();
+
+        got_jp_list = False;
+        jp_event_title_list = [];
+        while (not got_jp_list):
+            jp_event_title_list = get_event_title_list();
+            if (len(jp_event_title_list) != 0):
+                got_jp_list = True;
+            time.sleep(0.25);
+
+        event_title_dict = list_to_dict(jp_event_title_list, tw_event_title_list);
+
+        char_cvt_data_dict[jp_char_event_owner] = {
+            "tw_event_owner": tw_char_event_owner,
+            "event_title_dict": event_title_dict,
+        }
+
+        json_string = json.dumps(char_cvt_data_dict, indent=2, ensure_ascii=False)
+
+        utility.write_convert_data_char(json_string);
+    elif (umaDataType == UmaDataType.SAPOKA):
+        tw_event_owner = get_tw_card_event_owner();
+        jp_event_owner = get_jp_card_event_owner();
+
+
+        got_tw_list = False;
+        tw_event_title_list = [];
+        while (not got_tw_list):
+            tw_event_title_list = get_event_title_list();
+            if (len(tw_event_title_list) != 0):
+                got_tw_list = True;
+            time.sleep(0.25);
+
+        open_jp_url();
+
+        utility.switch_to_new_tab(driver);
+
+        got_jp_list = False;
+        jp_event_title_list = [];
+        while (not got_jp_list):
+            jp_event_title_list = get_event_title_list();
+            if (len(jp_event_title_list) != 0):
+                got_jp_list = True;
+            time.sleep(0.25);
+        
+        event_title_dict = list_to_dict(jp_event_title_list, tw_event_title_list);
+
+
+        card_cvt_data_dict[jp_event_owner] = {
+            "tw_event_owner": tw_event_owner,
+            "event_title_dict": event_title_dict,
+        }
+
+        json_string = json.dumps(card_cvt_data_dict, indent=2, ensure_ascii=False)
+
+        utility.write_convert_data_card(json_string);
+
+
+#####   獲取單筆資料    #####
+
+# 角色
+# dump_single_cvt_data(UmaDataType.CHARACTER, "https://wiki.biligame.com/umamusume/%E3%80%90%E8%88%87%E7%9C%BE%E4%B8%8D%E5%90%8C%E7%9A%84%E6%8A%80%E5%B8%AB%E3%80%91%E6%88%90%E7%94%B0%E5%A4%A7%E9%80%B2")
+# dump_single_cvt_data(UmaDataType.CHARACTER, "https://wiki.biligame.com/umamusume/%E3%80%90Dream_Deliverer%E3%80%91%E5%8B%9D%E5%88%A9%E7%8D%8E%E5%88%B8")
+# 支援卡
+dump_single_cvt_data(UmaDataType.SAPOKA, "https://wiki.biligame.com/umamusume/%E3%80%90%E5%B8%9D%E7%9A%87%E2%94%80%E2%94%80%E7%9A%87%E2%94%80%E2%94%80%E7%9A%87%E2%94%80%E2%94%80%EF%BC%81%EF%BC%81%EF%BC%81%E3%80%91%E6%9D%B1%E6%B5%B7%E5%B8%9D%E7%9A%87");
+dump_single_cvt_data(UmaDataType.SAPOKA, "https://wiki.biligame.com/umamusume/%E3%80%90TT_Ignition!%E3%80%91%E9%9B%99%E6%B8%A6%E8%BC%AA");
+
+
+
+#####   獲取支援卡資料  #####
 # dump_card_convert_data();
 
-# 獲取角色資料
-dump_char_convert_data();
+#####   獲取角色資料    #####
+# dump_char_convert_data();
 
 
 
