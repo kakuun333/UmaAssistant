@@ -61,6 +61,8 @@ namespace utility
 
 		std::regex colon_pattern(R"(:)");
 
+		std::regex forward_slash_pattern(R"(/)");
+
 		result = std::regex_replace(input, exclamationMark_pattern, u8"！");
 
 		result = result.empty() ? inputStr = input : inputStr = result;
@@ -83,6 +85,9 @@ namespace utility
 
 		result = result.empty() ? inputStr = input : inputStr = result;
 		result = std::regex_replace(inputStr, colon_pattern, u8"：");
+
+		result = result.empty() ? inputStr = input : inputStr = result;
+		result = std::regex_replace(inputStr, forward_slash_pattern, u8"／");
 
 		return result;
 	}

@@ -157,7 +157,7 @@ std::string Scanner::_GetScannedText(cv::Mat image, ImageType imgType, bool engl
 			switch (imgType)
 			{
 			case ImageType::IMG_EVENT_TITLE:
-				ocr_jpn->SetVariable("tessedit_char_blacklist", u8"@$%^*_-+<>[]{}|/\\`†:;；=《》567890");
+				ocr_jpn->SetVariable("tessedit_char_blacklist", u8"@$%^*_-+<>[]{}|/\\`†;；=《》579"); // 有在事件名稱中出現的符號 0368:/#
 				ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_BLOCK);
 				break;
 			case ImageType::IMG_HENSEI_CHARACTER_NAME:
@@ -179,7 +179,7 @@ std::string Scanner::_GetScannedText(cv::Mat image, ImageType imgType, bool engl
 			switch (imgType)
 			{
 			case ImageType::IMG_EVENT_TITLE:
-				ocr_tw->SetVariable("tessedit_char_blacklist", u8"@$%^*_-+<>[]{}|/\\`†:;；=《》567890");
+				ocr_tw->SetVariable("tessedit_char_blacklist", u8"@$%^*_-+<>[]{}|/\\`†;；=《》579"); // 有在事件名稱中出現的符號 0368:/#
 				ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 				break;
 			case ImageType::IMG_HENSEI_CHARACTER_NAME:

@@ -22,17 +22,19 @@ namespace UmaAssistant
 
 		//std::cout << utility::IsStringTooLong(u8"あああああああああああああああああああああああ") << std::endl;
 
-		//std::string test = u8"欸，我的打工......這麼糟嗎？";
 
-		//test = utility::ReplaceSpecialString(test);
 
 		//std::string boolean = utility::IsRepeatingString(test, 4) == true ? "true" : "false";
 
-		//std::cout << test << std::endl;
+		
 
 		//std::cout << boolean << std::endl;
 
-		std::cout << utility::GetSimilarity(u8"With", u8"With") << std::endl;
+		std::string test = u8"/";
+		test = utility::ReplaceSpecialString(test);
+		std::cout << "test: " << test << std::endl;
+
+		//std::cout << utility::GetSimilarity(u8"With", u8"With") << std::endl;
 	}
 
 	void UmaForm::OnChoiceDocumentCompleted(System::Object^ sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^ e)
@@ -115,18 +117,17 @@ namespace UmaAssistant
 				System::String^ sys_event_owner = match->Groups[1]->Value;
 				std::string std_event_owner = utility::systemStr2std(sys_event_owner);
 
-				umalog->print("[UmaForm] matched: ", std_event_owner);
+				umalog->print("[UmaForm] CHARACTER MATCHED: ", std_event_owner);
 
 				if (dataManager->SetCurrentCharacterInfoDict(std_event_owner))
 				{
-					umalog->print("[UmaForm] FOUND SELECT CHARACTER");
+					umalog->print(u8"[UmaForm] 已找到選擇的角色");
 					dataManager->SetCurrentCharacterInfoLock(true);
 					webManager->ChangeCharacterName(sys_event_owner);
 				}
 				else
 				{
-					umalog->print("[UmaForm] NOT FOUND SELECT CHARACTER");
-					std::cout << "FALSE" << std::endl;
+					umalog->print("[UmaForm] CAN NOT FOUND SELECT CHARACTER");
 				}
 			}
 			else
@@ -144,18 +145,17 @@ namespace UmaAssistant
 				System::String^ sys_event_owner = match->Groups[1]->Value;
 				std::string std_event_owner = utility::systemStr2std(sys_event_owner);
 
-				umalog->print("[UmaForm] matched: ", std_event_owner);
+				umalog->print("[UmaForm] CHARACTER MATCHED: ", std_event_owner);
 
 				if (dataManager->SetCurrentCharacterInfoDict(std_event_owner))
 				{
-					umalog->print("[UmaForm] FOUND SELECT CHARACTER");
+					umalog->print(u8"[UmaForm] 已找到選擇的角色");
 					dataManager->SetCurrentCharacterInfoLock(true);
 					webManager->ChangeCharacterName(sys_event_owner);
 				}
 				else
 				{
-					umalog->print("[UmaForm] NOT FOUND SELECT CHARACTER");
-					std::cout << "FALSE" << std::endl;
+					umalog->print("[UmaForm] CAN NOT FOUND SELECT CHARACTER");
 				}
 			}
 			else

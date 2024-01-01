@@ -5,9 +5,9 @@
     "VK": 6,
     "WinFormButton": 16777216
   },
-  "DebugMode": false,
-  "GameServer": 0,
-  "GameWindow": 0,
+  "DebugMode": true,
+  "GameServer": 1,
+  "GameWindow": 1,
   "GameWindowBoundOffset": {
     "DMM": {
       "Height": 0,
@@ -22,7 +22,7 @@
       "Y": 0
     }
   },
-  "GameWindowName": "NULL_GAME_WINDOW_NAME_UMA_ASSISTANT",
+  "GameWindowName": "164703.png ‎- 相片",
   "JpServerLang": 0,
   "LocalServer": {
     "Port": "5854"
