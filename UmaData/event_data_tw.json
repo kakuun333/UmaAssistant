@@ -29903,7 +29903,7 @@
               },
               {
                 "choice_title": "我覺得稍微玩一下也沒關係",
-                "choice_effect": "體力<span class=\"status_minus_value\">-5</span><br>パワ<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+5</span>"
+                "choice_effect": "體力<span class=\"status_minus_value\">-5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+5</span>"
               }
             ]
           },
@@ -45183,7 +45183,7 @@
               },
               {
                 "choice_title": "我覺得稍微玩一下也沒關係",
-                "choice_effect": "體力<span class=\"status_minus_value\">-5</span><br>パワ<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+5</span>"
+                "choice_effect": "體力<span class=\"status_minus_value\">-5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+5</span>"
               }
             ]
           },
