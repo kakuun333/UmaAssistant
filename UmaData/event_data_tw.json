@@ -46240,6 +46240,18 @@
             ]
           },
           {
+            "With My Whole Heart！": [
+              {
+                "choice_title": "妳放心，我很快就會康復的",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span><br>隨機<span class=\"plus_condition\">『擅長練習◯』</span>"
+              },
+              {
+                "choice_title": "那就拜託妳囉",
+                "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br>隨機<span class=\"plus_condition\">『擅長練習◯』</span>"
+              }
+            ]
+          },
+          {
             "重砲的重要的人！": [
               {
                 "choice_title": "えーっと……？",
@@ -52645,11 +52657,11 @@
           {
             "08：36/睡過頭，糟糕": [
               {
-                "choice_title": "もうすぐ始業時間なんじゃ……",
+                "choice_title": "不是快到上課時間了嗎……",
                 "choice_effect": "幹勁下降<br>技能點<span class=\"status_plus_value\">+45</span><br>黃金城市的情誼量條<span class=\"status_plus_value\">+5</span>"
               },
               {
-                "choice_title": "焦っても仕方ないしな",
+                "choice_title": "畢竟急也沒辦法嘛",
                 "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span><br>黃金城市的情誼量條<span class=\"status_plus_value\">+5</span>"
               }
             ]
@@ -56779,11 +56791,11 @@
           {
             "08：36/睡過頭，糟糕": [
               {
-                "choice_title": "もうすぐ始業時間なんじゃ……",
+                "choice_title": "不是快到上課時間了嗎……",
                 "choice_effect": "幹勁下降<br>技能點<span class=\"status_plus_value\">+45</span><br>黃金城市的情誼量條<span class=\"status_plus_value\">+5</span>"
               },
               {
-                "choice_title": "焦っても仕方ないしな",
+                "choice_title": "畢竟急也沒辦法嘛",
                 "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span><br>黃金城市的情誼量條<span class=\"status_plus_value\">+5</span>"
               }
             ]
@@ -58093,11 +58105,11 @@
           {
             "08：36/睡過頭，糟糕": [
               {
-                "choice_title": "もうすぐ始業時間なんじゃ……",
+                "choice_title": "不是快到上課時間了嗎……",
                 "choice_effect": "幹勁下降<br>技能點<span class=\"status_plus_value\">+45</span><br>黃金城市的情誼量條<span class=\"status_plus_value\">+5</span>"
               },
               {
-                "choice_title": "焦っても仕方ないしな",
+                "choice_title": "畢竟急也沒辦法嘛",
                 "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span><br>黃金城市的情誼量條<span class=\"status_plus_value\">+5</span>"
               }
             ]
@@ -60782,6 +60794,42 @@
       },
       "青雲天空（看來明天全國將染成一片鮮紅♪）": {
         "event": [
+          {
+            "突然開始的謀殺之謎！其一": [
+              {
+                "choice_title": "青雲天空就連晚餐時間也在打掃嗎？",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+20</span><br>青雲天空的情誼量條<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "茶碗蒸看起來很好吃的說……",
+                "choice_effect": "體力<span class=\"status_plus_value\">+15</span><br>青雲天空的情誼量條<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "突然開始的謀殺之謎！其二": [
+              {
+                "choice_title": "掃除用具を持ってたとか",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『對前列策略』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>青雲天空的情誼量條<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "というか、本当にただの清掃員……？",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+10</span><br>青雲天空的情誼量條<span class=\"status_plus_value\">+6</span>"
+              }
+            ]
+          },
+          {
+            "突然開始的謀殺之謎！其三": [
+              {
+                "choice_title": "セイウンスカイが犯人",
+                "choice_effect": "成功時：<br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+20</span><br><span class=\"skill_hint\"><span class=\"skill_hint\">『前鋒的心得』</span></span>的靈感Lv<span class=\"status_plus_value\">+2</span><br>青雲天空的情誼量條<span class=\"status_plus_value\">+5</span><hr>失敗時：<br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span><br><span class=\"skill_hint\"><span class=\"skill_hint\">『前鋒的心得』</span></span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>青雲天空的情誼量條<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "グラスワンダーが犯人",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span>"
+              }
+            ]
+          },
           {
             "隨便招募，給建議的人": [
               {

@@ -157,7 +157,7 @@ def convert_choice_effect_jp_to_tw(choice_effect, jp_event_owner = None, tw_even
     for jp, tw in translation_data["jp_to_tw"]["choice_effect"].items():
         if (jp == "スタミナ"):
             choice_effect = re.sub(rf'{jp}(?!キープ)', tw, choice_effect, flags=re.IGNORECASE);
-        elif (jp == "スピード"):
+        elif (jp == "スピード"): # 避免替換到技能 スピードスター、スピードイーター
             choice_effect = re.sub(rf'{jp}(?!スター|イーター)', tw, choice_effect, flags=re.IGNORECASE);
         elif (jp == "アップ"): # 避免替換到技能 ペースアップ、テンポアップ
             choice_effect = re.sub(rf'{jp}(?!』)', tw, choice_effect, flags=re.IGNORECASE);
