@@ -6488,11 +6488,11 @@
           {
             "重重的競賽講座☆": [
               {
-                "choice_title": "バテないようにスタミナをつけよう！",
+                "choice_title": "增強體力避免筋疲力盡！",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span>"
               },
               {
-                "choice_title": "ライバルを追い抜かすコツを掴もう！",
+                "choice_title": "掌握超越對手的訣竅！",
                 "choice_effect": "<span class=\"skill_hint\">『直線靈巧』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
               }
             ]
@@ -6512,11 +6512,11 @@
           {
             "唸書就交給重砲☆": [
               {
-                "choice_title": "マヤノもお礼をしてもらったら？",
+                "choice_title": "重砲也要求一些回禮如何？",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+5</span>"
               },
               {
-                "choice_title": "嫌な時は断るんだぞ",
+                "choice_title": "不願意的時候要拒絕喔",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
               }
             ]
@@ -6536,11 +6536,11 @@
           {
             "舞蹈練習": [
               {
-                "choice_title": "ああ、見返してやろう！",
+                "choice_title": "嗯，讓老師見識妳的性感！",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
               },
               {
-                "choice_title": "キュートさも取り入れてみれば？",
+                "choice_title": "要不要試著加入可愛的風格？",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
               }
             ]
@@ -6564,11 +6564,11 @@
           {
             "夏季集訓（第二年）途中": [
               {
-                "choice_title": "もう、ギュッてされてるよ",
+                "choice_title": "妳已經抓住我的心了",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
               },
               {
-                "choice_title": "それは頑張らないとだな",
+                "choice_title": "那妳可得好好加油了呢",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
               }
             ]
@@ -6576,15 +6576,15 @@
           {
             "新年參拜": [
               {
-                "choice_title": "どうかこのまま健やかに",
+                "choice_title": "希望她能一直保持健康活力",
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span>"
               },
               {
-                "choice_title": "たくさん学んで大きくなってほしい",
+                "choice_title": "希望她能學到許多，成長茁壯",
                 "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
               },
               {
-                "choice_title": "素敵な大人になれますように",
+                "choice_title": "希望她能為出色的大人",
                 "choice_effect": "技能點<span class=\"status_plus_value\">+35</span>"
               }
             ]
@@ -6592,11 +6592,11 @@
           {
             "額外的自主訓練": [
               {
-                "choice_title": "付き合う！",
+                "choice_title": "我陪妳！",
                 "choice_effect": "體力<span class=\"status_minus_value\">-5</span><br>當前選擇的訓練的數値<span class=\"status_plus_value\">+5</span><br>與劇本NPC相應的情誼量條<span class=\"status_plus_value\">+5</span><br>URA 秋川理事長<br>青春盃 乙名史記者"
               },
               {
-                "choice_title": "休むのも大切",
+                "choice_title": "休息也是很重要的",
                 "choice_effect": "體力<span class=\"status_plus_value\">+5</span>"
               }
             ]
@@ -46118,11 +46118,11 @@
           {
             "重重的競賽講座☆": [
               {
-                "choice_title": "バテないようにスタミナをつけよう！",
+                "choice_title": "增強體力避免筋疲力盡！",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span>"
               },
               {
-                "choice_title": "ライバルを追い抜かすコツを掴もう！",
+                "choice_title": "掌握超越對手的訣竅！",
                 "choice_effect": "<span class=\"skill_hint\">『直線靈巧』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
               }
             ]
@@ -46142,11 +46142,11 @@
           {
             "唸書就交給重砲☆": [
               {
-                "choice_title": "マヤノもお礼をしてもらったら？",
+                "choice_title": "重砲也要求一些回禮如何？",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+5</span>"
               },
               {
-                "choice_title": "嫌な時は断るんだぞ",
+                "choice_title": "不願意的時候要拒絕喔",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span>"
               }
             ]
@@ -46166,11 +46166,11 @@
           {
             "舞蹈練習": [
               {
-                "choice_title": "ああ、見返してやろう！",
+                "choice_title": "嗯，讓老師見識妳的性感！",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
               },
               {
-                "choice_title": "キュートさも取り入れてみれば？",
+                "choice_title": "要不要試著加入可愛的風格？",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
               }
             ]
@@ -46194,11 +46194,11 @@
           {
             "夏季集訓（第二年）途中": [
               {
-                "choice_title": "もう、ギュッてされてるよ",
+                "choice_title": "妳已經抓住我的心了",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
               },
               {
-                "choice_title": "それは頑張らないとだな",
+                "choice_title": "那妳可得好好加油了呢",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
               }
             ]
@@ -46206,15 +46206,15 @@
           {
             "新年參拜": [
               {
-                "choice_title": "どうかこのまま健やかに",
+                "choice_title": "希望她能一直保持健康活力",
                 "choice_effect": "體力<span class=\"status_plus_value\">+30</span>"
               },
               {
-                "choice_title": "たくさん学んで大きくなってほしい",
+                "choice_title": "希望她能學到許多，成長茁壯",
                 "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
               },
               {
-                "choice_title": "素敵な大人になれますように",
+                "choice_title": "希望她能為出色的大人",
                 "choice_effect": "技能點<span class=\"status_plus_value\">+35</span>"
               }
             ]
@@ -46222,11 +46222,11 @@
           {
             "額外的自主訓練": [
               {
-                "choice_title": "付き合う！",
+                "choice_title": "我陪妳！",
                 "choice_effect": "體力<span class=\"status_minus_value\">-5</span><br>當前選擇的訓練的數値<span class=\"status_plus_value\">+5</span><br>與劇本NPC相應的情誼量條<span class=\"status_plus_value\">+5</span><br>URA 秋川理事長<br>青春盃 乙名史記者"
               },
               {
-                "choice_title": "休むのも大切",
+                "choice_title": "休息也是很重要的",
                 "choice_effect": "體力<span class=\"status_plus_value\">+5</span>"
               }
             ]
@@ -57089,11 +57089,11 @@
           {
             "用神祕的儀式圖測試運勢！": [
               {
-                "choice_title": "最高にハッピーな秘術かも！？",
+                "choice_title": "或許是超強的幸福祕術！？",
                 "choice_effect": "成功時：<br>五種數値<span class=\"status_plus_value\">+7</span><br>待兼福來的情誼量條<span class=\"status_plus_value\">+7</span><hr>失敗時：<br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+4</span><br>連續事件將結束"
               },
               {
-                "choice_title": "……封印しておくべきもの、とか",
+                "choice_title": "……可能是應該封印起來的東西之類的",
                 "choice_effect": "體力<span class=\"status_plus_value\">+5</span><br>待兼福來的情誼量條<span class=\"status_plus_value\">+5</span><br>連續事件將結束"
               }
             ]
@@ -57101,11 +57101,11 @@
           {
             "和同伴們一起招來好運！": [
               {
-                "choice_title": "まだ宝の正体は謎のままだぞ！",
+                "choice_title": "現在可還沒揭開寶藏的謎團喔！",
                 "choice_effect": "成功時：<br>五種數値<span class=\"status_plus_value\">+7</span><br>待兼福來的情誼量條<span class=\"status_plus_value\">+7</span><hr>失敗時：<br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+4</span><br>連續事件將結束"
               },
               {
-                "choice_title": "地図、大事にしないとな",
+                "choice_title": "要好好珍惜那張地圖才行呢",
                 "choice_effect": "體力<span class=\"status_plus_value\">+5</span><br>待兼福來的情誼量條<span class=\"status_plus_value\">+5</span><br>連續事件將結束"
               }
             ]
