@@ -30,9 +30,9 @@ namespace UmaAssistant
 
 		//std::cout << boolean << std::endl;
 
-		std::string test = u8"/";
-		test = utility::ReplaceSpecialString(test);
-		std::cout << "test: " << test << std::endl;
+		//std::string test = u8"一~二！";
+		//test = utility::ReplaceSpecialString(test);
+		//std::cout << "test: " << test << std::endl;
 
 		//std::cout << utility::GetSimilarity(u8"With", u8"With") << std::endl;
 	}

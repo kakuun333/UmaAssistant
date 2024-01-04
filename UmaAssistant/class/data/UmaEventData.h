@@ -5,9 +5,11 @@
 
 #include <vcclr.h>
 
-#include "../../enum/UmaEventDataType.h"
 
 #include "../../utility/CharacterConvert.h"
+
+#include "../../enum/UmaEventDataType.h"
+#include "../../enum/UmaDataType.h"
 //#include "../../utility/CharacterCompare.h"
 
 constexpr inline int NONE_INDEX = -1;
@@ -51,6 +53,8 @@ public:
 	std::string event_owner;
 
 	UmaEvent umaEvent;
+
+	UmaDataType umaDataType;
 
 	// 如果資料完整返回 true，不完整返回 false
 	inline bool UmaEventData::IsDataComplete()

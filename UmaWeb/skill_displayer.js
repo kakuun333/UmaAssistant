@@ -272,13 +272,13 @@ function updateSkillContent() {
             // console.log("windowWidth: " + windowWidth, "windowHeight: " + windowHeight);
             // console.log("top: " + rect.top, "bottom: " + rect.bottom, "left: " + rect.left, "right: " + rect.right);
 
-            let content_width = rect.right - rect.left;
-            let content_height = rect.bottom - rect.top;
+            // let content_width = rect.right - rect.left;
+            // let content_height = rect.bottom - rect.top;
 
             const skill_table_size = getSize(skill_table);
 
             
-            if (rect.left + content_width > windowWidth) {
+            if (rect.left + skill_table_size.width > windowWidth) {
                 // console.log("超出視窗外！")
                 // console.log("width: " + content_width, "height: " + content_height);
                 // console.log("left: " + rect.left, "right: " + rect.right);
@@ -287,7 +287,7 @@ function updateSkillContent() {
                 skill_hint_content.style.left = parseInt(skill_hint_content.style.left) - horizontal_offset + "px";
                 skill_hint_content.style.right = parseInt(skill_hint_content.style.right) - horizontal_offset + "px";
             }
-            if (rect.top + content_height > windowHeight) {
+            if (rect.top + skill_table_size.height > windowHeight) {
                 // console.log("超出視窗外！")
 
                 let vertical_offset = (rect.top + skill_table_size.height) - windowHeight;
@@ -297,7 +297,7 @@ function updateSkillContent() {
                 skill_hint_content.style.bottom = parseInt(skill_hint_content.style.bottom) - vertical_offset + "px";
             }
 
-            // console.log(skill_table_size.width, skill_table_size.height);
+            console.log(skill_table_size.width, skill_table_size.height);
 
             // skill_hint_content.style.width = parseInt(skill_table_size.width) + "px";
             skill_hint_content.style.height = parseInt(skill_table_size.height) + "px";

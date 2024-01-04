@@ -6636,11 +6636,11 @@
           {
             "重砲的緊張刺激☆試膽遊戲！": [
               {
-                "choice_title": "その幽霊は無念だっただろうな",
+                "choice_title": "那個幽靈一定很遺憾吧",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+20</span>"
               },
               {
-                "choice_title": "マヤノたちの後ろに……",
+                "choice_title": "在重砲等人的身後……",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+20</span>"
               }
             ]
@@ -6648,11 +6648,11 @@
           {
             "重砲．起飛☆": [
               {
-                "choice_title": "いろんなレースにテイクオフだ！",
+                "choice_title": "朝向許多比賽起飛吧！",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+20</span><br>隨機<span class=\"plus_condition\">『討人喜歡◯』</span>"
               },
               {
-                "choice_title": "マヤノの原点がわかったよ",
+                "choice_title": "我終於知道妳的原點了",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+20</span><br>隨機<span class=\"plus_condition\">『討人喜歡◯』</span>"
               }
             ]
@@ -16492,6 +16492,18 @@
               {
                 "choice_title": "……『表現力のダンス』かな！",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "王者之戰〜拉麵篇〜": [
+              {
+                "choice_title": "……可以到賽場上再讓我看嗎！",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "知道了，我來見證",
+                "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><hr>失敗時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_minus_value\">-5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br><span class=\"minus_condition\">『體重過胖』</span>"
               }
             ]
           },
@@ -32992,6 +33004,18 @@
               {
                 "choice_title": "……『表現力のダンス』かな！",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+              }
+            ]
+          },
+          {
+            "王者之戰〜拉麵篇〜": [
+              {
+                "choice_title": "……可以到賽場上再讓我看嗎！",
+                "choice_effect": "體力<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "知道了，我來見證",
+                "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><hr>失敗時：<br>體力<span class=\"status_plus_value\">+30</span><br>技能點<span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_minus_value\">-5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br><span class=\"minus_condition\">『體重過胖』</span>"
               }
             ]
           },

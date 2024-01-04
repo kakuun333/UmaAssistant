@@ -9,6 +9,7 @@
 #include <Windows.h>
 
 
+
 /*			C++ std			*/
 #include <iostream>
 #include <fstream>
@@ -99,7 +100,7 @@ using json = nlohmann::json;
 #include "enum/GameWindowType.h"
 #include "enum/JpServerLangType.h"
 #include "enum/SoftwareLanguageType.h"
-
+#include "enum/UmaDataType.h"
 
 /*			global			*/
 #include "global/Path.h"

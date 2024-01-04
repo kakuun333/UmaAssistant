@@ -532,190 +532,227 @@ void Scanner::_Scan()
 		{
 			_updatedChoice = false;
 
+			std::unique_ptr<std::thread> charThread, sapokaThread, scenarioThread;
+
+
+
+			/*
+			* 有時候名字很像的事件名稱會先偵測到 scenarioEventData ，但是正確的事件在 sapokaUmaEventData
+			* 為了避免先偵測到 scenarioEventData ，應該要先比較 similarity 再判斷要更新的事件是
+			* scenarioEventData 還是 sapokaUmaEventData
+			*/
 
 			// 更新 CharChoice
 			if (dataManager->IsCurrentCharacterInfoLocked())
 			{
-				charUmaEventData = dataManager->GetCurrentCharacterUmaEventData(eventText);
-				if (charUmaEventData.IsDataComplete())
-				{
-					this->_UpdateCharChoice(webManager, charUmaEventData);
-					umalog->print(u8"[Scanner] 成功更新 CharChoice");
-					_previousEventText = eventText;
-					_updatedChoice = true;
-				}
+				charThread = std::make_unique<std::thread>([=, &charUmaEventData]()
+					{
+
+							std::unique_lock<std::mutex> lock(dataMutex); // 先上鎖以防萬一
+							charUmaEventData = dataManager->GetCurrentCharacterUmaEventData(eventText);
+					
+					});
 			}
 
+			// 更新 sapokaChoice
+			sapokaThread = std::make_unique<std::thread>([=, &eventText, &sapokaUmaEventData]()
+				{
+					try
+					{
+						sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
 
-			if (!charUmaEventData.IsDataComplete())
+						if (sapokaUmaEventData.IsDataComplete()) { _previousEventText = eventText; return; }
+
+						umalog->print(u8"[Scanner] sapokaUmaEventData 資料不完整_1");
+
+						eventText = this->_GetScannedText(ss.event_title_gray);
+						umalog->print(u8"[Scanner] event_title_gray: ", eventText);
+						sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
+
+						if (sapokaUmaEventData.IsDataComplete()) { _previousEventText = eventText; return; }
+
+						umalog->print(u8"[Scanner] sapokaUmaEventData 資料不完整_2");
+
+						eventText = this->_GetScannedText(ss.event_title_gray_bin_inv);
+						umalog->print(u8"[Scanner] event_title_gray_bin_inv: ", eventText);
+						sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
+
+						if (sapokaUmaEventData.IsDataComplete()) { _previousEventText = eventText; return; }
+
+						umalog->print(u8"[Scanner] sapokaUmaEventData 資料不完整_3");
+
+						eventText = this->_GetScannedText(ss.event_title_gray_bin_high_thresh);
+						umalog->print(u8"[Scanner] event_title_gray_bin_high_thresh: ", eventText);
+						sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
+
+						if (sapokaUmaEventData.IsDataComplete()) { _previousEventText = eventText; return; }
+
+						umalog->print(u8"[Scanner] sapokaUmaEventData 資料不完整_4");
+					}
+					catch (const std::exception& e)
+					{
+						umalog->print("[std::exception] sapokaThread:", e.what());
+						umalog->print(u8"已終止 Scanner 運作");
+						return;
+					}
+					catch (System::Exception^ ex)
+					{
+						umalog->print("[System::Exception] sapokaThread: ", utility::systemStr2std(ex->Message));
+						umalog->print(u8"已終止 Scanner 運作");
+						return;
+					}
+				});
+
+			// 更新 scenarioChoice
+			scenarioThread = std::make_unique<std::thread>([=, &scenarioEventData]()
+				{
+					try
+					{
+						scenarioEventData = dataManager->GetScenarioEventData(eventText);
+						if (scenarioEventData.IsDataComplete()) { _previousEventText = eventText; return; }
+					}
+					catch (const std::exception& e)
+					{
+						umalog->print("[std::exception] dataManager->GetScenarioEventData:", e.what());
+						umalog->print(u8"已終止 Scanner 運作");
+						return;
+					}
+					catch (System::Exception^ ex)
+					{
+						umalog->print("[System::Exception] dataManager->GetScenarioEventData: ", utility::systemStr2std(ex->Message));
+						umalog->print(u8"已終止 Scanner 運作");
+						return;
+					}
+				});
+
+			if (charThread != nullptr && charThread->joinable()) charThread->join();
+			if (sapokaThread != nullptr && sapokaThread->joinable()) sapokaThread->join();
+			if (scenarioThread != nullptr && scenarioThread->joinable()) scenarioThread->join();
+
+
+			umalog->print(u8"[Scanner] charUmaEventData.similarity: ", charUmaEventData.similarity);
+			umalog->print(u8"[Scanner] sapokaUmaEventData.similarity: ", sapokaUmaEventData.similarity);
+			umalog->print(u8"[Scanner] scenarioEventData.similarity: ", scenarioEventData.similarity);
+
+			std::vector<float> similarity_list = {};
+
+			similarity_list.push_back(charUmaEventData.similarity);
+			similarity_list.push_back(sapokaUmaEventData.similarity);
+			similarity_list.push_back(scenarioEventData.similarity);
+
+
+			if (charUmaEventData.similarity > sapokaUmaEventData.similarity)
 			{
-				/*
-				* 有時候名字很像的事件名稱會先偵測到 scenarioEventData ，但是正確的事件在 sapokaUmaEventData
-				* 為了避免先偵測到 scenarioEventData ，應該要先比較 similarity 再判斷要更新的事件是
-				* scenarioEventData 還是 sapokaUmaEventData
-				*/
-
-				std::unique_ptr<std::thread> sapokaThread, scenarioThread;
-
-
-				sapokaThread = std::make_unique<std::thread>([=, &eventText, &sapokaUmaEventData]()
-					{
-						try
-						{
-							sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
-
-							if (sapokaUmaEventData.IsDataComplete()) { _previousEventText = eventText; return; }
-
-							umalog->print(u8"[Scanner] sapokaUmaEventData 資料不完整_1");
-
-							eventText = this->_GetScannedText(ss.event_title_gray);
-							umalog->print(u8"[Scanner] event_title_gray: ", eventText);
-							sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
-
-							if (sapokaUmaEventData.IsDataComplete()) { _previousEventText = eventText; return; }
-
-							umalog->print(u8"[Scanner] sapokaUmaEventData 資料不完整_2");
-
-							eventText = this->_GetScannedText(ss.event_title_gray_bin_inv);
-							umalog->print(u8"[Scanner] event_title_gray_bin_inv: ", eventText);
-							sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
-
-							if (sapokaUmaEventData.IsDataComplete()) { _previousEventText = eventText; return; }
-
-							umalog->print(u8"[Scanner] sapokaUmaEventData 資料不完整_3");
-
-							eventText = this->_GetScannedText(ss.event_title_gray_bin_high_thresh);
-							umalog->print(u8"[Scanner] event_title_gray_bin_high_thresh: ", eventText);
-							sapokaUmaEventData = dataManager->GetSupportCardUmaEventData(eventText);
-
-							if (sapokaUmaEventData.IsDataComplete()) { _previousEventText = eventText; return; }
-
-							umalog->print(u8"[Scanner] sapokaUmaEventData 資料不完整_4");
-						}
-						catch (const std::exception& e)
-						{
-							umalog->print("[std::exception] sapokaThread:", e.what());
-							umalog->print(u8"已終止 Scanner 運作");
-							return;
-						}
-						catch (System::Exception^ ex)
-						{
-							umalog->print("[System::Exception] sapokaThread: ", utility::systemStr2std(ex->Message));
-							umalog->print(u8"已終止 Scanner 運作");
-							return;
-						}
-					});
-
-
-
-				scenarioThread = std::make_unique<std::thread>([=, &scenarioEventData]()
-					{
-						try
-						{
-							scenarioEventData = dataManager->GetScenarioEventData(eventText);
-							if (scenarioEventData.IsDataComplete()) { _previousEventText = eventText; return; }
-						}
-						catch (const std::exception& e)
-						{
-							umalog->print("[std::exception] dataManager->GetScenarioEventData:", e.what());
-							umalog->print(u8"已終止 Scanner 運作");
-							return;
-						}
-						catch (System::Exception^ ex)
-						{
-							umalog->print("[System::Exception] dataManager->GetScenarioEventData: ", utility::systemStr2std(ex->Message));
-							umalog->print(u8"已終止 Scanner 運作");
-							return;
-						}
-
-					});
-
-				sapokaThread->join();
-				scenarioThread->join();
-
-
-				umalog->print(u8"[Scanner] sapokaUmaEventData.similarity: ", sapokaUmaEventData.similarity);
-				umalog->print(u8"[Scanner] scenarioEventData.similarity: ", scenarioEventData.similarity);
-
-
-
-
-
-				if (sapokaUmaEventData.similarity > scenarioEventData.similarity)
+				if (charUmaEventData.IsDataComplete())
 				{
-					if (sapokaUmaEventData.IsDataComplete())
+					// 檢查是否與上次的 UmaEventData 一致
+					if (this->_IsSameAsPreviousUpdatedEventData(charUmaEventData))
 					{
-						// 檢查是否與上次的 UmaEventData 一致
-						if (this->_IsSameAsPreviousUpdatedEventData(sapokaUmaEventData))
-						{
-							umalog->print(u8"[Scanner] 獲取到的 sapokaUmaEventData 和 _previousUpdatedUmaEventData 的 event_title 一致");
+						umalog->print(u8"[Scanner] 獲取到的 charUmaEventData 和 _previousUpdatedUmaEventData 的 event_title 一致");
 
-							this->_PrintScanned(timer->Stop());
+						this->_PrintScanned(timer->Stop());
 
-							std::this_thread::sleep_for(std::chrono::milliseconds(global::config->ScanInterval));
-							continue;
-						}
+						std::this_thread::sleep_for(std::chrono::milliseconds(global::config->ScanInterval));
+						continue;
+					}
 
-						try
-						{
-							this->_UpdateSapokaChoice(webManager, sapokaUmaEventData);
-							_updatedChoice = true;
-							_previousUpdatedUmaEventData = sapokaUmaEventData;
-							umalog->print(u8"[Scanner] 成功更新 SapokaChoice");
-							umalog->print(u8"[Scanner] _updatedChoice = ", _updatedChoice == true ? "true" : "false");
-						}
-						catch (const std::exception& e)
-						{
-							umalog->print("[std::exception] UpdateSapokaChoice:", e.what());
-							umalog->print(u8"已終止 Scanner 運作");
-							return;
-						}
-						catch (System::Exception^ ex)
-						{
-							umalog->print("[System::Exception] UpdateSapokaChoice: ", utility::systemStr2std(ex->Message));
-							umalog->print(u8"已終止 Scanner 運作");
-							return;
-						}
+					try
+					{
+						this->_UpdateCharChoice(webManager, charUmaEventData);
+
+						umalog->print(u8"[Scanner] 成功更新 CharChoice");
+
+						_previousEventText = eventText;
+						_updatedChoice = true;
+						_previousUpdatedUmaEventData = charUmaEventData;
+					}
+					catch (const std::exception& e)
+					{
+						umalog->print("[std::exception] _UpdateCharChoice:", e.what());
+						umalog->print(u8"已終止 Scanner 運作");
+						return;
+					}
+					catch (System::Exception^ ex)
+					{
+						umalog->print("[System::Exception] _UpdateCharChoice: ", utility::systemStr2std(ex->Message));
+						umalog->print(u8"已終止 Scanner 運作");
+						return;
 					}
 				}
-				else if (sapokaUmaEventData.similarity < scenarioEventData.similarity)
+			}
+			else if (sapokaUmaEventData.similarity > scenarioEventData.similarity)
+			{
+				if (sapokaUmaEventData.IsDataComplete())
 				{
-					if (scenarioEventData.IsDataComplete())
+					// 檢查是否與上次的 UmaEventData 一致
+					if (this->_IsSameAsPreviousUpdatedEventData(sapokaUmaEventData))
 					{
-						// 檢查是否與上次的 ScenarioEventData 一致
-						if (this->_IsSameAsPreviousUpdatedEventData(scenarioEventData))
-						{
-							umalog->print(u8"[Scanner] 獲取到的 scenarioEventData 和 _previousUpdatedScenarioEventData 的 event_title 一致");
+						umalog->print(u8"[Scanner] 獲取到的 sapokaUmaEventData 和 _previousUpdatedUmaEventData 的 event_title 一致");
 
-							this->_PrintScanned(timer->Stop());
+						this->_PrintScanned(timer->Stop());
 
-							std::this_thread::sleep_for(std::chrono::milliseconds(global::config->ScanInterval));
-							continue;
-						}
+						std::this_thread::sleep_for(std::chrono::milliseconds(global::config->ScanInterval));
+						continue;
+					}
 
-						try
-						{
-							this->_UpdateScenarioChoice(webManager, scenarioEventData);
-							_updatedChoice = true;
-							_previousUpdatedScenarioEventData = scenarioEventData;
-							umalog->print(u8"[Scanner] 成功更新 ScenarioChoice");
-							umalog->print(u8"[Scanner] _updatedChoice = ", _updatedChoice == true ? "true" : "false");
-						}
-						catch (const std::exception& e)
-						{
-							umalog->print("[std::exception] UpdateScenarioChoice:", e.what());
-							umalog->print(u8"已終止 Scanner 運作");
-							return;
-						}
-						catch (System::Exception^ ex)
-						{
-							umalog->print("[System::Exception] UpdateScenarioChoice: ", utility::systemStr2std(ex->Message));
-							umalog->print(u8"已終止 Scanner 運作");
-							return;
-						}
+					try
+					{
+						this->_UpdateSapokaChoice(webManager, sapokaUmaEventData);
+						_updatedChoice = true;
+						_previousUpdatedUmaEventData = sapokaUmaEventData;
+						umalog->print(u8"[Scanner] 成功更新 SapokaChoice");
+						umalog->print(u8"[Scanner] _updatedChoice = ", _updatedChoice == true ? "true" : "false");
+					}
+					catch (const std::exception& e)
+					{
+						umalog->print("[std::exception] _UpdateSapokaChoice:", e.what());
+						umalog->print(u8"已終止 Scanner 運作");
+						return;
+					}
+					catch (System::Exception^ ex)
+					{
+						umalog->print("[System::Exception] _UpdateSapokaChoice: ", utility::systemStr2std(ex->Message));
+						umalog->print(u8"已終止 Scanner 運作");
+						return;
 					}
 				}
+			}
+			else if (sapokaUmaEventData.similarity < scenarioEventData.similarity)
+			{
+				if (scenarioEventData.IsDataComplete())
+				{
+					// 檢查是否與上次的 ScenarioEventData 一致
+					if (this->_IsSameAsPreviousUpdatedEventData(scenarioEventData))
+					{
+						umalog->print(u8"[Scanner] 獲取到的 scenarioEventData 和 _previousUpdatedScenarioEventData 的 event_title 一致");
 
+						this->_PrintScanned(timer->Stop());
+
+						std::this_thread::sleep_for(std::chrono::milliseconds(global::config->ScanInterval));
+						continue;
+					}
+
+					try
+					{
+						this->_UpdateScenarioChoice(webManager, scenarioEventData);
+						_updatedChoice = true;
+						_previousUpdatedScenarioEventData = scenarioEventData;
+						umalog->print(u8"[Scanner] 成功更新 ScenarioChoice");
+						umalog->print(u8"[Scanner] _updatedChoice = ", _updatedChoice == true ? "true" : "false");
+					}
+					catch (const std::exception& e)
+					{
+						umalog->print("[std::exception] _UpdateScenarioChoice:", e.what());
+						umalog->print(u8"已終止 Scanner 運作");
+						return;
+					}
+					catch (System::Exception^ ex)
+					{
+						umalog->print("[System::Exception] _UpdateScenarioChoice: ", utility::systemStr2std(ex->Message));
+						umalog->print(u8"已終止 Scanner 運作");
+						return;
+					}
+				}
 			}
 		}
 		else if (_previousEventText == eventText && _updatedChoice == false && ss.IsEventTitle())

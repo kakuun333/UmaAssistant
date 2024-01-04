@@ -134,10 +134,10 @@ cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 		break;
 
 	case static_cast<int>(GameWindowType::EMULATOR):
-		gameWidth	= rcClient.right	- rcClient.left	-	BLUE_STACKS_FIX_GAME_WIDTH	+ global::config->GameWindowBoundOffset["Emulator"]["Width"];
-		gameHeight	= rcClient.bottom	- rcClient.top	-	BLUE_STACKS_FIX_GAME_HEIGHT	+ global::config->GameWindowBoundOffset["Emulator"]["Height"];
-		gamePosX	= rcWindow.left		+					BLUE_STACKS_FIX_GAME_POS_X	+ global::config->GameWindowBoundOffset["Emulator"]["X"];
-		gamePosY	= rcWindow.top		+					BLUE_STACKS_FIX_GAME_POS_Y	+ global::config->GameWindowBoundOffset["Emulator"]["Y"];
+		gameWidth	= rcClient.right	- rcClient.left	-	EMULATOR_FIX_GAME_WIDTH		+ global::config->GameWindowBoundOffset["Emulator"]["Width"];
+		gameHeight	= rcClient.bottom	- rcClient.top	-	EMULATOR_FIX_GAME_HEIGHT	+ global::config->GameWindowBoundOffset["Emulator"]["Height"];
+		gamePosX	= rcWindow.left		+					EMULATOR_FIX_GAME_POS_X		+ global::config->GameWindowBoundOffset["Emulator"]["X"];
+		gamePosY	= rcWindow.top		+					EMULATOR_FIX_GAME_POS_Y		+ global::config->GameWindowBoundOffset["Emulator"]["Y"];
 		break;
 	}
 

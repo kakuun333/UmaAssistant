@@ -16,10 +16,10 @@ using namespace System::Drawing;
 constexpr inline int DMM_FIX_GAME_WIDTH = 13;
 constexpr inline int DMM_FIX_GAME_POS_Y = 30;
 
-constexpr inline int BLUE_STACKS_FIX_GAME_WIDTH = 44;
-constexpr inline int BLUE_STACKS_FIX_GAME_HEIGHT = 37;
-constexpr inline int BLUE_STACKS_FIX_GAME_POS_X = 10;
-constexpr inline int BLUE_STACKS_FIX_GAME_POS_Y = 36;
+constexpr inline int EMULATOR_FIX_GAME_WIDTH = 44;
+constexpr inline int EMULATOR_FIX_GAME_HEIGHT = 37;
+constexpr inline int EMULATOR_FIX_GAME_POS_X = 10;
+constexpr inline int EMULATOR_FIX_GAME_POS_Y = 36;
 
 constexpr inline double EVENT_ICON_METRIC = 0.55/*0.73*/;
 

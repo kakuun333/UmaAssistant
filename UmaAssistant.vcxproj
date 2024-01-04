@@ -136,6 +136,9 @@
       <AdditionalLibraryDirectories>$(ProjectDir)vcpkg\installed\x64-windows\lib;D:\Libraries\opencv\build\x64\vc16\lib;D:\Program Files\Lua\lua54\lib;D:\Program Files\Python\Python312\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EmbedManagedResourceFile>$(ProjectDir)UmaAssistant/form/UmaForm.resx;$(ProjectDir)UmaAssistant/form/SettingsForm.resx;%(EmbedManagedResourceFile)</EmbedManagedResourceFile>
     </Link>
+    <Manifest>
+      <EnableDpiAwareness>false</EnableDpiAwareness>
+    </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -196,6 +199,7 @@
     <ClInclude Include="UmaAssistant\enum\GameServerType.h" />
     <ClInclude Include="UmaAssistant\enum\JpServerLangType.h" />
     <ClInclude Include="UmaAssistant\enum\SoftwareLanguageType.h" />
+    <ClInclude Include="UmaAssistant\enum\UmaDataType.h" />
     <ClInclude Include="UmaAssistant\global\Others.h" />
     <ClInclude Include="UmaAssistant\utility\CharacterCompare.h" />
     <ClInclude Include="UmaAssistant\utility\FormControl.h" />
