@@ -53109,6 +53109,18 @@
                 "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+15</span><br>雪之美人的情誼量條<span class=\"status_plus_value\">+5</span>"
               }
             ]
+          },
+          {
+            "鎖定「城市景點」": [
+              {
+                "choice_title": "從這張地圖來看，目前位置跟目的地是……",
+                "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br>雪之美人的情誼量條<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "可以用導航軟體啊",
+                "choice_effect": "<span class=\"skill_hint\">『彎道加速◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>雪之美人的情誼量條<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
           }
         ]
       },
@@ -55811,6 +55823,18 @@
                 "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+15</span><br>雪之美人的情誼量條<span class=\"status_plus_value\">+5</span>"
               }
             ]
+          },
+          {
+            "鎖定「城市景點」": [
+              {
+                "choice_title": "從這張地圖來看，目前位置跟目的地是……",
+                "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br>雪之美人的情誼量條<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "可以用導航軟體啊",
+                "choice_effect": "<span class=\"skill_hint\">『彎道加速◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>雪之美人的情誼量條<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
           }
         ]
       },
@@ -57295,6 +57319,18 @@
               {
                 "choice_title": "アクロバティックな動きをしてみたら？",
                 "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+15</span><br>雪之美人的情誼量條<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "鎖定「城市景點」": [
+              {
+                "choice_title": "從這張地圖來看，目前位置跟目的地是……",
+                "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br>雪之美人的情誼量條<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "可以用導航軟體啊",
+                "choice_effect": "<span class=\"skill_hint\">『彎道加速◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>雪之美人的情誼量條<span class=\"status_plus_value\">+5</span>"
               }
             ]
           }
@@ -62775,6 +62811,18 @@
               {
                 "choice_title": "アクロバティックな動きをしてみたら？",
                 "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+15</span><br>雪之美人的情誼量條<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "鎖定「城市景點」": [
+              {
+                "choice_title": "從這張地圖來看，目前位置跟目的地是……",
+                "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br>幹勁提升<br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br>雪之美人的情誼量條<span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "可以用導航軟體啊",
+                "choice_effect": "<span class=\"skill_hint\">『彎道加速◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>雪之美人的情誼量條<span class=\"status_plus_value\">+5</span>"
               }
             ]
           }
