@@ -327,8 +327,8 @@ def convert_to_event_data_jp_trans_tw():
                             for key, value in choice_info.items():
                                 if (key == "choice_effect"):
                                     value = convert_choice_effect_jp_to_tw(value, jp_event_owner, cvt_skill_data=False);
-                                else:
-                                    value = convert_choice_title_jp_to_tw(value);
+                                # else:
+                                    # value = convert_choice_title_jp_to_tw(value);
 
                                 choice_obj[key] = value;
 

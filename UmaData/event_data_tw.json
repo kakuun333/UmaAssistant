@@ -8994,11 +8994,11 @@
           {
             "額外的自主訓練": [
               {
-                "choice_title": "諦めずにもう1度アタックしよう！",
+                "choice_title": "不要放棄，再去試一次看看吧！",
                 "choice_effect": "體力<span class=\"status_minus_value\">-5</span><br>當前選擇的訓練的數値<span class=\"status_plus_value\">+5</span><br>與劇本NPC相應的情誼量條<span class=\"status_plus_value\">+5</span><br>URA 秋川理事長<br>青春盃 乙名史記者"
               },
               {
-                "choice_title": "小休止も必要じゃないか？",
+                "choice_title": "也是需要私人空間的吧？",
                 "choice_effect": "體力<span class=\"status_plus_value\">+5</span>"
               }
             ]
@@ -9018,11 +9018,11 @@
           {
             "World is……？": [
               {
-                "choice_title": "カレンはパワフルだな！",
+                "choice_title": "真機伶真強勢呢！",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
               },
               {
-                "choice_title": "行動力がすごすぎる……",
+                "choice_title": "真是驚人的行動力……",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
               }
             ]
@@ -9058,11 +9058,11 @@
           {
             "讓我也學習一下吧♪": [
               {
-                "choice_title": "一緒に踊らせてもらおう！",
+                "choice_title": "跟她們一起跳吧！",
                 "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+20</span>"
               },
               {
-                "choice_title": "見学しよう！",
+                "choice_title": "觀摩她們的舞步吧！",
                 "choice_effect": "<span class=\"skill_hint\">『對居中策略』</span>的靈感Lv1"
               }
             ]
@@ -9322,11 +9322,11 @@
           {
             "競賽獲勝！": [
               {
-                "choice_title": "よく頑張ったもんな！",
+                "choice_title": "因為妳真的努力做到了嘛！",
                 "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+8</span><br>技能點<span class=\"status_plus_value\">+35</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><hr>共通：<br>體力<span class=\"status_minus_value\">-15</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
               },
               {
-                "choice_title": "次はもっと喜んでもらいたいな",
+                "choice_title": "這樣下次就會想讓大家更開心呢",
                 "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+8</span><br>技能點<span class=\"status_plus_value\">+35</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><hr>共通：<br>體力<span class=\"status_minus_value\">-5</span>or<span class=\"status_minus_value\">-10</span>or<span class=\"status_minus_value\">-20</span>or<span class=\"status_minus_value\">-30</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
               }
             ]
@@ -18914,11 +18914,11 @@
           {
             "額外的自主訓練": [
               {
-                "choice_title": "諦めずにもう1度アタックしよう！",
+                "choice_title": "不要放棄，再去試一次看看吧！",
                 "choice_effect": "體力<span class=\"status_minus_value\">-5</span><br>當前選擇的訓練的數値<span class=\"status_plus_value\">+5</span><br>與劇本NPC相應的情誼量條<span class=\"status_plus_value\">+5</span><br>URA 秋川理事長<br>青春盃 乙名史記者"
               },
               {
-                "choice_title": "小休止も必要じゃないか？",
+                "choice_title": "也是需要私人空間的吧？",
                 "choice_effect": "體力<span class=\"status_plus_value\">+5</span>"
               }
             ]
@@ -18938,11 +18938,11 @@
           {
             "World is……？": [
               {
-                "choice_title": "カレンはパワフルだな！",
+                "choice_title": "真機伶真強勢呢！",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
               },
               {
-                "choice_title": "行動力がすごすぎる……",
+                "choice_title": "真是驚人的行動力……",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
               }
             ]
@@ -18978,11 +18978,11 @@
           {
             "讓我也學習一下吧♪": [
               {
-                "choice_title": "一緒に踊らせてもらおう！",
+                "choice_title": "跟她們一起跳吧！",
                 "choice_effect": "體力<span class=\"status_minus_value\">-10</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+20</span>"
               },
               {
-                "choice_title": "見学しよう！",
+                "choice_title": "觀摩她們的舞步吧！",
                 "choice_effect": "<span class=\"skill_hint\">『對居中策略』</span>的靈感Lv1"
               }
             ]
@@ -19226,11 +19226,11 @@
           {
             "競賽獲勝！": [
               {
-                "choice_title": "よく頑張ったもんな！",
+                "choice_title": "因為妳真的努力做到了嘛！",
                 "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+8</span><br>技能點<span class=\"status_plus_value\">+35</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><hr>共通：<br>體力<span class=\"status_minus_value\">-15</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
               },
               {
-                "choice_title": "次はもっと喜んでもらいたいな",
+                "choice_title": "這樣下次就會想讓大家更開心呢",
                 "choice_effect": "G1：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+45</span><hr>G2~G3：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+8</span><br>技能點<span class=\"status_plus_value\">+35</span><hr>op：<br>五種數値中隨機選一種<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><hr>共通：<br>體力<span class=\"status_minus_value\">-5</span>or<span class=\"status_minus_value\">-10</span>or<span class=\"status_minus_value\">-20</span>or<span class=\"status_minus_value\">-30</span><br>隨機取得『馬場狀態或賽場相關技能的靈感』"
               }
             ]
@@ -53531,6 +53531,14 @@
             ]
           },
           {
+            "在風暴洋假寐": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "最大體力値<span class=\"status_plus_value\">+4</span><br>體力<span class=\"status_plus_value\">+25~35</span><br>幹勁提升<br>明亮光暈的情誼量條<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
             "用表岩屑隱藏": [
               {
                 "choice_title": "沒什麼好難為情的",
@@ -59515,6 +59523,14 @@
             ]
           },
           {
+            "在風暴洋假寐": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "最大體力値<span class=\"status_plus_value\">+4</span><br>體力<span class=\"status_plus_value\">+25~40</span><br>幹勁提升<br>明亮光暈的情誼量條<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
             "用表岩屑隱藏": [
               {
                 "choice_title": "沒什麼好難為情的",
@@ -63135,6 +63151,14 @@
       "北部玄駒（被逼近的熱情推著）": {
         "event": [
           {
+            "追逐閃耀的身影": [
+              {
+                "choice_title": "無選項",
+                "choice_effect": "幹勁提升<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+2</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+2</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+2</span><br>北部玄駒的情誼量條<span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
             "好心終會有好報": [
               {
                 "choice_title": "妳得快點好起來呢",
@@ -63493,11 +63517,11 @@
           {
             "帝王的弱點": [
               {
-                "choice_title": "次こそ帝王の強さを見せつけよう！",
+                "choice_title": "下次一定要讓她們見識帝王的實力！",
                 "choice_effect": "幹勁提升兩階<br>東海帝皇的情誼量條<span class=\"status_plus_value\">+5</span>"
               },
               {
-                "choice_title": "やっぱり連携すると強いな……",
+                "choice_title": "團隊合作果然很強呢……",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span><br>東海帝皇的情誼量條<span class=\"status_plus_value\">+5</span>"
               }
             ]
