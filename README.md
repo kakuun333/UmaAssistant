@@ -156,7 +156,9 @@ A.
 1. 請檢查設定是否正確。
 2. 請檢查是否選取了對應的視窗名稱。
 3. 請檢查「目前培育的馬娘」是否為現在培育的馬娘。
-4. 嘗試縮放遊戲視窗。
+4. 應用程式縮放的百分比必須為`100%`，`滑鼠右鍵 -> 顯示設定 -> 縮放與版面配置`  
+  ![10000](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/10000.png)
+
 > [!NOTE]
 > 如果上述的方法皆無效果，有大概率是`UmaData`中的資料不完整或程式的邏輯有疏失，請參考[問題回報](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E5%95%8F%E9%A1%8C%E5%9B%9E%E5%A0%B1)。  
 
