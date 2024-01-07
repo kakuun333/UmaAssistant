@@ -15,7 +15,7 @@
     "愛撒嬌的年紀": [
       {
         "choice_title": "『あーん』してもらうとか",
-        "choice_effect": "速度<span class=\"status_plus_value\">+6</span>\n智力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "速度<span class=\"status_plus_value\">+6</span><br>智力<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "『お姉ちゃん』って呼ぶのはどうだろう？",
@@ -25,7 +25,7 @@
     "甩不掉阿爾丹": [
       {
         "choice_title": "対処法に詳しいな、アルダン",
-        "choice_effect": "速度<span class=\"status_plus_value\">+6</span>\n意志力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "速度<span class=\"status_plus_value\">+6</span><br>意志力<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "お大事にな、パーマー",
@@ -35,7 +35,7 @@
     "股長們的閒聊": [
       {
         "choice_title": "ゴールドシップに併走してもらう？",
-        "choice_effect": "速度<span class=\"status_plus_value\">+6</span>\n力量<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "速度<span class=\"status_plus_value\">+6</span><br>力量<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "風紀に対する想いをバトンにしよう！",
@@ -45,7 +45,7 @@
     "意外的美化股長": [
       {
         "choice_title": "そもそもなんで君が水やりを？",
-        "choice_effect": "力量<span class=\"status_plus_value\">+6</span>\n智力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "力量<span class=\"status_plus_value\">+6</span><br>智力<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "大変そうだな、手伝うよ",
@@ -55,7 +55,7 @@
     "勝利俱樂部登場！": [
       {
         "choice_title": "ここはとってもいいクラブだな！",
-        "choice_effect": "持久力<span class=\"status_plus_value\">+6</span>\n智力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "持久力<span class=\"status_plus_value\">+6</span><br>智力<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "2人の強さの秘訣がわかったよ",
@@ -65,7 +65,7 @@
     "在同一把傘下": [
       {
         "choice_title": "これからはライバルだな！",
-        "choice_effect": "速度<span class=\"status_plus_value\">+6</span>\n意志力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "速度<span class=\"status_plus_value\">+6</span><br>意志力<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "今日は盛大にお祝いだね",
@@ -85,7 +85,7 @@
     "想一起討論！": [
       {
         "choice_title": "俺もその小説を読んでみようかな",
-        "choice_effect": "持久力<span class=\"status_plus_value\">+6</span>\n意志力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "持久力<span class=\"status_plus_value\">+6</span><br>意志力<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "その本のおすすめポイントを教えて？",
@@ -95,7 +95,7 @@
     "想守護可愛！": [
       {
         "choice_title": "大丈夫！守ってもらおう！",
-        "choice_effect": "持久力<span class=\"status_plus_value\">+6</span>\n力量<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "持久力<span class=\"status_plus_value\">+6</span><br>力量<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "まずは落ち着かせるべきかも……",
@@ -105,7 +105,7 @@
     "阿船主辦的狼人殺遊戲！": [
       {
         "choice_title": "マンハッタンカフェが人狼だ！",
-        "choice_effect": "力量<span class=\"status_plus_value\">+6</span>\n智力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "力量<span class=\"status_plus_value\">+6</span><br>智力<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "サトノダイヤモンドが人狼",
@@ -115,7 +115,7 @@
     "治好阿船！？": [
       {
         "choice_title": "ナカヤマ、助けてくれ！",
-        "choice_effect": "速度<span class=\"status_plus_value\">+6</span>\n力量<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "速度<span class=\"status_plus_value\">+6</span><br>力量<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "ジョーダン、なんかいい案はないか？",
@@ -125,7 +125,7 @@
     "不可怕的可怕事物": [
       {
         "choice_title": "幽霊は怖いよね",
-        "choice_effect": "持久力<span class=\"status_plus_value\">+6</span>\n意志力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "持久力<span class=\"status_plus_value\">+6</span><br>意志力<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "2人が幽霊平気なのはすごい……",
@@ -145,7 +145,7 @@
     "喜歡爺爺的兩人": [
       {
         "choice_title": "2人とも、おじいちゃんが大好きなんだね",
-        "choice_effect": "持久力<span class=\"status_plus_value\">+6</span>\n智力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "持久力<span class=\"status_plus_value\">+6</span><br>智力<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "気持ちがこもっていれば大丈夫だよ",
@@ -155,7 +155,7 @@
     "「全力」＆「普通」的減重方法！": [
       {
         "choice_title": "『全力』で！",
-        "choice_effect": "持久力<span class=\"status_plus_value\">+6</span>\n意志力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "持久力<span class=\"status_plus_value\">+6</span><br>意志力<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "ふ、『普通』でお願いします……",
@@ -165,7 +165,7 @@
     "以「退學」為賭注的對決": [
       {
         "choice_title": "ヒット！カードをもう1枚！",
-        "choice_effect": "持久力<span class=\"status_plus_value\">+6</span>\n智力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "持久力<span class=\"status_plus_value\">+6</span><br>智力<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "スタンド。カードをストップするしかない",
@@ -175,7 +175,7 @@
     "大樹、採珠和外語": [
       {
         "choice_title": "使う単語を変えてみたら？",
-        "choice_effect": "速度<span class=\"status_plus_value\">+6</span>\n智力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "速度<span class=\"status_plus_value\">+6</span><br>智力<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "言葉は不要なのかも？",
@@ -185,7 +185,7 @@
     "玉藻的電子遊樂場奮鬥記": [
       {
         "choice_title": "じゃあ俺はブルボンを！",
-        "choice_effect": "意志力<span class=\"status_plus_value\">+6</span>\n智力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "意志力<span class=\"status_plus_value\">+6</span><br>智力<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "じゃあ俺はカワカミとウララを！",
@@ -195,7 +195,7 @@
     "一大一小的搭檔": [
       {
         "choice_title": "2人のコンビネーションは完ぺきだった",
-        "choice_effect": "力量<span class=\"status_plus_value\">+6</span>\n意志力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "力量<span class=\"status_plus_value\">+6</span><br>意志力<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "ヒーローみたいだった",
@@ -205,7 +205,7 @@
     "心跳加速的水果祭": [
       {
         "choice_title": "バイトの立場を活かそう！",
-        "choice_effect": "持久力<span class=\"status_plus_value\">+6</span>\n力量<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "持久力<span class=\"status_plus_value\">+6</span><br>力量<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "メジロの絆で助けよう",
@@ -225,7 +225,7 @@
     "一個人生活": [
       {
         "choice_title": "大雑把な料理も君らしさだ",
-        "choice_effect": "力量<span class=\"status_plus_value\">+6</span>\n意志力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "力量<span class=\"status_plus_value\">+6</span><br>意志力<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "自由な創作料理にチャレンジしよう！",
@@ -235,7 +235,7 @@
     "兩人與宿根草": [
       {
         "choice_title": "メジロアルダンは物知りだね",
-        "choice_effect": "速度<span class=\"status_plus_value\">+6</span>\n力量<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "速度<span class=\"status_plus_value\">+6</span><br>力量<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "なんで宿根草は一度枯れるのかな",
@@ -255,7 +255,7 @@
     "織女星和角宿一": [
       {
         "choice_title": "アヤベはどの星が好き？",
-        "choice_effect": "速度<span class=\"status_plus_value\">+6</span>\n智力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "速度<span class=\"status_plus_value\">+6</span><br>智力<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "スズカはどの星が好き？",
@@ -285,7 +285,7 @@
     "交給我這個名偵探吧！": [
       {
         "choice_title": "どうしたんだテイオー？",
-        "choice_effect": "速度<span class=\"status_plus_value\">+6</span>\n持久力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "速度<span class=\"status_plus_value\">+6</span><br>持久力<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "何か隠してない？",
@@ -295,7 +295,7 @@
     "讓人不放心的大小姐們": [
       {
         "choice_title": "どこまでも優しいね……",
-        "choice_effect": "意志力<span class=\"status_plus_value\">+6</span>\n智力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "意志力<span class=\"status_plus_value\">+6</span><br>智力<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "もう少し世間勉強が必要かも……",
@@ -305,7 +305,7 @@
     "Worldwide Windy": [
       {
         "choice_title": "休み時間に昼寝しよう",
-        "choice_effect": "速度<span class=\"status_plus_value\">+6</span>\n意志力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "速度<span class=\"status_plus_value\">+6</span><br>意志力<span class=\"status_plus_value\">+6</span>"
       },
       {
         "choice_title": "ちゃんと夜に寝るべき",
@@ -315,19 +315,19 @@
     "戶外派賽馬娘，集合！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "幹勁提升\n力量<span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "幹勁提升<br>力量<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "憧憬對象的競爭對手！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "速度<span class=\"status_plus_value\">+4</span>\n意志力<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "速度<span class=\"status_plus_value\">+4</span><br>意志力<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "早晨的驀進．熱血指導！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "速度<span class=\"status_plus_value\">+4</span>\n意志力<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "速度<span class=\"status_plus_value\">+4</span><br>意志力<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "我是不會輸的……！": [
@@ -357,7 +357,7 @@
     "妳的星空": [
       {
         "choice_title": "無選項",
-        "choice_effect": "意志力<span class=\"status_plus_value\">+6</span>\n智力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "意志力<span class=\"status_plus_value\">+6</span><br>智力<span class=\"status_plus_value\">+6</span>"
       }
     ],
     "五人共度的某個晴天": [
@@ -369,13 +369,13 @@
     "最愛的事物": [
       {
         "choice_title": "無選項",
-        "choice_effect": "速度<span class=\"status_plus_value\">+4</span>\n意志力<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "速度<span class=\"status_plus_value\">+4</span><br>意志力<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "最棒的訓練員！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "力量<span class=\"status_plus_value\">+4</span>\n意志力<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "力量<span class=\"status_plus_value\">+4</span><br>意志力<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "某夜的冰雪之城": [
@@ -399,7 +399,7 @@
     "可說是印象深刻吧！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "持久力<span class=\"status_plus_value\">+6</span>\n智力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "持久力<span class=\"status_plus_value\">+6</span><br>智力<span class=\"status_plus_value\">+6</span>"
       }
     ],
     "不需占卜的占卜師": [
@@ -423,7 +423,7 @@
     "遠征☆生野之旅": [
       {
         "choice_title": "無選項",
-        "choice_effect": "持久力<span class=\"status_plus_value\">+8</span>\n力量<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "持久力<span class=\"status_plus_value\">+8</span><br>力量<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "坐過站！": [
@@ -447,7 +447,7 @@
     "大人的約會就是要有驚喜？": [
       {
         "choice_title": "無選項",
-        "choice_effect": "速度<span class=\"status_plus_value\">+6</span>\n力量<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "速度<span class=\"status_plus_value\">+6</span><br>力量<span class=\"status_plus_value\">+6</span>"
       }
     ],
     "飯糰需要加熱嗎！！！？": [
@@ -459,7 +459,7 @@
     "對妳來說還太早了": [
       {
         "choice_title": "無選項",
-        "choice_effect": "持久力<span class=\"status_plus_value\">+4</span>\n力量<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "持久力<span class=\"status_plus_value\">+4</span><br>力量<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "回憶的小餅乾": [
@@ -471,7 +471,7 @@
     "鄭重拜託": [
       {
         "choice_title": "無選項",
-        "choice_effect": "體力<span class=\"status_plus_value\">+20</span>\n持久力<span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "體力<span class=\"status_plus_value\">+20</span><br>持久力<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "撲克牌對決！": [
@@ -489,7 +489,7 @@
     "奇蹟般的調味料？": [
       {
         "choice_title": "無選項",
-        "choice_effect": "幹勁提升\n意志力<span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "幹勁提升<br>意志力<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "來自廚房的幸福": [
@@ -501,19 +501,19 @@
     "與妳分享的烤胡蘿蔔": [
       {
         "choice_title": "無選項",
-        "choice_effect": "持久力<span class=\"status_plus_value\">+4</span>\n技能點<span class=\"status_plus_value\">+20</span>"
+        "choice_effect": "持久力<span class=\"status_plus_value\">+4</span><br>技能點<span class=\"status_plus_value\">+20</span>"
       }
     ],
     "驚愕！來自理事長的驚喜！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "情況一：\n五種數値<span class=\"status_plus_value\">+7</span>\n技能點<span class=\"status_plus_value\">+50</span>\n情況二：\n固有技能Lv<span class=\"status_plus_value\">+1</span>"
+        "choice_effect": "情況一：<br>五種數値<span class=\"status_plus_value\">+7</span><br>技能點<span class=\"status_plus_value\">+50</span><br>情況二：<br>固有技能Lv<span class=\"status_plus_value\">+1</span>"
       }
     ],
     "如沸騰和燃燒般火熱": [
       {
         "choice_title": "無選項",
-        "choice_effect": "力量<span class=\"status_plus_value\">+4</span>\n意志力<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "力量<span class=\"status_plus_value\">+4</span><br>意志力<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "迎向巔峰賽第一戰": [
@@ -525,7 +525,7 @@
     "巔峰賽第一戰結束後": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span>\n技能點<span class=\"status_plus_value\">+30</span>"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+30</span>"
       }
     ],
     "巔峰賽開幕！": [
@@ -543,7 +543,7 @@
     "巔峰賽第三戰結束後": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span>\n技能點<span class=\"status_plus_value\">+30</span>"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+30</span>"
       }
     ],
     "迎向巔峰賽第二戰": [
@@ -561,7 +561,7 @@
     "高貴的香氣": [
       {
         "choice_title": "無選項",
-        "choice_effect": "持久力<span class=\"status_plus_value\">+4</span>\n智力<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "持久力<span class=\"status_plus_value\">+4</span><br>智力<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "Go go！潮流滿屋☆": [
@@ -597,25 +597,25 @@
     "打造最棒的聖誕節！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "體力<span class=\"status_plus_value\">+30</span>\n力量<span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>力量<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "獲選最優秀經典級賽馬娘！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>\n技能點<span class=\"status_plus_value\">+30</span>\n<span class=\"skill_hint\">『璀璨繁星』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>\n固有技能のLv<span class=\"status_plus_value\">+1</span>"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span><br><span class=\"skill_hint\">『璀璨繁星』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>固有技能のLv<span class=\"status_plus_value\">+1</span>"
       }
     ],
     "獲選最優秀資深級賽馬娘！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span>\n技能點<span class=\"status_plus_value\">+30</span>\n固有技能のLv<span class=\"status_plus_value\">+1</span>"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+30</span><br>固有技能のLv<span class=\"status_plus_value\">+1</span>"
       }
     ],
     "獲選最優秀新手級賽馬娘！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數値中隨機選一種<span class=\"status_plus_value\">+10</span>\n技能點<span class=\"status_plus_value\">+20</span>\n固有技能のLv<span class=\"status_plus_value\">+1</span>"
+        "choice_effect": "五種數値中隨機選一種<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+20</span><br>固有技能のLv<span class=\"status_plus_value\">+1</span>"
       }
     ],
     "各自有不同的作風": [
@@ -639,7 +639,7 @@
     "正義微光登場！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "速度<span class=\"status_plus_value\">+4</span>\n力量<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "速度<span class=\"status_plus_value\">+4</span><br>力量<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "充實．夏季集訓計畫": [
@@ -651,13 +651,13 @@
     "聖蹄祭背後的苦惱": [
       {
         "choice_title": "無選項",
-        "choice_effect": "力量<span class=\"status_plus_value\">+6</span>\n技能點<span class=\"status_plus_value\">+20</span>"
+        "choice_effect": "力量<span class=\"status_plus_value\">+6</span><br>技能點<span class=\"status_plus_value\">+20</span>"
       }
     ],
     "聖誕夜的驚喜": [
       {
         "choice_title": "無選項",
-        "choice_effect": "體力<span class=\"status_plus_value\">+30</span>\n持久力<span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "體力<span class=\"status_plus_value\">+30</span><br>持久力<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "是老師？媽媽？還是……": [
@@ -669,7 +669,7 @@
     "前輩，請多指教！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "意志力<span class=\"status_plus_value\">+6</span>\n智力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "意志力<span class=\"status_plus_value\">+6</span><br>智力<span class=\"status_plus_value\">+6</span>"
       }
     ],
     "敬啟者．寫自櫻花樹下": [
@@ -687,7 +687,7 @@
     "遇難！喵喵島": [
       {
         "choice_title": "無選項",
-        "choice_effect": "體力<span class=\"status_plus_value\">+20</span>\n意志力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "體力<span class=\"status_plus_value\">+20</span><br>意志力<span class=\"status_plus_value\">+6</span>"
       }
     ],
     "那顆星星為何振奮": [
@@ -699,7 +699,7 @@
     "每個人的格言": [
       {
         "choice_title": "無選項",
-        "choice_effect": "意志力<span class=\"status_plus_value\">+4</span>\n智力<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "意志力<span class=\"status_plus_value\">+4</span><br>智力<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "那既是鎧甲、魔杖，也是蹄鐵": [
@@ -711,7 +711,7 @@
     "最強是為了某人存在": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數値<span class=\"status_plus_value\">+5~7</span>\n技能點<span class=\"status_plus_value\">+30~50</span>\n<span class=\"skill_hint\">『璀璨繁星』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+5~7</span><br>技能點<span class=\"status_plus_value\">+30~50</span><br><span class=\"skill_hint\">『璀璨繁星』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
       }
     ],
     "達成！優異的偉大成就！": [
@@ -741,19 +741,19 @@
     "來場開心的茶會吧": [
       {
         "choice_title": "無選項",
-        "choice_effect": "持久力<span class=\"status_plus_value\">+4</span>\n意志力<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "持久力<span class=\"status_plus_value\">+4</span><br>意志力<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "偶爾也該坦率點": [
       {
         "choice_title": "無選項",
-        "choice_effect": "體力<span class=\"status_plus_value\">+20</span>\n意志力<span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "體力<span class=\"status_plus_value\">+20</span><br>意志力<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "為某人製作的巧克力": [
       {
         "choice_title": "無選項",
-        "choice_effect": "幹勁提升\n力量<span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "幹勁提升<br>力量<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "小魔女與英雄的邂逅": [
@@ -777,7 +777,7 @@
     "截然不同的三人組": [
       {
         "choice_title": "無選項",
-        "choice_effect": "力量<span class=\"status_plus_value\">+4</span>\n意志力<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "力量<span class=\"status_plus_value\">+4</span><br>意志力<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "靠考試更上一層樓！": [
@@ -795,25 +795,25 @@
     "同寢室的早上吵吵鬧鬧！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "速度<span class=\"status_plus_value\">+4</span>\n智力<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "速度<span class=\"status_plus_value\">+4</span><br>智力<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "心跳☆與狂野王子的邂逅！？": [
       {
         "choice_title": "無選項",
-        "choice_effect": "持久力<span class=\"status_plus_value\">+4</span>\n力量<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "持久力<span class=\"status_plus_value\">+4</span><br>力量<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "突然下雨！於是……": [
       {
         "choice_title": "無選項",
-        "choice_effect": "體力<span class=\"status_plus_value\">+20</span>\n速度<span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "體力<span class=\"status_plus_value\">+20</span><br>速度<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "看我來搗蛋！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "幹勁提升\n智力<span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "幹勁提升<br>智力<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "總之隨意聊聊": [
@@ -825,25 +825,25 @@
     "專業度不輸訓練員的……？": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>\n技能點<span class=\"status_plus_value\">+30</span>"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span><br>技能點<span class=\"status_plus_value\">+30</span>"
       }
     ],
     "追尋謎樣的天才玩家！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "意志力<span class=\"status_plus_value\">+4</span>\n智力<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "意志力<span class=\"status_plus_value\">+4</span><br>智力<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "在夏季華麗綻放！稱霸天下的賽馬娘！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "意志力<span class=\"status_plus_value\">+6</span>\n技能點<span class=\"status_plus_value\">+20</span>"
+        "choice_effect": "意志力<span class=\"status_plus_value\">+6</span><br>技能點<span class=\"status_plus_value\">+20</span>"
       }
     ],
     "夏日祭典～準備萬全～": [
       {
         "choice_title": "無選項",
-        "choice_effect": "力量<span class=\"status_plus_value\">+6</span>\n智力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "力量<span class=\"status_plus_value\">+6</span><br>智力<span class=\"status_plus_value\">+6</span>"
       }
     ],
     "夏夜裡不可掉以輕心★": [
@@ -867,25 +867,25 @@
     "冷硬派跑法": [
       {
         "choice_title": "無選項",
-        "choice_effect": "速度<span class=\"status_plus_value\">+4</span>\n力量<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "速度<span class=\"status_plus_value\">+4</span><br>力量<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "白晝的決鬥，禮讓萩餅對決": [
       {
         "choice_title": "無選項",
-        "choice_effect": "持久力<span class=\"status_plus_value\">+4</span>\n智力<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "持久力<span class=\"status_plus_value\">+4</span><br>智力<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "田裡的騎士團": [
       {
         "choice_title": "無選項",
-        "choice_effect": "力量<span class=\"status_plus_value\">+4</span>\n智力<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "力量<span class=\"status_plus_value\">+4</span><br>智力<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "情人節快樂♪": [
       {
         "choice_title": "無選項",
-        "choice_effect": "幹勁提升\n智力<span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "幹勁提升<br>智力<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "初雪降臨": [
@@ -909,19 +909,19 @@
     "春季資深二冠的差異": [
       {
         "choice_title": "無選項",
-        "choice_effect": "力量<span class=\"status_plus_value\">+4</span>\n智力<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "力量<span class=\"status_plus_value\">+4</span><br>智力<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "萬聖節，嗨起來！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "幹勁提升\n速度<span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "幹勁提升<br>速度<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "針對初學者的讀書強化週？": [
       {
         "choice_title": "無選項",
-        "choice_effect": "幹勁提升\n智力<span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "幹勁提升<br>智力<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "校舍後方的祕密": [
@@ -963,7 +963,7 @@
     "待兼寢室的成員": [
       {
         "choice_title": "無選項",
-        "choice_effect": "持久力<span class=\"status_plus_value\">+4</span>\n力量<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "持久力<span class=\"status_plus_value\">+4</span><br>力量<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "保養耳朵要細心": [
@@ -975,7 +975,7 @@
     "大家在一起最棒了！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "速度<span class=\"status_plus_value\">+6</span>\n力量<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "速度<span class=\"status_plus_value\">+6</span><br>力量<span class=\"status_plus_value\">+6</span>"
       }
     ],
     "大家一起回去吧": [
@@ -999,7 +999,7 @@
     "目白家私人海灘的派對之夜☆": [
       {
         "choice_title": "無選項",
-        "choice_effect": "速度<span class=\"status_plus_value\">+6</span>\n力量<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "速度<span class=\"status_plus_value\">+6</span><br>力量<span class=\"status_plus_value\">+6</span>"
       }
     ],
     "優雅的雙人舞": [
@@ -1011,19 +1011,19 @@
     "雪的回憶，雪之的想法": [
       {
         "choice_title": "無選項",
-        "choice_effect": "力量<span class=\"status_plus_value\">+6</span>\n意志力<span class=\"status_plus_value\">+6</span>"
+        "choice_effect": "力量<span class=\"status_plus_value\">+6</span><br>意志力<span class=\"status_plus_value\">+6</span>"
       }
     ],
     "夢想的彼端": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span>\n技能點<span class=\"status_plus_value\">+40</span>\n<span class=\"skill_hint\">『一等星』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+40</span><br><span class=\"skill_hint\">『一等星』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
       }
     ],
     "負面謠言？": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數値<span class=\"status_plus_value\">+6</span>\n技能點<span class=\"status_plus_value\">+40</span>"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+6</span><br>技能點<span class=\"status_plus_value\">+40</span>"
       }
     ],
     "一碗拉麵，並行練跑一次": [
@@ -1041,7 +1041,7 @@
     "Let's蜜蜜♪": [
       {
         "choice_title": "無選項",
-        "choice_effect": "體力<span class=\"status_plus_value\">+20</span>\n持久力<span class=\"status_plus_value\">+4</span>"
+        "choice_effect": "體力<span class=\"status_plus_value\">+20</span><br>持久力<span class=\"status_plus_value\">+4</span>"
       }
     ],
     "跟我來支舞": [
@@ -1065,19 +1065,19 @@
     "連繫你和我的演唱會": [
       {
         "choice_title": "「能互相呼喊的歌」嗎……(醒目飛鷹)",
-        "choice_effect": "醒目飛鷹編組時：\n<span class=\"skill_hint\">『全速前進！』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>\n非編組時：\n<span class=\"skill_hint\">『長驅直入』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+        "choice_effect": "醒目飛鷹編組時：<br><span class=\"skill_hint\">『全速前進！』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>非編組時：<br><span class=\"skill_hint\">『長驅直入』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
       },
       {
         "choice_title": "「對可以奔跑的感謝」嗎……(美浦波旁)",
-        "choice_effect": "美浦波旁編組時：\n<span class=\"skill_hint\">『全神貫注』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>\n非編組時：\n<span class=\"skill_hint\">『集中力』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+        "choice_effect": "美浦波旁編組時：<br><span class=\"skill_hint\">『全神貫注』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>非編組時：<br><span class=\"skill_hint\">『集中力』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
       },
       {
         "choice_title": "「我回來了」嗎……(無聲鈴鹿)",
-        "choice_effect": "無聲鈴鹿編組時：\n<span class=\"skill_hint\">『突破者』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>\n非編組時：\n<span class=\"skill_hint\">『前途無量』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+        "choice_effect": "無聲鈴鹿編組時：<br><span class=\"skill_hint\">『突破者』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>非編組時：<br><span class=\"skill_hint\">『前途無量』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
       },
       {
         "choice_title": "「打破現狀的力量」嗎……(愛麗速子)",
-        "choice_effect": "愛麗速子編組時：\n<span class=\"skill_hint\">『必死的決心』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>\n非編組時：\n<span class=\"skill_hint\">『傾注一切』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+        "choice_effect": "愛麗速子編組時：<br><span class=\"skill_hint\">『必死的決心』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>非編組時：<br><span class=\"skill_hint\">『傾注一切』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
       },
       {
         "choice_title": "「用歌曲來連繫」嗎……",
@@ -1087,11 +1087,11 @@
     "提案！製作新歌曲！": [
       {
         "choice_title": "讓對方親身感受飛鷹的心意？",
-        "choice_effect": "<img src=\"../UmaMisc/Image/ScenarioStatus/performance_Pa.png\">熱情<span class=\"status_plus_value\">+20</span>\n理事長的情誼量條<span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "<img src=\"../UmaMisc/Image/ScenarioStatus/performance_Pa.png\">熱情<span class=\"status_plus_value\">+20</span><br>理事長的情誼量條<span class=\"status_plus_value\">+10</span>"
       },
       {
         "choice_title": "回歸初心吧！",
-        "choice_effect": "<img src=\"../UmaMisc/Image/ScenarioStatus/performance_Me.png\">精神<span class=\"status_plus_value\">+20</span>\n理事長的情誼量條<span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "<img src=\"../UmaMisc/Image/ScenarioStatus/performance_Me.png\">精神<span class=\"status_plus_value\">+20</span><br>理事長的情誼量條<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "從能做的事開始": [
@@ -1107,49 +1107,49 @@
     "1st演唱會，結束！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span>\n根據課程次數獲得技能點\n粉絲數<span class=\"status_plus_value\">+1000</span>人\n五種表現力<span class=\"status_plus_value\">+5</span>\n※發生的效果會因演唱會結果而有所變動"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span><br>根據課程次數獲得技能點<br>粉絲數<span class=\"status_plus_value\">+1000</span>人<br>五種表現力<span class=\"status_plus_value\">+5</span><br>※發生的效果會因演唱會結果而有所變動"
       }
     ],
     "1st演唱會結束後": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數値中隨機選兩種<span class=\"status_plus_value\">+10</span>\n技能點<span class=\"status_plus_value\">+20</span>\n成員加入"
+        "choice_effect": "五種數値中隨機選兩種<span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+20</span><br>成員加入"
       }
     ],
     "2nd演唱會，結束！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數値<span class=\"status_plus_value\">+3~10</span>\n根據課程次數獲得技能點\n粉絲數<span class=\"status_plus_value\">+200~2000</span>人\n五種表現力<span class=\"status_plus_value\">+5~10</span>\n※發生的效果會因演唱會結果而有所變動"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+3~10</span><br>根據課程次數獲得技能點<br>粉絲數<span class=\"status_plus_value\">+200~2000</span>人<br>五種表現力<span class=\"status_plus_value\">+5~10</span><br>※發生的效果會因演唱會結果而有所變動"
       }
     ],
     "3rd演唱會，結束！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數値<span class=\"status_plus_value\">+3~10</span>\n根據課程次數獲得技能點\n粉絲數<span class=\"status_plus_value\">+550~5500</span>人\n※發生的效果會因演唱會結果而有所變動"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+3~10</span><br>根據課程次數獲得技能點<br>粉絲數<span class=\"status_plus_value\">+550~5500</span>人<br>※發生的效果會因演唱會結果而有所變動"
       }
     ],
     "4th演唱會，結束！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數値<span class=\"status_plus_value\">+3~10</span>\n根據課程次數獲得技能點\n粉絲數<span class=\"status_plus_value\">+650~6500</span>人\n※發生的效果會因演唱會結果而有所變動"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+3~10</span><br>根據課程次數獲得技能點<br>粉絲數<span class=\"status_plus_value\">+650~6500</span>人<br>※發生的效果會因演唱會結果而有所變動"
       }
     ],
     "新加入的演唱會協力者！": [
       {
         "choice_title": "無選項",
-        "choice_effect": "成員加入\n五種表現力的上限<span class=\"status_plus_value\">+50</span>\n五種表現力<span class=\"status_plus_value\">+10</span>"
+        "choice_effect": "成員加入<br>五種表現力的上限<span class=\"status_plus_value\">+50</span><br>五種表現力<span class=\"status_plus_value\">+10</span>"
       }
     ],
     "演唱的歌曲是……": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span>\n習得「GIRLS 'LEGEND U」樂曲\n演唱會期待度上升"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span><br>習得「GIRLS 'LEGEND U」樂曲<br>演唱會期待度上升"
       }
     ],
     "Finale": [
       {
         "choice_title": "無選項",
-        "choice_effect": "五種數値<span class=\"status_plus_value\">+12</span>\n技能點<span class=\"status_plus_value\">+160</span>\n粉絲數<span class=\"status_plus_value\">+2000</span>人\n<span class=\"skill_hint\">『夢想的途中』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+        "choice_effect": "五種數値<span class=\"status_plus_value\">+12</span><br>技能點<span class=\"status_plus_value\">+160</span><br>粉絲數<span class=\"status_plus_value\">+2000</span>人<br><span class=\"skill_hint\">『夢想的途中』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
       }
     ]
   },
