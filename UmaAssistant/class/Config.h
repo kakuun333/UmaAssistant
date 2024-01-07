@@ -8,6 +8,8 @@ constexpr inline int DEFAULT_SCAN_INTERVAL = 100; // ²@¬í
 
 const std::string DEFAULT_LOCAL_SERVER_PORT = "5854";
 
+const std::string DEFAULT_PREVIOUS_CURRENT_CHARACTER_NAME = "DEFAULT_PREVIOUS_CURRENT_CHARACTER_NAME";
+
 
 class Config
 {
@@ -29,6 +31,7 @@ public:
 	int JpServerLang;
 	int ScanInterval;
 	std::string GameWindowName;
+	std::string PreviousCurrentCharacterName;
 	std::map<std::string, int> AutoMouseClickKey;
 	std::map<std::string, std::string> LocalServer;
 	std::map<std::string, std::map<std::string, int>> GameWindowBoundOffset;

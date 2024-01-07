@@ -1,13 +1,15 @@
 #pragma once
 
-#include <string>
 
 #include <nlohmann/json.hpp>
 
 #include "data/UmaEventData.h"
 #include "data/ScenarioEventData.h"
 
+// STL
 #include <mutex>
+#include <string>
+#include <deque>
 
 class DataManager
 {
@@ -45,9 +47,15 @@ public:
 
 	UmaEventData GetCurrentCharacterUmaEventData(std::string scanned_text);
 
-	UmaEventData GetSupportCardUmaEventData(std::string scanned_text);
+	UmaEventData GetCurrentCharacterUmaEventDataByList(std::deque<std::string> scanned_text_list);
+
+	UmaEventData GetSapokaUmaEventData(std::string scanned_text);
+
+	UmaEventData GetSapokaUmaEventDataByList(std::deque<std::string> scanned_text_list);
 
 	ScenarioEventData GetScenarioEventData(std::string scanned_text);
+
+	ScenarioEventData GetScenarioEventDataByList(std::deque<std::string> scanned_text_list);
 
 	bool TryGetCurrentCharacterName(std::string scanned_text);
 

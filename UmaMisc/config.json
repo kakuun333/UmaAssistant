@@ -28,6 +28,7 @@
     "Port": "5854"
   },
   "OutputLogFile": false,
+  "PreviousCurrentCharacterName": "DEFAULT_PREVIOUS_CURRENT_CHARACTER_NAME",
   "ScanInterval": 100,
   "SoftwareLanguage": 1
 }

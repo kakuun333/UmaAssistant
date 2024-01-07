@@ -52,6 +52,8 @@ public:
 
 	std::string event_owner;
 
+	std::string matched_scanned_text;
+
 	UmaEvent umaEvent;
 
 	UmaDataType umaDataType;

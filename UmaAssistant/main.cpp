@@ -30,8 +30,6 @@ using namespace System::Windows::Forms;
 using namespace System::IO;
 using namespace System::Reflection;
 
-
-
 [STAThreadAttribute]
 int main(array<String^>^ args)
 {
@@ -148,7 +146,6 @@ int main(array<String^>^ args)
 		break;
 	}
 #pragma endregion
-
 
 	Application::Run(umaForm); // 啟動主要的 Form (UmaForm)
 

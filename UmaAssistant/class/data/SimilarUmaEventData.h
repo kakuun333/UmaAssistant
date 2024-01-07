@@ -2,7 +2,7 @@
 
 #include <string>
 
-class UmaEventRoute
+class SimilarUmaEventData
 {
 public:
 	float similarity;
@@ -10,4 +10,6 @@ public:
 	std::string rare;
 	std::string event_title;
 	std::string event_owner;
+
+	std::string matched_scanned_text;
 };

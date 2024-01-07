@@ -37,6 +37,7 @@ void Config::Update()
 
 	// std::string
 	GameWindowName = json_config["GameWindowName"].empty() ? NULL_GAME_WINDOW_NAME : json_config["GameWindowName"].get<std::string>();
+	PreviousCurrentCharacterName = json_config["PreviousCurrentCharacterName"].empty() ? DEFAULT_PREVIOUS_CURRENT_CHARACTER_NAME : json_config["PreviousCurrentCharacterName"].get<std::string>();
 
 	// std::map
 	AutoMouseClickKey["VK"] = json_config["AutoMouseClickKey"]["VK"].empty() ? VK_XBUTTON2 : json_config["AutoMouseClickKey"]["VK"].get<int>();
@@ -54,20 +55,25 @@ void Config::WriteToJson()
 
 	json json_config = fileManager->ReadJson(global::path::std_config);
 
+	// bool
 	//json_config["ShowEnhanceSkill"] = this->ShowEnhanceSkill;
 	json_config["DebugMode"] = this->DebugMode;
 	json_config["AlwaysOnTop"] = this->AlwaysOnTop;
 	json_config["AutoMouseClick"] = this->AutoMouseClick;
 	json_config["OutputLogFile"] = this->OutputLogFile;
 
+	// int
 	json_config["SoftwareLanguage"] = this->SoftwareLanguage;
 	json_config["GameServer"] = this->GameServer;
 	json_config["GameWindow"] = this->GameWindow;
 	json_config["JpServerLang"] = this->JpServerLang;
 	json_config["ScanInterval"] = this->ScanInterval;
 
+	// std::string
 	json_config["GameWindowName"] = this->GameWindowName;
+	json_config["PreviousCurrentCharacterName"] = this->PreviousCurrentCharacterName;
 
+	// std::map
 	json_config["AutoMouseClickKey"]["VK"] = this->AutoMouseClickKey["VK"];
 	json_config["AutoMouseClickKey"]["WinFormButton"] = this->AutoMouseClickKey["WinFormButton"];
 	json_config["LocalServer"]["Port"] = this->LocalServer["Port"];

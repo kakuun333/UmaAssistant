@@ -102,13 +102,7 @@
     <ClCompile Include="UmaAssistant\class\UmaTimer.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="UmaAssistant\class\data\UmaEventRoute.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="UmaAssistant\class\UmaLog.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="UmaAssistant\class\data\UmaGetCharData.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="UmaAssistant\class\UmaDataUpdater.cpp">
@@ -224,7 +218,7 @@
     <ClInclude Include="UmaAssistant\class\UmaTimer.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="UmaAssistant\class\data\UmaEventRoute.h">
+    <ClInclude Include="UmaAssistant\class\data\SimilarUmaEventData.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="UmaAssistant\enum\JpServerLangType.h">

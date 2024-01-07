@@ -21,6 +21,8 @@ public:
 	std::string event_title;
 	std::vector<ScenarioChoice> event_list;
 
+	std::string matched_scanned_text;
+
 	bool IsDataComplete();
 };
 

@@ -42,7 +42,8 @@ namespace UmaAssistant {
 
 		void Character_IMG_Clicked(System::Object^ sender, System::Windows::Forms::HtmlElementEventArgs^ e);
 
-		void UmaForm::UpdateIMGClickEvent();
+		void UpdateIMGClickEvent();
+		//void UmaForm::UpdateIMGClickEvent();
 
 	public: System::Windows::Forms::WebBrowser^ select_character_webBrowser;
 

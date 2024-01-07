@@ -13,17 +13,24 @@
 /*			C++ std			*/
 #include <iostream>
 #include <fstream>
-#include <memory>
-#include <map>
-#include <vector>
+
 #include <cstring>
-#include <thread>
-#include <regex>
 #include <future>
 #include <functional>
 #include <locale>
 #include <codecvt>
+
 #include <algorithm>
+
+#include <memory>
+
+#include <regex>
+
+#include <thread>
+
+#include <map>
+#include <vector>
+#include <deque>
 
 
 // Gdi+
@@ -80,7 +87,7 @@ using json = nlohmann::json;
 // data
 #include "class/data/UmaEventData.h"
 #include "class/data/ScenarioEventData.h"
-#include "class/data/UmaEventRoute.h"
+#include "class/data/SimilarUmaEventData.h"
 #include "class/data/UmaGetCharData.h"
 
 /*			utility			*/

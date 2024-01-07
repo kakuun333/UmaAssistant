@@ -3,6 +3,47 @@
 
 namespace UmaAssistant
 {
+	UmaForm::UmaForm(void) // UmaForm 的建構函數
+	{
+		InitializeComponent();
+		//
+		//TODO:  在此加入建構函式程式碼
+		//
+
+#pragma region 初始化 WebBrowser
+		// 提取 config 資料
+		System::String^ port = utility::stdStr2system(global::config->LocalServer["Port"]);
+		//json config = FileManager::GetInstance()->ReadJson(global::path::std_config);
+
+		//System::String^ port = utility::stdStr2system(config["LocalServer"]["Port"].get<std::string>());
+
+		// choice.html
+		choiceWebBrowser->DocumentCompleted += gcnew WebBrowserDocumentCompletedEventHandler(this, &UmaForm::OnChoiceDocumentCompleted);
+		choiceWebBrowser->Navigate("http://localhost:" + port + "/choice.html");
+
+		// character_name.html
+		characterNameWebBrowser->Navigate("http://localhost:" + port + "/character_name.html");
+
+		// select_character.html
+		select_character_webBrowser->DocumentCompleted += gcnew WebBrowserDocumentCompletedEventHandler(this, &UmaForm::OnSelectCharacterDocumentCompleted);
+		select_character_webBrowser->Navigate("http://localhost:" + port + "/select_character.html");
+#pragma endregion
+
+#pragma region 初始化 DebugMode 啟動時該顯示的按鈕
+		if (global::config->DebugMode == true)
+		{
+			test_btn->Visible = true;
+			screenshot_preview_btn->Visible = true;
+		}
+		else
+		{
+			test_btn->Visible = false;
+			screenshot_preview_btn->Visible = false;
+		}
+#pragma endregion
+
+	}
+
 	System::Void UmaForm::test_btn_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		//std::cout << utility::IsSimilar(u8"食いしん坊は伊達じゃない", u8"食いじん坊は伊達じゃよない") << std::endl;
@@ -23,25 +64,23 @@ namespace UmaAssistant
 		//std::cout << utility::IsStringTooLong(u8"あああああああああああああああああああああああ") << std::endl;
 
 
+		//std::string test = u8"With境";
+		//float sim = utility::GetSimilarity(test, "With");
+		//std::cout << "sim: " << sim << std::endl;
 
-		//std::string boolean = utility::IsRepeatingString(test, 4) == true ? "true" : "false";
+		//DataManager* dataManager = DataManager::GetInstance();
+		//UmaEventData umaData = dataManager->GetCurrentCharacterUmaEventData(test);
 
-		
+		//std::cout << "completed: " << (umaData.IsDataComplete() ? "true" : "false") << std::endl;
 
-		//std::cout << boolean << std::endl;
-
-		//std::string test = u8"一~二！";
-		//test = utility::ReplaceSpecialString(test);
-		//std::cout << "test: " << test << std::endl;
-
-		//std::cout << utility::GetSimilarity(u8"With", u8"With") << std::endl;
+		//std::cout << utility::GetSimilarity(u8"LoveRamen）", u8"Love Ramen") << std::endl;
 	}
 
 	void UmaForm::OnChoiceDocumentCompleted(System::Object^ sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^ e)
 	{
 		// 初始化 skill_displayer.js 中的 let GameServer 變數
 		WebManager* webManager = WebManager::GetInstance();
-
+		DataManager* dataManager = DataManager::GetInstance();
 
 		// GameServer
 		switch (global::config->GameServer)
@@ -81,6 +120,21 @@ namespace UmaAssistant
 			webManager->ChangeChoiceBrowserLang(static_cast<int>(SoftwareLanguageType::TW));
 			break;
 		}
+
+#pragma region 初始化上次選擇的角色
+		if (dataManager->SetCurrentCharacterInfoDict(global::config->PreviousCurrentCharacterName))
+		{
+			std::cout << u8"成功初始化上次培育的角色！ PreviousCurrentCharacterName: " << global::config->PreviousCurrentCharacterName << std::endl;
+			dataManager->SetCurrentCharacterInfoLock(true);
+
+			System::String^ sys_currentCharName = utility::stdStr2system(global::config->PreviousCurrentCharacterName);
+			webManager->ChangeCharacterName(sys_currentCharName);
+		}
+		else
+		{
+			std::cout << u8"初始化上次培育的角色失敗！ PreviousCurrentCharacterName: " << global::config->PreviousCurrentCharacterName << std::endl;
+		}
+#pragma endregion
 	}
 
 	void UmaForm::OnSelectCharacterDocumentCompleted(Object^ sender, WebBrowserDocumentCompletedEventArgs^ e)
@@ -256,49 +310,6 @@ namespace UmaAssistant
 			this->UpdateIMGClickEvent();
 			break;
 		}
-	}
-
-
-	UmaForm::UmaForm(void) // UmaForm 的建構函數
-	{
-		InitializeComponent();
-		//
-		//TODO:  在此加入建構函式程式碼
-		//
-
-
-#pragma region WebBrowser
-		// 提取 config 資料
-		System::String^ port = utility::stdStr2system(global::config->LocalServer["Port"]);
-		//json config = FileManager::GetInstance()->ReadJson(global::path::std_config);
-
-		//System::String^ port = utility::stdStr2system(config["LocalServer"]["Port"].get<std::string>());
-
-		// choice.html
-		choiceWebBrowser->DocumentCompleted += gcnew WebBrowserDocumentCompletedEventHandler(this, &UmaForm::OnChoiceDocumentCompleted);
-		choiceWebBrowser->Navigate("http://localhost:" + port + "/choice.html");
-		
-		// character_name.html
-		characterNameWebBrowser->Navigate("http://localhost:" + port + "/character_name.html");
-
-		// select_character.html
-		select_character_webBrowser->DocumentCompleted += gcnew WebBrowserDocumentCompletedEventHandler(this, &UmaForm::OnSelectCharacterDocumentCompleted);
-		select_character_webBrowser->Navigate("http://localhost:" + port + "/select_character.html");
-#pragma endregion
-
-#pragma region DebugMode
-		if (global::config->DebugMode == true)
-		{
-			test_btn->Visible = true;
-			screenshot_preview_btn->Visible = true;
-		}
-		else
-		{
-			test_btn->Visible = false;
-			screenshot_preview_btn->Visible = false;
-		}
-#pragma endregion
-
 	}
 
 	System::Void UmaForm::scan_btn_Click(System::Object^ sender, System::EventArgs^ e)

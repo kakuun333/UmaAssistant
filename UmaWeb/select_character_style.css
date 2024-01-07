@@ -13,8 +13,8 @@ body {
 }
 
 img {
-    width: 5.1em;
-    height: 5.1em;
+    width: 5.15em;
+    height: 5.15em;
 }
 
 table {
@@ -59,15 +59,20 @@ table, thead, tbody, tr, th, td {
 
 
 /* class *//* class *//* class *//* class *//* class */
+
 @keyframes scaleCharacterImgAnim {
     0% {
         transform: scale(1);
     }
     100% {
-        transform: scale(1.1); /* 結束狀態 */
+        transform: scale(1.1);
     }
 }
+
 .character_icon:hover {
     cursor: pointer;
+    transform: scale(1.1);
+
     animation: scaleCharacterImgAnim 0.1s forwards
 }
+

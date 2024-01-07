@@ -100,6 +100,7 @@ def get_scenario_event_data_jp(scenario_type):
             choice_effect = re.sub(r'ビジュアル', rf'<img src="../UmaMisc/Image/ScenarioStatus/performance_Vi.png">ビジュアル', choice_effect, flags=re.IGNORECASE);
             choice_effect = re.sub(r'メンタル', rf'<img src="../UmaMisc/Image/ScenarioStatus/performance_Me.png">メンタル', choice_effect, flags=re.IGNORECASE);
 
+            choice_effect = utility.replace(choice_effect, "\n", "<br>");
 
             choice_info = {
                 "choice_title": choice_title,

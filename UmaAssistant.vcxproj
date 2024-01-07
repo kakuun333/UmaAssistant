@@ -177,9 +177,7 @@
     <ClCompile Include="UmaAssistant\class\WebManager.cpp" />
     <ClCompile Include="UmaAssistant\class\GameWindowFinder.cpp" />
     <ClCompile Include="UmaAssistant\class\UmaTimer.cpp" />
-    <ClCompile Include="UmaAssistant\class\data\UmaEventRoute.cpp" />
     <ClCompile Include="UmaAssistant\class\UmaLog.cpp" />
-    <ClCompile Include="UmaAssistant\class\data\UmaGetCharData.cpp" />
     <ClCompile Include="UmaAssistant\class\UmaDataUpdater.cpp" />
     <ClCompile Include="UmaAssistant\class\URLManager.cpp" />
   </ItemGroup>
@@ -229,7 +227,7 @@
     <ClInclude Include="UmaAssistant\class\WebManager.h" />
     <ClInclude Include="UmaAssistant\class\GameWindowFinder.h" />
     <ClInclude Include="UmaAssistant\class\UmaTimer.h" />
-    <ClInclude Include="UmaAssistant\class\data\UmaEventRoute.h" />
+    <ClInclude Include="UmaAssistant\class\data\SimilarUmaEventData.h" />
     <ClInclude Include="UmaAssistant\class\UmaLog.h" />
     <ClInclude Include="UmaAssistant\class\data\UmaGetCharData.h" />
     <ClInclude Include="UmaAssistant\class\UmaDataUpdater.h" />

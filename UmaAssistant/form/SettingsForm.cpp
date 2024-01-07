@@ -506,6 +506,7 @@ namespace UmaAssistant
 
 		// GameWindowName
 		global::config->GameWindowName = NULL_GAME_WINDOW_NAME;
+		global::config->PreviousCurrentCharacterName = DEFAULT_PREVIOUS_CURRENT_CHARACTER_NAME;
 
 		global::config->WriteToJson();
 	}
@@ -606,7 +607,6 @@ namespace UmaAssistant
 		}
 
 		global::config->AutoMouseClickKey["WinFormButton"] = static_cast<int>(e->Button);
-
 
 		// config
 		global::config->WriteToJson();
