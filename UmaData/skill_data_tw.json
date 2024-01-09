@@ -2492,7 +2492,7 @@
       "閃光步伐": {
         "lower_skill": "閃電步伐",
         "skill_description": "在競賽中期若位於隊列後方\n一段時間內變得較不易遭到包圍\n＜中距離＞",
-        "skill_icon_name": "i_skill_y_r_2",
+        "skill_icon_name": "i_skill_y_r_3",
         "skill_pt": "140",
         "upper_skill": null
       },

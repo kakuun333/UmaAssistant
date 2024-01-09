@@ -15970,11 +15970,11 @@
           {
             "帝皇的武者修行": [
               {
-                "choice_title": "トレーニングじゃ物足りないか？",
+                "choice_title": "訓練不夠嗎？",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span>"
               },
               {
-                "choice_title": "いい友だちが出来たんだな",
+                "choice_title": "交到了很好的朋友呢",
                 "choice_effect": "<span class=\"skill_hint\">『準備突圍』</span>ヒントLv<span class=\"status_plus_value\">+1</span>"
               }
             ]
@@ -15982,11 +15982,11 @@
           {
             "我與大家與杯子蛋糕": [
               {
-                "choice_title": "半分こすればいい",
+                "choice_title": "一人一半吧",
                 "choice_effect": "體力<span class=\"status_plus_value\">+5</span><br>幹勁提升"
               },
               {
-                "choice_title": "勝負すればいい",
+                "choice_title": "用比賽來決定吧",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span>"
               }
             ]
@@ -16018,11 +16018,11 @@
           {
             "額外的自主訓練": [
               {
-                "choice_title": "じゃあ試してみようか",
+                "choice_title": "那就試試吧",
                 "choice_effect": "體力<span class=\"status_minus_value\">-5</span><br>當前選擇的訓練的數値<span class=\"status_plus_value\">+5</span><br>與劇本NPC相應的情誼量條<span class=\"status_plus_value\">+5</span><br>URA 秋川理事長<br>青春盃 乙名史記者"
               },
               {
-                "choice_title": "比べるまでもない",
+                "choice_title": "不用比都知道",
                 "choice_effect": "體力<span class=\"status_plus_value\">+5</span>"
               }
             ]
@@ -16288,6 +16288,10 @@
               {
                 "choice_title": "無選項",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+30</span><br><span class=\"skill_hint\">『補充營養』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+              },
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+15</span>"
               }
             ]
           },
@@ -39358,11 +39362,11 @@
           {
             "帝皇的武者修行": [
               {
-                "choice_title": "トレーニングじゃ物足りないか？",
+                "choice_title": "訓練不夠嗎？",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span>"
               },
               {
-                "choice_title": "いい友だちが出来たんだな",
+                "choice_title": "交到了很好的朋友呢",
                 "choice_effect": "<span class=\"skill_hint\">『準備突圍』</span>ヒントLv<span class=\"status_plus_value\">+1</span>"
               }
             ]
@@ -39370,11 +39374,11 @@
           {
             "我與大家與杯子蛋糕": [
               {
-                "choice_title": "半分こすればいい",
+                "choice_title": "一人一半吧",
                 "choice_effect": "體力<span class=\"status_plus_value\">+5</span><br>幹勁提升"
               },
               {
-                "choice_title": "勝負すればいい",
+                "choice_title": "用比賽來決定吧",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span>"
               }
             ]
@@ -39406,11 +39410,11 @@
           {
             "額外的自主訓練": [
               {
-                "choice_title": "じゃあ試してみようか",
+                "choice_title": "那就試試吧",
                 "choice_effect": "體力<span class=\"status_minus_value\">-5</span><br>當前選擇的訓練的數値<span class=\"status_plus_value\">+5</span><br>與劇本NPC相應的情誼量條<span class=\"status_plus_value\">+5</span><br>URA 秋川理事長<br>青春盃 乙名史記者"
               },
               {
-                "choice_title": "比べるまでもない",
+                "choice_title": "不用比都知道",
                 "choice_effect": "體力<span class=\"status_plus_value\">+5</span>"
               }
             ]
@@ -39498,11 +39502,11 @@
           {
             "吾乃帝皇前輩！": [
               {
-                "choice_title": "生徒会長みたいでカッコよかった",
+                "choice_title": "像學生會長一樣帥喔",
                 "choice_effect": "<span class=\"skill_hint\">『彎道加速◯』</span>的靈感Lv<span class=\"status_plus_value\">+2</span>"
               },
               {
-                "choice_title": "憧れの的として頑張って行こう！",
+                "choice_title": "作為受人崇拜的對象繼續努力吧！",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span>"
               }
             ]
@@ -39510,11 +39514,11 @@
           {
             "吾永不放棄！": [
               {
-                "choice_title": "ちゃんとした舞台で戦うんだろ？",
+                "choice_title": "妳想在正式舞台一較高下吧？",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+15</span><br><img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+5</span><br>隨機<span class=\"skill_hint\">『練習上手〇』</span>"
               },
               {
-                "choice_title": "競うなら準備が必要",
+                "choice_title": "要比賽的話，就得做好準備！",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+15</span><br>隨機<span class=\"skill_hint\">『練習上手〇』</span>"
               }
             ]
@@ -39676,6 +39680,10 @@
               {
                 "choice_title": "無選項",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+30</span><br><span class=\"skill_hint\">『補充營養』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+              },
+              {
+                "choice_title": "無選項",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+15</span>"
               }
             ]
           },
@@ -54241,11 +54249,11 @@
           {
             "不可違反命令": [
               {
-                "choice_title": "開店直前から待機しておこう",
+                "choice_title": "在販賣部要開店前就來待機吧",
                 "choice_effect": "<span class=\"skill_hint\">『集中力』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>美浦波旁的情誼量條<span class=\"status_plus_value\">+5</span>"
               },
               {
-                "choice_title": "昼休みになったらダッシュ！",
+                "choice_title": "午休一到就立刻衝到販賣部！",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span><br>美浦波旁的情誼量條<span class=\"status_plus_value\">+5</span>"
               }
             ]
@@ -56439,11 +56447,11 @@
           {
             "不可違反命令": [
               {
-                "choice_title": "開店直前から待機しておこう",
+                "choice_title": "在販賣部要開店前就來待機吧",
                 "choice_effect": "<span class=\"skill_hint\">『集中力』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>美浦波旁的情誼量條<span class=\"status_plus_value\">+5</span>"
               },
               {
-                "choice_title": "昼休みになったらダッシュ！",
+                "choice_title": "午休一到就立刻衝到販賣部！",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span><br>美浦波旁的情誼量條<span class=\"status_plus_value\">+5</span>"
               }
             ]
@@ -61073,11 +61081,11 @@
           {
             "狀態「覺得無趣？」": [
               {
-                "choice_title": "今のままでいいと思う！",
+                "choice_title": "我覺得現在這樣就很好了！",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『隨勢而動』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>美浦波旁的情誼量條<span class=\"status_plus_value\">+5</span>"
               },
               {
-                "choice_title": "表情を変えずに済む仮装は？",
+                "choice_title": "或是變裝成不用改變表情的人物",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+15</span><br>美浦波旁的情誼量條<span class=\"status_plus_value\">+5</span>"
               }
             ]
@@ -61113,11 +61121,11 @@
           {
             "不可違反命令": [
               {
-                "choice_title": "開店直前から待機しておこう",
+                "choice_title": "在販賣部要開店前就來待機吧",
                 "choice_effect": "<span class=\"skill_hint\">『集中力』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>美浦波旁的情誼量條<span class=\"status_plus_value\">+5</span>"
               },
               {
-                "choice_title": "昼休みになったらダッシュ！",
+                "choice_title": "午休一到就立刻衝到販賣部！",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span><br>美浦波旁的情誼量條<span class=\"status_plus_value\">+5</span>"
               }
             ]
@@ -62929,11 +62937,11 @@
           {
             "不可違反命令": [
               {
-                "choice_title": "開店直前から待機しておこう",
+                "choice_title": "在販賣部要開店前就來待機吧",
                 "choice_effect": "<span class=\"skill_hint\">『集中力』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>美浦波旁的情誼量條<span class=\"status_plus_value\">+5</span>"
               },
               {
-                "choice_title": "昼休みになったらダッシュ！",
+                "choice_title": "午休一到就立刻衝到販賣部！",
                 "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br>技能點<span class=\"status_plus_value\">+15</span><br>美浦波旁的情誼量條<span class=\"status_plus_value\">+5</span>"
               }
             ]
