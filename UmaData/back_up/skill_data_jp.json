@@ -2786,7 +2786,7 @@
       "ライトニングステップ": {
         "lower_skill": "イナズマステップ",
         "skill_description": "左右に移動するとき加速力が少し上がる＜作戦・先行＞",
-        "skill_icon_name": "i_skill_y_r_2",
+        "skill_icon_name": "i_skill_y_r_3",
         "skill_pt": "140",
         "upper_skill": null
       },
