@@ -1,6 +1,6 @@
-#include "../stdafx.h"
+ï»¿#include "../stdafx.h"
 
-#pragma region ÀRºAÅÜ¼Æ
+#pragma region éœæ…‹è®Šæ•¸
 DataManager* DataManager::_instance = nullptr;
 
 bool DataManager::_currentCharacterInfoLocked = false;
@@ -21,7 +21,7 @@ std::map<std::string, std::string> DataManager::_currentCharacterInfoDict =
 	// characterName
 	{ "event_owner", "" },
 };
-#pragma endregion ÀRºAÅÜ¼Æ
+#pragma endregion éœæ…‹è®Šæ•¸
 
 bool DataManager::SetCurrentCharacterInfoDict(std::string event_owner)
 {
@@ -149,7 +149,7 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 						umaGetCharData.rare = rare;
 						umaGetCharData.similarity = similarity;
 
-						// ¥H¨¾¸U¤@¡A¥[¤W¤¬¥¸Âê«OÅ@¦@¨É¸ê·½
+						// ä»¥é˜²è¬ä¸€ï¼ŒåŠ ä¸Šäº’æ–¥é–ä¿è­·å…±äº«è³‡æº
 						std::unique_lock<std::mutex> lock(dataMutex); 
 						similarCharList.push_back(umaGetCharData);
 						lock.unlock();
@@ -186,7 +186,7 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 						umaGetCharData.rare = rare;
 						umaGetCharData.similarity = similarity;
 
-						// ¥H¨¾¸U¤@¡A¥[¤W¤¬¥¸Âê«OÅ@¦@¨É¸ê·½
+						// ä»¥é˜²è¬ä¸€ï¼ŒåŠ ä¸Šäº’æ–¥é–ä¿è­·å…±äº«è³‡æº
 						std::unique_lock<std::mutex> lock(dataMutex);
 						similarCharList.push_back(umaGetCharData);
 						lock.unlock();
@@ -223,7 +223,7 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 						umaGetCharData.rare = rare;
 						umaGetCharData.similarity = similarity;
 
-						// ¥H¨¾¸U¤@¡A¥[¤W¤¬¥¸Âê«OÅ@¦@¨É¸ê·½
+						// ä»¥é˜²è¬ä¸€ï¼ŒåŠ ä¸Šäº’æ–¥é–ä¿è­·å…±äº«è³‡æº
 						std::unique_lock<std::mutex> lock(dataMutex);
 						similarCharList.push_back(umaGetCharData);
 						lock.unlock();
@@ -251,7 +251,7 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 
 	if (similarCharList.empty()) return false;
 
-	// ¨Ï¥Î std::max_element §ä¨ì³Ì¤jªº similarity
+	// ä½¿ç”¨ std::max_element æ‰¾åˆ°æœ€å¤§çš„ similarity
 	auto maxElement = std::max_element(similarCharList.begin(), similarCharList.end(),
 		[](const UmaGetCharData& data1, const UmaGetCharData& data2)
 		{
@@ -272,6 +272,117 @@ bool DataManager::TryGetCurrentCharacterName(std::string scanned_text)
 		global::config->WriteToJson();
 	}
 	
+
+	return foundChar;
+}
+
+bool DataManager::TryGetCurrentCharacterByList(std::deque<std::string> scanned_text_list)
+{
+	bool foundChar = false;
+	json event_data_json;
+
+	switch (global::config->GameServer)
+	{
+	case static_cast<int>(GameServerType::JP):
+		switch (global::config->JpServerLang)
+		{
+		case static_cast<int>(JpServerLangType::JP):
+			event_data_json = event_data_jp_json;
+			break;
+		case static_cast<int>(JpServerLangType::TW):
+			event_data_json = event_data_jp_trans_tw_json;
+			break;
+		}
+		break;
+	case static_cast<int>(GameServerType::TW):
+		event_data_json = event_data_tw_json;
+		break;
+	}
+
+	// event_owner		
+	std::deque<UmaGetCharData> similarCharList = {};
+
+	WebManager* webManager = WebManager::GetInstance();
+
+	for (json::iterator it = event_data_json["character"].begin(); it != event_data_json["character"].end(); ++it) // it.value() == characterRare
+	{
+
+		for (json::iterator it2 = it.value().begin(); it2 != it.value().end(); ++it2)
+		{
+			// it2.key() == event_owner;
+
+			std::string rare = it.key();
+			std::string event_owner = it2.key();
+
+			for (const auto& scanned_text : scanned_text_list)
+			{
+				float similarity = utility::GetCharacterNameSimilarity(scanned_text, event_owner);
+
+				//switch (global::config->GameServer)
+				//{
+				//case static_cast<int>(GameServerType::JP):
+				//	if (utility::JP_CHAR_SIMILAR_METRIC > similarity) continue;
+				//	break;
+				//case static_cast<int>(GameServerType::TW):
+				//	if (utility::SIMILAR_METRIC > similarity) continue;
+				//	break;
+				//}
+
+				/*
+				ç‚ºä»€éº¼ similarity == 100 ï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿï¼Ÿ......
+
+				scanned_text: IButterflyStingl, event_owner:ã‚¢ãƒ‰ãƒã‚¤ãƒ¤ãƒ™ã‚¬ï¼ˆStarry Nocturneï¼‰, similarity:-1
+				scanned_text: IButterflyStingl, event_owner:ã‚¢ãƒ‰ãƒã‚¤ãƒ¤ãƒ™ã‚¬ï¼ˆStarry Nocturneï¼‰, similarity:-1
+				scanned_text: IButterflyStingl, event_owner:ã‚¢ãƒ‰ãƒã‚¤ãƒ¤ãƒ™ã‚¬ï¼ˆStarry Nocturneï¼‰, similarity:-1
+				scanned_text: ButterflySting, event_owner:ã‚¢ãƒ‰ãƒã‚¤ãƒ¤ãƒ™ã‚¬ï¼ˆStarry Nocturneï¼‰, similarity:100
+				*/
+
+				
+				if (similarity < utility::SIMILAR_METRIC) continue;
+
+				std::cout << "scanned_text: " << scanned_text << ", event_owner: " << event_owner << ", similarity: " << similarity << std::endl;
+
+
+				UmaGetCharData umaGetCharData;
+				umaGetCharData.event_owner = event_owner;
+				umaGetCharData.rare = rare;
+				umaGetCharData.similarity = similarity;
+
+				// ä»¥é˜²è¬ä¸€ï¼ŒåŠ ä¸Šäº’æ–¥é–ä¿è­·å…±äº«è³‡æº
+				std::unique_lock<std::mutex> lock(dataMutex);
+				similarCharList.push_back(umaGetCharData);
+				lock.unlock();
+
+				std::cout << "FOUND CHARACTER: " << event_owner << std::endl;
+			}
+		}
+	}
+
+
+
+	if (similarCharList.empty()) return false;
+
+	// ä½¿ç”¨ std::max_element æ‰¾åˆ°æœ€å¤§çš„ similarity
+	auto maxElement = std::max_element(similarCharList.begin(), similarCharList.end(),
+		[](const UmaGetCharData& data1, const UmaGetCharData& data2)
+		{
+			return data1.similarity < data2.similarity;
+		}
+	);
+
+	if (maxElement != similarCharList.end())
+	{
+		_currentCharacterInfoDict["rare"] = maxElement->rare;
+		_currentCharacterInfoDict["event_owner"] = maxElement->event_owner;
+		_currentCharacterInfoLocked = true;
+		foundChar = true;
+		webManager->ChangeCharacterName(utility::stdStr2system(maxElement->event_owner));
+
+		// config
+		global::config->PreviousCurrentCharacterName = maxElement->event_owner;
+		global::config->WriteToJson();
+	}
+
 
 	return foundChar;
 }
@@ -341,7 +452,7 @@ ScenarioEventData DataManager::GetScenarioEventData(std::string scanned_text)
 
 	if (similarDataList.empty()) return ScenarioEventData();
 
-	// ¨Ï¥Î std::max_element §ä¨ì³Ì¤jªº similarity
+	// ä½¿ç”¨ std::max_element æ‰¾åˆ°æœ€å¤§çš„ similarity
 	auto maxElement = std::max_element(similarDataList.begin(), similarDataList.end(),
 		[](const ScenarioEventData& data1, const ScenarioEventData& data2)
 		{
@@ -422,7 +533,7 @@ ScenarioEventData DataManager::GetScenarioEventDataByList(std::deque<std::string
 
 	if (similarDataList.empty()) return ScenarioEventData();
 
-	// ¨Ï¥Î std::max_element §ä¨ì³Ì¤jªº similarity
+	// ä½¿ç”¨ std::max_element æ‰¾åˆ°æœ€å¤§çš„ similarity
 	auto maxElement = std::max_element(similarDataList.begin(), similarDataList.end(),
 		[](const ScenarioEventData& data1, const ScenarioEventData& data2)
 		{
@@ -608,7 +719,7 @@ UmaEventData DataManager::GetCurrentCharacterUmaEventDataByList(std::deque<std::
 
 	if (similarDataList.empty()) return umaEventData;
 
-	// ¨Ï¥Î std::max_element §ä¨ì³Ì¤jªº similarity
+	// ä½¿ç”¨ std::max_element æ‰¾åˆ°æœ€å¤§çš„ similarity
 	auto maxElement = std::max_element(similarDataList.begin(), similarDataList.end(),
 		[](const SimilarUmaEventData& sim_data1, const SimilarUmaEventData& sim_data2)
 		{
@@ -808,14 +919,14 @@ UmaEventData DataManager::GetSapokaUmaEventData(std::string scanned_text)
 
 	if (similarDataList.empty()) return umaEventData;
 
-	// ¨Ï¥Î std::max_element §ä¨ì³Ì¤jªº similarity
+	// ä½¿ç”¨ std::max_element æ‰¾åˆ°æœ€å¤§çš„ similarity
 	auto maxElement = std::max_element(similarDataList.begin(), similarDataList.end(),
 		[](const SimilarUmaEventData& route1, const SimilarUmaEventData& route2)
 		{
 			/*
-			¥Î rare.size() ¨Ó§PÂ_¤ä´©¥dªºµ}¦³«×
-			"SSR" ªº byte ¤@©w¤ñ "SR" ÁÙ­n¦h
-			"SR" ªº byte ¤@©w¤ñ "R" ÁÙ­n¦h
+			ç”¨ rare.size() ä¾†åˆ¤æ–·æ”¯æ´å¡çš„ç¨€æœ‰åº¦
+			"SSR" çš„ byte ä¸€å®šæ¯” "SR" é‚„è¦å¤š
+			"SR" çš„ byte ä¸€å®šæ¯” "R" é‚„è¦å¤š
 			*/
 
 			//std::cout << "route1: " << route1.rare << " size: " << route1.rare.size() << " similarity: " << route1.similarity << std::endl;
@@ -933,14 +1044,14 @@ UmaEventData DataManager::GetSapokaUmaEventDataByList(std::deque<std::string> sc
 
 	if (similarDataList.empty()) return umaEventData;
 
-	// ¨Ï¥Î std::max_element §ä¨ì³Ì¤jªº similarity
+	// ä½¿ç”¨ std::max_element æ‰¾åˆ°æœ€å¤§çš„ similarity
 	auto maxElement = std::max_element(similarDataList.begin(), similarDataList.end(),
 		[](const SimilarUmaEventData& sim_data1, const SimilarUmaEventData& sim_data2)
 		{
 			/*
-			¥Î rare.size() ¨Ó§PÂ_¤ä´©¥dªºµ}¦³«×
-			"SSR" ªº byte ¤@©w¤ñ "SR" ÁÙ­n¦h
-			"SR" ªº byte ¤@©w¤ñ "R" ÁÙ­n¦h
+			ç”¨ rare.size() ä¾†åˆ¤æ–·æ”¯æ´å¡çš„ç¨€æœ‰åº¦
+			"SSR" çš„ byte ä¸€å®šæ¯” "SR" é‚„è¦å¤š
+			"SR" çš„ byte ä¸€å®šæ¯” "R" é‚„è¦å¤š
 			*/
 
 			return (sim_data1.similarity < sim_data2.similarity || (sim_data1.similarity == sim_data2.similarity && sim_data1.rare.size() < sim_data2.rare.size()));

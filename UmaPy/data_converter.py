@@ -204,10 +204,14 @@ def convert_choice_effect_jp_to_tw(choice_effect, jp_event_owner = None, tw_even
     return choice_effect;
 
 def convert_choice_title_jp_to_tw(choice_title):
-    for jp, tw in translation_data["jp_to_tw"]["choice_title"].items():
-        # 用 re.escape() 來避開正規表達式的特殊字符
-        # 例如：『ただいま』か……(サイレンススズカ) 的 ()
-        choice_title = re.sub(re.escape(jp), tw, choice_title)
+    if choice_title in translation_data["jp_to_tw"]["choice_title"]:
+        tw = translation_data["jp_to_tw"]["choice_title"][choice_title];
+        choice_title = re.sub(re.escape(choice_title), tw, choice_title);
+
+    # for jp, tw in translation_data["jp_to_tw"]["choice_title"].items():
+    #     # 用 re.escape() 來避開正規表達式的特殊字符
+    #     # 例如：『ただいま』か……(サイレンススズカ) 的 ()
+    #     choice_title = re.sub(re.escape(jp), tw, choice_title)
 
     return choice_title;
 

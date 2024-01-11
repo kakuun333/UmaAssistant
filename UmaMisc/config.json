@@ -5,7 +5,7 @@
     "VK": 6,
     "WinFormButton": 16777216
   },
-  "DebugMode": true,
+  "DebugMode": false,
   "GameServer": 0,
   "GameWindow": 0,
   "GameWindowBoundOffset": {

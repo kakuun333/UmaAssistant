@@ -42,25 +42,18 @@ public:
 	}
 
 	static void InitEventDataJson();
-
-	//UmaEventData GetUmaEventDataFromJson(std::string scanned_text);
-
-	UmaEventData GetCurrentCharacterUmaEventData(std::string scanned_text);
-
+	
 	UmaEventData GetCurrentCharacterUmaEventDataByList(std::deque<std::string> scanned_text_list);
-
-	UmaEventData GetSapokaUmaEventData(std::string scanned_text);
 
 	UmaEventData GetSapokaUmaEventDataByList(std::deque<std::string> scanned_text_list);
 
-	ScenarioEventData GetScenarioEventData(std::string scanned_text);
-
 	ScenarioEventData GetScenarioEventDataByList(std::deque<std::string> scanned_text_list);
 
-	bool TryGetCurrentCharacterName(std::string scanned_text);
+	bool TryGetCurrentCharacterByList(std::deque<std::string> scanned_text_list);
 
 	bool SetCurrentCharacterInfoDict(std::string event_owner);
 
+#pragma region 內嵌函式
 	inline bool IsCurrentCharacterInfoLocked()
 	{
 		return _currentCharacterInfoLocked;
@@ -75,5 +68,13 @@ public:
 	{
 		return _currentCharacterInfoDict;
 	}
+#pragma endregion
+
+#pragma region 已棄用的函式
+	UmaEventData GetCurrentCharacterUmaEventData(std::string scanned_text);
+	UmaEventData GetSapokaUmaEventData(std::string scanned_text);
+	ScenarioEventData GetScenarioEventData(std::string scanned_text);
+	bool TryGetCurrentCharacterName(std::string scanned_text);
+#pragma endregion
 };
 

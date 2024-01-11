@@ -10,6 +10,7 @@ namespace utility
 	constexpr inline int MAX_SIMIALARITY = 100;
 	constexpr inline int NOT_SIMILAR = -1;
 
+	// 數 std::string 有幾個 UTF8 char，英文也可以數
 	int CountUTF8Char(std::string input);
 
 	std::vector<std::string> SplitJpnChar(std::string input);
@@ -29,6 +30,8 @@ namespace utility
 	bool HasBlackListedString(std::string scanned_text);
 
 	bool IsStringTooLong(std::string scanned_text);
+
+	int GetSameCountByMoveSmallerList(std::vector<std::string>& smaller_list, std::vector<std::string>& larger_list);
 
 #pragma region 已棄用
 	/// 從第一個 utf-8字 開始到 quantityInASet 的範圍的 utf-8字 拆分成一組，

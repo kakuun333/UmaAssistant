@@ -35,3 +35,7 @@ table th {
 table td {
     width: 100%;
 }
+
+#character_name {
+    font-size: 1em;
+}

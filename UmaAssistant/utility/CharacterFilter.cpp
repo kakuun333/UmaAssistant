@@ -65,6 +65,9 @@ namespace utility
 
 		std::regex nami_pattern(R"(~)");
 
+		// ＆
+		std::regex and_pattern(R"(&)");
+
 		result = std::regex_replace(input, exclamationMark_pattern, u8"！");
 
 		result = result.empty() ? inputStr = input : inputStr = result;
@@ -93,6 +96,9 @@ namespace utility
 
 		result = result.empty() ? inputStr = input : inputStr = result;
 		result = std::regex_replace(inputStr, nami_pattern, u8"〜");
+
+		result = result.empty() ? inputStr = input : inputStr = result;
+		result = std::regex_replace(inputStr, and_pattern, u8"＆");
 
 		return result;
 	}

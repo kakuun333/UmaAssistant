@@ -74,6 +74,19 @@ namespace UmaAssistant
 		//std::cout << "completed: " << (umaData.IsDataComplete() ? "true" : "false") << std::endl;
 
 		//std::cout << utility::GetSimilarity(u8"LoveRamen）", u8"Love Ramen") << std::endl;
+
+		std::string scanned = u8"『【配得上的自己";
+		std::string json_data = u8"配得上的自己";
+		std::cout << utility::GetSimilarity(scanned, json_data) << std::endl;
+
+		//std::cout << "==================== NOT SAME ====================" << std::endl;
+		//std::string scanned = u8"ButterflySting";
+		//std::string json_data = u8"アドマイヤベガ（Starry Nocturne）";
+		//std::cout << utility::GetCharacterNameSimilarity(scanned, json_data) << std::endl;
+		//std::cout << "==================== SAME ====================" << std::endl;
+		//scanned = u8"ButterflySting";
+		//json_data = u8"Butterfly Sting";
+		//std::cout << utility::GetCharacterNameSimilarity(scanned, json_data) << std::endl;
 	}
 
 	void UmaForm::OnChoiceDocumentCompleted(System::Object^ sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^ e)

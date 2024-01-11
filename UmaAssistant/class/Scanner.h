@@ -48,8 +48,8 @@ private:
 	std::mutex dataMutex;
 
 	std::string _previousEventText = INIT_EVENT_TITLE_TEXT;
-	std::string _previousCharacterNameText;
-	std::string _previousHenseiCharNameText = INIT_HENSEI_CHAR_NAME_TEXT;
+	//std::string _previousCharacterNameText;
+	//std::string _previousHenseiCharNameText = INIT_HENSEI_CHAR_NAME_TEXT;
 
 	UmaEventData _previousUpdatedUmaEventData;
 
@@ -72,7 +72,7 @@ private:
 	void _UpdateScenarioChoice(WebManager* webManager, ScenarioEventData scenarioEventData);
 
 	// 尋找 CurrentCharacter
-	void _LookingForCurrentCharacter(Screenshot& ss, std::string& henseiCharNameText, std::unique_ptr<std::thread>& tryCharThread);
+	void _LookingForCurrentCharacter(Screenshot& ss, std::string& henseiCharNameText);
 
 	bool _IsEventTextEmpty(Screenshot& ss, std::string& eventText);
 

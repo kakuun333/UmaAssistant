@@ -168,11 +168,11 @@ std::string Scanner::_GetScannedText(cv::Mat image, ImageType imgType, bool engl
 			{
 			case ImageType::IMG_EVENT_TITLE:
 				ocr_jpn->SetVariable("tessedit_char_blacklist", u8"@$%^*_-+<>[]{}|/\\`†;；=《》579"); // 有在事件名稱中出現的符號 0368:/#
-				ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_BLOCK);
+				ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 				break;
 			case ImageType::IMG_HENSEI_CHARACTER_NAME:
-				ocr_jpn->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|\\`~†.,:;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
-				ocr_jpn->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_BLOCK*/);
+				ocr_jpn->SetVariable("tessedit_char_blacklist", u8"@#$%^*_+<>?()[]{}|\\`†.,;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
+				ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE/*PSM_SINGLE_BLOCK*/);
 				break;
 			}
 
@@ -193,8 +193,8 @@ std::string Scanner::_GetScannedText(cv::Mat image, ImageType imgType, bool engl
 				ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 				break;
 			case ImageType::IMG_HENSEI_CHARACTER_NAME:
-				ocr_tw->SetVariable("tessedit_char_blacklist", u8"!@#$%^&*_-+<>?()[]{}|\\`~†.,:;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
-				ocr_tw->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_BLOCK*/);
+				ocr_tw->SetVariable("tessedit_char_blacklist", u8"@#$%^*_+<>?()[]{}|\\`†.,;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
+				ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_LINE/*PSM_SINGLE_BLOCK*/);
 				break;
 			}
 
@@ -246,148 +246,60 @@ std::string Scanner::_GetScannedText(cv::Mat image, ImageType imgType, bool engl
 
 
 
-void Scanner::_LookingForCurrentCharacter(Screenshot& ss, std::string& henseiCharNameText, std::unique_ptr<std::thread>& tryCharThread)
+void Scanner::_LookingForCurrentCharacter(Screenshot& ss, std::string& henseiCharNameText)
 {
 	DataManager* dataManager = DataManager::GetInstance();
 	UmaLog* umalog = UmaLog::GetInstance();
 
-	
-
 #pragma region 尋找 Current Character
-	if (_previousHenseiCharNameText != henseiCharNameText)
+
+	if (!dataManager->IsCurrentCharacterInfoLocked())
 	{
-
-		if (!dataManager->IsCurrentCharacterInfoLocked())
+		try
 		{
-			try
+			std::string gray_another_name_text = this->_GetScannedText(ss.hensei_character_another_name_gray, ImageType::IMG_HENSEI_CHARACTER_NAME);
+			std::string gray_bin_another_name_text = this->_GetScannedText(ss.hensei_character_another_name_gray_bin, ImageType::IMG_HENSEI_CHARACTER_NAME);
+			std::string gray_bin_inv_another_name_text = this->_GetScannedText(ss.hensei_character_another_name_gray_bin_inv, ImageType::IMG_HENSEI_CHARACTER_NAME);
+			std::string eng_gray_bin_another_name_text = this->_GetScannedText(ss.hensei_character_another_name_gray_bin, ImageType::IMG_HENSEI_CHARACTER_NAME, true);
+
+			std::cout << "gray_another_name_text: " << gray_another_name_text << std::endl;
+			std::cout << "gray_bin_another_name_text: " << gray_bin_another_name_text << std::endl;
+			std::cout << "gray_bin_inv_another_name_text: " << gray_bin_inv_another_name_text << std::endl;
+			std::cout << "eng_gray_bin_another_name_text: " << eng_gray_bin_another_name_text << std::endl;
+
+			std::deque<std::string> scanned_text_list;
+			scanned_text_list.push_back(gray_another_name_text);
+			scanned_text_list.push_back(gray_bin_another_name_text);
+			scanned_text_list.push_back(gray_bin_inv_another_name_text);
+			scanned_text_list.push_back(eng_gray_bin_another_name_text);
+
+			if (dataManager->TryGetCurrentCharacterByList(scanned_text_list))
 			{
-				tryCharThread = std::make_unique<std::thread>([=, &ss, &henseiCharNameText]()
-					{
-						bool foundHenseiChar = false;
-
-						const int TRY_RESIZE_COUNT = 2/*10*/;
-						const float SCALE_FACTOR = 0.1;
-						const int THRESH_FACTOR = 1;
-
-						if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) return;
-
-						//std::unique_ptr<std::thread> grayThread = std::make_unique<std::thread>([=, &ss, &henseiCharNameText, &foundHenseiChar]()
-						//	{
-						//		std::unique_lock<std::mutex> lock(dataMutex); // 以防萬一，先上鎖
-
-						//		henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
-						//		if (!henseiCharNameText.empty()) umalog->print(u8"[Scanner] hensei_character_name_gray: ", henseiCharNameText);
-
-						//		if (foundHenseiChar) return;
-
-						//		if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) { foundHenseiChar = true; return; }
-
-						//		float currentScale = 1;
-						//		for (int i = 0; i < TRY_RESIZE_COUNT; ++i)
-						//		{
-						//			currentScale += SCALE_FACTOR;
-						//			ss.ResetCharacterImage(ss.hensei_character_name_gray, currentScale, ImagePattern::HENSEI_CHAR_GRAY);
-						//			henseiCharNameText = this->GetScannedText(ss.hensei_character_name_gray, language, ImageType::IMG_HENSEI_CHARACTER_NAME);
-						//			if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) { foundHenseiChar = true; return; }
-						//		}
-						//	});
-
-
-						std::unique_ptr<std::thread> englishThread = std::make_unique<std::thread>([=, &ss, &henseiCharNameText, &foundHenseiChar]()
-							{
-								std::unique_lock<std::mutex> lock(dataMutex); // 以防萬一，先上鎖
-
-								henseiCharNameText = this->_GetScannedText(ss.hensei_character_another_name_gray, ImageType::IMG_HENSEI_CHARACTER_NAME, true);
-								if (!henseiCharNameText.empty()) umalog->print(u8"[Scanner] ENGLISH hensei_character_another_name: ", henseiCharNameText);
-								if (foundHenseiChar) return;
-
-								if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) { foundHenseiChar = true; return; }
-
-								//float currentScale = 1;
-								//for (int i = 0; i < TRY_RESIZE_COUNT; ++i)
-								//{
-								//	currentScale += SCALE_FACTOR;
-								//	ss.ResetCharacterImage(ss.hensei_character_another_name_gray, ImagePattern::HENSEI_CHAR_ANOTHER_NAME_GRAY, currentScale);
-								//	henseiCharNameText = this->GetScannedText(ss.hensei_character_another_name_gray, ImageType::IMG_HENSEI_CHARACTER_ANOTHER_NAME, true);
-								//	if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) { foundHenseiChar = true; return; }
-								//}
-							});
-
-
-
-						std::unique_ptr<std::thread> gray_bin_invThread = std::make_unique<std::thread>([=, &ss, &henseiCharNameText, &foundHenseiChar]()
-							{
-								std::unique_lock<std::mutex> lock(dataMutex); // 以防萬一，先上鎖
-
-								henseiCharNameText = this->_GetScannedText(ss.hensei_character_name_gray_bin_inv, ImageType::IMG_HENSEI_CHARACTER_NAME);
-								if (!henseiCharNameText.empty()) umalog->print(u8"[Scanner] hensei_character_name_gray_bin_inv: ", henseiCharNameText);
-
-								if (foundHenseiChar) return;
-
-								if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) { foundHenseiChar = true; return; }
-
-								float currentScale = 1;
-								for (int i = 0; i < TRY_RESIZE_COUNT; ++i)
-								{
-									if (foundHenseiChar) return;
-									currentScale += SCALE_FACTOR;
-									ss.ResetCharacterImage(ss.hensei_character_name_gray_bin_inv, ImagePattern::HENSEI_CHAR_GRAY_BIN, currentScale);
-									henseiCharNameText = this->_GetScannedText(ss.hensei_character_name_gray_bin_inv, ImageType::IMG_HENSEI_CHARACTER_NAME);
-									if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) { foundHenseiChar = true; return; }
-								}
-							});
-
-						std::unique_ptr<std::thread> gray_binThread = std::make_unique<std::thread>([=, &ss, &henseiCharNameText, &foundHenseiChar]()
-							{
-								std::unique_lock<std::mutex> lock(dataMutex); // 以防萬一，先上鎖
-
-								henseiCharNameText = this->_GetScannedText(ss.hensei_character_name_gray_bin, ImageType::IMG_HENSEI_CHARACTER_NAME);
-								if (!henseiCharNameText.empty()) umalog->print(u8"[Scanner] hensei_character_name_gray_bin: ", henseiCharNameText);
-
-								if (foundHenseiChar) return;
-
-								if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) { foundHenseiChar = true; return; }
-
-								float currentScale = 1;
-								for (int i = 0; i < TRY_RESIZE_COUNT; ++i)
-								{
-									if (foundHenseiChar) return;
-									currentScale += SCALE_FACTOR;
-									ss.ResetCharacterImage(ss.hensei_character_name_gray_bin, ImagePattern::HENSEI_CHAR_GRAY_BIN_INV, currentScale);
-									henseiCharNameText = this->_GetScannedText(ss.hensei_character_name_gray_bin, ImageType::IMG_HENSEI_CHARACTER_NAME);
-									if (dataManager->TryGetCurrentCharacterName(henseiCharNameText)) { foundHenseiChar = true; return; }
-								}
-							});
-
-						englishThread->join();
-						gray_bin_invThread->join();
-						gray_binThread->join();
-					});
+				std::cout << u8"[Scanner] 成功找到角色！" << std::endl;
 			}
-			catch (const std::exception& e)
+			else
 			{
-				umalog->print("[std::exception] tryCharThread:", e.what());
-				umalog->print(u8"已終止 Scanner 運作");
-				return;
+				std::cout << u8"[Scanner] 無法找到角色！" << std::endl;
 			}
-			catch (System::Exception^ ex)
-			{
-				umalog->print("[System::Exception] tryCharThread: ", utility::systemStr2std(ex->Message));
-				umalog->print(u8"已終止 Scanner 運作");
-				return;
-			}
-
 		}
-
-		else
+		catch (const std::exception& e)
 		{
-			umalog->print("[Scanner] CURRENT CHARACTER LOCKED");
+			umalog->print("[std::exception] _LookingForCurrentCharacter:", e.what());
+			this->Stop();
+			umalog->print(u8"已終止 Scanner 運作");
+		}
+		catch (System::Exception^ ex)
+		{
+			umalog->print("[System::Exception] _LookingForCurrentCharacter: ", utility::systemStr2std(ex->Message));
+			this->Stop();
+			umalog->print(u8"已終止 Scanner 運作");
 		}
 	}
 	else
 	{
-		umalog->print(u8"[Scanner] henseiCharNameText 偵測結果與上次一致");
+		umalog->print("[Scanner] CURRENT CHARACTER LOCKED");
 	}
+
 #pragma endregion
 }
 
@@ -403,46 +315,19 @@ bool Scanner::_IsEventTextEmpty(Screenshot& ss, std::string& eventText)
 	*/
 	if (eventText.empty() && dataManager->IsCurrentCharacterInfoLocked() && ss.IsEventTitle())
 	{
-		std::unique_ptr<std::thread> testThread, thread_two;
-
 		std::string gray_event_text, thread_two_text;
 
-		try
+		gray_event_text = this->_GetScannedText(ss.event_title_gray);
+		if (eventText.empty() && !gray_event_text.empty())
 		{
-			testThread = std::make_unique<std::thread>([=, &eventText, &gray_event_text]()
-				{
-					gray_event_text = this->_GetScannedText(ss.event_title_gray);
-					if (eventText.empty() && !gray_event_text.empty())
-					{
-						eventText = gray_event_text;
-					}
-				});
-		}
-		catch (System::Exception^ ex)
-		{
-			std::cout << u8"[exception] 捕捉到 testThread 區塊的 exception" << std::endl;
-			System::Console::WriteLine("Caught exception: " + ex->Message);
+			eventText = gray_event_text;
 		}
 
-		try
+		thread_two_text = this->_GetScannedText(ss.event_title_gray_bin_high_thresh);
+		if (eventText.empty() && !thread_two_text.empty())
 		{
-			thread_two = std::make_unique<std::thread>([=, &eventText, &thread_two_text]()
-				{
-					thread_two_text = this->_GetScannedText(ss.event_title_gray_bin_high_thresh);
-					if (eventText.empty() && !thread_two_text.empty())
-					{
-						eventText = thread_two_text;
-					}
-				});
+			eventText = thread_two_text;
 		}
-		catch (System::Exception^ ex)
-		{
-			std::cout << u8"[exception] 捕捉到 test2Thread 區塊的 exception" << std::endl;
-			System::Console::WriteLine("Caught exception: " + ex->Message);
-		}
-
-		testThread->join();
-		thread_two->join();
 
 		if (gray_event_text.empty() && thread_two_text.empty())
 		{
@@ -477,6 +362,9 @@ void Scanner::_Scan()
 			continue;
 		}
 
+		
+		umalog->print("[Scanner] ss._hasEventIcon:", ss.GetHasEventIcon() == true ? "true" : "false");
+		umalog->print("[Scanner] ss._eventIconWhitePixelRatio:", ss.GetEventIconWhitePixelRatio());
 
 		///
 		/// 獲取圖片裡的文字
@@ -513,12 +401,12 @@ void Scanner::_Scan()
 		}
 
 
-		if (!dataManager->IsCurrentCharacterInfoLocked())
-		{
-			henseiCharNameText = this->_GetScannedText(ss.hensei_character_name_gray, ImageType::IMG_HENSEI_CHARACTER_NAME);
+		//if (!dataManager->IsCurrentCharacterInfoLocked())
+		//{
+		//	henseiCharNameText = this->_GetScannedText(ss.hensei_character_name_gray, ImageType::IMG_HENSEI_CHARACTER_NAME);
 
-			umalog->print(u8"[Scanner] hensei_character_name_gray: ", henseiCharNameText);
-		}
+		//	umalog->print(u8"[Scanner] hensei_character_name_gray: ", henseiCharNameText);
+		//}
 
 
 		// 檢查 eventText 是否為真的空字串
@@ -532,16 +420,16 @@ void Scanner::_Scan()
 		umalog->print(u8"[Scanner] event_title_gray_bin: ", gray_bin_event_text);
 
 		// 尋找 CurrentCharacter
-		std::unique_ptr<std::thread> tryCharThread;
-		this->_LookingForCurrentCharacter(ss, henseiCharNameText, tryCharThread);
+		this->_LookingForCurrentCharacter(ss, henseiCharNameText);
 
 
 #pragma region 尋找 character 或 sapoka 或 scenario 的事件
 		if (_previousEventText != gray_bin_event_text && ss.IsEventTitle())
 		{
+			/*
+			* 如果 _previousEventText 不一樣就重置 _updatedChoice
+			*/
 			_updatedChoice = false;
-
-			//std::unique_ptr<std::thread> charThread, sapokaThread, scenarioThread;
 
 			/*
 			* 有時候名字很像的事件名稱會先偵測到 scenarioEventData ，但是正確的事件在 sapokaUmaEventData
@@ -756,20 +644,14 @@ void Scanner::_Scan()
 #pragma endregion
 
 
+		// 預計會棄用
 		// 如果有 tryCharThread 就等待它執行完畢
-		if (tryCharThread != nullptr && tryCharThread->joinable()) tryCharThread->join();
-
+		//if (tryCharThread != nullptr && tryCharThread->joinable()) tryCharThread->join();
 
 		//
 		// 更新上次辨識到的文字
 		//
-
-		//_previousCharacterNameText = characterNameText;
-		_previousHenseiCharNameText = henseiCharNameText;
-
 		umalog->print(u8"[Scanner] _previousEventText: ", _previousEventText);
-		umalog->print("[Scanner] _previousHenseiCharacterNameText: ", _previousHenseiCharNameText);
-
 
 		this->_PrintScanned(timer->Stop());
 
