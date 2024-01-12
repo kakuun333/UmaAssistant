@@ -75,9 +75,9 @@ namespace UmaAssistant
 
 		//std::cout << utility::GetSimilarity(u8"LoveRamen）", u8"Love Ramen") << std::endl;
 
-		std::string scanned = u8"『【配得上的自己";
-		std::string json_data = u8"配得上的自己";
-		std::cout << utility::GetSimilarity(scanned, json_data) << std::endl;
+		//std::string scanned = u8"『【配得上的自己";
+		//std::string json_data = u8"配得上的自己";
+		//std::cout << utility::GetSimilarity(scanned, json_data) << std::endl;
 
 		//std::cout << "==================== NOT SAME ====================" << std::endl;
 		//std::string scanned = u8"ButterflySting";
@@ -87,6 +87,12 @@ namespace UmaAssistant
 		//scanned = u8"ButterflySting";
 		//json_data = u8"Butterfly Sting";
 		//std::cout << utility::GetCharacterNameSimilarity(scanned, json_data) << std::endl;
+
+		DiscordManager* dcManager = DiscordManager::GetInstance();
+		dcManager->Init();
+		dcManager->UpdateRPC();
+
+		std::cout << "CLICKED TEST BUTTON" << std::endl;
 	}
 
 	void UmaForm::OnChoiceDocumentCompleted(System::Object^ sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^ e)

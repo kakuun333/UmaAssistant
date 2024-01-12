@@ -27,6 +27,7 @@ void ConsoleManager::Enable()
 	if (!AttachConsole(ATTACH_PARENT_PROCESS))
 	{
 		AllocConsole();
+		SetConsoleTitle(L"UmaAssistant Console");
 	}
 
 	// 設置 ConsoleCtrlHandler 來處理 Console 的事件

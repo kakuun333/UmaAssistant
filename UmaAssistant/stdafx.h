@@ -60,6 +60,8 @@ using json = nlohmann::json;
 #include <opencv2/opencv.hpp>
 
 
+
+
 /*			class			*/	
 #include "class/Screenshot.h"
 #include "class/Scanner.h"
@@ -76,6 +78,7 @@ using json = nlohmann::json;
 #include "class/UmaLog.h"
 #include "class/UmaDataUpdater.h"
 #include "class/URLManager.h"
+#include "class/DiscordManager.h"
 
 // ¨ü±±
 #include "class/ref/FormDesigner.h"

@@ -100,8 +100,10 @@ scenario_event_data_tw = {
     },
 };
 
+def normalize_motivation_jp():
+    print("");
 
-
+normalize_motivation_jp();
 
 # skill_effect_type 是 "skill_effect_title" or "skill_effect_data"
 def trans_enhance_skill_data_jp_to_tw(skill_effect_title, skill_effect_data):
