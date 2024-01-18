@@ -22,7 +22,7 @@ void AutoMouseClicker::Start()
 					SendInput(1, &input, sizeof(INPUT));
 
 					// 等待一段時間
-					std::this_thread::sleep_for(std::chrono::milliseconds(10));
+					std::this_thread::sleep_for(std::chrono::milliseconds(1/*10*/));
 
 					input.mi.dwFlags = MOUSEEVENTF_LEFTUP; // 左鍵釋放
 					SendInput(1, &input, sizeof(INPUT));

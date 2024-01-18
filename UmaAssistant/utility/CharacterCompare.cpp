@@ -422,8 +422,6 @@ namespace utility
 
 	float GetSimilarity(std::string str1, std::string str2)
 	{
-		float similarity = NOT_SIMILAR;
-
 		if (str1 == str2) return MAX_SIMIALARITY;
 
 		int str1CharCount = CountUTF8Char(str1);
@@ -537,6 +535,8 @@ namespace utility
 
 			return NOT_SIMILAR;
 		}
+
+		return NOT_SIMILAR;
 	}
 
 	float GetCharacterNameSimilarity(std::string scannedName, std::string jsonDataName)

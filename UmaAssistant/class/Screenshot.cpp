@@ -28,12 +28,15 @@ cv::Mat Screenshot::hensei_character_another_name_gray_bin_inv;
 
 // syousai_character_name
 cv::Mat Screenshot::syousai_character_name_gray_bin;
+
+// date
+cv::Mat Screenshot::date_gray_bin;
 #pragma endregion
 
 
 
 
-bool Screenshot::IsWindowCovered(HWND gameHWND)
+bool Screenshot::_IsWindowCovered(HWND gameHWND)
 {
 	RECT gameWindowRect;
 	if (GetWindowRect(gameHWND, &gameWindowRect))
@@ -68,7 +71,7 @@ bool Screenshot::IsWindowCovered(HWND gameHWND)
 	return false;
 }
 
-cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
+cv::Mat Screenshot::_hwnd2mat(HWND hwnd = GetDesktopWindow())
 {
 	UmaLog* umalog = UmaLog::GetInstance();
 
@@ -188,7 +191,7 @@ cv::Mat Screenshot::hwnd2mat(HWND hwnd = GetDesktopWindow())
 	return cvmat;
 }
 
-void Screenshot::CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPattern = ImagePattern::IMG_PATTERN_NONE)
+void Screenshot::_CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPattern = ImagePattern::IMG_PATTERN_NONE)
 {
 	// 獲取圖片大小
 	float img_width = img.cols;
@@ -251,6 +254,12 @@ void Screenshot::CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPatt
 			crop_y = img_height - (img_height * 0.845);
 			crop_width = img_width - (img_width * 0.55);
 			crop_height = img_height - (img_height * 0.948);
+			break;
+		case IMG_DATE:
+			crop_x = img_width - (img_width * 0.78);
+			crop_y = img_height - (img_height * 0.965);
+			crop_width = img_width - (img_width * 0.6);
+			crop_height = img_height - (img_height * 0.98);
 			break;
 		}
 		break;
@@ -321,7 +330,7 @@ void Screenshot::CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPatt
 	img = croppedImg;
 }
 
-void Screenshot::SetEventTitleBound(cv::Mat& img)
+void Screenshot::_SetEventTitleBound(cv::Mat& img)
 {
 	/*
 	假設一個字佔 0.015 whitePixelRatio
@@ -336,7 +345,7 @@ void Screenshot::SetEventTitleBound(cv::Mat& img)
 
 	[GetEventTitleBound] whitePixelRatio: 0.161974
 	*/
-	const double WHITE_PIXEL_RATIO = this->GetWhitePixelRatio(img);
+	const double WHITE_PIXEL_RATIO = this->_GetWhitePixelRatio(img);
 
 	// 一個字大概佔的 whitePixelRatio
 	double single_char_white_pixel_ratio;
@@ -429,7 +438,7 @@ void Screenshot::SetEventTitleBound(cv::Mat& img)
 	std::cout << "[GetEventTitleBound] whitePixelRatio: " << WHITE_PIXEL_RATIO << std::endl;
 }
 
-void Screenshot::ResizeImage(cv::Mat& img, float scale_factor = 2.0 /*放大倍數*/, cv::InterpolationFlags interpolationFlag)
+void Screenshot::_ResizeImage(cv::Mat& img, float scale_factor = 2.0 /*放大倍數*/, cv::InterpolationFlags interpolationFlag)
 {
 	// 計算放大後的寬和高
 	int new_width = static_cast<int>(img.cols * scale_factor);
@@ -438,7 +447,7 @@ void Screenshot::ResizeImage(cv::Mat& img, float scale_factor = 2.0 /*放大倍�
 	cv::resize(img, img, cv::Size(new_width, new_height), interpolationFlag);
 }
 
-const double Screenshot::GetWhitePixelRatio(cv::Mat img)
+const double Screenshot::_GetWhitePixelRatio(cv::Mat img)
 {
 
 
@@ -451,7 +460,7 @@ const double Screenshot::GetWhitePixelRatio(cv::Mat img)
 	return whitePixelRatio;
 }
 
-const double Screenshot::GetBlackPixelRatio(cv::Mat img)
+const double Screenshot::_GetBlackPixelRatio(cv::Mat img)
 {
 	/*
 	縁がいすれ行きつくは
@@ -463,7 +472,7 @@ const double Screenshot::GetBlackPixelRatio(cv::Mat img)
 	*/ 
 
 
-	const double whitePixelRatio = this->GetWhitePixelRatio(img);
+	const double whitePixelRatio = this->_GetWhitePixelRatio(img);
 	const double blackPixelRatio = 1.0f - whitePixelRatio;
 
 	return blackPixelRatio;
@@ -476,7 +485,7 @@ void Screenshot::_CheckEventIcon(cv::Mat img)
 	* 真機伶黑色婚紗 thresh: 160, whitePixelRatio: 0.572825
 	*/
 
-	double whitePixelRatio = this->GetWhitePixelRatio(img);
+	double whitePixelRatio = this->_GetWhitePixelRatio(img);
 	if (whitePixelRatio > EVENT_ICON_METRIC)
 	{
 		this->SetHasEventIcon(true);
@@ -493,7 +502,7 @@ void Screenshot::_CheckEventIcon(cv::Mat img)
 
 Screenshot::Screenshot()
 {
-	oimg = this->hwnd2mat();
+	oimg = this->_hwnd2mat();
 	if (oimg.empty()) return;
 
 	UmaLog* umalog = UmaLog::GetInstance();
@@ -501,7 +510,7 @@ Screenshot::Screenshot()
 	// event_icon
 	try
 	{
-		this->GetEventIconImage(); // 優先獲取 EventIconImage
+		this->_GetEventIconImage(); // 優先獲取 EventIconImage
 	}
 	catch (const std::exception& e)
 	{
@@ -517,7 +526,7 @@ Screenshot::Screenshot()
 	// event_title
 	try
 	{
-		this->GetEventTitleImage();
+		this->_GetEventTitleImage();
 	}
 	catch (const std::exception& e)
 	{
@@ -545,7 +554,7 @@ Screenshot::Screenshot()
 	// character_another_name
 	try
 	{
-		this->GetHenseiCharacterAnotherNameImage();
+		this->_GetHenseiCharacterAnotherNameImage();
 	}
 	catch (const std::exception& e)
 	{
@@ -555,7 +564,20 @@ Screenshot::Screenshot()
 	{
 		umalog->print("[System::Exception] GetHenseiCharacterAnotherNameImage: ", utility::systemStr2std(ex->Message));
 	}
-	
+
+	// date
+	try
+	{
+		this->_GetDateImage();
+	}
+	catch (const std::exception& e)
+	{
+		umalog->print("[std::exception] GetHenseiCharacterAnotherNameImage:", e.what());
+	}
+	catch (System::Exception^ ex)
+	{
+		umalog->print("[System::Exception] GetHenseiCharacterAnotherNameImage: ", utility::systemStr2std(ex->Message));
+	}
 
 
 	//this->GetSyousaiCharacterName();
@@ -569,64 +591,79 @@ void Screenshot::ShowImage()
 
 	cv::destroyAllWindows();
 
-	//// original ////
+	// ========== original ========== //
+
 	cv::imshow("oimg", oimg);
 
-	//// event_title ////
+	// ========== event_title ========== //
+
 	//cv::imshow("event_title_oimg", event_title_oimg);
 	//cv::imshow("event_title_resize", event_title_resize);
 	cv::imshow("event_title_gray", event_title_gray);
 	cv::imshow("event_title_gray_bin", event_title_gray_bin);
 	//cv::imshow("event_title_gray_bin_inv", event_title_gray_bin_inv);
 
-	//// event_icon ////
+	// ========== event_icon ========== //
 	cv::imshow("event_icon", event_icon);
 
-	//// character_name ////
+	// ========== character_name ========== //
 	//cv::imshow("hensei_character_name_oimg", hensei_character_name_gray_bin);
 	//cv::imshow("hensei_character_name_gray", hensei_character_name_gray);
 
 	//cv::imshow("hensei_character_name_gray_inv", hensei_character_name_gray_bin_inv);
 
+	// ========== character_another_name ========== //
+
 	cv::imshow("hensei_character_another_name_gray", hensei_character_another_name_gray);
 
+	// ========== syousai_character_name ========== //
 	//cv::imshow("syousai_character_name_gray_bin", syousai_character_name_gray_bin);
-	
 
+	// ========== date ========== //
+	cv::imshow("date_gray_bin", date_gray_bin);
 
 	cv::waitKey(10);
 }
 
-void Screenshot::GetEventTitleImage()
+void Screenshot::_GetDateImage()
+{
+	date_gray_bin = oimg.clone();
+	this->_CropImage(date_gray_bin, ImageType::IMG_DATE);
+	this->_ResizeImage(date_gray_bin, 2);
+	cv::cvtColor(date_gray_bin, date_gray_bin, cv::COLOR_BGR2GRAY);
+	cv::threshold(date_gray_bin, date_gray_bin, 200/*230*/, 255, cv::THRESH_OTSU);
+}
+
+void Screenshot::_GetEventTitleImage()
 {
 	UmaLog* umalog = UmaLog::GetInstance();
 
 	// event_title_oimg //
 	event_title_oimg = oimg.clone();
-	this->CropImage(event_title_oimg, ImageType::IMG_EVENT_TITLE);
+	this->_CropImage(event_title_oimg, ImageType::IMG_EVENT_TITLE);
 	//std::cout << "event_title_oimg whiteRatio: " << this->GetWhitePixelRatio(event_title_oimg) << std::endl;
 
 	// event_title_resize //
 	event_title_resize = oimg.clone();
-	this->CropImage(event_title_resize, ImageType::IMG_EVENT_TITLE);	
-	this->ResizeImage(event_title_resize, 2);
+	this->_CropImage(event_title_resize, ImageType::IMG_EVENT_TITLE);	
+	this->_ResizeImage(event_title_resize, 2);
 	//std::cout << "event_title_resize whiteRatio: " << this->GetWhitePixelRatio(event_title_resize) << std::endl;
 
 	// event_title_gray //
 	event_title_gray = oimg.clone();
-	this->CropImage(event_title_gray, ImageType::IMG_EVENT_TITLE);
-	this->ResizeImage(event_title_gray, 2);
+	this->_CropImage(event_title_gray, ImageType::IMG_EVENT_TITLE);
+	this->_ResizeImage(event_title_gray, 2);
 	cv::cvtColor(event_title_gray, event_title_gray, cv::COLOR_BGR2GRAY);
 
 	// event_title_gray_bin 裁切 -> 放大 + 去鋸齒 -> 灰值化 -> 二值化 //
 	int thresh = 208/*208*/;
 	event_title_gray_bin = oimg.clone();
-	this->CropImage(event_title_gray_bin, ImageType::IMG_EVENT_TITLE, ImagePattern::EVENT_TITLE_GRAY_BIN);
-	this->ResizeImage(event_title_gray_bin, 2);
+	this->_CropImage(event_title_gray_bin, ImageType::IMG_EVENT_TITLE, ImagePattern::EVENT_TITLE_GRAY_BIN);
+	this->_ResizeImage(event_title_gray_bin, 2);
 	cv::cvtColor(event_title_gray_bin, event_title_gray_bin, cv::COLOR_BGR2GRAY);
 	cv::threshold(event_title_gray_bin, event_title_gray_bin, thresh/*230*/, 255, cv::THRESH_BINARY);
 
-	double event_title_gray_bin_WPR = GetWhitePixelRatio(event_title_gray_bin);
+	double event_title_gray_bin_WPR = _GetWhitePixelRatio(event_title_gray_bin);
 	std::cout << "[Screenshot] event_title_gray_bin_WPR: " << event_title_gray_bin_WPR << std::endl;
 	if (event_title_gray_bin_WPR > IS_EVENT_TITLE_METRIC || event_title_gray_bin_WPR == 0)
 	{
@@ -643,16 +680,16 @@ void Screenshot::GetEventTitleImage()
 	}
 
 	event_title_gray_bin_high_thresh = oimg.clone();
-	this->CropImage(event_title_gray_bin_high_thresh, ImageType::IMG_EVENT_TITLE, ImagePattern::EVENT_TITLE_GRAY_BIN);
-	this->ResizeImage(event_title_gray_bin_high_thresh, 2);
+	this->_CropImage(event_title_gray_bin_high_thresh, ImageType::IMG_EVENT_TITLE, ImagePattern::EVENT_TITLE_GRAY_BIN);
+	this->_ResizeImage(event_title_gray_bin_high_thresh, 2);
 	cv::cvtColor(event_title_gray_bin_high_thresh, event_title_gray_bin_high_thresh, cv::COLOR_BGR2GRAY);
 	cv::threshold(event_title_gray_bin_high_thresh, event_title_gray_bin_high_thresh, 235/*230*/, 255, cv::THRESH_BINARY);
 	
 
 	// event_title_gray_bin_inv 裁切 -> 放大 + 去鋸齒 -> 灰值化 -> 二值化 //
 	event_title_gray_bin_inv = oimg.clone();
-	this->CropImage(event_title_gray_bin_inv, ImageType::IMG_EVENT_TITLE);
-	this->ResizeImage(event_title_gray_bin_inv, 1.5);
+	this->_CropImage(event_title_gray_bin_inv, ImageType::IMG_EVENT_TITLE);
+	this->_ResizeImage(event_title_gray_bin_inv, 1.5);
 	cv::cvtColor(event_title_gray_bin_inv, event_title_gray_bin_inv, cv::COLOR_BGR2GRAY);
 	cv::threshold(event_title_gray_bin_inv, event_title_gray_bin_inv, thresh/*230*/, 255, cv::THRESH_BINARY_INV);
 
@@ -660,12 +697,12 @@ void Screenshot::GetEventTitleImage()
 	//this->SetEventTitleBound(event_title_gray_bin);
 }
 
-void Screenshot::GetEventIconImage()
+void Screenshot::_GetEventIconImage()
 {
 	event_icon = oimg.clone();
 
 	cv::cvtColor(event_icon, event_icon, cv::COLOR_BGR2GRAY);
-	this->CropImage(event_icon, ImageType::IMG_EVENT_ICON);
+	this->_CropImage(event_icon, ImageType::IMG_EVENT_ICON);
 	/*
 	原版米浴：
 	type: cv::THRESH_BINARY, thresh: 157, WPR: 0.514706
@@ -675,34 +712,34 @@ void Screenshot::GetEventIconImage()
 }
 
 
-void Screenshot::GetSyousaiCharacterName()
+void Screenshot::_GetSyousaiCharacterName()
 {
 	syousai_character_name_gray_bin = oimg.clone();
-	this->CropImage(syousai_character_name_gray_bin, ImageType::IMG_SYOUSAI_CHARACTER_NAME);
-	this->ResizeImage(syousai_character_name_gray_bin, 1.2);
+	this->_CropImage(syousai_character_name_gray_bin, ImageType::IMG_SYOUSAI_CHARACTER_NAME);
+	this->_ResizeImage(syousai_character_name_gray_bin, 1.2);
 	cv::cvtColor(syousai_character_name_gray_bin, syousai_character_name_gray_bin, cv::COLOR_BGR2GRAY);
 	cv::threshold(syousai_character_name_gray_bin, syousai_character_name_gray_bin, 200, 255, cv::THRESH_BINARY_INV);
 }
 
-void Screenshot::GetHenseiCharacterNameImage()
+void Screenshot::_GetHenseiCharacterNameImage()
 {
 	// hensei_character_name_bin //
 	hensei_character_name_gray = oimg.clone();
-	this->CropImage(hensei_character_name_gray, ImageType::IMG_HENSEI_CHARACTER_NAME);
-	this->ResizeImage(hensei_character_name_gray, 1.0);
+	this->_CropImage(hensei_character_name_gray, ImageType::IMG_HENSEI_CHARACTER_NAME);
+	this->_ResizeImage(hensei_character_name_gray, 1.0);
 	cv::cvtColor(hensei_character_name_gray, hensei_character_name_gray, cv::COLOR_BGR2GRAY);
 
 	// hensei_character_name_gray_bin //
 	hensei_character_name_gray_bin = oimg.clone();
-	this->CropImage(hensei_character_name_gray_bin, ImageType::IMG_HENSEI_CHARACTER_NAME);
-	this->ResizeImage(hensei_character_name_gray_bin, 1.0);
+	this->_CropImage(hensei_character_name_gray_bin, ImageType::IMG_HENSEI_CHARACTER_NAME);
+	this->_ResizeImage(hensei_character_name_gray_bin, 1.0);
 	cv::cvtColor(hensei_character_name_gray_bin, hensei_character_name_gray_bin, cv::COLOR_BGR2GRAY);
 	cv::threshold(hensei_character_name_gray_bin, hensei_character_name_gray_bin, 170/*120*/, 255, cv::THRESH_BINARY);
 
 	// hensei_character_name_bin_inv //
 	hensei_character_name_gray_bin_inv = oimg.clone();
-	this->CropImage(hensei_character_name_gray_bin_inv, ImageType::IMG_HENSEI_CHARACTER_NAME);
-	this->ResizeImage(hensei_character_name_gray_bin_inv, 1.0);
+	this->_CropImage(hensei_character_name_gray_bin_inv, ImageType::IMG_HENSEI_CHARACTER_NAME);
+	this->_ResizeImage(hensei_character_name_gray_bin_inv, 1.0);
 	cv::cvtColor(hensei_character_name_gray_bin_inv, hensei_character_name_gray_bin_inv, cv::COLOR_BGR2GRAY);
 	cv::threshold(hensei_character_name_gray_bin_inv, hensei_character_name_gray_bin_inv, 175/*130*/, 255, cv::THRESH_BINARY);
 	hensei_character_name_gray_bin_inv = cv::Scalar::all(255) - hensei_character_name_gray_bin_inv; // 反轉顏色
@@ -710,25 +747,25 @@ void Screenshot::GetHenseiCharacterNameImage()
 
 }
 
-void Screenshot::GetHenseiCharacterAnotherNameImage()
+void Screenshot::_GetHenseiCharacterAnotherNameImage()
 {
 	// hensei_character_another_name_gray
 	hensei_character_another_name_gray = oimg.clone();
-	this->CropImage(hensei_character_another_name_gray, ImageType::IMG_HENSEI_CHARACTER_ANOTHER_NAME);
-	this->ResizeImage(hensei_character_another_name_gray, 1.0);
+	this->_CropImage(hensei_character_another_name_gray, ImageType::IMG_HENSEI_CHARACTER_ANOTHER_NAME);
+	this->_ResizeImage(hensei_character_another_name_gray, 1.0);
 	cv::cvtColor(hensei_character_another_name_gray, hensei_character_another_name_gray, cv::COLOR_BGR2GRAY);
 
 	// hensei_character_another_name_gray_bin
 	hensei_character_another_name_gray_bin = oimg.clone();
-	this->CropImage(hensei_character_another_name_gray_bin, ImageType::IMG_HENSEI_CHARACTER_ANOTHER_NAME);
-	this->ResizeImage(hensei_character_another_name_gray_bin, 1.0);
+	this->_CropImage(hensei_character_another_name_gray_bin, ImageType::IMG_HENSEI_CHARACTER_ANOTHER_NAME);
+	this->_ResizeImage(hensei_character_another_name_gray_bin, 1.0);
 	cv::cvtColor(hensei_character_another_name_gray_bin, hensei_character_another_name_gray_bin, cv::COLOR_BGR2GRAY);
 	cv::threshold(hensei_character_another_name_gray_bin, hensei_character_another_name_gray_bin, 170/*120*/, 255, cv::THRESH_BINARY);
 
 	// hensei_character_another_name_gray_bin_inv
 	hensei_character_another_name_gray_bin_inv = oimg.clone();
-	this->CropImage(hensei_character_another_name_gray_bin_inv, ImageType::IMG_HENSEI_CHARACTER_ANOTHER_NAME);
-	this->ResizeImage(hensei_character_another_name_gray_bin_inv, 1.0);
+	this->_CropImage(hensei_character_another_name_gray_bin_inv, ImageType::IMG_HENSEI_CHARACTER_ANOTHER_NAME);
+	this->_ResizeImage(hensei_character_another_name_gray_bin_inv, 1.0);
 	cv::cvtColor(hensei_character_another_name_gray_bin_inv, hensei_character_another_name_gray_bin_inv, cv::COLOR_BGR2GRAY);
 	cv::threshold(hensei_character_another_name_gray_bin_inv, hensei_character_another_name_gray_bin_inv, 180/*120*/, 255, cv::THRESH_BINARY);
 	hensei_character_another_name_gray_bin_inv = cv::Scalar::all(255) - hensei_character_another_name_gray_bin_inv; // 反轉顏色
@@ -740,23 +777,23 @@ void Screenshot::ResetCharacterImage(cv::Mat& img, ImagePattern imgPattern, floa
 	{
 	case ImagePattern::HENSEI_CHAR_GRAY:
 		img = oimg.clone();
-		this->CropImage(img, ImageType::IMG_HENSEI_CHARACTER_NAME);
-		this->ResizeImage(img, scale_factor);
+		this->_CropImage(img, ImageType::IMG_HENSEI_CHARACTER_NAME);
+		this->_ResizeImage(img, scale_factor);
 		cv::cvtColor(img, img, cv::COLOR_BGR2GRAY);
 		break;
 
 	case ImagePattern::HENSEI_CHAR_GRAY_BIN:
 		img = oimg.clone();
-		this->CropImage(img, ImageType::IMG_HENSEI_CHARACTER_NAME);
-		this->ResizeImage(img, scale_factor);
+		this->_CropImage(img, ImageType::IMG_HENSEI_CHARACTER_NAME);
+		this->_ResizeImage(img, scale_factor);
 		cv::cvtColor(img, img, cv::COLOR_BGR2GRAY);
 		cv::threshold(img, img, /*thresh_factor*/170/*120*/, 255, cv::THRESH_BINARY);
 		break;
 
 	case ImagePattern::HENSEI_CHAR_GRAY_BIN_INV:
 		img = oimg.clone();
-		this->CropImage(img, ImageType::IMG_HENSEI_CHARACTER_NAME);
-		this->ResizeImage(img, scale_factor);
+		this->_CropImage(img, ImageType::IMG_HENSEI_CHARACTER_NAME);
+		this->_ResizeImage(img, scale_factor);
 		cv::cvtColor(img, img, cv::COLOR_BGR2GRAY);
 		cv::threshold(img, img, /*thresh_factor*/175/*130*/, 255, cv::THRESH_BINARY);
 		img = cv::Scalar::all(255) - img; // 反轉顏色
@@ -764,8 +801,8 @@ void Screenshot::ResetCharacterImage(cv::Mat& img, ImagePattern imgPattern, floa
 
 	case ImagePattern::HENSEI_CHAR_ANOTHER_NAME_GRAY:
 		img = oimg.clone();
-		this->CropImage(img, ImageType::IMG_HENSEI_CHARACTER_ANOTHER_NAME);
-		this->ResizeImage(img, scale_factor);
+		this->_CropImage(img, ImageType::IMG_HENSEI_CHARACTER_ANOTHER_NAME);
+		this->_ResizeImage(img, scale_factor);
 		cv::cvtColor(img, img, cv::COLOR_BGR2GRAY);
 		break;
 	}

@@ -100,10 +100,46 @@ scenario_event_data_tw = {
     },
 };
 
-def normalize_motivation_jp():
-    print("");
 
-normalize_motivation_jp();
+def cvt_motivation(choice_effect):
+    # motivation_cvt_list = [
+    #     # アップ
+    #     "やる気アップ",
+    #     "やる気1段階アップ",
+    #     "やる気2段階アップ",
+    #     "やる気が2段階アップ",
+
+    #     # ダウン
+    #     "やる気ダウン",
+    #     "やる気1段階ダウン",
+    #     "やる気3段階ダウン",
+    # ]
+
+    converted_motivation_matched = re.search(r'<span class="motivation">やる気</span>')
+    if (converted_motivation_matched): return choice_effect;
+
+    up_match = re.search(r"やる気.*?アップ", choice_effect)
+    down_match = re.search(r"やる気.*?ダウン", choice_effect)
+
+    # 如果都沒找到關鍵字就返回原本的 choice_effect
+    if (not up_match and not down_match): return choice_effect;
+
+    if (up_match):
+        choice_effect = re.sub(up_match, f'<span class="motivation">やる気</span>.+', choice_effect);
+
+def normalize_motivation_jp():
+    for owner_type, owner_type_v in event_data_jp.items():
+        for rare, rare_v in owner_type_v.items():
+            for jp_event_owner, jp_event_owner_v in rare_v.items():
+                for event_idx, event in enumerate(jp_event_owner_v["event"]):
+                    for jp_event_title, jp_event_title_v in event.items():
+                        for choice_idx, choice_info in enumerate(jp_event_title_v):
+                            for key, value in choice_info.items():
+                                if (key == "choice_effect"):
+                                    value = cvt_motivation(value);
+                                    event_data_jp[owner_type][rare][jp_event_owner][event_idx][jp_event_title][choice_idx][key] = value;
+
+# normalize_motivation_jp();
 
 # skill_effect_type 是 "skill_effect_title" or "skill_effect_data"
 def trans_enhance_skill_data_jp_to_tw(skill_effect_title, skill_effect_data):

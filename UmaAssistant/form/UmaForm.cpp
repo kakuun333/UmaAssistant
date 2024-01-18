@@ -89,9 +89,7 @@ namespace UmaAssistant
 		//std::cout << utility::GetCharacterNameSimilarity(scanned, json_data) << std::endl;
 
 		DiscordManager* dcManager = DiscordManager::GetInstance();
-		dcManager->Init();
 		dcManager->UpdateRPC();
-
 		std::cout << "CLICKED TEST BUTTON" << std::endl;
 	}
 

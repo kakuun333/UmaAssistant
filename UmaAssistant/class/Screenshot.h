@@ -47,37 +47,42 @@ enum ImagePattern
 class Screenshot
 {
 private:
-	cv::Mat hwnd2mat(HWND hwnd);
+	// ========== variables ========== //
+	cv::Mat _hwnd2mat(HWND hwnd);
 
 	bool _isEventTitle = true;
 
 	bool _hasEventIcon = false;
+
 	double _eventIconWhitePixelRatio = -1;
 
-	void CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPattern);
+	// ========== member functions ========== //
+	void _CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPattern);
 
-	void ResizeImage(cv::Mat& img, float scale_factor /*放大倍數*/, cv::InterpolationFlags interpolationFlag = cv::INTER_LINEAR/*INTER_LINEAR*/);
+	void _ResizeImage(cv::Mat& img, float scale_factor /*放大倍數*/, cv::InterpolationFlags interpolationFlag = cv::INTER_LINEAR/*INTER_LINEAR*/);
 
-	const double GetWhitePixelRatio(cv::Mat img);
+	const double _GetWhitePixelRatio(cv::Mat img);
 
-	const double GetBlackPixelRatio(cv::Mat img);
+	const double _GetBlackPixelRatio(cv::Mat img);
 
 	// 檢查是否有 EventIcon，並設置 _hasEventIcon 和 _eventIconWhitePixelRatio
 	void _CheckEventIcon(cv::Mat img);
 
-	void GetEventTitleImage();
+	void _GetEventTitleImage();
 
-	void GetEventIconImage();
+	void _GetEventIconImage();
 
-	void GetHenseiCharacterNameImage();
+	void _GetHenseiCharacterNameImage();
 
-	void GetHenseiCharacterAnotherNameImage();
+	void _GetHenseiCharacterAnotherNameImage();
 
-	void GetSyousaiCharacterName();
+	void _GetSyousaiCharacterName();
 
-	bool IsWindowCovered(HWND hwnd);
+	void _GetDateImage();
 
-	void SetEventTitleBound(cv::Mat& img);
+	bool _IsWindowCovered(HWND hwnd);
+
+	void _SetEventTitleBound(cv::Mat& img);
 
 public:
 	Screenshot();
@@ -148,4 +153,7 @@ public:
 
 	// syousai_character_name
 	static cv::Mat syousai_character_name_gray_bin;
+
+	// date
+	static cv::Mat date_gray_bin;
 };
