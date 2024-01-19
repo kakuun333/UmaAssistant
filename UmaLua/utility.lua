@@ -1,4 +1,5 @@
 local pe = require("print_enhance");
+local json = require("dkjson"); -- http://dkolf.de/src/dkjson-lua.fsl/home
 
 local utility = {};
 
@@ -32,42 +33,6 @@ function utility.deepcopy(otable)
     end
 
     return tmp;
-end
-
-function utility.readfile(path)
-    local file = io.open(path, "r");
-
-    if file then
-        local content = file:read("*a");
-        file:close();
-
-        return content;
-    else
-        print("Error opening file.")
-        return nil;
-    end
-end
-
-function utility.writefile(path, content)
-    local file = io.open(path, "w");
-
-    if file then
-        local content = file:write(content);
-        file:close();
-    else
-        print("Error writing file.")
-    end
-end
-
-function utility.appendfile(path, content)
-    local file = io.open(path, "a");
-
-    if file then
-        local content = file:write(content);
-        file:close();
-    else
-        print("Error appending file.")
-    end
 end
 
 return utility;

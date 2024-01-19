@@ -61,12 +61,35 @@ local function getDefaultEventDataTable()
     return tmp;
 end
 
+local function getDefaultSkillDataTable()
+    local tmp = {
+        ["yellow"] = {
+            ["rare"] = {},
+            ["normal"] = {}
+        },
+        ["blue"] = {
+            ["rare"] = {},
+            ["normal"] = {}
+        },
+        ["green"] = {
+            ["rare"] = {},
+            ["normal"] = {}
+        },
+        ["red"] = {
+            ["rare"] = {},
+            ["normal"] = {}
+        }
+    }
+
+    return tmp;
+end
+
 ---- 公共函數 ---- 公共函數 ---- 公共函數 ---- 公共函數 ---- 公共函數 
 
 function dumper.dumpSkillData(ms)
     ms = ms or DEFAULT_MILLISECONDS;
 
-    local skill_data = { --[[
+    --[[
         ["yellow"] = {
             ["rare"] = {
                 [skill_name] = {
@@ -104,13 +127,30 @@ function dumper.dumpSkillData(ms)
 
         },
     ]]
-    }
+
+    local skill_data = fm.readjson("./UmaData/skill_data_jp.json") or getDefaultSkillDataTable();
 
     local skill_html = nil;
 
-    local white_list = fm.getSkillWhiteListFiltered();
+    -- local white_list = fm.getSkillWhiteListFiltered();
+
+    local skill_article_id_data = fm.readjson(fm.SKILL_ARTICLE_ID_DATA_JSON);
+    local white_list = skill_article_id_data["whitelist"];
 
     for i, white_id in ipairs(white_list) do
+
+        if skill_article_id_data["dumped_whitelist"] == nil then skill_article_id_data["dumped_whitelist"] = {}; end
+
+        if skill_article_id_data["skipped_whitelist"] == nil then
+            skill_article_id_data["skipped_whitelist"] = {};
+        end
+
+        for i, v in ipairs(skill_article_id_data["dumped_whitelist"]) do if v == white_id then goto continue end end
+
+        for i, v in ipairs(skill_article_id_data["skipped_whitelist"]) do if v == white_id then goto continue end end
+
+        local is_skip_id = false;
+
         local html = GetHtmlFromUrl("https://gamewith.jp/uma-musume/article/show/" .. tostring(white_id));
 
         skill_color, skill_rare, skill_name, skill_dict = parser.getSkillData(html, "uma_skill_hyouka");
@@ -123,22 +163,41 @@ function dumper.dumpSkillData(ms)
             console:print(pe.yellow .. "[警告] SkillData 不完整！ white_id:" .. tostring(white_id) ..
                               "\nskill_color: " .. tostring(skill_color) .. "\nskill_rare: " .. tostring(skill_rare) ..
                               "\nskill_name: " .. tostring(skill_name) .. "\nskill_dict: " .. tostring(skill_dict) ..
-                              pe.reset)
-            goto continue
+                              pe.reset);
+
+            is_skip_id = true;
+
+            goto is_skip_id_continue
         end
+
+        if skill_dict["upper_skill"] == "none" then end
+
+        table.insert(skill_article_id_data["dumped_whitelist"], white_id);
+        fm.writejson(fm.SKILL_ARTICLE_ID_DATA_JSON, skill_article_id_data);
 
         console:print("white_id:", white_id, "skill_color:", skill_color, "skill_rare:", skill_rare);
         skill_data[skill_color] = skill_data[skill_color] or {}
         skill_data[skill_color][skill_rare] = skill_data[skill_color][skill_rare] or {}
         skill_data[skill_color][skill_rare][skill_name] = skill_dict;
 
+        fm.writejson("./UmaData/skill_data_jp.json", skill_data);
+
         console:print("進度: [" .. pe.red .. i .. pe.reset .. "/" .. pe.yellow .. #white_list .. pe.reset .. "] " ..
                           pe.yellow .. white_id .. pe.reset .. pe.cyan .. " --" .. ms .. " 毫秒" .. pe.reset);
 
         if LUA_DEBUG then --[[ Debug 時使用 Debug 時使用 Debug 時使用 Debug 時使用 ]] break end
 
-        ::continue::
+        ::is_skip_id_continue::
+
+        if (is_skip_id) then
+            skill_article_id_data["skipped_whitelist"] = skill_article_id_data["skipped_whitelist"] or {};
+            table.insert(skill_article_id_data["skipped_whitelist"], white_id);
+            fm.writejson(fm.SKILL_ARTICLE_ID_DATA_JSON, skill_article_id_data);
+        end
+
         umalib.sleep(ms);
+
+        ::continue::
     end
 
     console:print(pe.green .. "已完成獲取 SkillData" .. pe.reset);
@@ -206,24 +265,26 @@ function dumper.dumpEventData(ms)
     }
     ]]
 
-    local event_data_jp_content = utility.readfile("./UmaData/event_data_jp.json");
-    local event_data_jp_json = json.decode(event_data_jp_content, 1, nil);
-
+    -- event_data
+    local event_data_jp_json = fm.readjson(fm.EVENT_DATA_JP_JSON);
     local event_data = event_data_jp_json or getDefaultEventDataTable()
 
-    local white_list = fm.getEventWhiteList();
+    -- event_article_id_data
+    local event_article_id_data = fm.readjson(fm.EVENT_ARTICLE_ID_DATA_JSON);
 
-    local dumped_white_list = {};
-    local content = utility.readfile(fm.DUMPED_EVENT_WHITE_LIST_JSON);
-    local dumped_white_list_data, pos, err = json.decode(content, 1, nil)
+    -- white_list
+    local white_list = event_article_id_data["whitelist"];
 
-    dumped_white_list = dumped_white_list_data or {};
+    -- dumped_whitelist
+    local dumped_whitelist_data = event_article_id_data["dumped_whitelist"];
+    local dumped_whitelist = {};
+    dumped_whitelist = dumped_whitelist_data or {};
 
     for i, white_id in ipairs(white_list) do
         local skip_white_id = false;
 
         -- 檢查是否為已抓取過的 white_id 
-        for i, dumped_white_id in pairs(dumped_white_list_data) do
+        for i, dumped_white_id in ipairs(dumped_whitelist_data) do
             if (white_id == dumped_white_id) then skip_white_id = true; end
         end
 
@@ -251,19 +312,13 @@ function dumper.dumpEventData(ms)
             event_data[owner_type][rare] = event_data[owner_type][rare] or {}
             event_data[owner_type][rare][event_owner] = event_dict;
 
-            table.insert(dumped_white_list, white_id)
+            table.insert(event_article_id_data["dumped_whitelist"], white_id)
 
-            -- 寫入 dumped_white_list.json
-            local json_string = json.encode(dumped_white_list, {
-                indent = true
-            });
-            utility.writefile(fm.DUMPED_EVENT_WHITE_LIST_JSON, json_string);
+            -- 寫入 event_article_id_data.json
+            fm.writejson(fm.EVENT_ARTICLE_ID_DATA_JSON, event_article_id_data)
 
             -- 寫入 event_data_jp.json
-            local event_data_json_string = json.encode(event_data, {
-                indent = true
-            });
-            utility.writefile("./UmaData/event_data_jp.json", event_data_json_string);
+            fm.writejson(fm.EVENT_DATA_JP_JSON, event_data)
 
             console:print(
                 "進度: [" .. pe.red .. i .. pe.reset .. "/" .. pe.yellow .. #white_list .. pe.reset .. "] " ..
@@ -285,190 +340,167 @@ function dumper.dumpEventBlackWhiteList(ms)
     console:print("嘗試更新 Event 黑白名單");
     ms = ms or DEFAULT_MILLISECONDS;
 
-    local aid_arr = fm.getArticleId();
+    local article_id_list = fm.readjson(fm.ARTICLE_ID_JSON);
     -------------------------------------------------------------
-    local black_list_file = io.open(fm.EVENT_BLACK_LIST_PATH, "a");
-    local white_list_file = io.open(fm.EVENT_WHITE_LIST_PATH, "a");
-    -- 如果檔案都順利開啟
-    if black_list_file and white_list_file then
-        local blacked_amount = 0;
-        local whited_amount = 0;
-        -- 獲取已儲存的黑白名單
-        local saved_black_list = fm.getEventBlackList();
-        local saved_white_list = fm.getEventWhiteList();
-        for i, id in ipairs(aid_arr) do
-            -- 跳過已儲存的黑名單
-            for _, v in ipairs(saved_black_list) do
-                if id == v then
-                    console:print(pe.magenta .. "跳過已儲存的黑名單：" .. id .. pe.reset);
-                    goto continue
-                end
+    local event_article_id_data = fm.readjson(fm.EVENT_ARTICLE_ID_DATA_JSON);
+
+    -- 獲取已儲存的黑白名單
+    local saved_black_list = event_article_id_data["blacklist"];
+    local saved_white_list = event_article_id_data["whitelist"];
+    for i, id in ipairs(article_id_list) do
+        -- 跳過已儲存的黑名單
+        for _, v in ipairs(saved_black_list) do
+            if id == v then
+                console:print(pe.magenta .. "跳過已儲存的黑名單：" .. id .. pe.reset);
+                goto continue
             end
-            -- 跳過已儲存的白名單
-            for _, v in ipairs(saved_white_list) do
-                if id == v then
-                    console:print(pe.magenta .. "跳過已儲存的白名單：" .. id .. pe.reset);
-                    goto continue
-                end
+        end
+        -- 跳過已儲存的白名單
+        for _, v in ipairs(saved_white_list) do
+            if id == v then
+                console:print(pe.magenta .. "跳過已儲存的白名單：" .. id .. pe.reset);
+                goto continue
             end
-            -- 開始進行分析並寫入
-            local black_listed = false;
-            local html = GetHtmlFromUrl("https://gamewith.jp/uma-musume/article/show/" .. id);
-            if parser.getEventHtmlById(html, html_id_arr[1]) == nil and parser.getEventHtmlById(html, html_id_arr[2]) ==
-                nil and parser.getEventHtmlById(html, html_id_arr[3]) == nil then
-                black_list_file:write("<" .. id .. ">" .. "\n");
-                black_list_file:flush();
-                blacked_amount = blacked_amount + 1;
-                black_listed = true;
-            else
-                whited_amount = whited_amount + 1;
-                white_list_file:write("<" .. id .. ">" .. "\n");
-                white_list_file:flush();
-            end
-            if black_listed then
-                console:print(
-                    "進度: " .. pe.red .. i .. pe.reset .. "/" .. pe.yellow .. #aid_arr .. pe.reset .. "   " .. pe.red ..
-                        id .. "  已加入黑名單  " .. pe.reset .. pe.cyan .. "--" .. ms .. " 毫秒" .. pe.reset);
-            else
-                console:print(
-                    "進度: " .. pe.red .. i .. pe.reset .. "/" .. pe.yellow .. #aid_arr .. pe.reset .. "   " ..
-                        pe.green .. id .. "  已加入白名單  " .. pe.reset .. pe.cyan .. "--" .. ms .. " 毫秒" ..
-                        pe.reset);
-            end
-            umalib.sleep(ms);
-            ::continue::
+        end
+        -- 開始進行分析並寫入
+        local blacklisted = false;
+        local html = GetHtmlFromUrl("https://gamewith.jp/uma-musume/article/show/" .. id);
+
+        -- 檢查是黑名單還是白名單
+        if parser.getEventHtmlById(html, html_id_arr[1]) == nil and parser.getEventHtmlById(html, html_id_arr[2]) == nil and
+            parser.getEventHtmlById(html, html_id_arr[3]) == nil then
+
+            table.insert(event_article_id_data["blacklist"], id);
+
+            fm.writejson(fm.EVENT_ARTICLE_ID_DATA_JSON, event_article_id_data);
+
+            blacklisted = true;
+        else
+            table.insert(event_article_id_data["whitelist"], id);
+            fm.writejson(fm.EVENT_ARTICLE_ID_DATA_JSON, event_article_id_data);
         end
 
-        -- black_list_file:write("\n\n黑名單總數："..blacked_amount);
-        -- white_list_file:write("\n\n白名單總數："..whited_amount);
-        black_list_file:close();
-        white_list_file:close();
-        console:print(pe.green .. "Event 黑白名單製作完成！" .. pe.reset);
+        if blacklisted then
+            console:print("進度: " .. pe.red .. i .. pe.reset .. "/" .. pe.yellow .. #article_id_list .. pe.reset ..
+                              "   " .. pe.red .. id .. "  已加入黑名單  " .. pe.reset .. pe.cyan .. "--" .. ms ..
+                              " 毫秒" .. pe.reset);
+        else
+            console:print("進度: " .. pe.red .. i .. pe.reset .. "/" .. pe.yellow .. #article_id_list .. pe.reset ..
+                              "   " .. pe.green .. id .. "  已加入白名單  " .. pe.reset .. pe.cyan .. "--" .. ms ..
+                              " 毫秒" .. pe.reset);
+        end
+        umalib.sleep(ms);
+        ::continue::
     end
+
+    console:print(pe.green .. "Event 黑白名單製作完成！" .. pe.reset);
+
 end
 
 function dumper.dumpSkillBlackWhiteList(ms)
     console:print("嘗試更新 Skill 黑白名單");
     ms = ms or DEFAULT_MILLISECONDS;
 
-    local aid_arr = fm.getArticleId();
+    local article_id_list = fm.readjson(fm.ARTICLE_ID_JSON);
     -------------------------------------------------------------
-    local black_list_file = io.open(fm.SKILL_BLACK_LIST_PATH, "a");
-    local white_list_file = io.open(fm.SKILL_WHITE_LIST_PATH, "a");
-    -- 如果檔案都順利開啟
-    if black_list_file and white_list_file then
-        local blacked_amount = 0;
-        local whited_amount = 0;
-        -- 獲取已儲存的黑白名單
-        local saved_black_list = fm.getSkillBlackList();
-        local saved_white_list = fm.getSkillWhiteList();
-        local event_white_list = fm.getEventWhiteList();
-        for i, id in ipairs(aid_arr) do
-            -- 跳過已儲存的黑名單
-            for _, v in ipairs(saved_black_list) do
-                if id == v then
-                    console:print(pe.magenta .. "跳過已儲存的黑名單：" .. id .. pe.reset);
-                    goto continue
-                end
-            end
-            -- 跳過已儲存的白名單
-            for _, v in ipairs(saved_white_list) do
-                if id == v then
-                    console:print(pe.magenta .. "跳過已儲存的白名單：" .. id .. pe.reset);
-                    goto continue
-                end
-            end
-            -- 跳過 event 的白名單
+    local skill_article_id_data = fm.readjson(fm.SKILL_ARTICLE_ID_DATA_JSON);
+    local event_article_id_data = fm.readjson(fm.EVENT_ARTICLE_ID_DATA_JSON);
 
-            for _, v in ipairs(event_white_list) do
-                if id == v then
-                    console:print(pe.magenta .. "跳過 event 的白名單：" .. id .. pe.reset);
-                    goto continue
-                end
-            end
+    -- 獲取已儲存的黑白名單
+    local saved_black_list = skill_article_id_data["blacklist"]
+    local saved_white_list = skill_article_id_data["whitelist"]
+    local event_white_list = event_article_id_data["whitelist"]
+    for i, id in ipairs(article_id_list) do
 
-            -- 開始進行分析並寫入
-            local black_listed = false;
-            local html = GetHtmlFromUrl("https://gamewith.jp/uma-musume/article/show/" .. id);
-            if not string.match(html, "<div class=\"uma_skill_hyouka\">") then
-                black_list_file:write("<" .. id .. ">" .. "\n");
-                black_list_file:flush();
-                blacked_amount = blacked_amount + 1;
-                black_listed = true;
-            else
-                whited_amount = whited_amount + 1;
-                white_list_file:write("<" .. id .. ">" .. "\n");
-                white_list_file:flush();
+        -- 跳過已儲存的黑名單
+        for _, v in ipairs(saved_black_list) do
+            if id == v then
+                console:print(pe.magenta .. "跳過已儲存的黑名單：" .. id .. pe.reset);
+                goto continue
             end
-            if black_listed then
-                console:print(
-                    "進度: " .. pe.red .. i .. pe.reset .. "/" .. pe.yellow .. #aid_arr .. pe.reset .. "   " .. pe.red ..
-                        id .. "  已加入黑名單  " .. pe.reset .. pe.cyan .. "--" .. ms .. " 毫秒" .. pe.reset);
-            else
-                console:print(
-                    "進度: " .. pe.red .. i .. pe.reset .. "/" .. pe.yellow .. #aid_arr .. pe.reset .. "   " ..
-                        pe.green .. id .. "  已加入白名單  " .. pe.reset .. pe.cyan .. "--" .. ms .. " 毫秒" ..
-                        pe.reset);
-            end
-            umalib.sleep(ms);
-            ::continue::
         end
 
-        -- black_list_file:write("\n\n黑名單總數："..blacked_amount);
-        -- white_list_file:write("\n\n白名單總數："..whited_amount);
-        black_list_file:close();
-        white_list_file:close();
-        console:print(pe.green .. "Skill 黑白名單製作完成！" .. pe.reset);
+        -- 跳過已儲存的白名單
+        for _, v in ipairs(saved_white_list) do
+            if id == v then
+                console:print(pe.magenta .. "跳過已儲存的白名單：" .. id .. pe.reset);
+                goto continue
+            end
+        end
+
+        -- 跳過 event 的白名單
+        for _, v in ipairs(event_white_list) do
+            if id == v then
+                console:print(pe.magenta .. "跳過 event 的白名單：" .. id .. pe.reset);
+                goto continue
+            end
+        end
+
+        -- 開始進行分析並寫入
+        local black_listed = false;
+        local html = GetHtmlFromUrl("https://gamewith.jp/uma-musume/article/show/" .. id);
+        if not string.match(html, "<div class=\"uma_skill_hyouka\">") then
+
+            table.insert(skill_article_id_data["blacklist"], id);
+            fm.writejson(fm.SKILL_ARTICLE_ID_DATA_JSON, skill_article_id_data);
+
+            black_listed = true;
+        else
+
+            table.insert(skill_article_id_data["whitelist"], id);
+            fm.writejson(fm.SKILL_ARTICLE_ID_DATA_JSON, skill_article_id_data);
+
+        end
+        if black_listed then
+            console:print("進度: " .. pe.red .. i .. pe.reset .. "/" .. pe.yellow .. #article_id_list .. pe.reset ..
+                              "   " .. pe.red .. id .. "  已加入黑名單  " .. pe.reset .. pe.cyan .. "--" .. ms ..
+                              " 毫秒" .. pe.reset);
+        else
+            console:print("進度: " .. pe.red .. i .. pe.reset .. "/" .. pe.yellow .. #article_id_list .. pe.reset ..
+                              "   " .. pe.green .. id .. "  已加入白名單  " .. pe.reset .. pe.cyan .. "--" .. ms ..
+                              " 毫秒" .. pe.reset);
+        end
+        umalib.sleep(ms);
+        ::continue::
     end
+
+    console:print(pe.green .. "Skill 黑白名單製作完成！" .. pe.reset);
 end
 
 function dumper.dumpArticleIdFromSiteMap()
     console:print("嘗試更新 ArticleId");
-    local aid_arr = {};
+    local article_id_list = {};
     local sitemapXml = "https://gamewith.jp/uma-musume/sitemap.xml";
     local xml = GetHtmlFromUrl(sitemapXml);
     console:print("已獲取 xml")
     -- <loc>https://gamewith.jp/uma-musume/article/show/256047</loc>
     local pattern = "<loc.-(%d+)</loc>";
-    for id in string.gmatch(xml, pattern) do
-        -- print(id.."\n")
-        table.insert(aid_arr, id);
-    end
 
-    local file_idx = io.open(fm.ARTICLE_ID_INDEX_PATH, "w")
-    if file_idx then
-        file_idx:write("總長度：" .. #aid_arr .. "\n\n")
-        for i, v in ipairs(aid_arr) do file_idx:write(tostring(i) .. ": " .. v .. "\n") end
-        file_idx:close()
-    else
-        console:print("無法打開文件")
-    end
+    -- 獲取字串中的所有 article_id
+    for id in string.gmatch(xml, pattern) do table.insert(article_id_list, id); end
 
-    local file = io.open(fm.ARTICLE_ID_PATH, "w")
-    if file then
-        file:write("總長度：" .. #aid_arr .. "\n\n")
-        for i, v in ipairs(aid_arr) do file:write("<" .. v .. ">" .. "\n") end
-        file:close()
-    else
-        console:print("無法打開文件")
-    end
+    fm.writejson(fm.ARTICLE_ID_JSON, article_id_list);
+
+    -- local file_idx = io.open(fm.ARTICLE_ID_INDEX_PATH, "w")
+    -- if file_idx then
+    --     file_idx:write("總長度：" .. #ariticle_id_list .. "\n\n")
+    --     for i, v in ipairs(ariticle_id_list) do file_idx:write(tostring(i) .. ": " .. v .. "\n") end
+    --     file_idx:close()
+    -- else
+    --     console:print("無法打開文件")
+    -- end
+
+    -- local file = io.open(fm.ARTICLE_ID_PATH, "w")
+    -- if file then
+    --     file:write("總長度：" .. #ariticle_id_list .. "\n\n")
+    --     for i, v in ipairs(ariticle_id_list) do file:write("<" .. v .. ">" .. "\n") end
+    --     file:close()
+    -- else
+    --     console:print("無法打開文件")
+    -- end
+
     console:print(pe.green .. "ArticleId 更新完成！" .. pe.reset);
 end
-
--- function parser.getElementsByClassName(html, class)
---     assert(html and class, "\n[html_parser] html 或 class 是 nil。\nhtml: " .. tostring(html) .. " class: " .. tostring(class));
-
---     -- local pattern = "<([%w]+)[%s+].-[%s+]class=\"([^\"]+)\">(.-)</%1>";
-
---     -- local removed_script_html = string.gsub(html, "<script.-</script>", "")
-
---     local pattern = "<([%w]+)[%s+].-[%s+]class=\"(".. class .. ")\"></%1>";
-
---     console:print("pattern: " .. pattern)
-
---     local tag, class, content = string.match(html, pattern);
---     return tag, class, content;
--- end
 
 -----------------------------------------------------
 return dumper;

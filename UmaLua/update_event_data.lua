@@ -33,16 +33,16 @@ local console = Console.new();
 -- local event_dict = parser.getEventDict(event_html);
 -- utility.writefile("./UMADAAAAAAAAAAAAAAAAA.json", json_string);
 
--- utility.deepprint(event_dict);
+-- local data = {
+--     ["whitelist"] = {},
+--     ["blacklist"] = {},
+--     ["dumped_whitelist"] = {}
+-- }
+-- for i, v in ipairs(fm.getEventWhiteList()) do data["whitelist"][i] = v; end
+-- for i, v in ipairs(fm.getEventBlackList()) do data["blacklist"][i] = v; end
+-- for i, v in ipairs(fm.readjson("./UmaData/dumped_event_white_list.json")) do data["dumped_whitelist"][i] = v; end
+-- fm.writejson(fm.EVENT_ARTICLE_ID_DATA_JSON, data);
 
 dumper.dumpArticleIdFromSiteMap();
 dumper.dumpEventBlackWhiteList(2000);
-
 dumper.dumpEventData(2000);
--- event_data = dumper.dumpEventData(2000);
-
--- local json_string = json.encode(event_data, {
---     indent = true
--- });
-
--- utility.writefile("./UmaData/event_data_jp.json", json_string);

@@ -1,5 +1,6 @@
 local umalib = require("UmaLuaLib");
 local pe = require("print_enhance");
+local fm = require("file_manager");
 local utility = require("utility");
 local Console = require("console");
 local json = require("dkjson"); -- http://dkolf.de/src/dkjson-lua.fsl/home
@@ -8,22 +9,6 @@ parser = {}
 
 ---- 本地變數 ---- 本地變數 ---- 本地變數 ---- 本地變數 ---- 本地變數 
 local console = Console.new();
-
-local jp_status_name_list = {
-    "スピード",
-    "スタミナ",
-    "パワー",
-    "根性",
-    "賢さ"
-}
-
-local status_class_dict = {
-    ["スピード"] = "speed",
-    ["スタミナ"] = "sutamina",
-    ["パワー"] = "power",
-    ["根性"] = "konjyou",
-    ["賢さ"] = "kasikosa"
-}
 
 -- local all_condition_list = {
 --     -- プラス
@@ -82,8 +67,7 @@ local status_class_dict = {
 
 ---- 本地函數 ---- 本地函數 ---- 本地函數 ---- 本地函數 ---- 本地函數 
 local function fixWrongSkillName(choice_effect)
-    local content = utility.readfile("./UmaData/wrong_word_data.json");
-    local wrong_word_data, pos, err = json.decode(content, 1, nil)
+    local wrong_word_data = fm.readjson("./UmaData/wrong_word_data.json");
 
     for wrong_skill, correct_skill in pairs(wrong_word_data["skill_name_list"]) do
         if string.match(choice_effect, wrong_skill) then
@@ -94,9 +78,16 @@ local function fixWrongSkillName(choice_effect)
     return choice_effect
 end
 
+---@param input string
+local function fixWrongStatusName(input)
+
+    input = string.gsub(input, "(パワ)(ー)?", "%1ー")
+
+    return input;
+end
+
 local function placeTagToStatus(choice_effect)
-    local content = utility.readfile("./UmaData/html_tag_data.json");
-    local html_tag_data, pos, err = json.decode(content, 1, nil)
+    local html_tag_data = fm.readjson("./UmaData/html_tag_data.json");
 
     -- local content = utility.readfile("./UmaData/skill_data_jp.json");
     -- local skill_data_jp, pos, err = json.decode(content, 1, nil)
@@ -111,15 +102,16 @@ local function placeTagToStatus(choice_effect)
 
     -- 給 choice_effect 相對應的 status 添加 <img> 和 <span>
     for _, status_name in pairs(html_tag_data["jp_status_name_list"]) do
-        local replace_pattern = "<img src=\"../UmaMisc/Image/Status/" .. status_class_dict[status_name] ..
-                                    ".png\"><span class=\"status_" .. status_class_dict[status_name] .. "\">%1</span>"
+        local replace_pattern =
+            "<img src=\"../UmaMisc/Image/Status/" .. html_tag_data["status_class_dict"][status_name] ..
+                ".png\"><span class=\"status_" .. html_tag_data["status_class_dict"][status_name] .. "\">%1</span>"
 
         choice_effect = string.gsub(choice_effect, "(" .. status_name .. ")", replace_pattern);
         -- 『<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">スピード</span>スター』
         choice_effect = string.gsub(choice_effect,
-            "『<img src=\"../UmaMisc/Image/Status/" .. status_class_dict[status_name] .. ".png\"><span class=\"status_" ..
-                status_class_dict[status_name] .. "\">" .. status_name .. "</span>(.-)』",
-            "『" .. status_name .. "%1』");
+            "『<img src=\"../UmaMisc/Image/Status/" .. html_tag_data["status_class_dict"][status_name] ..
+                ".png\"><span class=\"status_" .. html_tag_data["status_class_dict"][status_name] .. "\">" ..
+                status_name .. "</span>(.-)』", "『" .. status_name .. "%1』");
     end
 
     -- 負號
@@ -143,10 +135,10 @@ local function placeTagToSkillHint(choice_effect)
     『バ場状況や出場したレース場に関係するスキルのヒント』
     ]]
 
-    local content = utility.readfile("./UmaData/wrong_word_data.json");
+    local content = fm.readfile("./UmaData/wrong_word_data.json");
     local wrong_word_data, pos, err = json.decode(content, 1, nil)
 
-    local content = utility.readfile("./UmaData/condition_data.json");
+    local content = fm.readfile("./UmaData/condition_data.json");
     local condition_data, pos, err = json.decode(content, 1, nil)
 
     for skillOrCondition in string.gmatch(choice_effect, "『(.-)』") do
@@ -185,7 +177,7 @@ local function placeTagToSkillHint(choice_effect)
 end
 
 local function placeTagToCondition(choice_effect)
-    local content = utility.readfile("./UmaData/condition_data.json");
+    local content = fm.readfile("./UmaData/condition_data.json");
     local condition_data, pos, err = json.decode(content, 1, nil)
 
     for skillOrCondition in string.gmatch(choice_effect, "『(.-)』") do
@@ -274,8 +266,8 @@ function parser.getSkillData(html, class)
     local skill_description = string.match(skill_html, "<th>効果.-<td>(.-)</td>");
 
     -- upper_skill
-    local upper_skill = "none";
-    local lower_skill = "none";
+    local upper_skill = json.null;
+    local lower_skill = json.null;
 
     if skill_rare == "normal" then
         if string.match(skill_html, "<th>上位スキル.-<td>なし</td>") then goto continue_skill_dict end
@@ -458,6 +450,8 @@ function parser.getEventDict(event_html)
                 對 choice_effect 加工
             ]]
             choice_effect = fixWrongSkillName(choice_effect)
+
+            -- choice_effect = fixWrongStatusName(choice_effect);
 
             choice_effect = placeTagToStatus(choice_effect);
 

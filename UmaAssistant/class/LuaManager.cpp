@@ -269,98 +269,98 @@ void LuaManager::DumpSkillData()
             int fileState = luaL_dofile(L, global::path::std_update_skill_data_lua.c_str());
             if (fileState == LUA_OK)
             {
-                lua_getglobal(L, "skill_data");
-                int skill_data_idx = lua_gettop(L);
-                if (lua_istable(L, skill_data_idx))
-                {
-                    lua_pushnil(L);
-                    while (lua_next(L, skill_data_idx) != 0)
-                    {
-                        const char* skill_color = lua_tostring(L, -2);
-                        int skill_color_idx = lua_gettop(L);
+                //lua_getglobal(L, "skill_data");
+                //int skill_data_idx = lua_gettop(L);
+                //if (lua_istable(L, skill_data_idx))
+                //{
+                //    lua_pushnil(L);
+                //    while (lua_next(L, skill_data_idx) != 0)
+                //    {
+                //        const char* skill_color = lua_tostring(L, -2);
+                //        int skill_color_idx = lua_gettop(L);
 
-                        json_data[skill_color] = {};
+                //        json_data[skill_color] = {};
 
-                        lua_pushnil(L);
-                        while (lua_next(L, skill_color_idx) != 0)
-                        {
-                            const char* skill_rare = lua_tostring(L, -2);
-                            int skill_rare_idx = lua_gettop(L);
+                //        lua_pushnil(L);
+                //        while (lua_next(L, skill_color_idx) != 0)
+                //        {
+                //            const char* skill_rare = lua_tostring(L, -2);
+                //            int skill_rare_idx = lua_gettop(L);
 
-                            json_data[skill_color][skill_rare] = {};
+                //            json_data[skill_color][skill_rare] = {};
 
-                            lua_pushnil(L);
-                            while (lua_next(L, skill_rare_idx) != 0)
-                            {
-                                const char* skill_name = lua_tostring(L, -2);
-                                int skill_name_idx = lua_gettop(L);
+                //            lua_pushnil(L);
+                //            while (lua_next(L, skill_rare_idx) != 0)
+                //            {
+                //                const char* skill_name = lua_tostring(L, -2);
+                //                int skill_name_idx = lua_gettop(L);
 
-                                json_data[skill_color][skill_rare][skill_name] = {};
+                //                json_data[skill_color][skill_rare][skill_name] = {};
 
-                                lua_pushnil(L);
-                                while (lua_next(L, skill_name_idx) != 0)
-                                {
-                                    const char* key = lua_tostring(L, -2);
-                                    const char* value = lua_tostring(L, -1);
+                //                lua_pushnil(L);
+                //                while (lua_next(L, skill_name_idx) != 0)
+                //                {
+                //                    const char* key = lua_tostring(L, -2);
+                //                    const char* value = lua_tostring(L, -1);
 
-                                    std::cout << "key: " << key << " value: " << value << std::endl;
+                //                    std::cout << "key: " << key << " value: " << value << std::endl;
 
-                                    if (strcmp(key, "skill_pt") == 0)
-                                    {
-                                        json_data[skill_color][skill_rare][skill_name][key] = value;
-                                    }
-                                    else if (strcmp(key, "skill_effect") == 0)
-                                    {
-                                        json_data[skill_color][skill_rare][skill_name][key] = value;
-                                    }
-                                    else if (strcmp(key, "upper_skill") == 0)
-                                    {
-                                        if (strcmp(value, "none") == 0)
-                                            json_data[skill_color][skill_rare][skill_name][key] = {};
-                                        else
-                                            json_data[skill_color][skill_rare][skill_name][key] = value;
-                                    }
-                                    else if (strcmp(key, "lower_skill") == 0)
-                                    {
-                                        if (strcmp(value, "none") == 0)
-                                            json_data[skill_color][skill_rare][skill_name][key] = {};
-                                        else
-                                            json_data[skill_color][skill_rare][skill_name][key] = value;
-                                    }
-                                    else if (strcmp(key, "skill_icon_name") == 0)
-                                    {
-                                        json_data[skill_color][skill_rare][skill_name][key] = value;
-                                    }
-
-
-                                    lua_pop(L, 1);
-                                }
-
-                                lua_pop(L, 1);
-                            }
-
-                            lua_pop(L, 1);
-                        }
-
-                        lua_pop(L, 1);
-                    }
-                }
+                //                    if (strcmp(key, "skill_pt") == 0)
+                //                    {
+                //                        json_data[skill_color][skill_rare][skill_name][key] = value;
+                //                    }
+                //                    else if (strcmp(key, "skill_effect") == 0)
+                //                    {
+                //                        json_data[skill_color][skill_rare][skill_name][key] = value;
+                //                    }
+                //                    else if (strcmp(key, "upper_skill") == 0)
+                //                    {
+                //                        if (strcmp(value, "none") == 0)
+                //                            json_data[skill_color][skill_rare][skill_name][key] = {};
+                //                        else
+                //                            json_data[skill_color][skill_rare][skill_name][key] = value;
+                //                    }
+                //                    else if (strcmp(key, "lower_skill") == 0)
+                //                    {
+                //                        if (strcmp(value, "none") == 0)
+                //                            json_data[skill_color][skill_rare][skill_name][key] = {};
+                //                        else
+                //                            json_data[skill_color][skill_rare][skill_name][key] = value;
+                //                    }
+                //                    else if (strcmp(key, "skill_icon_name") == 0)
+                //                    {
+                //                        json_data[skill_color][skill_rare][skill_name][key] = value;
+                //                    }
 
 
-                std::string json_string = json_data.dump(2 /*縮排空格數*/);
+                //                    lua_pop(L, 1);
+                //                }
 
-                // 寫入 json
-                std::ofstream outputFile(global::path::std_skill_data_jp_json);
-                if (outputFile.is_open())
-                {
-                    outputFile << json_string << std::endl;
-                    outputFile.close();
-                    std::cout << global::path::std_skill_data_jp_json << u8" 成功創建並寫入！" << std::endl;
-                }
-                else
-                {
-                    std::cerr << global::path::std_skill_data_jp_json << u8" 創建失敗。" << std::endl;
-                }
+                //                lua_pop(L, 1);
+                //            }
+
+                //            lua_pop(L, 1);
+                //        }
+
+                //        lua_pop(L, 1);
+                //    }
+                //}
+
+
+                //std::string json_string = json_data.dump(2 /*縮排空格數*/);
+
+                //// 寫入 json
+                //std::ofstream outputFile(global::path::std_skill_data_jp_json);
+                //if (outputFile.is_open())
+                //{
+                //    outputFile << json_string << std::endl;
+                //    outputFile.close();
+                //    std::cout << global::path::std_skill_data_jp_json << u8" 成功創建並寫入！" << std::endl;
+                //}
+                //else
+                //{
+                //    std::cerr << global::path::std_skill_data_jp_json << u8" 創建失敗。" << std::endl;
+                //}
             }
             else
             {

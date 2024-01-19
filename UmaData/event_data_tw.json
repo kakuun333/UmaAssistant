@@ -28616,6 +28616,42 @@
             ]
           },
           {
+            "賽馬娘問答☆〜關係篇〜": [
+              {
+                "choice_title": "榮進閃耀",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『尾段加速』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+              },
+              {
+                "choice_title": "美浦波旁",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "賽馬娘問答☆〜嗜好篇〜": [
+              {
+                "choice_title": "ごはん",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "パン",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『京都賽場◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+              }
+            ]
+          },
+          {
+            "賽馬娘問答☆〜出身篇〜": [
+              {
+                "choice_title": "ケンタッキー州",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『一哩彎道◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+              },
+              {
+                "choice_title": "テキサス州",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
             "保重身體！": [
               {
                 "choice_title": "ちゃんと休もう",
@@ -36728,6 +36764,42 @@
               {
                 "choice_title": "ウオッカメニュー",
                 "choice_effect": "<span class=\"skill_hint\">『加速度』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+              }
+            ]
+          },
+          {
+            "賽馬娘問答☆〜關係篇〜": [
+              {
+                "choice_title": "エイシンフラッシュ",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『尾段加速』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+              },
+              {
+                "choice_title": "ミホノブルボン",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span>"
+              }
+            ]
+          },
+          {
+            "賽馬娘問答☆〜嗜好篇〜": [
+              {
+                "choice_title": "ごはん",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+5</span>"
+              },
+              {
+                "choice_title": "パン",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『京都賽場◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+              }
+            ]
+          },
+          {
+            "賽馬娘問答☆〜出身篇〜": [
+              {
+                "choice_title": "ケンタッキー州",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『一哩彎道◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
+              },
+              {
+                "choice_title": "テキサス州",
+                "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span>"
               }
             ]
           },
