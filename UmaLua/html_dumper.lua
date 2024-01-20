@@ -439,7 +439,8 @@ function dumper.dumpSkillBlackWhiteList(ms)
         -- 開始進行分析並寫入
         local black_listed = false;
         local html = GetHtmlFromUrl("https://gamewith.jp/uma-musume/article/show/" .. id);
-        if not string.match(html, "<div class=\"uma_skill_hyouka\">") then
+        -- if not string.match(html, "<div class=\"uma_skill_hyouka\">") then
+        if not string.match(html, "<h2 id=\"kouka\">") then
 
             table.insert(skill_article_id_data["blacklist"], id);
             fm.writejson(fm.SKILL_ARTICLE_ID_DATA_JSON, skill_article_id_data);
