@@ -17,6 +17,8 @@
 ## 功能介紹
 ### 事件選項效果
 ![1](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1.png)
+![1009](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1009.png)
+![1010](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1010.png)
 
 ### 技能預覽
 #### 白技能  
@@ -90,9 +92,18 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 
 - 顯示在最上層：讓程式的視窗一直保持在最上層。
 
-- 輸出偵錯日誌：開啟後會把日誌輸出到`UmaTemp/UmaLog.txt`，每一次啟動程式都會刪除上一個`UmaLog.txt`，如果你願意的話可以勾選此選項，遇到問題要回報時可以附上`UmaLog.txt`，這樣可以更好地判斷問題出在哪裡。
+- Discord RPC：更新`Discord`的遊戲狀態為`賽馬娘 Pretty Derby`或`ウマ娘 プリティーダービー`  
+> [!NOTE]
+> **Discord RPC**  
+> `遊戲名稱`和`馬娘的名字`會根據所選的`伺服器`發生變化  
+> `馬娘的名字`會根據`正在培育的馬娘`發生變化  
+> 其他文字會根據`軟體語言`發生變化  
+> ![1008](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1008.png)  
+> ![1011](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1011.png)  
 
 - Debug模式：基本上只給開發者做使用。
+
+- 輸出偵錯日誌：開啟後會把日誌輸出到`UmaTemp/UmaLog.txt`，每一次啟動程式都會刪除上一個`UmaLog.txt`，如果你願意的話可以勾選此選項，遇到問題要回報時可以附上`UmaLog.txt`，這樣可以更好地判斷問題出在哪裡。
 
 ### 2. 選取遊戲視窗  
 按下「選取視窗」，選擇對應的遊戲視窗名稱，之後應該要看到「已找到遊戲視窗」。
