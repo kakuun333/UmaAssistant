@@ -41,7 +41,7 @@ void GameWindowFinder::EnumWindow()
 			utf8name == u8"Microsoft Text Input Application")
 			continue;
 
-		System::String^ sys_string = utility::stdStr2system(utf8name);
+		System::String^ sys_string = util::stdStr2system(utf8name);
 
 		global::form::previewForm->window_listbox->Items->Add(sys_string);
 
@@ -59,22 +59,22 @@ void GameWindowFinder::CreateFindGameWindowThread()
 			while (true)
 			{
 				//if (FindWindow(nullptr, utility::string2wstring(GetCurrentGameWindowName()).c_str()))
-				if (FindWindow(nullptr, utility::string2wstring(global::config->GameWindowName).c_str()))
+				if (FindWindow(nullptr, util::string2wstring(global::config->GameWindowName).c_str()))
 				{
-					_currentGameWindow = FindWindow(nullptr, utility::string2wstring(global::config->GameWindowName).c_str());
+					_currentGameWindow = FindWindow(nullptr, util::string2wstring(global::config->GameWindowName).c_str());
 					//std::cout << u8"[GameWindowFinder] GameWindow: " << global::config->GameWindowName << std::endl;
 
 					switch (global::config->SoftwareLanguage)
 					{
 					case static_cast<int>(SoftwareLanguageType::JP):
-						utility::formctrl::Text(global::form::umaForm->game_window_status_label, u8"ゲームウィンドウが見つけました");
+						util::formctrl::Text(global::form::umaForm->game_window_status_label, u8"ゲームウィンドウが見つけました");
 						break;
 					case static_cast<int>(SoftwareLanguageType::TW):
-						utility::formctrl::Text(global::form::umaForm->game_window_status_label, u8"已找到遊戲視窗");
+						util::formctrl::Text(global::form::umaForm->game_window_status_label, u8"已找到遊戲視窗");
 						break;
 					}
 					
-					utility::formctrl::ForeColor(global::form::umaForm->game_window_status_label, 0, 255, 0);
+					util::formctrl::ForeColor(global::form::umaForm->game_window_status_label, 0, 255, 0);
 				}
 				else
 				{
@@ -85,14 +85,14 @@ void GameWindowFinder::CreateFindGameWindowThread()
 					switch (global::config->SoftwareLanguage)
 					{
 					case static_cast<int>(SoftwareLanguageType::JP):
-						utility::formctrl::Text(global::form::umaForm->game_window_status_label, u8"ゲームウィンドウが見つかりません");
+						util::formctrl::Text(global::form::umaForm->game_window_status_label, u8"ゲームウィンドウが見つかりません");
 						break;
 					case static_cast<int>(SoftwareLanguageType::TW):
-						utility::formctrl::Text(global::form::umaForm->game_window_status_label, u8"未找到遊戲視窗");
+						util::formctrl::Text(global::form::umaForm->game_window_status_label, u8"未找到遊戲視窗");
 						break;
 					}
 					
-					utility::formctrl::ForeColor(global::form::umaForm->game_window_status_label, 255, 0, 0);
+					util::formctrl::ForeColor(global::form::umaForm->game_window_status_label, 255, 0, 0);
 				}
 				std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 			}

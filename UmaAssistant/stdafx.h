@@ -32,6 +32,8 @@
 #include <vector>
 #include <deque>
 
+#include <variant> // C++ 17
+
 
 // Gdi+
 #include <GdiPlus.h>
@@ -90,15 +92,16 @@ using json = nlohmann::json;
 // data
 #include "class/data/UmaEventData.h"
 #include "class/data/ScenarioEventData.h"
-#include "class/data/SimilarUmaEventData.h"
 #include "class/data/UmaGetCharData.h"
+#include "class/data/UmaEventNameData.h"
 
 /*			utility			*/
-#include "utility/CharacterConvert.h"
-#include "utility/CharacterCombine.h"
-#include "utility/CharacterFilter.h"
-#include "utility/CharacterCompare.h"
-#include "utility/FormControl.h"
+#include "util/CharacterConvert.h"
+#include "util/CharacterCombine.h"
+#include "util/CharacterFilter.h"
+#include "util/CharacterCompare.h"
+#include "util/FormControl.h"
+#include "util/Constants.h"
 
 /*			enum			*/
 #include "enum/UmaEventDataType.h"

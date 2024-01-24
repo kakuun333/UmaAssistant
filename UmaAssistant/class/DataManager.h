@@ -2,14 +2,17 @@
 
 
 #include <nlohmann/json.hpp>
+using json = nlohmann::json;
 
 #include "data/UmaEventData.h"
+#include "data/UmaEventNameData.h"
 #include "data/ScenarioEventData.h"
 
 // STL
 #include <mutex>
 #include <string>
 #include <deque>
+#include <variant>
 
 class DataManager
 {
@@ -22,13 +25,12 @@ private:
 
 	static bool _currentCharacterInfoLocked;
 
-	static nlohmann::json event_data_jp_json;
-	static nlohmann::json event_data_tw_json;
+	json event_data_jp_json;
+	json event_data_tw_json;
+	json event_data_jp_trans_tw_json;
 
-	static nlohmann::json event_data_jp_trans_tw_json;
-
-	static nlohmann::json scenario_event_data_jp_json;
-	static nlohmann::json scenario_event_data_tw_json;
+	json event_name_data_jp_json;
+	json event_name_data_tw_json;
 
 	std::mutex dataMutex;
 public:
@@ -41,17 +43,16 @@ public:
 		return _instance;
 	}
 
-	static void InitEventDataJson();
+	void InitEventDataJson();
 	
-	UmaEventData GetCurrentCharacterUmaEventDataByList(std::deque<std::string> scanned_text_list);
-
-	UmaEventData GetSapokaUmaEventDataByList(std::deque<std::string> scanned_text_list);
-
-	ScenarioEventData GetScenarioEventDataByList(std::deque<std::string> scanned_text_list);
+	bool SetCurrentCharacterInfoDict(std::string event_owner);
 
 	bool TryGetCurrentCharacterByList(std::deque<std::string> scanned_text_list);
 
-	bool SetCurrentCharacterInfoDict(std::string event_owner);
+	UmaEventNameData GetMaxSimilarityUmaEventNameDataByList(std::deque<std::string> scanned_text_list);
+
+	std::variant<UmaEventData, ScenarioEventData> DataManager::GetEventDataByUmaEventNameData(UmaEventNameData umaEventNameData);
+
 
 #pragma region 內嵌函式
 	inline bool IsCurrentCharacterInfoLocked()
@@ -71,10 +72,14 @@ public:
 #pragma endregion
 
 #pragma region 已棄用的函式
-	UmaEventData GetCurrentCharacterUmaEventData(std::string scanned_text);
-	UmaEventData GetSapokaUmaEventData(std::string scanned_text);
-	ScenarioEventData GetScenarioEventData(std::string scanned_text);
-	bool TryGetCurrentCharacterName(std::string scanned_text);
+	//UmaEventData GetCurrentCharacterUmaEventDataByList(std::deque<std::string> scanned_text_list);
+	//UmaEventData GetSapokaUmaEventDataByList(std::deque<std::string> scanned_text_list);
+	//ScenarioEventData GetScenarioUmaEventDataByList(std::deque<std::string> scanned_text_list);
+
+	//UmaEventData GetCurrentCharacterUmaEventData(std::string scanned_text);
+	//UmaEventData GetSapokaUmaEventData(std::string scanned_text);
+	//ScenarioEventData GetScenarioEventData(std::string scanned_text);
+	//bool TryGetCurrentCharacterName(std::string scanned_text);
 #pragma endregion
 };
 

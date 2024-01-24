@@ -11,33 +11,33 @@ driver = webdriver.Chrome();
 # 全局變數
 DEBUG_MODE = False;
 
-class UmaDataType:
+class DumpDataType:
     CHARACTER = 0,
     SAPOKA = 1
 
 
 
-char_cvt_data_dict = utility.read_json_file(r"../UmaData/event_data_jp_cvt_tw_char.json") or {};
+char_cvt_data_dict = utility.read_json_file(r"../UmaData/convert_data/event_data_jp_cvt_tw_char.json") or {};
 
-card_cvt_data_dict = utility.read_json_file(r"../UmaData/event_data_jp_cvt_tw_card.json") or {};
+card_cvt_data_dict = utility.read_json_file(r"../UmaData/convert_data/event_data_jp_cvt_tw_card.json") or {};
 
 """
 event_dict = {
     jp_event_owner: {
         "tw_event_owner": tw_event_owner,
-        "event_title_dict": {
-            jp_event_title: tw_event_title,
-            jp_event_title: tw_event_title,
-            jp_event_title: tw_event_title,
+        "event_name_dict": {
+            jp_event_name: tw_event_name,
+            jp_event_name: tw_event_name,
+            jp_event_name: tw_event_name,
             ......
         }
     },
     jp_event_owner: {
         "tw_event_owner": tw_event_owner,
-        "event_title_dict": {
-            jp_event_title: tw_event_title,
-            jp_event_title: tw_event_title,
-            jp_event_title: tw_event_title,
+        "event_name_dict": {
+            jp_event_name: tw_event_name,
+            jp_event_name: tw_event_name,
+            jp_event_name: tw_event_name,
             ......
         }
     },
@@ -101,7 +101,7 @@ def get_tw_card_event_owner():
     
     return tw_event_owner;
 
-def get_event_title_dict():
+def get_event_name_dict():
     dict = {};
 
     title_pattern = r".+/(.+)";
@@ -114,14 +114,14 @@ def get_event_title_dict():
         title = utility.remove_space(title);
         if (title != None and '/' in title and a.text):
             try:
-                jp_event_title = re.match(title_pattern, title).group(1);
+                jp_event_name = re.match(title_pattern, title).group(1);
             except:
-                jp_event_title = "【遺失】"
+                jp_event_name = "【遺失】"
                 
-            tw_event_title = a.text
+            tw_event_name = a.text
 
-            dict[jp_event_title] = tw_event_title;
-            print("jp_title: " + jp_event_title + "  tw_title: " + tw_event_title);
+            dict[jp_event_name] = tw_event_name;
+            print("jp_title: " + jp_event_name + "  tw_title: " + tw_event_name);
 
 
     return dict;
@@ -221,14 +221,14 @@ def get_jp_char_event_owner():
     return jp_char_event_owner;
 
 
-def list_to_dict(jp_event_title_list, tw_event_title_list):
+def list_to_dict(jp_event_name_list, tw_event_name_list):
     dict = {};
 
-    for i in range(len(jp_event_title_list)):
+    for i in range(len(jp_event_name_list)):
         try:
-            dict[jp_event_title_list[i]] = tw_event_title_list[i];
+            dict[jp_event_name_list[i]] = tw_event_name_list[i];
         except:
-            print("[警告] tw_event_title_list 超出索引範圍！");
+            print("[警告] tw_event_name_list 超出索引範圍！");
 
     return dict;
 
@@ -245,14 +245,14 @@ def dump_card_convert_data():
         tw_event_owner = get_tw_card_event_owner();
         jp_event_owner = get_jp_card_event_owner();
 
-        # event_title_dict = get_event_title_dict();
+        # event_name_dict = get_event_name_dict();
 
 
         got_tw_list = False;
-        tw_event_title_list = [];
+        tw_event_name_list = [];
         while (not got_tw_list):
-            tw_event_title_list = get_event_title_list();
-            if (len(tw_event_title_list) != 0):
+            tw_event_name_list = get_event_title_list();
+            if (len(tw_event_name_list) != 0):
                 got_tw_list = True;
             time.sleep(0.25);
 
@@ -261,19 +261,19 @@ def dump_card_convert_data():
         utility.switch_to_new_tab(driver);
 
         got_jp_list = False;
-        jp_event_title_list = [];
+        jp_event_name_list = [];
         while (not got_jp_list):
-            jp_event_title_list = get_event_title_list();
-            if (len(jp_event_title_list) != 0):
+            jp_event_name_list = get_event_title_list();
+            if (len(jp_event_name_list) != 0):
                 got_jp_list = True;
             time.sleep(0.25);
         
-        event_title_dict = list_to_dict(jp_event_title_list, tw_event_title_list);
+        event_name_dict = list_to_dict(jp_event_name_list, tw_event_name_list);
 
 
         card_cvt_data_dict[jp_event_owner] = {
             "tw_event_owner": tw_event_owner,
-            "event_title_dict": event_title_dict,
+            "event_name_dict": event_name_dict,
         }
 
         json_string = json.dumps(card_cvt_data_dict, indent=2, ensure_ascii=False)
@@ -306,10 +306,10 @@ def dump_char_convert_data():
         # time.sleep(1.5);
 
         got_tw_list = False;
-        tw_event_title_list = [];
+        tw_event_name_list = [];
         while (not got_tw_list):
-            tw_event_title_list = get_event_title_list();
-            if (len(tw_event_title_list) != 0):
+            tw_event_name_list = get_event_title_list();
+            if (len(tw_event_name_list) != 0):
                 got_tw_list = True;
             time.sleep(0.25);
 
@@ -320,18 +320,18 @@ def dump_char_convert_data():
         jp_char_event_owner = get_jp_char_event_owner();
 
         got_jp_list = False;
-        jp_event_title_list = [];
+        jp_event_name_list = [];
         while (not got_jp_list):
-            jp_event_title_list = get_event_title_list();
-            if (len(jp_event_title_list) != 0):
+            jp_event_name_list = get_event_title_list();
+            if (len(jp_event_name_list) != 0):
                 got_jp_list = True;
             time.sleep(0.25);
 
-        event_title_dict = list_to_dict(jp_event_title_list, tw_event_title_list);
+        event_name_dict = list_to_dict(jp_event_name_list, tw_event_name_list);
 
         char_cvt_data_dict[jp_char_event_owner] = {
             "tw_event_owner": tw_char_event_owner,
-            "event_title_dict": event_title_dict,
+            "event_name_dict": event_name_dict,
         }
 
         json_string = json.dumps(char_cvt_data_dict, indent=2, ensure_ascii=False)
@@ -351,15 +351,15 @@ def dump_single_cvt_data(umaDataType, tw_data_url):
     driver.get(tw_data_url);
     time.sleep(6);
 
-    if (umaDataType == UmaDataType.CHARACTER):
+    if (umaDataType == DumpDataType.CHARACTER):
         tw_char_event_owner = get_tw_char_event_owner();
 
 
         got_tw_list = False;
-        tw_event_title_list = [];
+        tw_event_name_list = [];
         while (not got_tw_list):
-            tw_event_title_list = get_event_title_list();
-            if (len(tw_event_title_list) != 0):
+            tw_event_name_list = get_event_title_list();
+            if (len(tw_event_name_list) != 0):
                 got_tw_list = True;
             time.sleep(0.25);
 
@@ -370,33 +370,33 @@ def dump_single_cvt_data(umaDataType, tw_data_url):
         jp_char_event_owner = get_jp_char_event_owner();
 
         got_jp_list = False;
-        jp_event_title_list = [];
+        jp_event_name_list = [];
         while (not got_jp_list):
-            jp_event_title_list = get_event_title_list();
-            if (len(jp_event_title_list) != 0):
+            jp_event_name_list = get_event_title_list();
+            if (len(jp_event_name_list) != 0):
                 got_jp_list = True;
             time.sleep(0.25);
 
-        event_title_dict = list_to_dict(jp_event_title_list, tw_event_title_list);
+        event_name_dict = list_to_dict(jp_event_name_list, tw_event_name_list);
 
         char_cvt_data_dict[jp_char_event_owner] = {
             "tw_event_owner": tw_char_event_owner,
-            "event_title_dict": event_title_dict,
+            "event_name_dict": event_name_dict,
         }
 
         json_string = json.dumps(char_cvt_data_dict, indent=2, ensure_ascii=False)
 
         utility.write_convert_data_char(json_string);
-    elif (umaDataType == UmaDataType.SAPOKA):
+    elif (umaDataType == DumpDataType.SAPOKA):
         tw_event_owner = get_tw_card_event_owner();
         jp_event_owner = get_jp_card_event_owner();
 
 
         got_tw_list = False;
-        tw_event_title_list = [];
+        tw_event_name_list = [];
         while (not got_tw_list):
-            tw_event_title_list = get_event_title_list();
-            if (len(tw_event_title_list) != 0):
+            tw_event_name_list = get_event_title_list();
+            if (len(tw_event_name_list) != 0):
                 got_tw_list = True;
             time.sleep(0.25);
 
@@ -405,19 +405,19 @@ def dump_single_cvt_data(umaDataType, tw_data_url):
         utility.switch_to_new_tab(driver);
 
         got_jp_list = False;
-        jp_event_title_list = [];
+        jp_event_name_list = [];
         while (not got_jp_list):
-            jp_event_title_list = get_event_title_list();
-            if (len(jp_event_title_list) != 0):
+            jp_event_name_list = get_event_title_list();
+            if (len(jp_event_name_list) != 0):
                 got_jp_list = True;
             time.sleep(0.25);
         
-        event_title_dict = list_to_dict(jp_event_title_list, tw_event_title_list);
+        event_name_dict = list_to_dict(jp_event_name_list, tw_event_name_list);
 
 
         card_cvt_data_dict[jp_event_owner] = {
             "tw_event_owner": tw_event_owner,
-            "event_title_dict": event_title_dict,
+            "event_name_dict": event_name_dict,
         }
 
         json_string = json.dumps(card_cvt_data_dict, indent=2, ensure_ascii=False)
@@ -428,11 +428,11 @@ def dump_single_cvt_data(umaDataType, tw_data_url):
 #####   獲取單筆資料    #####
 
 # 角色
-# dump_single_cvt_data(UmaDataType.CHARACTER, "https://wiki.biligame.com/umamusume/%E3%80%90%E8%88%87%E7%9C%BE%E4%B8%8D%E5%90%8C%E7%9A%84%E6%8A%80%E5%B8%AB%E3%80%91%E6%88%90%E7%94%B0%E5%A4%A7%E9%80%B2")
-# dump_single_cvt_data(UmaDataType.CHARACTER, "https://wiki.biligame.com/umamusume/%E3%80%90Dream_Deliverer%E3%80%91%E5%8B%9D%E5%88%A9%E7%8D%8E%E5%88%B8")
+dump_single_cvt_data(DumpDataType.CHARACTER, "https://wiki.biligame.com/umamusume/%E3%80%90Rocket%E2%98%86Star%E3%80%91%E6%8E%A1%E7%8F%A0")
+
 # 支援卡
-dump_single_cvt_data(UmaDataType.SAPOKA, "https://wiki.biligame.com/umamusume/%E3%80%90%E5%B8%9D%E7%9A%87%E2%94%80%E2%94%80%E7%9A%87%E2%94%80%E2%94%80%E7%9A%87%E2%94%80%E2%94%80%EF%BC%81%EF%BC%81%EF%BC%81%E3%80%91%E6%9D%B1%E6%B5%B7%E5%B8%9D%E7%9A%87");
-dump_single_cvt_data(UmaDataType.SAPOKA, "https://wiki.biligame.com/umamusume/%E3%80%90TT_Ignition!%E3%80%91%E9%9B%99%E6%B8%A6%E8%BC%AA");
+# dump_single_cvt_data(DumpDataType.SAPOKA, "https://wiki.biligame.com/umamusume/%E3%80%90%E5%B8%9D%E7%9A%87%E2%94%80%E2%94%80%E7%9A%87%E2%94%80%E2%94%80%E7%9A%87%E2%94%80%E2%94%80%EF%BC%81%EF%BC%81%EF%BC%81%E3%80%91%E6%9D%B1%E6%B5%B7%E5%B8%9D%E7%9A%87");
+# dump_single_cvt_data(DumpDataType.SAPOKA, "https://wiki.biligame.com/umamusume/%E3%80%90TT_Ignition!%E3%80%91%E9%9B%99%E6%B8%A6%E8%BC%AA");
 
 
 
@@ -474,14 +474,14 @@ dump_single_cvt_data(UmaDataType.SAPOKA, "https://wiki.biligame.com/umamusume/%E
 # tw_event_owner = get_tw_card_event_owner();
 # jp_event_owner = get_jp_card_event_owner();
 
-# event_title_dict = get_event_title_dict();
+# event_name_dict = get_event_name_dict();
 
 
 # got_tw_list = False;
-# tw_event_title_list = [];
+# tw_event_name_list = [];
 # while (not got_tw_list):
-#     tw_event_title_list = get_event_title_list();
-#     if (len(tw_event_title_list) != 0):
+#     tw_event_name_list = get_event_title_list();
+#     if (len(tw_event_name_list) != 0):
 #         got_tw_list = True;
 #     time.sleep(0.25);
 
@@ -490,19 +490,19 @@ dump_single_cvt_data(UmaDataType.SAPOKA, "https://wiki.biligame.com/umamusume/%E
 # utility.switch_to_new_tab(driver);
 
 # got_jp_list = False;
-# jp_event_title_list = [];
+# jp_event_name_list = [];
 # while (not got_jp_list):
-#     jp_event_title_list = get_event_title_list();
-#     if (len(jp_event_title_list) != 0):
+#     jp_event_name_list = get_event_title_list();
+#     if (len(jp_event_name_list) != 0):
 #         got_jp_list = True;
 #     time.sleep(0.25);
 
-# event_title_dict = list_to_dict(jp_event_title_list, tw_event_title_list);
+# event_name_dict = list_to_dict(jp_event_name_list, tw_event_name_list);
 
 
 # event_dict[jp_event_owner] = {
 #     "tw_event_owner": tw_event_owner,
-#     "event_title_dict": event_title_dict,
+#     "event_name_dict": event_name_dict,
 # }
 
 # json_string = json.dumps(event_dict, indent=2, ensure_ascii=False)

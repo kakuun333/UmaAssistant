@@ -31,7 +31,7 @@ namespace UmaAssistant
 
 			std::map<std::string, HWND> windowDict = windowFinder->GetWindowDict();
 
-			std::string windowName = utility::systemStr2std(selectedItem);
+			std::string windowName = util::systemStr2std(selectedItem);
 
 			if (windowDict[windowName])
 			{

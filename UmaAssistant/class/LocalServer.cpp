@@ -98,7 +98,7 @@ void LocalServer::StartLocalServer(Object^ port)
 		// 開始監聽請求
 		listener->Start();
 
-		std::cout << u8"正在監聽本地伺服器... Port: " << utility::systemStr2std(port_str) << std::endl;
+		std::cout << u8"正在監聽本地伺服器... Port: " << util::systemStr2std(port_str) << std::endl;
 
 		while (true)
 		{
@@ -173,7 +173,7 @@ void LocalServer::StartLocalServer(Object^ port)
 	}
 	catch (Exception^ ex)
 	{
-		std::cout << u8"Local Server Error: " << utility::systemStr2std(ex->Message) << std::endl;
+		std::cout << u8"Local Server Error: " << util::systemStr2std(ex->Message) << std::endl;
 	}
 	finally
 	{

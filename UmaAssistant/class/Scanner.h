@@ -65,16 +65,12 @@ private:
 
 	std::string _GetScannedText(cv::Mat image, ImageType imgType = ImageType::IMG_EVENT_TITLE, bool englishMode = false);
 
-	void _UpdateSapokaChoice(WebManager* webManager, UmaEventData sapokaUmaEventData);
-
-	void _UpdateCharChoice(WebManager* webManager, UmaEventData charUmaEventData);
+	void _UpdateSapokaOrCharacterChoice(WebManager* webManager, UmaEventData sapokaUmaEventData);
 
 	void _UpdateScenarioChoice(WebManager* webManager, ScenarioEventData scenarioEventData);
 
 	// 尋找 CurrentCharacter
 	void _LookingForCurrentCharacter(Screenshot& ss, std::string& henseiCharNameText);
-
-	bool _IsEventTextEmpty(Screenshot& ss, std::string& eventText);
 
 	inline void _PrintScanned(double elapsedTime)
 	{
@@ -87,12 +83,12 @@ private:
 	{
 		if constexpr (std::is_same_v<T, UmaEventData>)
 		{
-			if (currentEventData.umaEvent.event_title == _previousUpdatedUmaEventData.umaEvent.event_title)
+			if (currentEventData.umaEvent.event_title == _previousUpdatedUmaEventData.umaEvent.event_name)
 				return true;
 		}
 		else if constexpr (std::is_same_v<T, ScenarioEventData>)
 		{
-			if (currentEventData.event_title == _previousUpdatedScenarioEventData.event_title)
+			if (currentEventData.event_name == _previousUpdatedScenarioEventData.event_name)
 				return true;
 		}
 

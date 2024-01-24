@@ -25,7 +25,7 @@ namespace UmaAssistant
 		this->FormClosing += gcnew FormClosingEventHandler(this, &SettingsForm::FormClosingHandler);
 
 		// 初始化 TextBox 的 Text
-		serverPortTextBox->Text = utility::stdStr2system(global::config->LocalServer["Port"]);
+		serverPortTextBox->Text = util::stdStr2system(global::config->LocalServer["Port"]);
 		scanInterval_textBox->Text = System::Convert::ToString(global::config->ScanInterval);
 
 		// 註冊 KeyPress 事件
@@ -159,7 +159,7 @@ namespace UmaAssistant
 
 		if (textbox->Text->Length >= 4)
 		{
-			global::config->LocalServer["Port"] = utility::systemStr2std(textbox->Text);
+			global::config->LocalServer["Port"] = util::systemStr2std(textbox->Text);
 
 			global::config->WriteToJson();
 		}
@@ -280,8 +280,8 @@ namespace UmaAssistant
 
 				array<System::String^>^ sys_str_arr =
 				{
-					utility::stdStr2system(form_obj_name),
-					utility::stdStr2system(trans_name),
+					util::stdStr2system(form_obj_name),
+					util::stdStr2system(trans_name),
 				};
 
 				this->TraverseControls(this, sys_str_arr);
@@ -297,8 +297,8 @@ namespace UmaAssistant
 
 				array<System::String^>^ sys_str_arr =
 				{
-					utility::stdStr2system(form_obj_name),
-					utility::stdStr2system(trans_name),
+					util::stdStr2system(form_obj_name),
+					util::stdStr2system(trans_name),
 				};
 
 				this->TraverseControls(this, sys_str_arr);
@@ -502,7 +502,7 @@ namespace UmaAssistant
 		this->scanInterval_textBox->Text = System::Convert::ToString(DEFAULT_SCAN_INTERVAL);
 
 		// LocalServer
-		this->serverPortTextBox->Text = utility::stdStr2system(DEFAULT_LOCAL_SERVER_PORT);
+		this->serverPortTextBox->Text = util::stdStr2system(DEFAULT_LOCAL_SERVER_PORT);
 
 		// GameWindowName
 		global::config->GameWindowName = NULL_GAME_WINDOW_NAME;

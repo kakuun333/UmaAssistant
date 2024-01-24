@@ -48,7 +48,7 @@ int main(array<String^>^ args)
 #pragma endregion
 #pragma region 初始化字型
 	// 加載字型
-	AddFontResourceW(utility::string2wstring(global::path::std_MochiyPopOne).c_str());
+	AddFontResourceW(util::string2wstring(global::path::std_MochiyPopOne).c_str());
 #pragma endregion
 
 
@@ -58,14 +58,14 @@ int main(array<String^>^ args)
 	Scanner::InitOcrEng();
 
 	// 初始化 DataManager
-	DataManager::InitEventDataJson();
+	DataManager::GetInstance()->InitEventDataJson();
 
 	// 初始化 python
 	//PyManager::GetInstance()->Init();
 
 
 #pragma region 啟動本地伺服器
-	System::String^ port = utility::stdStr2system(global::config->LocalServer["Port"]);
+	System::String^ port = util::stdStr2system(global::config->LocalServer["Port"]);
 	LocalServer::Instance->Start(port);
 
 	Application::EnableVisualStyles();
@@ -156,7 +156,7 @@ int main(array<String^>^ args)
 
 	ConsoleManager::GetInstance()->Disable();
 
-	RemoveFontResourceW(utility::string2wstring(global::path::std_MochiyPopOne).c_str());
+	RemoveFontResourceW(util::string2wstring(global::path::std_MochiyPopOne).c_str());
 
 
 #pragma endregion

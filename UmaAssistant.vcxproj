@@ -157,22 +157,23 @@
     <ClCompile Include="UmaAssistant\class\FileManager.cpp" />
     <ClCompile Include="UmaAssistant\class\ref\FormController.cpp" />
     <ClCompile Include="UmaAssistant\global\Others.cpp" />
-    <ClCompile Include="UmaAssistant\utility\CharacterCompare.cpp" />
-    <ClCompile Include="UmaAssistant\utility\FormControl.cpp" />
+    <ClCompile Include="UmaAssistant\util\CharacterCompare.cpp" />
+    <ClCompile Include="UmaAssistant\util\Constants.cpp" />
+    <ClCompile Include="UmaAssistant\util\FormControl.cpp" />
     <ClCompile Include="UmaAssistant\global\UmaSwitch.cpp" />
     <ClCompile Include="UmaAssistant\class\ref\FormDesigner.cpp" />
     <ClCompile Include="UmaAssistant\class\data\UmaEventData.cpp" />
     <ClCompile Include="UmaAssistant\class\DataManager.cpp" />
-    <ClCompile Include="UmaAssistant\utility\CharacterFilter.cpp" />
+    <ClCompile Include="UmaAssistant\util\CharacterFilter.cpp" />
     <ClCompile Include="UmaAssistant\global\FormManager.cpp" />
     <ClCompile Include="UmaAssistant\form\PreviewForm.cpp" />
     <ClCompile Include="UmaAssistant\form\SettingsForm.cpp" />
     <ClCompile Include="UmaAssistant\class\LuaManager.cpp" />
     <ClCompile Include="UmaAssistant\main.cpp" />
     <ClCompile Include="UmaAssistant\global\Path.cpp" />
-    <ClCompile Include="UmaAssistant\utility\CharacterCombine.cpp" />
+    <ClCompile Include="UmaAssistant\util\CharacterCombine.cpp" />
     <ClCompile Include="UmaAssistant\class\Scanner.cpp" />
-    <ClCompile Include="UmaAssistant\utility\CharacterConvert.cpp" />
+    <ClCompile Include="UmaAssistant\util\CharacterConvert.cpp" />
     <ClCompile Include="UmaAssistant\class\Screenshot.cpp" />
     <ClCompile Include="UmaAssistant\form\UmaForm.cpp" />
     <ClCompile Include="UmaAssistant\class\WebManager.cpp" />
@@ -181,6 +182,7 @@
     <ClCompile Include="UmaAssistant\class\UmaLog.cpp" />
     <ClCompile Include="UmaAssistant\class\UmaDataUpdater.cpp" />
     <ClCompile Include="UmaAssistant\class\URLManager.cpp" />
+    <ClCompile Include="UmaAssistant\class\data\UmaEventNameData.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
@@ -201,15 +203,16 @@
     <ClInclude Include="UmaAssistant\enum\SoftwareLanguageType.h" />
     <ClInclude Include="UmaAssistant\enum\UmaDataType.h" />
     <ClInclude Include="UmaAssistant\global\Others.h" />
-    <ClInclude Include="UmaAssistant\utility\CharacterCompare.h" />
-    <ClInclude Include="UmaAssistant\utility\FormControl.h" />
+    <ClInclude Include="UmaAssistant\util\CharacterCompare.h" />
+    <ClInclude Include="UmaAssistant\util\Constants.h" />
+    <ClInclude Include="UmaAssistant\util\FormControl.h" />
     <ClInclude Include="UmaAssistant\global\UmaSwitch.h" />
     <ClInclude Include="UmaAssistant\class\ref\FormDesigner.h" />
     <ClInclude Include="UmaAssistant\class\data\UmaEventData.h" />
     <ClInclude Include="UmaAssistant\class\DataManager.h" />
     <ClInclude Include="UmaAssistant\enum\UmaEventDataType.h" />
-    <ClInclude Include="UmaAssistant\utility\CharacterConvert.h" />
-    <ClInclude Include="UmaAssistant\utility\CharacterFilter.h" />
+    <ClInclude Include="UmaAssistant\util\CharacterConvert.h" />
+    <ClInclude Include="UmaAssistant\util\CharacterFilter.h" />
     <ClInclude Include="UmaAssistant\global\FormManager.h" />
     <ClInclude Include="UmaAssistant\form\PreviewForm.h">
       <FileType>CppForm</FileType>
@@ -219,7 +222,7 @@
     </ClInclude>
     <ClInclude Include="UmaAssistant\class\LuaManager.h" />
     <ClInclude Include="UmaAssistant\global\Path.h" />
-    <ClInclude Include="UmaAssistant\utility\CharacterCombine.h" />
+    <ClInclude Include="UmaAssistant\util\CharacterCombine.h" />
     <ClInclude Include="UmaAssistant\class\Scanner.h" />
     <ClInclude Include="UmaAssistant\class\Screenshot.h" />
     <ClInclude Include="UmaAssistant\form\UmaForm.h">
@@ -229,11 +232,11 @@
     <ClInclude Include="UmaAssistant\class\WebManager.h" />
     <ClInclude Include="UmaAssistant\class\GameWindowFinder.h" />
     <ClInclude Include="UmaAssistant\class\UmaTimer.h" />
-    <ClInclude Include="UmaAssistant\class\data\SimilarUmaEventData.h" />
     <ClInclude Include="UmaAssistant\class\UmaLog.h" />
     <ClInclude Include="UmaAssistant\class\data\UmaGetCharData.h" />
     <ClInclude Include="UmaAssistant\class\UmaDataUpdater.h" />
     <ClInclude Include="UmaAssistant\class\URLManager.h" />
+    <ClInclude Include="UmaAssistant\class\data\UmaEventNameData.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PreviewForm.resx" />

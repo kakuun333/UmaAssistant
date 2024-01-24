@@ -4,7 +4,7 @@
 
 #include "../global/Path.h"
 
-#include "../utility/CharacterConvert.h"
+#include "../util/CharacterConvert.h"
 
 namespace UmaAssistant {
 

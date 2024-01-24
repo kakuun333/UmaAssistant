@@ -24,3 +24,22 @@ DEAULT_EVENT_NAME_DATA_DICT = {
     "sapoka": [],
     "scenario": []
 }
+
+DEAULT_SKILL_DATA_DICT = {
+    "blue": {
+        "normal": {},
+        "rare": {}
+    },
+    "green": {
+        "normal": {},
+        "rare": {}
+    },
+    "red": {
+        "normal": {},
+        "rare": {}
+    },
+    "yellow": {
+        "normal": {},
+        "rare": {}
+    }
+}

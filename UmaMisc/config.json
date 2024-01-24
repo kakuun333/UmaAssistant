@@ -6,8 +6,8 @@
     "WinFormButton": 16777216
   },
   "DebugMode": true,
-  "GameServer": 0,
-  "GameWindow": 0,
+  "GameServer": 1,
+  "GameWindow": 1,
   "GameWindowBoundOffset": {
     "DMM": {
       "Height": 0,
@@ -22,13 +22,13 @@
       "Y": 0
     }
   },
-  "GameWindowName": "umamusume",
+  "GameWindowName": "BlueStacks App Player 1",
   "JpServerLang": 0,
   "LocalServer": {
     "Port": "5854"
   },
   "OutputLogFile": false,
-  "PreviousCurrentCharacterName": "ヴィブロス（Voyage étincelant）",
+  "PreviousCurrentCharacterName": "黃金船（RUN！亂！亂槍射手！！）",
   "ScanInterval": 100,
   "SoftwareLanguage": 1
 }

@@ -25,7 +25,7 @@ namespace global
 
 		/*		std::string		*//*		std::string		*//*		std::string		*/
 		//std::string std_currentDir						 = utility::GetCurrentDir();  // char ªº CurrentDirectory
-		std::string std_currentDir						 = utility::systemStr2std(currentDir);
+		std::string std_currentDir						 = util::systemStr2std(currentDir);
 
 		// UmaPy
 		std::string std_umaPy = std_currentDir + "\\UmaPy";
@@ -63,7 +63,7 @@ namespace global
 
 		std::string std_similar_char_list_json			 = std_UmaData + "\\similar_char_list.json";
 
-		std::string std_black_listed_string_json		 = std_UmaData + "\\black_listed_string.json";
+		std::string std_blacklisted_string_json		 = std_UmaData + "\\blacklisted_string.json";
 
 		// UmaLua
 		std::string std_UmaLua							 = std_currentDir + "\\UmaLua";

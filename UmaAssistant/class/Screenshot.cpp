@@ -518,7 +518,7 @@ Screenshot::Screenshot()
 	}
 	catch (System::Exception^ ex)
 	{
-		umalog->print("[System::Exception] GetEventIconImage: ", utility::systemStr2std(ex->Message));
+		umalog->print("[System::Exception] GetEventIconImage: ", util::systemStr2std(ex->Message));
 	}
 
 	this->_CheckEventIcon(event_icon);
@@ -534,7 +534,7 @@ Screenshot::Screenshot()
 	}
 	catch (System::Exception^ ex)
 	{
-		umalog->print("[System::Exception] GetEventTitleImage: ", utility::systemStr2std(ex->Message));
+		umalog->print("[System::Exception] GetEventTitleImage: ", util::systemStr2std(ex->Message));
 	}
 
 	// character_name
@@ -562,22 +562,22 @@ Screenshot::Screenshot()
 	}
 	catch (System::Exception^ ex)
 	{
-		umalog->print("[System::Exception] GetHenseiCharacterAnotherNameImage: ", utility::systemStr2std(ex->Message));
+		umalog->print("[System::Exception] GetHenseiCharacterAnotherNameImage: ", util::systemStr2std(ex->Message));
 	}
 
 	// date
-	try
-	{
-		this->_GetDateImage();
-	}
-	catch (const std::exception& e)
-	{
-		umalog->print("[std::exception] GetHenseiCharacterAnotherNameImage:", e.what());
-	}
-	catch (System::Exception^ ex)
-	{
-		umalog->print("[System::Exception] GetHenseiCharacterAnotherNameImage: ", utility::systemStr2std(ex->Message));
-	}
+	//try
+	//{
+	//	this->_GetDateImage();
+	//}
+	//catch (const std::exception& e)
+	//{
+	//	umalog->print("[std::exception] GetHenseiCharacterAnotherNameImage:", e.what());
+	//}
+	//catch (System::Exception^ ex)
+	//{
+	//	umalog->print("[System::Exception] GetHenseiCharacterAnotherNameImage: ", util::systemStr2std(ex->Message));
+	//}
 
 
 	//this->GetSyousaiCharacterName();
@@ -620,7 +620,7 @@ void Screenshot::ShowImage()
 	//cv::imshow("syousai_character_name_gray_bin", syousai_character_name_gray_bin);
 
 	// ========== date ========== //
-	cv::imshow("date_gray_bin", date_gray_bin);
+	//cv::imshow("date_gray_bin", date_gray_bin);
 
 	cv::waitKey(10);
 }

@@ -21,13 +21,13 @@
     <ClCompile Include="UmaAssistant\class\Screenshot.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="UmaAssistant\utility\CharacterConvert.cpp">
+    <ClCompile Include="UmaAssistant\util\CharacterConvert.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="UmaAssistant\class\Scanner.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="UmaAssistant\utility\CharacterCombine.cpp">
+    <ClCompile Include="UmaAssistant\util\CharacterCombine.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="UmaAssistant\global\Path.cpp">
@@ -48,7 +48,7 @@
     <ClCompile Include="UmaAssistant\global\FormManager.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="UmaAssistant\utility\CharacterFilter.cpp">
+    <ClCompile Include="UmaAssistant\util\CharacterFilter.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="UmaAssistant\class\DataManager.cpp">
@@ -63,10 +63,10 @@
     <ClCompile Include="UmaAssistant\global\UmaSwitch.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="UmaAssistant\utility\FormControl.cpp">
+    <ClCompile Include="UmaAssistant\util\FormControl.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="UmaAssistant\utility\CharacterCompare.cpp">
+    <ClCompile Include="UmaAssistant\util\CharacterCompare.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="UmaAssistant\class\WebManager.cpp">
@@ -114,6 +114,12 @@
     <ClCompile Include="UmaAssistant\class\DiscordManager.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="UmaAssistant\util\Constants.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="UmaAssistant\class\data\UmaEventNameData.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UmaAssistant\form\UmaForm.h">
@@ -128,7 +134,7 @@
     <ClInclude Include="UmaAssistant\class\Scanner.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="UmaAssistant\utility\CharacterCombine.h">
+    <ClInclude Include="UmaAssistant\util\CharacterCombine.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="UmaAssistant\global\Path.h">
@@ -146,10 +152,10 @@
     <ClInclude Include="UmaAssistant\global\FormManager.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="UmaAssistant\utility\CharacterFilter.h">
+    <ClInclude Include="UmaAssistant\util\CharacterFilter.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="UmaAssistant\utility\CharacterConvert.h">
+    <ClInclude Include="UmaAssistant\util\CharacterConvert.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="UmaAssistant\class\DataManager.h">
@@ -167,10 +173,10 @@
     <ClInclude Include="UmaAssistant\global\UmaSwitch.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="UmaAssistant\utility\FormControl.h">
+    <ClInclude Include="UmaAssistant\util\FormControl.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="UmaAssistant\utility\CharacterCompare.h">
+    <ClInclude Include="UmaAssistant\util\CharacterCompare.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="UmaAssistant\class\WebManager.h">
@@ -221,9 +227,6 @@
     <ClInclude Include="UmaAssistant\class\UmaTimer.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="UmaAssistant\class\data\SimilarUmaEventData.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
     <ClInclude Include="UmaAssistant\enum\JpServerLangType.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
@@ -249,6 +252,12 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="UmaAssistant\class\DiscordManager.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="UmaAssistant\util\Constants.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="UmaAssistant\class\data\UmaEventNameData.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

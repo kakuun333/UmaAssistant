@@ -77,5 +77,5 @@ void WebManager::test()
 {
 	Object^ result = global::form::umaForm->choiceWebBrowser->Document->InvokeScript("test");
 
-	std::cout << utility::systemStr2std(result->ToString()) << std::endl;
+	std::cout << util::systemStr2std(result->ToString()) << std::endl;
 }

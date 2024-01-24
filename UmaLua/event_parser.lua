@@ -244,6 +244,9 @@ function parser.getSkillData(html, class)
     skill_name = string.gsub(skill_name, "%(丸%)", "");
     skill_name = string.gsub(skill_name, "%(二重丸%)", "");
 
+    skill_name = string.gsub(skill_name, "○", "◯");
+    skill_name = string.gsub(skill_name, "〇", "◯");
+
     -- 初始化 skill_dict
     local skill_dict = { --[[
         [skill_name] = {
@@ -260,10 +263,18 @@ function parser.getSkillData(html, class)
     local pattern = "<([%w]+)[%s+]class=\"(" .. class .. ")\"(.-)</body>";
     local tag, class, skill_html = string.match(html, pattern);
 
-    local skill_pt = string.match(skill_html, "<th>必要Pt.-<td>(%d+)</td>");
+    local skill_pt = string.match(skill_html, "<th>必要Pt.-<td>(%d+)</td>") or json.null;
+
+    --------------------------[修正]--------------------------
+    -- ライトニングステップ 的圖示名稱有錯誤，所以特別修正
+    if (skill_name == "ライトニングステップ") then skill_icon_name = "i_skill_y_r_3"; end
+
+    -- 修正缺少技能點的技能
+    if (skill_name == "コール＆レスポンス") then skill_pt = "200"; end
+    if (skill_name == "二段構え") then skill_pt = "200"; end
 
     -- skill_description
-    local skill_description = string.match(skill_html, "<th>効果.-<td>(.-)</td>");
+    local skill_description = string.match(skill_html, "<th>効果.-<td>(.-)</td>") or json.null;
 
     -- upper_skill
     local upper_skill = json.null;

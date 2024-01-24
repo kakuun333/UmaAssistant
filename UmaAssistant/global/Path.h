@@ -68,7 +68,7 @@ namespace global
 
 		extern std::string std_similar_char_list_json;
 
-		extern std::string std_black_listed_string_json;
+		extern std::string std_blacklisted_string_json;
 
 		// UmaLua
 		extern std::string std_update_event_data_lua;

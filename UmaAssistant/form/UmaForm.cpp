@@ -12,7 +12,7 @@ namespace UmaAssistant
 
 #pragma region 初始化 WebBrowser
 		// 提取 config 資料
-		System::String^ port = utility::stdStr2system(global::config->LocalServer["Port"]);
+		System::String^ port = util::stdStr2system(global::config->LocalServer["Port"]);
 		//json config = FileManager::GetInstance()->ReadJson(global::path::std_config);
 
 		//System::String^ port = utility::stdStr2system(config["LocalServer"]["Port"].get<std::string>());
@@ -46,6 +46,8 @@ namespace UmaAssistant
 
 	System::Void UmaForm::test_btn_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		DataManager* dataManager = DataManager::GetInstance();
+
 		//std::cout << utility::IsSimilar(u8"食いしん坊は伊達じゃない", u8"食いじん坊は伊達じゃよない") << std::endl;
 
 		//utility::IsSimilar(u8"灰簾石の瞳", u8"色雇五のだ睡");
@@ -54,13 +56,6 @@ namespace UmaAssistant
 
 		//utility::GetCharacterNameSimilarity(u8"キセキの白星オグリキャップ", u8"オグリキャップ（キセキの白星）");
 
-		/* UmaDataUpdater */
-		//UmaDataUpdater::GetInstance()->Update();
-
-
-		//global::config->WriteToJson();
-
-
 		//std::cout << utility::IsStringTooLong(u8"あああああああああああああああああああああああ") << std::endl;
 
 
@@ -68,7 +63,7 @@ namespace UmaAssistant
 		//float sim = utility::GetSimilarity(test, "With");
 		//std::cout << "sim: " << sim << std::endl;
 
-		//DataManager* dataManager = DataManager::GetInstance();
+		
 		//UmaEventData umaData = dataManager->GetCurrentCharacterUmaEventData(test);
 
 		//std::cout << "completed: " << (umaData.IsDataComplete() ? "true" : "false") << std::endl;
@@ -88,9 +83,15 @@ namespace UmaAssistant
 		//json_data = u8"Butterfly Sting";
 		//std::cout << utility::GetCharacterNameSimilarity(scanned, json_data) << std::endl;
 
-		DiscordManager* dcManager = DiscordManager::GetInstance();
-		dcManager->UpdateRPC();
-		std::cout << "CLICKED TEST BUTTON" << std::endl;
+
+
+		/* UmaDataUpdater */
+		//UmaDataUpdater::GetInstance()->Update();
+		//global::config->WriteToJson();
+
+		//DiscordManager* dcManager = DiscordManager::GetInstance();
+		//dcManager->UpdateRPC();
+		//std::cout << "CLICKED TEST BUTTON" << std::endl;
 	}
 
 	void UmaForm::OnChoiceDocumentCompleted(System::Object^ sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^ e)
@@ -144,7 +145,7 @@ namespace UmaAssistant
 			std::cout << u8"成功初始化上次培育的角色！ PreviousCurrentCharacterName: " << global::config->PreviousCurrentCharacterName << std::endl;
 			dataManager->SetCurrentCharacterInfoLock(true);
 
-			System::String^ sys_currentCharName = utility::stdStr2system(global::config->PreviousCurrentCharacterName);
+			System::String^ sys_currentCharName = util::stdStr2system(global::config->PreviousCurrentCharacterName);
 			webManager->ChangeCharacterName(sys_currentCharName);
 		}
 		else
@@ -186,7 +187,7 @@ namespace UmaAssistant
 				webManager->ChangeCharacterName("");
 				
 				System::String^ sys_event_owner = match->Groups[1]->Value;
-				std::string std_event_owner = utility::systemStr2std(sys_event_owner);
+				std::string std_event_owner = util::systemStr2std(sys_event_owner);
 
 				umalog->print("[UmaForm] CHARACTER MATCHED: ", std_event_owner);
 
@@ -214,7 +215,7 @@ namespace UmaAssistant
 				webManager->ChangeCharacterName("");
 
 				System::String^ sys_event_owner = match->Groups[1]->Value;
-				std::string std_event_owner = utility::systemStr2std(sys_event_owner);
+				std::string std_event_owner = util::systemStr2std(sys_event_owner);
 
 				umalog->print("[UmaForm] CHARACTER MATCHED: ", std_event_owner);
 
@@ -366,7 +367,7 @@ namespace UmaAssistant
 				this->scan_btn->Text = u8"停止";
 				break;
 			}
-			utility::formctrl::ForeColor(this->scan_state_label, 0, 255, 0);
+			util::formctrl::ForeColor(this->scan_state_label, 0, 255, 0);
 		}
 		else
 		{
@@ -384,7 +385,7 @@ namespace UmaAssistant
 				break;
 			}
 
-			utility::formctrl::ForeColor(this->scan_state_label, 255, 0, 0);
+			util::formctrl::ForeColor(this->scan_state_label, 255, 0, 0);
 		}
 	}
 

@@ -204,7 +204,6 @@ def convert_choice_effect_jp_to_tw(choice_effect, jp_event_owner = None, tw_even
         else:
             choice_effect = re.sub(jp, tw, choice_effect, flags=re.IGNORECASE);
 
-
     if (cvt_skill_data):
         # 技能名稱 jp 轉 tw
         try:
@@ -236,8 +235,6 @@ def convert_choice_effect_jp_to_tw(choice_effect, jp_event_owner = None, tw_even
     except:
         pass;
     # 情誼量條的名稱 jp 轉 tw
-
-
 
     return choice_effect;
 

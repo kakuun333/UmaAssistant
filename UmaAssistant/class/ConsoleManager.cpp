@@ -10,7 +10,7 @@ BOOL ConsoleManager::_CtrlHandler(DWORD fdwCtrlType)
 	if (fdwCtrlType == CTRL_CLOSE_EVENT)
 	{
 		// 卸載字型
-		RemoveFontResourceW(utility::string2wstring(global::path::std_MochiyPopOne).c_str());
+		RemoveFontResourceW(util::string2wstring(global::path::std_MochiyPopOne).c_str());
 
 		return TRUE;  // 返回 TRUE 表示已經處理了此事件
 	}

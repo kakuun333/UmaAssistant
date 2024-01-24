@@ -6,11 +6,12 @@
 #include <vcclr.h>
 
 
-#include "../../utility/CharacterConvert.h"
+#include "../../util/CharacterConvert.h"
+#include "../../util/Constants.h"
 
 #include "../../enum/UmaEventDataType.h"
 #include "../../enum/UmaDataType.h"
-//#include "../../utility/CharacterCompare.h"
+
 
 constexpr inline int NONE_INDEX = -1;
 
@@ -26,20 +27,20 @@ UmaEventData -> UmaEvent -> UmaChoice
 class UmaChoice
 {
 public:
-	std::string choice_title;
+	std::string choice_name;
 	std::string choice_effect;
 };
 
 class UmaEvent
 {
 public:
-	std::string event_title;
+	std::string event_name;
 
 	std::vector<UmaChoice> choice_list;
 
 	inline bool empty()
 	{
-		if (event_title.empty() && choice_list.empty()) return true;
+		if (event_name.empty() && choice_list.empty()) return true;
 
 		return false;
 	}
@@ -48,9 +49,10 @@ public:
 class UmaEventData
 {
 public:
-	float similarity = -1;
+	float similarity = util::NOT_SIMILAR;
 
 	std::string event_owner;
+	std::string rare;
 
 	std::string matched_scanned_text;
 
@@ -70,7 +72,7 @@ public:
 
 		//std::cout << "3" << std::endl;
 
-		if (this->umaEvent.event_title.empty()) return false;
+		if (this->umaEvent.event_name.empty()) return false;
 		//std::cout << "4" << std::endl;
 
 		if (this->umaEvent.choice_list.empty()) return false;
@@ -80,7 +82,7 @@ public:
 		for (UmaChoice choice : this->umaEvent.choice_list)
 		{
 			//std::cout << "6" << std::endl;
-			if (choice.choice_title.empty()) return false;
+			if (choice.choice_name.empty()) return false;
 			//std::cout << "7" << std::endl;
 			if (choice.choice_effect.empty()) return false;
 			//std::cout << "8" << std::endl;
@@ -103,7 +105,7 @@ public:
 		{
 			if (dataType == UmaEventDataType::EVENT_TITLE)
 			{
-				return umaEvent.event_title;
+				return umaEvent.event_name;
 			}
 			else if (dataType == UmaEventDataType::EVENT_OWNER)
 			{

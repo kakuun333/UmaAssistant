@@ -12,28 +12,28 @@ skill_dict = {};
 
 
 
-def get_jp_skill_title():
-    jp_skill_title = "";
+def get_jp_skill_name():
+    jp_skill_name = "";
 
     span = driver.find_element(By.CLASS_NAME, "map-dh-an");
     if (span.text == "日服"):
         a_span = span.find_element(By.XPATH, "..");
-        jp_skill_title = a_span.get_attribute("title");
+        jp_skill_name = a_span.get_attribute("title");
 
-        print(jp_skill_title);
-    return jp_skill_title;
+        print(jp_skill_name);
+    return jp_skill_name;
 
-def get_tw_skill_title():
-    tw_skill_title = "";
+def get_tw_skill_name():
+    tw_skill_name = "";
 
     wikitable = driver.find_element(By.CLASS_NAME, "wikitable");
     th = wikitable.find_element(By.TAG_NAME, "th");
 
-    tw_skill_title = re.match(r"(.+).+/.+", th.text).group(1);
+    tw_skill_name = re.match(r"(.+).+/.+", th.text).group(1);
 
-    print(tw_skill_title);
+    print(tw_skill_name);
 
-    return tw_skill_title;
+    return tw_skill_name;
 
 def get_tw_skill_description():
     tw_skill_description = "";
@@ -92,11 +92,11 @@ def dump_skill_convert_data():
                 skill_url = a.get_attribute("href");
                 utility.open_url(driver, skill_url);
                 utility.switch_to_new_tab(driver);
-                jp_skill_title = get_jp_skill_title();
-                jp_skill_title = utility.replace(jp_skill_title, "○", "◯");
+                jp_skill_name = get_jp_skill_name();
+                jp_skill_name = utility.replace(jp_skill_name, "○", "◯");
 
-                tw_skill_title = get_tw_skill_title();
-                tw_skill_title = utility.replace(tw_skill_title, "○", "◯");
+                tw_skill_name = get_tw_skill_name();
+                tw_skill_name = utility.replace(tw_skill_name, "○", "◯");
 
                 tw_skill_description = get_tw_skill_description();
                 tw_skill_description = utility.replace(tw_skill_description, "○", "◯");
@@ -107,8 +107,8 @@ def dump_skill_convert_data():
                 tw_lower_skill = get_tw_lower_skill();
                 tw_lower_skill = utility.replace(tw_lower_skill, "○", "◯");
 
-                skill_dict[jp_skill_title] = {
-                    "tw_skill_title": tw_skill_title,
+                skill_dict[jp_skill_name] = {
+                    "tw_skill_name": tw_skill_name,
                     "tw_skill_description": tw_skill_description,
                     "tw_upper_skill": tw_upper_skill,
                     "tw_lower_skill": tw_lower_skill

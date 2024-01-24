@@ -3,14 +3,9 @@
 #include <string>
 #include <vector>
 
+#include "UmaEventData.h"
 
 
-class ScenarioChoice
-{
-public:
-	std::string choice_title;
-	std::string choice_effect;
-};
 
 class ScenarioEventData
 {
@@ -18,11 +13,23 @@ class ScenarioEventData
 public:
 	float similarity = -1;
 
-	std::string event_title;
-	std::vector<ScenarioChoice> event_list;
+	std::string event_name;
+
+	std::vector<UmaChoice> choice_list;
 
 	std::string matched_scanned_text;
 
-	bool IsDataComplete();
+	inline bool IsDataComplete()
+	{
+		if (this->event_name.empty()) return false;
+
+		for (UmaChoice _event : this->choice_list)
+		{
+			if (_event.choice_name.empty()) return false;
+			if (_event.choice_effect.empty()) return false;
+		}
+
+		return true;
+	}
 };
 
