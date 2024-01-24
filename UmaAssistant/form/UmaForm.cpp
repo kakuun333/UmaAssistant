@@ -147,6 +147,12 @@ namespace UmaAssistant
 
 			System::String^ sys_currentCharName = util::stdStr2system(global::config->PreviousCurrentCharacterName);
 			webManager->ChangeCharacterName(sys_currentCharName);
+
+			// 更新 Discord RPC
+			if (global::config->DiscordRPC)
+			{
+				DiscordManager::GetInstance()->UpdateRPC();
+			}
 		}
 		else
 		{
@@ -196,6 +202,12 @@ namespace UmaAssistant
 					umalog->print(u8"[UmaForm] 已找到選擇的角色");
 					dataManager->SetCurrentCharacterInfoLock(true);
 					webManager->ChangeCharacterName(sys_event_owner);
+
+					// 更新 Discord RPC
+					if (global::config->DiscordRPC)
+					{
+						DiscordManager::GetInstance()->UpdateRPC();
+					}
 				}
 				else
 				{
@@ -224,6 +236,12 @@ namespace UmaAssistant
 					umalog->print(u8"[UmaForm] 已找到選擇的角色");
 					dataManager->SetCurrentCharacterInfoLock(true);
 					webManager->ChangeCharacterName(sys_event_owner);
+
+					// 更新 Discord RPC
+					if (global::config->DiscordRPC)
+					{
+						DiscordManager::GetInstance()->UpdateRPC();
+					}
 				}
 				else
 				{

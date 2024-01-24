@@ -126,11 +126,11 @@ namespace UmaAssistant
 
 #pragma endregion
 #pragma region ªì©l¤Æ checkBox
-		
 		this->alwaysOnTop_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::alwaysOnTop_checkBox_CheckedChanged);
 		this->autoMouceClick_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::autoMouceClick_checkBox_CheckedChanged);
 		this->debugMode_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::debugMode_checkBox_CheckedChanged);
 		this->outputLogFile_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::outputLogFile_checkBox_CheckedChanged);
+		this->discordRpc_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::discordRpc_checkBox_CheckedChanged);
 #pragma endregion
 	}
 
@@ -438,6 +438,7 @@ namespace UmaAssistant
 		if (checkbox->Checked)
 		{
 			global::form::umaForm->TopMost = checkbox->Checked;
+			global::form::previewForm->TopMost = checkbox->Checked;
 			this->TopMost = checkbox->Checked;
 
 			// config
@@ -446,6 +447,7 @@ namespace UmaAssistant
 		else
 		{
 			global::form::umaForm->TopMost = checkbox->Checked;
+			global::form::previewForm->TopMost = checkbox->Checked;
 			this->TopMost = checkbox->Checked;
 
 			// config
@@ -473,6 +475,24 @@ namespace UmaAssistant
 		global::config->WriteToJson();
 	}
 
+	void SettingsForm::discordRpc_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
+	{
+		CheckBox^ checkbox = dynamic_cast<CheckBox^>(sender);
+
+		if (checkbox->Checked)
+		{
+			global::config->DiscordRPC = true;
+		}
+		else
+		{
+			global::config->DiscordRPC = false;
+
+			DiscordManager::GetInstance()->Shutdown();
+		}
+
+		global::config->WriteToJson();
+	}
+
 	System::Void SettingsForm::default_btn_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		//this->showEnhanceSkill_checkBox->Checked = true;
@@ -480,6 +500,7 @@ namespace UmaAssistant
 		this->alwaysOnTop_checkBox->Checked = false;
 		this->autoMouceClick_checkBox->Checked = false;
 		this->outputLogFile_checkBox->Checked = false;
+		this->discordRpc_checkBox->Checked = false;
 
 		// SoftwareLanguage
 		this->software_lang_tw_radio_btn->Checked = true;

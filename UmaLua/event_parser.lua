@@ -282,10 +282,10 @@ function parser.getSkillData(html, class)
 
     if skill_rare == "normal" then
         if string.match(skill_html, "<th>上位スキル.-<td>なし</td>") then goto continue_skill_dict end
-        upper_skill = string.match(skill_html, "<th>上位スキル.-<td><a.->(.-)</a>");
+        upper_skill = string.match(skill_html, "<th>上位スキル.-<td><a.->(.-)</a>") or json.null;
     elseif skill_rare == "rare" then
         if string.match(skill_html, "<th>下位スキル.-<td>なし</td>") then goto continue_skill_dict end
-        lower_skill = string.match(skill_html, "<th>下位スキル.-<td><a.->(.-)</a>");
+        lower_skill = string.match(skill_html, "<th>下位スキル.-<td><a.->(.-)</a>") or json.null;
     end
 
     --[[skill_dict]]

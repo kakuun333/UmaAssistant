@@ -18,6 +18,10 @@ private:
 
 	static std::map<std::string, HWND> _windowDict;
 
+	bool _foundGameWindow = false;
+
+	//bool _previousFoundGameWindow = false;
+
 public:
 	static GameWindowFinder* GetInstance()
 	{
@@ -55,6 +59,16 @@ public:
 	inline std::string GetCurrentGameWindowName()
 	{
 		return _currentGameWindowName;
+	}
+
+	inline bool GetFoundGameWindow()
+	{
+		return _foundGameWindow;
+	}
+
+	inline void SetFoundGameWindow(bool value)
+	{
+		_foundGameWindow = value;
 	}
 };
 

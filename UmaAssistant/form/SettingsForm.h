@@ -42,6 +42,7 @@ namespace UmaAssistant
 		void debugMode_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 		void autoMouceClick_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 		void outputLogFile_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+		void discordRpc_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
 
 		// ProgramLanguage
 		void ChangeSoftwareLanguage(SoftwareLanguageType langType);
@@ -131,6 +132,10 @@ namespace UmaAssistant
 	private: System::Windows::Forms::RadioButton^ software_lang_tw_radio_btn;
 
 	private: System::Windows::Forms::RadioButton^ software_lang_jp_radio_btn;
+public: System::Windows::Forms::CheckBox^ discordRpc_checkBox;
+private:
+
+private:
 
 private:
 
@@ -184,6 +189,7 @@ private:
 			this->tableLayoutPanel6 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->software_lang_jp_radio_btn = (gcnew System::Windows::Forms::RadioButton());
 			this->software_lang_tw_radio_btn = (gcnew System::Windows::Forms::RadioButton());
+			this->discordRpc_checkBox = (gcnew System::Windows::Forms::CheckBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->icon_pictureBox))->BeginInit();
 			this->tableLayoutPanel1->SuspendLayout();
 			this->tableLayoutPanel2->SuspendLayout();
@@ -206,7 +212,7 @@ private:
 			this->update_event_data_jp_btn1->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
 			this->update_event_data_jp_btn1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->update_event_data_jp_btn1->Location = System::Drawing::Point(3, 93);
+			this->update_event_data_jp_btn1->Location = System::Drawing::Point(3, 123);
 			this->update_event_data_jp_btn1->Name = L"update_event_data_jp_btn1";
 			this->update_event_data_jp_btn1->Size = System::Drawing::Size(240, 25);
 			this->update_event_data_jp_btn1->TabIndex = 0;
@@ -226,7 +232,7 @@ private:
 			this->update_skill_data_jp_btn1->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
 			this->update_skill_data_jp_btn1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->update_skill_data_jp_btn1->Location = System::Drawing::Point(3, 124);
+			this->update_skill_data_jp_btn1->Location = System::Drawing::Point(3, 154);
 			this->update_skill_data_jp_btn1->Name = L"update_skill_data_jp_btn1";
 			this->update_skill_data_jp_btn1->Size = System::Drawing::Size(240, 25);
 			this->update_skill_data_jp_btn1->TabIndex = 1;
@@ -491,14 +497,15 @@ private:
 			// 
 			this->flowLayoutPanel1->BackColor = System::Drawing::Color::Transparent;
 			this->flowLayoutPanel1->Controls->Add(this->alwaysOnTop_checkBox);
-			this->flowLayoutPanel1->Controls->Add(this->outputLogFile_checkBox);
+			this->flowLayoutPanel1->Controls->Add(this->discordRpc_checkBox);
 			this->flowLayoutPanel1->Controls->Add(this->debugMode_checkBox);
+			this->flowLayoutPanel1->Controls->Add(this->outputLogFile_checkBox);
 			this->flowLayoutPanel1->Controls->Add(this->update_event_data_jp_btn1);
 			this->flowLayoutPanel1->Controls->Add(this->update_skill_data_jp_btn1);
 			this->flowLayoutPanel1->FlowDirection = System::Windows::Forms::FlowDirection::TopDown;
 			this->flowLayoutPanel1->Location = System::Drawing::Point(9, 359);
 			this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
-			this->flowLayoutPanel1->Size = System::Drawing::Size(247, 155);
+			this->flowLayoutPanel1->Size = System::Drawing::Size(247, 189);
 			this->flowLayoutPanel1->TabIndex = 39;
 			// 
 			// outputLogFile_checkBox
@@ -509,7 +516,7 @@ private:
 			this->outputLogFile_checkBox->FlatAppearance->CheckedBackColor = System::Drawing::Color::Black;
 			this->outputLogFile_checkBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->outputLogFile_checkBox->Location = System::Drawing::Point(3, 33);
+			this->outputLogFile_checkBox->Location = System::Drawing::Point(3, 93);
 			this->outputLogFile_checkBox->Name = L"outputLogFile_checkBox";
 			this->outputLogFile_checkBox->Size = System::Drawing::Size(112, 24);
 			this->outputLogFile_checkBox->TabIndex = 38;
@@ -698,7 +705,7 @@ private:
 			this->default_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->default_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->default_btn->Location = System::Drawing::Point(262, 458);
+			this->default_btn->Location = System::Drawing::Point(262, 483);
 			this->default_btn->Name = L"default_btn";
 			this->default_btn->Size = System::Drawing::Size(109, 56);
 			this->default_btn->TabIndex = 45;
@@ -766,11 +773,26 @@ private:
 			this->software_lang_tw_radio_btn->Text = L"繁體中文";
 			this->software_lang_tw_radio_btn->UseVisualStyleBackColor = false;
 			// 
+			// discordRpc_checkBox
+			// 
+			this->discordRpc_checkBox->AutoSize = true;
+			this->discordRpc_checkBox->BackColor = System::Drawing::Color::Transparent;
+			this->discordRpc_checkBox->FlatAppearance->BorderSize = 0;
+			this->discordRpc_checkBox->FlatAppearance->CheckedBackColor = System::Drawing::Color::Black;
+			this->discordRpc_checkBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
+				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
+			this->discordRpc_checkBox->Location = System::Drawing::Point(3, 33);
+			this->discordRpc_checkBox->Name = L"discordRpc_checkBox";
+			this->discordRpc_checkBox->Size = System::Drawing::Size(126, 24);
+			this->discordRpc_checkBox->TabIndex = 48;
+			this->discordRpc_checkBox->Text = L"Discord RPC";
+			this->discordRpc_checkBox->UseVisualStyleBackColor = false;
+			// 
 			// SettingsForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(380, 525);
+			this->ClientSize = System::Drawing::Size(380, 547);
 			this->Controls->Add(this->tableLayoutPanel6);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->tableLayoutPanel5);

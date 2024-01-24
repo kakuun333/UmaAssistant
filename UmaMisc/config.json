@@ -1,11 +1,12 @@
 {
-  "AlwaysOnTop": false,
-  "AutoMouseClick": true,
+  "AlwaysOnTop": true,
+  "AutoMouseClick": false,
   "AutoMouseClickKey": {
     "VK": 6,
     "WinFormButton": 16777216
   },
   "DebugMode": true,
+  "DiscordRPC": true,
   "GameServer": 1,
   "GameWindow": 1,
   "GameWindowBoundOffset": {

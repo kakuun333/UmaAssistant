@@ -2,6 +2,7 @@ import os
 import re
 import time
 import json
+import util
 import utility
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -100,6 +101,9 @@ def dump_char_data(dump_icon):
             utility.switch_to_new_tab(driver);
 
             char_name = get_char_name();
+
+            char_name = util.sub(char_name, "水着", "");
+
             char_another_name = get_char_another_name();
         
             tmp_dict["icon"] = f"i_{matched_string}.png";

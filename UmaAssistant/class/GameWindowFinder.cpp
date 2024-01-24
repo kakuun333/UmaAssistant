@@ -56,6 +56,8 @@ void GameWindowFinder::CreateFindGameWindowThread()
 {
 	std::thread findGameWindowThread([=]()
 		{
+			DiscordManager* discordManager = DiscordManager::GetInstance();
+
 			while (true)
 			{
 				//if (FindWindow(nullptr, utility::string2wstring(GetCurrentGameWindowName()).c_str()))
@@ -75,6 +77,14 @@ void GameWindowFinder::CreateFindGameWindowThread()
 					}
 					
 					util::formctrl::ForeColor(global::form::umaForm->game_window_status_label, 0, 255, 0);
+
+					if (!this->GetFoundGameWindow())
+					{
+						discordManager->UpdateRPC();
+					}
+
+
+					this->SetFoundGameWindow(true);
 				}
 				else
 				{
@@ -93,6 +103,13 @@ void GameWindowFinder::CreateFindGameWindowThread()
 					}
 					
 					util::formctrl::ForeColor(global::form::umaForm->game_window_status_label, 255, 0, 0);
+
+					this->SetFoundGameWindow(false);
+
+					if (global::config->DiscordRPC && !discordManager->GetIsShutdown())
+					{
+						discordManager->Shutdown();
+					}
 				}
 				std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 			}

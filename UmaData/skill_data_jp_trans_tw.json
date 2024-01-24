@@ -1,2917 +1,3504 @@
 {
   "blue": {
     "normal": {
-      "様子見": {
-        "skill_description": "在競賽中期若位於隊列後方\n變得略微不易疲倦\n使加速力些微上升＜短距離＞",
+      "脇目も振らず": {
+        "lower_skill": null,
+        "skill_description": "レース中盤に持久力をわずかに回復しさらに速度がちょっと上がる＜長距離＞",
+        "upper_skill": "脱兎の先へ",
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_b_n_1"
+      },
+      "直線回復": {
+        "lower_skill": null,
+        "skill_description": "會在直線略微回復持久力",
+        "upper_skill": "好転一息",
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_b_n_1"
+      },
+      "別腹タンク": {
+        "lower_skill": null,
+        "skill_description": "精疲力盡時\n略微恢復奔跑的力氣＜長距離＞",
+        "upper_skill": "火事場のバ鹿力",
         "skill_pt": "160",
         "skill_icon_name": "i_skill_b_n_1"
       },
-      "展開窺い": {
-        "skill_description": "接近競賽中期時若位於隊列後方\n變得略微不易疲倦\n使前方的速度些微下降＜一哩＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "慧眼"
+      "後方待機": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期累積腳力\n變得略微不易疲倦＜作戰．後追＞",
+        "upper_skill": "眠れる獅子",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_b_n_1"
       },
-      "別腹タンク": {
-        "skill_description": "精疲力盡時\n略微恢復奔跑的力氣＜長距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "火事場のバ鹿力"
-      },
-      "コーナー回復◯": {
-        "skill_description": "以最佳的路線通過彎道\n略微回復持久力",
+      "ウマ込み冷静": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若遭到包圍\n會略微回復持久力",
+        "upper_skill": "どこ吹く風",
         "skill_pt": "170",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "円弧のマエストロ"
+        "skill_icon_name": "i_skill_b_n_1"
       },
       "ふり絞り": {
+        "lower_skill": null,
         "skill_description": "在競賽後期若發動多個技能\n會略微回復持久力",
+        "upper_skill": null,
         "skill_pt": "100",
         "skill_icon_name": "i_skill_b_n_1"
       },
-      "小休憩": {
-        "skill_description": "在競賽後期略微回復持久力\n＜作戰．居中＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "リラックス"
-      },
-      "脇目も振らず": {
-        "skill_description": "レース中盤に持久力をわずかに回復しさらに速度がちょっと上がる＜長距離＞",
-        "skill_pt": "200",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "脱兎の先へ"
-      },
-      "冷静": {
-        "skill_description": "前方被阻擋時會冷靜下來\n並略微重整勢態＜作戰．後追＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "冷静沈着"
-      },
       "好位追走": {
+        "lower_skill": null,
         "skill_description": "在競賽中期變得略微不易疲倦\n＜作戰．前列＞",
+        "upper_skill": "レースプランナー",
         "skill_pt": "180",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "レースプランナー"
+        "skill_icon_name": "i_skill_b_n_1"
       },
       "抜かりなし": {
+        "lower_skill": null,
         "skill_description": "若起跑時未落後\n在中期的一開始稍微恢復持久力\n＜前列．長距離＞",
+        "upper_skill": "一意専心",
         "skill_pt": "170",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "一意専心"
+        "skill_icon_name": "i_skill_b_n_1"
       },
-      "勢い任せ": {
-        "skill_description": "上坡時變得略微不易疲倦\n＜作戰．領頭＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "じゃじゃウマ娘"
-      },
-      "マイペース": {
-        "skill_description": "在競賽中期的一開始若位於隊列中段\n速度會略微下降\n稍微回復持久力＜長距離＞",
-        "skill_pt": "170",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "泰然自若"
-      },
-      "下校の楽しみ": {
-        "skill_description": "下坡時變得略微不易疲倦\n＜作戰．後追＞",
-        "skill_pt": "170",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "下校後のスペシャリスト"
-      },
-      "ウマ込み冷静": {
-        "skill_description": "在競賽中期若遭到包圍\n會略微回復持久力",
-        "skill_pt": "170",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "どこ吹く風"
-      },
-      "後方待機": {
-        "skill_description": "在競賽中期累積腳力\n變得略微不易疲倦＜作戰．後追＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "眠れる獅子"
-      },
-      "パス上手": {
-        "skill_description": "萌生想追過對方的想法\n會變得略微不易疲倦＜長距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "VIP顔パス"
-      },
-      "栄養補給": {
-        "skill_description": "在競賽中期略微回復持久力\n＜作戰．前列＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "食いしん坊"
-      },
-      "隠れ蓑": {
-        "skill_description": "在競賽初期或中期\n當前方被阻擋時\n能潛伏伺機以略微回復持久力",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "鋼の意志"
-      },
-      "静かな呼吸": {
-        "skill_description": "接近競賽中期時若位於隊列後方\n會略微回復持久力\n＜作戰．居中＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "潜伏態勢"
-      },
-      "スリーセブン": {
-        "skill_description": "剩餘距離為777m時\n會略微恢復活力",
+      "深呼吸": {
+        "lower_skill": null,
+        "skill_description": "進入直線後會喘口氣\n變得略微不易疲倦＜長距離＞",
+        "upper_skill": "クールダウン",
         "skill_pt": "160",
         "skill_icon_name": "i_skill_b_n_1"
       },
       "スタミナキープ": {
+        "lower_skill": null,
         "skill_description": "接近競賽中期時\n變得略微不易疲倦\n＜作戰．前列＞",
+        "upper_skill": "余裕綽々",
         "skill_pt": "180",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "余裕綽々"
+        "skill_icon_name": "i_skill_b_n_1"
       },
-      "アオハル点火・体": {
-        "skill_description": "在競賽中期燃燒青春魂，\n競賽中隊伍成員的持久力\n合計值越高，便隨之略微回復持久力",
-        "skill_pt": "200",
-        "skill_icon_name": "i_skill_b_n_1a",
-        "upper_skill": "アオハル燃焼・体"
-      },
-      "前途洋々": {
-        "skill_description": "在競賽中期若位於隊列前方\n變得略微不易疲倦＜中距離＞",
+      "展開窺い": {
+        "lower_skill": null,
+        "skill_description": "接近競賽中期時若位於隊列後方\n變得略微不易疲倦\n使前方的速度些微下降＜一哩＞",
+        "upper_skill": "慧眼",
         "skill_pt": "160",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "切り開く者"
-      },
-      "軽やかステップ": {
-        "skill_description": "即使左右移動也略微不易疲倦\n＜中距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "神業ステップ"
-      },
-      "ペースキープ": {
-        "skill_description": "在競賽中期若被追過\n會略微回復持久力",
-        "skill_pt": "170",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "不屈の心"
+        "skill_icon_name": "i_skill_b_n_1"
       },
       "砂塵慣れ": {
+        "lower_skill": null,
         "skill_description": "在競賽中期若位於隊列後方\n會略微回復持久力＜沙地＞",
+        "upper_skill": "砂の玄人",
         "skill_pt": "180",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "砂の玄人"
+        "skill_icon_name": "i_skill_b_n_1"
       },
-      "直線回復": {
-        "skill_description": "會在直線略微回復持久力",
-        "skill_pt": "170",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "好転一息"
-      },
-      "深呼吸": {
-        "skill_description": "進入直線後會喘口氣\n變得略微不易疲倦＜長距離＞",
+      "様子見": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若位於隊列後方\n變得略微不易疲倦\n使加速力些微上升＜短距離＞",
+        "upper_skill": null,
         "skill_pt": "160",
-        "skill_icon_name": "i_skill_b_n_1",
-        "upper_skill": "クールダウン"
+        "skill_icon_name": "i_skill_b_n_1"
+      },
+      "軽やかステップ": {
+        "lower_skill": null,
+        "skill_description": "即使左右移動也略微不易疲倦\n＜中距離＞",
+        "upper_skill": "神業ステップ",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_b_n_1"
+      },
+      "ペースキープ": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若被追過\n會略微回復持久力",
+        "upper_skill": "不屈の心",
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_b_n_1"
+      },
+      "勢い任せ": {
+        "lower_skill": null,
+        "skill_description": "上坡時變得略微不易疲倦\n＜作戰．領頭＞",
+        "upper_skill": "じゃじゃウマ娘",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_b_n_1"
+      },
+      "下校の楽しみ": {
+        "lower_skill": null,
+        "skill_description": "下坡時變得略微不易疲倦\n＜作戰．後追＞",
+        "upper_skill": "下校後のスペシャリスト",
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_b_n_1"
+      },
+      "小休憩": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期略微回復持久力\n＜作戰．居中＞",
+        "upper_skill": "リラックス",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_b_n_1"
+      },
+      "前途洋々": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若位於隊列前方\n變得略微不易疲倦＜中距離＞",
+        "upper_skill": "切り開く者",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_b_n_1"
+      },
+      "栄養補給": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期略微回復持久力\n＜作戰．前列＞",
+        "upper_skill": "食いしん坊",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_b_n_1"
+      },
+      "パス上手": {
+        "lower_skill": null,
+        "skill_description": "萌生想追過對方的想法\n會變得略微不易疲倦＜長距離＞",
+        "upper_skill": "VIP顔パス",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_b_n_1"
+      },
+      "コーナー回復◯": {
+        "lower_skill": null,
+        "skill_description": "以最佳的路線通過彎道\n略微回復持久力",
+        "upper_skill": "円弧のマエストロ",
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_b_n_1"
+      },
+      "アオハル点火・体": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期燃燒青春魂，\n競賽中隊伍成員的持久力\n合計值越高，便隨之略微回復持久力",
+        "upper_skill": "アオハル燃焼・体",
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_b_n_1a"
+      },
+      "スリーセブン": {
+        "lower_skill": null,
+        "skill_description": "剩餘距離為777m時\n會略微恢復活力",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_b_n_1"
+      },
+      "マイペース": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期的一開始若位於隊列中段\n速度會略微下降\n稍微回復持久力＜長距離＞",
+        "upper_skill": "泰然自若",
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_b_n_1"
+      },
+      "静かな呼吸": {
+        "lower_skill": null,
+        "skill_description": "接近競賽中期時若位於隊列後方\n會略微回復持久力\n＜作戰．居中＞",
+        "upper_skill": "潜伏態勢",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_b_n_1"
+      },
+      "冷静": {
+        "lower_skill": null,
+        "skill_description": "前方被阻擋時會冷靜下來\n並略微重整勢態＜作戰．後追＞",
+        "upper_skill": "冷静沈着",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_b_n_1"
+      },
+      "隠れ蓑": {
+        "lower_skill": null,
+        "skill_description": "在競賽初期或中期\n當前方被阻擋時\n能潛伏伺機以略微回復持久力",
+        "upper_skill": "鋼の意志",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_b_n_1"
       }
     },
     "rare": {
-      "クールダウン": {
-        "skill_description": "進入直線後會喘口氣\n變得不易疲倦＜長距離＞",
+      "神業ステップ": {
+        "lower_skill": "軽やかステップ",
+        "skill_description": "即使左右移動也不易疲倦\n＜中距離＞",
+        "upper_skill": null,
         "skill_pt": "160",
-        "lower_skill": "深呼吸",
-        "skill_icon_name": "i_skill_b_r_1"
-      },
-      "鋼の意志": {
-        "skill_description": "在競賽初期或中期\n當前方被阻擋時\n能維持堅強意志來回復持久力",
-        "skill_pt": "160",
-        "lower_skill": "隠れ蓑",
         "skill_icon_name": "i_skill_b_r_1"
       },
       "下校後のスペシャリスト": {
-        "skill_description": "下坡時變得較不易疲倦\n＜作戰．後追＞",
-        "skill_pt": "170",
         "lower_skill": "下校の楽しみ",
-        "skill_icon_name": "i_skill_b_r_1"
-      },
-      "じゃじゃウマ娘": {
-        "skill_description": "上坡時變得較不易疲倦\n＜作戰．領頭＞",
-        "skill_pt": "180",
-        "lower_skill": "勢い任せ",
-        "skill_icon_name": "i_skill_b_r_1"
-      },
-      "好転一息": {
-        "skill_description": "會在直線回復持久力",
+        "skill_description": "下坡時變得較不易疲倦\n＜作戰．後追＞",
+        "upper_skill": null,
         "skill_pt": "170",
-        "lower_skill": "直線回復",
-        "skill_icon_name": "i_skill_b_r_1"
-      },
-      "泰然自若": {
-        "skill_description": "在競賽中期的一開始若位於隊列中段\n速度會略微下降\n大幅回復持久力＜長距離＞",
-        "skill_pt": "170",
-        "lower_skill": "マイペース",
         "skill_icon_name": "i_skill_b_r_1"
       },
       "リラックス": {
-        "skill_description": "在競賽後期回復持久力\n＜作戰．居中＞",
-        "skill_pt": "180",
         "lower_skill": "小休憩",
-        "skill_icon_name": "i_skill_b_r_1"
-      },
-      "神業ステップ": {
-        "skill_description": "即使左右移動也不易疲倦\n＜中距離＞",
-        "skill_pt": "160",
-        "lower_skill": "軽やかステップ",
-        "skill_icon_name": "i_skill_b_r_1"
-      },
-      "余裕綽々": {
-        "skill_description": "接近競賽中期時變得較不易疲倦\n＜作戰．前列＞",
+        "skill_description": "在競賽後期回復持久力\n＜作戰．居中＞",
+        "upper_skill": null,
         "skill_pt": "180",
-        "lower_skill": "スタミナキープ",
-        "skill_icon_name": "i_skill_b_r_1"
-      },
-      "アオハル燃焼・体": {
-        "skill_description": "在競賽中期燃燒青春魂，\n競賽中隊伍成員的持久力\n合計值越高，便隨之回復持久力",
-        "skill_pt": "200",
-        "lower_skill": "アオハル点火・体",
-        "skill_icon_name": "i_skill_b_r_1a"
-      },
-      "慧眼": {
-        "skill_description": "接近競賽中期時若位於隊列後方\n變得較不易疲倦\n使前方的速度稍微下降＜一哩＞",
-        "skill_pt": "160",
-        "lower_skill": "展開窺い",
-        "skill_icon_name": "i_skill_b_r_1"
-      },
-      "一意専心": {
-        "skill_description": "若起跑時未落後\n在中期的一開始大幅恢復持久力\n＜前列．長距離＞",
-        "skill_pt": "170",
-        "lower_skill": "抜かりなし",
-        "skill_icon_name": "i_skill_b_r_1"
-      },
-      "レースプランナー": {
-        "skill_description": "在競賽中期變得較不易疲倦\n＜作戰．前列＞",
-        "skill_pt": "180",
-        "lower_skill": "好位追走",
-        "skill_icon_name": "i_skill_b_r_1"
-      },
-      "脱兎の先へ": {
-        "skill_description": "レース中盤に持久力を回復しさらに速度が少し上がる＜長距離＞",
-        "skill_pt": "200",
-        "lower_skill": "脇目も振らず",
-        "skill_icon_name": "i_skill_b_r_1"
-      },
-      "VIP顔パス": {
-        "skill_description": "萌生想追過對方的想法\n變得較不易疲倦＜長距離＞",
-        "skill_pt": "160",
-        "lower_skill": "パス上手",
-        "skill_icon_name": "i_skill_b_r_1"
-      },
-      "砂の玄人": {
-        "skill_description": "在競賽中期若位於隊列後方\n會回復持久力並使速度上升＜沙地＞",
-        "skill_pt": "200",
-        "lower_skill": "砂塵慣れ",
-        "skill_icon_name": "i_skill_b_r_1"
-      },
-      "切り開く者": {
-        "skill_description": "在競賽中期若位於隊列前方\n變得較不易疲倦＜中距離＞",
-        "skill_pt": "160",
-        "lower_skill": "前途洋々",
-        "skill_icon_name": "i_skill_b_r_1"
-      },
-      "眠れる獅子": {
-        "skill_description": "在競賽中期累積腳力\n變得較不易疲倦＜作戰．後追＞",
-        "skill_pt": "180",
-        "lower_skill": "後方待機",
         "skill_icon_name": "i_skill_b_r_1"
       },
       "潜伏態勢": {
-        "skill_description": "接近競賽中期時若位於隊列後方\n會回復持久力＜作戰．居中＞",
-        "skill_pt": "180",
         "lower_skill": "静かな呼吸",
-        "skill_icon_name": "i_skill_b_r_1"
-      },
-      "火事場のバ鹿力": {
-        "skill_description": "精疲力盡時\n恢復奔跑的力氣＜長距離＞",
-        "skill_pt": "160",
-        "lower_skill": "別腹タンク",
-        "skill_icon_name": "i_skill_b_r_1"
-      },
-      "どこ吹く風": {
-        "skill_description": "在競賽中期若遭到包圍\n會回復持久力",
-        "skill_pt": "170",
-        "lower_skill": "ウマ込み冷静",
-        "skill_icon_name": "i_skill_b_r_1"
-      },
-      "冷静沈着": {
-        "skill_description": "前方被阻擋時會冷靜下來\n並重整勢態＜作戰．後追＞",
+        "skill_description": "接近競賽中期時若位於隊列後方\n會回復持久力＜作戰．居中＞",
+        "upper_skill": null,
         "skill_pt": "180",
-        "lower_skill": "冷静",
         "skill_icon_name": "i_skill_b_r_1"
       },
       "不屈の心": {
-        "skill_description": "在競賽中期若被追過\n會回復持久力",
-        "skill_pt": "170",
         "lower_skill": "ペースキープ",
+        "skill_description": "在競賽中期若被追過\n會回復持久力",
+        "upper_skill": null,
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_b_r_1"
+      },
+      "泰然自若": {
+        "lower_skill": "マイペース",
+        "skill_description": "在競賽中期的一開始若位於隊列中段\n速度會略微下降\n大幅回復持久力＜長距離＞",
+        "upper_skill": null,
+        "skill_pt": "170",
         "skill_icon_name": "i_skill_b_r_1"
       },
       "円弧のマエストロ": {
-        "skill_description": "以最佳的路線通過彎道\n回復持久力",
-        "skill_pt": "170",
         "lower_skill": "コーナー回復◯",
+        "skill_description": "以最佳的路線通過彎道\n回復持久力",
+        "upper_skill": null,
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_b_r_1"
+      },
+      "どこ吹く風": {
+        "lower_skill": "ウマ込み冷静",
+        "skill_description": "在競賽中期若遭到包圍\n會回復持久力",
+        "upper_skill": null,
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_b_r_1"
+      },
+      "火事場のバ鹿力": {
+        "lower_skill": "別腹タンク",
+        "skill_description": "精疲力盡時\n恢復奔跑的力氣＜長距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_b_r_1"
+      },
+      "眠れる獅子": {
+        "lower_skill": "後方待機",
+        "skill_description": "在競賽中期累積腳力\n變得較不易疲倦＜作戰．後追＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_b_r_1"
+      },
+      "砂の玄人": {
+        "lower_skill": "砂塵慣れ",
+        "skill_description": "在競賽中期若位於隊列後方\n會回復持久力並使速度上升＜沙地＞",
+        "upper_skill": null,
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_b_r_1"
+      },
+      "じゃじゃウマ娘": {
+        "lower_skill": "勢い任せ",
+        "skill_description": "上坡時變得較不易疲倦\n＜作戰．領頭＞",
+        "upper_skill": null,
+        "skill_pt": "180",
         "skill_icon_name": "i_skill_b_r_1"
       },
       "食いしん坊": {
-        "skill_description": "在競賽中期回復持久力\n＜作戰．前列＞",
-        "skill_pt": "180",
         "lower_skill": "栄養補給",
+        "skill_description": "在競賽中期回復持久力\n＜作戰．前列＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_b_r_1"
+      },
+      "冷静沈着": {
+        "lower_skill": "冷静",
+        "skill_description": "前方被阻擋時會冷靜下來\n並重整勢態＜作戰．後追＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_b_r_1"
+      },
+      "切り開く者": {
+        "lower_skill": "前途洋々",
+        "skill_description": "在競賽中期若位於隊列前方\n變得較不易疲倦＜中距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_b_r_1"
+      },
+      "VIP顔パス": {
+        "lower_skill": "パス上手",
+        "skill_description": "萌生想追過對方的想法\n變得較不易疲倦＜長距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_b_r_1"
+      },
+      "クールダウン": {
+        "lower_skill": "深呼吸",
+        "skill_description": "進入直線後會喘口氣\n變得不易疲倦＜長距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_b_r_1"
+      },
+      "余裕綽々": {
+        "lower_skill": "スタミナキープ",
+        "skill_description": "接近競賽中期時變得較不易疲倦\n＜作戰．前列＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_b_r_1"
+      },
+      "アオハル燃焼・体": {
+        "lower_skill": "アオハル点火・体",
+        "skill_description": "在競賽中期燃燒青春魂，\n競賽中隊伍成員的持久力\n合計值越高，便隨之回復持久力",
+        "upper_skill": null,
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_b_r_1a"
+      },
+      "鋼の意志": {
+        "lower_skill": "隠れ蓑",
+        "skill_description": "在競賽初期或中期\n當前方被阻擋時\n能維持堅強意志來回復持久力",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_b_r_1"
+      },
+      "一意専心": {
+        "lower_skill": "抜かりなし",
+        "skill_description": "若起跑時未落後\n在中期的一開始大幅恢復持久力\n＜前列．長距離＞",
+        "upper_skill": null,
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_b_r_1"
+      },
+      "レースプランナー": {
+        "lower_skill": "好位追走",
+        "skill_description": "在競賽中期變得較不易疲倦\n＜作戰．前列＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_b_r_1"
+      },
+      "好転一息": {
+        "lower_skill": "直線回復",
+        "skill_description": "會在直線回復持久力",
+        "upper_skill": null,
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_b_r_1"
+      },
+      "慧眼": {
+        "lower_skill": "展開窺い",
+        "skill_description": "接近競賽中期時若位於隊列後方\n變得較不易疲倦\n使前方的速度稍微下降＜一哩＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_b_r_1"
+      },
+      "脱兎の先へ": {
+        "lower_skill": "脇目も振らず",
+        "skill_description": "レース中盤に持久力を回復しさらに速度が少し上がる＜長距離＞",
+        "upper_skill": null,
+        "skill_pt": "200",
         "skill_icon_name": "i_skill_b_r_1"
       }
     }
   },
   "green": {
     "normal": {
-      "右回り◯": {
-        "skill_description": "變得稍微擅長順時針賽道",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_1",
-        "upper_skill": "右回り◎"
+      "冬ウマ娘◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長冬季的競賽",
+        "upper_skill": "凍て風",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_1"
       },
-      "左回り◯": {
-        "skill_description": "變得稍微擅長逆時針賽道",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_1",
-        "upper_skill": "左回り◎"
+      "踏み込み上手": {
+        "lower_skill": null,
+        "skill_description": "若力量足夠強大使速度略微上升\n若力量超出理想值\n速度稍微上升＜沙地＞",
+        "upper_skill": "抜群の踏み込み",
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_g_n_1"
       },
-      "交流重賞◎": {
-        "skill_description": "變得擅長交流主要競賽",
+      "泥遊び◯": {
+        "lower_skill": null,
+        "skill_description": "變得擅長場地狀態「差」或「極差」的\n競賽，速度稍微上升\n＜沙地＞",
+        "upper_skill": "泥遊び◎",
         "skill_pt": "90",
         "skill_icon_name": "i_skill_g_n_1"
       },
-      "秋ウマ娘◯": {
-        "skill_description": "變得稍微擅長秋季的競賽",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_1",
-        "upper_skill": "秋ウマ娘◎"
-      },
-      "阪神レース場◯": {
-        "skill_description": "變得稍微擅長阪神賽場",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_2",
-        "upper_skill": "阪神レース場◎"
-      },
-      "春ウマ娘◯": {
-        "skill_description": "變得稍微擅長春季的競賽",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_1",
-        "upper_skill": "春ウマ娘◎"
-      },
-      "泥遊び◎": {
-        "skill_description": "變得擅長場地狀態「差」或「極差」的\n競賽，速度上升\n＜沙地＞",
+      "東京レース場◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長東京賽場",
+        "upper_skill": null,
         "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_1",
-        "upper_skill": "泥んこマイスター"
-      },
-      "道悪◎": {
-        "skill_description": "變得擅長\n「略差」「差」「極差」的場地狀態",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_3",
-        "upper_skill": "道悪の鬼"
-      },
-      "ラッキーセブン": {
-        "skill_description": "閘位是7時\n可能會稍微發生好事",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_6",
-        "upper_skill": "スーパーラッキーセブン"
+        "skill_icon_name": "i_skill_g_n_2"
       },
       "シンパシー": {
+        "lower_skill": null,
         "skill_description": "若參加很多有同理心的\n賽馬娘的競賽，能力會稍微上升",
+        "upper_skill": null,
         "skill_pt": "70",
         "skill_icon_name": "i_skill_g_n_1"
       },
-      "徹底マーク◎": {
-        "skill_description": "若與支持度第1的賽馬娘採取相同作戰\n會容易發揮能力",
+      "小倉レース場◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長小倉賽場",
+        "upper_skill": "小倉レース場◎",
+        "skill_pt": "70",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "一匹狼": {
+        "lower_skill": null,
+        "skill_description": "若參加僅有自己是獨行俠的競賽\n能力會稍微上升",
+        "upper_skill": null,
+        "skill_pt": "70",
+        "skill_icon_name": "i_skill_g_n_1"
+      },
+      "曇りの日◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長陰天的競賽",
+        "upper_skill": null,
         "skill_pt": "110",
         "skill_icon_name": "i_skill_g_n_4"
       },
-      "冬ウマ娘◎": {
-        "skill_description": "變得擅長冬季的競賽",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_1",
-        "upper_skill": "凍て風"
-      },
-      "探求心": {
-        "skill_description": "スピードが十二分に高いとスピードがわずかに上がる、賢さも十二分ならスピードが少し上がる＜先行・中距離＞",
-        "skill_pt": "120",
-        "skill_icon_name": "i_skill_g_n_1",
-        "upper_skill": "シンギュラリティ"
-      },
-      "ロンシャンレース場◯": {
-        "skill_description": "ロンシャンレース場が少し得意になる",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_g_n_2",
-        "upper_skill": "ロンシャンレース場◎"
-      },
-      "おひとり様◎": {
-        "skill_description": "若沒有賽馬娘與自己採取相同作戰\n會大幅容易發揮能力",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_1"
-      },
-      "ナイター◯": {
-        "skill_description": "變得稍微擅長夜間競賽",
-        "skill_pt": "70",
-        "skill_icon_name": "i_skill_g_n_5",
-        "upper_skill": "ナイター◎"
-      },
-      "追込のコツ◎": {
-        "skill_description": "變得容易取得良好位置\n＜作戰．後追＞",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_g_n_5"
-      },
-      "京都レース場◯": {
-        "skill_description": "變得稍微擅長京都賽場",
+      "良バ場◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長「良好」的場地狀態",
+        "upper_skill": "良バ場◎",
         "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_2",
-        "upper_skill": "京都レース場◎"
-      },
-      "船橋レース場◎": {
-        "skill_description": "變得擅長船橋賽場",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_2"
-      },
-      "伏兵◯": {
-        "skill_description": "在支持度第4以下的競賽中\n會稍微容易發揮能力",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_1",
-        "upper_skill": "伏兵◎"
-      },
-      "自信家": {
-        "skill_description": "スピードとパワーが十分に強いとスピードとパワーがわずかに上がる＜マイル/中距離＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_g_n_1",
-        "upper_skill": "雲蒸竜変"
-      },
-      "雨の日◯": {
-        "skill_description": "變得稍微擅長下雨天的競賽",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_4",
-        "upper_skill": "雨の日◎"
-      },
-      "対抗意識◯": {
-        "skill_description": "若很多賽馬娘與自己採取相同作戰\n會稍微容易發揮能力",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_3",
-        "upper_skill": "対抗意識◎"
-      },
-      "左回り◎": {
-        "skill_description": "變得擅長逆時針賽道",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_1"
-      },
-      "非根幹距離◎": {
-        "skill_description": "變得擅長\n非主要距離（非400m的倍數）",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_2"
-      },
-      "レースの真髄・心": {
-        "skill_description": "幹勁狀態為良好或絕佳時\n持久力、意志力、智力\n可能會稍微上升",
-        "skill_pt": "150",
-        "skill_icon_name": "i_skill_g_n_2"
-      },
-      "対抗意識◎": {
-        "skill_description": "若很多賽馬娘與自己採取相同作戰\n會容易發揮能力",
-        "skill_pt": "110",
         "skill_icon_name": "i_skill_g_n_3"
       },
-      "札幌レース場◎": {
-        "skill_description": "變得擅長札幌賽場",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_2"
-      },
       "小回り◎": {
+        "lower_skill": null,
         "skill_description": "變得擅長急彎賽道",
+        "upper_skill": null,
         "skill_pt": "90",
         "skill_icon_name": "i_skill_g_n_5"
       },
-      "小倉レース場◎": {
-        "skill_description": "變得擅長小倉賽場",
+      "札幌レース場◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長札幌賽場",
+        "upper_skill": null,
         "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_2"
-      },
-      "冬ウマ娘◯": {
-        "skill_description": "變得稍微擅長冬季的競賽",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_1",
-        "upper_skill": "冬ウマ娘◎"
-      },
-      "中山レース場◯": {
-        "skill_description": "變得稍微擅長中山賽場",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_2",
-        "upper_skill": "中山レース場◎"
-      },
-      "夏ウマ娘◯": {
-        "skill_description": "變得稍微擅長夏季的競賽",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_1",
-        "upper_skill": "夏ウマ娘◎"
-      },
-      "泥遊び◯": {
-        "skill_description": "變得擅長場地狀態「差」或「極差」的\n競賽，速度稍微上升\n＜沙地＞",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_1",
-        "upper_skill": "泥遊び◎"
-      },
-      "新潟レース場◯": {
-        "skill_description": "變得稍微擅長新潟賽場",
-        "skill_pt": "70",
-        "skill_icon_name": "i_skill_g_n_2",
-        "upper_skill": "新潟レース場◎"
-      },
-      "差しのコツ◎": {
-        "skill_description": "變得容易取得良好位置\n＜作戰．居中＞",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_g_n_5"
-      },
-      "東京レース場◎": {
-        "skill_description": "變得擅長東京賽場",
-        "skill_pt": "110",
         "skill_icon_name": "i_skill_g_n_2"
       },
       "中山レース場◎": {
+        "lower_skill": null,
         "skill_description": "變得擅長中山賽場",
+        "upper_skill": null,
         "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_2"
-      },
-      "おひとり様◯": {
-        "skill_description": "若沒有賽馬娘與自己採取相同作戰\n會容易發揮能力",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_1",
-        "upper_skill": "おひとり様◎"
-      },
-      "雪の日◎": {
-        "skill_description": "變得擅長下雪天的競賽",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_4"
-      },
-      "良バ場◎": {
-        "skill_description": "變得擅長「良好」的場地狀態",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_3"
-      },
-      "阪神レース場◎": {
-        "skill_description": "變得擅長阪神賽場",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_2"
-      },
-      "新潟レース場◎": {
-        "skill_description": "變得擅長新潟賽場",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_2"
-      },
-      "逃げのコツ◎": {
-        "skill_description": "變得容易取得良好位置\n＜作戰．領頭＞",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_g_n_5"
-      },
-      "内枠得意◎": {
-        "skill_description": "變得擅長位於閘位1～3的競賽",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_5"
-      },
-      "交流重賞◯": {
-        "skill_description": "變得稍微擅長交流主要競賽",
-        "skill_pt": "70",
-        "skill_icon_name": "i_skill_g_n_1",
-        "upper_skill": "交流重賞◎"
-      },
-      "福島レース場◎": {
-        "skill_description": "變得擅長福島賽場",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_2"
-      },
-      "右回り◎": {
-        "skill_description": "變得擅長順時針賽道",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_1",
-        "upper_skill": "右回りの鬼"
-      },
-      "小回り◯": {
-        "skill_description": "變得稍微擅長急彎賽道",
-        "skill_pt": "70",
-        "skill_icon_name": "i_skill_g_n_5",
-        "upper_skill": "小回り◎"
-      },
-      "先行のコツ◯": {
-        "skill_description": "變得稍微容易取得良好位置\n＜作戰．前列＞",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_5",
-        "upper_skill": "先行のコツ◎"
-      },
-      "根幹距離◯": {
-        "skill_description": "變得稍微擅長\n主要距離（400m的倍數）",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_2",
-        "upper_skill": "根幹距離◎"
-      },
-      "踏み込み上手": {
-        "skill_description": "若力量足夠強大使速度略微上升\n若力量超出理想值\n速度稍微上升＜沙地＞",
-        "skill_pt": "120",
-        "skill_icon_name": "i_skill_g_n_1",
-        "upper_skill": "抜群の踏み込み"
-      },
-      "一匹狼": {
-        "skill_description": "若參加僅有自己是獨行俠的競賽\n能力會稍微上升",
-        "skill_pt": "70",
-        "skill_icon_name": "i_skill_g_n_1"
-      },
-      "秋ウマ娘◎": {
-        "skill_description": "變得擅長秋季的競賽",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_1",
-        "upper_skill": "初嵐"
-      },
-      "春ウマ娘◎": {
-        "skill_description": "變得擅長春季的競賽",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_1",
-        "upper_skill": "春一番"
-      },
-      "先行のコツ◎": {
-        "skill_description": "變得容易取得良好位置\n＜作戰．前列＞",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_g_n_5"
-      },
-      "根幹距離◎": {
-        "skill_description": "變得擅長\n主要距離（400m的倍數）",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_2"
-      },
-      "雨の日◎": {
-        "skill_description": "變得擅長下雨天的競賽",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_4"
-      },
-      "夏ウマ娘◎": {
-        "skill_description": "變得擅長夏季的競賽",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_1",
-        "upper_skill": "青嵐"
-      },
-      "外枠得意◎": {
-        "skill_description": "變得擅長位於閘位6～8的比賽",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_1"
-      },
-      "非根幹距離◯": {
-        "skill_description": "變得稍微擅長\n非主要距離（非400m的倍數）",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_2",
-        "upper_skill": "非根幹距離◎"
-      },
-      "盛岡レース場◎": {
-        "skill_description": "變得擅長盛岡賽場",
-        "skill_pt": "90",
         "skill_icon_name": "i_skill_g_n_2"
       },
       "徹底マーク◯": {
+        "lower_skill": null,
         "skill_description": "若與支持度第1的賽馬娘採取相同作戰\n會稍微容易發揮能力",
+        "upper_skill": "徹底マーク◎",
         "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_4",
-        "upper_skill": "徹底マーク◎"
-      },
-      "差しのコツ◯": {
-        "skill_description": "變得稍微容易取得良好位置\n＜作戰．居中＞",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_5",
-        "upper_skill": "差しのコツ◎"
-      },
-      "晴れの日◎": {
-        "skill_description": "變得擅長晴天的競賽",
-        "skill_pt": "110",
         "skill_icon_name": "i_skill_g_n_4"
       },
-      "盛岡レース場◯": {
-        "skill_description": "變得稍微擅長盛岡賽場",
-        "skill_pt": "70",
-        "skill_icon_name": "i_skill_g_n_2",
-        "upper_skill": "盛岡レース場◎"
+      "対抗意識◎": {
+        "lower_skill": null,
+        "skill_description": "若很多賽馬娘與自己採取相同作戰\n會容易發揮能力",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_3"
       },
-      "小倉レース場◯": {
-        "skill_description": "變得稍微擅長小倉賽場",
-        "skill_pt": "70",
-        "skill_icon_name": "i_skill_g_n_2",
-        "upper_skill": "小倉レース場◎"
+      "レースの真髄・心": {
+        "lower_skill": null,
+        "skill_description": "幹勁狀態為良好或絕佳時\n持久力、意志力、智力\n可能會稍微上升",
+        "upper_skill": null,
+        "skill_pt": "150",
+        "skill_icon_name": "i_skill_g_n_2"
       },
-      "曇りの日◯": {
-        "skill_description": "變得稍微擅長陰天的競賽",
+      "内枠得意◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長位於閘位1～3的競賽",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_5"
+      },
+      "福島レース場◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長福島賽場",
+        "upper_skill": null,
         "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_4",
-        "upper_skill": "曇りの日◎"
+        "skill_icon_name": "i_skill_g_n_2"
       },
-      "川崎レース場◯": {
-        "skill_description": "變得稍微擅長川崎賽場",
+      "ナイター◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長夜間競賽",
+        "upper_skill": "ナイター◎",
         "skill_pt": "70",
-        "skill_icon_name": "i_skill_g_n_2",
-        "upper_skill": "川崎レース場◎"
+        "skill_icon_name": "i_skill_g_n_5"
+      },
+      "良バ場◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長「良好」的場地狀態",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_3"
+      },
+      "追込のコツ◎": {
+        "lower_skill": null,
+        "skill_description": "變得容易取得良好位置\n＜作戰．後追＞",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_g_n_5"
+      },
+      "小倉レース場◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長小倉賽場",
+        "upper_skill": null,
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "雪の日◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長下雪天的競賽",
+        "upper_skill": "雪の日◎",
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_4"
+      },
+      "非根幹距離◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長\n非主要距離（非400m的倍數）",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "盛岡レース場◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長盛岡賽場",
+        "upper_skill": "盛岡レース場◎",
+        "skill_pt": "70",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "中山レース場◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長中山賽場",
+        "upper_skill": "中山レース場◎",
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "盛岡レース場◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長盛岡賽場",
+        "upper_skill": null,
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "阪神レース場◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長阪神賽場",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_2"
       },
       "ナイター◎": {
+        "lower_skill": null,
         "skill_description": "變得擅長夜間競賽",
+        "upper_skill": null,
         "skill_pt": "90",
         "skill_icon_name": "i_skill_g_n_5"
       },
-      "外枠得意◯": {
-        "skill_description": "變得稍微擅長位於閘位6～8的比賽",
+      "新潟レース場◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長新潟賽場",
+        "upper_skill": "新潟レース場◎",
+        "skill_pt": "70",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "おひとり様◎": {
+        "lower_skill": null,
+        "skill_description": "若沒有賽馬娘與自己採取相同作戰\n會大幅容易發揮能力",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_1"
+      },
+      "道悪◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長\n「略差」「差」「極差」的場地狀態",
+        "upper_skill": "道悪◎",
         "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_1",
-        "upper_skill": "外枠得意◎"
+        "skill_icon_name": "i_skill_g_n_3"
       },
-      "大井レース場◎": {
-        "skill_description": "變得擅長大井賽場",
+      "春ウマ娘◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長春季的競賽",
+        "upper_skill": "春一番",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_1"
+      },
+      "秋ウマ娘◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長秋季的競賽",
+        "upper_skill": "初嵐",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_1"
+      },
+      "根幹距離◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長\n主要距離（400m的倍數）",
+        "upper_skill": null,
         "skill_pt": "110",
         "skill_icon_name": "i_skill_g_n_2"
       },
-      "中京レース場◎": {
-        "skill_description": "變得擅長中京賽場",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_2"
-      },
-      "追込のコツ◯": {
-        "skill_description": "變得稍微容易取得良好位置\n＜作戰．後追＞",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_5",
-        "upper_skill": "追込のコツ◎"
-      },
-      "函館レース場◎": {
-        "skill_description": "變得擅長函館賽場",
+      "根幹距離◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長\n主要距離（400m的倍數）",
+        "upper_skill": "根幹距離◎",
         "skill_pt": "90",
         "skill_icon_name": "i_skill_g_n_2"
       },
       "自制心": {
+        "lower_skill": null,
         "skill_description": "智力上升，變得稍微難以暴衝",
+        "upper_skill": null,
         "skill_pt": "160",
         "skill_icon_name": "i_skill_g_n_5"
       },
-      "逃げのコツ◯": {
-        "skill_description": "變得稍微容易取得良好位置\n＜作戰．領頭＞",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_5",
-        "upper_skill": "逃げのコツ◎"
-      },
-      "やまっけ": {
-        "skill_description": "在競賽時極小機率發揮更強大的實力\n使速度、力量、意志力稍微上升\n支持度低時變得容易發揮能力",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_g_n_1",
-        "upper_skill": "勝負師"
-      },
-      "函館レース場◯": {
-        "skill_description": "變得稍微擅長函館賽場",
-        "skill_pt": "70",
-        "skill_icon_name": "i_skill_g_n_2",
-        "upper_skill": "函館レース場◎"
-      },
       "船橋レース場◯": {
+        "lower_skill": null,
         "skill_description": "變得稍微擅長船橋賽場",
+        "upper_skill": "船橋レース場◎",
         "skill_pt": "70",
-        "skill_icon_name": "i_skill_g_n_2",
-        "upper_skill": "船橋レース場◎"
-      },
-      "京都レース場◎": {
-        "skill_description": "變得擅長京都賽場",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_2",
-        "upper_skill": "淀の申し子"
+        "skill_icon_name": "i_skill_g_n_2"
       },
       "福島レース場◯": {
+        "lower_skill": null,
         "skill_description": "變得稍微擅長福島賽場",
+        "upper_skill": "福島レース場◎",
         "skill_pt": "70",
-        "skill_icon_name": "i_skill_g_n_2",
-        "upper_skill": "福島レース場◎"
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "曇りの日◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長陰天的競賽",
+        "upper_skill": "曇りの日◎",
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_4"
+      },
+      "交流重賞◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長交流主要競賽",
+        "upper_skill": "交流重賞◎",
+        "skill_pt": "70",
+        "skill_icon_name": "i_skill_g_n_1"
+      },
+      "ロンシャンレース場◯": {
+        "lower_skill": null,
+        "skill_description": "ロンシャンレース場が少し得意になる",
+        "upper_skill": "ロンシャンレース場◎",
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "新潟レース場◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長新潟賽場",
+        "upper_skill": null,
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "夏ウマ娘◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長夏季的競賽",
+        "upper_skill": "青嵐",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_1"
+      },
+      "右回り◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長順時針賽道",
+        "upper_skill": "右回りの鬼",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_1"
+      },
+      "徹底マーク◎": {
+        "lower_skill": null,
+        "skill_description": "若與支持度第1的賽馬娘採取相同作戰\n會容易發揮能力",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_4"
+      },
+      "東京レース場◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長東京賽場",
+        "upper_skill": "東京レース場◎",
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "ロンシャンレース場◎": {
+        "lower_skill": null,
+        "skill_description": "ロンシャンレース場が得意になる",
+        "upper_skill": "ロンシャンの申し子",
+        "skill_pt": "70",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "内枠得意◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長位於閘位1～3的比賽",
+        "upper_skill": "内枠得意◎",
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_5"
+      },
+      "船橋レース場◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長船橋賽場",
+        "upper_skill": null,
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "対抗意識◯": {
+        "lower_skill": null,
+        "skill_description": "若很多賽馬娘與自己採取相同作戰\n會稍微容易發揮能力",
+        "upper_skill": "対抗意識◎",
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_3"
+      },
+      "差しのコツ◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微容易取得良好位置\n＜作戰．居中＞",
+        "upper_skill": "差しのコツ◎",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_5"
+      },
+      "冬ウマ娘◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長冬季的競賽",
+        "upper_skill": "冬ウマ娘◎",
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_1"
+      },
+      "雨の日◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長下雨天的競賽",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_4"
+      },
+      "夏ウマ娘◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長夏季的競賽",
+        "upper_skill": "夏ウマ娘◎",
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_1"
+      },
+      "中京レース場◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長中京賽場",
+        "upper_skill": "中京レース場◎",
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "伏兵◯": {
+        "lower_skill": null,
+        "skill_description": "在支持度第4以下的競賽中\n會稍微容易發揮能力",
+        "upper_skill": "伏兵◎",
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_1"
+      },
+      "外枠得意◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長位於閘位6～8的比賽",
+        "upper_skill": "外枠得意◎",
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_1"
       },
       "札幌レース場◯": {
+        "lower_skill": null,
         "skill_description": "變得稍微擅長札幌賽場",
+        "upper_skill": "札幌レース場◎",
         "skill_pt": "70",
-        "skill_icon_name": "i_skill_g_n_2",
-        "upper_skill": "札幌レース場◎"
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "京都レース場◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長京都賽場",
+        "upper_skill": "淀の申し子",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "秋ウマ娘◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長秋季的競賽",
+        "upper_skill": "秋ウマ娘◎",
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_1"
       },
       "川崎レース場◎": {
+        "lower_skill": null,
         "skill_description": "變得擅長川崎賽場",
+        "upper_skill": null,
         "skill_pt": "90",
         "skill_icon_name": "i_skill_g_n_2"
       },
       "晴れの日◯": {
+        "lower_skill": null,
         "skill_description": "變得稍微擅長晴天的競賽",
+        "upper_skill": "晴れの日◎",
         "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_4",
-        "upper_skill": "晴れの日◎"
+        "skill_icon_name": "i_skill_g_n_4"
       },
-      "伏兵◎": {
-        "skill_description": "在支持度第4以下的競賽中\n會容易發揮能力",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_g_n_1"
-      },
-      "大井レース場◯": {
-        "skill_description": "變得稍微擅長大井賽場",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_2",
-        "upper_skill": "大井レース場◎"
-      },
-      "中京レース場◯": {
-        "skill_description": "變得稍微擅長中京賽場",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_2",
-        "upper_skill": "中京レース場◎"
-      },
-      "曇りの日◎": {
-        "skill_description": "變得擅長陰天的競賽",
+      "雪の日◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長下雪天的競賽",
+        "upper_skill": null,
         "skill_pt": "110",
         "skill_icon_name": "i_skill_g_n_4"
       },
-      "道悪◯": {
-        "skill_description": "變得稍微擅長\n「略差」「差」「極差」的場地狀態",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_3",
-        "upper_skill": "道悪◎"
+      "逃げのコツ◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微容易取得良好位置\n＜作戰．領頭＞",
+        "upper_skill": "逃げのコツ◎",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_5"
       },
-      "内枠得意◯": {
-        "skill_description": "變得稍微擅長位於閘位1～3的比賽",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_5",
-        "upper_skill": "内枠得意◎"
-      },
-      "ロンシャンレース場◎": {
-        "skill_description": "ロンシャンレース場が得意になる",
+      "函館レース場◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長函館賽場",
+        "upper_skill": "函館レース場◎",
         "skill_pt": "70",
-        "skill_icon_name": "i_skill_g_n_2",
-        "upper_skill": "ロンシャンの申し子"
+        "skill_icon_name": "i_skill_g_n_2"
       },
-      "良バ場◯": {
-        "skill_description": "變得稍微擅長「良好」的場地狀態",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_3",
-        "upper_skill": "良バ場◎"
+      "やまっけ": {
+        "lower_skill": null,
+        "skill_description": "在競賽時極小機率發揮更強大的實力\n使速度、力量、意志力稍微上升\n支持度低時變得容易發揮能力",
+        "upper_skill": "勝負師",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_g_n_1"
       },
-      "雪の日◯": {
-        "skill_description": "變得稍微擅長下雪天的競賽",
-        "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_4",
-        "upper_skill": "雪の日◎"
+      "探求心": {
+        "lower_skill": null,
+        "skill_description": "スピードが十二分に高いとスピードがわずかに上がる、賢さも十二分ならスピードが少し上がる＜先行・中距離＞",
+        "upper_skill": "シンギュラリティ",
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_g_n_1"
       },
-      "東京レース場◯": {
-        "skill_description": "變得稍微擅長東京賽場",
+      "おひとり様◯": {
+        "lower_skill": null,
+        "skill_description": "若沒有賽馬娘與自己採取相同作戰\n會容易發揮能力",
+        "upper_skill": "おひとり様◎",
         "skill_pt": "90",
-        "skill_icon_name": "i_skill_g_n_2",
-        "upper_skill": "東京レース場◎"
+        "skill_icon_name": "i_skill_g_n_1"
+      },
+      "右回り◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長順時針賽道",
+        "upper_skill": "右回り◎",
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_1"
+      },
+      "函館レース場◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長函館賽場",
+        "upper_skill": null,
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "追込のコツ◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微容易取得良好位置\n＜作戰．後追＞",
+        "upper_skill": "追込のコツ◎",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_5"
+      },
+      "中京レース場◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長中京賽場",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "大井レース場◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長大井賽場",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "伏兵◎": {
+        "lower_skill": null,
+        "skill_description": "在支持度第4以下的競賽中\n會容易發揮能力",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_1"
+      },
+      "川崎レース場◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長川崎賽場",
+        "upper_skill": "川崎レース場◎",
+        "skill_pt": "70",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "非根幹距離◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長\n非主要距離（非400m的倍數）",
+        "upper_skill": "非根幹距離◎",
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "晴れの日◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長晴天的競賽",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_4"
+      },
+      "差しのコツ◎": {
+        "lower_skill": null,
+        "skill_description": "變得容易取得良好位置\n＜作戰．居中＞",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_g_n_5"
+      },
+      "京都レース場◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長京都賽場",
+        "upper_skill": "京都レース場◎",
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "左回り◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長逆時針賽道",
+        "upper_skill": "左回り◎",
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_1"
+      },
+      "交流重賞◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長交流主要競賽",
+        "upper_skill": null,
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_1"
+      },
+      "雨の日◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長下雨天的競賽",
+        "upper_skill": "雨の日◎",
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_4"
+      },
+      "大井レース場◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長大井賽場",
+        "upper_skill": "大井レース場◎",
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "ラッキーセブン": {
+        "lower_skill": null,
+        "skill_description": "閘位是7時\n可能會稍微發生好事",
+        "upper_skill": "スーパーラッキーセブン",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_6"
+      },
+      "阪神レース場◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長阪神賽場",
+        "upper_skill": "阪神レース場◎",
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_2"
+      },
+      "春ウマ娘◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長春季的競賽",
+        "upper_skill": "春ウマ娘◎",
+        "skill_pt": "90",
+        "skill_icon_name": "i_skill_g_n_1"
+      },
+      "泥遊び◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長場地狀態「差」或「極差」的\n競賽，速度上升\n＜沙地＞",
+        "upper_skill": "泥んこマイスター",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_1"
+      },
+      "自信家": {
+        "lower_skill": null,
+        "skill_description": "スピードとパワーが十分に強いとスピードとパワーがわずかに上がる＜マイル/中距離＞",
+        "upper_skill": "雲蒸竜変",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_g_n_1"
+      },
+      "左回り◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長逆時針賽道",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_1"
+      },
+      "逃げのコツ◎": {
+        "lower_skill": null,
+        "skill_description": "變得容易取得良好位置\n＜作戰．領頭＞",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_g_n_5"
+      },
+      "小回り◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微擅長急彎賽道",
+        "upper_skill": "小回り◎",
+        "skill_pt": "70",
+        "skill_icon_name": "i_skill_g_n_5"
+      },
+      "先行のコツ◯": {
+        "lower_skill": null,
+        "skill_description": "變得稍微容易取得良好位置\n＜作戰．前列＞",
+        "upper_skill": "先行のコツ◎",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_5"
+      },
+      "先行のコツ◎": {
+        "lower_skill": null,
+        "skill_description": "變得容易取得良好位置\n＜作戰．前列＞",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_g_n_5"
+      },
+      "道悪◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長\n「略差」「差」「極差」的場地狀態",
+        "upper_skill": "道悪の鬼",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_3"
+      },
+      "外枠得意◎": {
+        "lower_skill": null,
+        "skill_description": "變得擅長位於閘位6～8的比賽",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_n_1"
       }
     },
     "rare": {
-      "初嵐": {
-        "skill_description": "變得擅長秋季的競賽\n速度和力量上升",
-        "skill_pt": "130",
-        "lower_skill": "秋ウマ娘◎",
-        "skill_icon_name": "i_skill_g_r_1"
-      },
-      "雲蒸竜変": {
-        "skill_description": "スピードとパワーが十分に強いとスピードとパワーが上がる＜マイル/中距離＞",
-        "skill_pt": "180",
-        "lower_skill": "自信家",
-        "skill_icon_name": "i_skill_g_r_1"
-      },
-      "勝負師": {
-        "skill_description": "在競賽時偶爾發揮更強大的實力\n使速度、力量、意志力大幅上升\n支持度低時變得容易發揮能力",
-        "skill_pt": "180",
-        "lower_skill": "やまっけ",
-        "skill_icon_name": "i_skill_g_r_1"
-      },
       "泥んこマイスター": {
-        "skill_description": "變得擅長場地狀態「差」或「極差」的\n競賽，速度和力量上升\n＜沙地＞",
-        "skill_pt": "130",
         "lower_skill": "泥遊び◎",
-        "skill_icon_name": "i_skill_g_r_1"
-      },
-      "スーパーラッキーセブン": {
-        "skill_description": "閘位是7時\n可能會發生好事",
-        "skill_pt": "110",
-        "lower_skill": "ラッキーセブン",
-        "skill_icon_name": "i_skill_g_r_6"
-      },
-      "青嵐": {
-        "skill_description": "夏のレースが得意になりスピードとパワーが上昇する",
+        "skill_description": "變得擅長場地狀態「差」或「極差」的\n競賽，速度和力量上升\n＜沙地＞",
+        "upper_skill": null,
         "skill_pt": "130",
-        "lower_skill": "夏ウマ娘◎",
         "skill_icon_name": "i_skill_g_r_1"
-      },
-      "抜群の踏み込み": {
-        "skill_description": "若力量足夠強大使速度上升\n若力量超出理想值\n速度大幅上升＜沙地＞",
-        "skill_pt": "120",
-        "lower_skill": "踏み込み上手",
-        "skill_icon_name": "i_skill_g_r_1"
-      },
-      "大逃げ": {
-        "skill_description": "比一般的領頭作戰更大幅度地\n與後方拉開距離，並打算就此\n領頭至最後為止＜作戰．領頭＞",
-        "skill_pt": "200",
-        "skill_icon_name": "i_skill_g_r_7"
-      },
-      "春一番": {
-        "skill_description": "變得擅長春季的競賽\n速度和力量上升",
-        "skill_pt": "130",
-        "lower_skill": "春ウマ娘◎",
-        "skill_icon_name": "i_skill_g_r_1"
-      },
-      "シンギュラリティ": {
-        "skill_description": "スピードが十二分に高いとスピードが上がる、賢さも十二分ならスピードがすごく上がる＜先行・中距離＞",
-        "skill_pt": "120",
-        "lower_skill": "探求心",
-        "skill_icon_name": "i_skill_g_r_1"
-      },
-      "凍て風": {
-        "skill_description": "冬のレースが得意になりスピードとパワーが上昇する",
-        "skill_pt": "130",
-        "lower_skill": "冬ウマ娘◎",
-        "skill_icon_name": "i_skill_g_r_1"
-      },
-      "道悪の鬼": {
-        "skill_description": "「稍重」「重」「不良」のバ場状態が得意になりパワーとスピードが上昇する",
-        "skill_pt": "130",
-        "lower_skill": "道悪◎",
-        "skill_icon_name": "i_skill_g_r_3"
-      },
-      "良バ場の鬼": {
-        "skill_description": "變得擅長「良好」的場地狀態\n力量和速度上升",
-        "skill_pt": "130",
-        "lower_skill": "良バ場◎",
-        "skill_icon_name": "i_skill_g_r_3"
-      },
-      "淀の申し子": {
-        "skill_description": "變得擅長京都賽場\n持久力和智力上升",
-        "skill_pt": "130",
-        "lower_skill": "京都レース場◎",
-        "skill_icon_name": "i_skill_g_r_2"
       },
       "右回りの鬼": {
-        "skill_description": "變得擅長順時針賽道\n速度和力量上升",
-        "skill_pt": "130",
         "lower_skill": "右回り◎",
+        "skill_description": "變得擅長順時針賽道\n速度和力量上升",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_g_r_1"
+      },
+      "春一番": {
+        "lower_skill": "春ウマ娘◎",
+        "skill_description": "變得擅長春季的競賽\n速度和力量上升",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_g_r_1"
+      },
+      "青嵐": {
+        "lower_skill": "夏ウマ娘◎",
+        "skill_description": "夏のレースが得意になりスピードとパワーが上昇する",
+        "upper_skill": null,
+        "skill_pt": "130",
         "skill_icon_name": "i_skill_g_r_1"
       },
       "ロンシャンの申し子": {
-        "skill_description": "ロンシャンレース場が得意になり、スタミナ、賢さ、スピードが上昇する",
-        "skill_pt": "130",
         "lower_skill": "ロンシャンレース場◎",
+        "skill_description": "ロンシャンレース場が得意になり、スタミナ、賢さ、スピードが上昇する",
+        "upper_skill": null,
+        "skill_pt": "130",
         "skill_icon_name": "i_skill_g_r_2"
+      },
+      "雲蒸竜変": {
+        "lower_skill": "自信家",
+        "skill_description": "スピードとパワーが十分に強いとスピードとパワーが上がる＜マイル/中距離＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_g_r_1"
+      },
+      "淀の申し子": {
+        "lower_skill": "京都レース場◎",
+        "skill_description": "變得擅長京都賽場\n持久力和智力上升",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_g_r_2"
+      },
+      "勝負師": {
+        "lower_skill": "やまっけ",
+        "skill_description": "在競賽時偶爾發揮更強大的實力\n使速度、力量、意志力大幅上升\n支持度低時變得容易發揮能力",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_g_r_1"
+      },
+      "良バ場の鬼": {
+        "lower_skill": "良バ場◎",
+        "skill_description": "變得擅長「良好」的場地狀態\n力量和速度上升",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_g_r_3"
+      },
+      "道悪の鬼": {
+        "lower_skill": "道悪◎",
+        "skill_description": "「稍重」「重」「不良」のバ場状態が得意になりパワーとスピードが上昇する",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_g_r_3"
+      },
+      "大逃げ": {
+        "lower_skill": null,
+        "skill_description": "比一般的領頭作戰更大幅度地\n與後方拉開距離，並打算就此\n領頭至最後為止＜作戰．領頭＞",
+        "upper_skill": null,
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_g_r_7"
+      },
+      "抜群の踏み込み": {
+        "lower_skill": "踏み込み上手",
+        "skill_description": "若力量足夠強大使速度上升\n若力量超出理想值\n速度大幅上升＜沙地＞",
+        "upper_skill": null,
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_g_r_1"
+      },
+      "凍て風": {
+        "lower_skill": "冬ウマ娘◎",
+        "skill_description": "冬のレースが得意になりスピードとパワーが上昇する",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_g_r_1"
+      },
+      "シンギュラリティ": {
+        "lower_skill": "探求心",
+        "skill_description": "スピードが十二分に高いとスピードが上がる、賢さも十二分ならスピードがすごく上がる＜先行・中距離＞",
+        "upper_skill": null,
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_g_r_1"
+      },
+      "初嵐": {
+        "lower_skill": "秋ウマ娘◎",
+        "skill_description": "變得擅長秋季的競賽\n速度和力量上升",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_g_r_1"
+      },
+      "スーパーラッキーセブン": {
+        "lower_skill": "ラッキーセブン",
+        "skill_description": "閘位是7時\n可能會發生好事",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_g_r_6"
       }
     }
   },
   "red": {
     "normal": {
-      "追込ためらい": {
-        "skill_description": "在競賽後期使作戰・後追的賽馬娘遲疑\n且速度略微下降",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_r_n_1"
-      },
-      "差し焦り": {
-        "skill_description": "在競賽中期使作戰・居中的賽馬娘焦躁\n並略微容易感到疲倦",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_r_n_2"
-      },
-      "先行駆け引き": {
-        "skill_description": "作戰為前列的賽馬娘暴衝後\n需花費時間才能恢復",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_r_n_3"
-      },
-      "スピードイーター": {
-        "skill_description": "在競賽中期若位隊列前方\n能略微奪取後方的速度＜一哩＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_r_n_1"
-      },
-      "スタミナイーター": {
-        "skill_description": "在競賽中期若位於隊列後方\n會些微奪取前方的持久力＜長距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_r_n_2"
-      },
-      "差しけん制": {
-        "skill_description": "在競賽初期牽制作戰・居中的賽馬娘\n使其略微容易感到疲倦",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_r_n_2"
-      },
-      "逃げためらい": {
-        "skill_description": "在競賽後期使作戰・領頭的賽馬娘遲疑\n且速度略微下降",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_r_n_1"
-      },
-      "逃げ駆け引き": {
-        "skill_description": "作戰為領頭的賽馬娘暴衝後\n需花費時間才能恢復",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_r_n_3"
-      },
-      "先行ためらい": {
-        "skill_description": "在競賽後期使作戰・前列的賽馬娘遲疑\n且速度略微下降",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_r_n_1"
-      },
-      "トリック（後）": {
-        "skill_description": "在競賽中期若位於隊列後方\n前方暴衝的賽馬娘會略微感到疲倦",
-        "skill_pt": "140",
-        "skill_icon_name": "i_skill_r_n_2"
-      },
-      "差し駆け引き": {
-        "skill_description": "作戰為居中的賽馬娘暴衝後\n需花費時間才能恢復",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_r_n_3"
-      },
-      "鋭い眼光": {
-        "skill_description": "在競賽後期，其他賽馬娘會略微動搖\n＜作戰．居中＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_r_n_2",
-        "upper_skill": "八方にらみ"
-      },
-      "束縛": {
-        "skill_description": "在競賽後期若位於隊列後方\n會使前方的速度略微下降＜中距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_r_n_1",
-        "upper_skill": "独占力"
-      },
-      "差しためらい": {
-        "skill_description": "在競賽後期使作戰・居中的賽馬娘遲疑\n且速度略微下降",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_r_n_1"
-      },
       "圧迫感": {
+        "lower_skill": null,
         "skill_description": "在競賽後半\n讓喘口氣的賽馬娘感到略微畏縮＜沙地＞",
+        "upper_skill": null,
         "skill_pt": "180",
         "skill_icon_name": "i_skill_r_n_1"
+      },
+      "ささやき": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期會使最近的前方賽馬娘\n略微感到困惑＜中距離＞",
+        "upper_skill": "魅惑のささやき",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_r_n_2"
       },
       "後方釘付": {
+        "lower_skill": null,
         "skill_description": "在競賽初期若位於隊列前方\n後方的賽馬娘會稍微感到畏縮＜短距離＞",
+        "upper_skill": "悩殺術",
         "skill_pt": "170",
-        "skill_icon_name": "i_skill_r_n_1",
-        "upper_skill": "悩殺術"
-      },
-      "トリック（前）": {
-        "skill_description": "在競賽中期若位於隊列前方\n後方暴衝的賽馬娘會略微感到疲倦",
-        "skill_pt": "140",
-        "skill_icon_name": "i_skill_r_n_2",
-        "upper_skill": "見惚れるトリック"
-      },
-      "追込駆け引き": {
-        "skill_description": "作戰為後追的賽馬娘暴衝後\n需花費時間才能恢復",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_r_n_3"
-      },
-      "抜け駆け禁止": {
-        "skill_description": "在競賽初期若位於隊列後方\n前方的賽馬娘會略微感到焦躁\n行動變得些微遲鈍＜短距離＞",
-        "skill_pt": "170",
-        "skill_icon_name": "i_skill_r_n_2"
-      },
-      "先行けん制": {
-        "skill_description": "在競賽初期牽制作戰・前列的賽馬娘\n使其略微容易感到疲倦",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_r_n_2"
+        "skill_icon_name": "i_skill_r_n_1"
       },
       "かく乱": {
+        "lower_skill": null,
         "skill_description": "在競賽後期若位於隊列前方，會使後方\n對手的視線變得略微狹窄＜作戰．前列＞",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_r_n_4",
-        "upper_skill": "幻惑のかく乱"
-      },
-      "布石": {
-        "skill_description": "在競賽初期若位於後方，會使前方\n對手的行動變得略微遲鈍＜一哩＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_r_n_5",
-        "upper_skill": "布陣"
-      },
-      "先行焦り": {
-        "skill_description": "在競賽中期使作戰・前列的賽馬娘焦躁\n並略微容易感到疲倦",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_r_n_2"
-      },
-      "逃げ焦り": {
-        "skill_description": "在競賽中期使作戰・領頭的賽馬娘焦躁\n並略微容易感到疲倦",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_r_n_2"
-      },
-      "リスタート": {
-        "skill_description": "在競賽初期若沒有取得領先\n會使前方賽馬娘的行動變得略微遲鈍\n＜作戰．領頭＞",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_r_n_5"
-      },
-      "目くらまし": {
-        "skill_description": "在競賽後期使前方的賽馬娘\n視野變得稍微狹窄＜長距離＞",
+        "upper_skill": "幻惑のかく乱",
         "skill_pt": "110",
         "skill_icon_name": "i_skill_r_n_4"
       },
-      "まなざし": {
-        "skill_description": "在競賽後期會略微提高盯上的\n賽馬娘的緊張感＜作戰．後追＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_r_n_1",
-        "upper_skill": "熱いまなざし"
+      "抜け駆け禁止": {
+        "lower_skill": null,
+        "skill_description": "在競賽初期若位於隊列後方\n前方的賽馬娘會略微感到焦躁\n行動變得些微遲鈍＜短距離＞",
+        "upper_skill": null,
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_r_n_2"
       },
-      "追込けん制": {
-        "skill_description": "在競賽初期牽制作戰・後追的賽馬娘\n使其略微容易感到疲倦",
+      "追込ためらい": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期使作戰・後追的賽馬娘遲疑\n且速度略微下降",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_r_n_1"
+      },
+      "スタミナイーター": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若位於隊列後方\n會些微奪取前方的持久力＜長距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_r_n_2"
+      },
+      "追込焦り": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期使作戰・後追的賽馬娘焦躁\n並略微容易感到疲倦",
+        "upper_skill": null,
         "skill_pt": "130",
         "skill_icon_name": "i_skill_r_n_2"
       },
       "土煙": {
+        "lower_skill": null,
         "skill_description": "在競賽初期若位居領先\n使緊跟在後方的賽馬娘速度\n略微下降＜沙地＞",
+        "upper_skill": null,
         "skill_pt": "120",
         "skill_icon_name": "i_skill_r_n_1"
       },
-      "追込焦り": {
-        "skill_description": "在競賽中期使作戰・後追的賽馬娘焦躁\n並略微容易感到疲倦",
+      "トリック（前）": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若位於隊列前方\n後方暴衝的賽馬娘會略微感到疲倦",
+        "upper_skill": "見惚れるトリック",
+        "skill_pt": "140",
+        "skill_icon_name": "i_skill_r_n_2"
+      },
+      "まなざし": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期會略微提高盯上的\n賽馬娘的緊張感＜作戰．後追＞",
+        "upper_skill": "熱いまなざし",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_r_n_1"
+      },
+      "トリック（後）": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若位於隊列後方\n前方暴衝的賽馬娘會略微感到疲倦",
+        "upper_skill": null,
+        "skill_pt": "140",
+        "skill_icon_name": "i_skill_r_n_2"
+      },
+      "目くらまし": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期使前方的賽馬娘\n視野變得稍微狹窄＜長距離＞",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_r_n_4"
+      },
+      "逃げ駆け引き": {
+        "lower_skill": null,
+        "skill_description": "作戰為領頭的賽馬娘暴衝後\n需花費時間才能恢復",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_r_n_3"
+      },
+      "先行焦り": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期使作戰・前列的賽馬娘焦躁\n並略微容易感到疲倦",
+        "upper_skill": null,
         "skill_pt": "130",
         "skill_icon_name": "i_skill_r_n_2"
+      },
+      "リスタート": {
+        "lower_skill": null,
+        "skill_description": "在競賽初期若沒有取得領先\n會使前方賽馬娘的行動變得略微遲鈍\n＜作戰．領頭＞",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_r_n_5"
+      },
+      "逃げ焦り": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期使作戰・領頭的賽馬娘焦躁\n並略微容易感到疲倦",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_r_n_2"
+      },
+      "差し焦り": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期使作戰・居中的賽馬娘焦躁\n並略微容易感到疲倦",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_r_n_2"
+      },
+      "スピードイーター": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若位隊列前方\n能略微奪取後方的速度＜一哩＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_r_n_1"
+      },
+      "束縛": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期若位於隊列後方\n會使前方的速度略微下降＜中距離＞",
+        "upper_skill": "独占力",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_r_n_1"
+      },
+      "逃げためらい": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期使作戰・領頭的賽馬娘遲疑\n且速度略微下降",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_r_n_1"
+      },
+      "布石": {
+        "lower_skill": null,
+        "skill_description": "在競賽初期若位於後方，會使前方\n對手的行動變得略微遲鈍＜一哩＞",
+        "upper_skill": "布陣",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_r_n_5"
+      },
+      "差しためらい": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期使作戰・居中的賽馬娘遲疑\n且速度略微下降",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_r_n_1"
+      },
+      "先行けん制": {
+        "lower_skill": null,
+        "skill_description": "在競賽初期牽制作戰・前列的賽馬娘\n使其略微容易感到疲倦",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_r_n_2"
+      },
+      "差し駆け引き": {
+        "lower_skill": null,
+        "skill_description": "作戰為居中的賽馬娘暴衝後\n需花費時間才能恢復",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_r_n_3"
+      },
+      "追込けん制": {
+        "lower_skill": null,
+        "skill_description": "在競賽初期牽制作戰・後追的賽馬娘\n使其略微容易感到疲倦",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_r_n_2"
+      },
+      "先行駆け引き": {
+        "lower_skill": null,
+        "skill_description": "作戰為前列的賽馬娘暴衝後\n需花費時間才能恢復",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_r_n_3"
+      },
+      "先行ためらい": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期使作戰・前列的賽馬娘遲疑\n且速度略微下降",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_r_n_1"
+      },
+      "鋭い眼光": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期，其他賽馬娘會略微動搖\n＜作戰．居中＞",
+        "upper_skill": "八方にらみ",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_r_n_2"
+      },
+      "差しけん制": {
+        "lower_skill": null,
+        "skill_description": "在競賽初期牽制作戰・居中的賽馬娘\n使其略微容易感到疲倦",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_r_n_2"
+      },
+      "追込駆け引き": {
+        "lower_skill": null,
+        "skill_description": "作戰為後追的賽馬娘暴衝後\n需花費時間才能恢復",
+        "upper_skill": null,
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_r_n_3"
       },
       "逃げけん制": {
+        "lower_skill": null,
         "skill_description": "在競賽初期牽制作戰・領頭的賽馬娘\n使其略微容易感到疲倦",
+        "upper_skill": null,
         "skill_pt": "130",
         "skill_icon_name": "i_skill_r_n_2"
-      },
-      "ささやき": {
-        "skill_description": "在競賽中期會使最近的前方賽馬娘\n略微感到困惑＜中距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_r_n_2",
-        "upper_skill": "魅惑のささやき"
       }
     },
     "rare": {
-      "布陣": {
-        "skill_description": "在競賽初期若位於後方，會使前方\n對手的行動變得遲鈍＜一哩＞",
-        "skill_pt": "160",
-        "lower_skill": "布石",
-        "skill_icon_name": "i_skill_r_r_5"
-      },
-      "スタミナグリード": {
-        "skill_description": "在競賽中期若位於隊列後方\n會略微奪取前方的持久力＜長距離＞",
-        "skill_pt": "160",
-        "lower_skill": "スタミナイーター",
-        "skill_icon_name": "i_skill_r_r_2"
-      },
-      "悩殺術": {
-        "skill_description": "在競賽初期若位於隊列前方\n後方的賽馬娘會感到畏縮＜短距離＞",
-        "skill_pt": "170",
-        "lower_skill": "後方釘付",
-        "skill_icon_name": "i_skill_r_r_1"
-      },
       "見惚れるトリック": {
-        "skill_description": "在競賽中期若位於隊列前方\n後方暴衝的賽馬娘會感到疲倦",
-        "skill_pt": "140",
         "lower_skill": "トリック（前）",
-        "skill_icon_name": "i_skill_r_r_2"
-      },
-      "奇術師": {
-        "skill_description": "在競賽後期使前方的賽馬娘\n視野變得狹窄＜長距離＞",
-        "skill_pt": "110",
-        "lower_skill": "目くらまし",
-        "skill_icon_name": "i_skill_r_r_4"
-      },
-      "独占力": {
-        "skill_description": "在競賽後期若位於隊列後方\n會使前方的速度下降＜中距離＞",
-        "skill_pt": "160",
-        "lower_skill": "束縛",
-        "skill_icon_name": "i_skill_r_r_1"
-      },
-      "熱いまなざし": {
-        "skill_description": "在競賽後期會提高盯上的\n賽馬娘的緊張感＜作戰．後追＞",
-        "skill_pt": "180",
-        "lower_skill": "まなざし",
-        "skill_icon_name": "i_skill_r_r_1"
-      },
-      "魅惑のささやき": {
-        "skill_description": "在競賽中期使最近的前方賽馬娘\n感到困惑＜中距離＞",
-        "skill_pt": "160",
-        "lower_skill": "ささやき",
+        "skill_description": "在競賽中期若位於隊列前方\n後方暴衝的賽馬娘會感到疲倦",
+        "upper_skill": null,
+        "skill_pt": "140",
         "skill_icon_name": "i_skill_r_r_2"
       },
       "幻惑のかく乱": {
-        "skill_description": "在競賽後期若位於隊列前方，會使後方\n對手的視線變得稍微狹窄＜作戰．前列＞",
-        "skill_pt": "110",
         "lower_skill": "かく乱",
+        "skill_description": "在競賽後期若位於隊列前方，會使後方\n對手的視線變得稍微狹窄＜作戰．前列＞",
+        "upper_skill": null,
+        "skill_pt": "110",
         "skill_icon_name": "i_skill_r_r_4"
       },
-      "油断大敵": {
-        "skill_description": "在競賽後半\n讓喘口氣的賽馬娘感到畏縮＜沙地＞",
+      "八方にらみ": {
+        "lower_skill": "鋭い眼光",
+        "skill_description": "在競賽後期，其他賽馬娘會動搖\n＜作戰．居中＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_r_r_2"
+      },
+      "布陣": {
+        "lower_skill": "布石",
+        "skill_description": "在競賽初期若位於後方，會使前方\n對手的行動變得遲鈍＜一哩＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_r_r_5"
+      },
+      "熱いまなざし": {
+        "lower_skill": "まなざし",
+        "skill_description": "在競賽後期會提高盯上的\n賽馬娘的緊張感＜作戰．後追＞",
+        "upper_skill": null,
+        "skill_pt": "180",
         "skill_icon_name": "i_skill_r_r_1"
       },
-      "八方にらみ": {
-        "skill_description": "在競賽後期，其他賽馬娘會動搖\n＜作戰．居中＞",
-        "skill_pt": "180",
-        "lower_skill": "鋭い眼光",
+      "独占力": {
+        "lower_skill": "束縛",
+        "skill_description": "在競賽後期若位於隊列後方\n會使前方的速度下降＜中距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_r_r_1"
+      },
+      "奇術師": {
+        "lower_skill": "目くらまし",
+        "skill_description": "在競賽後期使前方的賽馬娘\n視野變得狹窄＜長距離＞",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_r_r_4"
+      },
+      "悩殺術": {
+        "lower_skill": "後方釘付",
+        "skill_description": "在競賽初期若位於隊列前方\n後方的賽馬娘會感到畏縮＜短距離＞",
+        "upper_skill": null,
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_r_r_1"
+      },
+      "油断大敵": {
+        "lower_skill": null,
+        "skill_description": "在競賽後半\n讓喘口氣的賽馬娘感到畏縮＜沙地＞",
+        "upper_skill": null,
+        "skill_pt": null,
+        "skill_icon_name": "i_skill_r_r_1"
+      },
+      "魅惑のささやき": {
+        "lower_skill": "ささやき",
+        "skill_description": "在競賽中期使最近的前方賽馬娘\n感到困惑＜中距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_r_r_2"
+      },
+      "スタミナグリード": {
+        "lower_skill": "スタミナイーター",
+        "skill_description": "在競賽中期若位於隊列後方\n會略微奪取前方的持久力＜長距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
         "skill_icon_name": "i_skill_r_r_2"
       }
     }
   },
   "yellow": {
     "normal": {
-      "外差し準備": {
-        "skill_description": "在最後彎道若由外側追過對手\n速度會略微上升＜作戰．居中＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "昇り龍"
-      },
-      "切れ味": {
-        "skill_description": "在進入競賽後期前若不暴衝並持續\n潛伏於隊列後方，會在後期的一開始\n加速力略微上升＜作戰．後追＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "抜群の切れ味"
-      },
-      "急ぎ足": {
-        "skill_description": "在競賽中期略微變得容易往前推進\n＜作戰．領頭＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "脱出術"
-      },
-      "尻尾上がり": {
-        "skill_description": "在競賽中期若發動多個技能\n速度會略微上升",
-        "skill_pt": "100",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "尻尾の滝登り"
-      },
-      "急浮上": {
-        "skill_description": "在競賽後期若位於隊列中段之後\n加速力會略微上升＜沙地＞",
-        "skill_pt": "180",
+      "登山家": {
+        "lower_skill": null,
+        "skill_description": "變得略微擅長上坡",
+        "upper_skill": null,
+        "skill_pt": "160",
         "skill_icon_name": "i_skill_y_n_2"
       },
-      "向上心": {
-        "skill_description": "即將進入競賽後期時，潛伏於第2之後，\n且距離最前頭2身距以內一段時間內\n速度會些微上升＜作戰．前列＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "風雲の志"
+      "臨機応変": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期變得稍微擅長爭搶賽道",
+        "upper_skill": "レーンの魔術師",
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_n_3"
       },
-      "下り坂巧者": {
-        "skill_description": "在下坡速度略微上升",
-        "skill_pt": "170",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "至高のダウンヒラー"
-      },
-      "短距離コーナー◯": {
-        "skill_description": "在彎道速度略微上升\n＜短距離＞",
+      "マイル直線◯": {
+        "lower_skill": null,
+        "skill_description": "在直線速度略微上升＜一哩＞",
+        "upper_skill": "マイル直線◎",
         "skill_pt": "100",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "短距離コーナー◎"
+        "skill_icon_name": "i_skill_y_n_1"
       },
-      "食い下がり": {
-        "skill_description": "在最後彎道若被追過\n略微變得容易反追回來＜中距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "勝利への執念"
-      },
-      "一歩から": {
-        "skill_description": "レース中盤に中団にいるとしばらくの間速度がちょっと上がる＜作戦・差し＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "千里の道"
-      },
-      "危険回避": {
-        "skill_description": "在競賽初期稍微不易遭到包圍\n＜作戰．領頭＞",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_y_n_3",
-        "upper_skill": "シックスセンス"
-      },
-      "本領発揮": {
-        "skill_description": "在即將進入競賽後期時，\n若位居領先或距離最前頭4身距內時競賽\n後期加速力略微上升＜前列．長距離＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "怪物"
-      },
-      "スリップストリーム": {
-        "skill_description": "若緊跟在前方賽馬娘的後方\n會略微不易受到風阻",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "いいとこ入った！"
-      },
-      "ギアシフト": {
-        "skill_description": "在競賽中期若位於隊列前方\n會略微變得容易追過對手＜一哩＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "ギアチェンジ"
-      },
-      "中距離コーナー◯": {
-        "skill_description": "在彎道速度略微上升\n＜中距離＞",
-        "skill_pt": "100",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "中距離コーナー◎"
-      },
-      "バイブス上昇": {
-        "skill_description": "レース中盤に速度がわずかに上がりさらに持久力をちょっと回復する＜長距離＞",
+      "二段構え": {
+        "lower_skill": null,
+        "skill_description": "レース中盤にスキルを発動すると速度がちょっと上がる。その後レース終盤にスキルを発動するとちょっと前に出る＜ダート＞",
+        "upper_skill": "コール＆レスポンス",
         "skill_pt": "200",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "ブチ☆アゲ↑バイブス"
-      },
-      "恐れぬ心": {
-        "skill_description": "在競賽後半若於隊列中段\n則速度會略微上升且加速力\n微微上升＜作戰．居中＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "大胆不敵"
-      },
-      "地の加護": {
-        "skill_description": "レース終盤の中ほどで速度がわずかに上がる、獲得したスキルの数に応じて効果が高まる",
-        "skill_pt": "200",
-        "skill_icon_name": "i_skill_y_n_9",
-        "upper_skill": "大地の叡智"
-      },
-      "策士": {
-        "skill_description": "在競賽後期若位於隊列後方\n視線會變得略微寬廣＜作戰．後追＞",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_y_n_4",
-        "upper_skill": "天命士"
-      },
-      "中盤巧者": {
-        "skill_description": "レース中盤に速度がわずかに上がる",
-        "skill_pt": "160",
         "skill_icon_name": "i_skill_y_n_1"
       },
       "二の矢": {
+        "lower_skill": null,
         "skill_description": "在競賽中期若沒有取得領先\n加速力會略微上升＜作戰．領頭＞",
+        "upper_skill": null,
         "skill_pt": "180",
         "skill_icon_name": "i_skill_y_n_2"
       },
-      "ありったけ": {
-        "skill_description": "若在最後衝刺的直線取得良好位置\n速度會略微上升＜中距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "決死の覚悟"
-      },
-      "短距離直線◯": {
-        "skill_description": "在直線速度略微上升＜短距離＞",
-        "skill_pt": "100",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "短距離直線◎"
-      },
-      "序盤巧者": {
-        "skill_description": "レース中盤が迫ったとき速度がわずかに上がる",
+      "ギアシフト": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若位於隊列前方\n會略微變得容易追過對手＜一哩＞",
+        "upper_skill": "ギアチェンジ",
         "skill_pt": "160",
         "skill_icon_name": "i_skill_y_n_1"
-      },
-      "善後策": {
-        "skill_description": "接近競賽後期時若位於隊列前方\n會略微變得容易追過對手＜短距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "プランX"
-      },
-      "しとやかな足取り": {
-        "skill_description": "レース中盤に速度がわずかに上がる＜マイル/中距離＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "優位形成"
-      },
-      "中距離コーナー◎": {
-        "skill_description": "在彎道速度稍微上升\n＜中距離＞",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "光芒円刃"
-      },
-      "あやしげな作戦": {
-        "skill_description": "雖然在競賽後半速度稍微上升\n但會大幅感到疲倦",
-        "skill_pt": "120",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "博打うち"
-      },
-      "会心の一歩": {
-        "skill_description": "終盤の最終コーナーで中団にいる時ゴールまで遠いと加速力がわずかに上がる＜先行/差し＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "王手"
-      },
-      "レースの真髄・速": {
-        "skill_description": "接近競賽後期時\n速度會略微上升",
-        "skill_pt": "150",
-        "skill_icon_name": "i_skill_y_n_1"
-      },
-      "気迫を込めて": {
-        "skill_description": "在競賽中期若位於隊列前方\n會使後方的速度稍稍下降\n使自己的速度略微上升＜中距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "荒ぶる旋風"
-      },
-      "ポジションセンス": {
-        "skill_description": "在競賽初期\n變得擅長爭搶賽道",
-        "skill_pt": "120",
-        "skill_icon_name": "i_skill_y_n_3",
-        "upper_skill": "注目の踊り子"
-      },
-      "しゃかりき": {
-        "skill_description": "在競賽中期的一開始\n大幅消耗持久力\n使速度稍微上升＜作戰．領頭＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "出力1000％！"
-      },
-      "直滑降": {
-        "skill_description": "變得略微擅長下坡\n＜作戰．前列＞",
-        "skill_pt": "120",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "決意の直滑降"
-      },
-      "差し直線◎": {
-        "skill_description": "在直線速度稍微上升\n＜作戰．居中＞",
-        "skill_pt": "140",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "鋭脚一閃"
-      },
-      "ペースアップ": {
-        "skill_description": "在競賽中期若追過對手\n速度會略微上升",
-        "skill_pt": "170",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "アガッてきた！"
-      },
-      "十万バリキ": {
-        "skill_description": "上坡時速度略微上升\n＜作戰．居中＞",
-        "skill_pt": "120",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "百万バリキ"
-      },
-      "逃げ直線◯": {
-        "skill_description": "在直線速度略微上升\n＜作戰．領頭＞",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "逃げ直線◎"
-      },
-      "型破り": {
-        "skill_description": "最終コーナー前の第3コーナーで後ろの方にいるとわずかに前に出る＜中距離/長距離＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "天衣無縫"
-      },
-      "長距離直線◎": {
-        "skill_description": "在直線速度稍微上升＜長距離＞",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "烈風一閃"
-      },
-      "キレる脚": {
-        "skill_description": "在最後直線若位列第2之後\n且距離最前頭4身距內時\n速度稍微上升＜作戰．居中＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "トップギア"
-      },
-      "先頭プライド": {
-        "skill_description": "在競賽初期或中期\n對追過對手或競爭變得略微更強\n＜作戰．領頭＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "トップランナー"
-      },
-      "アオハル点火・速": {
-        "skill_description": "在競賽中期燃燒青春魂，\n競賽中隊伍成員的速度\n合計值越高，速度便隨之略微上升",
-        "skill_pt": "200",
-        "skill_icon_name": "i_skill_y_n_1a",
-        "upper_skill": "アオハル燃焼・速"
-      },
-      "砂浴び◯": {
-        "skill_description": "若緊跟在前方賽馬娘的後方\n速度會略微上升＜沙地＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1"
-      },
-      "差しコーナー◎": {
-        "skill_description": "在彎道速度稍微上升\n＜作戰．居中＞",
-        "skill_pt": "140",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "鋭脚円刃"
-      },
-      "登山家": {
-        "skill_description": "變得略微擅長上坡",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_2"
-      },
-      "がむしゃら": {
-        "skill_description": "在最後衝刺階段若位於隊列中段之後\n稍微消耗持久力使加速力略微上升\n＜居中．長距離＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "無我夢中"
-      },
-      "追込直線◯": {
-        "skill_description": "在直線速度略微上升\n＜作戰．後追＞",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "追込直線◎"
-      },
-      "追い上げ": {
-        "skill_description": "在競賽後期若追過對手\n速度會略微上升＜長距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "怒涛の追い上げ"
-      },
-      "追込コーナー◎": {
-        "skill_description": "在彎道速度稍微上升\n＜作戰．後追＞",
-        "skill_pt": "140",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "月影円刃"
-      },
-      "詰め寄り": {
-        "skill_description": "在競賽後期若位於隊列後方\n略微變得容易進行衝刺＜短距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "電撃の煌めき"
-      },
-      "まき直し": {
-        "skill_description": "在競賽中期若位於隊列後方\n加速力會略微上升＜作戰．前列＞",
-        "skill_pt": "120",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "くじけぬ精神"
-      },
-      "ひたむき前進": {
-        "skill_description": "レース終盤が迫ったとき中団以降だと速度がわずかに上がる＜短距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "気骨稜稜"
-      },
-      "逃げ直線◎": {
-        "skill_description": "在直線速度稍微上升\n＜作戰．領頭＞",
-        "skill_pt": "140",
-        "skill_icon_name": "i_skill_y_n_1"
-      },
-      "心弾んで": {
-        "skill_description": "レース終盤始めの方で前方にいると加速力がわずかに上がる＜マイル＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "ハイボルテージ"
-      },
-      "積極策": {
-        "skill_description": "在競賽初期若位於隊列前方\n略微變得容易拉開距離\n＜一哩＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "マイルの支配者"
-      },
-      "軽い足取り": {
-        "skill_description": "接近競賽後期時若位於隊列前方\n速度會略微上升＜短距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "意気衝天"
-      },
-      "溢れる情熱": {
-        "skill_description": "レース中盤が迫ったとき、中団以降にいると速度がわずかに上がる＜作戦・差し＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1"
-      },
-      "気合十分": {
-        "skill_description": "在最後彎道若位於隊列後方\n速度會略微上升＜一哩＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "破竹の勢い"
-      },
-      "位置取り押し上げ": {
-        "skill_description": "在競賽中期速度略微上升\n＜作戰．居中＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "迅速果断"
-      },
-      "綺羅星": {
-        "skill_description": "在競賽後半些微調整呼吸向前邁進\n依照在培育中累積的勝利數提高效果",
-        "skill_pt": "200",
-        "skill_icon_name": "i_skill_y_n_6",
-        "upper_skill": "一番星"
-      },
-      "長距離コーナー◎": {
-        "skill_description": "在彎道速度稍微上升\n＜長距離＞",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_y_n_1"
-      },
-      "上昇気流": {
-        "skill_description": "在競賽後期若位於隊列後方\n追趕力略微上升＜一哩＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "豪脚"
-      },
-      "マイルコーナー◯": {
-        "skill_description": "在彎道速度略微上升\n＜一哩＞",
-        "skill_pt": "100",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "マイルコーナー◎"
-      },
-      "遊びはおしまいっ！": {
-        "skill_description": "若長時間被後方的賽馬娘緊跟\n速度會略微上升",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "お先に失礼っ！"
-      },
-      "先駆け": {
-        "skill_description": "在競賽初期略微變得容易往前推進\n＜作戰．領頭＞",
-        "skill_pt": "120",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "先手必勝"
-      },
-      "打開策": {
-        "skill_description": "在競賽中期若位於最後方附近\n速度會略微上升\n並變得略微擅長爭搶賽道＜作戰．後追＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "ブレイクスルー"
-      },
-      "短距離直線◎": {
-        "skill_description": "在直線速度稍微上升＜短距離＞",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "紫電一閃"
-      },
-      "イグニッション": {
-        "skill_description": "レース中にスキルを13回発動するとわずかに前に出る＜中距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "ルミネセンス"
-      },
-      "前だけ見据えて": {
-        "skill_description": "在最後衝刺階段速度略微上升\n依照最優秀的基礎能力數值\n提高效果",
-        "skill_pt": "200",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "限界の先へ"
-      },
-      "中距離直線◎": {
-        "skill_description": "在直線速度稍微上升＜中距離＞",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "光芒一閃"
-      },
-      "プレッシャー": {
-        "skill_description": "最終コーナーで中団以降だと前後3人ずつの速度をほんのわずかに下げ、自分の速度をわずかに上げる＜作戦・差し＞",
-        "skill_pt": "190",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "威風堂々"
-      },
-      "迷いなし": {
-        "skill_description": "ラストスパートの直線で前の方だと加速力がわずかに上がる＜逃げ・長距離＞",
-        "skill_pt": "170",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "万里一空"
-      },
-      "想いを背負って": {
-        "skill_description": "最終直線で速度がわずかに上がる",
-        "skill_pt": "200",
-        "skill_icon_name": "i_skill_y_n_10",
-        "upper_skill": "最高峰の夢"
-      },
-      "地固め": {
-        "skill_description": "在競賽初期若發動多個技能\n加速力會略微上升",
-        "skill_pt": "100",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "盤石の構え"
       },
       "粘り腰": {
+        "lower_skill": null,
         "skill_description": "在最後直線若位居領先\n且後方1身距內有其他賽馬娘時\n速度稍微上升＜作戰．領頭＞",
+        "upper_skill": "踏ませぬ影",
         "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "踏ませぬ影"
-      },
-      "明るい兆し": {
-        "skill_description": "接近競賽後期時若位於隊列前方\n速度會略微上升＜沙地＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "勝利の機運"
-      },
-      "マイルコーナー◎": {
-        "skill_description": "在彎道速度稍微上升\n＜一哩＞",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "豪風円刃"
-      },
-      "陽の加護": {
-        "skill_description": "レース中盤に競り合うと速度がわずかに上がる、獲得したスキルの数に応じて効果が高まる",
-        "skill_pt": "200",
-        "skill_icon_name": "i_skill_y_n_9",
-        "upper_skill": "太陽の叡智"
-      },
-      "アクセラレーション": {
-        "skill_description": "在競賽中期若追過對手\n加速力會略微上升＜一哩＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "アクセル全開！"
-      },
-      "内弁慶": {
-        "skill_description": "在最後彎道若位於內側圍欄\n速度會略微上升＜長距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "内的体験"
-      },
-      "抜け出し準備": {
-        "skill_description": "在最後彎道略微變得容易突圍\n＜作戰．前列＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "スピードスター"
-      },
-      "先行コーナー◎": {
-        "skill_description": "在彎道速度稍微上升\n＜作戰．前列＞",
-        "skill_pt": "140",
         "skill_icon_name": "i_skill_y_n_1"
       },
-      "アオハル点火・根": {
-        "skill_description": "在競賽後期燃燒青春魂，\n競賽中隊伍成員的意志力\n合計值越高，腳上便會隨之些微凝聚力道",
-        "skill_pt": "200",
-        "skill_icon_name": "i_skill_y_n_1a",
-        "upper_skill": "アオハル燃焼・根"
-      },
-      "大詰め": {
-        "skill_description": "レース終盤始めの方で余力十分ならわずかに前に出る＜逃げ・長距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "画竜点睛"
-      },
-      "読解力": {
-        "skill_description": "在競賽中期提高觀察力\n使視野略微變得寬廣＜作戰．居中＞",
-        "skill_pt": "120",
-        "skill_icon_name": "i_skill_y_n_4",
-        "upper_skill": "大局観"
-      },
-      "前列狙い": {
-        "skill_description": "在競賽後期會稍微採取\n向前衝刺的姿勢＜沙地＞",
-        "skill_pt": "140",
-        "skill_icon_name": "i_skill_y_n_3",
-        "upper_skill": "狙うは最前列！"
-      },
-      "攻めの姿勢": {
-        "skill_description": "在競賽中期速度略微上升\n＜作戰．前列＞",
+      "食らいつき": {
+        "lower_skill": null,
+        "skill_description": "在競賽後半若準備追過對手\n速度會略微上升＜前列/居中＞",
+        "upper_skill": "猛追",
         "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "アンストッパブル"
-      },
-      "差し直線◯": {
-        "skill_description": "在直線速度略微上升\n＜作戰．居中＞",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "差し直線◎"
-      },
-      "一足飛び": {
-        "skill_description": "在競賽後期若於隊列後方準備追過對手\n加速力略微上升＜短距離．一哩＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "電光石火"
-      },
-      "大急ぎ": {
-        "skill_description": "レース終盤始めの方で余力十分ならわずかに前に出る＜差し・長距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "一気呵成"
-      },
-      "長距離直線◯": {
-        "skill_description": "在直線速度略微上升＜長距離＞",
-        "skill_pt": "100",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "長距離直線◎"
-      },
-      "追込コーナー◯": {
-        "skill_description": "在彎道速度略微上升\n＜作戰．後追＞",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "追込コーナー◎"
-      },
-      "影打": {
-        "skill_description": "接近競賽後期時若位於隊列前方\n速度會略微上升＜長距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "真打"
-      },
-      "確かな足取り": {
-        "skill_description": "接近後期時若位居領先或\n距離最前頭4身距以內\n速度及加速力些微上升＜前列．中距離＞",
-        "skill_pt": "170",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "快進撃"
-      },
-      "イナズマステップ": {
-        "skill_description": "在競賽中期若位於隊列後方\n一段時間內變得稍微不易遭到包圍\n＜中距離＞",
-        "skill_pt": "140",
-        "skill_icon_name": "i_skill_y_n_3",
-        "upper_skill": "ライトニングステップ"
-      },
-      "コーナー巧者◯": {
-        "skill_description": "變得擅長彎道\n速度略微上升",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "弧線のプロフェッサー"
-      },
-      "がんばり屋": {
-        "skill_description": "準備追過對手時的一段時間內\n加速力會略微上升＜作戰．居中＞",
-        "skill_pt": "120",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "努力家"
-      },
-      "巧みなステップ": {
-        "skill_description": "爭搶賽道變得略微流暢\n＜作戰．前列＞",
-        "skill_pt": "120",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "技巧派"
-      },
-      "先行コーナー◯": {
-        "skill_description": "在彎道速度略微上升\n＜作戰．前列＞",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "先行コーナー◎"
-      },
-      "海の加護": {
-        "skill_description": "レース序盤の始めの方に加速力がわずかに上がる、獲得したスキルの数に応じて効果が高まる",
-        "skill_pt": "200",
-        "skill_icon_name": "i_skill_y_n_9",
-        "upper_skill": "大海の叡智"
-      },
-      "マイル直線◯": {
-        "skill_description": "在直線速度略微上升＜一哩＞",
-        "skill_pt": "100",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "マイル直線◎"
-      },
-      "逃げコーナー◯": {
-        "skill_description": "在彎道速度略微上升\n＜作戰．領頭＞",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "逃げコーナー◎"
-      },
-      "先行直線◯": {
-        "skill_description": "在直線速度略微上升\n＜作戰．前列＞",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "先行直線◎"
-      },
-      "仕掛け抜群": {
-        "skill_description": "在競賽後期若位於隊列後方\n會進入後追態勢\n略微提高排名順位＜作戰・後追＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "疾風怒濤"
-      },
-      "お見通し": {
-        "skill_description": "左右移動後掌握狀況\n視野略微變得寬廣＜作戰．後追＞",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_y_n_4",
-        "upper_skill": "視界良好！異常なし！"
-      },
-      "レースの真髄・体": {
-        "skill_description": "在最後衝刺階段稍微消耗持久力\n使速度稍微上升",
-        "skill_pt": "150",
         "skill_icon_name": "i_skill_y_n_1"
       },
-      "集中力": {
-        "skill_description": "變得擅長起跑\n使延遲時間略微變少",
-        "skill_pt": "140",
-        "skill_icon_name": "i_skill_y_n_5",
-        "upper_skill": "コンセントレーション"
-      },
-      "折れない心": {
-        "skill_description": "レース中盤のコーナーでしばらくの間速度がちょっと上がる",
+      "真っ向勝負": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期若位於隊列前方\n加速力會略微上升＜作戰．前列＞",
+        "upper_skill": "鍔迫り合い",
         "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "ネバーギブアップ"
+        "skill_icon_name": "i_skill_y_n_2"
       },
-      "アオハル点火・賢": {
-        "skill_description": "在競賽初期的一段時間燃燒青春魂\n競賽中隊伍成員的智力\n合計值越高，越能夠略微洞察局勢",
+      "序盤巧者": {
+        "lower_skill": null,
+        "skill_description": "レース中盤が迫ったとき速度がわずかに上がる",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "バイブス上昇": {
+        "lower_skill": null,
+        "skill_description": "レース中盤に速度がわずかに上がりさらに持久力をちょっと回復する＜長距離＞",
+        "upper_skill": "ブチ☆アゲ↑バイブス",
         "skill_pt": "200",
-        "skill_icon_name": "i_skill_y_n_3a",
-        "upper_skill": "アオハル燃焼・賢"
-      },
-      "短距離コーナー◎": {
-        "skill_description": "在彎道速度稍微上升\n＜短距離＞",
-        "skill_pt": "110",
         "skill_icon_name": "i_skill_y_n_1"
-      },
-      "込み上げる熱": {
-        "skill_description": "レース終盤始めの方に中団にいるとわずかに前に出る＜中距離/長距離＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "昂ぶる鼓動"
-      },
-      "直線加速": {
-        "skill_description": "在直線加速力略微上升",
-        "skill_pt": "170",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "一陣の風"
-      },
-      "仕掛け準備": {
-        "skill_description": "在競賽中期的一段時間內\n稍微做好邁向終點的準備\n＜短距離＞",
-        "skill_pt": "140",
-        "skill_icon_name": "i_skill_y_n_3",
-        "upper_skill": "準備万全！"
-      },
-      "マイル直線◎": {
-        "skill_description": "在直線速度稍微上升＜一哩＞",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_y_n_1"
-      },
-      "差し切り体勢": {
-        "skill_description": "在競賽後期加速力略微上升\n＜作戰．居中＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "乗り換え上手"
-      },
-      "向こう見ず": {
-        "skill_description": "接近競賽後期時若位於隊列前方\n速度會略微上升＜一哩＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "遮二無二"
-      },
-      "一番乗り": {
-        "skill_description": "スタート時に加速力がわずかに上がる＜中距離＞",
-        "skill_pt": "120",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "誰より前へ！"
       },
       "押し切り準備": {
+        "lower_skill": null,
         "skill_description": "在最後彎道略微變得容易維持領先\n＜作戰．領頭＞",
+        "upper_skill": "逃亡者",
         "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "逃亡者"
+        "skill_icon_name": "i_skill_y_n_2"
       },
-      "狙いを定めて": {
-        "skill_description": "レース終盤始めの方早めに前の方にいると加速力がわずかに上がる＜先行・長距離＞",
+      "イナズマステップ": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若位於隊列後方\n一段時間內變得稍微不易遭到包圍\n＜中距離＞",
+        "upper_skill": "ライトニングステップ",
+        "skill_pt": "140",
+        "skill_icon_name": "i_skill_y_n_3"
+      },
+      "上昇気流": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期若位於隊列後方\n追趕力略微上升＜一哩＞",
+        "upper_skill": "豪脚",
         "skill_pt": "160",
         "skill_icon_name": "i_skill_y_n_2"
       },
-      "逃げコーナー◎": {
-        "skill_description": "在彎道速度稍微上升\n＜作戰．領頭＞",
-        "skill_pt": "140",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "陣風円刃"
-      },
-      "レースの真髄・根": {
-        "skill_description": "同位競爭時\n加速力會略微上升",
-        "skill_pt": "150",
+      "差し切り体勢": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期加速力略微上升\n＜作戰．居中＞",
+        "upper_skill": "乗り換え上手",
+        "skill_pt": "180",
         "skill_icon_name": "i_skill_y_n_2"
       },
-      "レースの真髄・力": {
-        "skill_description": "在最後衝刺階段若準備追過對手\n一段時間內速度會略微上升",
-        "skill_pt": "150",
+      "急浮上": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期若位於隊列中段之後\n加速力會略微上升＜沙地＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "尻尾上がり": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若發動多個技能\n速度會略微上升",
+        "upper_skill": "尻尾の滝登り",
+        "skill_pt": "100",
         "skill_icon_name": "i_skill_y_n_1"
       },
       "前のめり": {
+        "lower_skill": null,
         "skill_description": "在競賽中期若位於隊列後方\n速度會略微上升＜中距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "プレッシャー": {
+        "lower_skill": null,
+        "skill_description": "最終コーナーで中団以降だと前後3人ずつの速度をほんのわずかに下げ、自分の速度をわずかに上げる＜作戦・差し＞",
+        "upper_skill": "威風堂々",
+        "skill_pt": "190",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "お見通し": {
+        "lower_skill": null,
+        "skill_description": "左右移動後掌握狀況\n視野略微變得寬廣＜作戰．後追＞",
+        "upper_skill": "視界良好！異常なし！",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_y_n_4"
+      },
+      "しとやかな足取り": {
+        "lower_skill": null,
+        "skill_description": "レース中盤に速度がわずかに上がる＜マイル/中距離＞",
+        "upper_skill": "優位形成",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "アオハル点火・速": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期燃燒青春魂，\n競賽中隊伍成員的速度\n合計值越高，速度便隨之略微上升",
+        "upper_skill": "アオハル燃焼・速",
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_n_1a"
+      },
+      "差しコーナー◯": {
+        "lower_skill": null,
+        "skill_description": "在彎道速度略微上升\n＜作戰．居中＞",
+        "upper_skill": "差しコーナー◎",
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "長距離コーナー◎": {
+        "lower_skill": null,
+        "skill_description": "在彎道速度稍微上升\n＜長距離＞",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "前列狙い": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期會稍微採取\n向前衝刺的姿勢＜沙地＞",
+        "upper_skill": "狙うは最前列！",
+        "skill_pt": "140",
+        "skill_icon_name": "i_skill_y_n_3"
+      },
+      "逃げコーナー◯": {
+        "lower_skill": null,
+        "skill_description": "在彎道速度略微上升\n＜作戰．領頭＞",
+        "upper_skill": "逃げコーナー◎",
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "会心の一歩": {
+        "lower_skill": null,
+        "skill_description": "終盤の最終コーナーで中団にいる時ゴールまで遠いと加速力がわずかに上がる＜先行/差し＞",
+        "upper_skill": "王手",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "仕掛け抜群": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期若位於隊列後方\n會進入後追態勢\n略微提高排名順位＜作戰・後追＞",
+        "upper_skill": "疾風怒濤",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "マイルコーナー◯": {
+        "lower_skill": null,
+        "skill_description": "在彎道速度略微上升\n＜一哩＞",
+        "upper_skill": "マイルコーナー◎",
+        "skill_pt": "100",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "先頭プライド": {
+        "lower_skill": null,
+        "skill_description": "在競賽初期或中期\n對追過對手或競爭變得略微更強\n＜作戰．領頭＞",
+        "upper_skill": "トップランナー",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "長距離直線◎": {
+        "lower_skill": null,
+        "skill_description": "在直線速度稍微上升＜長距離＞",
+        "upper_skill": "烈風一閃",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "策士": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期若位於隊列後方\n視線會變得略微寬廣＜作戰．後追＞",
+        "upper_skill": "天命士",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_y_n_4"
+      },
+      "切れ味": {
+        "lower_skill": null,
+        "skill_description": "在進入競賽後期前若不暴衝並持續\n潛伏於隊列後方，會在後期的一開始\n加速力略微上升＜作戰．後追＞",
+        "upper_skill": "抜群の切れ味",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "陽の加護": {
+        "lower_skill": null,
+        "skill_description": "レース中盤に競り合うと速度がわずかに上がる、獲得したスキルの数に応じて効果が高まる",
+        "upper_skill": "太陽の叡智",
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_n_9"
+      },
+      "しゃかりき": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期的一開始\n大幅消耗持久力\n使速度稍微上升＜作戰．領頭＞",
+        "upper_skill": "出力1000％！",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "外差し準備": {
+        "lower_skill": null,
+        "skill_description": "在最後彎道若由外側追過對手\n速度會略微上升＜作戰．居中＞",
+        "upper_skill": "昇り龍",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "長距離直線◯": {
+        "lower_skill": null,
+        "skill_description": "在直線速度略微上升＜長距離＞",
+        "upper_skill": "長距離直線◎",
+        "skill_pt": "100",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "本領発揮": {
+        "lower_skill": null,
+        "skill_description": "在即將進入競賽後期時，\n若位居領先或距離最前頭4身距內時競賽\n後期加速力略微上升＜前列．長距離＞",
+        "upper_skill": "怪物",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "アオハル点火・根": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期燃燒青春魂，\n競賽中隊伍成員的意志力\n合計值越高，腳上便會隨之些微凝聚力道",
+        "upper_skill": "アオハル燃焼・根",
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_n_1a"
+      },
+      "心弾んで": {
+        "lower_skill": null,
+        "skill_description": "レース終盤始めの方で前方にいると加速力がわずかに上がる＜マイル＞",
+        "upper_skill": "ハイボルテージ",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "遊びはおしまいっ！": {
+        "lower_skill": null,
+        "skill_description": "若長時間被後方的賽馬娘緊跟\n速度會略微上升",
+        "upper_skill": "お先に失礼っ！",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "逃げ直線◎": {
+        "lower_skill": null,
+        "skill_description": "在直線速度稍微上升\n＜作戰．領頭＞",
+        "upper_skill": null,
+        "skill_pt": "140",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "大詰め": {
+        "lower_skill": null,
+        "skill_description": "レース終盤始めの方で余力十分ならわずかに前に出る＜逃げ・長距離＞",
+        "upper_skill": "画竜点睛",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "キレる脚": {
+        "lower_skill": null,
+        "skill_description": "在最後直線若位列第2之後\n且距離最前頭4身距內時\n速度稍微上升＜作戰．居中＞",
+        "upper_skill": "トップギア",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "アオハル点火・賢": {
+        "lower_skill": null,
+        "skill_description": "在競賽初期的一段時間燃燒青春魂\n競賽中隊伍成員的智力\n合計值越高，越能夠略微洞察局勢",
+        "upper_skill": "アオハル燃焼・賢",
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_n_3a"
+      },
+      "レースの真髄・力": {
+        "lower_skill": null,
+        "skill_description": "在最後衝刺階段若準備追過對手\n一段時間內速度會略微上升",
+        "upper_skill": null,
+        "skill_pt": "150",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "逃げ直線◯": {
+        "lower_skill": null,
+        "skill_description": "在直線速度略微上升\n＜作戰．領頭＞",
+        "upper_skill": "逃げ直線◎",
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "がんばり屋": {
+        "lower_skill": null,
+        "skill_description": "準備追過對手時的一段時間內\n加速力會略微上升＜作戰．居中＞",
+        "upper_skill": "努力家",
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "下り坂巧者": {
+        "lower_skill": null,
+        "skill_description": "在下坡速度略微上升",
+        "upper_skill": "至高のダウンヒラー",
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "短距離直線◎": {
+        "lower_skill": null,
+        "skill_description": "在直線速度稍微上升＜短距離＞",
+        "upper_skill": "紫電一閃",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "アクセラレーション": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若追過對手\n加速力會略微上升＜一哩＞",
+        "upper_skill": "アクセル全開！",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "負けん気": {
+        "lower_skill": null,
+        "skill_description": "變得略微容易成功追過對手\n＜一哩＞",
+        "upper_skill": "姉御肌",
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "位置取り押し上げ": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期速度略微上升\n＜作戰．居中＞",
+        "upper_skill": "迅速果断",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "急ぎ足": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期略微變得容易往前推進\n＜作戰．領頭＞",
+        "upper_skill": "脱出術",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "ホークアイ": {
+        "lower_skill": null,
+        "skill_description": "在競賽初期提高觀察力\n使視野稍微變得寬廣＜中距離＞",
+        "upper_skill": "千里眼",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_y_n_4"
+      },
+      "コーナー巧者◯": {
+        "lower_skill": null,
+        "skill_description": "變得擅長彎道\n速度略微上升",
+        "upper_skill": "弧線のプロフェッサー",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "型破り": {
+        "lower_skill": null,
+        "skill_description": "最終コーナー前の第3コーナーで後ろの方にいるとわずかに前に出る＜中距離/長距離＞",
+        "upper_skill": "天衣無縫",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "垂れウマ回避": {
+        "lower_skill": null,
+        "skill_description": "於最後衝刺階段當前方堵塞時\n腳步會變得略微靈活",
+        "upper_skill": "ノンストップガール",
+        "skill_pt": "150",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "地固め": {
+        "lower_skill": null,
+        "skill_description": "在競賽初期若發動多個技能\n加速力會略微上升",
+        "upper_skill": "盤石の構え",
+        "skill_pt": "100",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "ポジションセンス": {
+        "lower_skill": null,
+        "skill_description": "在競賽初期\n變得擅長爭搶賽道",
+        "upper_skill": "注目の踊り子",
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_n_3"
+      },
+      "詰め寄り": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期若位於隊列後方\n略微變得容易進行衝刺＜短距離＞",
+        "upper_skill": "電撃の煌めき",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "気迫を込めて": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若位於隊列前方\n會使後方的速度稍稍下降\n使自己的速度略微上升＜中距離＞",
+        "upper_skill": "荒ぶる旋風",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "夢の途中": {
+        "lower_skill": null,
+        "skill_description": "在競賽後半若位於隊列前方\n速度略微上升、加速力稍稍上升\n粉絲越多效果越高",
+        "upper_skill": "キミと勝ちたい",
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_n_8"
+      },
+      "快速": {
+        "lower_skill": null,
+        "skill_description": "レース後半のどこかでわずかに前に出て持久力をほんのわずかに回復する",
+        "upper_skill": "神速",
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "進出開始": {
+        "lower_skill": null,
+        "skill_description": "レース終盤が迫ったとき、中団以降にいると速度がわずかに上がる＜作戦・差し＞",
+        "upper_skill": "突撃魂",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "向上心": {
+        "lower_skill": null,
+        "skill_description": "即將進入競賽後期時，潛伏於第2之後，\n且距離最前頭2身距以內一段時間內\n速度會些微上升＜作戰．前列＞",
+        "upper_skill": "風雲の志",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "一足飛び": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期若於隊列後方準備追過對手\n加速力略微上升＜短距離．一哩＞",
+        "upper_skill": "電光石火",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "攻めの姿勢": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期速度略微上升\n＜作戰．前列＞",
+        "upper_skill": "アンストッパブル",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "追込直線◯": {
+        "lower_skill": null,
+        "skill_description": "在直線速度略微上升\n＜作戰．後追＞",
+        "upper_skill": "追込直線◎",
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "中盤巧者": {
+        "lower_skill": null,
+        "skill_description": "レース中盤に速度がわずかに上がる",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "アオハル点火・力": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期燃燒青春魂，\n競賽中隊伍成員的力量\n合計值越高，加速力便隨之略微上升",
+        "upper_skill": "アオハル燃焼・力",
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_n_2a"
+      },
+      "スリップストリーム": {
+        "lower_skill": null,
+        "skill_description": "若緊跟在前方賽馬娘的後方\n會略微不易受到風阻",
+        "upper_skill": "いいとこ入った！",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "読解力": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期提高觀察力\n使視野略微變得寬廣＜作戰．居中＞",
+        "upper_skill": "大局観",
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_n_4"
+      },
+      "先行直線◯": {
+        "lower_skill": null,
+        "skill_description": "在直線速度略微上升\n＜作戰．前列＞",
+        "upper_skill": "先行直線◎",
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "短距離直線◯": {
+        "lower_skill": null,
+        "skill_description": "在直線速度略微上升＜短距離＞",
+        "upper_skill": "短距離直線◎",
+        "skill_pt": "100",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "確かな足取り": {
+        "lower_skill": null,
+        "skill_description": "接近後期時若位居領先或\n距離最前頭4身距以內\n速度及加速力些微上升＜前列．中距離＞",
+        "upper_skill": "快進撃",
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "恐れぬ心": {
+        "lower_skill": null,
+        "skill_description": "在競賽後半若於隊列中段\n則速度會略微上升且加速力\n微微上升＜作戰．居中＞",
+        "upper_skill": "大胆不敵",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "レコメンド": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若與對手競爭\n速度會略微上升＜沙地＞",
+        "upper_skill": "チャート急上昇！",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "ワンチャンス": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期若位於隊列後方\n加速力會略微上升＜中距離＞",
+        "upper_skill": "起死回生",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "追込直線◎": {
+        "lower_skill": null,
+        "skill_description": "在直線速度稍微上升\n＜作戰．後追＞",
+        "upper_skill": null,
+        "skill_pt": "140",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "巧みなステップ": {
+        "lower_skill": null,
+        "skill_description": "爭搶賽道變得略微流暢\n＜作戰．前列＞",
+        "upper_skill": "技巧派",
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "中距離直線◯": {
+        "lower_skill": null,
+        "skill_description": "在直線速度略微上升＜中距離＞",
+        "upper_skill": "中距離直線◎",
+        "skill_pt": "100",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "先行直線◎": {
+        "lower_skill": null,
+        "skill_description": "在直線速度稍微上升\n＜作戰．前列＞",
+        "upper_skill": null,
+        "skill_pt": "140",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "先駆け": {
+        "lower_skill": null,
+        "skill_description": "在競賽初期略微變得容易往前推進\n＜作戰．領頭＞",
+        "upper_skill": "先手必勝",
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "向こう見ず": {
+        "lower_skill": null,
+        "skill_description": "接近競賽後期時若位於隊列前方\n速度會略微上升＜一哩＞",
+        "upper_skill": "遮二無二",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "まっしぐら": {
+        "lower_skill": null,
+        "skill_description": "在最後衝刺階段若位於隊列前方\n速度會略微上升＜沙地＞",
+        "upper_skill": "全速前進！",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "末脚": {
+        "lower_skill": null,
+        "skill_description": "於最後衝刺階段速度略微上升",
+        "upper_skill": "全身全霊",
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "スプリントギア": {
+        "lower_skill": null,
+        "skill_description": "在直線加速力略微上升\n＜短距離＞",
+        "upper_skill": "スプリントターボ",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "大きなリード": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若大幅度領先\n則略微容易保持領先＜短距離＞",
+        "upper_skill": "圧倒的リード",
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "長距離コーナー◯": {
+        "lower_skill": null,
+        "skill_description": "在彎道速度略微上升\n＜長距離＞",
+        "upper_skill": "長距離コーナー◎",
+        "skill_pt": "100",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "狙いを定めて": {
+        "lower_skill": null,
+        "skill_description": "レース終盤始めの方早めに前の方にいると加速力がわずかに上がる＜先行・長距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "早仕掛け": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若位於隊列後方\n一段時間內速度會些微上升\n＜作戰．後追＞",
+        "upper_skill": "強攻策",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "積極策": {
+        "lower_skill": null,
+        "skill_description": "在競賽初期若位於隊列前方\n略微變得容易拉開距離\n＜一哩＞",
+        "upper_skill": "マイルの支配者",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "十万バリキ": {
+        "lower_skill": null,
+        "skill_description": "上坡時速度略微上升\n＜作戰．居中＞",
+        "upper_skill": "百万バリキ",
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "冴える思考": {
+        "lower_skill": null,
+        "skill_description": "若用技能回復持久力，\n在競賽中期的一開始位於隊列後方時\n使速度略微上升＜沙地＞",
+        "upper_skill": null,
+        "skill_pt": "150",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "意気込み十分": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期若位於隊列前方\n加速力會略微上升＜沙地＞",
+        "upper_skill": "目指せセンター！",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "品行方正": {
+        "lower_skill": null,
+        "skill_description": "最終コーナー前の第3コーナーで前の方にいるとわずかに前に出る＜マイル/中距離＞",
+        "upper_skill": "十全十美",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "善後策": {
+        "lower_skill": null,
+        "skill_description": "接近競賽後期時若位於隊列前方\n會略微變得容易追過對手＜短距離＞",
+        "upper_skill": "プランX",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "テンポアップ": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若位於隊列前方\n會略微變得容易取得良好位置＜中距離＞",
+        "upper_skill": "キラーチューン",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "先行コーナー◎": {
+        "lower_skill": null,
+        "skill_description": "在彎道速度稍微上升\n＜作戰．前列＞",
+        "upper_skill": null,
+        "skill_pt": "140",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "フルスロットル": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期大幅消耗持久力\n使速度稍微上升＜作戰．居中＞",
+        "upper_skill": "勇往邁進",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "直線巧者": {
+        "lower_skill": null,
+        "skill_description": "在直線速度略微上升",
+        "upper_skill": "ハヤテ一文字",
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "レースの真髄・賢": {
+        "lower_skill": null,
+        "skill_description": "在競賽後半若發動2次技能\n速度會略微上升",
+        "upper_skill": null,
+        "skill_pt": "150",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "込み上げる熱": {
+        "lower_skill": null,
+        "skill_description": "レース終盤始めの方に中団にいるとわずかに前に出る＜中距離/長距離＞",
+        "upper_skill": "昂ぶる鼓動",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "ウマ好み": {
+        "lower_skill": null,
+        "skill_description": "若身邊有很多賽馬娘\n速度略微上升",
+        "upper_skill": "ウママニア",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "前だけ見据えて": {
+        "lower_skill": null,
+        "skill_description": "在最後衝刺階段速度略微上升\n依照最優秀的基礎能力數值\n提高效果",
+        "upper_skill": "限界の先へ",
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "食い下がり": {
+        "lower_skill": null,
+        "skill_description": "在最後彎道若被追過\n略微變得容易反追回來＜中距離＞",
+        "upper_skill": "勝利への執念",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "コーナー加速◯": {
+        "lower_skill": null,
+        "skill_description": "以華麗的過彎技巧\n使加速力略微上升",
+        "upper_skill": "曲線のソムリエ",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "盛り返し": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若位於隊列後方\n速度會略微上升＜沙地＞",
+        "upper_skill": "捲土重来",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "綺羅星": {
+        "lower_skill": null,
+        "skill_description": "在競賽後半些微調整呼吸向前邁進\n依照在培育中累積的勝利數提高效果",
+        "upper_skill": "一番星",
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_n_6"
+      },
+      "迷いなし": {
+        "lower_skill": null,
+        "skill_description": "ラストスパートの直線で前の方だと加速力がわずかに上がる＜逃げ・長距離＞",
+        "upper_skill": "万里一空",
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "気合十分": {
+        "lower_skill": null,
+        "skill_description": "在最後彎道若位於隊列後方\n速度會略微上升＜一哩＞",
+        "upper_skill": "破竹の勢い",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "危険回避": {
+        "lower_skill": null,
+        "skill_description": "在競賽初期稍微不易遭到包圍\n＜作戰．領頭＞",
+        "upper_skill": "シックスセンス",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_y_n_3"
+      },
+      "折れない心": {
+        "lower_skill": null,
+        "skill_description": "レース中盤のコーナーでしばらくの間速度がちょっと上がる",
+        "upper_skill": "ネバーギブアップ",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "砂浴び◯": {
+        "lower_skill": null,
+        "skill_description": "若緊跟在前方賽馬娘的後方\n速度會略微上升＜沙地＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "あやしげな作戦": {
+        "lower_skill": null,
+        "skill_description": "雖然在競賽後半速度稍微上升\n但會大幅感到疲倦",
+        "upper_skill": "博打うち",
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "直線加速": {
+        "lower_skill": null,
+        "skill_description": "在直線加速力略微上升",
+        "upper_skill": "一陣の風",
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "ひたむき前進": {
+        "lower_skill": null,
+        "skill_description": "レース終盤が迫ったとき中団以降だと速度がわずかに上がる＜短距離＞",
+        "upper_skill": "気骨稜稜",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "仕掛け準備": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期的一段時間內\n稍微做好邁向終點的準備\n＜短距離＞",
+        "upper_skill": "準備万全！",
+        "skill_pt": "140",
+        "skill_icon_name": "i_skill_y_n_3"
+      },
+      "ロックオン": {
+        "lower_skill": null,
+        "skill_description": "レース終盤が迫ったとき後方にいると速度がわずかに上がる＜長距離＞",
+        "upper_skill": "一発必中",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "中距離直線◎": {
+        "lower_skill": null,
+        "skill_description": "在直線速度稍微上升＜中距離＞",
+        "upper_skill": "光芒一閃",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "勝利に向かって": {
+        "lower_skill": null,
+        "skill_description": "レース中盤に前の方にいるとしばらくの間速度がちょっと上がる＜作戦・先行＞",
+        "upper_skill": "かっとばせ！",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "短距離コーナー◯": {
+        "lower_skill": null,
+        "skill_description": "在彎道速度略微上升\n＜短距離＞",
+        "upper_skill": "短距離コーナー◎",
+        "skill_pt": "100",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "大急ぎ": {
+        "lower_skill": null,
+        "skill_description": "レース終盤始めの方で余力十分ならわずかに前に出る＜差し・長距離＞",
+        "upper_skill": "一気呵成",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "軽い足取り": {
+        "lower_skill": null,
+        "skill_description": "接近競賽後期時若位於隊列前方\n速度會略微上升＜短距離＞",
+        "upper_skill": "意気衝天",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "差し直線◎": {
+        "lower_skill": null,
+        "skill_description": "在直線速度稍微上升\n＜作戰．居中＞",
+        "upper_skill": "鋭脚一閃",
+        "skill_pt": "140",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "ありったけ": {
+        "lower_skill": null,
+        "skill_description": "若在最後衝刺的直線取得良好位置\n速度會略微上升＜中距離＞",
+        "upper_skill": "決死の覚悟",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "ペースアップ": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若追過對手\n速度會略微上升",
+        "upper_skill": "アガッてきた！",
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "がむしゃら": {
+        "lower_skill": null,
+        "skill_description": "在最後衝刺階段若位於隊列中段之後\n稍微消耗持久力使加速力略微上升\n＜居中．長距離＞",
+        "upper_skill": "無我夢中",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "一番乗り": {
+        "lower_skill": null,
+        "skill_description": "スタート時に加速力がわずかに上がる＜中距離＞",
+        "upper_skill": "誰より前へ！",
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "短距離コーナー◎": {
+        "lower_skill": null,
+        "skill_description": "在彎道速度稍微上升\n＜短距離＞",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "直滑降": {
+        "lower_skill": null,
+        "skill_description": "變得略微擅長下坡\n＜作戰．前列＞",
+        "upper_skill": "決意の直滑降",
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "明るい兆し": {
+        "lower_skill": null,
+        "skill_description": "接近競賽後期時若位於隊列前方\n速度會略微上升＜沙地＞",
+        "upper_skill": "勝利の機運",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "海の加護": {
+        "lower_skill": null,
+        "skill_description": "レース序盤の始めの方に加速力がわずかに上がる、獲得したスキルの数に応じて効果が高まる",
+        "upper_skill": "大海の叡智",
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_n_9"
+      },
+      "リードキープ": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若位居領先並拉開距離\n則略微容易保持領先＜長距離＞",
+        "upper_skill": "先陣の心得",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "レースの真髄・速": {
+        "lower_skill": null,
+        "skill_description": "接近競賽後期時\n速度會略微上升",
+        "upper_skill": null,
+        "skill_pt": "150",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "マイルコーナー◎": {
+        "lower_skill": null,
+        "skill_description": "在彎道速度稍微上升\n＜一哩＞",
+        "upper_skill": "豪風円刃",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "内弁慶": {
+        "lower_skill": null,
+        "skill_description": "在最後彎道若位於內側圍欄\n速度會略微上升＜長距離＞",
+        "upper_skill": "内的体験",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "一歩から": {
+        "lower_skill": null,
+        "skill_description": "レース中盤に中団にいるとしばらくの間速度がちょっと上がる＜作戦・差し＞",
+        "upper_skill": "千里の道",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "中距離コーナー◎": {
+        "lower_skill": null,
+        "skill_description": "在彎道速度稍微上升\n＜中距離＞",
+        "upper_skill": "光芒円刃",
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "闘争心": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若位於隊列中段與對手競爭\n會些微回復持久力\n且速度會略微上升＜中距離＞",
+        "upper_skill": "気炎万丈",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "打開策": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若位於最後方附近\n速度會略微上升\n並變得略微擅長爭搶賽道＜作戰．後追＞",
+        "upper_skill": "ブレイクスルー",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "地の加護": {
+        "lower_skill": null,
+        "skill_description": "レース終盤の中ほどで速度がわずかに上がる、獲得したスキルの数に応じて効果が高まる",
+        "upper_skill": "大地の叡智",
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_n_9"
+      },
+      "中距離コーナー◯": {
+        "lower_skill": null,
+        "skill_description": "在彎道速度略微上升\n＜中距離＞",
+        "upper_skill": "中距離コーナー◎",
+        "skill_pt": "100",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "追込コーナー◎": {
+        "lower_skill": null,
+        "skill_description": "在彎道速度稍微上升\n＜作戰．後追＞",
+        "upper_skill": "月影円刃",
+        "skill_pt": "140",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "先行コーナー◯": {
+        "lower_skill": null,
+        "skill_description": "在彎道速度略微上升\n＜作戰．前列＞",
+        "upper_skill": "先行コーナー◎",
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "想いを背負って": {
+        "lower_skill": null,
+        "skill_description": "最終直線で速度がわずかに上がる",
+        "upper_skill": "最高峰の夢",
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_n_10"
+      },
+      "抜け出し準備": {
+        "lower_skill": null,
+        "skill_description": "在最後彎道略微變得容易突圍\n＜作戰．前列＞",
+        "upper_skill": "スピードスター",
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "レースの真髄・根": {
+        "lower_skill": null,
+        "skill_description": "同位競爭時\n加速力會略微上升",
+        "upper_skill": null,
+        "skill_pt": "150",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "まき直し": {
+        "lower_skill": null,
+        "skill_description": "在競賽中期若位於隊列後方\n加速力會略微上升＜作戰．前列＞",
+        "upper_skill": "くじけぬ精神",
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_n_2"
+      },
+      "差し直線◯": {
+        "lower_skill": null,
+        "skill_description": "在直線速度略微上升\n＜作戰．居中＞",
+        "upper_skill": "差し直線◎",
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "差しコーナー◎": {
+        "lower_skill": null,
+        "skill_description": "在彎道速度稍微上升\n＜作戰．居中＞",
+        "upper_skill": "鋭脚円刃",
+        "skill_pt": "140",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "追込コーナー◯": {
+        "lower_skill": null,
+        "skill_description": "在彎道速度略微上升\n＜作戰．後追＞",
+        "upper_skill": "追込コーナー◎",
+        "skill_pt": "130",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "影打": {
+        "lower_skill": null,
+        "skill_description": "接近競賽後期時若位於隊列前方\n速度會略微上升＜長距離＞",
+        "upper_skill": "真打",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "マイル直線◎": {
+        "lower_skill": null,
+        "skill_description": "在直線速度稍微上升＜一哩＞",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "レースの真髄・体": {
+        "lower_skill": null,
+        "skill_description": "在最後衝刺階段稍微消耗持久力\n使速度稍微上升",
+        "upper_skill": null,
+        "skill_pt": "150",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "追い上げ": {
+        "lower_skill": null,
+        "skill_description": "在競賽後期若追過對手\n速度會略微上升＜長距離＞",
+        "upper_skill": "怒涛の追い上げ",
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "集中力": {
+        "lower_skill": null,
+        "skill_description": "變得擅長起跑\n使延遲時間略微變少",
+        "upper_skill": "コンセントレーション",
+        "skill_pt": "140",
+        "skill_icon_name": "i_skill_y_n_5"
+      },
+      "逃げコーナー◎": {
+        "lower_skill": null,
+        "skill_description": "在彎道速度稍微上升\n＜作戰．領頭＞",
+        "upper_skill": "陣風円刃",
+        "skill_pt": "140",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "溢れる情熱": {
+        "lower_skill": null,
+        "skill_description": "レース中盤が迫ったとき、中団以降にいると速度がわずかに上がる＜作戦・差し＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_n_1"
+      },
+      "イグニッション": {
+        "lower_skill": null,
+        "skill_description": "レース中にスキルを13回発動するとわずかに前に出る＜中距離＞",
+        "upper_skill": "ルミネセンス",
         "skill_pt": "160",
         "skill_icon_name": "i_skill_y_n_1"
       },
       "直線一気": {
+        "lower_skill": null,
         "skill_description": "在最後衝刺的直線\n加速力略微上升＜作戰・後追＞",
+        "upper_skill": "迫る影",
         "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "迫る影"
-      },
-      "進出開始": {
-        "skill_description": "レース終盤が迫ったとき、中団以降にいると速度がわずかに上がる＜作戦・差し＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "突撃魂"
-      },
-      "追込直線◎": {
-        "skill_description": "在直線速度稍微上升\n＜作戰．後追＞",
-        "skill_pt": "140",
-        "skill_icon_name": "i_skill_y_n_1"
-      },
-      "二段構え": {
-        "skill_icon_name": "i_skill_y_n_1",
-        "skill_pt": "200",
-        "upper_skill": "コール＆レスポンス",
-        "skill_description": "レース中盤にスキルを発動すると速度がちょっと上がる。その後レース終盤にスキルを発動するとちょっと前に出る＜ダート＞",
-        "lower_skill": null
-      },
-      "大きなリード": {
-        "skill_description": "在競賽中期若大幅度領先\n則略微容易保持領先＜短距離＞",
-        "skill_pt": "170",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "圧倒的リード"
-      },
-      "真っ向勝負": {
-        "skill_description": "在競賽後期若位於隊列前方\n加速力會略微上升＜作戰．前列＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "鍔迫り合い"
-      },
-      "ホークアイ": {
-        "skill_description": "在競賽初期提高觀察力\n使視野稍微變得寬廣＜中距離＞",
-        "skill_pt": "110",
-        "skill_icon_name": "i_skill_y_n_4",
-        "upper_skill": "千里眼"
-      },
-      "食らいつき": {
-        "skill_description": "在競賽後半若準備追過對手\n速度會略微上升＜前列/居中＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "猛追"
-      },
-      "盛り返し": {
-        "skill_description": "在競賽中期若位於隊列後方\n速度會略微上升＜沙地＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "捲土重来"
-      },
-      "コーナー加速◯": {
-        "skill_description": "以華麗的過彎技巧\n使加速力略微上升",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "曲線のソムリエ"
-      },
-      "ウマ好み": {
-        "skill_description": "若身邊有很多賽馬娘\n速度略微上升",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "ウママニア"
-      },
-      "夢の途中": {
-        "skill_description": "在競賽後半若位於隊列前方\n速度略微上升、加速力稍稍上升\n粉絲越多效果越高",
-        "skill_pt": "200",
-        "skill_icon_name": "i_skill_y_n_8",
-        "upper_skill": "キミと勝ちたい"
-      },
-      "差しコーナー◯": {
-        "skill_description": "在彎道速度略微上升\n＜作戰．居中＞",
-        "skill_pt": "130",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "差しコーナー◎"
-      },
-      "レースの真髄・賢": {
-        "skill_description": "在競賽後半若發動2次技能\n速度會略微上升",
-        "skill_pt": "150",
-        "skill_icon_name": "i_skill_y_n_1"
-      },
-      "直線巧者": {
-        "skill_description": "在直線速度略微上升",
-        "skill_pt": "170",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "ハヤテ一文字"
-      },
-      "スプリントギア": {
-        "skill_description": "在直線加速力略微上升\n＜短距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "スプリントターボ"
-      },
-      "フルスロットル": {
-        "skill_description": "在競賽中期大幅消耗持久力\n使速度稍微上升＜作戰．居中＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "勇往邁進"
-      },
-      "アオハル点火・力": {
-        "skill_description": "在競賽後期燃燒青春魂，\n競賽中隊伍成員的力量\n合計值越高，加速力便隨之略微上升",
-        "skill_pt": "200",
-        "skill_icon_name": "i_skill_y_n_2a",
-        "upper_skill": "アオハル燃焼・力"
-      },
-      "臨機応変": {
-        "skill_description": "在競賽後期變得稍微擅長爭搶賽道",
-        "skill_pt": "120",
-        "skill_icon_name": "i_skill_y_n_3",
-        "upper_skill": "レーンの魔術師"
-      },
-      "テンポアップ": {
-        "skill_description": "在競賽中期若位於隊列前方\n會略微變得容易取得良好位置＜中距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "キラーチューン"
-      },
-      "快速": {
-        "skill_description": "レース後半のどこかでわずかに前に出て持久力をほんのわずかに回復する",
-        "skill_pt": "200",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "神速"
-      },
-      "リードキープ": {
-        "skill_description": "在競賽中期若位居領先並拉開距離\n則略微容易保持領先＜長距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "先陣の心得"
-      },
-      "垂れウマ回避": {
-        "skill_description": "於最後衝刺階段當前方堵塞時\n腳步會變得略微靈活",
-        "skill_pt": "150",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "ノンストップガール"
-      },
-      "品行方正": {
-        "skill_description": "最終コーナー前の第3コーナーで前の方にいるとわずかに前に出る＜マイル/中距離＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "十全十美"
-      },
-      "負けん気": {
-        "skill_description": "變得略微容易成功追過對手\n＜一哩＞",
-        "skill_pt": "120",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "姉御肌"
-      },
-      "意気込み十分": {
-        "skill_description": "在競賽後期若位於隊列前方\n加速力會略微上升＜沙地＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "目指せセンター！"
-      },
-      "冴える思考": {
-        "skill_description": "若用技能回復持久力，\n在競賽中期的一開始位於隊列後方時\n使速度略微上升＜沙地＞",
-        "skill_pt": "150",
-        "skill_icon_name": "i_skill_y_n_1"
-      },
-      "早仕掛け": {
-        "skill_description": "在競賽中期若位於隊列後方\n一段時間內速度會些微上升\n＜作戰．後追＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "強攻策"
-      },
-      "長距離コーナー◯": {
-        "skill_description": "在彎道速度略微上升\n＜長距離＞",
-        "skill_pt": "100",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "長距離コーナー◎"
-      },
-      "末脚": {
-        "skill_description": "於最後衝刺階段速度略微上升",
-        "skill_pt": "170",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "全身全霊"
-      },
-      "まっしぐら": {
-        "skill_description": "在最後衝刺階段若位於隊列前方\n速度會略微上升＜沙地＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "全速前進！"
-      },
-      "ロックオン": {
-        "skill_description": "レース終盤が迫ったとき後方にいると速度がわずかに上がる＜長距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "一発必中"
-      },
-      "闘争心": {
-        "skill_description": "在競賽中期若位於隊列中段與對手競爭\n會些微回復持久力\n且速度會略微上升＜中距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "気炎万丈"
-      },
-      "先行直線◎": {
-        "skill_description": "在直線速度稍微上升\n＜作戰．前列＞",
-        "skill_pt": "140",
-        "skill_icon_name": "i_skill_y_n_1"
-      },
-      "中距離直線◯": {
-        "skill_description": "在直線速度略微上升＜中距離＞",
-        "skill_pt": "100",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "中距離直線◎"
-      },
-      "勝利に向かって": {
-        "skill_description": "レース中盤に前の方にいるとしばらくの間速度がちょっと上がる＜作戦・先行＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "かっとばせ！"
-      },
-      "ワンチャンス": {
-        "skill_description": "在競賽後期若位於隊列後方\n加速力會略微上升＜中距離＞",
-        "skill_pt": "160",
-        "skill_icon_name": "i_skill_y_n_2",
-        "upper_skill": "起死回生"
-      },
-      "レコメンド": {
-        "skill_description": "在競賽中期若與對手競爭\n速度會略微上升＜沙地＞",
-        "skill_pt": "180",
-        "skill_icon_name": "i_skill_y_n_1",
-        "upper_skill": "チャート急上昇！"
+        "skill_icon_name": "i_skill_y_n_2"
       }
     },
     "rare": {
-      "努力家": {
-        "skill_description": "準備追過對手時的一段時間內\n加速力會稍微上升＜作戰．居中＞",
-        "skill_pt": "120",
-        "lower_skill": "がんばり屋",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "起死回生": {
-        "skill_description": "在競賽後期若位於隊列後方\n加速力會上升＜中距離＞",
-        "skill_pt": "160",
-        "lower_skill": "ワンチャンス",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "気骨稜稜": {
-        "skill_description": "レース終盤が迫ったとき中団以降だと速度が上がる＜短距離＞",
-        "skill_pt": "160",
-        "lower_skill": "ひたむき前進",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "勝利への執念": {
-        "skill_description": "在最後彎道若被追過\n變得容易反追回來＜中距離＞",
-        "skill_pt": "160",
-        "lower_skill": "食い下がり",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "紫電一閃": {
-        "skill_description": "在直線速度上升＜短距離＞",
-        "skill_pt": "150",
-        "lower_skill": "短距離直線◎",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
       "月影円刃": {
-        "skill_description": "コーナーで速度が上がる＜作戦・追込＞",
-        "skill_pt": "150",
         "lower_skill": "追込コーナー◎",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "注目の踊り子": {
-        "skill_description": "在競賽初期\n變得大幅擅長爭搶賽道",
-        "skill_pt": "120",
-        "lower_skill": "ポジションセンス",
-        "skill_icon_name": "i_skill_y_r_3"
-      },
-      "電光石火": {
-        "skill_description": "在競賽後期若於隊列後方準備追過對手\n加速力上升＜短距離．一哩＞",
-        "skill_pt": "180",
-        "lower_skill": "一足飛び",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "威風堂々": {
-        "skill_description": "最終コーナーで中団以降だと前後3人ずつの速度をわずかに下げ、自分の速度を上げる＜作戦・差し＞",
-        "skill_pt": "190",
-        "lower_skill": "プレッシャー",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "荒ぶる旋風": {
-        "skill_description": "在競賽中期若位於隊列前方\n會使後方的速度略微下降\n使自己的速度上升＜中距離＞",
-        "skill_pt": "160",
-        "lower_skill": "気迫を込めて",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "プランX": {
-        "skill_description": "接近競賽後期時若位於隊列前方\n會變得容易追過對手＜短距離＞",
-        "skill_pt": "160",
-        "lower_skill": "善後策",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "乗り換え上手": {
-        "skill_description": "在競賽後期加速力上升\n＜作戰．居中＞",
-        "skill_pt": "180",
-        "lower_skill": "差し切り体勢",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "昇り龍": {
-        "skill_description": "在最後彎道若由外側追過對手\n速度會上升＜作戰．居中＞",
-        "skill_pt": "180",
-        "lower_skill": "外差し準備",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "全身全霊": {
-        "skill_description": "於最後衝刺階段速度上升",
-        "skill_pt": "170",
-        "lower_skill": "末脚",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "いいとこ入った！": {
-        "skill_description": "若緊跟在前方賽馬娘的後方\n會不易受到風阻",
-        "skill_pt": "160",
-        "lower_skill": "スリップストリーム",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "最高峰の夢": {
-        "skill_description": "最終直線で速度が上がる、獲得した海外適性Lvの合計が高いほど効果が高まる",
-        "skill_pt": "200",
-        "lower_skill": "想いを背負って",
-        "skill_icon_name": "i_skill_y_r_10"
-      },
-      "アオハル燃焼・力": {
-        "skill_description": "在競賽後期燃燒青春魂，\n競賽中隊伍成員的力量\n合計值越高，加速力便隨之上升",
-        "skill_pt": "200",
-        "lower_skill": "アオハル点火・力",
-        "skill_icon_name": "i_skill_y_r_2a"
-      },
-      "踏ませぬ影": {
-        "skill_description": "在最後直線若位居領先\n且後方1身距內有其他賽馬娘時\n速度大幅上升＜作戰．領頭＞",
-        "skill_pt": "180",
-        "lower_skill": "粘り腰",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "優位形成": {
-        "skill_description": "レース中盤に速度が上がる＜マイル/中距離＞",
-        "skill_pt": "180",
-        "lower_skill": "しとやかな足取り",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "狙うは最前列！": {
-        "skill_description": "在競賽後期會採取\n向前衝刺的姿勢＜沙地＞",
-        "skill_pt": "140",
-        "lower_skill": "前列狙い",
-        "skill_icon_name": "i_skill_y_r_3"
-      },
-      "万里一空": {
-        "skill_description": "ラストスパートの直線で前の方だと加速力が上がる＜逃げ・長距離＞",
-        "skill_pt": "170",
-        "lower_skill": "迷いなし",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "限界の先へ": {
-        "skill_description": "在最後衝刺階段速度上升\n依照最優秀的基礎能力數值\n提高效果",
-        "skill_pt": "200",
-        "lower_skill": "前だけ見据えて",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "豪風円刃": {
-        "skill_description": "コーナーで速度が上がる＜マイル＞",
+        "skill_description": "コーナーで速度が上がる＜作戦・追込＞",
+        "upper_skill": null,
         "skill_pt": "150",
-        "lower_skill": "マイルコーナー◎",
         "skill_icon_name": "i_skill_y_r_1"
-      },
-      "ハヤテ一文字": {
-        "skill_description": "在直線速度上升",
-        "skill_pt": "170",
-        "lower_skill": "直線巧者",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "脱出術": {
-        "skill_description": "在競賽中期變得容易往前推進\n＜作戰．領頭＞",
-        "skill_pt": "180",
-        "lower_skill": "急ぎ足",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "曲線のソムリエ": {
-        "skill_description": "以華麗的過彎技巧\n使加速力上升",
-        "skill_pt": "180",
-        "lower_skill": "コーナー加速◯",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "太陽の叡智": {
-        "skill_description": "レース中盤に競り合うと速度が上がる、獲得したスキルの数に応じて効果が高まる",
-        "skill_pt": "200",
-        "lower_skill": "陽の加護",
-        "skill_icon_name": "i_skill_y_r_9"
-      },
-      "勇往邁進": {
-        "skill_description": "在競賽中期大幅消耗持久力\n使速度大幅上升＜作戰．居中＞",
-        "skill_pt": "160",
-        "lower_skill": "フルスロットル",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "視界良好！異常なし！": {
-        "skill_description": "左右移動後掌握狀況\n視野稍微變得寬廣＜作戰．後追＞",
-        "skill_pt": "110",
-        "lower_skill": "お見通し",
-        "skill_icon_name": "i_skill_y_r_4"
       },
       "抜群の切れ味": {
-        "skill_description": "在進入競賽後期前若不暴衝並持續\n潛伏於隊列後方，會在後期的一開始\n加速力上升＜作戰．後追＞",
-        "skill_pt": "180",
         "lower_skill": "切れ味",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "ネバーギブアップ": {
-        "skill_description": "レース中盤のコーナーでしばらくの間速度が少し上がる",
-        "skill_pt": "180",
-        "lower_skill": "折れない心",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "無我夢中": {
-        "skill_description": "在最後衝刺階段若位於隊列中段之後\n稍微消耗持久力使加速力上升\n＜居中．長距離＞",
-        "skill_pt": "180",
-        "lower_skill": "がむしゃら",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "大海の叡智": {
-        "skill_description": "レース序盤の始めの方に加速力が上がる、獲得したスキルの数に応じて効果が高まる",
-        "skill_pt": "200",
-        "lower_skill": "海の加護",
-        "skill_icon_name": "i_skill_y_r_9"
-      },
-      "キミと勝ちたい": {
-        "skill_description": "在競賽後半若位於隊列前方\n速度上升、加速力略微上升\n粉絲越多效果越高",
-        "skill_pt": "200",
-        "lower_skill": "夢の途中",
-        "skill_icon_name": "i_skill_y_r_8"
-      },
-      "シックスセンス": {
-        "skill_description": "在競賽初期較不易遭到包圍\n＜作戰．領頭＞",
-        "skill_pt": "110",
-        "lower_skill": "危険回避",
-        "skill_icon_name": "i_skill_y_r_3"
-      },
-      "豪脚": {
-        "skill_description": "在競賽後期若位於隊列後方\n追趕力上升＜一哩＞",
-        "skill_pt": "160",
-        "lower_skill": "上昇気流",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "ギアチェンジ": {
-        "skill_description": "在競賽中期若位於隊列前方\n會變得容易追過對手＜一哩＞",
-        "skill_pt": "160",
-        "lower_skill": "ギアシフト",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "目指せセンター！": {
-        "skill_description": "在競賽後期若位於隊列前方\n加速力會上升＜沙地＞",
-        "skill_pt": "180",
-        "lower_skill": "意気込み十分",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "強攻策": {
-        "skill_description": "在競賽中期若位於隊列後方\n一段時間內速度會稍微上升\n＜作戰．後追＞",
-        "skill_pt": "180",
-        "lower_skill": "早仕掛け",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "出力1000％！": {
-        "skill_description": "在競賽中期的一開始\n大幅消耗持久力\n使速度大幅上升＜作戰．領頭＞",
-        "skill_pt": "180",
-        "lower_skill": "しゃかりき",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "疾風怒濤": {
-        "skill_description": "在競賽後期若位於隊列後方\n會進入後追態勢\n提高排名順位＜作戰・後追＞",
-        "skill_pt": "180",
-        "lower_skill": "仕掛け抜群",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "真打": {
-        "skill_description": "接近競賽後期時若位於隊列前方\n速度會上升＜長距離＞",
-        "skill_pt": "160",
-        "lower_skill": "影打",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "鍔迫り合い": {
-        "skill_description": "在競賽後期若位於隊列前方\n加速力會上升＜作戰．前列＞",
-        "skill_pt": "180",
-        "lower_skill": "真っ向勝負",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "鋭脚円刃": {
-        "skill_description": "在彎道速度上升\n＜作戰．居中＞",
-        "skill_pt": "150",
-        "lower_skill": "差しコーナー◎",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "ルミネセンス": {
-        "skill_description": "レース中にスキルを13回発動すると前に出る＜中距離＞",
-        "skill_pt": "160",
-        "lower_skill": "イグニッション",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "千里眼": {
-        "skill_description": "在競賽初期提高觀察力\n使視野變得寬廣＜中距離＞",
-        "skill_pt": "110",
-        "lower_skill": "ホークアイ",
-        "skill_icon_name": "i_skill_y_r_4"
-      },
-      "怒涛の追い上げ": {
-        "skill_description": "在競賽後期若追過對手\n速度會上升＜長距離＞",
-        "skill_pt": "160",
-        "lower_skill": "追い上げ",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "アクセル全開！": {
-        "skill_description": "在競賽中期若追過對手\n加速力會上升＜一哩＞",
-        "skill_pt": "160",
-        "lower_skill": "アクセラレーション",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "尻尾の滝登り": {
-        "skill_description": "在競賽中期若發動多項技能\n速度會上升",
-        "skill_pt": "180",
-        "lower_skill": "尻尾上がり",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "気炎万丈": {
-        "skill_description": "在競賽中期若位於隊列中段與對手競爭\n會稍微回復持久力\n且速度會稍微上升＜中距離＞",
-        "skill_pt": "160",
-        "lower_skill": "闘争心",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "ハイボルテージ": {
-        "skill_description": "レース終盤始めの方で前方にいると加速力が上がる＜マイル＞",
-        "skill_pt": "160",
-        "lower_skill": "心弾んで",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "一陣の風": {
-        "skill_description": "在直線加速力上升",
-        "skill_pt": "170",
-        "lower_skill": "直線加速",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "姉御肌": {
-        "skill_description": "變得容易成功追過對手\n＜一哩＞",
-        "skill_pt": "120",
-        "lower_skill": "負けん気",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "千里の道": {
-        "skill_description": "レース中盤に中団にいるとしばらくの間速度が少し上がる＜作戦・差し＞",
-        "skill_pt": "180",
-        "lower_skill": "一歩から",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "お先に失礼っ！": {
-        "skill_description": "若長時間被後方的賽馬娘緊跟\n速度會上升",
-        "skill_pt": "160",
-        "lower_skill": "遊びはおしまいっ！",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "昂る鼓動": {
-        "skill_description": "レース終盤始めの方に中団にいると前に出る＜中距離/長距離＞",
-        "skill_pt": "180",
-        "lower_skill": "込み上げる熱",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "鋭脚一閃": {
-        "skill_description": "在直線速度上升\n＜作戰．居中＞",
-        "skill_pt": "150",
-        "lower_skill": "差し直線◎",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "マイルの支配者": {
-        "skill_description": "在競賽初期若位於隊列前方\n變得容易拉開距離＜一哩＞",
-        "skill_pt": "160",
-        "lower_skill": "積極策",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "誰より前へ！": {
-        "skill_description": "スタート時に加速力が上がる＜中距離＞",
-        "skill_pt": "120",
-        "lower_skill": "一番乗り",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "盤石の構え": {
-        "skill_description": "レース序盤にスキルを多く発動すると加速力が上がる",
-        "skill_pt": "180",
-        "lower_skill": "地固め",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "勝利の機運": {
-        "skill_description": "接近競賽後期時若位於隊列前方\n速度會上升＜沙地＞",
-        "skill_pt": "180",
-        "lower_skill": "明るい兆し",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "スピードスター": {
-        "skill_description": "在最後彎道變得容易突圍\n＜作戰．前列＞",
-        "skill_pt": "180",
-        "lower_skill": "抜け出し準備",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "アオハル燃焼・賢": {
-        "skill_description": "在競賽初期的一段時間燃燒青春魂\n競賽中隊伍成員的智力\n合計值越高，越能夠洞察局勢",
-        "skill_pt": "200",
-        "lower_skill": "アオハル点火・賢",
-        "skill_icon_name": "i_skill_y_r_3a"
-      },
-      "先手必勝": {
-        "skill_description": "在競賽初期變得容易往前推進\n＜作戰．領頭＞",
-        "skill_pt": "120",
-        "lower_skill": "先駆け",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "遮二無二": {
-        "skill_description": "接近競賽後期時若位於隊列前方\n速度會上升＜一哩＞",
-        "skill_pt": "180",
-        "lower_skill": "向こう見ず",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "キラーチューン": {
-        "skill_description": "在競賽中期若位於隊列前方\n會變得容易取得良好位置＜中距離＞",
-        "skill_pt": "160",
-        "lower_skill": "テンポアップ",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "王手": {
-        "skill_description": "終盤の最終コーナーで中団にいる時ゴールまで遠いと加速力が上がる＜先行/差し＞",
-        "skill_pt": "180",
-        "lower_skill": "会心の一歩",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "猛追": {
-        "skill_description": "在競賽後半若準備追過對手\n速度會上升＜前列/居中＞",
-        "skill_pt": "180",
-        "lower_skill": "食らいつき",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "全速前進！": {
-        "skill_description": "在最後衝刺階段若位於隊列前方\n速度會上升＜沙地＞",
-        "skill_pt": "180",
-        "lower_skill": "まっしぐら",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "怪物": {
-        "skill_description": "在即將進入競賽後期時，\n若位居領先或距離最前頭4身距內時\n競賽後期加速力上升＜前列．長距離＞",
-        "skill_pt": "180",
-        "lower_skill": "本領発揮",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "ライトニングステップ": {
-        "skill_description": "在競賽中期若位於隊列後方\n一段時間內變得較不易遭到包圍\n＜中距離＞",
-        "skill_pt": "140",
-        "lower_skill": "イナズマステップ",
-        "skill_icon_name": "i_skill_y_r_3"
-      },
-      "アオハル燃焼・速": {
-        "skill_description": "在競賽中期燃燒青春魂，\n競賽中隊伍成員的速度\n合計值越高，速度便隨之上升",
-        "skill_pt": "200",
-        "lower_skill": "アオハル点火・速",
-        "skill_icon_name": "i_skill_y_r_1a"
-      },
-      "内的体験": {
-        "skill_description": "在最後彎道若位於內側圍欄\n速度會上升＜長距離＞",
-        "skill_pt": "160",
-        "lower_skill": "内弁慶",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "ノンストップガール": {
-        "skill_description": "於最後衝刺階段當前方堵塞時\n腳步會變得靈活",
-        "skill_pt": "150",
-        "lower_skill": "垂れウマ回避",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "一発必中": {
-        "skill_description": "レース終盤が迫ったとき後方にいると速度が上がる＜長距離＞",
-        "skill_pt": "160",
-        "lower_skill": "ロックオン",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "神速": {
-        "skill_description": "レース後半のどこかで前に出て持久力をわずかに回復する",
-        "skill_pt": "200",
-        "lower_skill": "快速",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "アンストッパブル": {
-        "skill_description": "在競賽中期速度上升\n＜作戰．前列＞",
-        "skill_pt": "180",
-        "lower_skill": "攻めの姿勢",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "優雅な砂浴び": {
-        "skill_description": "若緊跟在前方賽馬娘的後方\n速度會上升＜沙地＞",
-        "skill_pt": "160",
-        "lower_skill": "砂浴び◯",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "日本一のウマ娘": {
-        "skill_description": "將背負期待的強烈意志轉化為力量\n在最後彎道速度上升\n＜長距離＞",
-        "skill_pt": "360",
-        "skill_icon_name": "i_skill_y_r_7"
-      },
-      "くじけぬ精神": {
-        "skill_description": "レース中盤に後ろの方にいると加速力が少し上がる＜作戦・先行＞",
-        "skill_pt": "120",
-        "lower_skill": "まき直し",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "アガッてきた！": {
-        "skill_description": "在競賽中期若追過對手\n速度會上升",
-        "skill_pt": "170",
-        "lower_skill": "ペースアップ",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "ブチ☆アゲ&uarr;バイブス": {
-        "skill_description": "レース中盤に速度が上がりさらに持久力を少し回復する＜長距離＞",
-        "skill_pt": "200",
-        "lower_skill": "バイブス上昇",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "風雲の志": {
-        "skill_description": "即將進入競賽後期時，潛伏於第2之後，\n且距離最前頭2身距以內一段時間內\n速度會稍微上升＜作戰．前列＞",
-        "skill_pt": "180",
-        "lower_skill": "向上心",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "ブレイクスルー": {
-        "skill_description": "在競賽中期若位於最後方附近速度會上升\n並變得擅長爭搶賽道＜作戰．後追＞",
-        "skill_pt": "180",
-        "lower_skill": "打開策",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "突撃魂": {
-        "skill_description": "レース終盤が迫ったとき中団以降にいると速度が上がる＜作戦・差し＞",
-        "skill_pt": "180",
-        "lower_skill": "進出開始",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "一番星": {
-        "skill_description": "在競賽後半調整呼吸向前邁進\n依照在培育中累積的勝利數提高效果",
-        "skill_pt": "200",
-        "lower_skill": "綺羅星",
-        "skill_icon_name": "i_skill_y_r_6"
-      },
-      "至高のダウンヒラー": {
-        "skill_description": "下坡時速度上升",
-        "skill_pt": "170",
-        "lower_skill": "下り坂巧者",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "トップランナー": {
-        "skill_description": "在競賽初期或中期\n對追過對手或競爭變得更強\n＜作戰．領頭＞",
-        "skill_pt": "180",
-        "lower_skill": "先頭プライド",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "ウママニア": {
-        "skill_description": "身邊有很多賽馬娘時\n速度會上升",
-        "skill_pt": "160",
-        "lower_skill": "ウマ好み",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "月影一閃": {
-        "skill_description": "在直線速度上升\n＜作戰．後追＞",
-        "skill_pt": "150",
-        "lower_skill": "追込直線◎",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "大地の叡智": {
-        "skill_description": "レース終盤の中ほどで速度が上がる、獲得したスキルの数に応じて効果が高まる",
-        "skill_pt": "200",
-        "lower_skill": "地の加護",
-        "skill_icon_name": "i_skill_y_r_9"
-      },
-      "破竹の勢い": {
-        "skill_description": "在最後彎道若位於隊列後方\n速度會上升＜一哩＞",
-        "skill_pt": "160",
-        "lower_skill": "気合十分",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "レーンの魔術師": {
-        "skill_description": "在競賽後期變得擅長爭搶賽道",
-        "skill_pt": "120",
-        "lower_skill": "臨機応変",
-        "skill_icon_name": "i_skill_y_r_3"
-      },
-      "スプリントターボ": {
-        "skill_description": "在直線加速力上升\n＜短距離＞",
-        "skill_pt": "160",
-        "lower_skill": "スプリントギア",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "捲土重来": {
-        "skill_description": "在競賽中期若位於隊列後方\n速度會上升＜沙地＞",
-        "skill_pt": "180",
-        "lower_skill": "盛り返し",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "決意の直滑降": {
-        "skill_description": "變得稍微擅長下坡\n＜作戰．前列＞",
-        "skill_pt": "120",
-        "lower_skill": "直滑降",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "トップギア": {
-        "skill_description": "在最後直線若位列第2之後\n且距離最前頭4身距內時\n速度大幅上升＜作戰．居中＞",
-        "skill_pt": "180",
-        "lower_skill": "キレる脚",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "一気呵成": {
-        "skill_description": "レース終盤始めの方で余力十分なら前に出る＜差し・長距離＞",
-        "skill_pt": "160",
-        "lower_skill": "大急ぎ",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "光芒円刃": {
-        "skill_description": "在彎道速度上升＜中距離＞",
-        "skill_pt": "150",
-        "lower_skill": "中距離コーナー◎",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "準備万全！": {
-        "skill_description": "在競賽中期的一段時間內\n做好邁向終點的準備＜短距離＞",
-        "skill_pt": "140",
-        "lower_skill": "仕掛け準備",
-        "skill_icon_name": "i_skill_y_r_3"
-      },
-      "光芒一閃": {
-        "skill_description": "在直線速度上升＜中距離＞",
-        "skill_pt": "150",
-        "lower_skill": "中距離直線◎",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "コール＆レスポンス": {
-        "skill_icon_name": "i_skill_y_r_1",
-        "skill_pt": "200",
+        "skill_description": "在進入競賽後期前若不暴衝並持續\n潛伏於隊列後方，會在後期的一開始\n加速力上升＜作戰．後追＞",
         "upper_skill": null,
-        "skill_description": "レース中盤にスキルを発動すると速度が少し上がる。その後レース終盤にスキルを発動すると少し前に出る＜ダート＞",
-        "lower_skill": "二段構え"
-      },
-      "十全十美": {
-        "skill_description": "最終コーナー前の第3コーナーで前の方にいると前に出る＜マイル/中距離＞",
-        "lower_skill": "品行方正",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "高揚感": {
-        "skill_description": "在競賽中期若位於隊列後方\n速度會上升＜中距離＞",
-        "skill_pt": "160",
-        "lower_skill": "前のめり",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "大胆不敵": {
-        "skill_description": "在競賽後半若於隊列中段則速度會上升\n且加速力些微上升\n＜作戰．居中＞",
         "skill_pt": "180",
-        "lower_skill": "恐れぬ心",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "意気衝天": {
-        "skill_description": "接近競賽後期時若位於隊列前方\n速度會上升＜短距離＞",
-        "skill_pt": "160",
-        "lower_skill": "軽い足取り",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "大局観": {
-        "skill_description": "在競賽中期提高觀察力\n使視野變得寬廣＜作戰．居中＞",
-        "skill_pt": "120",
-        "lower_skill": "読解力",
-        "skill_icon_name": "i_skill_y_r_4"
-      },
-      "百万バリキ": {
-        "skill_description": "上坡時速度上升\n＜作戰．居中＞",
-        "skill_pt": "120",
-        "lower_skill": "十万バリキ",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "迫る影": {
-        "skill_description": "在最後衝刺的直線\n加速力上升＜作戰・後追＞",
-        "skill_pt": "180",
-        "lower_skill": "直線一気",
         "skill_icon_name": "i_skill_y_r_2"
       },
-      "博打うち": {
-        "skill_description": "雖然在競賽後半速度大幅上升\n但會大幅感到疲倦",
+      "努力家": {
+        "lower_skill": "がんばり屋",
+        "skill_description": "準備追過對手時的一段時間內\n加速力會稍微上升＜作戰．居中＞",
+        "upper_skill": null,
         "skill_pt": "120",
-        "lower_skill": "あやしげな作戦",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "チャート急上昇！": {
-        "skill_description": "在競賽中期若與對手競爭\n速度會上升＜沙地＞",
-        "skill_pt": "180",
-        "lower_skill": "レコメンド",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "画竜点睛": {
-        "skill_description": "レース終盤始めの方で余力十分なら前に出る＜逃げ・長距離＞",
-        "skill_pt": "160",
-        "lower_skill": "大詰め",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "天命士": {
-        "skill_description": "在競賽後期若位於隊列後方\n視線會變得寬廣＜作戰．後追＞",
-        "skill_pt": "110",
-        "lower_skill": "策士",
-        "skill_icon_name": "i_skill_y_r_4"
-      },
-      "弧線のプロフェッサー": {
-        "skill_description": "變得擅長彎道\n速度上升",
-        "skill_pt": "180",
-        "lower_skill": "コーナー巧者◯",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "コンセントレーション": {
-        "skill_description": "變得擅長起跑\n使延遲時間變少",
-        "skill_pt": "140",
-        "lower_skill": "集中力",
-        "skill_icon_name": "i_skill_y_r_5"
-      },
-      "電撃の煌めき": {
-        "skill_description": "在競賽後期若位於隊列後方\n變得容易進行衝刺＜短距離＞",
-        "skill_pt": "160",
-        "lower_skill": "詰め寄り",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "かっとばせ！": {
-        "skill_description": "レース中盤に前の方にいるとしばらくの間速度が少し上がる＜作戦・先行＞",
-        "skill_pt": "180",
-        "lower_skill": "勝利に向かって",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "決死の覚悟": {
-        "skill_description": "若在最後衝刺的直線取得良好位置\n速度會上升＜中距離＞",
-        "skill_pt": "160",
-        "lower_skill": "ありったけ",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "アオハル燃焼・根": {
-        "skill_description": "在競賽後期燃燒青春魂，\n競賽中隊伍成員的意志力\n合計值越高，腳上便會隨之凝聚力道",
-        "skill_pt": "200",
-        "lower_skill": "アオハル点火・根",
-        "skill_icon_name": "i_skill_y_r_1a"
-      },
-      "烈風一閃": {
-        "skill_description": "在直線速度上升＜長距離＞",
-        "skill_pt": "150",
-        "lower_skill": "長距離直線◎",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "技巧派": {
-        "skill_description": "爭搶賽道變得稍微流暢\n＜作戰．前列＞",
-        "skill_pt": "120",
-        "lower_skill": "巧みなステップ",
         "skill_icon_name": "i_skill_y_r_2"
       },
-      "圧倒的リード": {
-        "skill_description": "在競賽中期若大幅度領先\n則容易保持領先＜短距離＞",
-        "skill_pt": "170",
-        "lower_skill": "大きなリード",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "迅速果断": {
-        "skill_description": "在競賽中期速度上升\n＜作戰．居中＞",
+      "天衣無縫": {
+        "lower_skill": "型破り",
+        "skill_description": "最終コーナー前の第3コーナーで後ろの方にいると前に出る＜中距離/長距離＞",
+        "upper_skill": null,
         "skill_pt": "180",
-        "lower_skill": "位置取り押し上げ",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "逃亡者": {
-        "skill_description": "在最後彎道變得容易維持領先\n＜作戰．領頭＞",
-        "skill_pt": "180",
-        "lower_skill": "押し切り準備",
-        "skill_icon_name": "i_skill_y_r_2"
-      },
-      "快進撃": {
-        "skill_description": "接近後期時若位居領先或\n距離最前頭4身距以內\n速度及加速力稍微上升＜前列．中距離＞",
-        "skill_pt": "170",
-        "lower_skill": "確かな足取り",
-        "skill_icon_name": "i_skill_y_r_1"
-      },
-      "先陣の心得": {
-        "skill_description": "在競賽中期若位居領先並拉開距離\n則容易保持領先＜長距離＞",
-        "skill_pt": "160",
-        "lower_skill": "リードキープ",
         "skill_icon_name": "i_skill_y_r_1"
       },
       "陣風円刃": {
-        "skill_description": "在彎道速度上升\n＜作戰．領頭＞",
-        "skill_pt": "150",
         "lower_skill": "逃げコーナー◎",
+        "skill_description": "在彎道速度上升\n＜作戰．領頭＞",
+        "upper_skill": null,
+        "skill_pt": "150",
         "skill_icon_name": "i_skill_y_r_1"
       },
-      "天衣無縫": {
-        "skill_description": "最終コーナー前の第3コーナーで後ろの方にいると前に出る＜中距離/長距離＞",
-        "skill_pt": "180",
-        "lower_skill": "型破り",
+      "先陣の心得": {
+        "lower_skill": "リードキープ",
+        "skill_description": "在競賽中期若位居領先並拉開距離\n則容易保持領先＜長距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
         "skill_icon_name": "i_skill_y_r_1"
+      },
+      "盤石の構え": {
+        "lower_skill": "地固め",
+        "skill_description": "レース序盤にスキルを多く発動すると加速力が上がる",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "キラーチューン": {
+        "lower_skill": "テンポアップ",
+        "skill_description": "在競賽中期若位於隊列前方\n會變得容易取得良好位置＜中距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "鋭脚一閃": {
+        "lower_skill": "差し直線◎",
+        "skill_description": "在直線速度上升\n＜作戰．居中＞",
+        "upper_skill": null,
+        "skill_pt": "150",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "ノンストップガール": {
+        "lower_skill": "垂れウマ回避",
+        "skill_description": "於最後衝刺階段當前方堵塞時\n腳步會變得靈活",
+        "upper_skill": null,
+        "skill_pt": "150",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "アオハル燃焼・賢": {
+        "lower_skill": "アオハル点火・賢",
+        "skill_description": "在競賽初期的一段時間燃燒青春魂\n競賽中隊伍成員的智力\n合計值越高，越能夠洞察局勢",
+        "upper_skill": null,
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_r_3a"
+      },
+      "逃亡者": {
+        "lower_skill": "押し切り準備",
+        "skill_description": "在最後彎道變得容易維持領先\n＜作戰．領頭＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "一発必中": {
+        "lower_skill": "ロックオン",
+        "skill_description": "レース終盤が迫ったとき後方にいると速度が上がる＜長距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "至高のダウンヒラー": {
+        "lower_skill": "下り坂巧者",
+        "skill_description": "下坡時速度上升",
+        "upper_skill": null,
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "迅速果断": {
+        "lower_skill": "位置取り押し上げ",
+        "skill_description": "在競賽中期速度上升\n＜作戰．居中＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "先手必勝": {
+        "lower_skill": "先駆け",
+        "skill_description": "在競賽初期變得容易往前推進\n＜作戰．領頭＞",
+        "upper_skill": null,
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "視界良好！異常なし！": {
+        "lower_skill": "お見通し",
+        "skill_description": "左右移動後掌握狀況\n視野稍微變得寬廣＜作戰．後追＞",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_y_r_4"
+      },
+      "風雲の志": {
+        "lower_skill": "向上心",
+        "skill_description": "即將進入競賽後期時，潛伏於第2之後，\n且距離最前頭2身距以內一段時間內\n速度會稍微上升＜作戰．前列＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "真打": {
+        "lower_skill": "影打",
+        "skill_description": "接近競賽後期時若位於隊列前方\n速度會上升＜長距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "限界の先へ": {
+        "lower_skill": "前だけ見据えて",
+        "skill_description": "在最後衝刺階段速度上升\n依照最優秀的基礎能力數值\n提高效果",
+        "upper_skill": null,
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "技巧派": {
+        "lower_skill": "巧みなステップ",
+        "skill_description": "爭搶賽道變得稍微流暢\n＜作戰．前列＞",
+        "upper_skill": null,
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "烈風一閃": {
+        "lower_skill": "長距離直線◎",
+        "skill_description": "在直線速度上升＜長距離＞",
+        "upper_skill": null,
+        "skill_pt": "150",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "アオハル燃焼・根": {
+        "lower_skill": "アオハル点火・根",
+        "skill_description": "在競賽後期燃燒青春魂，\n競賽中隊伍成員的意志力\n合計值越高，腳上便會隨之凝聚力道",
+        "upper_skill": null,
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_r_1a"
+      },
+      "全身全霊": {
+        "lower_skill": "末脚",
+        "skill_description": "於最後衝刺階段速度上升",
+        "upper_skill": null,
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "決死の覚悟": {
+        "lower_skill": "ありったけ",
+        "skill_description": "若在最後衝刺的直線取得良好位置\n速度會上升＜中距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "かっとばせ！": {
+        "lower_skill": "勝利に向かって",
+        "skill_description": "レース中盤に前の方にいるとしばらくの間速度が少し上がる＜作戦・先行＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "猛追": {
+        "lower_skill": "食らいつき",
+        "skill_description": "在競賽後半若準備追過對手\n速度會上升＜前列/居中＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "鍔迫り合い": {
+        "lower_skill": "真っ向勝負",
+        "skill_description": "在競賽後期若位於隊列前方\n加速力會上升＜作戰．前列＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "ギアチェンジ": {
+        "lower_skill": "ギアシフト",
+        "skill_description": "在競賽中期若位於隊列前方\n會變得容易追過對手＜一哩＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "弧線のプロフェッサー": {
+        "lower_skill": "コーナー巧者◯",
+        "skill_description": "變得擅長彎道\n速度上升",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "目指せセンター！": {
+        "lower_skill": "意気込み十分",
+        "skill_description": "在競賽後期若位於隊列前方\n加速力會上升＜沙地＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "天命士": {
+        "lower_skill": "策士",
+        "skill_description": "在競賽後期若位於隊列後方\n視線會變得寬廣＜作戰．後追＞",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_y_r_4"
+      },
+      "注目の踊り子": {
+        "lower_skill": "ポジションセンス",
+        "skill_description": "在競賽初期\n變得大幅擅長爭搶賽道",
+        "upper_skill": null,
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_r_3"
+      },
+      "意気衝天": {
+        "lower_skill": "軽い足取り",
+        "skill_description": "接近競賽後期時若位於隊列前方\n速度會上升＜短距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "画竜点睛": {
+        "lower_skill": "大詰め",
+        "skill_description": "レース終盤始めの方で余力十分なら前に出る＜逃げ・長距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "チャート急上昇！": {
+        "lower_skill": "レコメンド",
+        "skill_description": "在競賽中期若與對手競爭\n速度會上升＜沙地＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "ハイボルテージ": {
+        "lower_skill": "心弾んで",
+        "skill_description": "レース終盤始めの方で前方にいると加速力が上がる＜マイル＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "大海の叡智": {
+        "lower_skill": "海の加護",
+        "skill_description": "レース序盤の始めの方に加速力が上がる、獲得したスキルの数に応じて効果が高まる",
+        "upper_skill": null,
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_r_9"
+      },
+      "疾風怒濤": {
+        "lower_skill": "仕掛け抜群",
+        "skill_description": "在競賽後期若位於隊列後方\n會進入後追態勢\n提高排名順位＜作戰・後追＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "博打うち": {
+        "lower_skill": "あやしげな作戦",
+        "skill_description": "雖然在競賽後半速度大幅上升\n但會大幅感到疲倦",
+        "upper_skill": null,
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "迫る影": {
+        "lower_skill": "直線一気",
+        "skill_description": "在最後衝刺的直線\n加速力上升＜作戰・後追＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "一番星": {
+        "lower_skill": "綺羅星",
+        "skill_description": "在競賽後半調整呼吸向前邁進\n依照在培育中累積的勝利數提高效果",
+        "upper_skill": null,
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_r_6"
+      },
+      "怒涛の追い上げ": {
+        "lower_skill": "追い上げ",
+        "skill_description": "在競賽後期若追過對手\n速度會上升＜長距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "マイルの支配者": {
+        "lower_skill": "積極策",
+        "skill_description": "在競賽初期若位於隊列前方\n變得容易拉開距離＜一哩＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "荒ぶる旋風": {
+        "lower_skill": "気迫を込めて",
+        "skill_description": "在競賽中期若位於隊列前方\n會使後方的速度略微下降\n使自己的速度上升＜中距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "百万バリキ": {
+        "lower_skill": "十万バリキ",
+        "skill_description": "上坡時速度上升\n＜作戰．居中＞",
+        "upper_skill": null,
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "突撃魂": {
+        "lower_skill": "進出開始",
+        "skill_description": "レース終盤が迫ったとき中団以降にいると速度が上がる＜作戦・差し＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "大胆不敵": {
+        "lower_skill": "恐れぬ心",
+        "skill_description": "在競賽後半若於隊列中段則速度會上升\n且加速力些微上升\n＜作戰．居中＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "高揚感": {
+        "lower_skill": "前のめり",
+        "skill_description": "在競賽中期若位於隊列後方\n速度會上升＜中距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "十全十美": {
+        "lower_skill": "品行方正",
+        "skill_description": "最終コーナー前の第3コーナーで前の方にいると前に出る＜マイル/中距離＞",
+        "upper_skill": null,
+        "skill_pt": null,
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "スピードスター": {
+        "lower_skill": "抜け出し準備",
+        "skill_description": "在最後彎道變得容易突圍\n＜作戰．前列＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "コール＆レスポンス": {
+        "lower_skill": "二段構え",
+        "skill_description": "レース中盤にスキルを発動すると速度が少し上がる。その後レース終盤にスキルを発動すると少し前に出る＜ダート＞",
+        "upper_skill": null,
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "千里の道": {
+        "lower_skill": "一歩から",
+        "skill_description": "レース中盤に中団にいるとしばらくの間速度が少し上がる＜作戦・差し＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "豪脚": {
+        "lower_skill": "上昇気流",
+        "skill_description": "在競賽後期若位於隊列後方\n追趕力上升＜一哩＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "起死回生": {
+        "lower_skill": "ワンチャンス",
+        "skill_description": "在競賽後期若位於隊列後方\n加速力會上升＜中距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "光芒一閃": {
+        "lower_skill": "中距離直線◎",
+        "skill_description": "在直線速度上升＜中距離＞",
+        "upper_skill": null,
+        "skill_pt": "150",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "誰より前へ！": {
+        "lower_skill": "一番乗り",
+        "skill_description": "スタート時に加速力が上がる＜中距離＞",
+        "upper_skill": null,
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "準備万全！": {
+        "lower_skill": "仕掛け準備",
+        "skill_description": "在競賽中期的一段時間內\n做好邁向終點的準備＜短距離＞",
+        "upper_skill": null,
+        "skill_pt": "140",
+        "skill_icon_name": "i_skill_y_r_3"
+      },
+      "ライトニングステップ": {
+        "lower_skill": "イナズマステップ",
+        "skill_description": "在競賽中期若位於隊列後方\n一段時間內變得較不易遭到包圍\n＜中距離＞",
+        "upper_skill": null,
+        "skill_pt": "140",
+        "skill_icon_name": "i_skill_y_r_3"
+      },
+      "アガッてきた！": {
+        "lower_skill": "ペースアップ",
+        "skill_description": "在競賽中期若追過對手\n速度會上升",
+        "upper_skill": null,
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "アクセル全開！": {
+        "lower_skill": "アクセラレーション",
+        "skill_description": "在競賽中期若追過對手\n加速力會上升＜一哩＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "光芒円刃": {
+        "lower_skill": "中距離コーナー◎",
+        "skill_description": "在彎道速度上升＜中距離＞",
+        "upper_skill": null,
+        "skill_pt": "150",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "脱出術": {
+        "lower_skill": "急ぎ足",
+        "skill_description": "在競賽中期變得容易往前推進\n＜作戰．領頭＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "アンストッパブル": {
+        "lower_skill": "攻めの姿勢",
+        "skill_description": "在競賽中期速度上升\n＜作戰．前列＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "レーンの魔術師": {
+        "lower_skill": "臨機応変",
+        "skill_description": "在競賽後期變得擅長爭搶賽道",
+        "upper_skill": null,
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_r_3"
+      },
+      "決意の直滑降": {
+        "lower_skill": "直滑降",
+        "skill_description": "變得稍微擅長下坡\n＜作戰．前列＞",
+        "upper_skill": null,
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "大地の叡智": {
+        "lower_skill": "地の加護",
+        "skill_description": "レース終盤の中ほどで速度が上がる、獲得したスキルの数に応じて効果が高まる",
+        "upper_skill": null,
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_r_9"
+      },
+      "乗り換え上手": {
+        "lower_skill": "差し切り体勢",
+        "skill_description": "在競賽後期加速力上升\n＜作戰．居中＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "大局観": {
+        "lower_skill": "読解力",
+        "skill_description": "在競賽中期提高觀察力\n使視野變得寬廣＜作戰．居中＞",
+        "upper_skill": null,
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_r_4"
+      },
+      "プランX": {
+        "lower_skill": "善後策",
+        "skill_description": "接近競賽後期時若位於隊列前方\n會變得容易追過對手＜短距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "曲線のソムリエ": {
+        "lower_skill": "コーナー加速◯",
+        "skill_description": "以華麗的過彎技巧\n使加速力上升",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "日本一のウマ娘": {
+        "lower_skill": null,
+        "skill_description": "將背負期待的強烈意志轉化為力量\n在最後彎道速度上升\n＜長距離＞",
+        "upper_skill": null,
+        "skill_pt": "360",
+        "skill_icon_name": "i_skill_y_r_7"
+      },
+      "トップギア": {
+        "lower_skill": "キレる脚",
+        "skill_description": "在最後直線若位列第2之後\n且距離最前頭4身距內時\n速度大幅上升＜作戰．居中＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "ルミネセンス": {
+        "lower_skill": "イグニッション",
+        "skill_description": "レース中にスキルを13回発動すると前に出る＜中距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "破竹の勢い": {
+        "lower_skill": "気合十分",
+        "skill_description": "在最後彎道若位於隊列後方\n速度會上升＜一哩＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "捲土重来": {
+        "lower_skill": "盛り返し",
+        "skill_description": "在競賽中期若位於隊列後方\n速度會上升＜沙地＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "勝利への執念": {
+        "lower_skill": "食い下がり",
+        "skill_description": "在最後彎道若被追過\n變得容易反追回來＜中距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "キミと勝ちたい": {
+        "lower_skill": "夢の途中",
+        "skill_description": "在競賽後半若位於隊列前方\n速度上升、加速力略微上升\n粉絲越多效果越高",
+        "upper_skill": null,
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_r_8"
+      },
+      "ウママニア": {
+        "lower_skill": "ウマ好み",
+        "skill_description": "身邊有很多賽馬娘時\n速度會上升",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "千里眼": {
+        "lower_skill": "ホークアイ",
+        "skill_description": "在競賽初期提高觀察力\n使視野變得寬廣＜中距離＞",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_y_r_4"
+      },
+      "無我夢中": {
+        "lower_skill": "がむしゃら",
+        "skill_description": "在最後衝刺階段若位於隊列中段之後\n稍微消耗持久力使加速力上升\n＜居中．長距離＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "踏ませぬ影": {
+        "lower_skill": "粘り腰",
+        "skill_description": "在最後直線若位居領先\n且後方1身距內有其他賽馬娘時\n速度大幅上升＜作戰．領頭＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "快進撃": {
+        "lower_skill": "確かな足取り",
+        "skill_description": "接近後期時若位居領先或\n距離最前頭4身距以內\n速度及加速力稍微上升＜前列．中距離＞",
+        "upper_skill": null,
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "スプリントターボ": {
+        "lower_skill": "スプリントギア",
+        "skill_description": "在直線加速力上升\n＜短距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "いいとこ入った！": {
+        "lower_skill": "スリップストリーム",
+        "skill_description": "若緊跟在前方賽馬娘的後方\n會不易受到風阻",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "ブレイクスルー": {
+        "lower_skill": "打開策",
+        "skill_description": "在競賽中期若位於最後方附近速度會上升\n並變得擅長爭搶賽道＜作戰．後追＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "ブチ☆アゲ&uarr;バイブス": {
+        "lower_skill": "バイブス上昇",
+        "skill_description": "レース中盤に速度が上がりさらに持久力を少し回復する＜長距離＞",
+        "upper_skill": null,
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "お先に失礼っ！": {
+        "lower_skill": "遊びはおしまいっ！",
+        "skill_description": "若長時間被後方的賽馬娘緊跟\n速度會上升",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "出力1000％！": {
+        "lower_skill": "しゃかりき",
+        "skill_description": "在競賽中期的一開始\n大幅消耗持久力\n使速度大幅上升＜作戰．領頭＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "優雅な砂浴び": {
+        "lower_skill": "砂浴び◯",
+        "skill_description": "若緊跟在前方賽馬娘的後方\n速度會上升＜沙地＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "紫電一閃": {
+        "lower_skill": "短距離直線◎",
+        "skill_description": "在直線速度上升＜短距離＞",
+        "upper_skill": null,
+        "skill_pt": "150",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "豪風円刃": {
+        "lower_skill": "マイルコーナー◎",
+        "skill_description": "コーナーで速度が上がる＜マイル＞",
+        "upper_skill": null,
+        "skill_pt": "150",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "優位形成": {
+        "lower_skill": "しとやかな足取り",
+        "skill_description": "レース中盤に速度が上がる＜マイル/中距離＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "勝利の機運": {
+        "lower_skill": "明るい兆し",
+        "skill_description": "接近競賽後期時若位於隊列前方\n速度會上升＜沙地＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "姉御肌": {
+        "lower_skill": "負けん気",
+        "skill_description": "變得容易成功追過對手\n＜一哩＞",
+        "upper_skill": null,
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "くじけぬ精神": {
+        "lower_skill": "まき直し",
+        "skill_description": "レース中盤に後ろの方にいると加速力が少し上がる＜作戦・先行＞",
+        "upper_skill": null,
+        "skill_pt": "120",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "最高峰の夢": {
+        "lower_skill": "想いを背負って",
+        "skill_description": "最終直線で速度が上がる、獲得した海外適性Lvの合計が高いほど効果が高まる",
+        "upper_skill": null,
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_r_10"
+      },
+      "トップランナー": {
+        "lower_skill": "先頭プライド",
+        "skill_description": "在競賽初期或中期\n對追過對手或競爭變得更強\n＜作戰．領頭＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "内的体験": {
+        "lower_skill": "内弁慶",
+        "skill_description": "在最後彎道若位於內側圍欄\n速度會上升＜長距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "アオハル燃焼・速": {
+        "lower_skill": "アオハル点火・速",
+        "skill_description": "在競賽中期燃燒青春魂，\n競賽中隊伍成員的速度\n合計值越高，速度便隨之上升",
+        "upper_skill": null,
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_r_1a"
+      },
+      "怪物": {
+        "lower_skill": "本領発揮",
+        "skill_description": "在即將進入競賽後期時，\n若位居領先或距離最前頭4身距內時\n競賽後期加速力上升＜前列．長距離＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "全速前進！": {
+        "lower_skill": "まっしぐら",
+        "skill_description": "在最後衝刺階段若位於隊列前方\n速度會上升＜沙地＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "電撃の煌めき": {
+        "lower_skill": "詰め寄り",
+        "skill_description": "在競賽後期若位於隊列後方\n變得容易進行衝刺＜短距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "気炎万丈": {
+        "lower_skill": "闘争心",
+        "skill_description": "在競賽中期若位於隊列中段與對手競爭\n會稍微回復持久力\n且速度會稍微上升＜中距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "ハヤテ一文字": {
+        "lower_skill": "直線巧者",
+        "skill_description": "在直線速度上升",
+        "upper_skill": null,
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "遮二無二": {
+        "lower_skill": "向こう見ず",
+        "skill_description": "接近競賽後期時若位於隊列前方\n速度會上升＜一哩＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "神速": {
+        "lower_skill": "快速",
+        "skill_description": "レース後半のどこかで前に出て持久力をわずかに回復する",
+        "upper_skill": null,
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "威風堂々": {
+        "lower_skill": "プレッシャー",
+        "skill_description": "最終コーナーで中団以降だと前後3人ずつの速度をわずかに下げ、自分の速度を上げる＜作戦・差し＞",
+        "upper_skill": null,
+        "skill_pt": "190",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "昇り龍": {
+        "lower_skill": "外差し準備",
+        "skill_description": "在最後彎道若由外側追過對手\n速度會上升＜作戰．居中＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "一陣の風": {
+        "lower_skill": "直線加速",
+        "skill_description": "在直線加速力上升",
+        "upper_skill": null,
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "鋭脚円刃": {
+        "lower_skill": "差しコーナー◎",
+        "skill_description": "在彎道速度上升\n＜作戰．居中＞",
+        "upper_skill": null,
+        "skill_pt": "150",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "太陽の叡智": {
+        "lower_skill": "陽の加護",
+        "skill_description": "レース中盤に競り合うと速度が上がる、獲得したスキルの数に応じて効果が高まる",
+        "upper_skill": null,
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_r_9"
+      },
+      "昂る鼓動": {
+        "lower_skill": "込み上げる熱",
+        "skill_description": "レース終盤始めの方に中団にいると前に出る＜中距離/長距離＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "月影一閃": {
+        "lower_skill": "追込直線◎",
+        "skill_description": "在直線速度上升\n＜作戰．後追＞",
+        "upper_skill": null,
+        "skill_pt": "150",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "狙うは最前列！": {
+        "lower_skill": "前列狙い",
+        "skill_description": "在競賽後期會採取\n向前衝刺的姿勢＜沙地＞",
+        "upper_skill": null,
+        "skill_pt": "140",
+        "skill_icon_name": "i_skill_y_r_3"
+      },
+      "勇往邁進": {
+        "lower_skill": "フルスロットル",
+        "skill_description": "在競賽中期大幅消耗持久力\n使速度大幅上升＜作戰．居中＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "強攻策": {
+        "lower_skill": "早仕掛け",
+        "skill_description": "在競賽中期若位於隊列後方\n一段時間內速度會稍微上升\n＜作戰．後追＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "ネバーギブアップ": {
+        "lower_skill": "折れない心",
+        "skill_description": "レース中盤のコーナーでしばらくの間速度が少し上がる",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "コンセントレーション": {
+        "lower_skill": "集中力",
+        "skill_description": "變得擅長起跑\n使延遲時間變少",
+        "upper_skill": null,
+        "skill_pt": "140",
+        "skill_icon_name": "i_skill_y_r_5"
+      },
+      "電光石火": {
+        "lower_skill": "一足飛び",
+        "skill_description": "在競賽後期若於隊列後方準備追過對手\n加速力上升＜短距離．一哩＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "アオハル燃焼・力": {
+        "lower_skill": "アオハル点火・力",
+        "skill_description": "在競賽後期燃燒青春魂，\n競賽中隊伍成員的力量\n合計值越高，加速力便隨之上升",
+        "upper_skill": null,
+        "skill_pt": "200",
+        "skill_icon_name": "i_skill_y_r_2a"
+      },
+      "尻尾の滝登り": {
+        "lower_skill": "尻尾上がり",
+        "skill_description": "在競賽中期若發動多項技能\n速度會上升",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "王手": {
+        "lower_skill": "会心の一歩",
+        "skill_description": "終盤の最終コーナーで中団にいる時ゴールまで遠いと加速力が上がる＜先行/差し＞",
+        "upper_skill": null,
+        "skill_pt": "180",
+        "skill_icon_name": "i_skill_y_r_2"
+      },
+      "圧倒的リード": {
+        "lower_skill": "大きなリード",
+        "skill_description": "在競賽中期若大幅度領先\n則容易保持領先＜短距離＞",
+        "upper_skill": null,
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "シックスセンス": {
+        "lower_skill": "危険回避",
+        "skill_description": "在競賽初期較不易遭到包圍\n＜作戰．領頭＞",
+        "upper_skill": null,
+        "skill_pt": "110",
+        "skill_icon_name": "i_skill_y_r_3"
+      },
+      "一気呵成": {
+        "lower_skill": "大急ぎ",
+        "skill_description": "レース終盤始めの方で余力十分なら前に出る＜差し・長距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "気骨稜稜": {
+        "lower_skill": "ひたむき前進",
+        "skill_description": "レース終盤が迫ったとき中団以降だと速度が上がる＜短距離＞",
+        "upper_skill": null,
+        "skill_pt": "160",
+        "skill_icon_name": "i_skill_y_r_1"
+      },
+      "万里一空": {
+        "lower_skill": "迷いなし",
+        "skill_description": "ラストスパートの直線で前の方だと加速力が上がる＜逃げ・長距離＞",
+        "upper_skill": null,
+        "skill_pt": "170",
+        "skill_icon_name": "i_skill_y_r_2"
       }
     }
   }

@@ -7,83 +7,103 @@ std::string DiscordManager::_twAppClientId = "1195259431106138132";
 
 void DiscordManager::UpdateRPC()
 {
-	// ================ DiscordEventHandlers ================ //
-	DiscordEventHandlers Handler;
-	memset(&Handler, 0, sizeof(Handler));
-
-	switch (global::config->GameServer)
+	try
 	{
-	case static_cast<int>(SoftwareLanguageType::JP):
-		Discord_Initialize(_jpAppClientId.c_str(), &Handler, 1, NULL);
-		break;
+		// ================ DiscordEventHandlers ================ //
+		DiscordEventHandlers Handler;
+		memset(&Handler, 0, sizeof(Handler));
 
-	case static_cast<int>(SoftwareLanguageType::TW):
-		Discord_Initialize(_twAppClientId.c_str(), &Handler, 1, NULL);
-		break;
-	}
+		switch (global::config->GameServer)
+		{
+		case static_cast<int>(SoftwareLanguageType::JP):
+			Discord_Initialize(_jpAppClientId.c_str(), &Handler, 1, NULL);
+			break;
 
-	// ================ DiscordRichPresence ================ //
-	DiscordRichPresence rpc;
-	memset(&rpc, 0, sizeof(rpc));
+		case static_cast<int>(SoftwareLanguageType::TW):
+			Discord_Initialize(_twAppClientId.c_str(), &Handler, 1, NULL);
+			break;
+		}
 
-	std::string details, state, largeImageText, smallImageText;
+		// ================ DiscordRichPresence ================ //
+		DiscordRichPresence rpc;
+		memset(&rpc, 0, sizeof(rpc));
 
-	std::string characterName = this->_GetCurrentCharacterName();
-	std::string iconName = this->_GetCurrentCharacterIconName(characterName);
-	std::string smallImageUrl = CHARACTER_ICON_URL + iconName;
+		std::string details, state, largeImageText, smallImageText;
 
-	rpc.startTimestamp = time(0);
-	rpc.largeImageKey = "https://raw.githubusercontent.com/kakuun333/UmaAssistant/main/UmaMisc/Image/DiscordRPC/umamusume_icon.png";
-	rpc.smallImageKey = smallImageUrl == CHARACTER_ICON_URL ? "" : smallImageUrl.c_str();
+		std::string characterName = this->_GetCurrentCharacterName();
+		std::string iconName = this->_GetCurrentCharacterIconName(characterName);
+		std::string smallImageUrl = CHARACTER_ICON_URL + iconName;
 
-	// ------------- 更新 largeImageText ------------- //
-	switch (global::config->GameServer)
-	{
-	case static_cast<int>(SoftwareLanguageType::JP):
-		largeImageText = u8"ウマ娘 プリティーダービー";
-		rpc.largeImageText = largeImageText.c_str();
-		break;
+		rpc.startTimestamp = time(0);
+		rpc.largeImageKey = "https://raw.githubusercontent.com/kakuun333/UmaAssistant/main/UmaMisc/Image/DiscordRPC/umamusume_icon.png";
+		rpc.smallImageKey = smallImageUrl == CHARACTER_ICON_URL ? "" : smallImageUrl.c_str();
 
-	case static_cast<int>(SoftwareLanguageType::TW):
-		largeImageText = u8"賽馬娘 Pretty Derby";
-		rpc.largeImageText = largeImageText.c_str();
-		break;
-	}
+		// ------------- 更新 largeImageText ------------- //
+		switch (global::config->GameServer)
+		{
+		case static_cast<int>(SoftwareLanguageType::JP):
+			largeImageText = u8"ウマ娘 プリティーダービー";
+			rpc.largeImageText = largeImageText.c_str();
+			break;
 
-	switch (global::config->SoftwareLanguage)
-	{
-	case static_cast<int>(SoftwareLanguageType::JP):
-		// ---------------------------------------------- //
-		details = characterName.empty() ? "" : characterName + u8" を育成している";
-		rpc.details = details.c_str();
-		// ---------------------------------------------- //
-		state = u8"待機中";
-		rpc.state = state.c_str();
-		// ---------------------------------------------- //
-		smallImageText = characterName.empty() ? "" : characterName;
-		rpc.smallImageText = smallImageText.c_str();
-		// ---------------------------------------------- //
-		break;
-	case static_cast<int>(SoftwareLanguageType::TW):
-		// ---------------------------------------------- //
-		details = characterName.empty() ? u8"閒置狀態" : u8"正在培育 " + characterName;
-		rpc.details = details.c_str();
-		// ---------------------------------------------- //
-		state = u8"閒置中";
-		rpc.state = state.c_str();
-		// ---------------------------------------------- //
-		smallImageText = characterName.empty() ? "" : characterName;
-		rpc.smallImageText = smallImageText.c_str();
-		// ---------------------------------------------- //
-		break;
-	}
+		case static_cast<int>(SoftwareLanguageType::TW):
+			largeImageText = u8"賽馬娘 Pretty Derby";
+			rpc.largeImageText = largeImageText.c_str();
+			break;
+		}
+
+		switch (global::config->SoftwareLanguage)
+		{
+		case static_cast<int>(SoftwareLanguageType::JP):
+			// ---------------------------------------------- //
+			details = characterName.empty() ? "" : characterName + u8" を育成している";
+			rpc.details = details.c_str();
+			// ---------------------------------------------- //
+			state = u8"待機中";
+			rpc.state = state.c_str();
+			// ---------------------------------------------- //
+			smallImageText = characterName.empty() ? "" : characterName;
+			rpc.smallImageText = smallImageText.c_str();
+			// ---------------------------------------------- //
+			break;
+		case static_cast<int>(SoftwareLanguageType::TW):
+			// ---------------------------------------------- //
+			details = characterName.empty() ? u8"閒置狀態" : u8"正在培育 " + characterName;
+			rpc.details = details.c_str();
+			// ---------------------------------------------- //
+			state = u8"閒置中";
+			rpc.state = state.c_str();
+			// ---------------------------------------------- //
+			smallImageText = characterName.empty() ? "" : characterName;
+			rpc.smallImageText = smallImageText.c_str();
+			// ---------------------------------------------- //
+			break;
+		}
 	
-	Discord_UpdatePresence(&rpc);
+		Discord_UpdatePresence(&rpc);
+
+		this->SetIsShutdown(false);
+
+		UmaLog::GetInstance()->print(u8"[DiscordManager] 已更新 Discord RPC");
+	}
+	catch (std::exception e)
+	{
+		UmaLog::GetInstance()->print(u8"[DiscordManager][UpdateRPC][std::exception]", e.what());
+	}
 }
 
 void DiscordManager::Shutdown()
 {
-	Discord_Shutdown();
+	try
+	{
+		Discord_Shutdown();
+		this->SetIsShutdown(true);
+		UmaLog::GetInstance()->print(u8"[DiscordManager] 已終結 Discord RPC");
+	}
+	catch (std::exception e)
+	{
+		UmaLog::GetInstance()->print(u8"[DiscordManager][Shutdown][std::exception]", e.what());
+	}
 }
 
 std::string DiscordManager::_GetCurrentCharacterName()

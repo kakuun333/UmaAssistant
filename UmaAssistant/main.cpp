@@ -91,6 +91,7 @@ int main(array<String^>^ args)
 	*  初始化 CheckBox
 	*/
 
+	// DebugMode
 	switch (global::config->DebugMode)
 	{
 	case true:
@@ -105,6 +106,7 @@ int main(array<String^>^ args)
 		break;
 	}
 
+	// AlwaysOnTop
 	switch (global::config->AlwaysOnTop)
 	{
 	case true:
@@ -115,6 +117,7 @@ int main(array<String^>^ args)
 		break;
 	}
 
+	// OutputLogFile
 	switch (global::config->OutputLogFile)
 	{
 	case true:
@@ -122,6 +125,17 @@ int main(array<String^>^ args)
 		break;
 	case false:
 		global::form::settingsForm->outputLogFile_checkBox->Checked = global::config->OutputLogFile;
+		break;
+	}
+
+	// DiscordRPC
+	switch (global::config->DiscordRPC)
+	{
+	case true:
+		global::form::settingsForm->discordRpc_checkBox->Checked = global::config->DiscordRPC;
+		break;
+	case false:
+		global::form::settingsForm->discordRpc_checkBox->Checked = global::config->DiscordRPC;
 		break;
 	}
 #pragma endregion

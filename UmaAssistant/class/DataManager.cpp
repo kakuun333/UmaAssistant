@@ -182,6 +182,12 @@ bool DataManager::TryGetCurrentCharacterByList(std::deque<std::string> scanned_t
 		foundChar = true;
 		webManager->ChangeCharacterName(util::stdStr2system(maxElement->event_owner));
 
+		// 更新 DiscordRPC
+		if (global::config->DiscordRPC)
+		{
+			DiscordManager::GetInstance()->UpdateRPC();
+		}
+
 		// config
 		global::config->PreviousCurrentCharacterName = maxElement->event_owner;
 		global::config->WriteToJson();

@@ -78,7 +78,12 @@ def dump_event(event_data_type, rare, event_owner):
             # 跳過沒有效果的事件
             if (choice_effect == "効果なし"): continue;
 
+            # 加工 choice_name
+            choice_name = util.process_choice_name(choice_name);
+
+            # 加工 choice_effect
             choice_effect = util.process_choice_effect(choice_effect, process_choice_effect_data, skill_data_jp);
+
             # print(choice_effect);
 
             choice_obj = {
@@ -236,7 +241,7 @@ def dump_character_event_data_jp(single_dump_mode: bool = False, url: str = ""):
         owner = match_obj.group(1);
 
         # 去掉 水着
-        owner = util.sub(owner, "水着", ""); 
+        owner = util.sub(owner, "水着", "");
     
         ##### rare, another_name #####
         rare = None;
@@ -398,10 +403,10 @@ def dump_scenario_event_data_jp():
 ##### single_dump_mode #####
 
 
-dump_character_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/401064");
-dump_character_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/327361");
+# dump_character_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/401064");
+# dump_character_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/327361");
 
 
 
 # dump_sapoka_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/359859");
-# dump_sapoka_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/360184");
+dump_sapoka_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/266299");

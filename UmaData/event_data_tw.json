@@ -113,7 +113,7 @@
           },
           {
             "choice_name": "上着を貸す",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "すかさず写真を撮る",
@@ -461,7 +461,7 @@
           },
           {
             "choice_name": "希望優秀素質能變得更強",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "希望優秀素質的特技能增加",
@@ -862,7 +862,7 @@
           },
           {
             "choice_name": "万事底上",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "技能向上",
@@ -1236,7 +1236,7 @@
           },
           {
             "choice_name": "総合力を底上げ！『レベルアップする』",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "テクニックを磨く！『玄人になる』",
@@ -1624,7 +1624,7 @@
           },
           {
             "choice_name": "超模範的ウマ娘になる",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "超スピード以外の武器を持つ",
@@ -2004,7 +2004,7 @@
           },
           {
             "choice_name": "全力でおみくじを引こう！",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "全力で新しい技の勉強だ！",
@@ -2398,7 +2398,7 @@
           },
           {
             "choice_name": "おみくじを引こう！",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "帰ってトレーニングだ！",
@@ -2806,7 +2806,7 @@
           },
           {
             "choice_name": "本願発見",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "筋肉革命",
@@ -3124,7 +3124,7 @@
           },
           {
             "choice_name": "せっかくなので、フルコース！",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "新春、敵情視察！",
@@ -3582,7 +3582,7 @@
           },
           {
             "choice_name": "気迫炸裂",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "家事向上",
@@ -3952,7 +3952,7 @@
           },
           {
             "choice_name": "希望她能學到許多，成長茁壯",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "希望她能為出色的大人",
@@ -4369,7 +4369,7 @@
           },
           {
             "choice_name": "絵マに『強くなりたい』って書こう！",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "おみくじを引こう！",
@@ -4683,7 +4683,7 @@
           },
           {
             "choice_name": "サイレンススズカ",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "グラスワンダー",
@@ -5089,7 +5089,7 @@
           },
           {
             "choice_name": "希望草上飛能夠變得更強",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "希望草上飛能夠跑得更好",
@@ -5463,7 +5463,7 @@
           },
           {
             "choice_name": "基礎から鍛え直す！",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "技術を磨こう！",
@@ -5833,7 +5833,7 @@
           },
           {
             "choice_name": "大排気量",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "サイドカー付き",
@@ -6198,29 +6198,29 @@
         ],
         "新年抱負": [
           {
-            "choice_name": "長距離を走れる力を付けよう！",
+            "choice_name": "鍛鍊出可以長距離奔跑的實力吧！",
             "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>"
           },
           {
-            "choice_name": "これから一緒に考えよう",
+            "choice_name": "接下來一起來思考吧",
             "choice_effect": "體力<span class=\"status_plus_value\">+20</span>"
           },
           {
-            "choice_name": "ドームツアーやろうぜ！",
+            "choice_name": "來辦巨蛋巡迴吧！",
             "choice_effect": "<img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span><span class=\"status_plus_value\">+20</span>"
           }
         ],
         "新年參拜": [
           {
-            "choice_name": "食べて魅力を再確認しよう",
+            "choice_name": "先透過吃，重新了解它的魅力吧",
             "choice_effect": "體力<span class=\"status_plus_value\">+30</span>"
           },
           {
-            "choice_name": "調理テクを身につけよう",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_name": "學習料理的技巧吧",
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
-            "choice_name": "斬新なアレンジを考えよう",
+            "choice_name": "想出嶄新的口味吧",
             "choice_effect": "<img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span><span class=\"status_plus_value\">+35</span>"
           }
         ],
@@ -6236,21 +6236,21 @@
         ],
         "夏季集訓（第二年）途中": [
           {
-            "choice_name": "一緒にスイカ割りするとか",
+            "choice_name": "一起玩劈西瓜",
             "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
           },
           {
-            "choice_name": "一緒に遠泳するとか",
+            "choice_name": "一起長泳",
             "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
           }
         ],
         "夏季集訓（第三年）結束": [
           {
-            "choice_name": "合宿中に割ったスイカの数",
+            "choice_name": "妳在集訓劈開的西瓜數量",
             "choice_effect": "隨機三種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
-            "choice_name": "合宿中に拾ったセミの抜け殻の数",
+            "choice_name": "妳在集訓撿到蟬的空殼數量",
             "choice_effect": "隨機三種數値<span class=\"status_plus_value\">+5</span>"
           }
         ],
@@ -6633,7 +6633,7 @@
           },
           {
             "choice_name": "本願発見",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "筋肉革命",
@@ -6941,7 +6941,7 @@
           },
           {
             "choice_name": "お参りでたくさんお願い",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "クラブのデイイベントに行く",
@@ -7693,7 +7693,7 @@
           },
           {
             "choice_name": "ここで併走をできるかな？",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "軽く周りを散策してみたい",
@@ -8051,7 +8051,7 @@
           },
           {
             "choice_name": "俺たちの大願成就",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "悪霊退散ッ！",
@@ -8398,7 +8398,7 @@
           },
           {
             "choice_name": "背伸びした写真",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "東京の珍品",
@@ -8780,7 +8780,7 @@
           },
           {
             "choice_name": "天才ノラ猫の服部忍び丸へ",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "無限の可能性を秘めているアリ村さんへ",
@@ -9140,7 +9140,7 @@
           },
           {
             "choice_name": "新春山ごもり",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "睡眠学習",
@@ -9524,7 +9524,7 @@
           },
           {
             "choice_name": "友情パワー",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "多様性",
@@ -9860,7 +9860,7 @@
           },
           {
             "choice_name": "フランス人になりきる",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "日仏ゲーム対決",
@@ -10240,7 +10240,7 @@
           },
           {
             "choice_name": "お散歩",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "ちょこっと遊ぶ",
@@ -10680,7 +10680,7 @@
           },
           {
             "choice_name": "いっそランニングでもしようか",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "ゲーセンでも行こうか！",
@@ -11056,7 +11056,7 @@
           },
           {
             "choice_name": "全力でおみくじを引こう！",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "全力で新しい技の勉強だ！",
@@ -11360,7 +11360,7 @@
           },
           {
             "choice_name": "飛飛的成長",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "飛飛的進化",
@@ -11736,7 +11736,7 @@
           },
           {
             "choice_name": "大物たちの関心",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "町全体の動き",
@@ -12117,7 +12117,7 @@
           },
           {
             "choice_name": "成長ッ！！",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "開運ッ！！",
@@ -12547,29 +12547,29 @@
         ],
         "新年抱負": [
           {
-            "choice_name": "長距離を走れる力を付けよう！",
+            "choice_name": "鍛鍊出可以長距離奔跑的實力吧！",
             "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+10</span>"
           },
           {
-            "choice_name": "これから一緒に考えよう",
+            "choice_name": "接下來一起來思考吧",
             "choice_effect": "體力<span class=\"status_plus_value\">+20</span>"
           },
           {
-            "choice_name": "ドームツアーやろうぜ！",
+            "choice_name": "來辦巨蛋巡迴吧！",
             "choice_effect": "<img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span><span class=\"status_plus_value\">+20</span>"
           }
         ],
         "新年參拜": [
           {
-            "choice_name": "食べて魅力を再確認しよう",
+            "choice_name": "先透過吃，重新了解它的魅力吧",
             "choice_effect": "體力<span class=\"status_plus_value\">+30</span>"
           },
           {
-            "choice_name": "調理テクを身につけよう",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_name": "學習料理的技巧吧",
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
-            "choice_name": "斬新なアレンジを考えよう",
+            "choice_name": "想出嶄新的口味吧",
             "choice_effect": "<img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span><span class=\"status_plus_value\">+35</span>"
           }
         ],
@@ -12585,21 +12585,21 @@
         ],
         "夏季集訓（第二年）途中": [
           {
-            "choice_name": "一緒にスイカ割りするとか",
+            "choice_name": "一起玩劈西瓜",
             "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
           },
           {
-            "choice_name": "一緒に遠泳するとか",
+            "choice_name": "一起長泳",
             "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span>"
           }
         ],
         "夏季集訓（第三年）結束": [
           {
-            "choice_name": "合宿中に割ったスイカの数",
+            "choice_name": "妳在集訓劈開的西瓜數量",
             "choice_effect": "隨機三種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
-            "choice_name": "合宿中に拾ったセミの抜け殻の数",
+            "choice_name": "妳在集訓撿到蟬的空殼數量",
             "choice_effect": "隨機三種數値<span class=\"status_plus_value\">+5</span>"
           }
         ],
@@ -12631,6 +12631,32 @@
           {
             "choice_name": "気合いで痛みを吹っ飛ばそう！(夏合宿中：厳しくいく！)",
             "choice_effect": "<img src=\"../UmaMisc/Image/Status/yaruki.png\"><span class=\"yaruki\">幹勁</span><span class=\"status_minus_value\">-3</span><br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>五種數値中隨機選兩種<span class=\"status_minus_value\">-10</span><br><span class=\"minus_condition\">『不擅長練習』</span><br>體力<span class=\"status_plus_value\">+10</span><br><span class=\"plus_condition\">『擅長練習◯』</span>"
+          }
+        ],
+        "龍金城的使者": [
+          {
+            "choice_name": "ゴールドシップを好きに遊ばせてあげよう<br>L'Arcで発生時：<br>(声、かけてみようかな……)",
+            "choice_effect": "<img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span><span class=\"status_plus_value\">+15</span>"
+          },
+          {
+            "choice_name": "なんとかゴールドシップをなだめよう<br>L'Arcで発生時：<br>(もうちょっと会話を聞いてみよう)",
+            "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+20</span>"
+          }
+        ],
+        "海之家（族）": [
+          {
+            "choice_name": "無選項",
+            "choice_effect": "成功時：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+20</span><br><span class=\"skill_hint\">『傾注一切』</span>的靈感Lv<span class=\"status_plus_value\">+3</span><br>失敗時：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
+          }
+        ],
+        "阿船的海產勇者傳說": [
+          {
+            "choice_name": "まさかライトだけであれほどのパワーが……<br>L'Arcで発生時：<br>俺も、その時を楽しみにしています",
+            "choice_effect": "<span class=\"skill_hint\">『夏賽馬娘◯』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><br>隨機<span class=\"plus_condition\">『擅長練習◯』</span>"
+          },
+          {
+            "choice_name": "勝負服もきっとパワーアップしたな<br>L'Arcで発生時：<br>ええ、きっと1着で駆け抜けますよ",
+            "choice_effect": "<img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+20</span><br>隨機<span class=\"plus_condition\">『擅長練習◯』</span>"
           }
         ],
         "左邊沒有黑痣的樣子": [
@@ -12940,7 +12966,7 @@
           },
           {
             "choice_name": "いつも通りのトレーニングだ",
-            "choice_effect": "全數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "全數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "福袋を買いに行こう！",
@@ -12989,6 +13015,26 @@
           {
             "choice_name": "ダメだ、メニューから考え直そう！(夏合宿中：厳しくいく！)",
             "choice_effect": "<img src=\"../UmaMisc/Image/Status/yaruki.png\"><span class=\"yaruki\">幹勁</span><span class=\"status_minus_value\">-3</span><br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>五種數値中隨機選兩種<span class=\"status_minus_value\">-10</span><br><span class=\"minus_condition\">『不擅長練習』</span><br>體力<span class=\"status_plus_value\">+10</span><br><span class=\"plus_condition\">『擅長練習◯』</span>"
+          }
+        ],
+        "那一定，比未來的藍圖更……": [
+          {
+            "choice_name": "俺たちも今日の決意を写真に残しておこう<br>L'Arcで発生時：<br>(声、かけてみようかな……)",
+            "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+20</span>"
+          },
+          {
+            "choice_name": "この景色を目に焼き付けていこう<br>L'Arcで発生時：<br>(もうちょっと会話を聞いてみよう)",
+            "choice_effect": "體力<span class=\"status_plus_value\">+10</span>"
+          }
+        ],
+        "不去惹事就不會出事！！": [
+          {
+            "choice_name": "気を強く持て！あれは罠だ！<br>L'Arcで発生時：<br>俺も、その時を楽しみにしています",
+            "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+20</span><br>隨機<span class=\"plus_condition\">『討人喜歡◯』</span>"
+          },
+          {
+            "choice_name": "……そろそろ構ってあげたら？<br>L'Arcで発生時：<br>ええ、きっと1着で駆け抜けますよ",
+            "choice_effect": "<span class=\"skill_hint\">『夏賽馬娘◯』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><br>隨機<span class=\"plus_condition\">『討人喜歡◯』</span>"
           }
         ],
         "相當於三碗拉麵的誘惑": [
@@ -13300,7 +13346,7 @@
           },
           {
             "choice_name": "能力を底上げする！",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "いろんな技を覚える！",
@@ -13353,6 +13399,28 @@
           {
             "choice_name": "イェアー！ブルドーザー・マキシマム！",
             "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+100</span><br>失敗時：<br>體力<span class=\"status_plus_value\">+100</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_minus_value\">-5</span><br><span class=\"minus_condition\">『體重過胖』</span>"
+          }
+        ],
+        "總大將的風範": [
+          {
+            "choice_name": "無選項",
+            "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『尾段加速』</span>的靈感Lv<span class=\"status_plus_value\">+2</span>"
+          }
+        ],
+        "至今為止與從今以後": [
+          {
+            "choice_name": "無選項",
+            "choice_effect": "大成功時：<br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+15</span><br><span class=\"skill_hint\">『冬賽馬娘◯』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><br>成功時<br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『冬賽馬娘◯』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>失敗時：<br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span>"
+          }
+        ],
+        "特別週的緊急牧場導覽": [
+          {
+            "choice_name": "もう少しだけ楽しもうか<br>L'Arcで発生時：<br>俺も、その時を楽しみにしています",
+            "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+15</span><br>隨機<span class=\"plus_condition\">『天賦異稟』</span>"
+          },
+          {
+            "choice_name": "……正直に話そう、スペ<br>L'Arcで発生時：<br>ええ、きっと1着で駆け抜けますよ",
+            "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+5</span><br>隨機<span class=\"plus_condition\">『天賦異稟』</span>"
           }
         ],
         "正因為特別": [
@@ -13602,7 +13670,7 @@
           },
           {
             "choice_name": "数学の講演についていく",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "新春レースイベントについていく",
@@ -13990,7 +14058,7 @@
           },
           {
             "choice_name": "お守りを買おう",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "願い事をしよう",
@@ -14466,7 +14534,7 @@
           },
           {
             "choice_name": "我希望能讓大樹不斷成長茁壯",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "我希望大樹的跑法能夠更進步",
@@ -14780,7 +14848,7 @@
           },
           {
             "choice_name": "そして今年こそ理想の使い魔になる！",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "女王様の仰せのままに",
@@ -15136,7 +15204,7 @@
           },
           {
             "choice_name": "俺たちの大願成就",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "悪霊退散ッ！",
@@ -15513,7 +15581,7 @@
           },
           {
             "choice_name": "成長祈願！詣でまくりコース",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "飛び道具！？滝行コース",
@@ -15956,7 +16024,7 @@
           },
           {
             "choice_name": "強いウマ娘になってほしい",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "色んな武器を持ってほしい",
@@ -16272,7 +16340,7 @@
           },
           {
             "choice_name": "パリピの始祖",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "ビリヤード神",
@@ -16657,7 +16725,7 @@
           },
           {
             "choice_name": "大願成就",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "技能向上",
@@ -17125,7 +17193,7 @@
           },
           {
             "choice_name": "上着を貸す",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "すかさず写真を撮る",
@@ -17479,7 +17547,7 @@
           },
           {
             "choice_name": "希望優秀素質能變得更強",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "希望優秀素質的特技能增加",
@@ -17762,7 +17830,7 @@
           },
           {
             "choice_name": "努力が実りますように",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "打倒オグリキャップ！！",
@@ -18064,7 +18132,7 @@
         "新年抱負": [
           {
             "choice_name": "いっぱいジャンプしに行く？",
-            "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+25</span>"
+            "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span>"
           },
           {
             "choice_name": "おっきい子の話を聞こう！",
@@ -18082,7 +18150,7 @@
           },
           {
             "choice_name": "たくさんお願いをする",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "絶景を見に行く",
@@ -18470,7 +18538,7 @@
           },
           {
             "choice_name": "新春マラソンに参加しよう",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "出走予定レースの下調べをしよう！",
@@ -18996,7 +19064,7 @@
           },
           {
             "choice_name": "スカイが大活躍できますように",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "スカイがレースを楽しめますように",
@@ -19466,7 +19534,7 @@
           },
           {
             "choice_name": "早く列が進みますように",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "神様の方から来てくれますように",
@@ -19827,7 +19895,7 @@
           },
           {
             "choice_name": "福袋を買いに行く",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "書き初めをする",
@@ -20113,7 +20181,7 @@
           },
           {
             "choice_name": "寒中水泳",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "新春登山",
@@ -20484,7 +20552,7 @@
           },
           {
             "choice_name": "（たくさんレースで活躍できますように）",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "（多くの楽しみを見つけられますように）",
@@ -20857,7 +20925,7 @@
           },
           {
             "choice_name": "アルダンが強くなれますように",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "アルダンが幸せになれますように",
@@ -21243,7 +21311,7 @@
           },
           {
             "choice_name": "お願いごとを書こう！",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "年賀状を交換しよう！",
@@ -21672,7 +21740,7 @@
           },
           {
             "choice_name": "おみくじで運気アップ！",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "新たな技を身につけよう",
@@ -21978,7 +22046,7 @@
           },
           {
             "choice_name": "成長のために基礎から取り組もう",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "みんなを蹴散らすスキルも身につけよう",
@@ -22382,7 +22450,7 @@
           },
           {
             "choice_name": "魔王転職",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "王政復古",
@@ -22776,7 +22844,7 @@
           },
           {
             "choice_name": "総合力を底上げ！『レベルアップする』",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "テクニックを磨く！『玄人になる』",
@@ -23086,7 +23154,7 @@
           },
           {
             "choice_name": "背伸びした写真",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "東京の珍品",
@@ -23498,7 +23566,7 @@
           },
           {
             "choice_name": "成長祈願！詣でまくりコース",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "飛び道具！？滝行コース",
@@ -23939,7 +24007,7 @@
           },
           {
             "choice_name": "勝利をつかむために能力を上げたい",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "たくさん技術を磨きたい",
@@ -24321,7 +24389,7 @@
           },
           {
             "choice_name": "以最強為目標，寫上「成為怪物！」",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "增加能辦到的事，寫上「學習技術！」",
@@ -24629,7 +24697,7 @@
           },
           {
             "choice_name": "お守りを買おう",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "願い事をしよう",
@@ -25025,7 +25093,7 @@
           },
           {
             "choice_name": "次までに君をもっと強くする！",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "新しい武器が見つかりますように",
@@ -25399,7 +25467,7 @@
           },
           {
             "choice_name": "ゲームでもしようか？",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "撮影側を経験するとか……",
@@ -25843,7 +25911,7 @@
           },
           {
             "choice_name": "『全知全能』最強の”皇帝”になる",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "『風流韻事』洒落の技術を磨く",
@@ -26166,7 +26234,7 @@
           },
           {
             "choice_name": "全身のウロコ",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "往き去りし者の叡智",
@@ -26556,7 +26624,7 @@
           },
           {
             "choice_name": "少年、俺たちもサッカーに混ぜてくれ！",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "……俺がすごいキックを見せるから貸して",
@@ -27030,7 +27098,7 @@
           },
           {
             "choice_name": "気迫炸裂",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "家事向上",
@@ -27400,7 +27468,7 @@
           },
           {
             "choice_name": "ライスの走りを支え続けたい",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "力が欲しい……！",
@@ -27710,7 +27778,7 @@
           },
           {
             "choice_name": "友情パワー",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "多様性",
@@ -28050,7 +28118,7 @@
           },
           {
             "choice_name": "コーヒーで、全部頑張る！",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "ホットチョコレートで、特別なパワー！",
@@ -28522,7 +28590,7 @@
           },
           {
             "choice_name": "万事底上",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "技能向上",
@@ -28816,7 +28884,7 @@
           },
           {
             "choice_name": "お願いごとを書こう！",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "年賀状を交換しよう！",
@@ -29203,7 +29271,7 @@
           },
           {
             "choice_name": "新春山ごもり",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "睡眠学習",
@@ -29691,7 +29759,7 @@
           },
           {
             "choice_name": "バランスの取れたトレーニングかな",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "得意な武器を磨くことかな",
@@ -29726,6 +29794,36 @@
           {
             "choice_name": "時には荒療治も必要だからな！(夏合宿中：厳しくいく！)",
             "choice_effect": "<img src=\"../UmaMisc/Image/Status/yaruki.png\"><span class=\"yaruki\">幹勁</span><span class=\"status_minus_value\">-3</span><br>當前選擇的訓練的數値<span class=\"status_minus_value\">-10</span><br>五種數値中隨機選兩種<span class=\"status_minus_value\">-10</span><br><span class=\"minus_condition\">『不擅長練習』</span><br>體力<span class=\"status_plus_value\">+10</span><br><span class=\"plus_condition\">『擅長練習◯』</span>"
+          }
+        ],
+        "憧憬的「丸姐」": [
+          {
+            "choice_name": "気のせいだと思う！<br>L'Arcで発生時：<br>(声、かけてみようかな……)",
+            "choice_effect": "<img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span>"
+          },
+          {
+            "choice_name": "実は、悩んでいるみたいで……<br>L'Arcで発生時：<br>(もうちょっと会話を聞いてみよう)",
+            "choice_effect": "體力<span class=\"status_plus_value\">+15</span>"
+          }
+        ],
+        "歡迎來到泡沫樂園": [
+          {
+            "choice_name": "素敵な写真を撮って送ろう！<br>L'Arcで発生時：<br>パリの街でのことを話す",
+            "choice_effect": "<img src=\"../UmaMisc/Image/Status/konjyou.png\"><span class=\"status_konjyou\">意志力</span><span class=\"status_plus_value\">+20</span>"
+          },
+          {
+            "choice_name": "とびっきりのお土産を贈ろう！<br>L'Arcで発生時：<br>レース場でのことを話す",
+            "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+20</span>"
+          }
+        ],
+        "丸善斯基的重要之物": [
+          {
+            "choice_name": "ゴールへ向かおう<br>L'Arcで発生時：<br>俺も、その時を楽しみにしています",
+            "choice_effect": "<span class=\"skill_hint\">『疾行』</span>的靈感Lv<span class=\"status_plus_value\">+2</span><br>隨機<span class=\"plus_condition\">『討人喜歡◯』</span>"
+          },
+          {
+            "choice_name": "スタート地点へ戻ろう<br>L'Arcで発生時：<br>ええ、きっと1着で駆け抜けますよ",
+            "choice_effect": "<img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+20</span><br>隨機<span class=\"plus_condition\">『討人喜歡◯』</span>"
           }
         ],
         "外出後的樂趣♪": [
@@ -30009,7 +30107,7 @@
           },
           {
             "choice_name": "能力を底上げする！",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "いろんな技を覚える！",
@@ -30321,7 +30419,7 @@
           },
           {
             "choice_name": "ゲームでもしようか？",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "撮影側を経験するとか……",
@@ -30675,7 +30773,7 @@
           },
           {
             "choice_name": "新春マラソンに参加しよう",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "出走予定レースの下調べをしよう！",
@@ -31251,7 +31349,7 @@
           },
           {
             "choice_name": "希望草上飛能夠變得更強",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "希望草上飛能夠跑得更好",
@@ -31571,7 +31669,7 @@
           },
           {
             "choice_name": "サイレンススズカ",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "グラスワンダー",
@@ -31921,7 +32019,7 @@
           },
           {
             "choice_name": "隠し芸でもやってみる",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "おせちを作ってみよう",
@@ -32380,7 +32478,7 @@
           },
           {
             "choice_name": "スカイが大活躍できますように",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "スカイがレースを楽しめますように",
@@ -32864,7 +32962,7 @@
           },
           {
             "choice_name": "絵マに『強くなりたい』って書こう！",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "おみくじを引こう！",
@@ -33206,7 +33304,7 @@
           },
           {
             "choice_name": "希望她能學到許多，成長茁壯",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "希望她能為出色的大人",
@@ -33611,7 +33709,7 @@
           },
           {
             "choice_name": "正月明けのトレーニング、楽しみにしてて！",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "君の期待に添えるよう努力するよ",
@@ -33999,7 +34097,7 @@
           },
           {
             "choice_name": "飛飛的成長",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "飛飛的進化",
@@ -34393,7 +34491,7 @@
           },
           {
             "choice_name": "いっそランニングでもしようか",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "ゲーセンでも行こうか！",
@@ -34773,7 +34871,7 @@
           },
           {
             "choice_name": "強いウマ娘になってほしい",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "色んな武器を持ってほしい",
@@ -35163,7 +35261,7 @@
           },
           {
             "choice_name": "いつも通りのトレーニングだ",
-            "choice_effect": "全數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "全數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "福袋を買いに行こう！",
@@ -35545,7 +35643,7 @@
           },
           {
             "choice_name": "『テイオーの実力向上に努めます』って",
-            "choice_effect": "全數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "全數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "『テイオーをスキルアップさせます』って",
@@ -35875,7 +35973,7 @@
           },
           {
             "choice_name": "勝利をつかむために能力を上げたい",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "たくさん技術を磨きたい",
@@ -36233,7 +36331,7 @@
           },
           {
             "choice_name": "おみくじで運気アップ！",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "新たな技を身につけよう",
@@ -36585,7 +36683,7 @@
           },
           {
             "choice_name": "魔王転職",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "王政復古",
@@ -36973,7 +37071,7 @@
           },
           {
             "choice_name": "ライスの走りを支え続けたい",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "力が欲しい……！",
@@ -37383,7 +37481,7 @@
           },
           {
             "choice_name": "『全知全能』最強の”皇帝”になる",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "『風流韻事』洒落の技術を磨く",
@@ -37766,7 +37864,7 @@
           },
           {
             "choice_name": "いつも通りのトレーニングだ",
-            "choice_effect": "全數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "全數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "福袋を買いに行こう！",
@@ -38180,7 +38278,7 @@
           },
           {
             "choice_name": "我希望能讓大樹不斷成長茁壯",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "我希望大樹的跑法能夠更進步",
@@ -38568,7 +38666,7 @@
           },
           {
             "choice_name": "以最強為目標，寫上「成為怪物！」",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "增加能辦到的事，寫上「學習技術！」",
@@ -38972,7 +39070,7 @@
           },
           {
             "choice_name": "バランスの取れたトレーニングかな",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "得意な武器を磨くことかな",
@@ -39354,7 +39452,7 @@
           },
           {
             "choice_name": "『テイオーの実力向上に努めます』って",
-            "choice_effect": "全數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "全數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "『テイオーをスキルアップさせます』って",
@@ -39704,7 +39802,7 @@
           },
           {
             "choice_name": "全てを運に任せよ！おみくじ占い",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "新たな技を身に付けよ！福笑い占い",
@@ -40102,7 +40200,7 @@
           },
           {
             "choice_name": "能力を底上げする！",
-            "choice_effect": "五種數値<span class=\"status_plus_value\">+8</span>"
+            "choice_effect": "五種數値<span class=\"status_plus_value\">+5</span>"
           },
           {
             "choice_name": "いろんな技を覚える！",
@@ -41689,11 +41787,11 @@
         ],
         "在絕望中閃耀": [
           {
-            "choice_name": "2回目で上選択\n(※成功率高め)",
+            "choice_name": "2回目で上選択<br>(※成功率高め)",
             "choice_effect": "成功時：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span><span class=\"status_plus_value\">+20</span><br><span class=\"skill_hint\">『好賭之徒』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>中山慶典的情誼量條<span class=\"status_plus_value\">+5</span><br>失敗時：<br><img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『可疑的作戰』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
           },
           {
-            "choice_name": "2回目で下選択\n(※成功率低め)",
+            "choice_name": "2回目で下選択<br>(※成功率低め)",
             "choice_effect": "成功時：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+20</span><br><img src=\"../UmaMisc/Image/Status/sutamina.png\"><span class=\"status_sutamina\">持久力</span><span class=\"status_plus_value\">+20</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+20</span><br><img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span><span class=\"status_plus_value\">+30</span><br><span class=\"skill_hint\">『好賭之徒』</span>的靈感Lv<span class=\"status_plus_value\">+3</span><br>中山慶典的情誼量條<span class=\"status_plus_value\">+5</span><br>失敗時：<br><img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『可疑的作戰』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
           }
         ],
@@ -41813,6 +41911,20 @@
           {
             "choice_name": "無選項",
             "choice_effect": "<img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+15~18</span><br>齊聚於王座之人的情誼量條<span class=\"status_plus_value\">+5</span>"
+          }
+        ],
+        "一起鍛鍊吧": [
+          {
+            "choice_name": "読書で走りの知識を深めようか<br>L'Arcで発生時：<br>(育成ウマ娘名)の写真を送る",
+            "choice_effect": "成功時：<br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+4</span><br><img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span><span class=\"status_plus_value\">+4</span><br>齊聚於王座之人的情誼量條<span class=\"status_plus_value\">+5</span><br>失敗時：<br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+4</span><br>齊聚於王座之人的情誼量條<span class=\"status_plus_value\">+5</span>"
+          },
+          {
+            "choice_name": "やっぱり併走かな！<br>L'Arcで発生時：<br>トレーニングの様子を動画に撮る",
+            "choice_effect": "成功時：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+4</span><br><img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span><span class=\"status_plus_value\">+4</span><br>齊聚於王座之人的情誼量條<span class=\"status_plus_value\">+5</span><br>失敗時：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+4</span><br>齊聚於王座之人的情誼量條<span class=\"status_plus_value\">+5</span>"
+          },
+          {
+            "choice_name": "しっかりテクニックを磨いていこう<br>L'Arcで発生時：<br>ここは文字の力！文章で表現しよう",
+            "choice_effect": "成功時：<br>體力<span class=\"status_plus_value\">+3</span><br><img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span><span class=\"status_plus_value\">+4</span><br>齊聚於王座之人的情誼量條<span class=\"status_plus_value\">+5</span><br>失敗時：<br><img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span><span class=\"status_plus_value\">+4</span><br>齊聚於王座之人的情誼量條<span class=\"status_plus_value\">+5</span>"
           }
         ],
         "出行・东海帝皇": [
@@ -44832,7 +44944,7 @@
         "兩人共渡的光榮之道": [
           {
             "choice_name": "無選項",
-            "choice_effect": "大成功：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br>弧線のプロフェッサー的靈感Lv<span class=\"status_plus_value\">+3</span><br>北部玄駒的情誼量條<span class=\"status_plus_value\">+5</span><br>成功：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br>弧線のプロフェッサー的靈感Lv<span class=\"status_plus_value\">+1</span><br>北部玄駒的情誼量條<span class=\"status_plus_value\">+5</span>"
+            "choice_effect": "大成功：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『弧線的教授』</span>的靈感Lv<span class=\"status_plus_value\">+3</span><br>北部玄駒的情誼量條<span class=\"status_plus_value\">+5</span><br>成功：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><img src=\"../UmaMisc/Image/Status/power.png\"><span class=\"status_power\">力量</span><span class=\"status_plus_value\">+5</span><br><span class=\"skill_hint\">『弧線的教授』</span>的靈感Lv<span class=\"status_plus_value\">+1</span><br>北部玄駒的情誼量條<span class=\"status_plus_value\">+5</span>"
           }
         ],
         "啊啊，友情": [
@@ -50915,7 +51027,7 @@
       "1st演唱會，結束！": [
         {
           "choice_name": "無選項",
-          "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span><br>レッスン回数に応じて<img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span>獲得<br>粉絲數<span class=\"status_plus_value\">+1000</span>人<br>五種表現力<span class=\"status_plus_value\">+5</span><br>※發生的效果會因演唱會結果而有所變動"
+          "choice_effect": "五種數値<span class=\"status_plus_value\">+10</span><br>根據課程次數<img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span>獲得<br>粉絲數<span class=\"status_plus_value\">+1000</span>人<br>五種表現力<span class=\"status_plus_value\">+5</span><br>※發生的效果會因演唱會結果而有所變動"
         }
       ],
       "1st演唱會結束後": [
@@ -50927,19 +51039,19 @@
       "2nd演唱會，結束！": [
         {
           "choice_name": "無選項",
-          "choice_effect": "五種數値<span class=\"status_plus_value\">+3~10</span><br>レッスン回数に応じて<img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span>獲得<br>粉絲數<span class=\"status_plus_value\">+200~2000</span>人<br>五種表現力<span class=\"status_plus_value\">+5~10</span><br>※發生的效果會因演唱會結果而有所變動"
+          "choice_effect": "五種數値<span class=\"status_plus_value\">+3~10</span><br>根據課程次數<img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span>獲得<br>粉絲數<span class=\"status_plus_value\">+200~2000</span>人<br>五種表現力<span class=\"status_plus_value\">+5~10</span><br>※發生的效果會因演唱會結果而有所變動"
         }
       ],
       "3rd演唱會，結束！": [
         {
           "choice_name": "無選項",
-          "choice_effect": "五種數値<span class=\"status_plus_value\">+3~10</span><br>レッスン回数に応じて<img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span>獲得<br>粉絲數<span class=\"status_plus_value\">+550~5500</span>人<br>※發生的效果會因演唱會結果而有所變動"
+          "choice_effect": "五種數値<span class=\"status_plus_value\">+3~10</span><br>根據課程次數<img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span>獲得<br>粉絲數<span class=\"status_plus_value\">+550~5500</span>人<br>※發生的效果會因演唱會結果而有所變動"
         }
       ],
       "4th演唱會，結束！": [
         {
           "choice_name": "無選項",
-          "choice_effect": "五種數値<span class=\"status_plus_value\">+3~10</span><br>レッスン回数に応じて<img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span>獲得<br>粉絲數<span class=\"status_plus_value\">+650~6500</span>人<br>※發生的效果會因演唱會結果而有所變動"
+          "choice_effect": "五種數値<span class=\"status_plus_value\">+3~10</span><br>根據課程次數<img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span>獲得<br>粉絲數<span class=\"status_plus_value\">+650~6500</span>人<br>※發生的效果會因演唱會結果而有所變動"
         }
       ],
       "新加入的演唱會協力者！": [

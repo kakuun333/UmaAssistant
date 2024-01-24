@@ -25,6 +25,7 @@ public:
 	bool AlwaysOnTop;
 	bool AutoMouseClick;
 	bool OutputLogFile;
+	bool DiscordRPC;
 	int SoftwareLanguage;
 	int GameServer;
 	int GameWindow;

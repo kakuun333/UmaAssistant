@@ -27,6 +27,7 @@ void Config::Update()
 	AlwaysOnTop = json_config["AlwaysOnTop"].empty() ? false : json_config["AlwaysOnTop"].get<bool>();
 	AutoMouseClick = json_config["AutoMouseClick"].empty() ? false : json_config["AutoMouseClick"].get<bool>();
 	OutputLogFile = json_config["OutputLogFile"].empty() ? false : json_config["OutputLogFile"].get<bool>();
+	DiscordRPC = json_config["DiscordRPC"].empty() ? false : json_config["DiscordRPC"].get<bool>();
 
 	// int
 	SoftwareLanguage = json_config["SoftwareLanguage"].empty() ? static_cast<int>(SoftwareLanguageType::TW) : json_config["SoftwareLanguage"].get<int>();
@@ -61,6 +62,7 @@ void Config::WriteToJson()
 	json_config["AlwaysOnTop"] = this->AlwaysOnTop;
 	json_config["AutoMouseClick"] = this->AutoMouseClick;
 	json_config["OutputLogFile"] = this->OutputLogFile;
+	json_config["DiscordRPC"] = this->DiscordRPC;
 
 	// int
 	json_config["SoftwareLanguage"] = this->SoftwareLanguage;

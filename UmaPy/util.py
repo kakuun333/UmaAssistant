@@ -64,6 +64,20 @@ def sub(input_text: str, pattern: str, replace: str):
 
 
 ########## event_data ##########
+
+### 加工 choice_name
+def process_choice_name(choice_name: str):
+    ### 替換換行符 ###
+    choice_name = sub(choice_name, "\n", "<br>");
+
+    ### 替換半形括號 ###
+    choice_name = sub(choice_name, r"\(", "（");
+    choice_name = sub(choice_name, r"\)", "）");
+
+
+    return choice_name;
+
+
 ### 加工 choice_effect
 def process_choice_effect(choice_effect: str, process_choice_effect_data: dict, skill_data_jp: dict):
     ### 替換換行符 ###
@@ -120,11 +134,11 @@ def process_choice_effect(choice_effect: str, process_choice_effect_data: dict, 
     for color_v in skill_data_jp.values():
         for rare_v in color_v.values():
             for skill_name in rare_v:
-                match = re.search(rf'『{skill_name}』(のヒントLv)?', choice_effect)
+                match = re.search(rf'『?{skill_name}』?(のヒントLv)?', choice_effect)
                 if match and match.group(1) != None:
-                    choice_effect = re.sub(rf'『({skill_name})』(のヒントLv)?', r'<span class="skill_hint">『\1』</span>のヒントLv', choice_effect);
+                    choice_effect = re.sub(rf'『?({skill_name})』?(のヒントLv)?', r'<span class="skill_hint">『\1』</span>のヒントLv', choice_effect);
                 elif match and match.group(1) == None:
-                    choice_effect = re.sub(rf'『({skill_name})』(のヒントLv)?', r'<span class="skill_hint">『\1』</span>のヒントLv+1', choice_effect);
+                    choice_effect = re.sub(rf'『?({skill_name})』?(のヒントLv)?', r'<span class="skill_hint">『\1』</span>のヒントLv+1', choice_effect);
     
     ### 加工 +-數字 ###
     choice_effect = re.sub(r"\+\d+(~\d+)?", r'<span class="status_plus_value">\g<0></span>', choice_effect);

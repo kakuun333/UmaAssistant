@@ -18,7 +18,7 @@ private:
 	static std::string _jpAppClientId;
 	static std::string _twAppClientId;
 
-	bool _inited = false;
+	bool _isShutdown = true;
 
 	std::string _GetCurrentCharacterName();
 
@@ -39,14 +39,14 @@ public:
 	void Shutdown();
 
 #pragma region ¤º´O¨ç¦¡
-	inline void SetInited(bool value)
+	inline void SetIsShutdown(bool value)
 	{
-		_inited = value;
+		_isShutdown = value;
 	}
 	
-	inline bool GetInited()
+	inline bool GetIsShutdown()
 	{
-		return _inited;
+		return _isShutdown;
 	}
 #pragma endregion
 

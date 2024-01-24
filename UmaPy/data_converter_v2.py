@@ -46,6 +46,37 @@ skill_data_jp_trans_tw = copy.deepcopy(DEAULT_SKILL_DATA_DICT);
 # enhance_skill_data
 enhance_skill_data_tw = {};
 
+
+###############################################################################################
+# 修正 event_data_jp.json 的 choice_effect
+
+def fix_choice_effect():
+    
+    for rare, rare_v in event_data_jp["character"].items():
+        for event_owner, event_owner_v in rare_v.items():
+            for event_name, event_name_v in event_owner_v.items():
+                if event_name == "新年の抱負": # 修正所有角色的「新年の抱負」事件的第一個選項的效果
+                    # +25 改成 +10
+                    event_data_jp["character"][rare][event_owner][event_name][0]["choice_effect"] = util.sub(event_data_jp["character"][rare][event_owner][event_name][0]["choice_effect"], "25", "10");
+                elif event_name == "初詣": # 修正所有角色的「初詣」事件的第二個選項的效果
+                    # +8 改成 +5
+                    event_data_jp["character"][rare][event_owner][event_name][1]["choice_effect"] = util.sub(event_data_jp["character"][rare][event_owner][event_name][1]["choice_effect"], "8", "5");
+
+    # 修正單一事件效果
+    for rare, rare_v in event_data_jp["character"].items():
+        for event_owner, event_owner_v in rare_v.items():
+            if event_owner in fix_choice_effect_data["character"]:
+                for fix_event_name, fix_event_name_v in fix_choice_effect_data["character"][event_owner].items():
+
+                    for choice_idx, choice_value in enumerate(fix_event_name_v):
+                        fix_event_name_v[choice_idx]["choice_effect"] = util.process_choice_effect(choice_value["choice_effect"], process_choice_effect_data, skill_data_jp)
+
+                    event_data_jp["character"][rare][event_owner][fix_event_name] = fix_event_name_v;
+
+    util.write_json("../UmaData/event_data_jp.json", event_data_jp);
+
+
+fix_choice_effect();
 ###############################################################################################
 
 # skill_effect_type 是 "skill_effect_title" or "skill_effect_data"
@@ -94,7 +125,15 @@ util.write_json("../UmaData/enhance_skill_data_tw.json", enhance_skill_data_tw);
 def convert_choice_name_jp_to_tw(choice_name):
     if choice_name in translation_data["jp_to_tw"]["choice_name"]:
         tw = translation_data["jp_to_tw"]["choice_name"][choice_name];
+
+        # 用 re.escape() 來避開正規表達式的特殊字符
+        # 例如：『ただいま』か……(サイレンススズカ) 的 ()
         choice_name = re.sub(re.escape(choice_name), tw, choice_name);
+
+    # for jp, tw in translation_data["jp_to_tw"]["choice_name"].items():
+    #     if re.search(jp, choice_name):
+    #         choice_name = re.sub(jp, tw, choice_name);
+
 
     # for jp, tw in translation_data["jp_to_tw"]["choice_title"].items():
     #     # 用 re.escape() 來避開正規表達式的特殊字符
@@ -375,31 +414,4 @@ def create_event_name_data():
 
 create_event_name_data();
 
-###############################################################################################
-# 修正 event_data_jp.json 的 choice_effect
-
-def fix_choice_effect():
-    # 修正所有角色的「新年の抱負」事件的第一個選項的效果
-    for rare, rare_v in event_data_jp["character"].items():
-        for event_owner, event_owner_v in rare_v.items():
-            for event_name, event_name_v in event_owner_v.items():
-                if event_name == "新年の抱負":
-                    # +25 改成 +10
-                    event_data_jp["character"][rare][event_owner][event_name][0]["choice_effect"] = util.sub(event_data_jp["character"][rare][event_owner][event_name][0]["choice_effect"], "25", "10");
-
-    # 修正單一事件效果
-    for rare, rare_v in event_data_jp["character"].items():
-        for event_owner, event_owner_v in rare_v.items():
-            if event_owner in fix_choice_effect_data["character"]:
-                for fix_event_name, fix_event_name_v in fix_choice_effect_data["character"][event_owner].items():
-
-                    for choice_idx, choice_value in enumerate(fix_event_name_v):
-                        fix_event_name_v[choice_idx]["choice_effect"] = util.process_choice_effect(choice_value["choice_effect"], process_choice_effect_data, skill_data_jp)
-
-                    event_data_jp["character"][rare][event_owner][fix_event_name] = fix_event_name_v;
-
-    util.write_json("../UmaData/event_data_jp.json", event_data_jp);
-
-
-fix_choice_effect();
 
