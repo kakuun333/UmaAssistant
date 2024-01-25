@@ -11463,6 +11463,16 @@
             "choice_effect": "成功時：<br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+10</span><br><img src=\"../UmaMisc/Image/Status/kasikosa.png\"><span class=\"status_kasikosa\">智力</span><span class=\"status_plus_value\">+10</span><br><span class=\"skill_hint\">『長驅直入』</span>的靈感Lv<span class=\"status_plus_value\">+3</span><br><img src=\"../UmaMisc/Image/Status/speed.png\"><span class=\"status_speed\">速度</span><span class=\"status_plus_value\">+5</span><br><span class=\"skill_hint\">『長驅直入』</span>的靈感Lv<span class=\"status_plus_value\">+1</span>"
           }
         ],
+        "帶給大家熱情的表演！": [
+          {
+            "choice_name": "我也看得很開心",
+            "choice_effect": "體力<span class=\"status_plus_value\">+20</span><br><img src=\"../UmaMisc/Image/Status/yaruki.png\"><span class=\"yaruki\">幹勁</span><span class=\"status_plus_value\">+1</span>"
+          },
+          {
+            "choice_name": "妳真的很努力！",
+            "choice_effect": "<img src=\"../UmaMisc/Image/Status/skill_point.png\"><span class=\"status_skill_point\">技能點</span><span class=\"status_plus_value\">+30</span>"
+          }
+        ],
         "遙遠的賽馬娘偶像之路": [
           {
             "choice_name": "すごく見応えがあった",
