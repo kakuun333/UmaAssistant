@@ -76,7 +76,7 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 
 - 軟體語言：本軟體`UI`的語言。
 
-- 伺服器：請選擇適當的伺服器，選錯伺服器將無法辨識事件。
+- 遊戲伺服器：請選擇適當的遊戲伺服器，選錯遊戲伺服器將無法辨識事件。
 
 - 視窗類型：DMM版請選`DMM`，模擬器目前支援`BlueStacks`、`夜神模擬器`、`雷電模擬器`，模擬器請不要使用全螢幕遊玩，解析度比例必須為`16:9`，否則將無法辨識事件。
 
@@ -95,7 +95,7 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 - Discord RPC：更新`Discord`的遊戲狀態為`賽馬娘 Pretty Derby`或`ウマ娘 プリティーダービー`  
 > [!NOTE]
 > **Discord RPC**  
-> `遊戲名稱`和`馬娘的名字`會根據所選的`伺服器`發生變化  
+> `遊戲名稱`和`馬娘的名字`會根據所選的`遊戲伺服器`發生變化  
 > `馬娘的名字`會根據`正在培育的馬娘`發生變化  
 > 其他文字會根據`軟體語言`發生變化  
 > ![1008](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1008.png)  
@@ -114,7 +114,7 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 
 ### 4. 尋找目前培育的馬娘  
 > [!NOTE]
-> 目前推薦用[方法三：直接選擇角色](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E6%96%B9%E6%B3%95%E4%B8%89)來尋找目前培育的馬娘。
+> 如果方法一和方法二皆無效的話請使用[方法三：直接選擇角色](https://github.com/kakuun333/UmaAssistant/blob/main/README.md#%E6%96%B9%E6%B3%95%E4%B8%89)來尋找`目前培育的馬娘`。
 
 > [!WARNING]
 > 更換培育的馬娘時，請務必先清除先前的馬娘。  
@@ -152,6 +152,8 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 查詢功能支援`繁體中文`、`平假名`、`片假名`。  
 如果角色的別名有`英文`、`數字`、`標點符號`的話也可以用來查詢。  
 ![16](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/16.png)  
+
+
 
 
 ## 常見問題
