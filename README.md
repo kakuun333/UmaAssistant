@@ -96,7 +96,7 @@ https://learn.microsoft.com/zh-tw/cpp/windows/latest-supported-vc-redist
 > [!NOTE]
 > **Discord RPC**  
 > `遊戲名稱`和`馬娘的名字`會根據所選的`遊戲伺服器`發生變化  
-> `馬娘的名字`會根據`正在培育的馬娘`發生變化  
+> `馬娘的名字`會根據`目前培育的馬娘`發生變化  
 > 其他文字會根據`軟體語言`發生變化  
 > ![1008](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1008.png)  
 > ![1011](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1011.png)  
