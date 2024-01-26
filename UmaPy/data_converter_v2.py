@@ -1,6 +1,7 @@
 import re
 import json
 import copy
+import sys
 
 import util
 from umaenum import *
@@ -36,16 +37,42 @@ fix_choice_effect_data = util.read_json(r"../UmaData/convert_data/fix_choice_eff
 ###############################################################################################
 
 # event_data 
-event_data_tw = copy.deepcopy(DEAULT_EVENT_DATA_DICT);
-event_data_jp_trans_tw = copy.deepcopy(DEAULT_EVENT_DATA_DICT);
+event_data_tw = copy.deepcopy(DEFAULT_EVENT_DATA_DICT);
+event_data_jp_trans_tw = copy.deepcopy(DEFAULT_EVENT_DATA_DICT);
 
 # skill_data
-skill_data_tw = copy.deepcopy(DEAULT_SKILL_DATA_DICT);
-skill_data_jp_trans_tw = copy.deepcopy(DEAULT_SKILL_DATA_DICT);
+skill_data_tw = copy.deepcopy(DEFAULT_SKILL_DATA_DICT);
+skill_data_jp_trans_tw = copy.deepcopy(DEFAULT_SKILL_DATA_DICT);
 
 # enhance_skill_data
 enhance_skill_data_tw = {};
 
+
+###############################################################################################
+# 刪除 event_data_jp.json 值是空陣列的 event_name
+# 有一些事件沒有選項也沒有效果，所以 dump_event_data.py 會把它變成空陣列
+def del_empty_value_event_name_key():
+    del_event_name_obj_list = [];
+
+    # 找出需要刪除的 event_name 和 路徑
+    for rare, rare_v in event_data_jp["character"].items():
+        for event_owner, event_owner_v in rare_v.items():
+            for event_name, event_name_v in event_owner_v.items():
+                if event_name_v == []:
+                    del_event_name_obj = {
+                        "rare": rare,
+                        "event_owner": event_owner,
+                        "event_name": event_name,
+                    }
+                    del_event_name_obj_list.append(del_event_name_obj);
+
+    # 刪除值是空陣列的 event_name 鍵
+    for del_event_obj in del_event_name_obj_list:
+        del event_data_jp["character"][del_event_obj["rare"]][del_event_obj["event_owner"]][del_event_obj["event_name"]];
+
+    util.write_json("../UmaData/event_data_jp.json", event_data_jp);
+
+# del_empty_value_event_name_key();
 
 ###############################################################################################
 # 修正 event_data_jp.json 的 choice_effect
@@ -78,7 +105,101 @@ def fix_choice_effect():
 
 fix_choice_effect();
 ###############################################################################################
+# 修正某些 event_name 含有 larc_event_name 而導致無法匹配事件名稱和無法轉換繁中服事件名稱的問題
+# 作法：
+# 1. 把原本該有的事件名稱去除掉 larc_event_name 後獨立成一個事件資料
+# 2. 把 larc_event_name 提取出來後獨立成一個事件資料
+# 3. 刪除含有 larc_event_name 的 event_name 鍵
+def fix_larc_event_name():
+    create_event_list = [];
+    del_event_list = [];
 
+    for event_type, event_type_v in event_data_jp.items():
+        if (event_type == "scenario"): continue;
+        for rare, rare_v in event_type_v.items():
+            for event_owner, event_owner_v in rare_v.items():
+                for original_event_name, original_event_name_v in event_owner_v.items():
+                    larc_event_name = re.search(r"パリの街にて|彼の都の思い出は|その日を信じて|温かなメッセージ", original_event_name);
+                    if larc_event_name:
+                        subed_original_event_name = re.sub(rf"(（)?{larc_event_name.group()}(）)?", "", original_event_name);
+                        # print("subed_original_event_name: ", subed_original_event_name);
+
+                        larc_event_name = larc_event_name.group();
+                        # print("larc_event_name: ", larc_event_name)
+                        
+
+                        subed_original_event_name_obj = {
+                            "event_type": event_type,
+                            "rare": rare,
+                            "event_owner": event_owner,
+                            "event_name": subed_original_event_name,
+                            "choice_list": [],
+                        }
+
+                        larc_event_name_obj = {
+                            "event_type": event_type,
+                            "rare": rare,
+                            "event_owner": event_owner,
+                            "event_name": larc_event_name,
+                            "choice_list": [],
+                        }
+
+                        del_event_name_obj = {
+                            "event_type": event_type,
+                            "rare": rare,
+                            "event_owner": event_owner,
+                            "event_name": original_event_name,
+                        }
+                        del_event_list.append(del_event_name_obj);
+
+                        for choice_dict in original_event_name_v:
+                            larc_choice_name_search = re.search(r"(<hr>)?(<br>)?L'Arcで発生時：<br>(.+)", choice_dict["choice_name"]);
+                            # 如果找到 larc_choice_name
+                            # choice_obj
+                            choice_obj = {
+                                "choice_name": "",
+                                "choice_effect": ""
+                            };
+                            larc_choice_obj = copy.deepcopy(choice_obj);
+
+                            # 獲取去除 larc_choice_name 的 choice_name
+                            subed_original_choice_name = re.sub(r"(<hr>)?(<br>)?L'Arcで発生時：<br>(.+)", "", choice_dict["choice_name"]);
+                            choice_obj["choice_name"] = subed_original_choice_name;
+                            choice_obj["choice_effect"] = choice_dict["choice_effect"];
+                            subed_original_event_name_obj["choice_list"].append(choice_obj);
+                            
+                            # 有 larc_choice_name 的情況
+                            if larc_choice_name_search:
+                                larc_choice_name = larc_choice_name_search.group(3);
+                            else: # choice_name 是「選択肢なし」的情況
+                                larc_choice_name = choice_obj["choice_name"];
+
+                            larc_choice_obj["choice_name"] = larc_choice_name;
+                            larc_choice_obj["choice_effect"] = choice_dict["choice_effect"];
+                            larc_event_name_obj["choice_list"].append(larc_choice_obj);
+                        
+                        create_event_list.append(subed_original_event_name_obj);
+                        create_event_list.append(larc_event_name_obj);
+
+
+    # 刪除有包含 larc_event_name 的 event_name 鍵
+    for del_event_obj in del_event_list:
+        del event_data_jp[del_event_obj["event_type"]][del_event_obj["rare"]][del_event_obj["event_owner"]][del_event_obj["event_name"]];
+
+    # 創建分離 larc_event_name 的 event 和 larc_event 的 event_name 鍵
+    for create_event_obj in create_event_list:
+        event_data_jp[create_event_obj["event_type"]][create_event_obj["rare"]][create_event_obj["event_owner"]][create_event_obj["event_name"]] = create_event_obj["choice_list"];
+
+    util.write_json("../UmaData/event_data_jp.json", event_data_jp);
+
+
+
+print("開始 fix_larc_event_name");
+fix_larc_event_name();
+print("結束 fix_larc_event_name");
+
+
+###############################################################################################
 # skill_effect_type 是 "skill_effect_title" or "skill_effect_data"
 def trans_enhance_skill_data_jp_to_tw(skill_effect_title, skill_effect_data):
 
@@ -391,7 +512,7 @@ def get_same_event_name_dict(event_data_language):
     return same_event_name_dict;
 
 def create_event_name_data():
-    event_name_data_jp = copy.deepcopy(DEAULT_EVENT_NAME_DATA_DICT);
+    event_name_data_jp = copy.deepcopy(DEFAULT_EVENT_NAME_DATA_DICT);
     same_event_name_dict_jp = get_same_event_name_dict("jp");
 
     for event_type, event_type_v in same_event_name_dict_jp.items():
@@ -402,7 +523,7 @@ def create_event_name_data():
 
     # -----------------------------------------------------------------------------------
 
-    event_name_data_tw = copy.deepcopy(DEAULT_EVENT_NAME_DATA_DICT);
+    event_name_data_tw = copy.deepcopy(DEFAULT_EVENT_NAME_DATA_DICT);
     same_event_name_dict_tw = get_same_event_name_dict("tw");
 
     for event_type, event_type_v in same_event_name_dict_tw.items():

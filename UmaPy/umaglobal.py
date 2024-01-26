@@ -1,4 +1,4 @@
-DEAULT_EVENT_DATA_DICT = {
+DEFAULT_EVENT_DATA_DICT = {
     "character": {
         "1_star": {},
         "2_star": {},
@@ -19,13 +19,13 @@ DEAULT_EVENT_DATA_DICT = {
     },
 }
 
-DEAULT_EVENT_NAME_DATA_DICT = {
+DEFAULT_EVENT_NAME_DATA_DICT = {
     "character": [],
     "sapoka": [],
     "scenario": []
 }
 
-DEAULT_SKILL_DATA_DICT = {
+DEFAULT_SKILL_DATA_DICT = {
     "blue": {
         "normal": {},
         "rare": {}

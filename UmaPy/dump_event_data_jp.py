@@ -19,7 +19,7 @@ driver = webdriver.Chrome();
 
 
 skill_data_jp = util.read_json("../UmaData/skill_data_jp.json");
-event_data_jp = util.read_json("../UmaData/event_data_jp.json") or DEAULT_EVENT_DATA_DICT;
+event_data_jp = util.read_json("../UmaData/event_data_jp.json") or DEFAULT_EVENT_DATA_DICT;
 process_choice_effect_data = util.read_json("../UmaData/convert_data/process_choice_effect_data.json");
 
 ########## functions ##########

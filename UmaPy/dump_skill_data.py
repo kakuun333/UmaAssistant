@@ -16,7 +16,7 @@ chrome_options.add_argument("--new-tab")
 
 driver = webdriver.Chrome(options=chrome_options)
 
-skill_data_jp = util.read_json("../UmaData/event_data_jp.json") or DEAULT_SKILL_DATA_DICT;
+skill_data_jp = util.read_json("../UmaData/event_data_jp.json") or DEFAULT_SKILL_DATA_DICT;
 
 
 
