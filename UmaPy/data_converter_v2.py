@@ -72,8 +72,7 @@ def del_empty_value_event_name_key():
 
     util.write_json("../UmaData/event_data_jp.json", event_data_jp);
 
-# del_empty_value_event_name_key();
-
+del_empty_value_event_name_key();
 ###############################################################################################
 # 修正 event_data_jp.json 的 choice_effect
 
