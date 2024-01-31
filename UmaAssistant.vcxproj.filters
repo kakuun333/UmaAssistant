@@ -248,9 +248,6 @@
     <ClInclude Include="UmaAssistant\class\URLManager.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="UmaAssistant\enum\UmaDataType.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
     <ClInclude Include="UmaAssistant\class\DiscordManager.h">
       <Filter>標頭檔</Filter>
     </ClInclude>

@@ -5,19 +5,18 @@
 
 #include "UmaEventData.h"
 
+#include "../../util/Constants.h"
 
 
 class ScenarioEventData
 {
 
 public:
-	float similarity = -1;
+	float similarity = util::NOT_SIMILAR;
 
 	std::string event_name;
 
 	std::vector<UmaChoice> choice_list;
-
-	std::string matched_scanned_text;
 
 	inline bool IsDataComplete()
 	{

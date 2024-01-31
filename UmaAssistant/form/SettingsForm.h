@@ -172,6 +172,7 @@ private:
 			this->autoMouceClick_checkBox = (gcnew System::Windows::Forms::CheckBox());
 			this->alwaysOnTop_checkBox = (gcnew System::Windows::Forms::CheckBox());
 			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->discordRpc_checkBox = (gcnew System::Windows::Forms::CheckBox());
 			this->outputLogFile_checkBox = (gcnew System::Windows::Forms::CheckBox());
 			this->tableLayoutPanel3 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->autoMouseClickKey_textBox = (gcnew System::Windows::Forms::TextBox());
@@ -189,7 +190,6 @@ private:
 			this->tableLayoutPanel6 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->software_lang_jp_radio_btn = (gcnew System::Windows::Forms::RadioButton());
 			this->software_lang_tw_radio_btn = (gcnew System::Windows::Forms::RadioButton());
-			this->discordRpc_checkBox = (gcnew System::Windows::Forms::CheckBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->icon_pictureBox))->BeginInit();
 			this->tableLayoutPanel1->SuspendLayout();
 			this->tableLayoutPanel2->SuspendLayout();
@@ -508,6 +508,21 @@ private:
 			this->flowLayoutPanel1->Size = System::Drawing::Size(247, 189);
 			this->flowLayoutPanel1->TabIndex = 39;
 			// 
+			// discordRpc_checkBox
+			// 
+			this->discordRpc_checkBox->AutoSize = true;
+			this->discordRpc_checkBox->BackColor = System::Drawing::Color::Transparent;
+			this->discordRpc_checkBox->FlatAppearance->BorderSize = 0;
+			this->discordRpc_checkBox->FlatAppearance->CheckedBackColor = System::Drawing::Color::Black;
+			this->discordRpc_checkBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
+				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
+			this->discordRpc_checkBox->Location = System::Drawing::Point(3, 33);
+			this->discordRpc_checkBox->Name = L"discordRpc_checkBox";
+			this->discordRpc_checkBox->Size = System::Drawing::Size(126, 24);
+			this->discordRpc_checkBox->TabIndex = 48;
+			this->discordRpc_checkBox->Text = L"Discord RPC";
+			this->discordRpc_checkBox->UseVisualStyleBackColor = false;
+			// 
 			// outputLogFile_checkBox
 			// 
 			this->outputLogFile_checkBox->AutoSize = true;
@@ -772,21 +787,6 @@ private:
 			this->software_lang_tw_radio_btn->TabStop = true;
 			this->software_lang_tw_radio_btn->Text = L"繁體中文";
 			this->software_lang_tw_radio_btn->UseVisualStyleBackColor = false;
-			// 
-			// discordRpc_checkBox
-			// 
-			this->discordRpc_checkBox->AutoSize = true;
-			this->discordRpc_checkBox->BackColor = System::Drawing::Color::Transparent;
-			this->discordRpc_checkBox->FlatAppearance->BorderSize = 0;
-			this->discordRpc_checkBox->FlatAppearance->CheckedBackColor = System::Drawing::Color::Black;
-			this->discordRpc_checkBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
-				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->discordRpc_checkBox->Location = System::Drawing::Point(3, 33);
-			this->discordRpc_checkBox->Name = L"discordRpc_checkBox";
-			this->discordRpc_checkBox->Size = System::Drawing::Size(126, 24);
-			this->discordRpc_checkBox->TabIndex = 48;
-			this->discordRpc_checkBox->Text = L"Discord RPC";
-			this->discordRpc_checkBox->UseVisualStyleBackColor = false;
 			// 
 			// SettingsForm
 			// 

@@ -51,7 +51,7 @@ public:
 
 	UmaEventNameData GetMaxSimilarityUmaEventNameDataByList(std::deque<std::string> scanned_text_list);
 
-	std::variant<UmaEventData, ScenarioEventData> DataManager::GetEventDataByUmaEventNameData(UmaEventNameData umaEventNameData);
+	std::variant<UmaEventData, ScenarioEventData> GetEventDataByUmaEventNameData(UmaEventNameData umaEventNameData);
 
 
 #pragma region 內嵌函式
@@ -69,17 +69,6 @@ public:
 	{
 		return _currentCharacterInfoDict;
 	}
-#pragma endregion
-
-#pragma region 已棄用的函式
-	//UmaEventData GetCurrentCharacterUmaEventDataByList(std::deque<std::string> scanned_text_list);
-	//UmaEventData GetSapokaUmaEventDataByList(std::deque<std::string> scanned_text_list);
-	//ScenarioEventData GetScenarioUmaEventDataByList(std::deque<std::string> scanned_text_list);
-
-	//UmaEventData GetCurrentCharacterUmaEventData(std::string scanned_text);
-	//UmaEventData GetSapokaUmaEventData(std::string scanned_text);
-	//ScenarioEventData GetScenarioEventData(std::string scanned_text);
-	//bool TryGetCurrentCharacterName(std::string scanned_text);
 #pragma endregion
 };
 

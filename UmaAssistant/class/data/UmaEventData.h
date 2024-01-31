@@ -10,7 +10,6 @@
 #include "../../util/Constants.h"
 
 #include "../../enum/UmaEventDataType.h"
-#include "../../enum/UmaDataType.h"
 
 
 constexpr inline int NONE_INDEX = -1;
@@ -54,14 +53,10 @@ public:
 	std::string event_owner;
 	std::string rare;
 
-	std::string matched_scanned_text;
-
 	UmaEvent umaEvent;
 
-	UmaDataType umaDataType;
-
 	// 如果資料完整返回 true，不完整返回 false
-	inline bool UmaEventData::IsDataComplete()
+	inline bool IsDataComplete()
 	{
 		//std::cout << "1" << std::endl;
 		if (this->event_owner.empty()) return false;

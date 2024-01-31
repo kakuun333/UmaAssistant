@@ -10,11 +10,14 @@ body {
     font-family: "MochiyPopOne", sans-serif;
     color: #cfc197;
     font-size: 0.9em;
+    
+    user-select: none;
 }
 
 img {
     width: 5.15em;
     height: 5.15em;
+    
 }
 
 table {
@@ -56,7 +59,11 @@ table, thead, tbody, tr, th, td {
     width: 100%;
 }
 
-
+/*
+#icon_container {
+    text-align: center;
+}
+*/
 
 /* class *//* class *//* class *//* class *//* class */
 

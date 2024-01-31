@@ -12,6 +12,8 @@ body {
     font-family: "MochiyPopOne", sans-serif;
     color: #cfc197;
     font-size: 0.9em;
+    
+    user-select: none;
 }
 
 img {
