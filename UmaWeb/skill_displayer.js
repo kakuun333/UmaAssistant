@@ -59,7 +59,7 @@ function findSkillData(event, skill_hint) {
     const skill_table = document.getElementById("skill_table");
     // element
 
-    const skill_hint_pattern = new RegExp("<span class=\"skill_hint\">『(.+)』");
+    const skill_hint_pattern = new RegExp("<span class=\"skill_hint\"(.+)?>『(.+)』");
 
 
     // skill json
@@ -84,15 +84,18 @@ function findSkillData(event, skill_hint) {
     }
 
     for (let color in skill_data) {
+        // if (!skill_data.hasOwnProperty(color)) continue;
         let color_obj = skill_data[color];
         for (let skill_rare in color_obj) {
+            // if (!color_obj.hasOwnProperty(skill_rare)) continue;
             let rare_obj = color_obj[skill_rare];
             for (let json_skill_name in rare_obj) {
+                // if (!rare_obj.hasOwnProperty(json_skill_name)) continue;
                 let skill_name_obj = rare_obj[json_skill_name];
                 // <span class=\"skill_hint\">『負けん気』
-                // 測試字符串是否匹配正規表達式
-                let match_name = skill_hint.outerHTML.match(skill_hint_pattern);
-                if (json_skill_name == match_name[1]) {
+                let match_skill_name = skill_hint.outerHTML.match(skill_hint_pattern);
+                // 第二個括號捕獲的字串: match_skill_name[2]
+                if (json_skill_name == match_skill_name[2]) {
 
                     skill_name.innerText = json_skill_name;
 
@@ -248,9 +251,11 @@ function findSkillData(event, skill_hint) {
 function updateSkillContent() {
     let skill_hint_elements = document.querySelectorAll(".skill_hint");
     for (let i = 0; i < skill_hint_elements.length; i++) {
-        let skill_hint = skill_hint_elements[i];
+        const skill_hint = skill_hint_elements[i];
 
         if (isMobileDevice()) {
+            skill_hint.style.fontSize = "1.2em"
+
             skill_hint.addEventListener("touchstart", function(event) {
                 findSkillData(event, skill_hint);
             });

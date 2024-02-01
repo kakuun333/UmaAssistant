@@ -7,8 +7,8 @@
   },
   "DebugMode": true,
   "DiscordRPC": false,
-  "GameServer": 0,
-  "GameWindow": 0,
+  "GameServer": 1,
+  "GameWindow": 1,
   "GameWindowBoundOffset": {
     "DMM": {
       "Height": 0,
@@ -24,12 +24,12 @@
     }
   },
   "GameWindowName": "185353.png ‎- 相片",
-  "JpServerLang": 1,
+  "JpServerLang": 0,
   "LocalServer": {
     "Port": "5854"
   },
   "OutputLogFile": false,
-  "PreviousCurrentCharacterName": "マンハッタンカフェ（柳緑小夜）",
+  "PreviousCurrentCharacterName": "醒目飛鷹（黃昏凱旋）",
   "ScanInterval": 100,
   "SoftwareLanguage": 1
 }

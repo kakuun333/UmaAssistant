@@ -26,7 +26,13 @@ function createCharacterImageButton(jp_event_owner, tw_event_owner, img_name) {
 }
 
 function setSearchTextbox() {
+    const search_title = document.getElementById("search_title");
     const search_textbox = document.getElementById("search_textbox");
+
+    if (isMobileDevice()) {
+        search_title.style.height = "10vh";
+        search_textbox.parentElement.style.height = "10vh";
+    }
     
     search_textbox.addEventListener("input", function() {
         let pattern = new RegExp(search_textbox.value + "|" + hiraganaToKatakana(search_textbox.value), "i");
@@ -85,6 +91,16 @@ function loadSelectCharacterData() {
     }
 }
 
+function setImgAlign() {
+    const icon_container = document.getElementById("icon_container");
+
+    if (isMobileDevice()) {
+        icon_container.style.textAlign = "center";
+    } else {
+        icon_container.style.textAlign = "left";
+    }
+}
+
 
 // ======================================================================================================
 
@@ -94,6 +110,6 @@ if (!isMobileDevice()) {
     });
 }
 
-
+setImgAlign();
 loadSelectCharacterData();
 setSearchTextbox();
