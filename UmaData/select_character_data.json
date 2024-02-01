@@ -1,5 +1,15 @@
 [
   {
+    "icon": "i_156.png",
+    "jp_event_owner": "マンハッタンカフェ（柳緑小夜）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_155.png",
+    "jp_event_owner": "ユキノビジン（茶の子雪ん子）",
+    "tw_event_owner": null
+  },
+  {
     "icon": "i_154.png",
     "jp_event_owner": "ヴィブロス（Voyage étincelant）",
     "tw_event_owner": null
@@ -322,12 +332,12 @@
   {
     "icon": "i_90.png",
     "jp_event_owner": "ゴールドシップ（RUN！乱！ランチャー！！）",
-    "tw_event_owner": "黃金船（RUN！亂！亂槍射手！！）"
+    "tw_event_owner": null
   },
   {
     "icon": "i_89.png",
     "jp_event_owner": "メジロマックイーン（さざ波フェアレディ）",
-    "tw_event_owner": "目白麥昆（漣漪窈窕淑女）"
+    "tw_event_owner": null
   },
   {
     "icon": "i_88.png",
@@ -552,12 +562,12 @@
   {
     "icon": "i_44.png",
     "jp_event_owner": "マルゼンスキー（ぶっとび☆さまーナイト）",
-    "tw_event_owner": "丸善斯基（飛越☆盛夏騎士）"
+    "tw_event_owner": null
   },
   {
     "icon": "i_43.png",
     "jp_event_owner": "スペシャルウィーク（ほっぴん♪ビタミンハート）",
-    "tw_event_owner": "特別週（跳躍♪富含維他命的心）"
+    "tw_event_owner": null
   },
   {
     "icon": "i_42.png",

@@ -21,23 +21,21 @@ public:
 
 	void CreateChoice(System::String^ title, System::String^ effect);
 	void ChangeEventOwner(System::String^ text);
-	void ChangeEventTitle(System::String^ text);
+	void ChangeEventName(System::String^ text);
 	void CleanChoiceTable();
 	void UpdateSkillContent();
-	void HiddenSkillContent();
+	void HideSkillContent();
 
 	void ChangeCharacterName(System::String^ characterName);
 
-	void ChangeSkillGameServer(int gameServer);
+	void SetGameServer(int gameServer);
 
-	void ChangeJpServerLang(int jpServerLangType);
+	void SetJpServerLanguage(int jpServerLangType);
 
-	void ChangeCharacterNameBrowserLang(int softwareLangType);
-
-	void ChangeChoiceBrowserLang(int softwareLangType);
+	void ChangeCharacterNameHtmlLanguage(int softwareLangType);
+	void ChangeChoiceHtmlLanguage(int softwareLangType);
+	void ChangeSelectCharacterHtmlLanguage(int softwareLangType);
 
 	//void ChangeShowEnhanceSkillData(bool boolean);
-
-	void test();
 };
 

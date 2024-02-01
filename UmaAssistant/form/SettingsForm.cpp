@@ -189,12 +189,12 @@ namespace UmaAssistant
 			if (radioButton == tw_server_radio_btn)
 			{
 				global::config->GameServer = static_cast<int>(GameServerType::TW);
-				webManager->ChangeSkillGameServer(static_cast<int>(GameServerType::TW));
+				webManager->SetGameServer(static_cast<int>(GameServerType::TW));
 			}
 			else if (radioButton == jp_server_radio_btn)
 			{
 				global::config->GameServer = static_cast<int>(GameServerType::JP);
-				webManager->ChangeSkillGameServer(static_cast<int>(GameServerType::JP));
+				webManager->SetGameServer(static_cast<int>(GameServerType::JP));
 			}
 		}
 
@@ -213,12 +213,12 @@ namespace UmaAssistant
 			if (radioButton == jpServerLang_tw_radio_btn)
 			{
 				global::config->JpServerLang = static_cast<int>(GameServerType::TW);
-				webManager->ChangeJpServerLang(static_cast<int>(GameServerType::TW));
+				webManager->SetJpServerLanguage(static_cast<int>(GameServerType::TW));
 			}
 			else if (radioButton == jpServerLang_jp_radio_btn)
 			{
 				global::config->JpServerLang = static_cast<int>(GameServerType::JP);
-				webManager->ChangeJpServerLang(static_cast<int>(GameServerType::JP));
+				webManager->SetJpServerLanguage(static_cast<int>(GameServerType::JP));
 			}
 		}
 
@@ -336,8 +336,9 @@ namespace UmaAssistant
 
 				this->ChangeSoftwareLanguage(SoftwareLanguageType::JP);
 
-				webManager->ChangeCharacterNameBrowserLang(static_cast<int>(SoftwareLanguageType::JP));
-				webManager->ChangeChoiceBrowserLang(static_cast<int>(SoftwareLanguageType::JP));
+				webManager->ChangeCharacterNameHtmlLanguage(static_cast<int>(SoftwareLanguageType::JP));
+				webManager->ChangeChoiceHtmlLanguage(static_cast<int>(SoftwareLanguageType::JP));
+				webManager->ChangeSelectCharacterHtmlLanguage(static_cast<int>(SoftwareLanguageType::JP));
 			}
 			else if (radioButton == software_lang_tw_radio_btn)
 			{
@@ -345,8 +346,9 @@ namespace UmaAssistant
 
 				this->ChangeSoftwareLanguage(SoftwareLanguageType::TW);
 
-				webManager->ChangeCharacterNameBrowserLang(static_cast<int>(SoftwareLanguageType::TW));
-				webManager->ChangeChoiceBrowserLang(static_cast<int>(SoftwareLanguageType::TW));
+				webManager->ChangeCharacterNameHtmlLanguage(static_cast<int>(SoftwareLanguageType::TW));
+				webManager->ChangeChoiceHtmlLanguage(static_cast<int>(SoftwareLanguageType::TW));
+				webManager->ChangeSelectCharacterHtmlLanguage(static_cast<int>(SoftwareLanguageType::TW));
 			}
 		}
 
@@ -479,15 +481,17 @@ namespace UmaAssistant
 	{
 		CheckBox^ checkbox = dynamic_cast<CheckBox^>(sender);
 
+		DiscordManager* discordManager = DiscordManager::GetInstance();
+
 		if (checkbox->Checked)
 		{
 			global::config->DiscordRPC = true;
+			discordManager->UpdateRPC();
 		}
 		else
 		{
 			global::config->DiscordRPC = false;
-
-			DiscordManager::GetInstance()->Shutdown();
+			discordManager->Shutdown();
 		}
 
 		global::config->WriteToJson();

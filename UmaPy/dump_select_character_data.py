@@ -1,9 +1,7 @@
 import os
 import re
 import time
-import json
 import util
-import utility
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import urllib.request
@@ -11,17 +9,17 @@ import urllib.request
 
 driver = webdriver.Chrome();
 
-# 獲取腳本所在的路徑
-script_dir = os.path.dirname(os.path.abspath(__file__));
-# 設置當前的路徑為腳本所在的路徑
-os.chdir(script_dir);
-save_folder = r"../UmaMisc/Image/Character"
+# # 獲取腳本所在的路徑
+# script_dir = os.path.dirname(os.path.abspath(__file__));
+# # 設置當前的路徑為腳本所在的路徑
+# os.chdir(script_dir);
+save_char_icon_path = r"../UmaMisc/Image/Character"
 
 
 select_character_list = [];
 
 """
-select_character_list = {
+select_character_list = [
     {
         "jp_event_owner": "小笠帽",
         "tw_event_owner": "オグリキャップ（スタービートライト）",
@@ -32,7 +30,7 @@ select_character_list = {
         "tw_event_owner": "オグリキャップ（スタービートライト）",
         "icon": "i_5.png"
     }
-}
+]
 """
 
 def get_char_name():
@@ -76,49 +74,51 @@ def open_char_url(element):
 def dump_char_data(dump_icon):
     driver.get("https://gamewith.jp/uma-musume/article/show/253241");
     time.sleep(6);
-    img_list = driver.find_elements(By.TAG_NAME, "img");
+
+    umamusume_ikusei_ichiran = driver.find_element(By.CLASS_NAME, "umamusume-ikusei-ichiran");
+    img_list = umamusume_ikusei_ichiran.find_elements(By.XPATH, ".//img");
+
+    icon_number_pattern = r"https://img.gamewith.jp/article_tools/uma-musume/gacha/i_([0-9]+).png"
 
     for img in img_list:
-        # https://img.gamewith.jp/article_tools/uma-musume/gacha/i_48.png
-        pattern = r"https://img.gamewith.jp/article_tools/uma-musume/gacha/i_([0-9]+).png"
-
-        img_url = img.get_attribute("data-original");
-
         try:
-            matched_string = re.match(pattern, img_url).group(1)
+            img_url = img.get_attribute("data-original"); # WTF;
+            matched_icon_number = re.match(icon_number_pattern, img_url).group(1)
 
             ##### 下載圖片 #####
+
+            print(f"matched_icon_number: {matched_icon_number}");
+
             if (dump_icon):
-                print(f"matched_string: {matched_string}");
-                save_path = os.path.join(save_folder, f"i_{matched_string}.png");
+                save_path = os.path.join(save_char_icon_path, f"i_{matched_icon_number}.png");
                 urllib.request.urlretrieve(img_url, save_path);
 
-            # json
-            tmp_dict = {};
+            char_data_dict = {};
 
             open_char_url(img);
 
-            utility.switch_to_new_tab(driver);
-
+            util.switch_tab(driver, util.Tab.NEWEST);
+            
             char_name = get_char_name();
-
             char_name = util.sub(char_name, "水着", "");
 
+            print("char_name: ", char_name);
+
             char_another_name = get_char_another_name();
+
+            print("char_another_name: ", char_name);
         
-            tmp_dict["icon"] = f"i_{matched_string}.png";
-            tmp_dict["jp_event_owner"] = f"{char_name}（{char_another_name}）";
-            tmp_dict["tw_event_owner"] = None;
+            char_data_dict["icon"] = f"i_{matched_icon_number}.png";
+            char_data_dict["jp_event_owner"] = f"{char_name}（{char_another_name}）";
+            char_data_dict["tw_event_owner"] = None;
 
-            select_character_list.append(tmp_dict);
+            select_character_list.append(char_data_dict);
 
-            json_string = json.dumps(select_character_list, indent=2, ensure_ascii=False)
-            utility.write_json(r"../UmaData/select_character_data.json", json_string);
+            util.write_json("../UmaData/select_character_data.json", select_character_list);
 
             driver.close();
 
-            utility.return_to_first_window(driver);
-
+            util.switch_tab(driver, util.Tab.FIRST);
         except:
             pass;
 

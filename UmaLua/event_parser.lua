@@ -260,8 +260,8 @@ function parser.getSkillData(html, class)
     }
 
     -- 獲取 skill_html
-    local pattern = "<([%w]+)[%s+]class=\"(" .. class .. ")\"(.-)</body>";
-    local tag, class, skill_html = string.match(html, pattern);
+    local body_pattern = "<body>(.-)</body>";
+    local skill_html = string.match(html, body_pattern);
 
     local skill_pt = string.match(skill_html, "<th>必要Pt.-<td>(%d+)</td>") or json.null;
 

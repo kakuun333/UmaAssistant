@@ -104,11 +104,11 @@ namespace UmaAssistant
 		switch (global::config->GameServer)
 		{
 		case static_cast<int>(GameServerType::JP):
-			webManager->ChangeSkillGameServer(static_cast<int>(GameServerType::JP));
+			webManager->SetGameServer(static_cast<int>(GameServerType::JP));
 			break;
 
 		case static_cast<int>(GameServerType::TW):
-			webManager->ChangeSkillGameServer(static_cast<int>(GameServerType::TW));
+			webManager->SetGameServer(static_cast<int>(GameServerType::TW));
 			break;
 		}
 
@@ -116,11 +116,11 @@ namespace UmaAssistant
 		switch (global::config->JpServerLang)
 		{
 		case static_cast<int>(GameServerType::JP):
-			webManager->ChangeJpServerLang(static_cast<int>(GameServerType::JP));
+			webManager->SetJpServerLanguage(static_cast<int>(GameServerType::JP));
 			break;
 
 		case static_cast<int>(GameServerType::TW):
-			webManager->ChangeJpServerLang(static_cast<int>(GameServerType::TW));
+			webManager->SetJpServerLanguage(static_cast<int>(GameServerType::TW));
 			break;
 		}
 
@@ -129,13 +129,13 @@ namespace UmaAssistant
 		switch (global::config->SoftwareLanguage)
 		{
 		case static_cast<int>(GameServerType::JP):
-			webManager->ChangeCharacterNameBrowserLang(static_cast<int>(SoftwareLanguageType::JP));
-			webManager->ChangeChoiceBrowserLang(static_cast<int>(SoftwareLanguageType::JP));
+			webManager->ChangeCharacterNameHtmlLanguage(static_cast<int>(SoftwareLanguageType::JP));
+			webManager->ChangeChoiceHtmlLanguage(static_cast<int>(SoftwareLanguageType::JP));
 			break;
 
 		case static_cast<int>(GameServerType::TW):
-			webManager->ChangeCharacterNameBrowserLang(static_cast<int>(SoftwareLanguageType::TW));
-			webManager->ChangeChoiceBrowserLang(static_cast<int>(SoftwareLanguageType::TW));
+			webManager->ChangeCharacterNameHtmlLanguage(static_cast<int>(SoftwareLanguageType::TW));
+			webManager->ChangeChoiceHtmlLanguage(static_cast<int>(SoftwareLanguageType::TW));
 			break;
 		}
 

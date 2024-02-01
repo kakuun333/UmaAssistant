@@ -1,5 +1,5 @@
 function changeCharacterName(characterName) {
-    let character_name = document.getElementById("character_name");
+    const character_name = document.getElementById("character_name");
 
     character_name.innerHTML = characterName;
 
@@ -35,35 +35,28 @@ function changeCharacterName(characterName) {
                 break;
             }
 
-            
-
-
             character_name.style.fontSize = fontSize + "px";
-            console.log(fontSize);
-
             --currentLength;
-
-            
-        
-            // console.log(`${char} 是${isFullWidth ? '全角' : '半角'}`);
         }
     }
 }
 
-function changeCharacterNameBrowserLang(softwareLang) {
-    let character_name_title = document.getElementById("character_name_title");
-
-    const JP = 0;
-    const TW = 1;
-
-    switch (softwareLang) {
-    case TW:
+function changeCharacterNameHtmlLanguage(language) {
+    const character_name_title = document.getElementById("character_name_title");
+    
+    if (language == SoftwareLanguage.JP || language == AndroidLocale.JP)
+    {
+        character_name_title.innerHTML = "育成ウマ娘";
+        character_name_title.style.fontSize = "0.88em";
+    }
+    else if (language == SoftwareLanguage.TW || language == AndroidLocale.TW)
+    {
         character_name_title.innerHTML = "目前培育的馬娘";
         character_name_title.style.fontSize = "0.9em";
-        break;
-    case JP:
-        character_name_title.innerHTML = "育成しているウマ娘";
-        character_name_title.style.fontSize = "0.88em";
-        break;
+    }
+    else if (language == SoftwareLanguage.EN || language == AndroidLocale.EN)
+    {
+        character_name_title.innerHTML = "Training Umamusume";
+        character_name_title.style.fontSize = "0.7em";
     }
 }

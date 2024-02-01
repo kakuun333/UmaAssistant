@@ -10,29 +10,29 @@ from umaglobal import *
 ###############################################################################################
 
 event_data_jp = util.read_json("../UmaData/event_data_jp.json");
-skill_data_jp = util.read_json(r"../UmaData/skill_data_jp.json");
-enhance_skill_data_jp = util.read_json(r"../UmaData/enhance_skill_data_jp.json");
+skill_data_jp = util.read_json("../UmaData/skill_data_jp.json");
+enhance_skill_data_jp = util.read_json("../UmaData/enhance_skill_data_jp.json");
 
 # select_character_data
-select_character_data = util.read_json(r"../UmaData/select_character_data.json");
+select_character_data = util.read_json("../UmaData/select_character_data.json");
 
 ############### convert_data ###############
 # translation_data
-translation_data = util.read_json(r"../UmaData/convert_data/translation_data.json");
+translation_data = util.read_json("../UmaData/convert_data/translation_data.json");
 
 # missed_data
-missed_data = util.read_json(r"../UmaData/convert_data/missed_data.json");
+missed_data = util.read_json("../UmaData/convert_data/missed_data.json");
 
-char_cvt_data = util.read_json(r"../UmaData/convert_data/event_data_jp_cvt_tw_char.json");
-sapoka_cvt_data = util.read_json(r"../UmaData/convert_data/event_data_jp_cvt_tw_card.json");
-scenario_cvt_data = util.read_json(r"../UmaData/convert_data/event_data_jp_cvt_tw_scenario.json");
-skill_cvt_data = util.read_json(r"../UmaData/convert_data/skill_data_jp_cvt_tw.json");
+char_cvt_data = util.read_json("../UmaData/convert_data/event_data_jp_cvt_tw_char.json");
+sapoka_cvt_data = util.read_json("../UmaData/convert_data/event_data_jp_cvt_tw_card.json");
+scenario_cvt_data = util.read_json("../UmaData/convert_data/event_data_jp_cvt_tw_scenario.json");
+skill_cvt_data = util.read_json("../UmaData/convert_data/skill_data_jp_cvt_tw.json");
 
 # process_choice_effect_data
 process_choice_effect_data = util.read_json("../UmaData/convert_data/process_choice_effect_data.json");
 
 # fix_choice_effect_data
-fix_choice_effect_data = util.read_json(r"../UmaData/convert_data/fix_choice_effect_data.json");
+fix_choice_effect_data = util.read_json("../UmaData/convert_data/fix_choice_effect_data.json");
 
 ###############################################################################################
 

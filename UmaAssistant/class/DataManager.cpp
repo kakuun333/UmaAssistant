@@ -26,15 +26,7 @@ bool DataManager::SetCurrentCharacterInfoDict(std::string event_owner)
 	switch (global::config->GameServer)
 	{
 	case static_cast<int>(GameServerType::JP):
-		switch (global::config->JpServerLang)
-		{
-		case static_cast<int>(JpServerLangType::JP):
-			event_data_json = event_data_jp_json;
-			break;
-		case static_cast<int>(JpServerLangType::TW):
-			event_data_json = event_data_jp_trans_tw_json;
-			break;
-		}
+		event_data_json = event_data_jp_json;
 		break;
 	case static_cast<int>(GameServerType::TW):
 		event_data_json = event_data_tw_json;
@@ -88,15 +80,7 @@ bool DataManager::TryGetCurrentCharacterByList(std::deque<std::string> scanned_t
 	switch (global::config->GameServer)
 	{
 	case static_cast<int>(GameServerType::JP):
-		switch (global::config->JpServerLang)
-		{
-		case static_cast<int>(JpServerLangType::JP):
-			event_data_json = event_data_jp_json;
-			break;
-		case static_cast<int>(JpServerLangType::TW):
-			event_data_json = event_data_jp_trans_tw_json;
-			break;
-		}
+		event_data_json = event_data_jp_json;
 		break;
 	case static_cast<int>(GameServerType::TW):
 		event_data_json = event_data_tw_json;
@@ -121,16 +105,6 @@ bool DataManager::TryGetCurrentCharacterByList(std::deque<std::string> scanned_t
 			for (const auto& scanned_text : scanned_text_list)
 			{
 				float similarity = util::GetCharacterNameSimilarity(scanned_text, event_owner);
-
-				//switch (global::config->GameServer)
-				//{
-				//case static_cast<int>(GameServerType::JP):
-				//	if (utility::JP_CHAR_SIMILAR_METRIC > similarity) continue;
-				//	break;
-				//case static_cast<int>(GameServerType::TW):
-				//	if (utility::SIMILAR_METRIC > similarity) continue;
-				//	break;
-				//}
 
 				/*
 				為什麼 similarity == 100 ？？？？？？......

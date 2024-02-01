@@ -1,10 +1,12 @@
-#include "../stdafx.h"
+﻿#include "../stdafx.h"
 
 WebManager* WebManager::_instance = nullptr;
 
-void WebManager::CreateChoice(System::String^ title, System::String^ effect)
+
+// ========== СhoiceWebBrowser ========== //
+void WebManager::CreateChoice(System::String^ choice_name, System::String^ choice_effect)
 {
-	array<Object^>^ param = gcnew array<Object^> { title, effect };
+	array<Object^>^ param = gcnew array<Object^> { choice_name, choice_effect };
 	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "createChoice", param);
 }
 
@@ -13,10 +15,10 @@ void WebManager::ChangeEventOwner(System::String^ text)
 	array<Object^>^ param = gcnew array<Object^> { text };
 	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "changeEventOwner", param);
 }
-void WebManager::ChangeEventTitle(System::String^ text)
+void WebManager::ChangeEventName(System::String^ text)
 {
 	array<Object^>^ param = gcnew array<Object^> { text };
-	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "changeEventTitle", param);
+	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "changeEventName", param);
 }
 
 void WebManager::CleanChoiceTable()
@@ -25,10 +27,10 @@ void WebManager::CleanChoiceTable()
 	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "cleanChoiceTable", param);
 }
 
-void WebManager::ChangeCharacterName(System::String^ characterName)
+void WebManager::ChangeChoiceHtmlLanguage(int softwareLangType)
 {
-	array<Object^>^ param = gcnew array<Object^> { characterName };
-	FormController::Instance->InvokeScript(global::form::umaForm->characterNameWebBrowser, "changeCharacterName", param);
+	array<Object^>^ param = gcnew array<Object^> { softwareLangType };
+	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "changeChoiceHtmlLanguage", param);
 }
 
 void WebManager::UpdateSkillContent()
@@ -37,45 +39,41 @@ void WebManager::UpdateSkillContent()
 	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "updateSkillContent", param);
 }
 
-void WebManager::HiddenSkillContent()
+void WebManager::HideSkillContent()
 {
 	array<Object^>^ param = gcnew array<Object^> { };
-	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "hiddenSkillHintContent", param);
+	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "hideSkillHintContent", param);
 }
 
-void WebManager::ChangeSkillGameServer(int gameServer)
+void WebManager::SetGameServer(int gameServer)
 {
 	array<Object^>^ param = gcnew array<Object^> { gameServer };
-	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "changeSkillGameServer", param);
+	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "setGameServer", param);
 }
 
-void WebManager::ChangeJpServerLang(int jpServerLangType)
+void WebManager::SetJpServerLanguage(int jpServerLangType)
 {
 	array<Object^>^ param = gcnew array<Object^> { jpServerLangType };
-	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "changeJpServerLang", param);
+	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "setJpServerLanguage", param);
 }
 
-void WebManager::ChangeCharacterNameBrowserLang(int softwareLangType)
+// ========== CharacterNameWebBrowser ========== //
+void WebManager::ChangeCharacterName(System::String^ characterName)
+{
+	array<Object^>^ param = gcnew array<Object^> { characterName };
+	FormController::Instance->InvokeScript(global::form::umaForm->characterNameWebBrowser, "changeCharacterName", param);
+}
+
+void WebManager::ChangeCharacterNameHtmlLanguage(int softwareLangType)
 {
 	array<Object^>^ param = gcnew array<Object^> { softwareLangType };
-	FormController::Instance->InvokeScript(global::form::umaForm->characterNameWebBrowser, "changeCharacterNameBrowserLang", param);
+	FormController::Instance->InvokeScript(global::form::umaForm->characterNameWebBrowser, "changeCharacterNameHtmlLanguage", param);
 }
 
-void WebManager::ChangeChoiceBrowserLang(int softwareLangType)
+
+// ========== select_character_webBrowser ========== //
+void WebManager::ChangeSelectCharacterHtmlLanguage(int softwareLangType)
 {
 	array<Object^>^ param = gcnew array<Object^> { softwareLangType };
-	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "changeChoiceBrowserLang", param);
-}
-
-//void WebManager::ChangeShowEnhanceSkillData(bool boolean)
-//{
-//	array<Object^>^ param = gcnew array<Object^> { boolean };
-//	FormController::Instance->InvokeScript(global::form::umaForm->choiceWebBrowser, "changeShowEnhanceSkill", param);
-//}
-
-void WebManager::test()
-{
-	Object^ result = global::form::umaForm->choiceWebBrowser->Document->InvokeScript("test");
-
-	std::cout << util::systemStr2std(result->ToString()) << std::endl;
+	FormController::Instance->InvokeScript(global::form::umaForm->select_character_webBrowser, "changeSelectCharacterHtmlLanguage", param);
 }

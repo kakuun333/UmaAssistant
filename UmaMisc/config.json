@@ -5,7 +5,7 @@
     "VK": 6,
     "WinFormButton": 16777216
   },
-  "DebugMode": false,
+  "DebugMode": true,
   "DiscordRPC": false,
   "GameServer": 0,
   "GameWindow": 0,
@@ -23,13 +23,13 @@
       "Y": 0
     }
   },
-  "GameWindowName": "033417.png ‎- 相片",
-  "JpServerLang": 0,
+  "GameWindowName": "185353.png ‎- 相片",
+  "JpServerLang": 1,
   "LocalServer": {
     "Port": "5854"
   },
   "OutputLogFile": false,
-  "PreviousCurrentCharacterName": "アグネスタキオン（Lunatic Lab）",
+  "PreviousCurrentCharacterName": "マンハッタンカフェ（柳緑小夜）",
   "ScanInterval": 100,
   "SoftwareLanguage": 1
 }

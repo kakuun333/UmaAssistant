@@ -86,9 +86,9 @@ void Scanner::_UpdateSapokaOrCharacterChoice(WebManager* webManager, UmaEventDat
 	webManager->ChangeEventOwner(sys_event_owner);
 
 	System::String^ sys_event_title = util::stdStr2system(sapokaUmaEventData.Get<std::string>(UmaEventDataType::EVENT_TITLE));
-	webManager->ChangeEventTitle(sys_event_title);
+	webManager->ChangeEventName(sys_event_title);
 
-	webManager->HiddenSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
+	webManager->HideSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
 	webManager->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
 }
 
@@ -113,9 +113,9 @@ void Scanner::_UpdateScenarioChoice(WebManager* webManager, ScenarioEventData sc
 		break;
 	}
 
-	webManager->ChangeEventTitle(sys_event_title);
+	webManager->ChangeEventName(sys_event_title);
 
-	webManager->HiddenSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
+	webManager->HideSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
 	webManager->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
 }
 
