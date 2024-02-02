@@ -402,8 +402,8 @@ def dump_scenario_event_data_jp():
 
 ##### single_dump_mode #####
 ## character ##
-# dump_character_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/435242");
-# dump_character_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/435243");
+dump_character_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/396371");
+dump_character_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/257392");
 
 ## sapoka ##
 # dump_sapoka_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/435246");

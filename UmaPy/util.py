@@ -87,6 +87,7 @@ def process_choice_effect(choice_effect: str, process_choice_effect_data: dict, 
     choice_effect = sub(choice_effect, "＋", "+");
     choice_effect = sub(choice_effect, "－", "-");
     choice_effect = sub(choice_effect, "―", "-");
+    choice_effect = sub(choice_effect, "−", "-");
     
     ### 替換半形冒號 ###
     choice_effect = sub(choice_effect, ":", "：");
