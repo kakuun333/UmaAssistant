@@ -147,7 +147,7 @@ def dump_larc_event():
 
 
 ########## 倒出支援卡事件資料 ##########
-def dump_sapoka_event_data_jp(single_dump_mode: bool = False, url: str = ""):
+def dump_sapoka_event_data_jp(single_dump_mode: bool = False, url: str = "", skip_count:int = 0):
 
     def dump_event_data():
         
@@ -203,12 +203,13 @@ def dump_sapoka_event_data_jp(single_dump_mode: bool = False, url: str = ""):
         tr_list = tbody.find_elements(By.TAG_NAME, "tr");
 
         MAX_PROCRESS = len(tr_list);
-        current_procress = 0;
+        current_process = 0;
 
         for tr in tr_list:
-            current_procress += 1;
+            current_process += 1;
+            if current_process < skip_count: continue;
             if tr.get_attribute("class") == "":
-                print(f"進度: {int((current_procress / MAX_PROCRESS) * 100)}% [{current_procress} / {MAX_PROCRESS}]")
+                print(f"進度: {int((current_process / MAX_PROCRESS) * 100)}% [{current_process} / {MAX_PROCRESS}]")
                 continue;
 
             # 尋找網址並在新分頁開啟
@@ -226,7 +227,7 @@ def dump_sapoka_event_data_jp(single_dump_mode: bool = False, url: str = ""):
 
             util.switch_tab(driver, util.Tab.FIRST);
 
-            print(f"進度: {int((current_procress / MAX_PROCRESS) * 100)}% [{current_procress} / {MAX_PROCRESS}]")
+            print(f"進度: {int((current_process / MAX_PROCRESS) * 100)}% [{current_process} / {MAX_PROCRESS}]")
 
 
 ########## 倒出角色事件資料 ##########
@@ -288,10 +289,10 @@ def dump_character_event_data_jp(single_dump_mode: bool = False, url: str = ""):
         tr_list = tbody.find_elements(By.TAG_NAME, "tr");
 
         MAX_PROCRESS = len(tr_list);
-        current_procress = 0;
+        current_process = 0;
 
         for tr in tr_list:
-            current_procress += 1;
+            current_process += 1;
             # if current_procress < skip_count: continue;
 
             char_url = tr.find_element(By.XPATH, ".//a").get_attribute("href");
@@ -309,7 +310,7 @@ def dump_character_event_data_jp(single_dump_mode: bool = False, url: str = ""):
 
             util.switch_tab(driver, util.Tab.FIRST);
 
-            print(f"進度: {int((current_procress / MAX_PROCRESS) * 100)}% [{current_procress} / {MAX_PROCRESS}]")
+            print(f"進度: {int((current_process / MAX_PROCRESS) * 100)}% [{current_process} / {MAX_PROCRESS}]")
 
 
 ########## 倒出劇本事件資料 ##########
@@ -396,14 +397,14 @@ def dump_scenario_event_data_jp():
 ############################################################
 
 # dump_character_event_data_jp();
-# dump_sapoka_event_data_jp();
-# dump_scenario_event_data_jp();
+# dump_sapoka_event_data_jp(False, "", 223);
+dump_scenario_event_data_jp();
 
 
 ##### single_dump_mode #####
 ## character ##
-dump_character_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/396371");
-dump_character_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/257392");
+# dump_character_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/396371");
+# dump_character_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/257392");
 
 ## sapoka ##
 # dump_sapoka_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/435246");
