@@ -377,7 +377,7 @@ namespace UmaAssistant
 			switch (global::config->SoftwareLanguage)
 			{
 			case static_cast<int>(SoftwareLanguageType::JP):
-				this->scan_state_label->Text = u8"稼働狀態：稼働中";
+				this->scan_state_label->Text = u8"起動状態：起動中";
 				this->scan_btn->Text = u8"ストップ";
 				break;
 			case static_cast<int>(SoftwareLanguageType::TW):
@@ -394,11 +394,11 @@ namespace UmaAssistant
 			switch (global::config->SoftwareLanguage)
 			{
 			case static_cast<int>(SoftwareLanguageType::JP):
-				this->scan_state_label->Text = u8"稼働狀態：停止";
+				this->scan_state_label->Text = u8"起動状態：停止中";
 				this->scan_btn->Text = u8"スキャン";
 				break;
 			case static_cast<int>(SoftwareLanguageType::TW):
-				this->scan_state_label->Text = u8"運作狀態：停止";
+				this->scan_state_label->Text = u8"運作狀態：停止中";
 				this->scan_btn->Text = u8"啓動";
 				break;
 			}

@@ -19,7 +19,7 @@ public:
 		return _instance;
 	}
 
-	void CreateChoice(System::String^ title, System::String^ effect);
+	void CreateChoice(System::String^ choice_name, System::String^ choice_effect);
 	void ChangeEventOwner(System::String^ text);
 	void ChangeEventName(System::String^ text);
 	void CleanChoiceTable();
