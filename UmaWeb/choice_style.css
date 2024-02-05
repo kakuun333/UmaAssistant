@@ -192,6 +192,14 @@ th {
 	color: rgb(197, 160, 135);
 }
 
+.strength {
+    color: rgb(108, 223, 255);
+}
+
+.max_strength {
+    color: rgb(196, 243, 255);
+}
+
 
 
 /* .skill_hint:hover {
