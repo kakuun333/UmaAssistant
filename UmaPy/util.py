@@ -92,6 +92,9 @@ def process_choice_effect(choice_effect: str, process_choice_effect_data: dict, 
     ### 替換半形冒號 ###
     choice_effect = sub(choice_effect, ":", "：");
 
+    ### 替換全形波浪符成半形 ###
+    choice_effect = sub(choice_effect, "～", "~");
+
     ### 替換圈圈符號 ###
     choice_effect = sub(choice_effect, "○", "◯");
     choice_effect = sub(choice_effect, "〇", "◯");
