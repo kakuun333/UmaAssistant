@@ -165,7 +165,8 @@ namespace UmaAssistant
 	{
 		WebBrowser^ webBrowser = dynamic_cast<WebBrowser^>(sender);
 
-
+		// 切換 select_character.html 語言
+		WebManager::GetInstance()->ChangeSelectCharacterHtmlLanguage(global::config->SoftwareLanguage);
 	}
 
 	void UmaForm::Character_IMG_Clicked(System::Object^ sender, System::Windows::Forms::HtmlElementEventArgs^ e)
@@ -363,47 +364,10 @@ namespace UmaAssistant
 			}
 
 			scanner->Start();
-
-			switch (global::config->GameServer)
-			{
-			case static_cast<int>(GameServerType::JP):
-				umalog->print("[Scanner] GameServer: JP");
-				break;
-			case static_cast<int>(GameServerType::TW):
-				umalog->print("[Scanner] GameServer: TW");
-				break;
-			}
-			
-			switch (global::config->SoftwareLanguage)
-			{
-			case static_cast<int>(SoftwareLanguageType::JP):
-				this->scan_state_label->Text = u8"起動状態：起動中";
-				this->scan_btn->Text = u8"ストップ";
-				break;
-			case static_cast<int>(SoftwareLanguageType::TW):
-				this->scan_state_label->Text = u8"運作狀態：運作中";
-				this->scan_btn->Text = u8"停止";
-				break;
-			}
-			util::formctrl::ForeColor(this->scan_state_label, 0, 255, 0);
 		}
 		else
 		{
 			scanner->Stop();
-
-			switch (global::config->SoftwareLanguage)
-			{
-			case static_cast<int>(SoftwareLanguageType::JP):
-				this->scan_state_label->Text = u8"起動状態：停止中";
-				this->scan_btn->Text = u8"スキャン";
-				break;
-			case static_cast<int>(SoftwareLanguageType::TW):
-				this->scan_state_label->Text = u8"運作狀態：停止中";
-				this->scan_btn->Text = u8"啓動";
-				break;
-			}
-
-			util::formctrl::ForeColor(this->scan_state_label, 255, 0, 0);
 		}
 	}
 

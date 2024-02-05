@@ -74,7 +74,9 @@ namespace UmaAssistant {
 	private: System::Windows::Forms::Button^ close_form_btn;
 	private: System::Windows::Forms::Button^ minimize_btn;
 	private: System::Windows::Forms::Button^ settings_btn;
-	private: System::Windows::Forms::Button^ scan_btn;
+	public: System::Windows::Forms::Button^ scan_btn;
+	private:
+
 	public: System::Windows::Forms::Button^ screenshot_preview_btn;
 
 

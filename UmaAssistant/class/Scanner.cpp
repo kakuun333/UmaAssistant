@@ -474,6 +474,33 @@ void Scanner::Start()
 	std::thread scanThread(&Scanner::_Scan, this);
 
 	scanThread.detach();
+
+
+#pragma region 更新 UI
+	UmaLog* umalog = UmaLog::GetInstance();
+	switch (global::config->GameServer)
+	{
+	case static_cast<int>(GameServerType::JP):
+		umalog->print("[Scanner] GameServer: JP");
+		break;
+	case static_cast<int>(GameServerType::TW):
+		umalog->print("[Scanner] GameServer: TW");
+		break;
+	}
+
+	switch (global::config->SoftwareLanguage)
+	{
+	case static_cast<int>(SoftwareLanguageType::JP):
+		util::formctrl::Text(global::form::umaForm->scan_state_label, u8"起動状態：起動中");
+		util::formctrl::Text(global::form::umaForm->scan_btn, u8"ストップ");
+		break;
+	case static_cast<int>(SoftwareLanguageType::TW):
+		util::formctrl::Text(global::form::umaForm->scan_state_label, u8"運作狀態：運作中");
+		util::formctrl::Text(global::form::umaForm->scan_btn, u8"停止");
+		break;
+	}
+	util::formctrl::ForeColor(global::form::umaForm->scan_state_label, 0, 255, 0);
+#pragma endregion
 }
 
 void Scanner::Stop()
@@ -488,6 +515,22 @@ void Scanner::Stop()
 				{
 					global::umaswitch::Scanning = false;
 					stopped = true;
+
+#pragma region 更新 UI
+					switch (global::config->SoftwareLanguage)
+					{
+					case static_cast<int>(SoftwareLanguageType::JP):						
+						util::formctrl::Text(global::form::umaForm->scan_state_label, u8"起動状態：停止");
+						util::formctrl::Text(global::form::umaForm->scan_btn, u8"スキャン");
+						break;
+					case static_cast<int>(SoftwareLanguageType::TW):
+						util::formctrl::Text(global::form::umaForm->scan_state_label, u8"運作狀態：停止");
+						util::formctrl::Text(global::form::umaForm->scan_btn, u8"啓動");
+						break;
+					}
+
+					util::formctrl::ForeColor(global::form::umaForm->scan_state_label, 255, 0, 0);
+#pragma endregion
 				}
 
 				std::this_thread::sleep_for(std::chrono::milliseconds(300));
