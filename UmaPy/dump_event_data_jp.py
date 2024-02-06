@@ -398,7 +398,7 @@ def dump_scenario_event_data_jp():
 
 # dump_character_event_data_jp();
 # dump_sapoka_event_data_jp();
-# dump_sapoka_event_data_jp(False, "", 220);
+# dump_sapoka_event_data_jp(False, "", 219);
 dump_scenario_event_data_jp();
 
 

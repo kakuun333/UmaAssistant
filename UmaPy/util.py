@@ -125,11 +125,12 @@ def process_choice_effect(choice_effect: str, process_choice_effect_data: dict, 
     ### 加工 技能點 ###
     choice_effect = re.sub(r'スキルPt|スキルpt', rf'<img src="../UmaMisc/Image/Status/skill_point.png"><span class="status_skill_point">スキルPt</span>', choice_effect);
     
+    ### 加工 体力最大値 ###
+    choice_effect = re.sub(r'体力(の)?最大値', r'<img src="../UmaMisc/Image/Status/max_strength.png"><span class="max_strength">体力最大値</span>', choice_effect);
+    
     ### 加工 体力 ###
     choice_effect = re.sub(r'体力(?!最大値)', rf'<img src="../UmaMisc/Image/Status/strength.png"><span class="strength">体力</span>', choice_effect);
 
-    ### 加工 体力最大値 ###
-    choice_effect = re.sub(r'体力(の)?最大値', r'<img src="../UmaMisc/Image/Status/max_strength.png"><span class="max_strength">体力最大値</span>', choice_effect);
 
     ### 修正錯誤的技能名稱 ###
     for wrong_word, correct_word in process_choice_effect_data["wrong_word"]["skill_name"].items():
