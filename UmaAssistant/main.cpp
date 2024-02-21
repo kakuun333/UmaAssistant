@@ -39,7 +39,7 @@ using namespace System::Reflection;
 [STAThreadAttribute]
 int main(array<String^>^ args)
 {
-#pragma region 初始化 CSharp Runtime 路徑
+#pragma region 初始化 CSharpRuntime 路徑
 	AppDomain^ currentDomain = AppDomain::CurrentDomain;
 	currentDomain->AppendPrivatePath("CSharpRuntime");
 #pragma endregion
@@ -70,19 +70,19 @@ int main(array<String^>^ args)
 #pragma region 啟動本地伺服器
 	System::String^ port = util::stdStr2system(Config::GetInstance()->LocalServer["Port"]);
 	LocalServer::Instance->Start(port);
-
-	Application::EnableVisualStyles();
-	Application::SetCompatibleTextRenderingDefault(false);
 #pragma endregion
 #pragma region 初始化 Form
-	UmaAssistant::UmaForm^ umaForm = gcnew UmaAssistant::UmaForm();
-	UmaAssistant::PreviewForm^ previewForm = gcnew UmaAssistant::PreviewForm();
-	UmaAssistant::SettingsForm^ settingsForm = gcnew UmaAssistant::SettingsForm();
+	Application::EnableVisualStyles();
+	Application::SetCompatibleTextRenderingDefault(false);
 
-	// FormManager
+	UmaAssistant::UmaForm^ umaForm = gcnew UmaAssistant::UmaForm();
 	global::form::umaForm = umaForm;
-	global::form::previewForm = previewForm;
+
+	UmaAssistant::SettingsForm^ settingsForm = gcnew UmaAssistant::SettingsForm();
 	global::form::settingsForm = settingsForm;
+
+	UmaAssistant::PreviewForm^ previewForm = gcnew UmaAssistant::PreviewForm();
+	global::form::previewForm = previewForm;
 #pragma endregion
 #pragma region 初始化 CheckBox
 	/*
@@ -93,14 +93,10 @@ int main(array<String^>^ args)
 	switch (Config::GetInstance()->DebugMode)
 	{
 	case true:
-		global::form::settingsForm->debugMode_checkBox->Checked = Config::GetInstance()->DebugMode;
-		global::form::settingsForm->update_event_data_jp_btn1->Visible = Config::GetInstance()->DebugMode;
-		global::form::settingsForm->update_skill_data_jp_btn1->Visible = Config::GetInstance()->DebugMode;
+		global::form::settingsForm->debugMode_checkBox->Checked = true;
 		break;
 	case false:
-		global::form::settingsForm->debugMode_checkBox->Checked = Config::GetInstance()->DebugMode;
-		global::form::settingsForm->update_event_data_jp_btn1->Visible = Config::GetInstance()->DebugMode;
-		global::form::settingsForm->update_skill_data_jp_btn1->Visible = Config::GetInstance()->DebugMode;
+		global::form::settingsForm->debugMode_checkBox->Checked = true;
 		break;
 	}
 
@@ -108,10 +104,10 @@ int main(array<String^>^ args)
 	switch (Config::GetInstance()->AlwaysOnTop)
 	{
 	case true:
-		global::form::settingsForm->alwaysOnTop_checkBox->Checked = Config::GetInstance()->AlwaysOnTop;
+		global::form::settingsForm->alwaysOnTop_checkBox->Checked = true;
 		break;
 	case false:
-		global::form::settingsForm->alwaysOnTop_checkBox->Checked = Config::GetInstance()->AlwaysOnTop;
+		global::form::settingsForm->alwaysOnTop_checkBox->Checked = false;
 		break;
 	}
 
@@ -119,10 +115,10 @@ int main(array<String^>^ args)
 	switch (Config::GetInstance()->OutputLogFile)
 	{
 	case true:
-		global::form::settingsForm->outputLogFile_checkBox->Checked = Config::GetInstance()->OutputLogFile;
+		global::form::settingsForm->outputLogFile_checkBox->Checked = true;
 		break;
 	case false:
-		global::form::settingsForm->outputLogFile_checkBox->Checked = Config::GetInstance()->OutputLogFile;
+		global::form::settingsForm->outputLogFile_checkBox->Checked = false;
 		break;
 	}
 
@@ -130,10 +126,10 @@ int main(array<String^>^ args)
 	switch (Config::GetInstance()->DiscordRPC)
 	{
 	case true:
-		global::form::settingsForm->discordRpc_checkBox->Checked = Config::GetInstance()->DiscordRPC;
+		global::form::settingsForm->discordRpc_checkBox->Checked = true;
 		break;
 	case false:
-		global::form::settingsForm->discordRpc_checkBox->Checked = Config::GetInstance()->DiscordRPC;
+		global::form::settingsForm->discordRpc_checkBox->Checked = false;
 		break;
 	}
 #pragma endregion
@@ -150,7 +146,6 @@ int main(array<String^>^ args)
 	case static_cast<int>(GameServerType::JP):
 		global::form::settingsForm->ChangeSoftwareLanguage(SoftwareLanguageType::JP);
 		break;
-
 	case static_cast<int>(GameServerType::TW):
 		global::form::settingsForm->ChangeSoftwareLanguage(SoftwareLanguageType::TW);
 		break;

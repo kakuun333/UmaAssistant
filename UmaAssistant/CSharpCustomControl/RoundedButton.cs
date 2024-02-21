@@ -17,7 +17,7 @@ namespace UmaCustomControl
         #endregion
 
         #region Properties
-        [Browsable(true)] // 讓 Radius 可在屬性視窗中顯示
+        [Browsable(true)] // 讓 Radius 顯示在屬性視窗上
         public int Radius { get { return _radius; } set { _radius = value; } }
         #endregion
 

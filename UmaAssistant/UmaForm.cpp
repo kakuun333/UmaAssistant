@@ -22,10 +22,11 @@ namespace UmaAssistant
 	{
 		WebView2^ webview = dynamic_cast<WebView2^>(sender);
 		
+		DataManager* dataManager = DataManager::GetInstance();
+
 		if (webview->Name == choiceWebView2->Name)
 		{
 			// 初始化 skill_displayer.js 中的 let GameServer 變數
-			DataManager* dataManager = DataManager::GetInstance();
 
 			// GameServer
 			switch (Config::GetInstance()->GameServer)
@@ -65,8 +66,10 @@ namespace UmaAssistant
 				WebViewManager::Instance->ChangeChoiceHtmlLanguage(static_cast<int>(SoftwareLanguageType::TW));
 				break;
 			}
-
-#pragma region 初始化上次選擇的角色
+		}
+		else if (webview->Name == characterNameWebView2->Name)
+		{
+			#pragma region 初始化上次選擇的角色
 			if (dataManager->SetCurrentCharacterInfoDict(Config::GetInstance()->PreviousCurrentCharacterName))
 			{
 				std::cout << u8"成功初始化上次培育的角色！ PreviousCurrentCharacterName: " << Config::GetInstance()->PreviousCurrentCharacterName << std::endl;
@@ -85,7 +88,7 @@ namespace UmaAssistant
 			{
 				std::cout << u8"初始化上次培育的角色失敗！ PreviousCurrentCharacterName: " << Config::GetInstance()->PreviousCurrentCharacterName << std::endl;
 			}
-#pragma endregion
+			#pragma endregion
 		}
 		else if (webview->Name == selectCharacterWebView2->Name)
 		{
@@ -114,6 +117,7 @@ namespace UmaAssistant
 
 			if (j_msg["messageName"] == "charImgClick")
 			{
+
 				std::cout << u8"收到消息:" << util::systemStr2std(message) << std::endl;
 				DataManager* dataManager = DataManager::GetInstance();
 				UmaLog* umalog = UmaLog::GetInstance();
@@ -198,6 +202,7 @@ namespace UmaAssistant
 				}
 			}
 		}
+	
 	}
 
 	System::Void UmaForm::OnCharImgClick()
@@ -206,144 +211,7 @@ namespace UmaAssistant
 	}
 #pragma endregion
 
-	UmaForm::UmaForm(void) // UmaForm 的建構函數
-	{
-		InitializeComponent();
-		//
-		//TODO:  在此加入建構函式程式碼
-		//
-
-#pragma region 初始化 WebBrowser
-		// 提取 config 資料
-		System::String^ port = util::stdStr2system(Config::GetInstance()->LocalServer["Port"]);
-		
-		// choice.html
-		choiceWebView2->WebMessageReceived += gcnew System::EventHandler<CoreWebView2WebMessageReceivedEventArgs^>(this, &UmaForm::OnWebMessageReceived);
-		choiceWebView2->NavigationCompleted += gcnew System::EventHandler<CoreWebView2NavigationCompletedEventArgs^>(this, &UmaForm::OnNavigationCompleted);
-		choiceWebView2->Source = gcnew System::Uri(System::String::Format("http://localhost:{0}/choice.html", port), System::UriKind::Absolute);
-
-		// character_name.html
-		characterNameWebView2->Source = gcnew System::Uri(System::String::Format("http://localhost:{0}/character_name.html", port), System::UriKind::Absolute);
-
-		// select_character.html
-		selectCharacterWebView2->WebMessageReceived += gcnew System::EventHandler<CoreWebView2WebMessageReceivedEventArgs^>(this, &UmaForm::OnWebMessageReceived);
-		selectCharacterWebView2->NavigationCompleted += gcnew System::EventHandler<CoreWebView2NavigationCompletedEventArgs^>(this, &UmaForm::OnNavigationCompleted);
-		selectCharacterWebView2->Source = gcnew System::Uri(System::String::Format("http://localhost:{0}/select_character.html", port), System::UriKind::Absolute);
-
-		//// choice.html
-		//choiceWebBrowser->DocumentCompleted += gcnew WebBrowserDocumentCompletedEventHandler(this, &UmaForm::OnChoiceDocumentCompleted);
-		//choiceWebBrowser->Navigate("http://localhost:" + port + "/choice.html");
-
-		//// character_name.html
-		//characterNameWebBrowser->Navigate("http://localhost:" + port + "/character_name.html");
-
-		//// select_character.html
-		//select_character_webBrowser->DocumentCompleted += gcnew WebBrowserDocumentCompletedEventHandler(this, &UmaForm::OnSelectCharacterDocumentCompleted);
-		//select_character_webBrowser->Navigate("http://localhost:" + port + "/select_character.html");
-#pragma endregion
-
-
-
-
-#pragma region 初始化 DebugMode 啟動時該顯示的按鈕
-		if (Config::GetInstance()->DebugMode == true)
-		{
-			test_btn->Visible = true;
-			screenshot_preview_btn->Visible = true;
-		}
-		else
-		{
-			test_btn->Visible = false;
-			screenshot_preview_btn->Visible = false;
-		}
-#pragma endregion
-
-	}
-
-	System::Void UmaForm::test_btn_Click(System::Object^ sender, System::EventArgs^ e)
-	{
-		DataManager* dataManager = DataManager::GetInstance();
-
-		/* UmaDataUpdater */
-		//UmaDataUpdater::GetInstance()->Update();
-		//Config::GetInstance()->WriteToJson();
-
-		std::cout << "CLICKED TEST BUTTON" << std::endl;
-	}
-
-	System::Void UmaForm::close_select_character_btn_Click(System::Object^ sender, System::EventArgs^ e)
-	{
-		Button^ button = dynamic_cast<Button^>(sender);
-
-		_openedSelectCharacter = false;
-
-		switch (Config::GetInstance()->SoftwareLanguage)
-		{
-		case static_cast<int>(SoftwareLanguageType::JP):
-			this->select_character_btn->Text = u8"キャラ選択";
-			break;
-		case static_cast<int>(SoftwareLanguageType::TW):
-			this->select_character_btn->Text = u8"選擇角色";
-			break;
-		}
-
-		this->Size = System::Drawing::Size(560, this->Size.Height);
-
-
-		this->minimize_btn->Location = System::Drawing::Point(476, 0);
-		this->close_form_btn->Location = System::Drawing::Point(521, 0);
-
-	}
-
-	System::Void UmaForm::select_character_btn_Click(System::Object^ sender, System::EventArgs^ e)
-	{
-		Button^ button = dynamic_cast<Button^>(sender);
-
-		switch (_openedSelectCharacter)
-		{
-		case true:
-			_openedSelectCharacter = false;
-
-			switch (Config::GetInstance()->SoftwareLanguage)
-			{
-			case static_cast<int>(SoftwareLanguageType::JP):
-				button->Text = u8"キャラ選択";
-				break;
-			case static_cast<int>(SoftwareLanguageType::TW):
-				button->Text = u8"選擇角色";
-				break;
-			}
-			
-
-			this->Size = System::Drawing::Size(560, this->Size.Height);
-			this->minimize_btn->Location = System::Drawing::Point(476, 0);
-			this->close_form_btn->Location = System::Drawing::Point(521, 0);
-
-			break;
-
-		case false:
-			_openedSelectCharacter = true;
-
-			switch (Config::GetInstance()->SoftwareLanguage)
-			{
-			case static_cast<int>(SoftwareLanguageType::JP):
-				button->Text = u8"折りたたむ";
-				break;
-			case static_cast<int>(SoftwareLanguageType::TW):
-				button->Text = u8"收回";
-				break;
-			}
-
-			this->Size = System::Drawing::Size(1060, this->Size.Height);
-
-			this->minimize_btn->Location = System::Drawing::Point(476, 0);
-			this->close_form_btn->Location = System::Drawing::Point(521, 0);
-
-			//this->UpdateIMGClickEvent();
-			break;
-		}
-	}
-
+#pragma region Button Click
 	System::Void UmaForm::scan_btn_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		Scanner* scanner = Scanner::GetInstance();
@@ -371,35 +239,6 @@ namespace UmaAssistant
 		global::form::settingsForm->Show();
 	}
 
-	System::Void UmaForm::screenshot_preview_btn_Click(System::Object^ sender, System::EventArgs^ e)
-	{
-		Screenshot::ShowImage();
-
-
-		//global::form::previewForm->Show();
-	}
-
-
-	System::Void UmaForm::UmaForm_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
-	{
-		draggingForm = true;
-		dragOffset.X = e->X;
-		dragOffset.Y = e->Y;
-	}
-	System::Void UmaForm::UmaForm_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
-	{
-		draggingForm = false;
-	}
-
-	System::Void UmaForm::UmaForm_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
-	{
-		if (draggingForm)
-		{
-			System::Drawing::Point currentFormPos = PointToScreen(System::Drawing::Point(e->X, e->Y));
-			this->Location = System::Drawing::Point(currentFormPos.X  - dragOffset.X, currentFormPos.Y - dragOffset.Y);
-		}
-	}
-
 	System::Void UmaForm::close_form_btn_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		this->Close();
@@ -421,5 +260,122 @@ namespace UmaAssistant
 		global::form::previewForm->window_listbox->Items->Clear();
 		GameWindowFinder::GetInstance()->EnumWindow();
 		global::form::previewForm->Show();
+	}
+
+	System::Void UmaForm::close_select_character_btn_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		Button^ button = dynamic_cast<Button^>(sender);
+
+		_openedSelectCharacter = false;
+
+		switch (Config::GetInstance()->SoftwareLanguage)
+		{
+		case static_cast<int>(SoftwareLanguageType::JP):
+			this->select_character_btn->Text = u8"キャラ選択";
+			break;
+		case static_cast<int>(SoftwareLanguageType::TW):
+			this->select_character_btn->Text = u8"選擇角色";
+			break;
+		}
+
+		this->Size = System::Drawing::Size(560, this->Size.Height);
+
+		this->minimize_btn->Location = System::Drawing::Point(476, 0);
+		this->close_form_btn->Location = System::Drawing::Point(521, 0);
+	}
+
+	System::Void UmaForm::select_character_btn_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		Button^ button = dynamic_cast<Button^>(sender);
+
+		switch (_openedSelectCharacter)
+		{
+		case true:
+			_openedSelectCharacter = false;
+
+			switch (Config::GetInstance()->SoftwareLanguage)
+			{
+			case static_cast<int>(SoftwareLanguageType::JP):
+				button->Text = u8"キャラ選択";
+				break;
+			case static_cast<int>(SoftwareLanguageType::TW):
+				button->Text = u8"選擇角色";
+				break;
+			}
+
+
+			this->Size = System::Drawing::Size(560, this->Size.Height);
+			this->minimize_btn->Location = System::Drawing::Point(476, 0);
+			this->close_form_btn->Location = System::Drawing::Point(521, 0);
+
+			break;
+
+		case false:
+			_openedSelectCharacter = true;
+
+			switch (Config::GetInstance()->SoftwareLanguage)
+			{
+			case static_cast<int>(SoftwareLanguageType::JP):
+				button->Text = u8"折りたたむ";
+				break;
+			case static_cast<int>(SoftwareLanguageType::TW):
+				button->Text = u8"收回";
+				break;
+			}
+
+			this->Size = System::Drawing::Size(1060, this->Size.Height);
+
+			this->minimize_btn->Location = System::Drawing::Point(476, 0);
+			this->close_form_btn->Location = System::Drawing::Point(521, 0);
+			break;
+		}
+	}
+#pragma endregion
+
+	UmaForm::UmaForm(void) // UmaForm 的建構函數
+	{
+		InitializeComponent();
+		//
+		//TODO:  在此加入建構函式程式碼
+		//
+
+		#pragma region 初始化 WebBrowser
+		// 提取 config 資料
+		System::String^ port = util::stdStr2system(Config::GetInstance()->LocalServer["Port"]);
+
+		// choice.html
+		choiceWebView2->WebMessageReceived += gcnew System::EventHandler<CoreWebView2WebMessageReceivedEventArgs^>(this, &UmaForm::OnWebMessageReceived);
+		choiceWebView2->NavigationCompleted += gcnew System::EventHandler<CoreWebView2NavigationCompletedEventArgs^>(this, &UmaForm::OnNavigationCompleted);
+		choiceWebView2->Source = gcnew System::Uri(System::String::Format("http://localhost:{0}/choice.html", port), System::UriKind::Absolute);
+
+		// character_name.html
+		characterNameWebView2->NavigationCompleted += gcnew System::EventHandler<CoreWebView2NavigationCompletedEventArgs^>(this, &UmaForm::OnNavigationCompleted);
+		characterNameWebView2->Source = gcnew System::Uri(System::String::Format("http://localhost:{0}/character_name.html", port), System::UriKind::Absolute);
+
+		// select_character.html
+		selectCharacterWebView2->WebMessageReceived += gcnew System::EventHandler<CoreWebView2WebMessageReceivedEventArgs^>(this, &UmaForm::OnWebMessageReceived);
+		selectCharacterWebView2->NavigationCompleted += gcnew System::EventHandler<CoreWebView2NavigationCompletedEventArgs^>(this, &UmaForm::OnNavigationCompleted);
+		selectCharacterWebView2->Source = gcnew System::Uri(System::String::Format("http://localhost:{0}/select_character.html", port), System::UriKind::Absolute);
+		#pragma endregion
+	}
+
+	System::Void UmaForm::UmaForm_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
+	{
+		draggingForm = true;
+		dragOffset.X = e->X;
+		dragOffset.Y = e->Y;
+	}
+	System::Void UmaForm::UmaForm_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
+	{
+		draggingForm = false;
+	}
+
+	System::Void UmaForm::UmaForm_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
+	{
+		if (draggingForm)
+		{
+			System::Drawing::Point currentFormPos = PointToScreen(System::Drawing::Point(e->X, e->Y));
+			this->Location = System::Drawing::Point(currentFormPos.X  - dragOffset.X, currentFormPos.Y - dragOffset.Y);
+		}
 	}
 }

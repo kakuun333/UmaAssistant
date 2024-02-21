@@ -2,10 +2,10 @@
 
 #include "cppsrc/enum/SoftwareLanguageType.h"
 
+//#using "control/UmaCustomControl.RoundedButton.dll"
 
 namespace UmaAssistant
 {
-
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -13,40 +13,43 @@ namespace UmaAssistant
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-
 	/// <summary>
 	/// SettingsForm 的摘要
 	/// </summary>
 	public ref class SettingsForm : public System::Windows::Forms::Form
 	{
-	public:
-		SettingsForm(void);
+	
+	public: SettingsForm(void);
 
-		// Form
-		void FormClosingHandler(Object^ sender, FormClosingEventArgs^ e);
+	// 變數
+	private: System::Drawing::Point dragOffset;
+	private: bool draggingForm = false;
+	private: bool _changingSoftwareLang = false;
 
-		// TextBox
-		void DigitOnly_TextBox_KeyPress(Object^ sender, KeyPressEventArgs^ e);
-		void serverPortTextBox_TextChanged(Object^ sender, EventArgs^ e);
-		void scanInterval_textBox_TextChanged(Object^ sender, EventArgs^ e);
+	// Form
+	private: void FormClosingHandler(Object^ sender, FormClosingEventArgs^ e);
 
-		// RadioButton
-		void GameServerRadioButtonChanged(Object^ sender, EventArgs^ e);
-		void GameWindowRadioButtonChanged(Object^ sender, EventArgs^ e);
-		void JpServerLangRadioButtonChanged(Object^ sender, EventArgs^ e);
-		void SoftwareLangRadioButtonChanged(Object^ sender, EventArgs^ e);
+	// TextBox
+	private: void DigitOnly_TextBox_KeyPress(Object^ sender, KeyPressEventArgs^ e);
+	private: void serverPortTextBox_TextChanged(Object^ sender, EventArgs^ e);
+	private: void scanInterval_textBox_TextChanged(Object^ sender, EventArgs^ e);
 
-		// CheckBox
-		//void showEnhanceSkill_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-		void alwaysOnTop_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-		void debugMode_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-		void autoMouceClick_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-		void outputLogFile_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
-		void discordRpc_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	// RadioButton
+	private: void GameServerRadioButtonChanged(Object^ sender, EventArgs^ e);
+	private: void GameWindowRadioButtonChanged(Object^ sender, EventArgs^ e);
+	private: void JpServerLangRadioButtonChanged(Object^ sender, EventArgs^ e);
+	private: void SoftwareLangRadioButtonChanged(Object^ sender, EventArgs^ e);
 
-		// ProgramLanguage
-		void ChangeSoftwareLanguage(SoftwareLanguageType langType);
-		void TraverseControls(Control^ control, array<System::String^>^ sys_str_arr);
+	// CheckBox
+	private: void alwaysOnTop_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	private: void debugMode_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	private: void autoMouceClick_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	private: void outputLogFile_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	private: void discordRpc_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+
+	// ProgramLanguage
+	public: void ChangeSoftwareLanguage(SoftwareLanguageType langType);
+	public: void TraverseControls(Control^ control, array<System::String^>^ sys_str_arr);
 
 	protected:
 		/// <summary>
@@ -59,14 +62,10 @@ namespace UmaAssistant
 				delete components;
 			}
 		}
-	public: System::Windows::Forms::Button^ update_event_data_jp_btn1;
-	protected:
-	public: System::Windows::Forms::Button^ update_skill_data_jp_btn1;
 
-
-
-	private: System::Windows::Forms::Button^ minimize_btn;
-	private: System::Windows::Forms::Button^ close_form_btn;
+	private: System::ComponentModel::Container^ components;
+	private: UmaCustomControl::RoundedButton^ minimize_btn;
+	private: UmaCustomControl::RoundedButton^ close_form_btn;
 	private: System::Windows::Forms::PictureBox^ icon_pictureBox;
 	private: System::Windows::Forms::Label^ app_name_label;
 
@@ -74,75 +73,43 @@ namespace UmaAssistant
 		/// <summary>
 		/// 設計工具所需的變數。
 		/// </summary>
-		System::ComponentModel::Container^ components;
-		bool draggingForm = false;
-		bool _changingSoftwareLang = false;
 	public: System::Windows::Forms::CheckBox^ debugMode_checkBox;
 	private: System::Windows::Forms::Label^ local_server_port_label;
-
 	private: System::Windows::Forms::TextBox^ serverPortTextBox;
 	private: System::Windows::Forms::RadioButton^ jp_server_radio_btn;
 	private: System::Windows::Forms::Label^ game_server_type_label;
-
-
-
-
-
 	private: System::Windows::Forms::RadioButton^ tw_server_radio_btn;
-
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel2;
 	private: System::Windows::Forms::RadioButton^ dmm_radio_btn;
 	private: System::Windows::Forms::RadioButton^ emulator_radio_btn;
-
 	private: System::Windows::Forms::Label^ window_type_label;
-
-
-
 	public: System::Windows::Forms::CheckBox^ autoMouceClick_checkBox;
 	public: System::Windows::Forms::CheckBox^ alwaysOnTop_checkBox;
-
 	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel1;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel3;
 	private: System::Windows::Forms::TextBox^ autoMouseClickKey_textBox;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel4;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel52;
 	private: System::Windows::Forms::RadioButton^ jpServerLang_tw_radio_btn;
-
-
 	private: System::Windows::Forms::RadioButton^ jpServerLang_jp_radio_btn;
-
-
 	private: System::Windows::Forms::Label^ jp_server_lang_label;
-
-
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel5;
 	private: System::Windows::Forms::Label^ scan_interval_label;
-
 	private: System::Windows::Forms::TextBox^ scanInterval_textBox;
 	private: System::Windows::Forms::Label^ scan_interval_ms_label;
-
 	public: System::Windows::Forms::CheckBox^ outputLogFile_checkBox;
-
-
-	public: System::Windows::Forms::Button^ default_btn;
+	public: UmaCustomControl::RoundedButton^ default_btn;
 	private: System::Windows::Forms::Label^ label7;
-
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel6;
 	private: System::Windows::Forms::RadioButton^ software_lang_tw_radio_btn;
-
 	private: System::Windows::Forms::RadioButton^ software_lang_jp_radio_btn;
-public: System::Windows::Forms::CheckBox^ discordRpc_checkBox;
-private:
-
-private:
-
-private:
+	public: System::Windows::Forms::CheckBox^ discordRpc_checkBox;
+	public: UmaCustomControl::RoundedButton^ test_btn;
+	public: UmaCustomControl::RoundedButton^ screenshotPreview_btn;
 
 
 
-	private:
-		System::Drawing::Point dragOffset;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -152,10 +119,8 @@ private:
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(SettingsForm::typeid));
-			this->update_event_data_jp_btn1 = (gcnew System::Windows::Forms::Button());
-			this->update_skill_data_jp_btn1 = (gcnew System::Windows::Forms::Button());
-			this->minimize_btn = (gcnew System::Windows::Forms::Button());
-			this->close_form_btn = (gcnew System::Windows::Forms::Button());
+			this->minimize_btn = (gcnew UmaCustomControl::RoundedButton());
+			this->close_form_btn = (gcnew UmaCustomControl::RoundedButton());
 			this->icon_pictureBox = (gcnew System::Windows::Forms::PictureBox());
 			this->app_name_label = (gcnew System::Windows::Forms::Label());
 			this->debugMode_checkBox = (gcnew System::Windows::Forms::CheckBox());
@@ -185,11 +150,13 @@ private:
 			this->scan_interval_label = (gcnew System::Windows::Forms::Label());
 			this->scanInterval_textBox = (gcnew System::Windows::Forms::TextBox());
 			this->scan_interval_ms_label = (gcnew System::Windows::Forms::Label());
-			this->default_btn = (gcnew System::Windows::Forms::Button());
+			this->default_btn = (gcnew UmaCustomControl::RoundedButton());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel6 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->software_lang_jp_radio_btn = (gcnew System::Windows::Forms::RadioButton());
 			this->software_lang_tw_radio_btn = (gcnew System::Windows::Forms::RadioButton());
+			this->test_btn = (gcnew UmaCustomControl::RoundedButton());
+			this->screenshotPreview_btn = (gcnew UmaCustomControl::RoundedButton());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->icon_pictureBox))->BeginInit();
 			this->tableLayoutPanel1->SuspendLayout();
 			this->tableLayoutPanel2->SuspendLayout();
@@ -200,46 +167,6 @@ private:
 			this->tableLayoutPanel5->SuspendLayout();
 			this->tableLayoutPanel6->SuspendLayout();
 			this->SuspendLayout();
-			// 
-			// update_event_data_jp_btn1
-			// 
-			this->update_event_data_jp_btn1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)),
-				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(81)));
-			this->update_event_data_jp_btn1->FlatAppearance->BorderSize = 0;
-			this->update_event_data_jp_btn1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
-				static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
-			this->update_event_data_jp_btn1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->update_event_data_jp_btn1->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
-			this->update_event_data_jp_btn1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
-				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->update_event_data_jp_btn1->Location = System::Drawing::Point(3, 123);
-			this->update_event_data_jp_btn1->Name = L"update_event_data_jp_btn1";
-			this->update_event_data_jp_btn1->Size = System::Drawing::Size(240, 25);
-			this->update_event_data_jp_btn1->TabIndex = 0;
-			this->update_event_data_jp_btn1->TabStop = false;
-			this->update_event_data_jp_btn1->Text = L"更新 event_data_jp.json";
-			this->update_event_data_jp_btn1->UseVisualStyleBackColor = false;
-			this->update_event_data_jp_btn1->Click += gcnew System::EventHandler(this, &SettingsForm::update_event_data_jp_btn_Click);
-			// 
-			// update_skill_data_jp_btn1
-			// 
-			this->update_skill_data_jp_btn1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)),
-				static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(81)));
-			this->update_skill_data_jp_btn1->FlatAppearance->BorderSize = 0;
-			this->update_skill_data_jp_btn1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
-				static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
-			this->update_skill_data_jp_btn1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->update_skill_data_jp_btn1->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
-			this->update_skill_data_jp_btn1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
-				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->update_skill_data_jp_btn1->Location = System::Drawing::Point(3, 154);
-			this->update_skill_data_jp_btn1->Name = L"update_skill_data_jp_btn1";
-			this->update_skill_data_jp_btn1->Size = System::Drawing::Size(240, 25);
-			this->update_skill_data_jp_btn1->TabIndex = 1;
-			this->update_skill_data_jp_btn1->TabStop = false;
-			this->update_skill_data_jp_btn1->Text = L"更新 skill_data_jp.json";
-			this->update_skill_data_jp_btn1->UseVisualStyleBackColor = false;
-			this->update_skill_data_jp_btn1->Click += gcnew System::EventHandler(this, &SettingsForm::update_skill_data_jp_btn_Click);
 			// 
 			// minimize_btn
 			// 
@@ -255,6 +182,7 @@ private:
 			this->minimize_btn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"minimize_btn.Image")));
 			this->minimize_btn->Location = System::Drawing::Point(292, 0);
 			this->minimize_btn->Name = L"minimize_btn";
+			this->minimize_btn->Radius = 10;
 			this->minimize_btn->Size = System::Drawing::Size(39, 32);
 			this->minimize_btn->TabIndex = 12;
 			this->minimize_btn->UseVisualStyleBackColor = false;
@@ -274,6 +202,7 @@ private:
 			this->close_form_btn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"close_form_btn.Image")));
 			this->close_form_btn->Location = System::Drawing::Point(337, 0);
 			this->close_form_btn->Name = L"close_form_btn";
+			this->close_form_btn->Radius = 10;
 			this->close_form_btn->Size = System::Drawing::Size(40, 32);
 			this->close_form_btn->TabIndex = 11;
 			this->close_form_btn->UseVisualStyleBackColor = false;
@@ -311,7 +240,7 @@ private:
 			this->debugMode_checkBox->FlatAppearance->CheckedBackColor = System::Drawing::Color::Black;
 			this->debugMode_checkBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->debugMode_checkBox->Location = System::Drawing::Point(3, 63);
+			this->debugMode_checkBox->Location = System::Drawing::Point(135, 3);
 			this->debugMode_checkBox->Name = L"debugMode_checkBox";
 			this->debugMode_checkBox->Size = System::Drawing::Size(108, 24);
 			this->debugMode_checkBox->TabIndex = 27;
@@ -500,12 +429,10 @@ private:
 			this->flowLayoutPanel1->Controls->Add(this->discordRpc_checkBox);
 			this->flowLayoutPanel1->Controls->Add(this->debugMode_checkBox);
 			this->flowLayoutPanel1->Controls->Add(this->outputLogFile_checkBox);
-			this->flowLayoutPanel1->Controls->Add(this->update_event_data_jp_btn1);
-			this->flowLayoutPanel1->Controls->Add(this->update_skill_data_jp_btn1);
 			this->flowLayoutPanel1->FlowDirection = System::Windows::Forms::FlowDirection::TopDown;
 			this->flowLayoutPanel1->Location = System::Drawing::Point(9, 359);
 			this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
-			this->flowLayoutPanel1->Size = System::Drawing::Size(247, 189);
+			this->flowLayoutPanel1->Size = System::Drawing::Size(359, 63);
 			this->flowLayoutPanel1->TabIndex = 39;
 			// 
 			// discordRpc_checkBox
@@ -531,7 +458,7 @@ private:
 			this->outputLogFile_checkBox->FlatAppearance->CheckedBackColor = System::Drawing::Color::Black;
 			this->outputLogFile_checkBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->outputLogFile_checkBox->Location = System::Drawing::Point(3, 93);
+			this->outputLogFile_checkBox->Location = System::Drawing::Point(135, 33);
 			this->outputLogFile_checkBox->Name = L"outputLogFile_checkBox";
 			this->outputLogFile_checkBox->Size = System::Drawing::Size(112, 24);
 			this->outputLogFile_checkBox->TabIndex = 38;
@@ -720,9 +647,10 @@ private:
 			this->default_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->default_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->default_btn->Location = System::Drawing::Point(262, 483);
+			this->default_btn->Location = System::Drawing::Point(268, 428);
 			this->default_btn->Name = L"default_btn";
-			this->default_btn->Size = System::Drawing::Size(109, 56);
+			this->default_btn->Radius = 10;
+			this->default_btn->Size = System::Drawing::Size(100, 65);
 			this->default_btn->TabIndex = 45;
 			this->default_btn->TabStop = false;
 			this->default_btn->Text = L"恢復預設値";
@@ -788,11 +716,55 @@ private:
 			this->software_lang_tw_radio_btn->Text = L"繁體中文";
 			this->software_lang_tw_radio_btn->UseVisualStyleBackColor = false;
 			// 
+			// test_btn
+			// 
+			this->test_btn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)), static_cast<System::Int32>(static_cast<System::Byte>(61)),
+				static_cast<System::Int32>(static_cast<System::Byte>(81)));
+			this->test_btn->FlatAppearance->BorderSize = 0;
+			this->test_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
+				static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
+			this->test_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->test_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
+			this->test_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
+				static_cast<System::Int32>(static_cast<System::Byte>(151)));
+			this->test_btn->Location = System::Drawing::Point(110, 428);
+			this->test_btn->Name = L"test_btn";
+			this->test_btn->Radius = 10;
+			this->test_btn->Size = System::Drawing::Size(95, 65);
+			this->test_btn->TabIndex = 48;
+			this->test_btn->TabStop = false;
+			this->test_btn->Text = L"測試";
+			this->test_btn->UseVisualStyleBackColor = false;
+			this->test_btn->Click += gcnew System::EventHandler(this, &SettingsForm::test_btn_Click);
+			// 
+			// screenshotPreview_btn
+			// 
+			this->screenshotPreview_btn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)),
+				static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(81)));
+			this->screenshotPreview_btn->FlatAppearance->BorderSize = 0;
+			this->screenshotPreview_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
+				static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
+			this->screenshotPreview_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->screenshotPreview_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
+			this->screenshotPreview_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
+				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
+			this->screenshotPreview_btn->Location = System::Drawing::Point(9, 428);
+			this->screenshotPreview_btn->Name = L"screenshotPreview_btn";
+			this->screenshotPreview_btn->Radius = 10;
+			this->screenshotPreview_btn->Size = System::Drawing::Size(95, 65);
+			this->screenshotPreview_btn->TabIndex = 49;
+			this->screenshotPreview_btn->TabStop = false;
+			this->screenshotPreview_btn->Text = L"截圖預覽";
+			this->screenshotPreview_btn->UseVisualStyleBackColor = false;
+			this->screenshotPreview_btn->Click += gcnew System::EventHandler(this, &SettingsForm::screenshotPreview_btn_Click);
+			// 
 			// SettingsForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(380, 547);
+			this->ClientSize = System::Drawing::Size(380, 502);
+			this->Controls->Add(this->screenshotPreview_btn);
+			this->Controls->Add(this->test_btn);
 			this->Controls->Add(this->tableLayoutPanel6);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->tableLayoutPanel5);
@@ -858,5 +830,7 @@ private:
 	private: System::Void autoMouseClickKey_textBox_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
 	private: System::Void default_btn_Click(System::Object^ sender, System::EventArgs^ e);
 
+	private: System::Void test_btn_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void screenshotPreview_btn_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

@@ -152,17 +152,30 @@
       <EnableDpiAwareness>false</EnableDpiAwareness>
     </Manifest>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command>rd /s /q $(OutDir)</Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>xcopy /E /Y "$(SolutionDir)UmaData\*.*" "$(OutDir)UmaData\*.*"
-xcopy /E /Y "$(SolutionDir)UmaWeb\*.*" "$(OutDir)UmaWeb\*.*"
-xcopy /E /Y "$(SolutionDir)UmaMisc\*.*" "$(OutDir)UmaMisc\*.*"
-xcopy /E /Y "$(SolutionDir)UmaTemp\*.*" "$(OutDir)UmaTemp\*.*"
-xcopy /E /Y "$(SolutionDir)tessdata\*.*" "$(OutDir)tessdata\*.*"
-xcopy /E /Y "$(SolutionDir)CSharpRuntime\*.*" "$(OutDir)CSharpRuntime\*.*"
-xcopy /E /Y "$(SolutionDir)cppdll\*.*" "$(OutDir)\*.*"</Command>
+      <Command>xcopy /E /C /Y $(SolutionDir)UmaData\ $(OutDir)UmaData\ 
+
+xcopy /E /C /Y $(SolutionDir)UmaWeb\ $(OutDir)UmaWeb\
+xcopy /E /C /Y $(SolutionDir)UmaMisc\ $(OutDir)UmaMisc\
+
+xcopy /E /C /Y $(SolutionDir)UmaTemp\ $(OutDir)UmaTemp\
+
+xcopy /E /C /Y $(SolutionDir)tessdata\ $(OutDir)tessdata\
+xcopy /E /C /Y $(SolutionDir)CSharpRuntime\ $(OutDir)CSharpRuntime\
+xcopy /E /C /Y $(SolutionDir)cppdll\ $(OutDir)
+
+move $(OutDir)Microsoft.Web.WebView2.Core.dll $(OutDir)CSharpRuntime\Microsoft.Web.WebView2.Core.dll
+
+move $(OutDir)Microsoft.Web.WebView2.Core.xml $(OutDir)CSharpRuntime\Microsoft.Web.WebView2.Core.xml
+
+move $(OutDir)Microsoft.Web.WebView2.WinForms.dll $(OutDir)CSharpRuntime\Microsoft.Web.WebView2.WinForms.dll
+
+move $(OutDir)Microsoft.Web.WebView2.WinForms.xml $(OutDir)CSharpRuntime\Microsoft.Web.WebView2.WinForms.xml
+
+move $(OutDir)RoundedButton.dll $(OutDir)CSharpRuntime\RoundedButton.dll
+move $(OutDir)WebView2Loader.dll $(OutDir)CSharpRuntime\WebView2Loader.dll</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

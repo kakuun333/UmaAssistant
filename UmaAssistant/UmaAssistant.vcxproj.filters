@@ -242,6 +242,9 @@
     <ClInclude Include="cppsrc\util\Singleton.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+    <ClInclude Include="class\ref\WebViewManager.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SettingsForm.resx">

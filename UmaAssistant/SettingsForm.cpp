@@ -8,6 +8,7 @@
 #include "cppsrc/class/AutoMouseClicker.h"
 #include "cppsrc/class/ConsoleManager.h"
 #include "cppsrc/class/Config.h"
+#include "cppsrc/class/Screenshot.h"
 
 // global
 #include "cppsrc/global/form.h"
@@ -123,7 +124,6 @@ namespace UmaAssistant
 			autoMouseClicker->Stop();
 			break;
 		}
-
 #pragma endregion
 #pragma region 初始化 checkBox
 		this->alwaysOnTop_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::alwaysOnTop_checkBox_CheckedChanged);
@@ -132,8 +132,75 @@ namespace UmaAssistant
 		this->outputLogFile_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::outputLogFile_checkBox_CheckedChanged);
 		this->discordRpc_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::discordRpc_checkBox_CheckedChanged);
 #pragma endregion
+#pragma region 初始化 DebugMode 啟動時該顯示的按鈕
+		switch (Config::GetInstance()->DebugMode)
+		{
+		case true:
+			this->test_btn->Visible = true;
+			this->screenshotPreview_btn->Visible = true;
+			break;
+		case false:
+			this->test_btn->Visible = false;
+			this->screenshotPreview_btn->Visible = false;
+			break;
+		}
+#pragma endregion
 	}
 
+#pragma region Button Click
+	System::Void SettingsForm::test_btn_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		DataManager* dataManager = DataManager::GetInstance();
+
+		/* UmaDataUpdater */
+		//UmaDataUpdater::GetInstance()->Update();
+		//Config::GetInstance()->WriteToJson();
+
+		std::cout << "CLICKED TEST BUTTON" << std::endl;
+	}
+	System::Void SettingsForm::screenshotPreview_btn_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		Screenshot::ShowImage();
+	}
+	System::Void SettingsForm::default_btn_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		//this->showEnhanceSkill_checkBox->Checked = true;
+		this->debugMode_checkBox->Checked = false;
+		this->alwaysOnTop_checkBox->Checked = false;
+		this->autoMouceClick_checkBox->Checked = false;
+		this->outputLogFile_checkBox->Checked = false;
+		this->discordRpc_checkBox->Checked = false;
+
+		// SoftwareLanguage
+		this->software_lang_tw_radio_btn->Checked = true;
+
+		// GameServer
+		this->jp_server_radio_btn->Checked = true;
+
+		// GameWindow
+		this->dmm_radio_btn->Checked = true;
+
+		// JpServerLang
+		this->jpServerLang_jp_radio_btn->Checked = true;
+
+		// AutoMouseClickKey
+		this->autoMouseClickKey_textBox->Text = "XButton2";
+		Config::GetInstance()->AutoMouseClickKey["VK"] = VK_XBUTTON2;
+		Config::GetInstance()->AutoMouseClickKey["WinFormButton"] = static_cast<int>(System::Windows::Forms::MouseButtons::XButton2);
+
+		// ScanInterval
+		this->scanInterval_textBox->Text = System::Convert::ToString(DEFAULT_SCAN_INTERVAL);
+
+		// LocalServer
+		this->serverPortTextBox->Text = util::stdStr2system(DEFAULT_LOCAL_SERVER_PORT);
+
+		// GameWindowName
+		Config::GetInstance()->GameWindowName = NULL_GAME_WINDOW_NAME;
+		Config::GetInstance()->PreviousCurrentCharacterName = DEFAULT_PREVIOUS_CURRENT_CHARACTER_NAME;
+
+		Config::GetInstance()->WriteToJson();
+	}
+#pragma endregion
 
 	void SettingsForm::FormClosingHandler(Object^ sender, FormClosingEventArgs^ e)
 	{
@@ -359,22 +426,16 @@ namespace UmaAssistant
 		if (debugMode_checkBox->Checked)
 		{
 			Config::GetInstance()->DebugMode = true;
-			global::form::umaForm->test_btn->Visible = true;
-			global::form::umaForm->screenshot_preview_btn->Visible = true;
-			update_event_data_jp_btn1->Visible = true;
-			update_skill_data_jp_btn1->Visible = true;
+			global::form::settingsForm->test_btn->Visible = true;
+			global::form::settingsForm->screenshotPreview_btn->Visible = true;
 
 			consoleManager->Enable();
 		}
 		else
 		{
 			Config::GetInstance()->DebugMode = false;
-			global::form::umaForm->test_btn->Visible = false;
-			global::form::umaForm->screenshot_preview_btn->Visible = false;
-
-			update_event_data_jp_btn1->Visible = false;
-			update_skill_data_jp_btn1->Visible = false;
-
+			global::form::settingsForm->test_btn->Visible = false;
+			global::form::settingsForm->screenshotPreview_btn->Visible = false;
 
 			consoleManager->Disable();
 		}
@@ -463,45 +524,6 @@ namespace UmaAssistant
 			Config::GetInstance()->DiscordRPC = false;
 			discordManager->Shutdown();
 		}
-
-		Config::GetInstance()->WriteToJson();
-	}
-
-	System::Void SettingsForm::default_btn_Click(System::Object^ sender, System::EventArgs^ e)
-	{
-		//this->showEnhanceSkill_checkBox->Checked = true;
-		this->debugMode_checkBox->Checked = false;
-		this->alwaysOnTop_checkBox->Checked = false;
-		this->autoMouceClick_checkBox->Checked = false;
-		this->outputLogFile_checkBox->Checked = false;
-		this->discordRpc_checkBox->Checked = false;
-
-		// SoftwareLanguage
-		this->software_lang_tw_radio_btn->Checked = true;
-
-		// GameServer
-		this->jp_server_radio_btn->Checked = true;
-
-		// GameWindow
-		this->dmm_radio_btn->Checked = true;
-
-		// JpServerLang
-		this->jpServerLang_jp_radio_btn->Checked = true;
-
-		// AutoMouseClickKey
-		this->autoMouseClickKey_textBox->Text = "XButton2";
-		Config::GetInstance()->AutoMouseClickKey["VK"] = VK_XBUTTON2;
-		Config::GetInstance()->AutoMouseClickKey["WinFormButton"] = static_cast<int>(System::Windows::Forms::MouseButtons::XButton2);
-
-		// ScanInterval
-		this->scanInterval_textBox->Text = System::Convert::ToString(DEFAULT_SCAN_INTERVAL);
-
-		// LocalServer
-		this->serverPortTextBox->Text = util::stdStr2system(DEFAULT_LOCAL_SERVER_PORT);
-
-		// GameWindowName
-		Config::GetInstance()->GameWindowName = NULL_GAME_WINDOW_NAME;
-		Config::GetInstance()->PreviousCurrentCharacterName = DEFAULT_PREVIOUS_CURRENT_CHARACTER_NAME;
 
 		Config::GetInstance()->WriteToJson();
 	}
