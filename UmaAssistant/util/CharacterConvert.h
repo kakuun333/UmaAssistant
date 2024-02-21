@@ -1,5 +1,14 @@
 #pragma once
+
+// STL
 #include <iostream>
+#include <string>
+
+// Windows API
+#include <Windows.h>
+#include <msclr/marshal.h>
+using namespace msclr::interop;
+
 
 namespace util
 {
@@ -10,9 +19,6 @@ namespace util
 
 	// 把 std::string 轉成 System::String^
 	System::String^ stdStr2system(std::string stdStr);
-
-
-
 
 	// 把 char* 轉成 wchat_t*
 	// 必須使用 delete[] 釋放記憶體

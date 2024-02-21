@@ -1,27 +1,24 @@
-﻿#include "../stdafx.h"
+﻿#include "FileManager.h"
 
 FileManager* FileManager::_instance = nullptr;
 
 
-nlohmann::json FileManager::ReadJson(std::string path)
+json FileManager::ReadJson(std::string path)
 {
 	std::ifstream inputFile(path);
 	if (inputFile.is_open())
 	{
-		nlohmann::json jsonInput;
+		json jsonInput;
 		inputFile >> jsonInput;
 		inputFile.close();
 
-
 		return jsonInput;
-
 	}
 	else
 	{
 		std::cerr << u8"讀取失敗：" << path << std::endl;
 	}
 }
-
 
 System::String^ FileManager::SysReadFile(System::String^ path)
 {

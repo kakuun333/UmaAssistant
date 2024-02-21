@@ -1,12 +1,7 @@
-﻿#include "../stdafx.h"
+﻿#include "DataManager.h"
 
-#pragma region 靜態變數
 DataManager* DataManager::_instance = nullptr;
-
 bool DataManager::_currentCharacterInfoLocked = false;
-
-
-
 std::map<std::string, std::string> DataManager::_currentCharacterInfoDict =
 {
 	// route
@@ -15,7 +10,7 @@ std::map<std::string, std::string> DataManager::_currentCharacterInfoDict =
 	// characterName
 	{ "event_owner", "" },
 };
-#pragma endregion 靜態變數
+
 
 bool DataManager::SetCurrentCharacterInfoDict(std::string event_owner)
 {
@@ -23,7 +18,7 @@ bool DataManager::SetCurrentCharacterInfoDict(std::string event_owner)
 
 	json event_data_json;
 
-	switch (global::config->GameServer)
+	switch (Config::GetInstance()->GameServer)
 	{
 	case static_cast<int>(GameServerType::JP):
 		event_data_json = event_data_jp_json;
@@ -46,8 +41,8 @@ bool DataManager::SetCurrentCharacterInfoDict(std::string event_owner)
 				_currentCharacterInfoDict["event_owner"] = json_event_owner;
 
 				// config
-				global::config->PreviousCurrentCharacterName = json_event_owner;
-				global::config->WriteToJson();
+				Config::GetInstance()->PreviousCurrentCharacterName = json_event_owner;
+				Config::GetInstance()->WriteToJson();
 
 				return true;
 			}
@@ -77,7 +72,7 @@ bool DataManager::TryGetCurrentCharacterByList(std::deque<std::string> scanned_t
 	bool foundChar = false;
 	json event_data_json;
 
-	switch (global::config->GameServer)
+	switch (Config::GetInstance()->GameServer)
 	{
 	case static_cast<int>(GameServerType::JP):
 		event_data_json = event_data_jp_json;
@@ -89,8 +84,6 @@ bool DataManager::TryGetCurrentCharacterByList(std::deque<std::string> scanned_t
 
 	// event_owner		
 	std::deque<UmaGetCharData> similarCharList = {};
-
-	WebManager* webManager = WebManager::GetInstance();
 
 	for (json::iterator it = event_data_json["character"].begin(); it != event_data_json["character"].end(); ++it) // it.value() == characterRare
 	{
@@ -154,17 +147,17 @@ bool DataManager::TryGetCurrentCharacterByList(std::deque<std::string> scanned_t
 		_currentCharacterInfoDict["event_owner"] = maxElement->event_owner;
 		_currentCharacterInfoLocked = true;
 		foundChar = true;
-		webManager->ChangeCharacterName(util::stdStr2system(maxElement->event_owner));
+		WebViewManager::Instance->ChangeCharacterName(util::stdStr2system(maxElement->event_owner));
 
 		// 更新 DiscordRPC
-		if (global::config->DiscordRPC)
+		if (Config::GetInstance()->DiscordRPC)
 		{
 			DiscordManager::GetInstance()->UpdateRPC();
 		}
 
 		// config
-		global::config->PreviousCurrentCharacterName = maxElement->event_owner;
-		global::config->WriteToJson();
+		Config::GetInstance()->PreviousCurrentCharacterName = maxElement->event_owner;
+		Config::GetInstance()->WriteToJson();
 	}
 
 
@@ -177,7 +170,7 @@ UmaEventNameData DataManager::GetMaxSimilarityUmaEventNameDataByList(std::deque<
 
 	json event_data_name_json;
 
-	switch (global::config->GameServer)
+	switch (Config::GetInstance()->GameServer)
 	{
 	case static_cast<int>(GameServerType::JP):
 		event_data_name_json = event_name_data_jp_json;
@@ -228,10 +221,10 @@ std::variant<UmaEventData, ScenarioEventData> DataManager::GetEventDataByUmaEven
 {
 	json event_data_json;
 
-	switch (global::config->GameServer)
+	switch (Config::GetInstance()->GameServer)
 	{
 	case static_cast<int>(GameServerType::JP):
-		switch (global::config->JpServerLang)
+		switch (Config::GetInstance()->JpServerLang)
 		{
 		case static_cast<int>(JpServerLangType::JP):
 			event_data_json = event_data_jp_json;

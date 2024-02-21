@@ -1,4 +1,17 @@
 #pragma once
+
+// STL
+#include <thread>
+
+// Windows API
+#include <Windows.h>
+
+// class
+#include "Config.h"
+
+// global
+//#include "../global/global.h"
+
 class AutoMouseClicker
 {
 private:
@@ -21,4 +34,3 @@ public:
 
 	void Stop();
 };
-

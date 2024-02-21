@@ -1,47 +1,56 @@
-﻿//#include "form/UmaForm.h"
-#include <Windows.h>
+﻿// STL
 #include <fstream>
+#include <locale>
+#include <codecvt>
+#include <filesystem>
+namespace fs = std::filesystem;
 
-#include "global/Path.h"
-#include "global/FormManager.h"
-#include "global/Others.h"
+// Windows API
+#include <Windows.h>
 
+// 3rdparty
+#include <nlohmann/json.hpp>
+using json = nlohmann::json;
+
+// class
 #include "class/DataManager.h"
 #include "class/Scanner.h"
 #include "class/GameWindowFinder.h"
 #include "class/FileManager.h"
 #include "class/ConsoleManager.h"
-#include "class/LocalServer.h"
-#include "class/WebManager.h"
-//#include "class/PyManager.h"
+#include "class/Config.h"
 #include "class/UmaLog.h"
 
+// ref class
+#include "class/ref/LocalServer.h"
 
-#include <nlohmann/json.hpp>
-using json = nlohmann::json;
+// global
+#include "global/form.h"
 
+// singleton
+//#include "test.h"	
 
-#include <locale>
-#include <codecvt>
-
-
+// .NET
 using namespace System;
-using namespace System::Windows::Forms;
 using namespace System::IO;
+using namespace System::Windows::Forms;
 using namespace System::Reflection;
 
 [STAThreadAttribute]
 int main(array<String^>^ args)
 {
-	// 初始化 config
-	global::config->Update();
-
-
+#pragma region 初始化 CSharp Runtime 路徑
+	AppDomain^ currentDomain = AppDomain::CurrentDomain;
+	currentDomain->AppendPrivatePath("CSharpRuntime");
+#pragma endregion
+#pragma region 初始化 config
+	Config::GetInstance()->Update();
+#pragma endregion
 #pragma region 初始化 Console
 	/*
 	* 如果 DebugMode 有開啟就創建 Console
 	*/
-	if (global::config->DebugMode == true)
+	if (Config::GetInstance()->DebugMode == true)
 	{
 		ConsoleManager::GetInstance()->Enable();
 	}
@@ -50,22 +59,16 @@ int main(array<String^>^ args)
 	// 加載字型
 	AddFontResourceW(util::string2wstring(global::path::std_MochiyPopOne).c_str());
 #pragma endregion
-
-
-	// 初始化 Scanner
+#pragma region 初始化 Scanner
 	Scanner::InitOcrJpn();
 	Scanner::InitOcrTw();
 	Scanner::InitOcrEng();
-
-	// 初始化 DataManager
+#pragma endregion
+#pragma region 初始化 DataManager
 	DataManager::GetInstance()->InitEventDataJson();
-
-	// 初始化 python
-	//PyManager::GetInstance()->Init();
-
-
+#pragma endregion
 #pragma region 啟動本地伺服器
-	System::String^ port = util::stdStr2system(global::config->LocalServer["Port"]);
+	System::String^ port = util::stdStr2system(Config::GetInstance()->LocalServer["Port"]);
 	LocalServer::Instance->Start(port);
 
 	Application::EnableVisualStyles();
@@ -81,65 +84,59 @@ int main(array<String^>^ args)
 	global::form::previewForm = previewForm;
 	global::form::settingsForm = settingsForm;
 #pragma endregion
-#pragma region 初始化 checkBox
+#pragma region 初始化 CheckBox
 	/*
 	* 不知道為什麼放在 SettingsForm 的構造函數裡面 nlohmann::json 會報錯
 	* 所以在這裡初始化
 	*/
-
-	/*
-	*  初始化 CheckBox
-	*/
-
 	// DebugMode
-	switch (global::config->DebugMode)
+	switch (Config::GetInstance()->DebugMode)
 	{
 	case true:
-		global::form::settingsForm->debugMode_checkBox->Checked = global::config->DebugMode;
-		global::form::settingsForm->update_event_data_jp_btn1->Visible = global::config->DebugMode;
-		global::form::settingsForm->update_skill_data_jp_btn1->Visible = global::config->DebugMode;
+		global::form::settingsForm->debugMode_checkBox->Checked = Config::GetInstance()->DebugMode;
+		global::form::settingsForm->update_event_data_jp_btn1->Visible = Config::GetInstance()->DebugMode;
+		global::form::settingsForm->update_skill_data_jp_btn1->Visible = Config::GetInstance()->DebugMode;
 		break;
 	case false:
-		global::form::settingsForm->debugMode_checkBox->Checked = global::config->DebugMode;
-		global::form::settingsForm->update_event_data_jp_btn1->Visible = global::config->DebugMode;
-		global::form::settingsForm->update_skill_data_jp_btn1->Visible = global::config->DebugMode;
+		global::form::settingsForm->debugMode_checkBox->Checked = Config::GetInstance()->DebugMode;
+		global::form::settingsForm->update_event_data_jp_btn1->Visible = Config::GetInstance()->DebugMode;
+		global::form::settingsForm->update_skill_data_jp_btn1->Visible = Config::GetInstance()->DebugMode;
 		break;
 	}
 
 	// AlwaysOnTop
-	switch (global::config->AlwaysOnTop)
+	switch (Config::GetInstance()->AlwaysOnTop)
 	{
 	case true:
-		global::form::settingsForm->alwaysOnTop_checkBox->Checked = global::config->AlwaysOnTop;
+		global::form::settingsForm->alwaysOnTop_checkBox->Checked = Config::GetInstance()->AlwaysOnTop;
 		break;
 	case false:
-		global::form::settingsForm->alwaysOnTop_checkBox->Checked = global::config->AlwaysOnTop;
+		global::form::settingsForm->alwaysOnTop_checkBox->Checked = Config::GetInstance()->AlwaysOnTop;
 		break;
 	}
 
 	// OutputLogFile
-	switch (global::config->OutputLogFile)
+	switch (Config::GetInstance()->OutputLogFile)
 	{
 	case true:
-		global::form::settingsForm->outputLogFile_checkBox->Checked = global::config->OutputLogFile;
+		global::form::settingsForm->outputLogFile_checkBox->Checked = Config::GetInstance()->OutputLogFile;
 		break;
 	case false:
-		global::form::settingsForm->outputLogFile_checkBox->Checked = global::config->OutputLogFile;
+		global::form::settingsForm->outputLogFile_checkBox->Checked = Config::GetInstance()->OutputLogFile;
 		break;
 	}
 
 	// DiscordRPC
-	switch (global::config->DiscordRPC)
+	switch (Config::GetInstance()->DiscordRPC)
 	{
 	case true:
-		global::form::settingsForm->discordRpc_checkBox->Checked = global::config->DiscordRPC;
+		global::form::settingsForm->discordRpc_checkBox->Checked = Config::GetInstance()->DiscordRPC;
 		break;
 	case false:
-		global::form::settingsForm->discordRpc_checkBox->Checked = global::config->DiscordRPC;
+		global::form::settingsForm->discordRpc_checkBox->Checked = Config::GetInstance()->DiscordRPC;
 		break;
 	}
 #pragma endregion
-
 #pragma region 初始化 GameWindowFinder
 	/*
 	* 初始化 UmaForm 之後才可以初始化 GameWindowFinder
@@ -147,9 +144,8 @@ int main(array<String^>^ args)
 	*/
 	GameWindowFinder::GetInstance()->CreateFindGameWindowThread();
 #pragma endregion
-
 #pragma region 初始化語言
-	switch (global::config->SoftwareLanguage)
+	switch (Config::GetInstance()->SoftwareLanguage)
 	{
 	case static_cast<int>(GameServerType::JP):
 		global::form::settingsForm->ChangeSoftwareLanguage(SoftwareLanguageType::JP);
@@ -160,19 +156,15 @@ int main(array<String^>^ args)
 		break;
 	}
 #pragma endregion
-
+#pragma region 運行主要的 Form
 	Application::Run(umaForm); // 啟動主要的 Form (UmaForm)
-
-
+#pragma endregion
 #pragma region 釋放資源
 	// 中止 LocalServer
 	LocalServer::Instance->Stop();
-
 	ConsoleManager::GetInstance()->Disable();
-
 	RemoveFontResourceW(util::string2wstring(global::path::std_MochiyPopOne).c_str());
-
-
 #pragma endregion
+
 	return 0;
 }

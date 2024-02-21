@@ -1,8 +1,28 @@
 #pragma once
 
+// STL
+#include <iostream>
+#include <string>
+#include <thread>
 #include <map>
-#include "../enum/GameWindowType.h"
+#include <codecvt>
 
+// MS
+#include <Windows.h>
+
+// enum
+#include "../enum/GameWindowType.h"
+#include "../enum/SoftwareLanguageType.h"
+
+// util
+#include "../util/FormControl.h"
+
+// class
+#include "Config.h"
+#include "DiscordManager.h"
+
+// global
+#include "../global/form.h"
 
 const std::string NULL_GAME_WINDOW_NAME = "NULL_GAME_WINDOW_NAME_UMA_ASSISTANT";
 

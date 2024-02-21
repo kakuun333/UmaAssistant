@@ -1,4 +1,6 @@
-#include "../../stdafx.h"
+#include "FormDesigner.h"
+
+
 
 
 
@@ -48,7 +50,7 @@ System::Void FormDesigner::CreateChoiceTable(UmaChoice choice)
 	choice_title_textbox->Multiline = true;
 	choice_title_textbox->ReadOnly = true;
 
-	choice_title_textbox->Text = util::FormNewLineFormat(util::stdStr2system(choice.choice_name)); // utility::stdStr2system(choice.choice_title);
+	choice_title_textbox->Text = util::FormNewLineFormat(util::stdStr2system(choice.choice_name));
 
 	choice_title_textbox->Size = System::Drawing::Size(366, 25);
 

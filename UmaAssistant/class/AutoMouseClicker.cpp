@@ -1,20 +1,17 @@
-#include "../stdafx.h"
+#include "AutoMouseClicker.h"
 
 AutoMouseClicker* AutoMouseClicker::_instance = nullptr;
-
 bool AutoMouseClicker::_starting = false;
 
 void AutoMouseClicker::Start()
 {
-	// &global::config->AutoMouseClickKey;
-
 	_starting = true;
 	
 	std::thread([=]()
 		{
 			while (_starting)
 			{
-				if (GetAsyncKeyState(global::config->AutoMouseClickKey["VK"]) & 0x8000)
+				if (GetAsyncKeyState(Config::GetInstance()->AutoMouseClickKey["VK"]) & 0x8000)
 				{
 					INPUT input;
 					input.type = INPUT_MOUSE;

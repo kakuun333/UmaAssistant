@@ -1,7 +1,14 @@
 #pragma once
 
-#include <vcclr.h>
+// STL
 #include <string>
+
+// Windows API
+#include <vcclr.h>
+
+// util
+#include "../util/CharacterConvert.h"
+
 
 namespace global
 {
@@ -20,13 +27,11 @@ namespace global
 		extern gcroot<System::String^> character_name_html;
 		extern gcroot<System::String^> character_name_style_css;
 		extern gcroot<System::String^> character_name_displayer_js;
-		
 
 		// UmaTemp
 		extern gcroot<System::String^> umaTemp; // º»¶s¿…¶Ï∏m
 		extern gcroot<System::String^> screenshot;
 		extern gcroot<System::String^> screenshot_event;
-
 
 		/*		std::string		*//*		std::string		*//*		std::string		*/
 		extern std::string std_currentDir;
@@ -60,7 +65,7 @@ namespace global
 
 		// jp server translation data
 		extern std::string std_event_data_jp_trans_tw_json;
-		
+
 
 		extern std::string std_event_data_tw_json;
 		extern std::string std_skill_data_tw_json;
@@ -73,6 +78,5 @@ namespace global
 		// UmaLua
 		extern std::string std_update_event_data_lua;
 		extern std::string std_update_skill_data_lua;
-	}
+	};
 };
-

@@ -1,4 +1,6 @@
-﻿#include "../stdafx.h"
+﻿#include "CharacterCompare.h"
+
+
 
 namespace util
 {
@@ -231,7 +233,7 @@ namespace util
 		int larger_list_idx = 0;
 
 		// for (json::iterator it = event_data_json["character"].begin(); it != event_data_json["character"].end(); ++it) 
-		for (std::vector<std::string>::iterator& larger_it = larger_list.begin(); larger_it != larger_list.end(); ++larger_it)
+		for (std::vector<std::string>::iterator larger_it = larger_list.begin(); larger_it != larger_list.end(); ++larger_it)
 		{
 			// 如果 larger_list_idx 等於或超過 smaller_list.size() 的話就跳出迴圈
 			if (larger_list_idx >= smaller_list.size()) break;

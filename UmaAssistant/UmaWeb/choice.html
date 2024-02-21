@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="choice_style.css">
+    <script src="enum.js"></script>
+    <script src="util.js"></script>
+    <script src="json_data.js"></script>
+    <script src="config.js"></script>
+    <title>ChoiceHTML</title>
+</head>
+<body id="content">
+
+
+    <!-- <span id="custom_scroll"></span> -->
+
+    <div id="skill_hint_content">
+        <table id="skill_table">
+            <thead>
+                <tr>
+                    <th><img id="skill_icon" src="../UmaMisc/Image/Skill/i_skill_b_n_1.png"></th>
+                    <td><span id="skill_name">ポジションセンス</span></td>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <th><span id="skill_pt_title">所需技能點</span></th>
+                    <td><span id="skill_pt">110</span></td>
+                </tr>
+                <tr>
+                    <th><span id="skill_description_title">描述</span></th>
+                    <td><span id="skill_description">レース終盤が迫ったとき、中団以降にいると速度がわずかに上がる＜作戦・差し＞</span></td>
+                </tr>
+                <tr>
+                    <th><span id="upper_skill_title">上位技能</span></th>
+                    <td><span id="upper_skill"></span></td>
+                </tr>
+                <tr>
+                    <th><span id="lower_skill_title">下位技能</span></th>
+                    <td><span id="lower_skill"></span></td>
+                </tr>
+            </tbody>
+
+            <tfoot id="skill_effect_table">
+
+                <tr class="enhance_data">
+                    <th id="skill_effect_title">效果</th>
+                    <td id="skill_effect"></td>
+                </tr>
+                <tr class="enhance_data">
+                    <th id="skill_condition_title">發動條件</th>
+                    <td id="skill_condition"></td>
+                </tr>
+
+            </tfoot>
+        </table>
+        
+    </div>
+
+    <table id="info_table">
+        <thead>
+            <tr>
+                <th id="event_owner_title">事件所有者</th>
+                <td id="event_owner"><!--オグリ--></td>
+            </tr>
+            <tr>
+                <th id="event_name_title">事件名稱</th>
+                <td id="event_name"><!--食いしん坊<br>食いしん坊--></td>
+            </tr>
+        </thead>
+    </table>
+    
+    <table id="choice_table">
+        <!--
+            <tr>
+                <th class="choice_name">いや、これはただの偶然だ！</th>
+            </tr>
+            <tr>
+                <td class="choice_effect"">
+                    <img src="../UmaMisc/Image/Status/yaruki.png"><span class="yaruki">やる気</span><span class="status_plus_value">+1</span><br><img src="../UmaMisc/Image/Status/strength.png"><span class="strength">体力</span><span class="status_plus_value">+10</span><br>アグネスタキオンの絆ゲージ<span class="status_plus_value">+5</span>
+                </td>
+            </tr>
+            <tr>
+                <th class="choice_name">これ以上は、さすがに怖い……っ</th>
+            </tr>
+            <tr>
+                <td class="choice_effect"">
+                    大成功時：<br><img src="../UmaMisc/Image/Status/speed.png"><span class="status_speed">スピード</span><span class="status_plus_value">+5</span><br><img src="../UmaMisc/Image/Status/sutamina.png"><span class="status_sutamina">スタミナ</span><span class="status_plus_value">+5</span><br><img src="../UmaMisc/Image/Status/kasikosa.png"><span class="status_kasikosa">賢さ</span><span class="status_plus_value">+5</span><br><span class="skill_hint">『先行直線◯』</span>のヒントLv<span class="status_plus_value">+3</span><br><span class="skill_hint">『ささやき』</span>のヒントLv<span class="status_plus_value">+1</span><br>アグネスタキオンの絆ゲージ<span class="status_plus_value">+5</span><br>成功時：<br><img src="../UmaMisc/Image/Status/speed.png"><span class="status_speed">スピード</span><span class="status_plus_value">+5</span><br><img src="../UmaMisc/Image/Status/kasikosa.png"><span class="status_kasikosa">賢さ</span><span class="status_plus_value">+5</span><br><span class="skill_hint">『先行直線◯』</span>のヒントLv<span class="status_plus_value">+1</span><br>アグネスタキオンの絆ゲージ<span class="status_plus_value">+5</span>
+                </td>
+            </tr>
+        <tr>
+            <td class="choice_effect"">
+                <img src="../UmaMisc/Image/Status/group.png">
+                <span class="status_speed">効果</span>
+                
+                <span class="skill_hint">『ありったけ』</span>のヒントLv<span class="status_plus_value">+5</span>
+                <span class="skill_hint">『しとやかな足取り』</span>のヒントLv<span class="status_plus_value">+5</span>
+                <span class="skill_hint">『お先に失礼っ！』</span>のヒントLv<span class="status_plus_value">+5</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="choice_effect"">
+                <img src="../UmaMisc/Image/Status/group.png">
+                <span class="status_speed">効果</span>
+                
+                <span class="skill_hint">『レースの真髄・心』</span>のヒントLv<span class="status_plus_value">+5</span>
+                <span class="skill_hint">『交流重賞◎』</span>のヒントLv<span class="status_plus_value">+5</span>
+                <span class="skill_hint">『余裕綽々』</span>のヒントLv<span class="status_plus_value">+5</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="choice_effect"">
+                <img src="../UmaMisc/Image/Status/group.png">
+                <span class="status_speed">効果</span>
+                
+                <span class="skill_hint">『布陣』</span>のヒントLv<span class="status_plus_value">+5</span>
+                <span class="skill_hint">『八方にらみ』</span>のヒントLv<span class="status_plus_value">+5</span>
+                <span class="skill_hint">『まき直し』</span>のヒントLv<span class="status_plus_value">+5</span>
+            </td>
+        </tr>
+        -->
+
+
+        <!-- <tr>
+            <th class="choice_title">腹が減っては力が出ない！</th>
+            <td class="choice_effect"">
+                効果
+                <br>
+                <span style="color: red;">効果2</span>
+                <img src="../UmaMisc/Image/Status/group.png">
+            </td>
+        </tr> -->
+
+    </table>
+    
+    <script src="choice_displayer.js"></script>
+    <script src="skill_displayer.js"></script>
+</body>
+</html>

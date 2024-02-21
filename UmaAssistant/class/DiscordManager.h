@@ -1,11 +1,23 @@
 #pragma once
 
-
+// STL
 #include <string>
 #include <cstring>
 
+// Discord API
 #include <discord_register.h>
 #include <discord_rpc.h>
+
+// enum
+#include "../enum/SoftwareLanguageType.h"
+
+// class
+#include "Config.h"
+#include "DataManager.h"
+#include "UmaLog.h"
+
+// global
+#include "../global/form.h"
 
 const std::string CHARACTER_ICON_URL = "https://raw.githubusercontent.com/kakuun333/UmaAssistant/main/UmaMisc/Image/Character/";
 
@@ -38,7 +50,6 @@ public:
 
 	void Shutdown();
 
-#pragma region ¤º´O¨ç¦¡
 	inline void SetIsShutdown(bool value)
 	{
 		_isShutdown = value;
@@ -48,6 +59,4 @@ public:
 	{
 		return _isShutdown;
 	}
-#pragma endregion
-
 };

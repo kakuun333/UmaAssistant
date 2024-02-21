@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="來源檔案">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="標頭檔">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="資源檔">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="class\Config.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="class\ConsoleManager.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="class\DiscordManager.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="global\umaswitch.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="global\path.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="PreviewForm.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingsForm.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="class\AutoMouseClicker.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="class\data\ScenarioEventData.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="class\ref\LocalServer.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="class\FileManager.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="class\ref\FormController.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="class\ref\FormDesigner.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="class\data\UmaEventData.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="class\DataManager.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="class\Scanner.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="class\Screenshot.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="class\GameWindowFinder.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="class\UmaTimer.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="class\UmaLog.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="class\data\UmaEventNameData.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="UmaForm.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="util\CharacterCombine.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="util\CharacterCompare.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="util\CharacterConvert.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="util\CharacterFilter.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="util\Constants.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="util\FormControl.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="class\ref\eventtest.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="class\ref\WebViewManager.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="global\form.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="global\umaswitch.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="global\path.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="PreviewForm.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingsForm.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="class\AutoMouseClicker.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="class\data\ScenarioEventData.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="class\Config.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="class\ConsoleManager.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="class\DiscordManager.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="class\ref\LocalServer.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="class\FileManager.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="class\ref\FormController.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="enum\FilePathType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="enum\FileType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="enum\GameWindowType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="enum\ImageType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="enum\GameServerType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="enum\JpServerLangType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="enum\SoftwareLanguageType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="util\CharacterCompare.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Constants.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="util\FormControl.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="class\ref\FormDesigner.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="class\data\UmaEventData.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="class\DataManager.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="enum\UmaEventDataType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="util\CharacterConvert.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="util\CharacterFilter.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="util\CharacterCombine.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="class\Scanner.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="class\Screenshot.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="class\GameWindowFinder.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="class\UmaTimer.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="class\UmaLog.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="class\data\UmaGetCharData.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="class\data\UmaEventNameData.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="UmaForm.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="util\Singleton.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="test.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="class\ref\eventtest.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="class\ref\WebViewManager.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="global\form.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <Filter>資源檔</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UmaForm.resx">
+      <Filter>資源檔</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreviewForm.resx">
+      <Filter>資源檔</Filter>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="UmaMisc\Image\UmaAssistant\uma_icon_32px.ico">
+      <Filter>資源檔</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UmaAssistant.rc">
+      <Filter>資源檔</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

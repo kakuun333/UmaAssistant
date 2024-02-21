@@ -1,4 +1,4 @@
-﻿#include "../stdafx.h"
+﻿#include "Screenshot.h"
 
 #pragma region 靜態變數
 // event_title
@@ -130,21 +130,22 @@ cv::Mat Screenshot::_hwnd2mat(HWND hwnd = GetDesktopWindow())
 	int gameWidth, gameHeight, gamePosX, gamePosY = 0;
 
 
-	global::config->Update();
-	switch (global::config->GameWindow)
+	
+	Config::GetInstance()->Update();
+	switch (Config::GetInstance()->GameWindow)
 	{
 	case static_cast<int>(GameWindowType::DMM):
-		gameWidth	= rcClient.right	- rcClient.left			- DMM_FIX_GAME_WIDTH	+ global::config->GameWindowBoundOffset["DMM"]["Width"];
-		gameHeight	= rcClient.bottom	- rcClient.top									+ global::config->GameWindowBoundOffset["DMM"]["Height"];
-		gamePosX	= rcWindow.left		+ DMM_FIX_GAME_WIDTH							+ global::config->GameWindowBoundOffset["DMM"]["X"];
-		gamePosY	= rcWindow.top		+ DMM_FIX_GAME_POS_Y							+ global::config->GameWindowBoundOffset["DMM"]["Y"];
+		gameWidth	= rcClient.right	- rcClient.left			- DMM_FIX_GAME_WIDTH	+ Config::GetInstance()->GameWindowBoundOffset["DMM"]["Width"];
+		gameHeight	= rcClient.bottom	- rcClient.top									+ Config::GetInstance()->GameWindowBoundOffset["DMM"]["Height"];
+		gamePosX	= rcWindow.left		+ DMM_FIX_GAME_WIDTH							+ Config::GetInstance()->GameWindowBoundOffset["DMM"]["X"];
+		gamePosY	= rcWindow.top		+ DMM_FIX_GAME_POS_Y							+ Config::GetInstance()->GameWindowBoundOffset["DMM"]["Y"];
 		break;
 
 	case static_cast<int>(GameWindowType::EMULATOR):
-		gameWidth	= rcClient.right	- rcClient.left	-	EMULATOR_FIX_GAME_WIDTH		+ global::config->GameWindowBoundOffset["Emulator"]["Width"];
-		gameHeight	= rcClient.bottom	- rcClient.top	-	EMULATOR_FIX_GAME_HEIGHT	+ global::config->GameWindowBoundOffset["Emulator"]["Height"];
-		gamePosX	= rcWindow.left		+					EMULATOR_FIX_GAME_POS_X		+ global::config->GameWindowBoundOffset["Emulator"]["X"];
-		gamePosY	= rcWindow.top		+					EMULATOR_FIX_GAME_POS_Y		+ global::config->GameWindowBoundOffset["Emulator"]["Y"];
+		gameWidth	= rcClient.right	- rcClient.left	-	EMULATOR_FIX_GAME_WIDTH		+ Config::GetInstance()->GameWindowBoundOffset["Emulator"]["Width"];
+		gameHeight	= rcClient.bottom	- rcClient.top	-	EMULATOR_FIX_GAME_HEIGHT	+ Config::GetInstance()->GameWindowBoundOffset["Emulator"]["Height"];
+		gamePosX	= rcWindow.left		+					EMULATOR_FIX_GAME_POS_X		+ Config::GetInstance()->GameWindowBoundOffset["Emulator"]["X"];
+		gamePosY	= rcWindow.top		+					EMULATOR_FIX_GAME_POS_Y		+ Config::GetInstance()->GameWindowBoundOffset["Emulator"]["Y"];
 		break;
 	}
 
@@ -204,7 +205,7 @@ void Screenshot::_CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPat
 	int crop_height	 = 0; // 裁切高度
 
 
-	switch (global::config->GameWindow)
+	switch (Config::GetInstance()->GameWindow)
 	{
 	case static_cast<int>(GameWindowType::DMM):
 		switch (imgType)
@@ -366,7 +367,7 @@ void Screenshot::_SetEventTitleBound(cv::Mat& img)
 	double textBound;
 	cv::Rect rect;
 
-	switch (global::config->GameWindow)
+	switch (Config::GetInstance()->GameWindow)
 	{
 	case static_cast<int>(GameWindowType::DMM):
 		single_char_white_pixel_ratio = 0.015;

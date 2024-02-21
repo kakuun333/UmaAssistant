@@ -1,0 +1,35 @@
+{
+  "AlwaysOnTop": false,
+  "AutoMouseClick": false,
+  "AutoMouseClickKey": {
+    "VK": 6,
+    "WinFormButton": 16777216
+  },
+  "DebugMode": true,
+  "DiscordRPC": false,
+  "GameServer": 0,
+  "GameWindow": 1,
+  "GameWindowBoundOffset": {
+    "DMM": {
+      "Height": 0,
+      "Width": 0,
+      "X": 0,
+      "Y": 0
+    },
+    "Emulator": {
+      "Height": 0,
+      "Width": 0,
+      "X": 0,
+      "Y": 0
+    }
+  },
+  "GameWindowName": "002245.png ‎- 相片",
+  "JpServerLang": 0,
+  "LocalServer": {
+    "Port": "5854"
+  },
+  "OutputLogFile": false,
+  "PreviousCurrentCharacterName": "ナイスネイチャ（ネガイノカサネ）",
+  "ScanInterval": 100,
+  "SoftwareLanguage": 1
+}

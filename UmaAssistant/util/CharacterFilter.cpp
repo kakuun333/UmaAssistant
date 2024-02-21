@@ -1,10 +1,9 @@
-﻿#include "../stdafx.h"
+﻿#include "CharacterFilter.h"
+
 
 /*
 UTF-8 編碼
 	全形空白鍵：\xE3\x80\x80
-
-
 */
 namespace util
 {
@@ -27,7 +26,7 @@ namespace util
 	System::String^ FormNewLineFormat(System::String^ input)
 	{
 		Regex^ regex = gcnew Regex("\n");
-		String^ formattedStr = regex->Replace(input, Environment::NewLine);
+		System::String^ formattedStr = regex->Replace(input, System::Environment::NewLine);
 
 		return formattedStr;
 	}

@@ -1,4 +1,25 @@
 #pragma once
+
+// STL
+#include <cstdio>
+
+// Windows API
+#include <Windows.h>
+//#include <consoleapi.h>
+//#include <consoleapi2.h>
+//#include <wingdi.h>
+//#include <WinNls.h>
+//#include <processenv.h>
+//#include <WinBase.h>
+
+// util
+#include "../util/CharacterConvert.h"
+
+// global
+#include "../global/form.h"
+#include "../global/path.h"
+
+
 class ConsoleManager
 {
 private:

@@ -1,13 +1,21 @@
 #pragma once
 
-// C++ std
+// STL
 #include <map>
+
+// MS
+#include "Windows.h"
 
 // opencv
 #include <opencv2/opencv.hpp>
 
 // enum
 #include "../enum/ImageType.h"
+
+// class
+#include "Config.h"
+#include "UmaLog.h"
+#include "GameWindowFinder.h"
 
 using namespace System;
 using namespace System::Drawing;

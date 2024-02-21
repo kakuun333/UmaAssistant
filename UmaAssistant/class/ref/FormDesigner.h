@@ -1,8 +1,16 @@
 #pragma once
 
+// util
+#include "../../util/CharacterFilter.h"
+#include "../../util/CharacterConvert.h"
+
+// class
 #include "../data/UmaEventData.h"
 
+
+using namespace System;
 using namespace System::Windows::Forms;
+using namespace System::Text::RegularExpressions;
 
 
 constexpr inline unsigned int NEW_LINE_BYTE = 52;

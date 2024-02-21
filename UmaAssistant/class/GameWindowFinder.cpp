@@ -1,4 +1,6 @@
-﻿#include "../stdafx.h"
+﻿#include "GameWindowFinder.h"
+
+
 
 GameWindowFinder* GameWindowFinder::_instance = nullptr;
 
@@ -61,12 +63,12 @@ void GameWindowFinder::CreateFindGameWindowThread()
 			while (true)
 			{
 				//if (FindWindow(nullptr, utility::string2wstring(GetCurrentGameWindowName()).c_str()))
-				if (FindWindow(nullptr, util::string2wstring(global::config->GameWindowName).c_str()))
+				if (FindWindow(nullptr, util::string2wstring(Config::GetInstance()->GameWindowName).c_str()))
 				{
-					_currentGameWindow = FindWindow(nullptr, util::string2wstring(global::config->GameWindowName).c_str());
-					//std::cout << u8"[GameWindowFinder] GameWindow: " << global::config->GameWindowName << std::endl;
+					_currentGameWindow = FindWindow(nullptr, util::string2wstring(Config::GetInstance()->GameWindowName).c_str());
+					//std::cout << u8"[GameWindowFinder] GameWindow: " << Config::GetInstance()->GameWindowName << std::endl;
 
-					switch (global::config->SoftwareLanguage)
+					switch (Config::GetInstance()->SoftwareLanguage)
 					{
 					case static_cast<int>(SoftwareLanguageType::JP):
 						util::formctrl::Text(global::form::umaForm->game_window_status_label, u8"ゲームウィンドウが見つけました");
@@ -92,7 +94,7 @@ void GameWindowFinder::CreateFindGameWindowThread()
 					_currentGameWindowName = NULL_GAME_WINDOW_NAME;
 					//std::cout << u8"[GameWindowFinder] 未找到遊戲視窗" << std::endl;
 
-					switch (global::config->SoftwareLanguage)
+					switch (Config::GetInstance()->SoftwareLanguage)
 					{
 					case static_cast<int>(SoftwareLanguageType::JP):
 						util::formctrl::Text(global::form::umaForm->game_window_status_label, u8"ゲームウィンドウが見つかりません");
@@ -106,7 +108,7 @@ void GameWindowFinder::CreateFindGameWindowThread()
 
 					this->SetFoundGameWindow(false);
 
-					if (global::config->DiscordRPC && !discordManager->GetIsShutdown())
+					if (Config::GetInstance()->DiscordRPC && !discordManager->GetIsShutdown())
 					{
 						discordManager->Shutdown();
 					}

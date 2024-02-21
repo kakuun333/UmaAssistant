@@ -1,18 +1,29 @@
 #pragma once
 
-
-#include <nlohmann/json.hpp>
-using json = nlohmann::json;
-
-#include "data/UmaEventData.h"
-#include "data/UmaEventNameData.h"
-#include "data/ScenarioEventData.h"
-
 // STL
 #include <mutex>
 #include <string>
 #include <deque>
 #include <variant>
+
+// 3rdparty
+#include <nlohmann/json.hpp>
+using json = nlohmann::json;
+
+// util
+#include "../util/CharacterCompare.h"
+
+// class
+#include "ref/WebViewManager.h"
+#include "DiscordManager.h"
+#include "data/UmaEventData.h"
+#include "data/UmaEventNameData.h"
+#include "data/ScenarioEventData.h"
+#include "data/UmaGetCharData.h"
+
+
+// global
+#include "../global/form.h"
 
 class DataManager
 {
@@ -71,4 +82,3 @@ public:
 	}
 #pragma endregion
 };
-

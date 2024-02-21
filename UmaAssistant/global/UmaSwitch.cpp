@@ -1,4 +1,4 @@
-#include "UmaSwitch.h"
+#include "umaswitch.h"
 
 namespace global
 {
@@ -6,5 +6,5 @@ namespace global
 	{
 		bool Scanning = false;
 		bool UpdatingEventData = false;
-	}
-}
+	};
+};

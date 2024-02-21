@@ -1,4 +1,7 @@
-﻿#include "../stdafx.h"
+﻿#include "ConsoleManager.h"
+
+
+
 
 ConsoleManager* ConsoleManager::_instance = nullptr;
 

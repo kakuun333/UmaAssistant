@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{046B390A-3EDD-4CEB-99E4-C0D589EAE7BF}</ProjectGuid>
+    <EnableManagedPackageReferenceSupport>true</EnableManagedPackageReferenceSupport>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>UmaAssistant</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>7.0</WindowsTargetPlatformMinVersion>
+    <WebView2LoaderPreference>Dynamic</WebView2LoaderPreference>
+    <WebView2DispatchAdapterUseJavaScriptCase>true</WebView2DispatchAdapterUseJavaScriptCase>
+    <WV2WinRTWrapWebViewTypes>true</WV2WinRTWrapWebViewTypes>
+    <WV2WinRTPlatformReferencesLevel>foundation</WV2WinRTPlatformReferencesLevel>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ExecutablePath>$(OutDir)dll;$(ExecutablePath)</ExecutablePath>
+    <OutDir>$(ProjectDir)Release</OutDir>
+    <EnableManagedIncrementalBuild>false</EnableManagedIncrementalBuild>
+    <CopyCppRuntimeToOutputDir>false</CopyCppRuntimeToOutputDir>
+    <CopyLocalProjectReference>true</CopyLocalProjectReference>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <VcpkgInstalledDir>
+    </VcpkgInstalledDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)vcpkg\installed\x64-windows\include;D:\Libraries\opencv\build\include;D:\Program Files\Lua\lua54\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>gdi32.lib;opencv_world481.lib;opencv_world481d.lib;lua54.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
+      <AdditionalLibraryDirectories>$(ProjectDir)vcpkg\installed\x64-windows\lib;D:\Libraries\opencv\build\x64\vc16\lib;D:\Program Files\Lua\lua54\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)vcpkg\installed\x64-windows\include;D:\Libraries\opencv\build\include;D:\Program Files\Lua\lua54\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>gdi32.lib;opencv_world481.lib;opencv_world481d.lib;lua54.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
+      <AdditionalLibraryDirectories>$(ProjectDir)vcpkg\installed\x64-windows\lib;D:\Libraries\opencv\build\x64\vc16\lib;D:\Program Files\Lua\lua54\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)vcpkg\installed\x64-windows\include;D:\Libraries\opencv\build\include;D:\Program Files\Lua\lua54\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>gdi32.lib;opencv_world481.lib;opencv_world481d.lib;lua54.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
+      <AdditionalLibraryDirectories>$(ProjectDir)vcpkg\installed\x64-windows\lib;D:\Libraries\opencv\build\x64\vc16\lib;D:\Program Files\Lua\lua54\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)vcpkg\installed\x64-windows\include;D:\Libraries\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>gdiplus.lib;gdi32.lib;user32.lib;opencv_world481.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
+      <AdditionalLibraryDirectories>$(ProjectDir)vcpkg\installed\x64-windows\lib;D:\Libraries\opencv\build\x64\vc16\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EmbedManagedResourceFile>%(EmbedManagedResourceFile)</EmbedManagedResourceFile>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+    <Manifest>
+      <EnableDpiAwareness>false</EnableDpiAwareness>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.WebView2.WinForms">
+      <HintPath>packages\Microsoft.Web.WebView2.1.0.2277.86\lib\net45\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="class\Config.cpp" />
+    <ClCompile Include="class\ConsoleManager.cpp" />
+    <ClCompile Include="class\DiscordManager.cpp" />
+    <ClCompile Include="class\ref\eventtest.cpp" />
+    <ClCompile Include="global\form.cpp" />
+    <ClCompile Include="global\umaswitch.cpp" />
+    <ClCompile Include="global\path.cpp" />
+    <ClCompile Include="PreviewForm.cpp" />
+    <ClCompile Include="SettingsForm.cpp" />
+    <ClCompile Include="class\AutoMouseClicker.cpp" />
+    <ClCompile Include="class\data\ScenarioEventData.cpp" />
+    <ClCompile Include="class\ref\LocalServer.cpp" />
+    <ClCompile Include="class\FileManager.cpp" />
+    <ClCompile Include="class\ref\FormController.cpp" />
+    <ClCompile Include="class\ref\FormDesigner.cpp" />
+    <ClCompile Include="class\data\UmaEventData.cpp" />
+    <ClCompile Include="class\DataManager.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="class\Scanner.cpp" />
+    <ClCompile Include="class\Screenshot.cpp" />
+    <ClCompile Include="class\GameWindowFinder.cpp" />
+    <ClCompile Include="class\UmaTimer.cpp" />
+    <ClCompile Include="class\UmaLog.cpp" />
+    <ClCompile Include="class\data\UmaEventNameData.cpp" />
+    <ClCompile Include="UmaForm.cpp" />
+    <ClCompile Include="util\CharacterCombine.cpp" />
+    <ClCompile Include="util\CharacterCompare.cpp" />
+    <ClCompile Include="util\CharacterConvert.cpp" />
+    <ClCompile Include="util\CharacterFilter.cpp" />
+    <ClCompile Include="util\Constants.cpp" />
+    <ClCompile Include="util\FormControl.cpp" />
+    <ClCompile Include="class\ref\WebViewManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="class\ref\eventtest.h" />
+    <ClInclude Include="global\form.h" />
+    <ClInclude Include="global\umaswitch.h" />
+    <ClInclude Include="global\path.h" />
+    <ClInclude Include="PreviewForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SettingsForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="class\AutoMouseClicker.h" />
+    <ClInclude Include="class\data\ScenarioEventData.h" />
+    <ClInclude Include="class\Config.h" />
+    <ClInclude Include="class\ConsoleManager.h" />
+    <ClInclude Include="class\DiscordManager.h" />
+    <ClInclude Include="class\ref\LocalServer.h" />
+    <ClInclude Include="class\FileManager.h" />
+    <ClInclude Include="class\ref\FormController.h" />
+    <ClInclude Include="enum\FilePathType.h" />
+    <ClInclude Include="enum\FileType.h" />
+    <ClInclude Include="enum\GameWindowType.h" />
+    <ClInclude Include="enum\ImageType.h" />
+    <ClInclude Include="enum\GameServerType.h" />
+    <ClInclude Include="enum\JpServerLangType.h" />
+    <ClInclude Include="enum\SoftwareLanguageType.h" />
+    <ClInclude Include="util\CharacterCompare.h" />
+    <ClInclude Include="util\Constants.h" />
+    <ClInclude Include="util\FormControl.h" />
+    <ClInclude Include="class\ref\FormDesigner.h" />
+    <ClInclude Include="class\data\UmaEventData.h" />
+    <ClInclude Include="class\DataManager.h" />
+    <ClInclude Include="enum\UmaEventDataType.h" />
+    <ClInclude Include="util\CharacterConvert.h" />
+    <ClInclude Include="util\CharacterFilter.h" />
+    <ClInclude Include="util\CharacterCombine.h" />
+    <ClInclude Include="class\Scanner.h" />
+    <ClInclude Include="class\Screenshot.h" />
+    <ClInclude Include="class\GameWindowFinder.h" />
+    <ClInclude Include="class\UmaTimer.h" />
+    <ClInclude Include="class\UmaLog.h" />
+    <ClInclude Include="class\data\UmaGetCharData.h" />
+    <ClInclude Include="class\data\UmaEventNameData.h" />
+    <ClInclude Include="UmaForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="util\Singleton.h" />
+    <ClInclude Include="test.h" />
+    <ClInclude Include="class\ref\WebViewManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PreviewForm.resx" />
+    <EmbeddedResource Include="SettingsForm.resx" />
+    <EmbeddedResource Include="UmaForm.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="UmaMisc\Image\UmaAssistant\uma_icon_32px.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UmaAssistant.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\Microsoft.Web.WebView2.1.0.2277.86\build\native\Microsoft.Web.WebView2.targets" Condition="Exists('packages\Microsoft.Web.WebView2.1.0.2277.86\build\native\Microsoft.Web.WebView2.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此專案參考這部電腦上所缺少的 NuGet 套件。請啟用 NuGet 套件還原，以下載該套件。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.Web.WebView2.1.0.2277.86\build\native\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Web.WebView2.1.0.2277.86\build\native\Microsoft.Web.WebView2.targets'))" />
+  </Target>
+</Project>

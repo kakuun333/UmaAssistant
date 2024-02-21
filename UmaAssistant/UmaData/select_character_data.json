@@ -1,0 +1,787 @@
+[
+  {
+    "icon": "i_157.png",
+    "jp_event_owner": "ビコーペガサス（疾風ペガサス・零式）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_156.png",
+    "jp_event_owner": "マンハッタンカフェ（柳緑小夜）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_155.png",
+    "jp_event_owner": "ユキノビジン（茶の子雪ん子）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_154.png",
+    "jp_event_owner": "ヴィブロス（Voyage étincelant）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_153.png",
+    "jp_event_owner": "ナイスネイチャ（ネガイノカサネ）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_152.png",
+    "jp_event_owner": "キタサンブラック（結願のしまい華）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_151.png",
+    "jp_event_owner": "シュヴァルグラン（Grand itinéraire）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_150.png",
+    "jp_event_owner": "サトノクラウン（黒翠千里行）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_149.png",
+    "jp_event_owner": "メジロブライト（清らに星澄むスノーロリィタ）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_148.png",
+    "jp_event_owner": "メジロパーマー（赤心のトナカイさん）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_147.png",
+    "jp_event_owner": "タップダンスシチー（GLITTER!）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_146.png",
+    "jp_event_owner": "トウカイテイオー（紫雲の夢見取り）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_145.png",
+    "jp_event_owner": "カワカミプリンセス（水干撫子）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_144.png",
+    "jp_event_owner": "メジロラモーヌ（オニキス・ライン）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_143.png",
+    "jp_event_owner": "シンボリクリスエス（Jetblack Automaton）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_142.png",
+    "jp_event_owner": "エアシャカール（Belphegor's Prime）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_141.png",
+    "jp_event_owner": "ケイエスミラクル（Prism）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_140.png",
+    "jp_event_owner": "サトノダイヤモンド（シュヴァリエ・ブル）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_139.png",
+    "jp_event_owner": "ゴールドシップ（La mode 564）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_138.png",
+    "jp_event_owner": "ナリタトップロード（The Proud Road）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_137.png",
+    "jp_event_owner": "サイレンススズカ（波間のエメラルド）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_136.png",
+    "jp_event_owner": "アグネスタキオン（Lunatic Lab）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_135.png",
+    "jp_event_owner": "シリウスシンボリ（Féroce）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_134.png",
+    "jp_event_owner": "カツラギエース（登竜之頂）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_133.png",
+    "jp_event_owner": "トーセンジョーダン（Aurore☆Vacances）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_132.png",
+    "jp_event_owner": "バンブーメモリー（Ultra☆Marine）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_131.png",
+    "jp_event_owner": "マーベラスサンデー（☆キラ★ドキ☆ワク∞マベ∞）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_130.png",
+    "jp_event_owner": "ヒシアマゾン（Hungry Veil）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_129.png",
+    "jp_event_owner": "ニシノフラワー（Sweet Juneberry）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_128.png",
+    "jp_event_owner": "タニノギムレット（身に纏うケラヴノス）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_127.png",
+    "jp_event_owner": "ヒシミラクル（みらくるめーくあっぷ！）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_126.png",
+    "jp_event_owner": "サクラバクシンオー（レッドホット☆リーダー）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_125.png",
+    "jp_event_owner": "マチカネタンホイザ（ブルー・タービュランス）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_124.png",
+    "jp_event_owner": "ネオユニヴァース（Universe-Naut）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_123.png",
+    "jp_event_owner": "サクラローレル（Saisir le rêve）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_122.png",
+    "jp_event_owner": "サクラチヨノオー（Fleur Enneigée）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_121.png",
+    "jp_event_owner": "メジロアルダン（Neige Émeraude）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_120.png",
+    "jp_event_owner": "シンボリクリスエス（Onyx Soldier）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_119.png",
+    "jp_event_owner": "ダイイチルビー（ダイイチルビー）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_118.png",
+    "jp_event_owner": "ツインターボ（爆走！ターボエンジン）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_117.png",
+    "jp_event_owner": "ミスターシービー（Clear Bliss）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_116.png",
+    "jp_event_owner": "シンコウウインディ（Wicked Punk）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_115.png",
+    "jp_event_owner": "メジロライアン（マーガレット・ラッテ）",
+    "tw_event_owner": "目白雷恩（雛菊．拿鐵）"
+  },
+  {
+    "icon": "i_114.png",
+    "jp_event_owner": "アイネスフウジン（MELTY GIFT）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_113.png",
+    "jp_event_owner": "ダイタクヘリオス（Fun☆Fun☆ぱりない）",
+    "tw_event_owner": "大德太陽（Fun☆Fun☆派對夜）"
+  },
+  {
+    "icon": "i_112.png",
+    "jp_event_owner": "ホッコータルマエ（スター･ライト･シップ）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_111.png",
+    "jp_event_owner": "サトノダイヤモンド（花形・弥栄之翠）",
+    "tw_event_owner": "里見光鑽（當家花旦・彌榮之翠）"
+  },
+  {
+    "icon": "i_110.png",
+    "jp_event_owner": "キタサンブラック（真打・慶鶴ノ志）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_109.png",
+    "jp_event_owner": "ナリタブライアン（餓狼）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_108.png",
+    "jp_event_owner": "ゼンノロブロイ（Heroic Author）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_107.png",
+    "jp_event_owner": "ダイワスカーレット（緋色のニュイ･エトワレ）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_106.png",
+    "jp_event_owner": "ウオッカ（不凍のアクア･ウィタエ）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_105.png",
+    "jp_event_owner": "ワンダーアキュート（Butterfly Sting）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_104.png",
+    "jp_event_owner": "ナカヤマフェスタ（死中求活）",
+    "tw_event_owner": "中山慶典（死中求活）"
+  },
+  {
+    "icon": "i_103.png",
+    "jp_event_owner": "イナリワン（夢ノ金原）",
+    "tw_event_owner": "稻荷一（夢想的金原）"
+  },
+  {
+    "icon": "i_102.png",
+    "jp_event_owner": "タマモクロス（猛ル鳴神）",
+    "tw_event_owner": "玉藻十字（荒暴雷神）"
+  },
+  {
+    "icon": "i_101.png",
+    "jp_event_owner": "ヤマニンゼファー（Fluttertail Spirit）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_100.png",
+    "jp_event_owner": "アストンマーチャン（Flare）",
+    "tw_event_owner": "奧斯頓真弓（Flare）"
+  },
+  {
+    "icon": "i_99.png",
+    "jp_event_owner": "メイショウドトウ（Dot-o'-Lantern）",
+    "tw_event_owner": "名將怒濤（Dot-o'-Lantern）"
+  },
+  {
+    "icon": "i_98.png",
+    "jp_event_owner": "アグネスデジタル（愛麗♡キョンシー）",
+    "tw_event_owner": "愛麗數碼（愛麗♡殭屍）"
+  },
+  {
+    "icon": "i_97.png",
+    "jp_event_owner": "シーキングザパール（Rocket☆Star）",
+    "tw_event_owner": "採珠（Rocket☆Star）"
+  },
+  {
+    "icon": "i_96.png",
+    "jp_event_owner": "ユキノビジン（めんこいめんこいむつのはな）",
+    "tw_event_owner": "雪之美人（好口愛好口愛的銀粟）"
+  },
+  {
+    "icon": "i_95.png",
+    "jp_event_owner": "ナリタタイシン（ディファレンス･エンジニア）",
+    "tw_event_owner": "成田大進（與眾不同的技師）"
+  },
+  {
+    "icon": "i_94.png",
+    "jp_event_owner": "ウイニングチケット（Dream Deliverer）",
+    "tw_event_owner": "勝利獎券（Dream Deliverer）"
+  },
+  {
+    "icon": "i_93.png",
+    "jp_event_owner": "スマートファルコン（黄昏トライアンフ）",
+    "tw_event_owner": "醒目飛鷹（黃昏凱旋）"
+  },
+  {
+    "icon": "i_92.png",
+    "jp_event_owner": "コパノリッキー（陰陽八卦☆開運衣）",
+    "tw_event_owner": "小林歷奇（陰陽八卦☆開運衣）"
+  },
+  {
+    "icon": "i_91.png",
+    "jp_event_owner": "バンブーメモリー（黒鉄の大志）",
+    "tw_event_owner": "青竹回憶（黑鐵大志）"
+  },
+  {
+    "icon": "i_90.png",
+    "jp_event_owner": "ゴールドシップ（RUN！乱！ランチャー！！）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_89.png",
+    "jp_event_owner": "メジロマックイーン（さざ波フェアレディ）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_88.png",
+    "jp_event_owner": "スペシャルウィーク（日之本一の総大将）",
+    "tw_event_owner": "特別週（日之本第一總大將）"
+  },
+  {
+    "icon": "i_87.png",
+    "jp_event_owner": "エアシャカール（unsigned）",
+    "tw_event_owner": "空中神宮（unsigned）"
+  },
+  {
+    "icon": "i_86.png",
+    "jp_event_owner": "メジロドーベル（バカンス・サフィール）",
+    "tw_event_owner": "目白多伯（藍寶石假期）"
+  },
+  {
+    "icon": "i_85.png",
+    "jp_event_owner": "タイキシャトル（Bubblegum☆Memories）",
+    "tw_event_owner": "大樹快車（Bubblegum☆Memories）"
+  },
+  {
+    "icon": "i_84.png",
+    "jp_event_owner": "スイープトウショウ（プラタナス・ウィッチ）",
+    "tw_event_owner": "東商變革（懸鈴木魔女）"
+  },
+  {
+    "icon": "i_83.png",
+    "jp_event_owner": "イナリワン（稲荷所縁江戸紫）",
+    "tw_event_owner": "稻荷一（稻荷因緣江戶紫）"
+  },
+  {
+    "icon": "i_82.png",
+    "jp_event_owner": "ファインモーション（Titania）",
+    "tw_event_owner": "美妙姿勢（Titania）"
+  },
+  {
+    "icon": "i_81.png",
+    "jp_event_owner": "カレンチャン（朔月のマ・シェリ）",
+    "tw_event_owner": "真機伶（朔月甜心）"
+  },
+  {
+    "icon": "i_80.png",
+    "jp_event_owner": "メジロパーマー（Line Breakthrough）",
+    "tw_event_owner": "目白善信（Line Breakthrough）"
+  },
+  {
+    "icon": "i_79.png",
+    "jp_event_owner": "アイネスフウジン（オールタイム・フィーバー）",
+    "tw_event_owner": "艾尼風神（全天候狂熱）"
+  },
+  {
+    "icon": "i_78.png",
+    "jp_event_owner": "キングヘイロー（白く気高き激励の装）",
+    "tw_event_owner": "帝王光輝（潔白高貴的激勵之服）"
+  },
+  {
+    "icon": "i_77.png",
+    "jp_event_owner": "ナイスネイチャ（RUN&WIN）",
+    "tw_event_owner": "優秀素質（RUN＆WIN）"
+  },
+  {
+    "icon": "i_76.png",
+    "jp_event_owner": "ヤエノムテキ（四白流星の襲）",
+    "tw_event_owner": "八重無敵（四白流星襲擊）"
+  },
+  {
+    "icon": "i_75.png",
+    "jp_event_owner": "ニシノフラワー（ティアード・ペタル）",
+    "tw_event_owner": "西野花（重瓣花朵）"
+  },
+  {
+    "icon": "i_74.png",
+    "jp_event_owner": "フジキセキ（シュクセ・エトワーレ）",
+    "tw_event_owner": "富士奇石（勝利明星）"
+  },
+  {
+    "icon": "i_73.png",
+    "jp_event_owner": "セイウンスカイ（ソワレ・ド・シャトン）",
+    "tw_event_owner": "青雲天空（小貓咪的晚宴）"
+  },
+  {
+    "icon": "i_72.png",
+    "jp_event_owner": "メジロブライト（ブリュニサージュ・ライン）",
+    "tw_event_owner": "目白光明（Vernissage Line）"
+  },
+  {
+    "icon": "i_71.png",
+    "jp_event_owner": "サトノダイヤモンド（Natural Brilliance）",
+    "tw_event_owner": "里見光鑽（Natural Brilliance）"
+  },
+  {
+    "icon": "i_70.png",
+    "jp_event_owner": "マチカネタンホイザ（ぱんぱかティルトット）",
+    "tw_event_owner": "待兼唐懷瑟（鏘鏘～斜裝登場）"
+  },
+  {
+    "icon": "i_69.png",
+    "jp_event_owner": "キタサンブラック（錦上・大判御輿）",
+    "tw_event_owner": "北部玄駒（錦上．大判御輿）"
+  },
+  {
+    "icon": "i_68.png",
+    "jp_event_owner": "アドマイヤベガ（Starry Nocturne）",
+    "tw_event_owner": "愛慕織姬（Starry Nocturne）"
+  },
+  {
+    "icon": "i_67.png",
+    "jp_event_owner": "メジロアルダン（クリノクロア・ライン）",
+    "tw_event_owner": "目白阿爾丹（Clinochlore Line）"
+  },
+  {
+    "icon": "i_66.png",
+    "jp_event_owner": "エイシンフラッシュ（コレクト・ショコラティエ）",
+    "tw_event_owner": "榮進閃耀（精確無比巧克力師）"
+  },
+  {
+    "icon": "i_65.png",
+    "jp_event_owner": "ミホノブルボン（CODE：グラサージュ）",
+    "tw_event_owner": "美浦波旁（CODE：淋面裝飾）"
+  },
+  {
+    "icon": "i_64.png",
+    "jp_event_owner": "サクラチヨノオー（日下開山・花あかり）",
+    "tw_event_owner": "櫻花千代王（天下第一花滿天）"
+  },
+  {
+    "icon": "i_63.png",
+    "jp_event_owner": "テイエムオペラオー（初晴・青き絢爛）",
+    "tw_event_owner": "好歌劇（初晴．湛藍絢爛）"
+  },
+  {
+    "icon": "i_62.png",
+    "jp_event_owner": "ハルウララ（初うらら♪さくさくら）",
+    "tw_event_owner": "春烏菈菈（初烏菈菈♪櫻花綻放）"
+  },
+  {
+    "icon": "i_61.png",
+    "jp_event_owner": "タマモクロス（疾風迅雷）",
+    "tw_event_owner": "玉藻十字（疾風迅雷）"
+  },
+  {
+    "icon": "i_60.png",
+    "jp_event_owner": "ファインモーション（Noble Seamair）",
+    "tw_event_owner": "美妙姿勢（Noble Seamair）"
+  },
+  {
+    "icon": "i_59.png",
+    "jp_event_owner": "ビワハヤヒデ（ノエルージュ･キャロル）",
+    "tw_event_owner": "琵琶晨光（聖夜紅袍頌歌）"
+  },
+  {
+    "icon": "i_58.png",
+    "jp_event_owner": "オグリキャップ（キセキの白星）",
+    "tw_event_owner": "小栗帽（奇蹟白星）"
+  },
+  {
+    "icon": "i_57.png",
+    "jp_event_owner": "メジロドーベル（ツイステッド･ライン）",
+    "tw_event_owner": "目白多伯（Twisted Line）"
+  },
+  {
+    "icon": "i_56.png",
+    "jp_event_owner": "トーセンジョーダン（ポップス☆ジョーカー）",
+    "tw_event_owner": "島川喬登（POPS☆JOKER）"
+  },
+  {
+    "icon": "i_55.png",
+    "jp_event_owner": "ゴールドシチー（秋桜ダンツァトリーチェ）",
+    "tw_event_owner": "黃金城市（秋櫻舞者）"
+  },
+  {
+    "icon": "i_54.png",
+    "jp_event_owner": "シンボリルドルフ（皓月の弓取り）",
+    "tw_event_owner": "魯道夫象徵（皓月下的弓手）"
+  },
+  {
+    "icon": "i_53.png",
+    "jp_event_owner": "マンハッタンカフェ（Creeping Black）",
+    "tw_event_owner": "曼哈頓咖啡（Creeping Black）"
+  },
+  {
+    "icon": "i_52.png",
+    "jp_event_owner": "カワカミプリンセス（プリンセス・オブ・ピンク）",
+    "tw_event_owner": "川上公主（Princess of pink）"
+  },
+  {
+    "icon": "i_51.png",
+    "jp_event_owner": "スーパークリーク（シフォンリボンマミー）",
+    "tw_event_owner": "超級小溪（雪紡緞帶木乃伊）"
+  },
+  {
+    "icon": "i_50.png",
+    "jp_event_owner": "ライスシャワー（Make up Vampire!）",
+    "tw_event_owner": "米浴（Make up Vampire!）"
+  },
+  {
+    "icon": "i_49.png",
+    "jp_event_owner": "アグネスデジタル（超特急！フルカラー特殊PP）",
+    "tw_event_owner": "愛麗數碼（超特急！全彩特殊膜）"
+  },
+  {
+    "icon": "i_48.png",
+    "jp_event_owner": "ヒシアケボノ（ボーノ☆アラモーダ）",
+    "tw_event_owner": "菱曙（Buono☆時尚）"
+  },
+  {
+    "icon": "i_47.png",
+    "jp_event_owner": "マチカネフクキタル（吉兆・初あらし）",
+    "tw_event_owner": "待兼福來（吉兆初現）"
+  },
+  {
+    "icon": "i_46.png",
+    "jp_event_owner": "エイシンフラッシュ（Meisterschaft）",
+    "tw_event_owner": "榮進閃耀（Meisterschaft）"
+  },
+  {
+    "icon": "i_45.png",
+    "jp_event_owner": "メイショウドトウ（ブルー/レイジング）",
+    "tw_event_owner": "名將怒濤（湛藍/湧濤）"
+  },
+  {
+    "icon": "i_44.png",
+    "jp_event_owner": "マルゼンスキー（ぶっとび☆さまーナイト）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_43.png",
+    "jp_event_owner": "スペシャルウィーク（ほっぴん♪ビタミンハート）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_42.png",
+    "jp_event_owner": "ゴールドシチー（オーセンティック/1928）",
+    "tw_event_owner": "黃金城市（純正/1928）"
+  },
+  {
+    "icon": "i_41.png",
+    "jp_event_owner": "フジキセキ（シューティンスタァ・ルヴュ）",
+    "tw_event_owner": "富士奇石（流星歌舞劇）"
+  },
+  {
+    "icon": "i_40.png",
+    "jp_event_owner": "グラスワンダー（セイントジェード・ヒーラー）",
+    "tw_event_owner": "草上飛（神聖翡翠治癒師）"
+  },
+  {
+    "icon": "i_39.png",
+    "jp_event_owner": "エルコンドルパサー（ククルカン・モンク）",
+    "tw_event_owner": "神鷹（羽蛇神武鬥家）"
+  },
+  {
+    "icon": "i_38.png",
+    "jp_event_owner": "ヒシアマゾン（アマゾネス・ラピス）",
+    "tw_event_owner": "菱亞馬遜（亞馬遜青金石）"
+  },
+  {
+    "icon": "i_37.png",
+    "jp_event_owner": "セイウンスカイ（あおぐもサミング）",
+    "tw_event_owner": "青雲天空（青雲釣術）"
+  },
+  {
+    "icon": "i_36.png",
+    "jp_event_owner": "エアグルーヴ（クエルクス・キウィーリス）",
+    "tw_event_owner": "氣槽（榮譽橡木冠）"
+  },
+  {
+    "icon": "i_35.png",
+    "jp_event_owner": "マヤノトップガン（サンライト・ブーケ）",
+    "tw_event_owner": "重砲（陽光捧花）"
+  },
+  {
+    "icon": "i_34.png",
+    "jp_event_owner": "ナリタブライアン（Maverick）",
+    "tw_event_owner": "成田白仁（Maverick）"
+  },
+  {
+    "icon": "i_33.png",
+    "jp_event_owner": "スマートファルコン（あぶそりゅーと☆LOVE）",
+    "tw_event_owner": "醒目飛鷹（絕對純粹☆LOVE）"
+  },
+  {
+    "icon": "i_32.png",
+    "jp_event_owner": "ナリタタイシン（Nevertheless）",
+    "tw_event_owner": "成田大進（Nevertheless）"
+  },
+  {
+    "icon": "i_31.png",
+    "jp_event_owner": "カレンチャン（フィーユ・エクレール）",
+    "tw_event_owner": "真機伶（閃光少女）"
+  },
+  {
+    "icon": "i_30.png",
+    "jp_event_owner": "メジロマックイーン（エンド・オブ・スカイ）",
+    "tw_event_owner": "目白麥昆（空之盡頭）"
+  },
+  {
+    "icon": "i_29.png",
+    "jp_event_owner": "トウカイテイオー（ビヨンド・ザ・ホライズン）",
+    "tw_event_owner": "東海帝皇（超越地平線）"
+  },
+  {
+    "icon": "i_28.png",
+    "jp_event_owner": "ビワハヤヒデ（pf.Victory formula...）",
+    "tw_event_owner": "琵琶晨光（pf.Victory formula...）"
+  },
+  {
+    "icon": "i_27.png",
+    "jp_event_owner": "ミホノブルボン（MB-19890425）",
+    "tw_event_owner": "美浦波旁（MB-19890425）"
+  },
+  {
+    "icon": "i_26.png",
+    "jp_event_owner": "テイエムオペラオー（オー・ソレ・スーオ！）",
+    "tw_event_owner": "好歌劇（你的太陽！）"
+  },
+  {
+    "icon": "i_25.png",
+    "jp_event_owner": "キングヘイロー（キング・オブ・エメラルド）",
+    "tw_event_owner": "帝王光輝（綠寶石之王）"
+  },
+  {
+    "icon": "i_24.png",
+    "jp_event_owner": "ナイスネイチャ（ポインセチア・リボン）",
+    "tw_event_owner": "優秀素質（聖誕紅緞帶）"
+  },
+  {
+    "icon": "i_23.png",
+    "jp_event_owner": "マチカネフクキタル（運気上昇☆幸福万来）",
+    "tw_event_owner": "待兼福來（運勢上升☆好運臨門）"
+  },
+  {
+    "icon": "i_22.png",
+    "jp_event_owner": "ハルウララ（うららん一等賞♪）",
+    "tw_event_owner": "春烏菈菈（烏菈菈得第一♪）"
+  },
+  {
+    "icon": "i_21.png",
+    "jp_event_owner": "サクラバクシンオー（サクラ、すすめ！）",
+    "tw_event_owner": "櫻花驀進王（前進吧！櫻花）"
+  },
+  {
+    "icon": "i_20.png",
+    "jp_event_owner": "ウイニングチケット（Go To Winning!）",
+    "tw_event_owner": "勝利獎券（Go To Winning!）"
+  },
+  {
+    "icon": "i_19.png",
+    "jp_event_owner": "アグネスタキオン（tach-nology）",
+    "tw_event_owner": "愛麗速子（tach-nology）"
+  },
+  {
+    "icon": "i_18.png",
+    "jp_event_owner": "メジロライアン（ストレート・ライン）",
+    "tw_event_owner": "目白雷恩（勇往直前）"
+  },
+  {
+    "icon": "i_17.png",
+    "jp_event_owner": "スーパークリーク（マーマリングストリーム）",
+    "tw_event_owner": "超級小溪（低語溪流）"
+  },
+  {
+    "icon": "i_16.png",
+    "jp_event_owner": "マヤノトップガン（すくらんぶる☆ゾーン）",
+    "tw_event_owner": "重砲（急飛☆區域）"
+  },
+  {
+    "icon": "i_15.png",
+    "jp_event_owner": "エアグルーヴ（エンプレスロード）",
+    "tw_event_owner": "氣槽（女帝之路）"
+  },
+  {
+    "icon": "i_14.png",
+    "jp_event_owner": "エルコンドルパサー（エル☆Número 1）",
+    "tw_event_owner": "神鷹（神鷹☆Número 1）"
+  },
+  {
+    "icon": "i_13.png",
+    "jp_event_owner": "グラスワンダー（岩穿つ青）",
+    "tw_event_owner": "草上飛（穿岩之青）"
+  },
+  {
+    "icon": "i_12.png",
+    "jp_event_owner": "ダイワスカーレット（トップ・オブ・ブルー）",
+    "tw_event_owner": "大和赤驥（蒼藍巔峰）"
+  },
+  {
+    "icon": "i_11.png",
+    "jp_event_owner": "ウオッカ（ワイルドトップギア）",
+    "tw_event_owner": "伏特加（狂野極速）"
+  },
+  {
+    "icon": "i_10.png",
+    "jp_event_owner": "ゴールドシップ（レッドストライフ）",
+    "tw_event_owner": "黃金船（火紅鬥爭）"
+  },
+  {
+    "icon": "i_9.png",
+    "jp_event_owner": "ライスシャワー（ローゼスドリーム）",
+    "tw_event_owner": "米浴（薔薇之夢）"
+  },
+  {
+    "icon": "i_8.png",
+    "jp_event_owner": "シンボリルドルフ（ロード・オブ・エンペラー）",
+    "tw_event_owner": "魯道夫象徵（皇帝之路）"
+  },
+  {
+    "icon": "i_7.png",
+    "jp_event_owner": "メジロマックイーン（エレガンス・ライン）",
+    "tw_event_owner": "目白麥昆（優雅線條）"
+  },
+  {
+    "icon": "i_6.png",
+    "jp_event_owner": "タイキシャトル（ワイルド・フロンティア）",
+    "tw_event_owner": "大樹快車（野性邊境）"
+  },
+  {
+    "icon": "i_5.png",
+    "jp_event_owner": "オグリキャップ（スターライトビート）",
+    "tw_event_owner": "小栗帽（星光躍動）"
+  },
+  {
+    "icon": "i_4.png",
+    "jp_event_owner": "マルゼンスキー（フォーミュラオブルージュ）",
+    "tw_event_owner": "丸善斯基（嫣紅方程式）"
+  },
+  {
+    "icon": "i_3.png",
+    "jp_event_owner": "トウカイテイオー（トップ・オブ・ジョイフル）",
+    "tw_event_owner": "東海帝皇（歡樂巔峰）"
+  },
+  {
+    "icon": "i_2.png",
+    "jp_event_owner": "サイレンススズカ（サイレントイノセンス）",
+    "tw_event_owner": "無聲鈴鹿（無聲純真）"
+  },
+  {
+    "icon": "i_1.png",
+    "jp_event_owner": "スペシャルウィーク（スペシャルドリーマー）",
+    "tw_event_owner": "特別週（特別夢想家）"
+  }
+]

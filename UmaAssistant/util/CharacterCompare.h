@@ -1,6 +1,24 @@
 ﻿#pragma once
 
+// STL
+#include <string>
+#include <vector>
+#include <regex>
 
+// 3rdparty
+#include <nlohmann/json.hpp>
+using json = nlohmann::json;
+
+// class
+#include "../class/FileManager.h"
+
+// global
+#include "../global/form.h"
+#include "../global/path.h"
+
+// util
+#include "CharacterFilter.h"
+#include "Constants.h"
 
 namespace util
 {

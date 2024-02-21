@@ -1,15 +1,10 @@
-﻿#include "../stdafx.h"
-#include <tesseract/baseapi.h> // Tesseract OCR Version: 5.3.3
+﻿#include "Scanner.h"
 
-
-# pragma region 初始化靜態變數
 Scanner* Scanner::_instance = nullptr;
 bool Scanner::_scanning = false;
 tesseract::TessBaseAPI* Scanner::ocr_jpn = nullptr;
 tesseract::TessBaseAPI* Scanner::ocr_tw = nullptr;
 tesseract::TessBaseAPI* Scanner::ocr_eng = nullptr;
-#pragma endregion
-
 
 
 void Scanner::InitOcrJpn()
@@ -73,50 +68,50 @@ void Scanner::InitOcrEng()
 
 
 #pragma region 私人函數
-void Scanner::_UpdateSapokaOrCharacterChoice(WebManager* webManager, UmaEventData sapokaUmaEventData)
+void Scanner::_UpdateSapokaOrCharacterChoice(UmaEventData sapokaUmaEventData)
 {
-	webManager->CleanChoiceTable();
+	WebViewManager::Instance->CleanChoiceTable();
 
 	for (UmaChoice choice : sapokaUmaEventData.umaEvent.choice_list)
 	{
-		webManager->CreateChoice(util::stdStr2system(choice.choice_name), util::stdStr2system(choice.choice_effect));
+		WebViewManager::Instance->CreateChoice(util::stdStr2system(choice.choice_name), util::stdStr2system(choice.choice_effect));
 	}
 
 	System::String^ sys_event_owner = util::stdStr2system(sapokaUmaEventData.Get<std::string>(UmaEventDataType::EVENT_OWNER));
-	webManager->ChangeEventOwner(sys_event_owner);
+	WebViewManager::Instance->ChangeEventOwner(sys_event_owner);
 
 	System::String^ sys_event_title = util::stdStr2system(sapokaUmaEventData.Get<std::string>(UmaEventDataType::EVENT_TITLE));
-	webManager->ChangeEventName(sys_event_title);
+	WebViewManager::Instance->ChangeEventName(sys_event_title);
 
-	webManager->HideSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
-	webManager->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
+	WebViewManager::Instance->HideSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
+	WebViewManager::Instance->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
 }
 
-void Scanner::_UpdateScenarioChoice(WebManager* webManager, ScenarioEventData scenarioEventData)
+void Scanner::_UpdateScenarioChoice(ScenarioEventData scenarioEventData)
 {
-	webManager->CleanChoiceTable();
+	WebViewManager::Instance->CleanChoiceTable();
 
 	for (UmaChoice choice : scenarioEventData.choice_list)
 	{
-		webManager->CreateChoice(util::stdStr2system(choice.choice_name), util::stdStr2system(choice.choice_effect));
+		WebViewManager::Instance->CreateChoice(util::stdStr2system(choice.choice_name), util::stdStr2system(choice.choice_effect));
 	}
 
 	System::String^ sys_event_title = util::stdStr2system(scenarioEventData.event_name);
 
-	switch (global::config->GameServer)
+	switch (Config::GetInstance()->GameServer)
 	{
 	case static_cast<int>(GameServerType::JP):
-		webManager->ChangeEventOwner(u8"メインシナリオイベント");
+		WebViewManager::Instance->ChangeEventOwner(u8"メインシナリオイベント");
 		break;
 	case static_cast<int>(GameServerType::TW):
-		webManager->ChangeEventOwner(u8"主要劇情事件");
+		WebViewManager::Instance->ChangeEventOwner(u8"主要劇情事件");
 		break;
 	}
 
-	webManager->ChangeEventName(sys_event_title);
+	WebViewManager::Instance->ChangeEventName(sys_event_title);
 
-	webManager->HideSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
-	webManager->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
+	WebViewManager::Instance->HideSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
+	WebViewManager::Instance->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
 }
 
 
@@ -141,7 +136,7 @@ std::string Scanner::_GetScannedText(cv::Mat image, ImageType imgType, bool engl
 		utf8 = ocr_eng->GetUTF8Text();
 		break;
 	case false:
-		switch (global::config->GameServer)
+		switch (Config::GetInstance()->GameServer)
 		{
 		case static_cast<int>(GameServerType::JP):
 			switch (imgType)
@@ -255,11 +250,11 @@ void Scanner::_LookingForCurrentCharacter(Screenshot& ss, std::string& henseiCha
 
 			if (dataManager->TryGetCurrentCharacterByList(scanned_text_list))
 			{
-				std::cout << u8"[Scanner] 成功找到角色！" << std::endl;
+				std::cout << "[Scanner] 成功找到角色！" << std::endl;
 			}
 			else
 			{
-				std::cout << u8"[Scanner] 無法找到角色！" << std::endl;
+				std::cout << "[Scanner] 無法找到角色！" << std::endl;
 			}
 		}
 		catch (const std::exception& e)
@@ -288,7 +283,6 @@ void Scanner::_LookingForCurrentCharacter(Screenshot& ss, std::string& henseiCha
 void Scanner::_Scan()
 {
 	DataManager* dataManager = DataManager::GetInstance();
-	WebManager* webManager = WebManager::GetInstance();
 	UmaLog* umalog = UmaLog::GetInstance();
 
 	this->_scanning = true;
@@ -330,7 +324,7 @@ void Scanner::_Scan()
 			{
 				umalog->print(u8"[Scanner] 所有 eventText 都是空字串");
 				this->_PrintScanned(timer->Stop());
-				std::this_thread::sleep_for(std::chrono::milliseconds(global::config->ScanInterval));
+				std::this_thread::sleep_for(std::chrono::milliseconds(Config::GetInstance()->ScanInterval));
 				continue;
 			}
 		}
@@ -371,7 +365,7 @@ void Scanner::_Scan()
 
 				this->_PrintScanned(timer->Stop());
 
-				std::this_thread::sleep_for(std::chrono::milliseconds(global::config->ScanInterval));
+				std::this_thread::sleep_for(std::chrono::milliseconds(Config::GetInstance()->ScanInterval));
 				continue;
 			}
 
@@ -397,7 +391,7 @@ void Scanner::_Scan()
 
 						this->_PrintScanned(timer->Stop());
 
-						std::this_thread::sleep_for(std::chrono::milliseconds(global::config->ScanInterval));
+						std::this_thread::sleep_for(std::chrono::milliseconds(Config::GetInstance()->ScanInterval));
 						continue;
 					}
 
@@ -405,7 +399,7 @@ void Scanner::_Scan()
 					_previousEventText = eventNameData.matched_scanned_text;
 					_previousUpdatedUmaEventData = eventData;
 
-					this->_UpdateSapokaOrCharacterChoice(webManager, eventData);
+					this->_UpdateSapokaOrCharacterChoice(eventData);
 				}
 			}
 			else if (std::holds_alternative<ScenarioEventData>(variant))
@@ -421,7 +415,7 @@ void Scanner::_Scan()
 
 						this->_PrintScanned(timer->Stop());
 
-						std::this_thread::sleep_for(std::chrono::milliseconds(global::config->ScanInterval));
+						std::this_thread::sleep_for(std::chrono::milliseconds(Config::GetInstance()->ScanInterval));
 						continue;
 					}
 
@@ -429,7 +423,7 @@ void Scanner::_Scan()
 					_previousEventText = eventNameData.matched_scanned_text;
 					_previousUpdatedScenarioEventData = eventData;
 
-					this->_UpdateScenarioChoice(webManager, eventData);
+					this->_UpdateScenarioChoice(eventData);
 				}
 			}
 		}
@@ -451,7 +445,7 @@ void Scanner::_Scan()
 
 		this->_PrintScanned(timer->Stop());
 
-		std::this_thread::sleep_for(std::chrono::milliseconds(global::config->ScanInterval));
+		std::this_thread::sleep_for(std::chrono::milliseconds(Config::GetInstance()->ScanInterval));
 	}
 	this->_scanning = false;
 }
@@ -465,7 +459,7 @@ void Scanner::Start()
 {
 	if (global::umaswitch::Scanning)
 	{
-		std::cout << u8"[Scanner] 必須先停止掃描 Scanner::GetInstance()->Stop()" << std::endl;
+		std::cout << "[Scanner] 必須先停止掃描 Scanner::GetInstance()->Stop()" << std::endl;
 		return;
 	}
 
@@ -478,7 +472,7 @@ void Scanner::Start()
 
 #pragma region 更新 UI
 	UmaLog* umalog = UmaLog::GetInstance();
-	switch (global::config->GameServer)
+	switch (Config::GetInstance()->GameServer)
 	{
 	case static_cast<int>(GameServerType::JP):
 		umalog->print("[Scanner] GameServer: JP");
@@ -488,7 +482,7 @@ void Scanner::Start()
 		break;
 	}
 
-	switch (global::config->SoftwareLanguage)
+	switch (Config::GetInstance()->SoftwareLanguage)
 	{
 	case static_cast<int>(SoftwareLanguageType::JP):
 		util::formctrl::Text(global::form::umaForm->scan_state_label, u8"起動状態：起動中");
@@ -517,7 +511,7 @@ void Scanner::Stop()
 					stopped = true;
 
 #pragma region 更新 UI
-					switch (global::config->SoftwareLanguage)
+					switch (Config::GetInstance()->SoftwareLanguage)
 					{
 					case static_cast<int>(SoftwareLanguageType::JP):						
 						util::formctrl::Text(global::form::umaForm->scan_state_label, u8"起動状態：停止");

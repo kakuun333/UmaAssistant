@@ -1,28 +1,35 @@
 ﻿#pragma once
 
 // STL
+#include <iostream>
 #include <string>
+#include <thread>
 #include <functional>
 #include <vector>
-#include <iostream>
 #include <mutex>
 
 // 3rdparty
-#include <tesseract/baseapi.h>
+#include <tesseract/baseapi.h> // Tesseract OCR Version: 5.3.3
 #include <leptonica/allheaders.h>
-#include <opencv2/opencv.hpp>
+
+// util
+#include "../util/CharacterFilter.h"
 
 // class
-#include "../class/WebManager.h"
-#include "../class/Screenshot.h"
-
-// data
-#include "../class/data/ScenarioEventData.h"
-#include "../class/data/UmaEventData.h"
-#include "../class/data/ScenarioEventData.h"
+#include "Config.h"
+#include "Screenshot.h"
+#include "UmaTimer.h"
+#include "ref/WebViewManager.h"
+#include "data/ScenarioEventData.h"
+#include "data/UmaEventData.h"
+#include "data/ScenarioEventData.h"
 
 // enum
 #include "../enum/ImageType.h"
+
+// global
+#include "../global/form.h"
+#include "../global/umaswitch.h"
 
 const std::string INIT_EVENT_TITLE_TEXT = "INIT_EVENT_TITLE_TEXT";
 const std::string INIT_HENSEI_CHAR_NAME_TEXT = "INIT_HENSEI_CHAR_NAME_TEXT";
@@ -65,9 +72,9 @@ private:
 
 	std::string _GetScannedText(cv::Mat image, ImageType imgType = ImageType::IMG_EVENT_TITLE, bool englishMode = false);
 
-	void _UpdateSapokaOrCharacterChoice(WebManager* webManager, UmaEventData sapokaUmaEventData);
+	void _UpdateSapokaOrCharacterChoice(UmaEventData sapokaUmaEventData);
 
-	void _UpdateScenarioChoice(WebManager* webManager, ScenarioEventData scenarioEventData);
+	void _UpdateScenarioChoice(ScenarioEventData scenarioEventData);
 
 	// 尋找 CurrentCharacter
 	void _LookingForCurrentCharacter(Screenshot& ss, std::string& henseiCharNameText);

@@ -1,24 +1,43 @@
 #pragma once
+
+// STL
 #include <map>
 #include <string>
+
+// enum
 #include "../enum/GameServerType.h"
 #include "../enum/GameWindowType.h"
+#include "../enum/SoftwareLanguageType.h"
+#include "../enum/JpServerLangType.h"
+
+// class
+#include "FileManager.h"
+#include "GameWindowFinder.h"
+
+// 3rdparty
+#include <nlohmann/json.hpp>
+using json = nlohmann::json;
 
 constexpr inline int DEFAULT_SCAN_INTERVAL = 100; // ²@¬í
-
 const std::string DEFAULT_LOCAL_SERVER_PORT = "5854";
-
 const std::string DEFAULT_PREVIOUS_CURRENT_CHARACTER_NAME = "DEFAULT_PREVIOUS_CURRENT_CHARACTER_NAME";
 
+// global
+#include "../global/path.h"
 
 class Config
 {
 private:
+	Config() {}
+	static Config* _instance;
 
 	std::map<std::string, int> InitGameWindowBoundOffset();
-
 public:
-	Config();
+	static Config* GetInstance()
+	{
+		if (_instance == nullptr) _instance = new Config();
+		return _instance;
+	}
 
 	//bool ShowEnhanceSkill;
 	bool DebugMode;

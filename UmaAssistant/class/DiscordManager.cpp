@@ -1,7 +1,6 @@
-﻿#include "../stdafx.h"
+﻿#include "DiscordManager.h"
 
 DiscordManager* DiscordManager::_instance = nullptr;
-
 std::string DiscordManager::_jpAppClientId = "1195236155709468752";
 std::string DiscordManager::_twAppClientId = "1195259431106138132";
 
@@ -13,7 +12,7 @@ void DiscordManager::UpdateRPC()
 		DiscordEventHandlers Handler;
 		memset(&Handler, 0, sizeof(Handler));
 
-		switch (global::config->GameServer)
+		switch (Config::GetInstance()->GameServer)
 		{
 		case static_cast<int>(SoftwareLanguageType::JP):
 			Discord_Initialize(_jpAppClientId.c_str(), &Handler, 1, NULL);
@@ -39,7 +38,7 @@ void DiscordManager::UpdateRPC()
 		rpc.smallImageKey = smallImageUrl == CHARACTER_ICON_URL ? "" : smallImageUrl.c_str();
 
 		// ------------- 更新 largeImageText ------------- //
-		switch (global::config->GameServer)
+		switch (Config::GetInstance()->GameServer)
 		{
 		case static_cast<int>(SoftwareLanguageType::JP):
 			largeImageText = u8"ウマ娘 プリティーダービー";
@@ -52,7 +51,7 @@ void DiscordManager::UpdateRPC()
 			break;
 		}
 
-		switch (global::config->SoftwareLanguage)
+		switch (Config::GetInstance()->SoftwareLanguage)
 		{
 		case static_cast<int>(SoftwareLanguageType::JP):
 			// ---------------------------------------------- //
