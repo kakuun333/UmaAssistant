@@ -4,6 +4,10 @@ UmaAssistant/*.rar
 
 UmaAssistant/vcpkg
 
+## CSharpRuntime
+UmaAssistant/CSharpRuntime/*.xml
+UmaAssistant/CSharpRuntime/*.pdb
+
 ## dll
 opencv_world481.dll
 
@@ -417,5 +421,3 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-lua_executor_config.json
-LuaExecutor.exe

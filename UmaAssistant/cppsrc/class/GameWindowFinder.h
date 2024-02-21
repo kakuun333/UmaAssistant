@@ -19,7 +19,7 @@
 
 // class
 #include "Config.h"
-#include "DiscordManager.h"
+#include "ref/DiscordManager2.h"
 
 // global
 #include "../global/form.h"

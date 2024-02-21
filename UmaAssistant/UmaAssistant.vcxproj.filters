@@ -63,9 +63,6 @@
     <ClCompile Include="cppsrc\class\DataManager.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="cppsrc\class\DiscordManager.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="cppsrc\class\FileManager.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
@@ -109,6 +106,12 @@
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="cppsrc\util\FormControl.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="cppsrc\class\ref\DiscordManager2.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="cppsrc\class\ref\RefSingleton.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
@@ -165,9 +168,6 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="cppsrc\class\DataManager.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="cppsrc\class\DiscordManager.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="cppsrc\class\FileManager.h">
@@ -243,6 +243,12 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="class\ref\WebViewManager.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\class\ref\DiscordManager2.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\class\ref\RefSingleton.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

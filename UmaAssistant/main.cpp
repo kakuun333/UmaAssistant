@@ -28,7 +28,7 @@ using json = nlohmann::json;
 #include "cppsrc/global/form.h"
 
 // singleton
-//#include "test.h"	
+//#include "test.h"
 
 // .NET
 using namespace System;
@@ -43,6 +43,7 @@ int main(array<String^>^ args)
 	AppDomain^ currentDomain = AppDomain::CurrentDomain;
 	currentDomain->AppendPrivatePath("CSharpRuntime");
 #pragma endregion
+
 #pragma region 初始化 config
 	Config::GetInstance()->Update();
 #pragma endregion
@@ -75,11 +76,11 @@ int main(array<String^>^ args)
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
 
-	UmaAssistant::UmaForm^ umaForm = gcnew UmaAssistant::UmaForm();
-	global::form::umaForm = umaForm;
-
 	UmaAssistant::SettingsForm^ settingsForm = gcnew UmaAssistant::SettingsForm();
 	global::form::settingsForm = settingsForm;
+
+	UmaAssistant::UmaForm^ umaForm = gcnew UmaAssistant::UmaForm();
+	global::form::umaForm = umaForm;
 
 	UmaAssistant::PreviewForm^ previewForm = gcnew UmaAssistant::PreviewForm();
 	global::form::previewForm = previewForm;
@@ -152,6 +153,10 @@ int main(array<String^>^ args)
 	}
 #pragma endregion
 #pragma region 運行主要的 Form
+	//test::GetInstance().foo();
+
+	
+
 	Application::Run(umaForm); // 啟動主要的 Form (UmaForm)
 #pragma endregion
 #pragma region 釋放資源

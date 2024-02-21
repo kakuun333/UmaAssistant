@@ -7,7 +7,6 @@
 // class
 #include "../data/UmaEventData.h"
 
-
 using namespace System;
 using namespace System::Windows::Forms;
 using namespace System::Text::RegularExpressions;
@@ -16,7 +15,7 @@ using namespace System::Text::RegularExpressions;
 constexpr inline unsigned int NEW_LINE_BYTE = 52;
 constexpr inline unsigned int NEW_LINE_SIZE = 20;
 
-public ref class FormDesigner
+ref class FormDesigner
 {
 private:
 	FormDesigner() {}
@@ -24,7 +23,7 @@ private:
 	static FormDesigner _instance;
 
 public:
-	static property FormDesigner^ Instance { FormDesigner^ get() { return % _instance; } }
+	static property FormDesigner^ Instance { FormDesigner^ get() { return %_instance; } }
 	
 	System::Void CreateChoiceTable(UmaChoice choice);
 

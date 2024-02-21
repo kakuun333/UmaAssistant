@@ -14,13 +14,15 @@ using json = nlohmann::json;
 #include "../util/CharacterCompare.h"
 
 // class
-#include "ref/WebViewManager.h"
-#include "DiscordManager.h"
+#include "Config.h"
 #include "data/UmaEventData.h"
 #include "data/UmaEventNameData.h"
 #include "data/ScenarioEventData.h"
 #include "data/UmaGetCharData.h"
 
+// ref class
+#include "ref/WebViewManager.h"
+#include "ref/DiscordManager2.h"
 
 // global
 #include "../global/form.h"
@@ -66,6 +68,11 @@ public:
 
 
 #pragma region ¤º´O¨ç¦¡
+	inline std::string GetCurrentCharacter()
+	{
+		return _currentCharacterInfoDict["event_owner"];
+	}
+
 	inline bool IsCurrentCharacterInfoLocked()
 	{
 		return _currentCharacterInfoLocked;

@@ -163,7 +163,7 @@ xcopy /E /C /Y $(SolutionDir)UmaMisc\ $(OutDir)UmaMisc\
 xcopy /E /C /Y $(SolutionDir)UmaTemp\ $(OutDir)UmaTemp\
 
 xcopy /E /C /Y $(SolutionDir)tessdata\ $(OutDir)tessdata\
-xcopy /E /C /Y $(SolutionDir)CSharpRuntime\ $(OutDir)CSharpRuntime\
+xcopy /E /C /Y $(SolutionDir)CSharpRuntime\*.dll $(OutDir)CSharpRuntime\*.dll
 xcopy /E /C /Y $(SolutionDir)cppdll\ $(OutDir)
 
 move $(OutDir)Microsoft.Web.WebView2.Core.dll $(OutDir)CSharpRuntime\Microsoft.Web.WebView2.Core.dll
@@ -199,7 +199,6 @@ move $(OutDir)WebView2Loader.dll $(OutDir)CSharpRuntime\WebView2Loader.dll</Comm
     <ClCompile Include="cppsrc\class\data\ScenarioEventData.cpp" />
     <ClCompile Include="cppsrc\class\data\UmaEventData.cpp" />
     <ClCompile Include="cppsrc\class\data\UmaEventNameData.cpp" />
-    <ClCompile Include="cppsrc\class\DiscordManager.cpp" />
     <ClCompile Include="cppsrc\class\FileManager.cpp" />
     <ClCompile Include="cppsrc\class\GameWindowFinder.cpp" />
     <ClCompile Include="cppsrc\class\ref\eventtest.cpp" />
@@ -221,8 +220,10 @@ move $(OutDir)WebView2Loader.dll $(OutDir)CSharpRuntime\WebView2Loader.dll</Comm
     <ClCompile Include="cppsrc\util\Constants.cpp" />
     <ClCompile Include="cppsrc\util\FormControl.cpp" />
     <ClCompile Include="PreviewForm.cpp" />
+    <ClCompile Include="cppsrc\class\ref\RefSingleton.cpp" />
     <ClCompile Include="SettingsForm.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="cppsrc\class\ref\DiscordManager2.cpp" />
     <ClCompile Include="UmaForm.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -234,7 +235,6 @@ move $(OutDir)WebView2Loader.dll $(OutDir)CSharpRuntime\WebView2Loader.dll</Comm
     <ClInclude Include="cppsrc\class\data\UmaEventData.h" />
     <ClInclude Include="cppsrc\class\data\UmaEventNameData.h" />
     <ClInclude Include="cppsrc\class\data\UmaGetCharData.h" />
-    <ClInclude Include="cppsrc\class\DiscordManager.h" />
     <ClInclude Include="cppsrc\class\FileManager.h" />
     <ClInclude Include="cppsrc\class\GameWindowFinder.h" />
     <ClInclude Include="cppsrc\class\ref\eventtest.h" />
@@ -267,10 +267,12 @@ move $(OutDir)WebView2Loader.dll $(OutDir)CSharpRuntime\WebView2Loader.dll</Comm
     <ClInclude Include="PreviewForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="cppsrc\class\ref\RefSingleton.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SettingsForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="cppsrc\class\ref\DiscordManager2.h" />
     <ClInclude Include="UmaForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>

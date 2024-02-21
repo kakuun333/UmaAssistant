@@ -13,6 +13,9 @@
 // global
 #include "cppsrc/global/form.h"
 
+#using "CSharpRuntime/UmaCSharpLibrary.dll"
+
+
 namespace UmaAssistant
 {
 	SettingsForm::SettingsForm(void)
@@ -155,6 +158,18 @@ namespace UmaAssistant
 		/* UmaDataUpdater */
 		//UmaDataUpdater::GetInstance()->Update();
 		//Config::GetInstance()->WriteToJson();
+
+		UmaCSharp::UmaDiscordManager::Instance->Initialize(0);
+
+		UmaCSharp::UmaDiscordManager::Instance->SetCharacterSmallIconUrl(util::stdStr2system(dataManager->GetCurrentCharacter()));
+
+		UmaCSharp::UmaDiscordManager::Instance->SetPresence(
+			Config::GetInstance()->GameServer,
+			Config::GetInstance()->SoftwareLanguage,
+			util::stdStr2system(dataManager->GetCurrentCharacter())
+		);
+
+		UmaCSharp::UmaDiscordManager::Instance->Update();
 
 		std::cout << "CLICKED TEST BUTTON" << std::endl;
 	}
@@ -512,17 +527,15 @@ namespace UmaAssistant
 	{
 		CheckBox^ checkbox = dynamic_cast<CheckBox^>(sender);
 
-		DiscordManager* discordManager = DiscordManager::GetInstance();
-
 		if (checkbox->Checked)
 		{
 			Config::GetInstance()->DiscordRPC = true;
-			discordManager->UpdateRPC();
+			//DiscordManager2::Instance->UpdateRPC();
 		}
 		else
 		{
 			Config::GetInstance()->DiscordRPC = false;
-			discordManager->Shutdown();
+			//DiscordManager2::Instance->Shutdown();
 		}
 
 		Config::GetInstance()->WriteToJson();

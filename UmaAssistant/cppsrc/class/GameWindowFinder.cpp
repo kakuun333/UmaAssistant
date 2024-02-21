@@ -58,8 +58,6 @@ void GameWindowFinder::CreateFindGameWindowThread()
 {
 	std::thread findGameWindowThread([=]()
 		{
-			DiscordManager* discordManager = DiscordManager::GetInstance();
-
 			while (true)
 			{
 				//if (FindWindow(nullptr, utility::string2wstring(GetCurrentGameWindowName()).c_str()))
@@ -82,7 +80,7 @@ void GameWindowFinder::CreateFindGameWindowThread()
 
 					if (!this->GetFoundGameWindow())
 					{
-						discordManager->UpdateRPC();
+						//DiscordManager2::Instance->UpdateRPC();
 					}
 
 
@@ -108,10 +106,10 @@ void GameWindowFinder::CreateFindGameWindowThread()
 
 					this->SetFoundGameWindow(false);
 
-					if (Config::GetInstance()->DiscordRPC && !discordManager->GetIsShutdown())
-					{
-						discordManager->Shutdown();
-					}
+					//if (Config::GetInstance()->DiscordRPC && !DiscordManager2::Instance->IsShutdown)
+					//{
+					//	DiscordManager2::Instance->Shutdown();
+					//}
 				}
 				std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 			}

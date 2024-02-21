@@ -79,10 +79,7 @@ namespace UmaAssistant
 				WebViewManager::Instance->ChangeCharacterName(sys_currentCharName);
 
 				// 更新 Discord RPC
-				if (Config::GetInstance()->DiscordRPC)
-				{
-					DiscordManager::GetInstance()->UpdateRPC();
-				}
+				DiscordManager2::Instance->UpdateRPC();
 			}
 			else
 			{
@@ -118,7 +115,8 @@ namespace UmaAssistant
 			if (j_msg["messageName"] == "charImgClick")
 			{
 
-				std::cout << u8"收到消息:" << util::systemStr2std(message) << std::endl;
+				//std::cout << u8"收到消息:" << util::systemStr2std(message) << std::endl;
+
 				DataManager* dataManager = DataManager::GetInstance();
 				UmaLog* umalog = UmaLog::GetInstance();
 
@@ -150,10 +148,7 @@ namespace UmaAssistant
 							WebViewManager::Instance->ChangeCharacterName(sys_event_owner);
 
 							// 更新 Discord RPC
-							if (Config::GetInstance()->DiscordRPC)
-							{
-								DiscordManager::GetInstance()->UpdateRPC();
-							}
+							DiscordManager2::Instance->UpdateRPC();
 						}
 						else
 						{
@@ -184,10 +179,7 @@ namespace UmaAssistant
 							WebViewManager::Instance->ChangeCharacterName(sys_event_owner);
 
 							// 更新 Discord RPC
-							if (Config::GetInstance()->DiscordRPC)
-							{
-								DiscordManager::GetInstance()->UpdateRPC();
-							}
+							DiscordManager2::Instance->UpdateRPC();
 						}
 						else
 						{

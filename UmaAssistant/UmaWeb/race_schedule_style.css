@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "MochiyPopOne";
+    src: url("../UmaMisc/Font/MochiyPopOne-Regular.ttf") format("truetype");
+}
+
+body {
+    /* overflow: hidden; */
+    
+    background: linear-gradient(to right, #10182a, #10192d);
+
+    /* font */
+    font-family: "MochiyPopOne", sans-serif;
+    color: #cfc197;
+    font-size: 0.9em;
+    
+    user-select: none;
+}

@@ -6,9 +6,9 @@
     "WinFormButton": 16777216
   },
   "DebugMode": true,
-  "DiscordRPC": false,
-  "GameServer": 1,
-  "GameWindow": 1,
+  "DiscordRPC": true,
+  "GameServer": 0,
+  "GameWindow": 0,
   "GameWindowBoundOffset": {
     "DMM": {
       "Height": 0,
@@ -29,7 +29,7 @@
     "Port": "5854"
   },
   "OutputLogFile": false,
-  "PreviousCurrentCharacterName": "東海帝皇（超越地平線）",
+  "PreviousCurrentCharacterName": "アグネスタキオン（Lunatic Lab）",
   "ScanInterval": 100,
   "SoftwareLanguage": 1
 }
