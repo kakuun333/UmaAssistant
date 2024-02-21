@@ -7,7 +7,7 @@
   },
   "DebugMode": true,
   "DiscordRPC": false,
-  "GameServer": 0,
+  "GameServer": 1,
   "GameWindow": 1,
   "GameWindowBoundOffset": {
     "DMM": {
@@ -29,7 +29,7 @@
     "Port": "5854"
   },
   "OutputLogFile": false,
-  "PreviousCurrentCharacterName": "ナイスネイチャ（ネガイノカサネ）",
+  "PreviousCurrentCharacterName": "八重無敵（四白流星襲擊）",
   "ScanInterval": 100,
   "SoftwareLanguage": 1
 }

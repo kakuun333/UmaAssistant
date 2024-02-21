@@ -1,16 +1,16 @@
 ﻿#include "UmaForm.h"
 
 // util
-#include "util/CharacterConvert.h"
+#include "cppsrc/util/CharacterConvert.h"
 
 // class
-#include "class/Config.h"
-#include "class/Scanner.h"
-#include "class/DataManager.h"
-#include "class/ref/WebViewManager.h"
+#include "cppsrc/class/Config.h"
+#include "cppsrc/class/Scanner.h"
+#include "cppsrc/class/DataManager.h"
+#include "cppsrc/class/ref/WebViewManager.h"
 
 // global
-#include "global/umaswitch.h"
+#include "cppsrc/global/umaswitch.h"
 
 using namespace Microsoft::Web::WebView2::Core;
 using namespace Microsoft::Web::WebView2::WinForms;
@@ -200,10 +200,10 @@ namespace UmaAssistant
 		}
 	}
 
-	//System::Void OnCharImgClick()
-	//{
+	System::Void UmaForm::OnCharImgClick()
+	{
 
-	//}
+	}
 #pragma endregion
 
 	UmaForm::UmaForm(void) // UmaForm 的建構函數

@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "enum/SoftwareLanguageType.h"
+#include "cppsrc/enum/SoftwareLanguageType.h"
 
 
 namespace UmaAssistant

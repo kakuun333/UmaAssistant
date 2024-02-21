@@ -26,23 +26,15 @@ namespace UmaAssistant
 	public: System::Windows::Forms::Label^ scan_state_label;
 	public: Microsoft::Web::WebView2::WinForms::WebView2^ choiceWebView2;
 	public: Microsoft::Web::WebView2::WinForms::WebView2^ characterNameWebView2;
+
+	public:
 	public: Microsoft::Web::WebView2::WinForms::WebView2^ selectCharacterWebView2;
 
 	public: UmaForm(void);
 
-
 	public: System::Void OnNavigationCompleted(System::Object^ sender, CoreWebView2NavigationCompletedEventArgs^ e);
 	public: System::Void OnWebMessageReceived(System::Object^ sender, CoreWebView2WebMessageReceivedEventArgs^ e);
 	public: System::Void OnCharImgClick();
-
-
-		//void OnChoiceDocumentCompleted(System::Object^ sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^ e);
-		//void OnSelectCharacterDocumentCompleted(System::Object^ sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^ e);
-		//void Character_IMG_Clicked(System::Object^ sender, System::Windows::Forms::HtmlElementEventArgs^ e);
-		//void UpdateIMGClickEvent();
-		//void UmaForm::UpdateIMGClickEvent();
-
-
 
 
 	protected:
@@ -59,37 +51,26 @@ namespace UmaAssistant
 
 	private: System::Windows::Forms::PictureBox^ icon_pictureBox;
 	private: System::ComponentModel::IContainer^ components;
-	private: System::Windows::Forms::Button^ close_select_character_btn;
+	private: UmaCustomControl::RoundedButton^ close_select_character_btn;
 
 
 	private:
 		/// <summary>
 		/// 設計工具所需的變數。
 		/// </summary>
-
-
-
-	private: System::Windows::Forms::Button^ close_form_btn;
-	private: System::Windows::Forms::Button^ minimize_btn;
-	private: System::Windows::Forms::Button^ settings_btn;
-	public: System::Windows::Forms::Button^ scan_btn;
-
-
-	public: System::Windows::Forms::Button^ screenshot_preview_btn;
-
-
-
+	private: UmaCustomControl::RoundedButton^ close_form_btn;
+	private: UmaCustomControl::RoundedButton^ minimize_btn;
+	private: UmaCustomControl::RoundedButton^ settings_btn;
+	public: UmaCustomControl::RoundedButton^ scan_btn;
+	public: UmaCustomControl::RoundedButton^ screenshot_preview_btn;
 	private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
-	public: System::Windows::Forms::Button^ test_btn;
-
-	private: System::Windows::Forms::Button^ clean_current_character_btn;
+	public: UmaCustomControl::RoundedButton^ test_btn;
+	private: UmaCustomControl::RoundedButton^ clean_current_character_btn;
 	public: System::Windows::Forms::Label^ game_window_status_label;
-
-
 	private: System::Windows::Forms::Label^ app_name_label;
-	private: System::Windows::Forms::Button^ select_window_btn;
+	private: UmaCustomControl::RoundedButton^ select_window_btn;
 	private: System::Windows::Forms::Label^ version_label;
-	public: System::Windows::Forms::Button^ select_character_btn;
+	public: UmaCustomControl::RoundedButton^ select_character_btn;
 
 
 
@@ -103,20 +84,20 @@ namespace UmaAssistant
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(UmaForm::typeid));
 			this->icon_pictureBox = (gcnew System::Windows::Forms::PictureBox());
-			this->close_form_btn = (gcnew System::Windows::Forms::Button());
-			this->minimize_btn = (gcnew System::Windows::Forms::Button());
-			this->settings_btn = (gcnew System::Windows::Forms::Button());
-			this->scan_btn = (gcnew System::Windows::Forms::Button());
-			this->screenshot_preview_btn = (gcnew System::Windows::Forms::Button());
+			this->close_form_btn = (gcnew UmaCustomControl::RoundedButton());
+			this->minimize_btn = (gcnew UmaCustomControl::RoundedButton());
+			this->settings_btn = (gcnew UmaCustomControl::RoundedButton());
+			this->scan_btn = (gcnew UmaCustomControl::RoundedButton());
+			this->screenshot_preview_btn = (gcnew UmaCustomControl::RoundedButton());
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
-			this->test_btn = (gcnew System::Windows::Forms::Button());
-			this->clean_current_character_btn = (gcnew System::Windows::Forms::Button());
+			this->test_btn = (gcnew UmaCustomControl::RoundedButton());
+			this->clean_current_character_btn = (gcnew UmaCustomControl::RoundedButton());
 			this->game_window_status_label = (gcnew System::Windows::Forms::Label());
 			this->app_name_label = (gcnew System::Windows::Forms::Label());
-			this->select_window_btn = (gcnew System::Windows::Forms::Button());
+			this->select_window_btn = (gcnew UmaCustomControl::RoundedButton());
 			this->version_label = (gcnew System::Windows::Forms::Label());
-			this->select_character_btn = (gcnew System::Windows::Forms::Button());
-			this->close_select_character_btn = (gcnew System::Windows::Forms::Button());
+			this->select_character_btn = (gcnew UmaCustomControl::RoundedButton());
+			this->close_select_character_btn = (gcnew UmaCustomControl::RoundedButton());
 			this->scan_state_label = (gcnew System::Windows::Forms::Label());
 			this->choiceWebView2 = (gcnew Microsoft::Web::WebView2::WinForms::WebView2());
 			this->characterNameWebView2 = (gcnew Microsoft::Web::WebView2::WinForms::WebView2());
@@ -150,8 +131,9 @@ namespace UmaAssistant
 			this->close_form_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->close_form_btn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"close_form_btn.Image")));
-			this->close_form_btn->Location = System::Drawing::Point(1021, 0);
+			this->close_form_btn->Location = System::Drawing::Point(521, 0);
 			this->close_form_btn->Name = L"close_form_btn";
+			this->close_form_btn->Radius = 10;
 			this->close_form_btn->Size = System::Drawing::Size(40, 32);
 			this->close_form_btn->TabIndex = 9;
 			this->close_form_btn->TabStop = false;
@@ -170,8 +152,9 @@ namespace UmaAssistant
 			this->minimize_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->minimize_btn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"minimize_btn.Image")));
-			this->minimize_btn->Location = System::Drawing::Point(976, 0);
+			this->minimize_btn->Location = System::Drawing::Point(476, 0);
 			this->minimize_btn->Name = L"minimize_btn";
+			this->minimize_btn->Radius = 10;
 			this->minimize_btn->Size = System::Drawing::Size(39, 32);
 			this->minimize_btn->TabIndex = 10;
 			this->minimize_btn->TabStop = false;
@@ -182,6 +165,7 @@ namespace UmaAssistant
 			// 
 			this->settings_btn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)), static_cast<System::Int32>(static_cast<System::Byte>(61)),
 				static_cast<System::Int32>(static_cast<System::Byte>(81)));
+			this->settings_btn->CausesValidation = false;
 			this->settings_btn->FlatAppearance->BorderSize = 0;
 			this->settings_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
 				static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
@@ -191,6 +175,7 @@ namespace UmaAssistant
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->settings_btn->Location = System::Drawing::Point(211, 42);
 			this->settings_btn->Name = L"settings_btn";
+			this->settings_btn->Radius = 10;
 			this->settings_btn->Size = System::Drawing::Size(95, 65);
 			this->settings_btn->TabIndex = 11;
 			this->settings_btn->TabStop = false;
@@ -211,6 +196,7 @@ namespace UmaAssistant
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->scan_btn->Location = System::Drawing::Point(9, 42);
 			this->scan_btn->Name = L"scan_btn";
+			this->scan_btn->Radius = 10;
 			this->scan_btn->Size = System::Drawing::Size(95, 65);
 			this->scan_btn->TabIndex = 16;
 			this->scan_btn->TabStop = false;
@@ -231,6 +217,7 @@ namespace UmaAssistant
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->screenshot_preview_btn->Location = System::Drawing::Point(312, 42);
 			this->screenshot_preview_btn->Name = L"screenshot_preview_btn";
+			this->screenshot_preview_btn->Radius = 10;
 			this->screenshot_preview_btn->Size = System::Drawing::Size(63, 65);
 			this->screenshot_preview_btn->TabIndex = 17;
 			this->screenshot_preview_btn->TabStop = false;
@@ -256,6 +243,7 @@ namespace UmaAssistant
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->test_btn->Location = System::Drawing::Point(262, 8);
 			this->test_btn->Name = L"test_btn";
+			this->test_btn->Radius = 10;
 			this->test_btn->Size = System::Drawing::Size(91, 65);
 			this->test_btn->TabIndex = 21;
 			this->test_btn->TabStop = false;
@@ -275,6 +263,7 @@ namespace UmaAssistant
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->clean_current_character_btn->Location = System::Drawing::Point(381, 42);
 			this->clean_current_character_btn->Name = L"clean_current_character_btn";
+			this->clean_current_character_btn->Radius = 10;
 			this->clean_current_character_btn->Size = System::Drawing::Size(91, 65);
 			this->clean_current_character_btn->TabIndex = 24;
 			this->clean_current_character_btn->TabStop = false;
@@ -321,6 +310,7 @@ namespace UmaAssistant
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->select_window_btn->Location = System::Drawing::Point(110, 42);
 			this->select_window_btn->Name = L"select_window_btn";
+			this->select_window_btn->Radius = 10;
 			this->select_window_btn->Size = System::Drawing::Size(95, 65);
 			this->select_window_btn->TabIndex = 26;
 			this->select_window_btn->TabStop = false;
@@ -354,6 +344,7 @@ namespace UmaAssistant
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->select_character_btn->Location = System::Drawing::Point(478, 42);
 			this->select_character_btn->Name = L"select_character_btn";
+			this->select_character_btn->Radius = 10;
 			this->select_character_btn->Size = System::Drawing::Size(75, 65);
 			this->select_character_btn->TabIndex = 28;
 			this->select_character_btn->TabStop = false;
@@ -373,8 +364,9 @@ namespace UmaAssistant
 			this->close_select_character_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->close_select_character_btn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"close_select_character_btn.Image")));
-			this->close_select_character_btn->Location = System::Drawing::Point(1021, 0);
+			this->close_select_character_btn->Location = System::Drawing::Point(771, 0);
 			this->close_select_character_btn->Name = L"close_select_character_btn";
+			this->close_select_character_btn->Radius = 10;
 			this->close_select_character_btn->Size = System::Drawing::Size(40, 32);
 			this->close_select_character_btn->TabIndex = 30;
 			this->close_select_character_btn->TabStop = false;
@@ -432,7 +424,7 @@ namespace UmaAssistant
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(1060, 550);
+			this->ClientSize = System::Drawing::Size(560, 550);
 			this->Controls->Add(this->selectCharacterWebView2);
 			this->Controls->Add(this->characterNameWebView2);
 			this->Controls->Add(this->choiceWebView2);

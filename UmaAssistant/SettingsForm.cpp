@@ -1,16 +1,16 @@
 #include "SettingsForm.h"
 
 // enum
-#include "enum/SoftwareLanguageType.h"
-#include "enum/GameServerType.h"
+#include "cppsrc/enum/SoftwareLanguageType.h"
+#include "cppsrc/enum/GameServerType.h"
 
 // class
-#include "class/AutoMouseClicker.h"
-#include "class/ConsoleManager.h"
-#include "class/Config.h"
+#include "cppsrc/class/AutoMouseClicker.h"
+#include "cppsrc/class/ConsoleManager.h"
+#include "cppsrc/class/Config.h"
 
 // global
-#include "global/form.h"
+#include "cppsrc/global/form.h"
 
 namespace UmaAssistant
 {

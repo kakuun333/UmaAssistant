@@ -35,7 +35,7 @@ System::Void WebViewManager::ChangeChoiceHtmlLanguage(int softwareLangType)
 System::Void WebViewManager::CleanChoiceTable()
 {
 	FormController::Instance->ExecuteFunctionAsync(global::form::umaForm->choiceWebView2,
-		"changeChoiceHtmlLanguage", gcnew array<System::Object^>{});
+		"cleanChoiceTable", gcnew array<System::Object^>{});
 }
 System::Void WebViewManager::UpdateSkillContent()
 {

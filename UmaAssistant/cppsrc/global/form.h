@@ -4,9 +4,9 @@
 #include <vcclr.h>
 
 // WinForm
-#include "../UmaForm.h"
-#include "../SettingsForm.h"
-#include "../PreviewForm.h"
+#include "../../UmaForm.h"
+#include "../../SettingsForm.h"
+#include "../../PreviewForm.h"
 
 namespace global
 {

@@ -13,19 +13,19 @@ namespace fs = std::filesystem;
 using json = nlohmann::json;
 
 // class
-#include "class/DataManager.h"
-#include "class/Scanner.h"
-#include "class/GameWindowFinder.h"
-#include "class/FileManager.h"
-#include "class/ConsoleManager.h"
-#include "class/Config.h"
-#include "class/UmaLog.h"
+#include "cppsrc/class/DataManager.h"
+#include "cppsrc/class/Scanner.h"
+#include "cppsrc/class/GameWindowFinder.h"
+#include "cppsrc/class/FileManager.h"
+#include "cppsrc/class/ConsoleManager.h"
+#include "cppsrc/class/Config.h"
+#include "cppsrc/class/UmaLog.h"
 
 // ref class
-#include "class/ref/LocalServer.h"
+#include "cppsrc/class/ref/LocalServer.h"
 
 // global
-#include "global/form.h"
+#include "cppsrc/global/form.h"
 
 // singleton
 //#include "test.h"	

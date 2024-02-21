@@ -14,6 +14,10 @@ body {
     font-size: 0.9em;
 }
 
+th {
+    font-weight: normal;
+}
+
 img {
     width: 1.5em;
     height: 1.5em;
@@ -38,4 +42,9 @@ table td {
 
 #character_name {
     font-size: 1em;
+}
+
+#character_name_title {
+    padding-left: 2ch;
+    text-align: left;
 }

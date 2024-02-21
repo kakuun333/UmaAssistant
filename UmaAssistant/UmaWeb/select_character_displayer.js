@@ -11,6 +11,7 @@ function createCharacterImageButton(jp_event_owner, tw_event_owner, img_name) {
     char_img.src = "../UmaMisc/Image/Character/" + img_name;
     char_img.alt = "<jp_event_owner>"+jp_event_owner+"</jp_event_owner>"+"<tw_event_owner>"+tw_event_owner+"</tw_event_owner>";
     char_img.loading = "eager";
+    char_img.draggable = false;
 
     char_img.addEventListener("load", function() {
         char_img.style.display = "inline";

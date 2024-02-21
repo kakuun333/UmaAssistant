@@ -27,6 +27,16 @@ th {
     font-weight: normal;
 }
 
+#event_owner_title {
+    padding-left: 2ch;
+    text-align: left;
+}
+#event_name_title {
+    padding-left: 2ch;
+    text-align: left;
+}
+
+
 #info_table {
     width: 100%;
     border-radius: 10px 10px 10px 10px;

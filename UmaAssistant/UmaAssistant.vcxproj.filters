@@ -15,111 +15,105 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="class\Config.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="class\ConsoleManager.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="class\DiscordManager.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="global\umaswitch.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="global\path.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="PreviewForm.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="SettingsForm.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="class\AutoMouseClicker.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="class\data\ScenarioEventData.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="class\ref\LocalServer.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="class\FileManager.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="class\ref\FormController.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="class\ref\FormDesigner.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="class\data\UmaEventData.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="class\DataManager.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="class\Scanner.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="class\Screenshot.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="class\GameWindowFinder.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="class\UmaTimer.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="class\UmaLog.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="class\data\UmaEventNameData.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
     <ClCompile Include="UmaForm.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="util\CharacterCombine.cpp">
+    <ClCompile Include="cppsrc\class\data\ScenarioEventData.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="util\CharacterCompare.cpp">
+    <ClCompile Include="cppsrc\class\data\UmaEventData.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="util\CharacterConvert.cpp">
+    <ClCompile Include="cppsrc\class\data\UmaEventNameData.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="util\CharacterFilter.cpp">
+    <ClCompile Include="cppsrc\class\ref\eventtest.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="util\Constants.cpp">
+    <ClCompile Include="cppsrc\class\ref\FormController.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="util\FormControl.cpp">
+    <ClCompile Include="cppsrc\class\ref\FormDesigner.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="class\ref\eventtest.cpp">
+    <ClCompile Include="cppsrc\class\ref\LocalServer.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="class\ref\WebViewManager.cpp">
+    <ClCompile Include="cppsrc\class\ref\WebViewManager.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="global\form.cpp">
+    <ClCompile Include="cppsrc\class\AutoMouseClicker.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="cppsrc\class\Config.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="cppsrc\class\ConsoleManager.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="cppsrc\class\DataManager.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="cppsrc\class\DiscordManager.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="cppsrc\class\FileManager.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="cppsrc\class\GameWindowFinder.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="cppsrc\class\Scanner.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="cppsrc\class\Screenshot.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="cppsrc\class\UmaLog.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="cppsrc\class\UmaTimer.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="cppsrc\global\form.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="cppsrc\global\path.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="cppsrc\global\umaswitch.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="cppsrc\util\CharacterCombine.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="cppsrc\util\CharacterCompare.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="cppsrc\util\CharacterConvert.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="cppsrc\util\CharacterFilter.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="cppsrc\util\Constants.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="cppsrc\util\FormControl.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="global\umaswitch.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="global\path.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="PreviewForm.h">
@@ -128,118 +122,124 @@
     <ClInclude Include="SettingsForm.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="class\AutoMouseClicker.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="class\data\ScenarioEventData.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="class\Config.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="class\ConsoleManager.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="class\DiscordManager.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="class\ref\LocalServer.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="class\FileManager.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="class\ref\FormController.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="enum\FilePathType.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="enum\FileType.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="enum\GameWindowType.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="enum\ImageType.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="enum\GameServerType.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="enum\JpServerLangType.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="enum\SoftwareLanguageType.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="util\CharacterCompare.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="util\Constants.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="util\FormControl.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="class\ref\FormDesigner.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="class\data\UmaEventData.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="class\DataManager.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="enum\UmaEventDataType.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="util\CharacterConvert.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="util\CharacterFilter.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="util\CharacterCombine.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="class\Scanner.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="class\Screenshot.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="class\GameWindowFinder.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="class\UmaTimer.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="class\UmaLog.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="class\data\UmaGetCharData.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="class\data\UmaEventNameData.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
     <ClInclude Include="UmaForm.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="util\Singleton.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="test.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="class\ref\eventtest.h">
+    <ClInclude Include="cppsrc\class\data\ScenarioEventData.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="class\ref\WebViewManager.h">
+    <ClInclude Include="cppsrc\class\data\UmaEventData.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="global\form.h">
+    <ClInclude Include="cppsrc\class\data\UmaEventNameData.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\class\data\UmaGetCharData.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\class\ref\eventtest.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\class\ref\FormController.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\class\ref\FormDesigner.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\class\ref\LocalServer.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\class\ref\WebViewManager.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\class\AutoMouseClicker.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\class\Config.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\class\ConsoleManager.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\class\DataManager.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\class\DiscordManager.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\class\FileManager.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\class\GameWindowFinder.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\class\Scanner.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\class\Screenshot.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\class\UmaLog.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\class\UmaTimer.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\enum\FilePathType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\enum\FileType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\enum\GameServerType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\enum\GameWindowType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\enum\ImageType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\enum\JpServerLangType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\enum\SoftwareLanguageType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\enum\UmaEventDataType.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\global\form.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\global\path.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\global\umaswitch.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\util\CharacterCombine.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\util\CharacterCompare.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\util\CharacterConvert.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\util\CharacterFilter.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\util\Constants.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\util\FormControl.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\util\Singleton.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

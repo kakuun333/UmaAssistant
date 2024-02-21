@@ -5,7 +5,7 @@
 #include <string>
 
 // class
-#include "class/GameWindowFinder.h"
+#include "cppsrc/class/GameWindowFinder.h"
 
 // global
 //#include "global/global.h"
