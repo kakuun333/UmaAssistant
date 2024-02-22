@@ -1,10 +1,16 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/image/uma_icon_64px.png">
-  <h1 align="center">UmaAssistant</h1>
 </p>
+<h1 align="center">UmaAssistant</h1>
 
-## 文檔語言｜ドキュメント言語
-### [繁體中文](./README.md)｜[日本語](./README_jp.md)
+
+<h3 align="center">文檔語言｜ドキュメント言語</h2>  
+<h3 align="center">
+  <a href="./README.md">繁體中文</a>｜
+  <a href="./README_jp.md">日本語</a>
+</h3>
+
+
 
 ## 社群
 ### 作者有為這個專案運營一個 Discord 伺服器，在這個伺服器裡會第一時間通知本軟體的最新資訊、也可以在這個伺服器裡輕鬆地提交問題回報。  
@@ -210,9 +216,18 @@ https://github.com/nlohmann/json
 - curl    
 https://curl.se
 
-
 - The Programming Language Lua  
 https://www.lua.org
+
+### C#
+- WebView2  
+https://learn.microsoft.com/en-us/microsoft-edge/webview2/get-started/winforms
+
+- Newtonsoft.Json  
+https://github.com/JamesNK/Newtonsoft.Json
+
+- Lachee/discord-rpc-csharp  
+https://github.com/Lachee/discord-rpc-csharp
 
 ### Lua
 - dkjson - JSON Module for Lua  
