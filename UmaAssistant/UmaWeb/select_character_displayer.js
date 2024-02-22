@@ -28,7 +28,7 @@ function createCharacterImageButton(jp_event_owner, tw_event_owner, img_name) {
     {
         char_img.addEventListener("click", function(event) {
             const msgObj = {
-                messageName: "charImgClick",
+                messageType: MessageType.CHARACTER_IMAGE_CLICK,
                 src: char_img.src,
                 alt: char_img.alt,
             }

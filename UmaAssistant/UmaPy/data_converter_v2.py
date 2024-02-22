@@ -463,9 +463,9 @@ util.write_json("../UmaData/skill_data_tw.json", skill_data_tw);
 def select_character_jp_owner_to_tw_owner():
     for jp_event_owner, jp_event_owner_v in char_cvt_data.items():
         
-        for origin_name, cvt_name in missed_data["jp_to_tw"]["event_owner"].items():
-            if (jp_event_owner == cvt_name):
-                jp_event_owner = origin_name;
+        # for origin_name, cvt_name in missed_data["jp_to_tw"]["event_owner"].items():
+        #     if (jp_event_owner == cvt_name):
+        #         jp_event_owner = origin_name;
 
         for idx, char_data in enumerate(select_character_data):
 

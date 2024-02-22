@@ -121,7 +121,7 @@ namespace UmaAssistant
 		{
 			json j_msg = json::parse(util::systemStr2std(message));
 
-			if (j_msg["messageName"] == "charImgClick")
+			if (j_msg["messageType"] == "charImgClick")
 			{
 
 				//std::cout << u8"收到消息:" << util::systemStr2std(message) << std::endl;

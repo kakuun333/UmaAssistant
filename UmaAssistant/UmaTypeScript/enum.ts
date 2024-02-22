@@ -40,3 +40,8 @@ export enum JsonDataType
 
     SELECT_CHARACTER_DATA = "select_character_data",
 }
+
+export enum MessageType
+{
+    CHARACTER_IMAGE_CLICK = "charImgClick"
+}
