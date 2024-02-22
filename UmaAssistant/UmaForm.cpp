@@ -147,14 +147,6 @@ namespace UmaAssistant
 							umalog->print(u8"[UmaForm] 已找到選擇的角色");
 							dataManager->SetCurrentCharacterInfoLock(true);
 							WebViewManager::Instance->ChangeCharacterName(sys_event_owner);
-
-							// 更新 Discord RPC
-							UmaCSharp::UmaDiscordManager::Instance->SetPresence(
-								Config::GetInstance()->GameServer,
-								Config::GetInstance()->SoftwareLanguage,
-								util::stdStr2system(DataManager::GetInstance()->GetCurrentCharacter())
-							);
-							
 						}
 						else
 						{

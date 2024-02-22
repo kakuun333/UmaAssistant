@@ -90,7 +90,6 @@ void GameWindowFinder::CreateFindGameWindowThread()
 								Config::GetInstance()->SoftwareLanguage,
 								util::stdStr2system(DataManager::GetInstance()->GetCurrentCharacter())
 							);
-							
 						}
 					//}
 
