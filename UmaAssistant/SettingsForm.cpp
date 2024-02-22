@@ -520,20 +520,10 @@ namespace UmaAssistant
 		if (checkbox->Checked)
 		{
 			Config::GetInstance()->DiscordRPC = true;
-
-			// 更新 DiscordRPC
-			UmaCSharp::UmaDiscordManager::Instance->SetPresence(
-				Config::GetInstance()->GameServer,
-				Config::GetInstance()->SoftwareLanguage,
-				util::stdStr2system(DataManager::GetInstance()->GetCurrentCharacter())
-			);
-			
 		}
 		else
 		{
 			Config::GetInstance()->DiscordRPC = false;
-
-			// 更新 DiscordRPC
 			UmaCSharp::UmaDiscordManager::Instance->Deinitialize();
 		}
 
