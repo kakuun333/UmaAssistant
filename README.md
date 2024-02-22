@@ -3,14 +3,10 @@
 </p>
 <h1 align="center">UmaAssistant</h1>
 
-
-<h3 align="center">文檔語言｜ドキュメント言語</h2>  
+<h3 align="center">文檔語言｜ドキュメント言語</h3>  
 <h3 align="center">
-  <a href="./README.md">繁體中文</a>｜
-  <a href="./README_jp.md">日本語</a>
+  <a href="./README.md">繁體中文</a>｜<a href="./README_jp.md">日本語</a>
 </h3>
-
-
 
 ## 社群
 ### 作者有為這個專案運營一個 Discord 伺服器，在這個伺服器裡會第一時間通知本軟體的最新資訊、也可以在這個伺服器裡輕鬆地提交問題回報。  
