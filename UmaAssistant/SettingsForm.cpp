@@ -6,15 +6,16 @@
 
 // class
 #include "cppsrc/class/AutoMouseClicker.h"
-#include "cppsrc/class/ConsoleManager.h"
-#include "cppsrc/class/Config.h"
 #include "cppsrc/class/Screenshot.h"
+
+#include "cppsrc/class/Config.h"
+#include "cppsrc/class/ConsoleManager.h"
+#include "cppsrc/class/DataManager.h"
 
 // global
 #include "cppsrc/global/form.h"
 
 #using "CSharpRuntime/UmaCSharpLibrary.dll"
-
 
 namespace UmaAssistant
 {
@@ -159,17 +160,15 @@ namespace UmaAssistant
 		//UmaDataUpdater::GetInstance()->Update();
 		//Config::GetInstance()->WriteToJson();
 
-		UmaCSharp::UmaDiscordManager::Instance->Initialize(0);
+		//UmaCSharp::UmaDiscordManager::Instance->Initialize(Config::GetInstance()->GameServer);
+		//UmaCSharp::UmaDiscordManager::Instance->SetPresence(
+		//	Config::GetInstance()->GameServer,
+		//	Config::GetInstance()->SoftwareLanguage,
+		//	util::stdStr2system(DataManager::GetInstance()->GetCurrentCharacter())
+		//);
+		//UmaCSharp::UmaDiscordManager::Instance->Update();
 
-		UmaCSharp::UmaDiscordManager::Instance->SetCharacterSmallIconUrl(util::stdStr2system(dataManager->GetCurrentCharacter()));
 
-		UmaCSharp::UmaDiscordManager::Instance->SetPresence(
-			Config::GetInstance()->GameServer,
-			Config::GetInstance()->SoftwareLanguage,
-			util::stdStr2system(dataManager->GetCurrentCharacter())
-		);
-
-		UmaCSharp::UmaDiscordManager::Instance->Update();
 
 		std::cout << "CLICKED TEST BUTTON" << std::endl;
 	}
@@ -530,12 +529,21 @@ namespace UmaAssistant
 		if (checkbox->Checked)
 		{
 			Config::GetInstance()->DiscordRPC = true;
-			//DiscordManager2::Instance->UpdateRPC();
+
+			// 更新 DiscordRPC
+			UmaCSharp::UmaDiscordManager::Instance->SetPresence(
+				Config::GetInstance()->GameServer,
+				Config::GetInstance()->SoftwareLanguage,
+				util::stdStr2system(DataManager::GetInstance()->GetCurrentCharacter())
+			);
+			UmaCSharp::UmaDiscordManager::Instance->Update();
 		}
 		else
 		{
 			Config::GetInstance()->DiscordRPC = false;
-			//DiscordManager2::Instance->Shutdown();
+
+			// 更新 DiscordRPC
+			UmaCSharp::UmaDiscordManager::Instance->Deinitialize();
 		}
 
 		Config::GetInstance()->WriteToJson();

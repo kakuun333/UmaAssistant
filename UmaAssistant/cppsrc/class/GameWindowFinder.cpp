@@ -1,6 +1,8 @@
 ﻿#include "GameWindowFinder.h"
 
 
+#using "CSharpRuntime/UmaCSharpLibrary.dll"
+
 
 GameWindowFinder* GameWindowFinder::_instance = nullptr;
 
@@ -80,7 +82,16 @@ void GameWindowFinder::CreateFindGameWindowThread()
 
 					if (!this->GetFoundGameWindow())
 					{
-						//DiscordManager2::Instance->UpdateRPC();
+						if (Config::GetInstance()->DiscordRPC)
+						{
+							UmaCSharp::UmaDiscordManager::Instance->Initialize(Config::GetInstance()->GameServer);
+							UmaCSharp::UmaDiscordManager::Instance->SetPresence(
+								Config::GetInstance()->GameServer,
+								Config::GetInstance()->SoftwareLanguage,
+								util::stdStr2system(DataManager::GetInstance()->GetCurrentCharacter())
+							);
+							UmaCSharp::UmaDiscordManager::Instance->Update();
+						}
 					}
 
 
@@ -106,10 +117,11 @@ void GameWindowFinder::CreateFindGameWindowThread()
 
 					this->SetFoundGameWindow(false);
 
-					//if (Config::GetInstance()->DiscordRPC && !DiscordManager2::Instance->IsShutdown)
-					//{
-					//	DiscordManager2::Instance->Shutdown();
-					//}
+
+					if (Config::GetInstance()->DiscordRPC && !UmaCSharp::UmaDiscordManager::Instance->IsInitialized)
+					{
+						UmaCSharp::UmaDiscordManager::Instance->Deinitialize();
+					}
 				}
 				std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 			}

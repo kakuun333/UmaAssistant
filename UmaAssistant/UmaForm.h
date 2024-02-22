@@ -36,7 +36,7 @@ namespace UmaAssistant
 
 	public: System::Void OnNavigationCompleted(System::Object^ sender, CoreWebView2NavigationCompletedEventArgs^ e);
 	public: System::Void OnWebMessageReceived(System::Object^ sender, CoreWebView2WebMessageReceivedEventArgs^ e);
-	public: System::Void OnCharImgClick();
+	public: System::Void OnApplicationExit(System::Object^ sender, EventArgs^ e);
 
 
 	protected:

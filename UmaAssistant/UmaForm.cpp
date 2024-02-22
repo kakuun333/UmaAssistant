@@ -7,10 +7,14 @@
 #include "cppsrc/class/Config.h"
 #include "cppsrc/class/Scanner.h"
 #include "cppsrc/class/DataManager.h"
+#include "cppsrc/class/ConsoleManager.h"
 #include "cppsrc/class/ref/WebViewManager.h"
+#include "cppsrc/class/ref/LocalServer.h"
 
 // global
 #include "cppsrc/global/umaswitch.h"
+
+#using "CSharpRuntime/UmaCSharpLibrary.dll"
 
 using namespace Microsoft::Web::WebView2::Core;
 using namespace Microsoft::Web::WebView2::WinForms;
@@ -79,7 +83,12 @@ namespace UmaAssistant
 				WebViewManager::Instance->ChangeCharacterName(sys_currentCharName);
 
 				// 更新 Discord RPC
-				DiscordManager2::Instance->UpdateRPC();
+				UmaCSharp::UmaDiscordManager::Instance->SetPresence(
+					Config::GetInstance()->GameServer,
+					Config::GetInstance()->SoftwareLanguage,
+					util::stdStr2system(DataManager::GetInstance()->GetCurrentCharacter())
+				);
+				UmaCSharp::UmaDiscordManager::Instance->Update();
 			}
 			else
 			{
@@ -148,7 +157,12 @@ namespace UmaAssistant
 							WebViewManager::Instance->ChangeCharacterName(sys_event_owner);
 
 							// 更新 Discord RPC
-							DiscordManager2::Instance->UpdateRPC();
+							UmaCSharp::UmaDiscordManager::Instance->SetPresence(
+								Config::GetInstance()->GameServer,
+								Config::GetInstance()->SoftwareLanguage,
+								util::stdStr2system(DataManager::GetInstance()->GetCurrentCharacter())
+							);
+							UmaCSharp::UmaDiscordManager::Instance->Update();
 						}
 						else
 						{
@@ -179,7 +193,12 @@ namespace UmaAssistant
 							WebViewManager::Instance->ChangeCharacterName(sys_event_owner);
 
 							// 更新 Discord RPC
-							DiscordManager2::Instance->UpdateRPC();
+							UmaCSharp::UmaDiscordManager::Instance->SetPresence(
+								Config::GetInstance()->GameServer,
+								Config::GetInstance()->SoftwareLanguage,
+								util::stdStr2system(DataManager::GetInstance()->GetCurrentCharacter())
+							);
+							UmaCSharp::UmaDiscordManager::Instance->Update();
 						}
 						else
 						{
@@ -197,9 +216,19 @@ namespace UmaAssistant
 	
 	}
 
-	System::Void UmaForm::OnCharImgClick()
+	System::Void UmaForm::OnApplicationExit(System::Object^ sender, EventArgs^ e)
 	{
+		// 中止 LocalServer
+		LocalServer::Instance->Stop();
 
+		// 關閉 Console
+		ConsoleManager::GetInstance()->Disable();
+
+		// 卸載字型
+		RemoveFontResourceW(util::string2wstring(global::path::std_MochiyPopOne).c_str());
+
+		// 去初始化 Discord RPC
+		UmaCSharp::UmaDiscordManager::Instance->Deinitialize();
 	}
 #pragma endregion
 
@@ -322,6 +351,8 @@ namespace UmaAssistant
 			break;
 		}
 	}
+
+
 #pragma endregion
 
 	UmaForm::UmaForm(void) // UmaForm 的建構函數
@@ -330,6 +361,8 @@ namespace UmaAssistant
 		//
 		//TODO:  在此加入建構函式程式碼
 		//
+
+		Application::ApplicationExit += gcnew EventHandler(this, &UmaForm::OnApplicationExit);
 
 		#pragma region 初始化 WebBrowser
 		// 提取 config 資料

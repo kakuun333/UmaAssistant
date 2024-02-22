@@ -1,5 +1,7 @@
 ﻿#include "DataManager.h"
 
+#using "CSharpRuntime/UmaCSharpLibrary.dll"
+
 DataManager* DataManager::_instance = nullptr;
 bool DataManager::_currentCharacterInfoLocked = false;
 std::map<std::string, std::string> DataManager::_currentCharacterInfoDict =
@@ -150,7 +152,12 @@ bool DataManager::TryGetCurrentCharacterByList(std::deque<std::string> scanned_t
 		WebViewManager::Instance->ChangeCharacterName(util::stdStr2system(maxElement->event_owner));
 
 		// 更新 DiscordRPC
-		DiscordManager2::Instance->UpdateRPC();
+		UmaCSharp::UmaDiscordManager::Instance->SetPresence(
+			Config::GetInstance()->GameServer,
+			Config::GetInstance()->SoftwareLanguage,
+			util::stdStr2system(DataManager::GetInstance()->GetCurrentCharacter())
+		);
+		UmaCSharp::UmaDiscordManager::Instance->Update();
 
 		// config
 		Config::GetInstance()->PreviousCurrentCharacterName = maxElement->event_owner;

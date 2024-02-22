@@ -223,7 +223,6 @@ move $(OutDir)WebView2Loader.dll $(OutDir)CSharpRuntime\WebView2Loader.dll</Comm
     <ClCompile Include="cppsrc\class\ref\RefSingleton.cpp" />
     <ClCompile Include="SettingsForm.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="cppsrc\class\ref\DiscordManager2.cpp" />
     <ClCompile Include="UmaForm.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -272,7 +271,6 @@ move $(OutDir)WebView2Loader.dll $(OutDir)CSharpRuntime\WebView2Loader.dll</Comm
     <ClInclude Include="SettingsForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="cppsrc\class\ref\DiscordManager2.h" />
     <ClInclude Include="UmaForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>

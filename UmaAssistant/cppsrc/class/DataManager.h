@@ -22,7 +22,6 @@ using json = nlohmann::json;
 
 // ref class
 #include "ref/WebViewManager.h"
-#include "ref/DiscordManager2.h"
 
 // global
 #include "../global/form.h"

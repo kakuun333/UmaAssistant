@@ -98,12 +98,18 @@ namespace UmaCSharp
 
         #region fields
         private string m_characterSmallIconUrl = string.Empty;
+        private bool m_isInitialized = false;
         #endregion
 
         #region properties
         public string CharacterSmallIconUrl
         {
             get { return m_characterSmallIconUrl; }
+            private set { }
+        }
+        public bool IsInitialized
+        {
+            get { return m_isInitialized; }
             private set { }
         }
         #endregion
@@ -117,7 +123,7 @@ namespace UmaCSharp
         /// </summary>
         /// <param name="currentCharacterName"></param>
         /// <returns></returns>
-        public void SetCharacterSmallIconUrl(string currentCharacterName)
+        private void m_SetCharacterSmallIconUrl(string currentCharacterName)
         {
             string iconName = string.Empty;
 
@@ -145,6 +151,8 @@ namespace UmaCSharp
         /// <param name="gameServer"></param>
         public void Initialize(int gameServer)
         {
+            if (m_isInitialized) return;
+
             switch (gameServer)
             {
                 case (int)GameServerType.JP:
@@ -171,6 +179,8 @@ namespace UmaCSharp
 
             // Connect to the RPC
             client.Initialize();
+
+            m_isInitialized = true;
         }
 
         /// <summary>
@@ -178,7 +188,11 @@ namespace UmaCSharp
         /// </summary>
         public void Deinitialize()
         {
+            if (!m_isInitialized) return;
+
             client.Dispose();
+
+            m_isInitialized = false;
         }
 
         /// <summary>
@@ -190,6 +204,10 @@ namespace UmaCSharp
         /// <param name="smallImageUrl"></param>
         public void SetPresence(int gameServer, int softwareLanguage, string currentCharacterName)
         {
+            if (!m_isInitialized) return;
+
+            m_SetCharacterSmallIconUrl(currentCharacterName);
+
             string _largeImageText = string.Empty;
             string _smallImageText = string.Empty;
             string _details = string.Empty;
@@ -212,11 +230,11 @@ namespace UmaCSharp
             switch (softwareLanguage)
             {
                 case (int)SoftwareLanguage.JP:
-                    _details = string.IsNullOrEmpty(currentCharacterName) ? string.Empty : string.Format("{0} を育成している", currentCharacterName);
+                    _details = string.IsNullOrEmpty(currentCharacterName) ? string.Empty : string.Format("育成中 {0}", currentCharacterName);
                     break;
                 
                 case (int)SoftwareLanguage.TW:
-                    _details = string.IsNullOrEmpty(currentCharacterName) ? string.Empty : string.Format("培育 {0} 中", currentCharacterName);
+                    _details = string.IsNullOrEmpty(currentCharacterName) ? string.Empty : string.Format("培育中 {0}", currentCharacterName);
                     break;
             }
 
@@ -241,6 +259,8 @@ namespace UmaCSharp
         /// </summary>
         public void Update()
         {
+            if (!m_isInitialized) return;
+
             //Invoke all the events, such as OnPresenceUpdate
             client.Invoke();
         }

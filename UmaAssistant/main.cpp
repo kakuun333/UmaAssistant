@@ -30,6 +30,9 @@ using json = nlohmann::json;
 // singleton
 //#include "test.h"
 
+
+
+
 // .NET
 using namespace System;
 using namespace System::IO;
@@ -47,19 +50,19 @@ int main(array<String^>^ args)
 #pragma region 初始化 config
 	Config::GetInstance()->Update();
 #pragma endregion
+
 #pragma region 初始化 Console
-	/*
-	* 如果 DebugMode 有開啟就創建 Console
-	*/
 	if (Config::GetInstance()->DebugMode == true)
 	{
 		ConsoleManager::GetInstance()->Enable();
 	}
 #pragma endregion
+
 #pragma region 初始化字型
 	// 加載字型
 	AddFontResourceW(util::string2wstring(global::path::std_MochiyPopOne).c_str());
 #pragma endregion
+
 #pragma region 初始化 Scanner
 	Scanner::InitOcrJpn();
 	Scanner::InitOcrTw();
@@ -158,11 +161,16 @@ int main(array<String^>^ args)
 	
 
 	Application::Run(umaForm); // 啟動主要的 Form (UmaForm)
+
 #pragma endregion
 #pragma region 釋放資源
 	// 中止 LocalServer
 	LocalServer::Instance->Stop();
+
+	// 關閉 Console
 	ConsoleManager::GetInstance()->Disable();
+
+	// 卸載字型
 	RemoveFontResourceW(util::string2wstring(global::path::std_MochiyPopOne).c_str());
 #pragma endregion
 
