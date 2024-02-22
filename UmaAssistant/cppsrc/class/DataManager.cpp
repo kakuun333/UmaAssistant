@@ -151,14 +151,6 @@ bool DataManager::TryGetCurrentCharacterByList(std::deque<std::string> scanned_t
 		foundChar = true;
 		WebViewManager::Instance->ChangeCharacterName(util::stdStr2system(maxElement->event_owner));
 
-		// 更新 DiscordRPC
-		UmaCSharp::UmaDiscordManager::Instance->SetPresence(
-			Config::GetInstance()->GameServer,
-			Config::GetInstance()->SoftwareLanguage,
-			util::stdStr2system(DataManager::GetInstance()->GetCurrentCharacter())
-		);
-		UmaCSharp::UmaDiscordManager::Instance->Update();
-
 		// config
 		Config::GetInstance()->PreviousCurrentCharacterName = maxElement->event_owner;
 		Config::GetInstance()->WriteToJson();

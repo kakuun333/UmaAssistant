@@ -80,8 +80,8 @@ void GameWindowFinder::CreateFindGameWindowThread()
 					
 					util::formctrl::ForeColor(global::form::umaForm->game_window_status_label, 0, 255, 0);
 
-					if (!this->GetFoundGameWindow())
-					{
+					//if (!this->GetFoundGameWindow())
+					//{
 						if (Config::GetInstance()->DiscordRPC)
 						{
 							UmaCSharp::UmaDiscordManager::Instance->Initialize(Config::GetInstance()->GameServer);
@@ -90,9 +90,9 @@ void GameWindowFinder::CreateFindGameWindowThread()
 								Config::GetInstance()->SoftwareLanguage,
 								util::stdStr2system(DataManager::GetInstance()->GetCurrentCharacter())
 							);
-							UmaCSharp::UmaDiscordManager::Instance->Update();
+							
 						}
-					}
+					//}
 
 
 					this->SetFoundGameWindow(true);

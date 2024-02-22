@@ -1,12 +1,12 @@
 {
-  "AlwaysOnTop": false,
+  "AlwaysOnTop": true,
   "AutoMouseClick": false,
   "AutoMouseClickKey": {
     "VK": 6,
     "WinFormButton": 16777216
   },
   "DebugMode": true,
-  "DiscordRPC": false,
+  "DiscordRPC": true,
   "GameServer": 1,
   "GameWindow": 1,
   "GameWindowBoundOffset": {
@@ -29,7 +29,7 @@
     "Port": "5854"
   },
   "OutputLogFile": false,
-  "PreviousCurrentCharacterName": "成田大進（與眾不同的技師）",
+  "PreviousCurrentCharacterName": "東商變革（懸鈴木魔女）",
   "ScanInterval": 100,
   "SoftwareLanguage": 1
 }

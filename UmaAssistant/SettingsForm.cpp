@@ -15,6 +15,7 @@
 // global
 #include "cppsrc/global/form.h"
 
+
 #using "CSharpRuntime/UmaCSharpLibrary.dll"
 
 namespace UmaAssistant
@@ -159,16 +160,6 @@ namespace UmaAssistant
 		/* UmaDataUpdater */
 		//UmaDataUpdater::GetInstance()->Update();
 		//Config::GetInstance()->WriteToJson();
-
-		//UmaCSharp::UmaDiscordManager::Instance->Initialize(Config::GetInstance()->GameServer);
-		//UmaCSharp::UmaDiscordManager::Instance->SetPresence(
-		//	Config::GetInstance()->GameServer,
-		//	Config::GetInstance()->SoftwareLanguage,
-		//	util::stdStr2system(DataManager::GetInstance()->GetCurrentCharacter())
-		//);
-		//UmaCSharp::UmaDiscordManager::Instance->Update();
-
-
 
 		std::cout << "CLICKED TEST BUTTON" << std::endl;
 	}
@@ -536,7 +527,7 @@ namespace UmaAssistant
 				Config::GetInstance()->SoftwareLanguage,
 				util::stdStr2system(DataManager::GetInstance()->GetCurrentCharacter())
 			);
-			UmaCSharp::UmaDiscordManager::Instance->Update();
+			
 		}
 		else
 		{

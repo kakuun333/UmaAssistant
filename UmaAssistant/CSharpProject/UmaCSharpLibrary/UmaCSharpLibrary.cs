@@ -17,7 +17,7 @@ namespace UmaCSharp
     {
         public static void d(string tag, string message)
         {
-            Console.WriteLine(string.Format("[{0}][DEBUG] {1}", tag, message));
+            Console.WriteLine(string.Format("[DEBUG][{0}] {1}", tag, message));
         }
     }
 
@@ -99,6 +99,7 @@ namespace UmaCSharp
         #region fields
         private string m_characterSmallIconUrl = string.Empty;
         private bool m_isInitialized = false;
+        private Timestamps m_startTimestamps = Timestamps.Now;
         #endregion
 
         #region properties
@@ -169,16 +170,18 @@ namespace UmaCSharp
             // Subscribe to events
             client.OnReady += (sender, e) =>
             {
-                UmaLog.d(TAG, "已收到使用者的就緒訊息: " + e.User.Username);
+                UmaLog.d(TAG, "使用者已就緒: " + e.User.Username);
             };
 
-            client.OnPresenceUpdate += (sender, e) =>
-            {
-                UmaLog.d(TAG, "收到更新！ " + e.Presence);
-            };
+            //client.OnPresenceUpdate += (sender, e) =>
+            //{
+            //    UmaLog.d(TAG, "收到更新！ " + e.Presence);
+            //};
 
             // Connect to the RPC
             client.Initialize();
+
+            m_startTimestamps = Timestamps.Now;
 
             m_isInitialized = true;
         }
@@ -238,12 +241,17 @@ namespace UmaCSharp
                     break;
             }
 
+
+            
+
             //Set the rich presence
             //Call this as many times as you want and anywhere in your code.
             client.SetPresence(new RichPresence()
             {
                 Details = _details,
                 State = _state,
+                Timestamps = m_startTimestamps,
+
                 Assets = new Assets()
                 {
                     LargeImageKey = LARGE_IMAGE_URL,
@@ -257,12 +265,12 @@ namespace UmaCSharp
         /// <summary>
         /// 更新 Presence
         /// </summary>
-        public void Update()
-        {
-            if (!m_isInitialized) return;
+        //public void Update()
+        //{
+        //    if (!m_isInitialized) return;
 
-            //Invoke all the events, such as OnPresenceUpdate
-            client.Invoke();
-        }
+        //    //Invoke all the events, such as OnPresenceUpdate
+        //    client.Invoke();
+        //}
     }
 }
