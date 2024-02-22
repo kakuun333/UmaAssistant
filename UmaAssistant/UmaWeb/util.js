@@ -81,3 +81,9 @@ function getSize(element) {
 
     return tmp;
 }
+
+// 禁用滑鼠右鍵
+function disableContextMenu()
+{
+    document.addEventListener("contextmenu", (e) => { e.preventDefault(); }, false);
+}

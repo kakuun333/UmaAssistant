@@ -60,3 +60,6 @@ function changeCharacterNameHtmlLanguage(language) {
         character_name_title.style.fontSize = "0.7em";
     }
 }
+
+
+disableContextMenu();

@@ -3,6 +3,27 @@
     src: url("../UmaMisc/Font/MochiyPopOne-Regular.ttf") format("truetype");
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #10192d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #f9f9bb;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #584763;
+}
+
 body {
     /* overflow: hidden; */
     
@@ -15,6 +36,7 @@ body {
     
     user-select: none;
 }
+
 
 img {
     width: 1.4em;

@@ -118,6 +118,18 @@ namespace UmaAssistant
 			this->icon_pictureBox->TabIndex = 8;
 			this->icon_pictureBox->TabStop = false;
 			// 
+			// choiceWebView2
+			// 
+			this->choiceWebView2->AllowExternalDrop = true;
+			this->choiceWebView2->CreationProperties = nullptr;
+			this->choiceWebView2->DefaultBackgroundColor = System::Drawing::Color::White;
+			this->choiceWebView2->Location = System::Drawing::Point(9, 166);
+			this->choiceWebView2->Name = L"choiceWebView2";
+			this->choiceWebView2->Size = System::Drawing::Size(544, 372);
+			this->choiceWebView2->Source = (gcnew System::Uri(L"https://github.com/kakuun333/UmaAssistant", System::UriKind::Absolute));
+			this->choiceWebView2->TabIndex = 32;
+			this->choiceWebView2->ZoomFactor = 1;
+			// 
 			// close_form_btn
 			// 
 			this->close_form_btn->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
@@ -342,18 +354,6 @@ namespace UmaAssistant
 			this->scan_state_label->Size = System::Drawing::Size(100, 19);
 			this->scan_state_label->TabIndex = 31;
 			this->scan_state_label->Text = L"運作狀態：停止";
-			// 
-			// choiceWebView2
-			// 
-			this->choiceWebView2->AllowExternalDrop = true;
-			this->choiceWebView2->CreationProperties = nullptr;
-			this->choiceWebView2->DefaultBackgroundColor = System::Drawing::Color::White;
-			this->choiceWebView2->Location = System::Drawing::Point(9, 166);
-			this->choiceWebView2->Name = L"choiceWebView2";
-			this->choiceWebView2->Size = System::Drawing::Size(544, 372);
-			this->choiceWebView2->Source = (gcnew System::Uri(L"https://github.com/kakuun333/UmaAssistant", System::UriKind::Absolute));
-			this->choiceWebView2->TabIndex = 32;
-			this->choiceWebView2->ZoomFactor = 1;
 			// 
 			// characterNameWebView2
 			// 

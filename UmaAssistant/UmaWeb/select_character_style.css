@@ -3,6 +3,27 @@
     src: url("../UmaMisc/Font/MochiyPopOne-Regular.ttf") format("truetype");
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #10192d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #f9f9bb;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #584763;
+}
+
 body {
     background: linear-gradient(to right, #10182a, #10192d);
 
@@ -14,6 +35,7 @@ body {
     user-select: none;
 }
 
+
 th {
     font-weight: normal;
 }
@@ -21,7 +43,6 @@ th {
 img {
     width: 5.15em;
     height: 5.15em;
-    
 }
 
 table {
@@ -74,12 +95,6 @@ table {
     width: 100%;
 }
 
-/*
-#icon_container {
-    text-align: center;
-}
-*/
-
 /* class *//* class *//* class *//* class *//* class */
 
 @keyframes scaleCharacterImgAnim {
@@ -94,7 +109,6 @@ table {
 .character_icon:hover {
     cursor: pointer;
     transform: scale(1.1);
-
     animation: scaleCharacterImgAnim 0.1s forwards
 }
 

@@ -73,8 +73,8 @@ namespace UmaAssistant {
 			// 
 			// window_listbox
 			// 
-			this->window_listbox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(27)), static_cast<System::Int32>(static_cast<System::Byte>(42)),
-				static_cast<System::Int32>(static_cast<System::Byte>(79)));
+			this->window_listbox->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)), static_cast<System::Int32>(static_cast<System::Byte>(60)),
+				static_cast<System::Int32>(static_cast<System::Byte>(81)));
 			this->window_listbox->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->window_listbox->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 9));
 			this->window_listbox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
