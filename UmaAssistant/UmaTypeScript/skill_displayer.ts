@@ -89,56 +89,74 @@ function findSkillData(event: any, skill_hint: Element): void
         break;
     }
 
-    for (let color in skill_data) {
+    for (let color in skill_data)
+    {
         // if (!skill_data.hasOwnProperty(color)) continue;
         let color_obj = skill_data[color];
-        for (let skill_rare in color_obj) {
+        for (let skill_rare in color_obj)
+        {
             // if (!color_obj.hasOwnProperty(skill_rare)) continue;
             let rare_obj = color_obj[skill_rare];
-            for (let json_skill_name in rare_obj) {
+            for (let json_skill_name in rare_obj)
+            {
                 // if (!rare_obj.hasOwnProperty(json_skill_name)) continue;
                 let skill_name_obj = rare_obj[json_skill_name];
                 // <span class=\"skill_hint\">『負けん気』
                 let match_skill_name = skill_hint.outerHTML.match(skill_hint_pattern)!;
                 // 第二個括號捕獲的字串: match_skill_name[2]
-                if (json_skill_name == match_skill_name[2]) {
+                if (json_skill_name == match_skill_name[2])
+                {
 
                     skill_name.innerText = json_skill_name;
 
                     // 更新背景顏色
-                    if (skill_rare == "rare") {
+                    if (skill_rare == "rare")
+                    {
                         skill_hint_content.style.background = 'linear-gradient(to right,  rgb(254, 242, 176), rgb(254, 195, 57))';
-                    } else if (skill_rare == "normal") {
+                    }
+                    else if (skill_rare == "normal")
+                    {
                         skill_hint_content.style.background = 'linear-gradient(to right,  rgb(248, 248, 248), rgb(199, 199, 212))';
                     }
 
                     // ===== 更新基本的 skill 資訊 ===== //
                     // skill_pt
-                    if (skill_name_obj["skill_pt"] != undefined) {
+                    if (skill_name_obj["skill_pt"] != undefined)
+                    {
                         skill_pt.innerText = skill_name_obj["skill_pt"];
-                    } else {
+                    }
+                    else
+                    {
                         skill_pt.parentElement!.parentElement!.style.display = "none";
                     }
                     // skill_description
-                    if (skill_name_obj["skill_description"] != undefined) {
+                    if (skill_name_obj["skill_description"] != undefined)
+                    {
                         skill_description.innerText = skill_name_obj["skill_description"];
                     }
                     // skill_icon_name
-                    if (skill_name_obj["skill_icon_name"] != undefined) {
+                    if (skill_name_obj["skill_icon_name"] != undefined)
+                    {
                         skill_icon.src = "../UmaMisc/Image/Skill/" + skill_name_obj["skill_icon_name"] + ".png"
                     }
                     // upper_skill
-                    if (skill_name_obj["upper_skill"] != undefined) {
+                    if (skill_name_obj["upper_skill"] != undefined)
+                    {
                         upper_skill.innerText = skill_name_obj["upper_skill"];
                         upper_skill_title.parentElement!.parentElement!.style.display = "table-row";
-                    } else {
+                    }
+                    else
+                    {
                         upper_skill_title.parentElement!.parentElement!.style.display = "none";
                     }
                     // lower_skill
-                    if (skill_name_obj["lower_skill"] != undefined) {
+                    if (skill_name_obj["lower_skill"] != undefined)
+                    {
                         lower_skill.innerText = skill_name_obj["lower_skill"];
                         lower_skill_title.parentElement!.parentElement!.style.display = "table-row";
-                    } else {
+                    }
+                    else
+                    {
                         lower_skill_title.parentElement!.parentElement!.style.display = "none";
                     }
 
@@ -167,10 +185,12 @@ function findSkillData(event: any, skill_hint: Element): void
                     cleanSkillLabelRow();
 
                     // 添加進階技能詳細資訊
-                    for (let skill_data_type in enhance_skill_data[json_skill_name]) {
+                    for (let skill_data_type in enhance_skill_data[json_skill_name])
+                    {
                         const skill_data_v = enhance_skill_data[json_skill_name][skill_data_type];
 
-                        for (let skill_data_title in skill_data_v) {
+                        for (let skill_data_title in skill_data_v)
+                        {
                             const skill_data_data = skill_data_v[skill_data_title];
                             // console.log(skill_data_title, skill_data_data);
 
@@ -211,7 +231,7 @@ function findSkillData(event: any, skill_hint: Element): void
 
     const skill_table_size = getSize(skill_table);
 
-    
+    // ---------------------------------------------------- //
     if (rect.left + skill_table_size.width > windowWidth)
     {
         // console.log("超出視窗外！")
@@ -222,6 +242,7 @@ function findSkillData(event: any, skill_hint: Element): void
         skill_hint_content.style.left = parseInt(skill_hint_content.style.left) - horizontal_offset + "px";
         skill_hint_content.style.right = parseInt(skill_hint_content.style.right) - horizontal_offset + "px";
     }
+    // ---------------------------------------------------- //
     if (rect.top + skill_table_size.height > windowHeight)
     {
         // console.log("超出視窗外！")
@@ -232,6 +253,8 @@ function findSkillData(event: any, skill_hint: Element): void
         skill_hint_content.style.top = parseInt(skill_hint_content.style.top) - vertical_offset + "px";
         skill_hint_content.style.bottom = parseInt(skill_hint_content.style.bottom) - vertical_offset + "px";
     }
+    // ---------------------------------------------------- //
+
 
     // console.log(skill_table_size.width, skill_table_size.height);
 
@@ -243,7 +266,8 @@ function updateSkillContent(): void
 {
     const skill_hint_content = document.getElementById("skill_hint_content")!;
     let skill_hint_elements = document.querySelectorAll(".skill_hint");
-    for (let i = 0; i < skill_hint_elements.length; i++) {
+    for (let i = 0; i < skill_hint_elements.length; i++)
+    {
         const skill_hint = skill_hint_elements[i] as HTMLSpanElement;
 
         if (isMobileDevice())

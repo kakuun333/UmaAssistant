@@ -14,7 +14,7 @@ interface IRaceInfoItem
 }
 
 // TODO: 創建 raceInfoItem
-function createRaceInfoItem(raceInfo: IRaceInfoItem)
+function createRaceInfoItem(raceInfo: IRaceInfoItem): void
 {
     const raceInfoItem = document.createElement("tr");
     raceInfoItem.className = "raceInfoItem";

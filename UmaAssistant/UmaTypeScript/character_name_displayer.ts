@@ -1,4 +1,5 @@
-function changeCharacterName(characterName: string): void {
+function changeCharacterName(characterName: string): void
+{
     const character_name = document.getElementById("character_name")!;
 
     character_name.innerHTML = characterName;
@@ -41,7 +42,8 @@ function changeCharacterName(characterName: string): void {
     }
 }
 
-function changeCharacterNameHtmlLanguage(language: SoftwareLanguage | AndroidLocale) {
+function changeCharacterNameHtmlLanguage(language: SoftwareLanguage | AndroidLocale)
+{
     const character_name_title = document.getElementById("character_name_title")!;
     
     if (language == SoftwareLanguage.JP || language == AndroidLocale.JP)

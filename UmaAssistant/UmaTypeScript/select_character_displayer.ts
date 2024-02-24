@@ -88,7 +88,7 @@ function reflushCharacterElement(): void
     }
 }
 
-function changeSelectCharacterHtmlLanguage(language: SoftwareLanguage | AndroidLocale)
+function changeSelectCharacterHtmlLanguage(language: SoftwareLanguage | AndroidLocale): void
 {
     const search_title = document.getElementById("search_title")!;
     const search_textbox = document.getElementById("search_textbox")! as HTMLInputElement;
@@ -109,7 +109,6 @@ function changeSelectCharacterHtmlLanguage(language: SoftwareLanguage | AndroidL
         search_textbox.placeholder = "Click to search character";
     }
 }
-
 
 function loadSelectCharacterData(): void
 {
@@ -138,7 +137,6 @@ function setImgAlign(): void
         icon_container.style.textAlign = "left";
     }
 }
-
 
 // ======================================================================================================
 

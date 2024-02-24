@@ -89,7 +89,8 @@ function updateRaceInfoItemElementDisplay(filterConfig: FilterConfig): void
     }
 }
 
-class FilterConfig implements IFilterConfig {
+class FilterConfig implements IFilterConfig
+{
     private m_raceTrack: Map<string, boolean>;
     private m_raceDistanceType: Map<string, boolean>;
     private m_raceGrade: Map<string, boolean>;

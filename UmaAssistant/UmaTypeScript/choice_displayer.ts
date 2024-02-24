@@ -1,7 +1,9 @@
 // 創建 choice
-function createChoice(choice_name: string, choice_effect: string) {
+function createChoice(choice_name: string, choice_effect: string): void
+{
 
-    if (isAndroidDevice()) {
+    if (isAndroidDevice())
+    {
         choice_name = decodeURIComponent(choice_name);
         choice_effect = decodeURIComponent(choice_effect);
     }
@@ -24,22 +26,18 @@ function createChoice(choice_name: string, choice_effect: string) {
     td.className = "choice_effect";
     effect_tr.appendChild(td);
     choice_table.appendChild(effect_tr);
-
-    // ------------------------------------------ //
-    // let hr = document.createElement("hr");
-    // choice_table.appendChild(hr);
 }
 
-function changeEventName(text: string) {
-
+function changeEventName(text: string): void
+{
     if (isAndroidDevice()) text = decodeURIComponent(text);
 
     const event_name = document.getElementById("event_name")!;
     event_name.innerHTML = text;
 }
 
-function changeEventOwner(text: string) {
-
+function changeEventOwner(text: string): void
+{
     if (isAndroidDevice()) text = decodeURIComponent(text);
 
     const event_owner = document.getElementById("event_owner")!;
@@ -47,14 +45,18 @@ function changeEventOwner(text: string) {
 }
 
 // 清除所有選項
-function cleanChoiceTable() {
+function cleanChoiceTable(): void
+{
     const choice_table = document.getElementById("choice_table")!;
-    while (choice_table.firstChild) {
+
+    while (choice_table.firstChild)
+    {
         choice_table.removeChild(choice_table.firstChild);
     }
 }
 
-function changeChoiceHtmlLanguage(language: SoftwareLanguage | AndroidLocale) {
+function changeChoiceHtmlLanguage(language: SoftwareLanguage | AndroidLocale): void
+{
     // event_owner
     const event_owner_title = document.getElementById("event_owner_title")!;
     // event_name
