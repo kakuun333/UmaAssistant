@@ -268,9 +268,9 @@ function setSaveLoadRaceScheduleButton(): void
 {
     const saveRaceScheduleButton = document.getElementById("saveRaceScheduleButton")! as HTMLButtonElement;
     saveRaceScheduleButton.addEventListener("click", (event) => {
-    
-        const tempArray = new Array<Object>();
-    
+        
+        const raceObjList = new Array<Object>();
+
         for (let element of selectedRaceList)
         {
             const raceNameElement = element.querySelector(".raceInfoItem_raceName")!;
@@ -282,9 +282,8 @@ function setSaveLoadRaceScheduleButton(): void
             const raceDirectionElement = element.querySelector(".raceInfoItem_raceDirection")!;
             const raceDistanceTypeElement = element.querySelector(".raceInfoItem_raceDistanceType")!;
             const raceDistanceElement = element.querySelector(".raceInfoItem_raceDistance")!;
-    
-            const msgObj = {
-                messageType: MessageType.SAVE_RACE_SCHEDULE_DATA,
+
+            const raceObj = {
                 race_name: raceNameElement.textContent,
                 race_grade: raceDateGradeElement.textContent,
                 race_track: raceDateDayElement.textContent,
@@ -295,12 +294,18 @@ function setSaveLoadRaceScheduleButton(): void
                 race_date_grade: raceDistanceTypeElement.textContent,
                 race_date_day: raceDistanceElement.textContent,
             }
-    
-            tempArray.push(msgObj);
+
+            raceObjList.push(raceObj)
         }
+
         
+        const msgObj = {
+            messageType: MessageType.SAVE_RACE_SCHEDULE_DATA,
+            raceObjectList: raceObjList
+        }
+
         // @ts-ignore
-        window.chrome.webview.postMessage(JSON.stringify(tempArray));
+        window.chrome.webview.postMessage(JSON.stringify(msgObj));
     });
 }
 
