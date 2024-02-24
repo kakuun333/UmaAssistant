@@ -3,6 +3,7 @@
     src: url("../UmaMisc/Font/MochiyPopOne-Regular.ttf") format("truetype");
 }
 
+/* ========== start scrollbar ========== */
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -23,6 +24,7 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #584763;
 }
+/* ========== end scrollbar ========== */
 
 body {
     /* overflow: hidden; */

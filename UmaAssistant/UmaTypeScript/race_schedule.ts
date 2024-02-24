@@ -267,8 +267,15 @@ loadJsonData();
 function setSaveLoadRaceScheduleButton(): void
 {
     const saveRaceScheduleButton = document.getElementById("saveRaceScheduleButton")! as HTMLButtonElement;
+    const saveFileNameInput = document.getElementById("saveFileNameInput")! as HTMLInputElement;
     saveRaceScheduleButton.addEventListener("click", (event) => {
         
+        if (saveFileNameInput.value === "")
+        {
+            console.log("需要輸入檔案名稱");
+            return;
+        }
+
         const raceObjList = new Array<Object>();
 
         for (let element of selectedRaceList)
@@ -283,7 +290,8 @@ function setSaveLoadRaceScheduleButton(): void
             const raceDistanceTypeElement = element.querySelector(".raceInfoItem_raceDistanceType")!;
             const raceDistanceElement = element.querySelector(".raceInfoItem_raceDistance")!;
 
-            const raceObj = {
+            const raceObj =
+            {
                 race_name: raceNameElement.textContent,
                 race_grade: raceDateGradeElement.textContent,
                 race_track: raceDateDayElement.textContent,
@@ -299,17 +307,53 @@ function setSaveLoadRaceScheduleButton(): void
         }
 
         
-        const msgObj = {
+        const msgObj =
+        {
             messageType: MessageType.SAVE_RACE_SCHEDULE_DATA,
-            raceObjectList: raceObjList
+            messageContent: {
+                fileName: `${saveFileNameInput.value}.json`,
+                raceObjectList: raceObjList,
+            }
         }
 
-        // @ts-ignore
-        window.chrome.webview.postMessage(JSON.stringify(msgObj));
+
+        if (isWindowsDevice())
+        {
+            // @ts-ignore
+            window.chrome.webview.postMessage(JSON.stringify(msgObj));
+        }
+    });
+
+
+    // ==================== loadRaceScheduleButton ==================== //
+    const loadRaceScheduleButton = document.getElementById("loadRaceScheduleButton")! as HTMLButtonElement;
+    const loadRaceScheduleInput = document.getElementById("loadRaceScheduleInput")! as HTMLInputElement;
+
+    loadRaceScheduleButton.addEventListener("click", () => {
+        const file = loadRaceScheduleInput.files![0]; // 獲取選擇的檔案
+
+        if (!file) return;
+        
+        const reader = new FileReader();
+        // 監聽 FileReader 的 onload 事件
+        reader.onload = (event) => {
+            const fileContent = event.target!.result as string; // 獲取檔案內容
+            
+            const msgObj =
+            {
+                messageType: MessageType.LOAD_RACE_SCHEDULE_DATA,
+                messageContent: fileContent,
+            }
+
+            // @ts-ignore
+            window.chrome.webview.postMessage(JSON.stringify(msgObj));
+        };
+        reader.readAsText(file); // 讀取檔案內容
     });
 }
 
 setSaveLoadRaceScheduleButton();
 
 
+disableContextMenu();
 // ========== End Execute ========== //

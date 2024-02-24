@@ -1,4 +1,6 @@
-// Android 版本的軟體語言
+/**
+ * Android 系統語言類型
+ */
 enum AndroidLocale
 {
     JP = "ja",
@@ -6,7 +8,9 @@ enum AndroidLocale
     EN = "en",
 }
 
-// Windows 版本的軟體語言
+/**
+ * Windows 版本的軟體語言
+ */
 enum SoftwareLanguage
 {
     JP = 0,
@@ -14,6 +18,9 @@ enum SoftwareLanguage
     EN = 2
 }
 
+/**
+ * 遊戲伺服器類型
+ */
 enum GameServer
 {
     JP = 0,
@@ -41,10 +48,14 @@ enum JsonDataType
     SELECT_CHARACTER_DATA = "select_character_data",
 }
 
+/**
+ * WebMassage 的類型
+ */
 enum MessageType
 {
     CHARACTER_IMAGE_CLICK = "charImgClick",
     SAVE_RACE_SCHEDULE_DATA = "saveRaceScheduleData",
+    LOAD_RACE_SCHEDULE_DATA = "loadRaceScheduleData"
 }
 
 enum UmaColor

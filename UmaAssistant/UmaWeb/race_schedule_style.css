@@ -21,7 +21,61 @@ th {
     font-weight: normal;
 }
 
+input[type="text"] {
+    width: 15em;
+    height: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: rgb(44, 61, 81);
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+}
+
+input[type="file"] {
+    font-family: "MochiyPopOne", sans-serif;
+}
+
+input[type="button"] {
+    width: 6em;
+    height: 3em;
+    background-color: rgb(44, 61, 81);
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    color: #cfc197;
+    font-family: "MochiyPopOne", sans-serif;
+}
+
+input[type="button"]:hover {
+    background-color: rgb(103, 78, 126);
+}
+
+
 /* ========== end global ========== */
+
+/* ========== start scrollbar ========== */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #10192d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #f9f9bb;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #584763;
+}
+/* ========== end scrollbar ========== */
 
 /* ========== class ========== */
 
