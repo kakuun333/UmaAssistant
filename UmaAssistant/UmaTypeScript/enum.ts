@@ -1,5 +1,5 @@
 // Android 版本的軟體語言
-export enum AndroidLocale
+enum AndroidLocale
 {
     JP = "ja",
     TW = "zh",
@@ -7,26 +7,26 @@ export enum AndroidLocale
 }
 
 // Windows 版本的軟體語言
-export enum SoftwareLanguage
+enum SoftwareLanguage
 {
     JP = 0,
     TW = 1,
     EN = 2
 }
 
-export enum GameServer
+enum GameServer
 {
     JP = 0,
     TW = 1,
 }
 
-export enum JpServerLanguage
+enum JpServerLanguage
 {
     JP = 0,
     TW = 1,
 }
 
-export enum JsonDataType
+enum JsonDataType
 {
     EVENT_DATA_JP = "event_data_jp",
     EVENT_DATA_TW = "event_data_tw",
@@ -41,7 +41,20 @@ export enum JsonDataType
     SELECT_CHARACTER_DATA = "select_character_data",
 }
 
-export enum MessageType
+enum MessageType
 {
-    CHARACTER_IMAGE_CLICK = "charImgClick"
+    CHARACTER_IMAGE_CLICK = "charImgClick",
+    SAVE_RACE_SCHEDULE_DATA = "saveRaceScheduleData",
+}
+
+enum UmaColor
+{
+    UMA_BLUE = "rgb(85, 118, 120)",
+    UMA_DARK_PURPLE = "rgb(107, 85, 136)"
+}
+
+enum SkillDataType
+{
+    SKILL_EFFECT = "skill_effect",
+    SKILL_CONDITION = "skill_condition"
 }

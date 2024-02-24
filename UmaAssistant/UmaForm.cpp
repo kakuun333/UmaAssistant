@@ -21,6 +21,36 @@ using namespace Microsoft::Web::WebView2::WinForms;
 
 namespace UmaAssistant
 {
+	UmaForm::UmaForm(void) // UmaForm 的建構函數
+	{
+		InitializeComponent();
+		//
+		//TODO:  在此加入建構函式程式碼
+		//
+
+		Application::ApplicationExit += gcnew EventHandler(this, &UmaForm::OnApplicationExit);
+
+		#pragma region 初始化 WebBrowser
+		// 提取 config 資料
+		System::String^ port = util::stdStr2system(Config::GetInstance()->LocalServer["Port"]);
+
+		// choice.html
+		choiceWebView2->WebMessageReceived += gcnew System::EventHandler<CoreWebView2WebMessageReceivedEventArgs^>(this, &UmaForm::OnWebMessageReceived);
+		choiceWebView2->NavigationCompleted += gcnew System::EventHandler<CoreWebView2NavigationCompletedEventArgs^>(this, &UmaForm::OnNavigationCompleted);
+		choiceWebView2->Source = gcnew System::Uri(System::String::Format("http://localhost:{0}/choice.html", port), System::UriKind::Absolute);
+
+		// character_name.html
+		characterNameWebView2->NavigationCompleted += gcnew System::EventHandler<CoreWebView2NavigationCompletedEventArgs^>(this, &UmaForm::OnNavigationCompleted);
+		characterNameWebView2->Source = gcnew System::Uri(System::String::Format("http://localhost:{0}/character_name.html", port), System::UriKind::Absolute);
+
+		// select_character.html
+		selectCharacterWebView2->WebMessageReceived += gcnew System::EventHandler<CoreWebView2WebMessageReceivedEventArgs^>(this, &UmaForm::OnWebMessageReceived);
+		selectCharacterWebView2->NavigationCompleted += gcnew System::EventHandler<CoreWebView2NavigationCompletedEventArgs^>(this, &UmaForm::OnNavigationCompleted);
+		selectCharacterWebView2->Source = gcnew System::Uri(System::String::Format("http://localhost:{0}/select_character.html", port), System::UriKind::Absolute);
+		#pragma endregion
+	}
+
+
 #pragma region EventHandler 函式
 	System::Void UmaForm::OnNavigationCompleted(System::Object^ sender, CoreWebView2NavigationCompletedEventArgs^ e)
 	{
@@ -231,6 +261,11 @@ namespace UmaAssistant
 		}
 	}
 
+	System::Void UmaForm::raceSchedule_btn_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		global::form::raceScheduleForm->Show();
+	}
+
 	System::Void UmaForm::settings_btn_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		global::form::settingsForm->Show();
@@ -331,35 +366,7 @@ namespace UmaAssistant
 
 #pragma endregion
 
-	UmaForm::UmaForm(void) // UmaForm 的建構函數
-	{
-		InitializeComponent();
-		//
-		//TODO:  在此加入建構函式程式碼
-		//
-
-		Application::ApplicationExit += gcnew EventHandler(this, &UmaForm::OnApplicationExit);
-
-		#pragma region 初始化 WebBrowser
-		// 提取 config 資料
-		System::String^ port = util::stdStr2system(Config::GetInstance()->LocalServer["Port"]);
-
-		// choice.html
-		choiceWebView2->WebMessageReceived += gcnew System::EventHandler<CoreWebView2WebMessageReceivedEventArgs^>(this, &UmaForm::OnWebMessageReceived);
-		choiceWebView2->NavigationCompleted += gcnew System::EventHandler<CoreWebView2NavigationCompletedEventArgs^>(this, &UmaForm::OnNavigationCompleted);
-		choiceWebView2->Source = gcnew System::Uri(System::String::Format("http://localhost:{0}/choice.html", port), System::UriKind::Absolute);
-
-		// character_name.html
-		characterNameWebView2->NavigationCompleted += gcnew System::EventHandler<CoreWebView2NavigationCompletedEventArgs^>(this, &UmaForm::OnNavigationCompleted);
-		characterNameWebView2->Source = gcnew System::Uri(System::String::Format("http://localhost:{0}/character_name.html", port), System::UriKind::Absolute);
-
-		// select_character.html
-		selectCharacterWebView2->WebMessageReceived += gcnew System::EventHandler<CoreWebView2WebMessageReceivedEventArgs^>(this, &UmaForm::OnWebMessageReceived);
-		selectCharacterWebView2->NavigationCompleted += gcnew System::EventHandler<CoreWebView2NavigationCompletedEventArgs^>(this, &UmaForm::OnNavigationCompleted);
-		selectCharacterWebView2->Source = gcnew System::Uri(System::String::Format("http://localhost:{0}/select_character.html", port), System::UriKind::Absolute);
-		#pragma endregion
-	}
-
+#pragma region Mouse Event
 	System::Void UmaForm::UmaForm_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
 	{
 		draggingForm = true;
@@ -379,4 +386,5 @@ namespace UmaAssistant
 			this->Location = System::Drawing::Point(currentFormPos.X  - dragOffset.X, currentFormPos.Y - dragOffset.Y);
 		}
 	}
+#pragma endregion
 }

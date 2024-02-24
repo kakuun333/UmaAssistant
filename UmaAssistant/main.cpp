@@ -82,11 +82,14 @@ int main(array<String^>^ args)
 	UmaAssistant::SettingsForm^ settingsForm = gcnew UmaAssistant::SettingsForm();
 	global::form::settingsForm = settingsForm;
 
-	UmaAssistant::UmaForm^ umaForm = gcnew UmaAssistant::UmaForm();
-	global::form::umaForm = umaForm;
-
 	UmaAssistant::PreviewForm^ previewForm = gcnew UmaAssistant::PreviewForm();
 	global::form::previewForm = previewForm;
+
+	UmaAssistant::RaceScheduleForm^ raceScheduleForm = gcnew UmaAssistant::RaceScheduleForm();
+	global::form::raceScheduleForm = raceScheduleForm;
+
+	UmaAssistant::UmaForm^ umaForm = gcnew UmaAssistant::UmaForm();
+	global::form::umaForm = umaForm;
 #pragma endregion
 #pragma region 初始化 CheckBox
 	/*

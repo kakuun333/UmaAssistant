@@ -1,3 +1,4 @@
+/* ========== global ========== */
 @font-face {
     font-family: "MochiyPopOne";
     src: url("../UmaMisc/Font/MochiyPopOne-Regular.ttf") format("truetype");
@@ -15,3 +16,72 @@ body {
     
     user-select: none;
 }
+
+th {
+    font-weight: normal;
+}
+
+/* ========== end global ========== */
+
+/* ========== class ========== */
+
+.filterTitle {
+    color: rgb(166, 196, 84);
+    font-size: 1.2em;
+}
+
+.raceInfoItem_img {
+    width: 10em;
+    height: 5em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.raceInfoItem td {
+    text-align: center;
+}
+
+.filterContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+/* ========== end class ========== */
+
+/* ========== id ========== */
+
+#filterTable {
+    width: 100%;
+}
+
+#filterTable thead tr,
+#filterTable thead th,
+#filterTable thead td {
+    width: 100%;
+    background: linear-gradient(to right, #10182a, #10192d);
+}
+
+#raceInfoTable {
+    border: 5px solid rgb(40, 48, 68);
+    border-radius: 10px;
+    background: rgb(40, 48, 68);
+    width: 100%;
+}
+
+#raceInfoTable thead tr {
+    background: rgb(106, 35, 231);
+
+    border-radius: 10px;
+}
+
+/* ========== end id ========== */
+
+/* ========== start raceInfoItemCheckbox ========== */
+
+input[name="raceInfoItemCheckbox"] {
+    display: none;
+}
+
+/* ========== end raceInfoItemCheckbox ========== */

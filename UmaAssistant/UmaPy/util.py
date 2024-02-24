@@ -49,7 +49,8 @@ def scroll_page(driver, value: Union[int, str]):
 def click(driver, element):
     driver.execute_script("arguments[0].click();", element)
 
-
+def scroll_info_view(driver, element):
+    driver.execute_script("arguments[0].scrollIntoView();", element)
 
 ########## string ##########
 
@@ -62,7 +63,11 @@ def sub(input_text: str, pattern: str, replace: str):
 
     return input_text;
 
-
+def remove_space(str):
+    str = str.replace(" ", "");
+    str = str.replace("　", "");
+    str = str.replace("\n", "");
+    return str;
 ########## event_data ##########
 
 ### 加工 choice_name

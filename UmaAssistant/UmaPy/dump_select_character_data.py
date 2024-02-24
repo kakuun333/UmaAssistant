@@ -86,7 +86,6 @@ def dump_char_data(dump_icon):
             matched_icon_number = re.match(icon_number_pattern, img_url).group(1)
 
             ##### 下載圖片 #####
-
             print(f"matched_icon_number: {matched_icon_number}");
 
             if (dump_icon):

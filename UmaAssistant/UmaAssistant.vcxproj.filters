@@ -111,6 +111,9 @@
     <ClCompile Include="cppsrc\class\ref\RefSingleton.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="RaceScheduleForm.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
@@ -243,6 +246,9 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="cppsrc\class\ref\RefSingleton.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="RaceScheduleForm.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

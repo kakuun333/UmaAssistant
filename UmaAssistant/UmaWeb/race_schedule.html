@@ -4,10 +4,206 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RaceSchedule</title>
     <link rel="stylesheet" type="text/css" href="race_schedule_style.css">
+    <!-- start module -->
+    <script src="enum.js"></script>
+    <script src="config.js"></script>
+    <script src="json_data.js"></script>
+    <script src="util.js"></script>
+    <script src="filter_config.js"></script>
+    <!-- end module -->
+    <title>RaceSchedule</title>
 </head>
 <body>
+
+    <button id="saveRaceScheduleButton">
+        saveRaceScheduleButton
+    </button>
+    <button id="loadRaceScheduleButton">
+        loadRaceScheduleButton
+    </button>
     
+    <table id="filterTable">
+        <thead>
+            <!-- 場地 -->
+            <tr>
+                <th id="filterTitle_raceTrack" class="filterTitle">場地</th>
+            </tr>
+            <tr>
+                <td class="filterContainer">
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="raceTrack" value="turf">
+                        <span id="filterRadio_turf">草地</span>
+                    </label>
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="raceTrack" value="dirt">
+                        <span id="filterRadio_dirt">沙地</span>
+                    </label>
+                </td>
+            </tr>
+            <!-- 距離 -->
+            <tr>
+                <th id="filterTitle_distanceType" class="filterTitle">距離</th>
+            </tr>
+            <tr>
+                <td class="filterContainer">
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="distanceType" value="sprint">
+                        <span id="filterRadio_sprint">短距離</span>
+                    </label>
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="distanceType" value="mile">
+                        <span id="filterRadio_mile">一哩</span>
+                    </label>
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="distanceType" value="middle">
+                        <span id="filterRadio_middle">中距離</span>
+                    </label>
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="distanceType" value="long">
+                        <span id="filterRadio_long">長距離</span>
+                    </label>
+                </td>
+            </tr>
+            <!-- 階級 -->
+            <tr>
+                <th id="filterTitle_grade" class="filterTitle">階級</th>
+            </tr>
+            <tr>
+                <td class="filterContainer">
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="raceGrade" value="gOne">
+                        G1
+                    </label>
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="raceGrade" value="gTwo">
+                        G2
+                    </label>
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="raceGrade" value="gThree">
+                        G3
+                    </label>
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="raceGrade" value="op">
+                        OP
+                    </label>
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="raceGrade" value="preOp">
+                        Pre-OP
+                    </label>                    
+                </td>
+            </tr>
+            <!-- 賽馬場 -->
+
+
+            <!-- <tr>
+                <th id="filterTitle_racecourse" class="filterTitle">賽馬場</th>
+            </tr>
+            <tr>
+                <td class="filterContainer">
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="racecourse" value="tokyo">
+                        東京
+                    </label>
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="racecourse" value="kyoto">
+                        京都
+                    </label>
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="racecourse" value="nakayama">
+                        中山
+                    </label>
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="racecourse" value="cyukyo">
+                        中京
+                    </label>
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="racecourse" value="hanshin">
+                        阪神
+                    </label>
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="racecourse" value="ooi">
+                        大井
+                    </label>
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="racecourse" value="kokura">
+                        小倉
+                    </label>
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="racecourse" value="fukushima">
+                        福島
+                    </label>
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="racecourse" value="niigata">
+                        新潟
+                    </label>
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="racecourse" value="kawasaki">
+                        川崎
+                    </label>
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="racecourse" value="sapporo">
+                        札幌
+                    </label>
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="racecourse" value="hakodate">
+                        函館
+                    </label>
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="racecourse" value="funabashi">
+                        船橋
+                    </label>
+                    <label>
+                        <input class="filter_radioButton" type="checkbox" name="racecourse" value="morioka">
+                        盛岡
+                    </label>                    
+                </td>
+            </tr> -->
+
+
+        </thead>
+    </table>
+
+    <table id="raceInfoTable">
+        <thead>
+            <tr>
+                <th id="raceInfoTitle_raceName">名稱</th>
+                <th id="raceInfoTitle_raceDateGrade">年齡階級</th>
+                <th id="raceInfoTitle_raceDateDay">日期</th>
+                <th id="raceInfoTitle_raceGrade">階級</th>
+                <th id="raceInfoTitle_racecourse">賽馬場</th>
+                <th id="raceInfoTitle_raceTrack">場地</th>
+                <th id="raceInfoTitle_raceDirection">方向</th>
+                <th id="raceInfoTitle_raceDistanceType">距離類型</th>
+                <th id="raceInfoTitle_raceDistance">距離</th>
+            </tr>
+        </thead>
+        <tbody id="raceInfoTable_tbody">
+            <div>
+                <tr class="raceInfoItem">
+                    <label>
+                        <td>
+                            <input type="checkbox" name="raceInfoItemCheckbox">
+                            <img class="raceInfoItem_img" src="../UmaMisc/Image/Race/i_race2.png">
+                            <div class="raceInfoItem_raceName">函館ジュニアステークス</div>
+                        </td>
+                        <td class="raceInfoItem_raceDateGrade">ジュニア級</td>
+                        <td class="raceInfoItem_raceDateDay">7月後半</td>
+                        <td class="raceInfoItem_raceGrade">G3</td>
+                        <td class="raceInfoItem_racecourse">函館</td>
+                        <td class="raceInfoItem_raceTrack">芝</td>
+                        <td class="raceInfoItem_raceDirection">右</td>
+                        <td class="raceInfoItem_raceDistanceType">短距離</td>
+                        <td class="raceInfoItem_raceDistance">1200m</td>
+                    </label>
+                </tr>
+            </div>
+            
+        </tbody>
+    </table>
+
+    <!-- start script -->
+    <script src="race_schedule.js"></script>
+    <!-- end script -->
 </body>
 </html>

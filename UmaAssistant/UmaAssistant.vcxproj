@@ -221,6 +221,7 @@ move $(OutDir)WebView2Loader.dll $(OutDir)CSharpRuntime\WebView2Loader.dll</Comm
     <ClCompile Include="cppsrc\util\FormControl.cpp" />
     <ClCompile Include="PreviewForm.cpp" />
     <ClCompile Include="cppsrc\class\ref\RefSingleton.cpp" />
+    <ClCompile Include="RaceScheduleForm.cpp" />
     <ClCompile Include="SettingsForm.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="UmaForm.cpp" />
@@ -267,6 +268,9 @@ move $(OutDir)WebView2Loader.dll $(OutDir)CSharpRuntime\WebView2Loader.dll</Comm
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="cppsrc\class\ref\RefSingleton.h" />
+    <ClInclude Include="RaceScheduleForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="resource.h" />
     <ClInclude Include="SettingsForm.h">
       <FileType>CppForm</FileType>
@@ -279,6 +283,9 @@ move $(OutDir)WebView2Loader.dll $(OutDir)CSharpRuntime\WebView2Loader.dll</Comm
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PreviewForm.resx" />
+    <EmbeddedResource Include="RaceScheduleForm.resx">
+      <DependentUpon>RaceScheduleForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SettingsForm.resx" />
     <EmbeddedResource Include="UmaForm.resx" />
   </ItemGroup>

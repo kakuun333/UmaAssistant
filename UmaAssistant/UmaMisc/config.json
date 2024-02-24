@@ -6,7 +6,7 @@
     "WinFormButton": 16777216
   },
   "DebugMode": true,
-  "DiscordRPC": true,
+  "DiscordRPC": false,
   "GameServer": 1,
   "GameWindow": 1,
   "GameWindowBoundOffset": {
@@ -29,7 +29,7 @@
     "Port": "5854"
   },
   "OutputLogFile": false,
-  "PreviousCurrentCharacterName": "東商變革（懸鈴木魔女）",
+  "PreviousCurrentCharacterName": "醒目飛鷹（黃昏凱旋）",
   "ScanInterval": 100,
   "SoftwareLanguage": 1
 }

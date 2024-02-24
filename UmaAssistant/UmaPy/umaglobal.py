@@ -43,3 +43,13 @@ DEFAULT_SKILL_DATA_DICT = {
         "rare": {}
     }
 }
+
+# DEFAULT_RACE_DATA_ARRAY = []
+
+# DEFAULT_RACE_DATA_DICT = {
+#     "g_one": [],
+#     "g_two": [],
+#     "g_three": [],
+#     "op": [],
+#     "pre_op": []
+# }

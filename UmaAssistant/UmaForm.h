@@ -2,6 +2,8 @@
 
 #using "control/Microsoft.Web.WebView2.Core.dll"
 #using "control/Microsoft.Web.WebView2.WinForms.dll"
+using namespace Microsoft::Web::WebView2::Core;
+using namespace Microsoft::Web::WebView2::WinForms;
 
 //#using "control/UmaCustomControl.RoundedButton.dll"
 
@@ -13,30 +15,22 @@ namespace UmaAssistant
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-	using namespace Microsoft::Web::WebView2::Core;
-	using namespace Microsoft::Web::WebView2::WinForms;
+
 
 	/// <summary>
 	/// UmaForm 的摘要
 	/// </summary>
 	public ref class UmaForm : public System::Windows::Forms::Form
 	{
-	private: bool draggingForm = false;
-	private: bool _openedSelectCharacter = false;
-	private: System::Drawing::Point dragOffset;
-
 	public: System::Windows::Forms::Label^ scan_state_label;
 	public: Microsoft::Web::WebView2::WinForms::WebView2^ choiceWebView2;
 	public: Microsoft::Web::WebView2::WinForms::WebView2^ characterNameWebView2;
+	private: UmaCustomControl::RoundedButton^ raceSchedule_btn;
 
-	public:
 	public: Microsoft::Web::WebView2::WinForms::WebView2^ selectCharacterWebView2;
 
 	public: UmaForm(void);
 
-	public: System::Void OnNavigationCompleted(System::Object^ sender, CoreWebView2NavigationCompletedEventArgs^ e);
-	public: System::Void OnWebMessageReceived(System::Object^ sender, CoreWebView2WebMessageReceivedEventArgs^ e);
-	public: System::Void OnApplicationExit(System::Object^ sender, EventArgs^ e);
 
 
 	protected:
@@ -73,8 +67,6 @@ namespace UmaAssistant
 	private: System::Windows::Forms::Label^ version_label;
 	public: UmaCustomControl::RoundedButton^ select_character_btn;
 
-
-
 #pragma region Windows Form Designer generated code
 		/// <summary>
 		/// 此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改
@@ -101,6 +93,7 @@ namespace UmaAssistant
 			this->scan_state_label = (gcnew System::Windows::Forms::Label());
 			this->characterNameWebView2 = (gcnew Microsoft::Web::WebView2::WinForms::WebView2());
 			this->selectCharacterWebView2 = (gcnew Microsoft::Web::WebView2::WinForms::WebView2());
+			this->raceSchedule_btn = (gcnew UmaCustomControl::RoundedButton());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->icon_pictureBox))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->choiceWebView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->characterNameWebView2))->BeginInit();
@@ -184,10 +177,10 @@ namespace UmaAssistant
 			this->settings_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->settings_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->settings_btn->Location = System::Drawing::Point(211, 42);
+			this->settings_btn->Location = System::Drawing::Point(185, 43);
 			this->settings_btn->Name = L"settings_btn";
 			this->settings_btn->Radius = 10;
-			this->settings_btn->Size = System::Drawing::Size(95, 65);
+			this->settings_btn->Size = System::Drawing::Size(84, 65);
 			this->settings_btn->TabIndex = 11;
 			this->settings_btn->TabStop = false;
 			this->settings_btn->Text = L"設定";
@@ -205,10 +198,10 @@ namespace UmaAssistant
 			this->scan_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->scan_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->scan_btn->Location = System::Drawing::Point(9, 42);
+			this->scan_btn->Location = System::Drawing::Point(9, 43);
 			this->scan_btn->Name = L"scan_btn";
 			this->scan_btn->Radius = 10;
-			this->scan_btn->Size = System::Drawing::Size(95, 65);
+			this->scan_btn->Size = System::Drawing::Size(82, 65);
 			this->scan_btn->TabIndex = 16;
 			this->scan_btn->TabStop = false;
 			this->scan_btn->Text = L"啓動";
@@ -228,12 +221,13 @@ namespace UmaAssistant
 			this->clean_current_character_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
 				static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
 			this->clean_current_character_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->clean_current_character_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->clean_current_character_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->clean_current_character_btn->Location = System::Drawing::Point(312, 42);
+			this->clean_current_character_btn->Location = System::Drawing::Point(366, 44);
 			this->clean_current_character_btn->Name = L"clean_current_character_btn";
 			this->clean_current_character_btn->Radius = 10;
-			this->clean_current_character_btn->Size = System::Drawing::Size(95, 65);
+			this->clean_current_character_btn->Size = System::Drawing::Size(85, 65);
 			this->clean_current_character_btn->TabIndex = 24;
 			this->clean_current_character_btn->TabStop = false;
 			this->clean_current_character_btn->Text = L"清除角色";
@@ -277,10 +271,10 @@ namespace UmaAssistant
 			this->select_window_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->select_window_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->select_window_btn->Location = System::Drawing::Point(110, 42);
+			this->select_window_btn->Location = System::Drawing::Point(97, 43);
 			this->select_window_btn->Name = L"select_window_btn";
 			this->select_window_btn->Radius = 10;
-			this->select_window_btn->Size = System::Drawing::Size(95, 65);
+			this->select_window_btn->Size = System::Drawing::Size(82, 65);
 			this->select_window_btn->TabIndex = 26;
 			this->select_window_btn->TabStop = false;
 			this->select_window_btn->Text = L"選取視窗";
@@ -308,10 +302,10 @@ namespace UmaAssistant
 			this->select_character_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
 				static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
 			this->select_character_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->select_character_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
+			this->select_character_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->select_character_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->select_character_btn->Location = System::Drawing::Point(457, 43);
+			this->select_character_btn->Location = System::Drawing::Point(458, 44);
 			this->select_character_btn->Name = L"select_character_btn";
 			this->select_character_btn->Radius = 10;
 			this->select_character_btn->Size = System::Drawing::Size(95, 65);
@@ -377,11 +371,34 @@ namespace UmaAssistant
 			this->selectCharacterWebView2->TabIndex = 34;
 			this->selectCharacterWebView2->ZoomFactor = 1;
 			// 
+			// raceSchedule_btn
+			// 
+			this->raceSchedule_btn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)), static_cast<System::Int32>(static_cast<System::Byte>(61)),
+				static_cast<System::Int32>(static_cast<System::Byte>(81)));
+			this->raceSchedule_btn->CausesValidation = false;
+			this->raceSchedule_btn->FlatAppearance->BorderSize = 0;
+			this->raceSchedule_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
+				static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
+			this->raceSchedule_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->raceSchedule_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
+			this->raceSchedule_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
+				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
+			this->raceSchedule_btn->Location = System::Drawing::Point(275, 43);
+			this->raceSchedule_btn->Name = L"raceSchedule_btn";
+			this->raceSchedule_btn->Radius = 10;
+			this->raceSchedule_btn->Size = System::Drawing::Size(85, 65);
+			this->raceSchedule_btn->TabIndex = 35;
+			this->raceSchedule_btn->TabStop = false;
+			this->raceSchedule_btn->Text = L"比賽排程";
+			this->raceSchedule_btn->UseVisualStyleBackColor = false;
+			this->raceSchedule_btn->Click += gcnew System::EventHandler(this, &UmaForm::raceSchedule_btn_Click);
+			// 
 			// UmaForm
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(560, 550);
+			this->Controls->Add(this->raceSchedule_btn);
 			this->Controls->Add(this->selectCharacterWebView2);
 			this->Controls->Add(this->characterNameWebView2);
 			this->Controls->Add(this->choiceWebView2);
@@ -418,6 +435,15 @@ namespace UmaAssistant
 #pragma endregion
 
 
+	private: bool _openedSelectCharacter = false;
+	private: bool draggingForm = false;
+	private: System::Drawing::Point dragOffset;
+
+	public: System::Void OnNavigationCompleted(System::Object^ sender, CoreWebView2NavigationCompletedEventArgs^ e);
+	public: System::Void OnWebMessageReceived(System::Object^ sender, CoreWebView2WebMessageReceivedEventArgs^ e);
+
+	public: System::Void OnApplicationExit(System::Object^ sender, EventArgs^ e);
+
 	private: System::Void scan_btn_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void settings_btn_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void UmaForm_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
@@ -429,5 +455,6 @@ namespace UmaAssistant
 	private: System::Void close_select_character_btn_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void clean_current_character_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void select_window_btn_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void raceSchedule_btn_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

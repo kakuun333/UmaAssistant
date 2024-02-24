@@ -9,22 +9,17 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
-
-
 driver = webdriver.Chrome();
-
-
-
-
 
 
 skill_data_jp = util.read_json("../UmaData/skill_data_jp.json");
 event_data_jp = util.read_json("../UmaData/event_data_jp.json") or DEFAULT_EVENT_DATA_DICT;
 process_choice_effect_data = util.read_json("../UmaData/convert_data/process_choice_effect_data.json");
 
+
+
+
 ########## functions ##########
-
-
 
 def dump_event(event_data_type, rare, event_owner):
     ### 獲取 event ###

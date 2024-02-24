@@ -4,11 +4,14 @@ UmaAssistant/*.rar
 
 UmaAssistant/vcpkg
 
+## 無視 js
+UmaAssistant/UmaWeb/*.js
+
 ## CSharpRuntime
 UmaAssistant/CSharpRuntime/*.xml
 UmaAssistant/CSharpRuntime/*.pdb
 
-## dll
+## C++ dll
 opencv_world481.dll
 
 ## LuaExecutor

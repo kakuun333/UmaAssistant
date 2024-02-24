@@ -1,4 +1,4 @@
-#include "SettingsForm.h"
+Ôªø#include "SettingsForm.h"
 
 // enum
 #include "cppsrc/enum/SoftwareLanguageType.h"
@@ -18,34 +18,36 @@
 
 #using "CSharpRuntime/UmaCSharpLibrary.dll"
 
+using namespace System::Collections::Generic;
+
 namespace UmaAssistant
 {
 	SettingsForm::SettingsForm(void)
 	{
 		InitializeComponent();
 		//
-		//TODO:  ¶b¶π•[§J´ÿ∫c®Á¶°µ{¶°ΩX
+		//TODO:  Âú®Ê≠§Âä†ÂÖ•Âª∫ÊßãÂáΩÂºèÁ®ãÂºèÁ¢º
 		//
 
-		// µ˘•U FormClosing ®∆•Û
+		// Ë®ªÂÜä FormClosing ‰∫ã‰ª∂
 		this->FormClosing += gcnew FormClosingEventHandler(this, &SettingsForm::FormClosingHandler);
 
-		// ™Ï©l§∆ TextBox ™∫ Text
+		// ÂàùÂßãÂåñ TextBox ÁöÑ Text
 		serverPortTextBox->Text = util::stdStr2system(Config::GetInstance()->LocalServer["Port"]);
 		scanInterval_textBox->Text = System::Convert::ToString(Config::GetInstance()->ScanInterval);
 
-		// µ˘•U KeyPress ®∆•Û
+		// Ë®ªÂÜä KeyPress ‰∫ã‰ª∂
 		serverPortTextBox->KeyPress += gcnew KeyPressEventHandler(this, &SettingsForm::DigitOnly_TextBox_KeyPress);
 		scanInterval_textBox->KeyPress += gcnew KeyPressEventHandler(this, &SettingsForm::DigitOnly_TextBox_KeyPress);
 
-		// µ˘•U TextChanged ®∆•Û
+		// Ë®ªÂÜä TextChanged ‰∫ã‰ª∂
 		serverPortTextBox->TextChanged += gcnew EventHandler(this, &SettingsForm::serverPortTextBox_TextChanged);
 		scanInterval_textBox->TextChanged += gcnew EventHandler(this, &SettingsForm::scanInterval_textBox_TextChanged);
 
 		//
-		// ™Ï©l§∆ RadioButtons
+		// ÂàùÂßãÂåñ RadioButtons
 		//
-#pragma region ™Ï©l§∆ SoftwareLanguage
+#pragma region ÂàùÂßãÂåñ SoftwareLanguage
 		switch (Config::GetInstance()->SoftwareLanguage)
 		{
 		case static_cast<int>(GameServerType::JP):
@@ -60,8 +62,8 @@ namespace UmaAssistant
 		software_lang_jp_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::SoftwareLangRadioButtonChanged);
 		software_lang_tw_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::SoftwareLangRadioButtonChanged);
 #pragma endregion
-#pragma region ™Ï©l§∆ GameServerType
-		// ±q config ™Ï©l§∆ Checked
+#pragma region ÂàùÂßãÂåñ GameServerType
+		// Âæû config ÂàùÂßãÂåñ Checked
 		switch (Config::GetInstance()->GameServer)
 		{
 		case static_cast<int>(GameServerType::JP):
@@ -72,12 +74,12 @@ namespace UmaAssistant
 			break;
 		}
 
-		// µ˘•U CheckedChanged ®∆•Û
+		// Ë®ªÂÜä CheckedChanged ‰∫ã‰ª∂
 		jp_server_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::GameServerRadioButtonChanged);
 		tw_server_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::GameServerRadioButtonChanged);
 #pragma endregion
-#pragma region ™Ï©l§∆ GameWindow
-		// ±q config ™Ï©l§∆ Checked
+#pragma region ÂàùÂßãÂåñ GameWindow
+		// Âæû config ÂàùÂßãÂåñ Checked
 		switch (Config::GetInstance()->GameWindow)
 		{
 		case static_cast<int>(GameWindowType::DMM):
@@ -88,12 +90,12 @@ namespace UmaAssistant
 			break;
 		}
 
-		// µ˘•U CheckedChanged ®∆•Û
+		// Ë®ªÂÜä CheckedChanged ‰∫ã‰ª∂
 		dmm_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::GameWindowRadioButtonChanged);
 		emulator_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::GameWindowRadioButtonChanged);
 #pragma endregion
-#pragma region ™Ï©l§∆ JpServerLangType
-		// ±q config ™Ï©l§∆ Checked
+#pragma region ÂàùÂßãÂåñ JpServerLangType
+		// Âæû config ÂàùÂßãÂåñ Checked
 		switch (Config::GetInstance()->JpServerLang)
 		{
 		case static_cast<int>(JpServerLangType::JP):
@@ -104,12 +106,12 @@ namespace UmaAssistant
 			break;
 		}
 
-		// µ˘•U CheckedChanged ®∆•Û
+		// Ë®ªÂÜä CheckedChanged ‰∫ã‰ª∂
 		jpServerLang_jp_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::JpServerLangRadioButtonChanged);
 		jpServerLang_tw_radio_btn->CheckedChanged += gcnew EventHandler(this, &SettingsForm::JpServerLangRadioButtonChanged);
 #pragma endregion
 
-#pragma region ™Ï©l§∆ AutoMouseClick
+#pragma region ÂàùÂßãÂåñ AutoMouseClick
 		String^ buttonName = Enum::GetName(static_cast<System::Windows::Forms::MouseButtons>(Config::GetInstance()->AutoMouseClickKey["WinFormButton"]).GetType(),
 			static_cast<System::Windows::Forms::MouseButtons>(Config::GetInstance()->AutoMouseClickKey["WinFormButton"]));
 
@@ -130,14 +132,14 @@ namespace UmaAssistant
 			break;
 		}
 #pragma endregion
-#pragma region ™Ï©l§∆ checkBox
+#pragma region ÂàùÂßãÂåñ checkBox
 		this->alwaysOnTop_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::alwaysOnTop_checkBox_CheckedChanged);
 		this->autoMouceClick_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::autoMouceClick_checkBox_CheckedChanged);
 		this->debugMode_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::debugMode_checkBox_CheckedChanged);
 		this->outputLogFile_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::outputLogFile_checkBox_CheckedChanged);
 		this->discordRpc_checkBox->CheckedChanged += gcnew System::EventHandler(this, &SettingsForm::discordRpc_checkBox_CheckedChanged);
 #pragma endregion
-#pragma region ™Ï©l§∆ DebugMode ±“∞ Æ…∏”≈„•‹™∫´ˆ∂s
+#pragma region ÂàùÂßãÂåñ DebugMode ÂïüÂãïÊôÇË©≤È°ØÁ§∫ÁöÑÊåâÈàï
 		switch (Config::GetInstance()->DebugMode)
 		{
 		case true:
@@ -160,6 +162,20 @@ namespace UmaAssistant
 		/* UmaDataUpdater */
 		//UmaDataUpdater::GetInstance()->Update();
 		//Config::GetInstance()->WriteToJson();
+
+		//Dictionary<System::String^, System::String^>^ raceInfo = gcnew Dictionary<System::String^, System::String^>();
+		//raceInfo->Add("imgSrc", u8"../UmaMisc/Image/Race/i_race2.png");
+		//raceInfo->Add("raceName", u8"ÂáΩÈ§®„Ç∏„É•„Éã„Ç¢„Çπ„ÉÜ„Éº„ÇØ„Çπ");
+		//raceInfo->Add("raceDate", u8"„Ç∏„É•„Éã„Ç¢Á¥ö 7ÊúàÂæåÂçä");
+		//raceInfo->Add("raceGrade", u8"G3");
+		//raceInfo->Add("racecourse", u8"ÂáΩÈ§®");
+		//raceInfo->Add("raceTrack", u8"Ëäù");
+		//raceInfo->Add("raceDirection", u8"Âè≥");
+		//raceInfo->Add("raceDistanceType", u8"Áü≠Ë∑ùÈõ¢");
+		//raceInfo->Add("raceDistance", u8"1200m");
+		//raceInfo->Add("inputValue", u8"hakodate");
+		//FormController::Instance->ExecuteFunctionAsync(global::form::raceScheduleForm->raceScheduleWebView2,
+		//	"setRaceScheduleLanguage", gcnew array<System::Object^>{ 0 });
 
 		std::cout << "CLICKED TEST BUTTON" << std::endl;
 	}
@@ -209,19 +225,19 @@ namespace UmaAssistant
 
 	void SettingsForm::FormClosingHandler(Object^ sender, FormClosingEventArgs^ e)
 	{
-		// ®˙Æ¯√ˆ≥¨æﬁß@°A¡◊ßK form ≥Q¶€∞ ƒ¿©Ò
+		// ÂèñÊ∂àÈóúÈñâÊìç‰ΩúÔºåÈÅøÂÖç form Ë¢´Ëá™ÂãïÈáãÊîæ
 		e->Cancel = true;
 
-		// ¡Ù¬√µ¯µ°
+		// Èö±ËóèË¶ñÁ™ó
 		this->Hide();
 	}
 
 	void SettingsForm::DigitOnly_TextBox_KeyPress(Object^ sender, KeyPressEventArgs^ e)
 	{
-		// §π≥\º∆¶r°B∞hÆÊ¡‰©MßR∞£¡‰
+		// ÂÖÅË®±Êï∏Â≠ó„ÄÅÈÄÄÊ†ºÈçµÂíåÂà™Èô§Èçµ
 		if (!Char::IsDigit(e->KeyChar) && e->KeyChar != 8 && e->KeyChar != 127)
 		{
-			e->Handled = true; // ™˝§Ó§£§π≥\™∫¶r≤≈øÈ§J
+			e->Handled = true; // ÈòªÊ≠¢‰∏çÂÖÅË®±ÁöÑÂ≠óÁ¨¶Ëº∏ÂÖ•
 		}
 	}
 
@@ -256,7 +272,7 @@ namespace UmaAssistant
 
 		if (radioButton != nullptr && radioButton->Checked)
 		{
-			// ¶p™G RadioButton ≥QøÔ§§
+			// Â¶ÇÊûú RadioButton Ë¢´ÈÅ∏‰∏≠
 			if (radioButton == tw_server_radio_btn)
 			{
 				Config::GetInstance()->GameServer = static_cast<int>(GameServerType::TW);
@@ -279,7 +295,7 @@ namespace UmaAssistant
 
 		if (radioButton != nullptr && radioButton->Checked)
 		{
-			// ¶p™G RadioButton ≥QøÔ§§
+			// Â¶ÇÊûú RadioButton Ë¢´ÈÅ∏‰∏≠
 			if (radioButton == jpServerLang_tw_radio_btn)
 			{
 				Config::GetInstance()->JpServerLang = static_cast<int>(GameServerType::TW);
@@ -301,7 +317,7 @@ namespace UmaAssistant
 
 		if (radioButton != nullptr && radioButton->Checked)
 		{
-			// ¶p™G RadioButton ≥QøÔ§§
+			// Â¶ÇÊûú RadioButton Ë¢´ÈÅ∏‰∏≠
 			if (radioButton == dmm_radio_btn)
 			{
 				Config::GetInstance()->GameWindow = static_cast<int>(GameWindowType::DMM);
@@ -327,7 +343,7 @@ namespace UmaAssistant
 				childControl->Text = controlTransText;
 			}
 
-			// ¶p™G±±®Ó§∏•Û¡Ÿ¶≥§l±±®Ó§∏•Û°Aªº∞jπMæ˙
+			// Â¶ÇÊûúÊéßÂà∂ÂÖÉ‰ª∂ÈÇÑÊúâÂ≠êÊéßÂà∂ÂÖÉ‰ª∂ÔºåÈÅûËø¥ÈÅçÊ≠∑
 			if (childControl->Controls->Count > 0)
 			{
 				this->TraverseControls(childControl, sys_str_arr);
@@ -395,7 +411,7 @@ namespace UmaAssistant
 		
 		if (radioButton != nullptr && radioButton->Checked)
 		{
-			// ¶p™G RadioButton ≥QøÔ§§
+			// Â¶ÇÊûú RadioButton Ë¢´ÈÅ∏‰∏≠
 			if (radioButton == software_lang_jp_radio_btn)
 			{
 				Config::GetInstance()->SoftwareLanguage = static_cast<int>(SoftwareLanguageType::JP);
@@ -619,7 +635,7 @@ namespace UmaAssistant
 			//this->autoMouseClickKey_textBox->Text = "XButton2";
 			break;
 		default:
-			Config::GetInstance()->AutoMouseClickKey["VK"] = 0x07; // ´OØd
+			Config::GetInstance()->AutoMouseClickKey["VK"] = 0x07; // ‰øùÁïô
 		
 			//this->autoMouseClickKey_textBox->Text = "Unknown";
 			break;
