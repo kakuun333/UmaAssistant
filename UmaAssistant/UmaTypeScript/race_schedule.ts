@@ -10,7 +10,6 @@ interface IRaceInfoItem
     raceDirection: string;
     raceDistanceType: string;
     raceDistance: string;
-    inputValue: string | number;
 }
 
 // TODO: 創建 raceInfoItem
@@ -22,7 +21,7 @@ function createRaceInfoItem(raceInfo: IRaceInfoItem): void
     raceInfoItem.innerHTML =
     `
     <td>
-        <input type="checkbox" name="raceInfoItemCheckbox" value="${raceInfo.inputValue}">
+        <input type="checkbox" name="raceInfoItemCheckbox">
         <img class="raceInfoItem_img" src="${raceInfo.imgSrc}"/>
         <div class="raceInfoItem_raceName">${raceInfo.raceName}</div>
     </td>
@@ -155,7 +154,7 @@ function setRaceScheduleLanguage(language: SoftwareLanguage | AndroidLocale): vo
         filterTitle_raceTrack.innerHTML = "バ場";
         filterTitle_distanceType.innerHTML = "距離";
         filterTitle_grade.innerHTML = "グレード";
-        // filterTitle_racecourse.innerHTML = "競馬場";
+        // filterTitle_racecourse.innerHTML = "レース場";
         // end filterTitle
 
         // start filterRadio
@@ -173,7 +172,7 @@ function setRaceScheduleLanguage(language: SoftwareLanguage | AndroidLocale): vo
         raceInfoTitle_raceDateGrade.innerHTML = "年齢グレード";
         raceInfoTitle_raceDateDay.innerHTML = "期日";
         raceInfoTitle_raceGrade.innerHTML = "グレード";
-        raceInfoTitle_racecourse.innerHTML = "競馬場";
+        raceInfoTitle_racecourse.innerHTML = "レース場";
         raceInfoTitle_raceTrack.innerHTML = "バ場";
         raceInfoTitle_raceDirection.innerHTML = "方向";
         raceInfoTitle_raceDistanceType.innerHTML = "距離区分";
@@ -225,7 +224,6 @@ function reflushRaceItem(): void
             raceDirection: race_obj["race_direction"],
             raceDistanceType: race_obj["race_distance_type"],
             raceDistance: race_obj["race_distance"],
-            inputValue: index
         }
         // raceInfoItemList.push(raceInfoItem);
 
