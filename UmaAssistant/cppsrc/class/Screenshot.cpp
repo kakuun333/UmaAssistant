@@ -314,6 +314,12 @@ void Screenshot::_CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPat
 			crop_width = img_width - (img_width * 0.55);
 			crop_height = img_height - (img_height * 0.948);
 			break;
+		case IMG_DATE:
+			crop_x = img_width - (img_width * 0.77);
+			crop_y = img_height - (img_height * 0.965);
+			crop_width = img_width - (img_width * 0.72);
+			crop_height = img_height - (img_height * 0.981);
+			break;
 		}
 		break;
 	}
