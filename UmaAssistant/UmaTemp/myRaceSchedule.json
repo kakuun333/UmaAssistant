@@ -1,0 +1,145 @@
+[
+  {
+    "race_date_day": "12月前半",
+    "race_date_grade": "ジュニア",
+    "race_direction": "右",
+    "race_distance": "1600m",
+    "race_distance_type": "マイル",
+    "race_grade": "G1",
+    "race_name": "朝日杯フューチュリティステークス",
+    "race_track": "芝",
+    "racecourse": "阪神"
+  },
+  {
+    "race_date_day": "12月前半",
+    "race_date_grade": "ジュニア",
+    "race_direction": "右",
+    "race_distance": "1600m",
+    "race_distance_type": "マイル",
+    "race_grade": "G1",
+    "race_name": "阪神ジュベナイルフィリーズ",
+    "race_track": "芝",
+    "racecourse": "阪神"
+  },
+  {
+    "race_date_day": "12月後半",
+    "race_date_grade": "ジュニア",
+    "race_direction": "右",
+    "race_distance": "2000m",
+    "race_distance_type": "中距離",
+    "race_grade": "G1",
+    "race_name": "ホープフルステークス",
+    "race_track": "芝",
+    "racecourse": "中山"
+  },
+  {
+    "race_date_day": "4月前半",
+    "race_date_grade": "クラシック",
+    "race_direction": "右",
+    "race_distance": "2000m",
+    "race_distance_type": "中距離",
+    "race_grade": "G1",
+    "race_name": "皐月賞",
+    "race_track": "芝",
+    "racecourse": "中山"
+  },
+  {
+    "race_date_day": "4月前半",
+    "race_date_grade": "クラシック",
+    "race_direction": "右",
+    "race_distance": "1600m",
+    "race_distance_type": "マイル",
+    "race_grade": "G1",
+    "race_name": "桜花賞",
+    "race_track": "芝",
+    "racecourse": "阪神"
+  },
+  {
+    "race_date_day": "5月前半",
+    "race_date_grade": "クラシック",
+    "race_direction": "左",
+    "race_distance": "1600m",
+    "race_distance_type": "マイル",
+    "race_grade": "G1",
+    "race_name": "NHKマイルカップ",
+    "race_track": "芝",
+    "racecourse": "東京"
+  },
+  {
+    "race_date_day": "5月後半",
+    "race_date_grade": "クラシック",
+    "race_direction": "左",
+    "race_distance": "2400m",
+    "race_distance_type": "中距離",
+    "race_grade": "G1",
+    "race_name": "日本ダービー東京優駿",
+    "race_track": "芝",
+    "racecourse": "東京"
+  },
+  {
+    "race_date_day": "5月後半",
+    "race_date_grade": "クラシック",
+    "race_direction": "左",
+    "race_distance": "2400m",
+    "race_distance_type": "中距離",
+    "race_grade": "G1",
+    "race_name": "オークス",
+    "race_track": "芝",
+    "racecourse": "東京"
+  },
+  {
+    "race_date_day": "6月前半",
+    "race_date_grade": "クラシック",
+    "race_direction": "左",
+    "race_distance": "1600m",
+    "race_distance_type": "マイル",
+    "race_grade": "G1",
+    "race_name": "安田記念",
+    "race_track": "芝",
+    "racecourse": "東京"
+  },
+  {
+    "race_date_day": "6月後半",
+    "race_date_grade": "クラシック",
+    "race_direction": "右",
+    "race_distance": "2200m",
+    "race_distance_type": "中距離",
+    "race_grade": "G1",
+    "race_name": "宝塚記念",
+    "race_track": "芝",
+    "racecourse": "阪神"
+  },
+  {
+    "race_date_day": "10月後半",
+    "race_date_grade": "クラシック",
+    "race_direction": "右",
+    "race_distance": "3000m",
+    "race_distance_type": "長距離",
+    "race_grade": "G1",
+    "race_name": "菊花賞",
+    "race_track": "芝",
+    "racecourse": "京都"
+  },
+  {
+    "race_date_day": "10月後半",
+    "race_date_grade": "クラシック",
+    "race_direction": "左",
+    "race_distance": "2000m",
+    "race_distance_type": "中距離",
+    "race_grade": "G1",
+    "race_name": "天皇賞秋",
+    "race_track": "芝",
+    "racecourse": "東京"
+  },
+  {
+    "race_date_day": "11月前半",
+    "race_date_grade": "クラシック",
+    "race_direction": "右",
+    "race_distance": "2200m",
+    "race_distance_type": "中距離",
+    "race_grade": "G1",
+    "race_name": "エリザベス女王杯",
+    "race_track": "芝",
+    "racecourse": "京都"
+  }
+]

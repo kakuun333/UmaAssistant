@@ -29,7 +29,18 @@ input[type="text"] {
     background-color: rgb(44, 61, 81);
     border-radius: 5px;
     border: none;
-    text-decoration: none;
+    font: inherit;
+    color: #cfc197;
+}
+
+input[type="text"]::placeholder {
+    /* border: #cfc197; */
+    color: #cfc197;
+    font-family: "MochiyPopOne", sans-serif;
+}
+
+#search_textbox::placeholder {
+    color: #cfc197; /* 設定placeholder的顏色 */
 }
 
 input[type="file"] {

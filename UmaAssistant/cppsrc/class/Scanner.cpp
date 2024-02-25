@@ -149,6 +149,10 @@ std::string Scanner::_GetScannedText(cv::Mat image, ImageType imgType, bool engl
 				ocr_jpn->SetVariable("tessedit_char_blacklist", u8"@#$%^*_+<>?()[]{}|\\`†.,;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
 				ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE/*PSM_SINGLE_BLOCK*/);
 				break;
+			case ImageType::IMG_DATE:
+				ocr_jpn->SetVariable("tessedit_char_whitelist", u8"ジュニアクラシックシニア級0123456789０１２３４５６７８９月前後半");
+				ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
+				break;
 			}
 
 			// 設置圖片到 ocr
@@ -284,6 +288,7 @@ void Scanner::_Scan()
 {
 	DataManager* dataManager = DataManager::GetInstance();
 	UmaLog* umalog = UmaLog::GetInstance();
+	Config* config = Config::GetInstance();
 
 	this->_scanning = true;
 	while (global::umaswitch::Scanning)
@@ -328,6 +333,18 @@ void Scanner::_Scan()
 				continue;
 			}
 		}
+		
+
+		//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+		//===================== 處理 date =======================
+		//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+		if (config->GameServer == static_cast<int>(GameServerType::JP))
+		{
+			std::string scanned_date = this->_GetScannedText(ss.date_gray_bin, ImageType::IMG_DATE);
+			UmaCSharp::UmaLog::d("Scanner", "_________________________________________DATE:" + util::stdStr2system(scanned_date));
+			umalog->print("[Scanner] TryFindScheduledRace", dataManager->TryFindScheduledRace(scanned_date) == true ? "true" : "false");
+		}
+
 
 
 		// 尋找 CurrentCharacter

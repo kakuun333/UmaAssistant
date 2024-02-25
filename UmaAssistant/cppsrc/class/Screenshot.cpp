@@ -257,10 +257,10 @@ void Screenshot::_CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPat
 			crop_height = img_height - (img_height * 0.948);
 			break;
 		case IMG_DATE:
-			crop_x = img_width - (img_width * 0.78);
+			crop_x = img_width - (img_width * 0.77);
 			crop_y = img_height - (img_height * 0.965);
-			crop_width = img_width - (img_width * 0.6);
-			crop_height = img_height - (img_height * 0.98);
+			crop_width = img_width - (img_width * 0.72);
+			crop_height = img_height - (img_height * 0.981);
 			break;
 		}
 		break;
@@ -567,18 +567,18 @@ Screenshot::Screenshot()
 	}
 
 	// date
-	//try
-	//{
-	//	this->_GetDateImage();
-	//}
-	//catch (const std::exception& e)
-	//{
-	//	umalog->print("[std::exception] GetHenseiCharacterAnotherNameImage:", e.what());
-	//}
-	//catch (System::Exception^ ex)
-	//{
-	//	umalog->print("[System::Exception] GetHenseiCharacterAnotherNameImage: ", util::systemStr2std(ex->Message));
-	//}
+	try
+	{
+		this->_GetDateImage();
+	}
+	catch (const std::exception& e)
+	{
+		umalog->print("[std::exception] GetHenseiCharacterAnotherNameImage:", e.what());
+	}
+	catch (System::Exception^ ex)
+	{
+		umalog->print("[System::Exception] GetHenseiCharacterAnotherNameImage: ", util::systemStr2std(ex->Message));
+	}
 
 
 	//this->GetSyousaiCharacterName();
@@ -621,7 +621,7 @@ void Screenshot::ShowImage()
 	//cv::imshow("syousai_character_name_gray_bin", syousai_character_name_gray_bin);
 
 	// ========== date ========== //
-	//cv::imshow("date_gray_bin", date_gray_bin);
+	cv::imshow("date_gray_bin", date_gray_bin);
 
 	cv::waitKey(10);
 }
@@ -631,8 +631,15 @@ void Screenshot::_GetDateImage()
 	date_gray_bin = oimg.clone();
 	this->_CropImage(date_gray_bin, ImageType::IMG_DATE);
 	this->_ResizeImage(date_gray_bin, 2);
+
+	// 灰值化
 	cv::cvtColor(date_gray_bin, date_gray_bin, cv::COLOR_BGR2GRAY);
-	cv::threshold(date_gray_bin, date_gray_bin, 200/*230*/, 255, cv::THRESH_OTSU);
+
+	// 使用高斯模糊去除噪音
+	cv::GaussianBlur(date_gray_bin, date_gray_bin, cv::Size(3, 3), 0);
+
+	// OTSU
+	cv::threshold(date_gray_bin, date_gray_bin, 180/*230*/, 255, cv::THRESH_OTSU);
 }
 
 void Screenshot::_GetEventTitleImage()

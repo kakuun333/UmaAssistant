@@ -27,7 +27,7 @@ namespace UmaAssistant
 	private: bool _changingSoftwareLang = false;
 
 	// Form
-	private: void FormClosingHandler(Object^ sender, FormClosingEventArgs^ e);
+	private: void OnFormClosing(Object^ sender, FormClosingEventArgs^ e);
 
 	// TextBox
 	private: void DigitOnly_TextBox_KeyPress(Object^ sender, KeyPressEventArgs^ e);
@@ -107,9 +107,6 @@ namespace UmaAssistant
 	public: System::Windows::Forms::CheckBox^ discordRpc_checkBox;
 	public: UmaCustomControl::RoundedButton^ test_btn;
 	public: UmaCustomControl::RoundedButton^ screenshotPreview_btn;
-
-
-
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -813,10 +810,7 @@ namespace UmaAssistant
 
 		}
 #pragma endregion
-	private: System::Void update_event_data_jp_btn_Click(System::Object^ sender, System::EventArgs^ e);
 
-
-	private: System::Void update_skill_data_jp_btn_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void minimize_btn_Click(System::Object^ sender, System::EventArgs^ e);
 
 	private: System::Void close_form_btn_Click(System::Object^ sender, System::EventArgs^ e);

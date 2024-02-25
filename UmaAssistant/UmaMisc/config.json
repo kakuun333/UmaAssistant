@@ -1,5 +1,5 @@
 {
-  "AlwaysOnTop": true,
+  "AlwaysOnTop": false,
   "AutoMouseClick": false,
   "AutoMouseClickKey": {
     "VK": 6,
@@ -7,8 +7,8 @@
   },
   "DebugMode": true,
   "DiscordRPC": false,
-  "GameServer": 1,
-  "GameWindow": 1,
+  "GameServer": 0,
+  "GameWindow": 0,
   "GameWindowBoundOffset": {
     "DMM": {
       "Height": 0,
@@ -23,13 +23,13 @@
       "Y": 0
     }
   },
-  "GameWindowName": "185353.png ‎- 相片",
+  "GameWindowName": "umamusume",
   "JpServerLang": 0,
   "LocalServer": {
     "Port": "5854"
   },
   "OutputLogFile": false,
-  "PreviousCurrentCharacterName": "醒目飛鷹（黃昏凱旋）",
+  "PreviousCurrentCharacterName": "ニシノフラワー（ティアード・ペタル）",
   "ScanInterval": 100,
   "SoftwareLanguage": 1
 }

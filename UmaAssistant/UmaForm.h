@@ -389,7 +389,7 @@ namespace UmaAssistant
 			this->raceSchedule_btn->Size = System::Drawing::Size(85, 65);
 			this->raceSchedule_btn->TabIndex = 35;
 			this->raceSchedule_btn->TabStop = false;
-			this->raceSchedule_btn->Text = L"比賽排程";
+			this->raceSchedule_btn->Text = L"賽事排程";
 			this->raceSchedule_btn->UseVisualStyleBackColor = false;
 			this->raceSchedule_btn->Click += gcnew System::EventHandler(this, &UmaForm::raceSchedule_btn_Click);
 			// 

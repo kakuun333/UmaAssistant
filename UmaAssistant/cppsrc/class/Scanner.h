@@ -31,6 +31,8 @@
 #include "../global/form.h"
 #include "../global/umaswitch.h"
 
+#using "CSharpRuntime/UmaCSharpLibrary.dll"
+
 const std::string INIT_EVENT_TITLE_TEXT = "INIT_EVENT_TITLE_TEXT";
 const std::string INIT_HENSEI_CHAR_NAME_TEXT = "INIT_HENSEI_CHAR_NAME_TEXT";
 

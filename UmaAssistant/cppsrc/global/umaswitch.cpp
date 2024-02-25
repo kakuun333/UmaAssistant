@@ -6,5 +6,6 @@ namespace global
 	{
 		bool Scanning = false;
 		bool UpdatingEventData = false;
+		bool LoadedRaceSchedule = false;
 	};
 };

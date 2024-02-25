@@ -13,6 +13,22 @@ std::map<std::string, std::string> DataManager::_currentCharacterInfoDict =
 	{ "event_owner", "" },
 };
 
+bool DataManager::TryFindScheduledRace(std::string scanned_race_date)
+{
+	if (race_schedule_json.empty()) return false;
+
+	for (const auto& race_obj : race_schedule_json)
+	{
+		std::string race_date_grade = race_obj["race_date_grade"];
+		std::string race_date_day = race_obj["race_date_day"];
+
+		std::string race_date = race_date_grade + race_date_day;
+		
+		if (util::GetSimilarity(race_date, scanned_race_date) > 80) return true;
+	}
+
+	return false;
+}
 
 bool DataManager::SetCurrentCharacterInfoDict(std::string event_owner)
 {
@@ -67,6 +83,7 @@ void DataManager::InitEventDataJson()
 
 	// jp server translation data //
 	event_data_jp_trans_tw_json = fileManager->ReadJson(global::path::std_event_data_jp_trans_tw_json);
+
 }
 
 bool DataManager::TryGetCurrentCharacterByList(std::deque<std::string> scanned_text_list)

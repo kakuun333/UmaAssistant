@@ -30,7 +30,7 @@ namespace UmaAssistant
 		//
 
 		// 註冊 FormClosing 事件
-		this->FormClosing += gcnew FormClosingEventHandler(this, &SettingsForm::FormClosingHandler);
+		this->FormClosing += gcnew FormClosingEventHandler(this, &SettingsForm::OnFormClosing);
 
 		// 初始化 TextBox 的 Text
 		serverPortTextBox->Text = util::stdStr2system(Config::GetInstance()->LocalServer["Port"]);
@@ -223,11 +223,10 @@ namespace UmaAssistant
 	}
 #pragma endregion
 
-	void SettingsForm::FormClosingHandler(Object^ sender, FormClosingEventArgs^ e)
+	void SettingsForm::OnFormClosing(Object^ sender, FormClosingEventArgs^ e)
 	{
 		// 取消關閉操作，避免 form 被自動釋放
 		e->Cancel = true;
-
 		// 隱藏視窗
 		this->Hide();
 	}
@@ -544,22 +543,6 @@ namespace UmaAssistant
 		}
 
 		Config::GetInstance()->WriteToJson();
-	}
-
-	System::Void SettingsForm::update_event_data_jp_btn_Click(System::Object^ sender, System::EventArgs^ e)
-	{
-		//LuaManager* luaManager = LuaManager::GetInstance();
-
-		//if (!luaManager->IsBusy())
-		//	luaManager->DumpEventData();
-	}
-
-	System::Void SettingsForm::update_skill_data_jp_btn_Click(System::Object^ sender, System::EventArgs^ e)
-	{
-		//LuaManager* luaManager = LuaManager::GetInstance();
-
-		//if (!luaManager->IsBusy())
-		//	luaManager->DumpSkillData();
 	}
 
 	System::Void SettingsForm::minimize_btn_Click(System::Object^ sender, System::EventArgs^ e)

@@ -44,6 +44,8 @@ private:
 	json event_name_data_jp_json;
 	json event_name_data_tw_json;
 
+	json race_schedule_json;
+
 	std::mutex dataMutex;
 public:
 	static DataManager* GetInstance()
@@ -57,6 +59,7 @@ public:
 
 	void InitEventDataJson();
 	
+
 	bool SetCurrentCharacterInfoDict(std::string event_owner);
 
 	bool TryGetCurrentCharacterByList(std::deque<std::string> scanned_text_list);
@@ -65,8 +68,14 @@ public:
 
 	std::variant<UmaEventData, ScenarioEventData> GetEventDataByUmaEventNameData(UmaEventNameData umaEventNameData);
 
+	bool TryFindScheduledRace(std::string scanned_date);
 
 #pragma region ¤º´O¨ç¦¡
+	inline void SetRaceScheduleJson(json _json)
+	{
+		race_schedule_json = _json;
+	}
+
 	inline std::string GetCurrentCharacter()
 	{
 		return _currentCharacterInfoDict["event_owner"];

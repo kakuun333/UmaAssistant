@@ -20,8 +20,7 @@ namespace UmaAssistant {
 	/// </summary>
 	public ref class RaceScheduleForm : public System::Windows::Forms::Form
 	{
-	public:
-		RaceScheduleForm(void);
+	public: RaceScheduleForm(void);
 	protected:
 		/// <summary>
 		/// 清除任何使用中的資源。
@@ -38,8 +37,6 @@ namespace UmaAssistant {
 	private: UmaCustomControl::RoundedButton^ minimize_btn;
 	private: UmaCustomControl::RoundedButton^ closeForm_btn;
 	public: Microsoft::Web::WebView2::WinForms::WebView2^ raceScheduleWebView2;
-	private:
-
 	private:
 		/// <summary>
 		/// 設計工具所需的變數。
@@ -85,7 +82,7 @@ namespace UmaAssistant {
 			this->raceSchedule_label->Name = L"raceSchedule_label";
 			this->raceSchedule_label->Size = System::Drawing::Size(74, 24);
 			this->raceSchedule_label->TabIndex = 26;
-			this->raceSchedule_label->Text = L"比賽排程";
+			this->raceSchedule_label->Text = L"賽事排程";
 			// 
 			// minimize_btn
 			// 
@@ -99,7 +96,7 @@ namespace UmaAssistant {
 			this->minimize_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->minimize_btn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"minimize_btn.Image")));
-			this->minimize_btn->Location = System::Drawing::Point(620, 1);
+			this->minimize_btn->Location = System::Drawing::Point(685, 1);
 			this->minimize_btn->Name = L"minimize_btn";
 			this->minimize_btn->Radius = 10;
 			this->minimize_btn->Size = System::Drawing::Size(39, 32);
@@ -120,7 +117,7 @@ namespace UmaAssistant {
 			this->closeForm_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 				static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->closeForm_btn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"closeForm_btn.Image")));
-			this->closeForm_btn->Location = System::Drawing::Point(664, 1);
+			this->closeForm_btn->Location = System::Drawing::Point(729, 1);
 			this->closeForm_btn->Name = L"closeForm_btn";
 			this->closeForm_btn->Radius = 10;
 			this->closeForm_btn->Size = System::Drawing::Size(40, 32);
@@ -136,7 +133,7 @@ namespace UmaAssistant {
 			this->raceScheduleWebView2->DefaultBackgroundColor = System::Drawing::Color::White;
 			this->raceScheduleWebView2->Location = System::Drawing::Point(12, 34);
 			this->raceScheduleWebView2->Name = L"raceScheduleWebView2";
-			this->raceScheduleWebView2->Size = System::Drawing::Size(681, 504);
+			this->raceScheduleWebView2->Size = System::Drawing::Size(746, 504);
 			this->raceScheduleWebView2->TabIndex = 29;
 			this->raceScheduleWebView2->ZoomFactor = 1;
 			// 
@@ -144,7 +141,7 @@ namespace UmaAssistant {
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(705, 550);
+			this->ClientSize = System::Drawing::Size(770, 550);
 			this->Controls->Add(this->raceScheduleWebView2);
 			this->Controls->Add(this->minimize_btn);
 			this->Controls->Add(this->closeForm_btn);
@@ -157,6 +154,7 @@ namespace UmaAssistant {
 			this->Name = L"RaceScheduleForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"RaceScheduleForm";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &RaceScheduleForm::RaceScheduleForm_FormClosing);
 			this->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &RaceScheduleForm::RaceScheduleForm_MouseDown);
 			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &RaceScheduleForm::RaceScheduleForm_MouseMove);
 			this->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &RaceScheduleForm::RaceScheduleForm_MouseUp);
@@ -174,20 +172,23 @@ namespace UmaAssistant {
 	private: System::Drawing::Point _dragOffset;
 #pragma endregion
 
+
+#pragma region Form Event
+	private: System::Void RaceScheduleForm_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e);
+
+	private: System::Void RaceScheduleForm_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
+	private: System::Void RaceScheduleForm_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
+	private: System::Void RaceScheduleForm_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
+#pragma endregion
+
 #pragma region EventHandler 函式
-	public: System::Void OnWebMessageReceived(System::Object^ sender, CoreWebView2WebMessageReceivedEventArgs^ e);
-	public: System::Void OnNavigationCompleted(System::Object^ sender, CoreWebView2NavigationCompletedEventArgs^ e);
+	private: System::Void OnWebMessageReceived(System::Object^ sender, CoreWebView2WebMessageReceivedEventArgs^ e);
+	private: System::Void OnNavigationCompleted(System::Object^ sender, CoreWebView2NavigationCompletedEventArgs^ e);
 #pragma endregion
 
 #pragma region Button Click
 	private: System::Void minimize_btn_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void closeForm_btn_Click(System::Object^ sender, System::EventArgs^ e);
-#pragma endregion
-
-#pragma region Mouse Event
-	private: System::Void RaceScheduleForm_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
-	private: System::Void RaceScheduleForm_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
-	private: System::Void RaceScheduleForm_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
 #pragma endregion
 };
 }

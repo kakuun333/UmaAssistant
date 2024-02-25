@@ -270,11 +270,7 @@ function setSaveLoadRaceScheduleButton(): void
     const saveFileNameInput = document.getElementById("saveFileNameInput")! as HTMLInputElement;
     saveRaceScheduleButton.addEventListener("click", (event) => {
         
-        if (saveFileNameInput.value === "")
-        {
-            console.log("需要輸入檔案名稱");
-            return;
-        }
+        if (saveFileNameInput.value === "") { alert("請輸入檔案名稱"); return; }
 
         const raceObjList = new Array<Object>();
 
@@ -293,17 +289,17 @@ function setSaveLoadRaceScheduleButton(): void
             const raceObj =
             {
                 race_name: raceNameElement.textContent,
-                race_grade: raceDateGradeElement.textContent,
-                race_track: raceDateDayElement.textContent,
-                racecourse: raceGradeElement.textContent,
-                race_distance: racecourseElement.textContent,
-                race_distance_type: raceTrackElement.textContent,
+                race_date_grade: raceDateGradeElement.textContent,
+                race_date_day: raceDateDayElement.textContent,
+                race_grade: raceGradeElement.textContent,
+                racecourse: racecourseElement.textContent,
+                race_track: raceTrackElement.textContent,
                 race_direction: raceDirectionElement.textContent,
-                race_date_grade: raceDistanceTypeElement.textContent,
-                race_date_day: raceDistanceElement.textContent,
+                race_distance_type: raceDistanceTypeElement.textContent,
+                race_distance: raceDistanceElement.textContent,
             }
 
-            raceObjList.push(raceObj)
+            raceObjList.push(raceObj);
         }
 
         
@@ -332,7 +328,7 @@ function setSaveLoadRaceScheduleButton(): void
     loadRaceScheduleButton.addEventListener("click", () => {
         const file = loadRaceScheduleInput.files![0]; // 獲取選擇的檔案
 
-        if (!file) return;
+        if (!file) { alert("請選擇檔案"); return; }
         
         const reader = new FileReader();
         // 監聽 FileReader 的 onload 事件
