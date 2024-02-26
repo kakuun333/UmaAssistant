@@ -19,14 +19,15 @@
 ## 功能介紹
 ### 事件選項效果
 ![1](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1.png)
+![1013](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1013.png)
 ![1009](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1009.png)
 ![1010](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1010.png)
 
 ### 技能預覽
 #### 白技能  
 ![2](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/2.png)
-![998](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/998.png)
 ![1002](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1002.png)
+![998](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/998.png)
 ![1005](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1005.png)
 ![1006](https://raw.githubusercontent.com/kakuun333/UmaAssistant/assets/tw_doc/1006.png)
 
