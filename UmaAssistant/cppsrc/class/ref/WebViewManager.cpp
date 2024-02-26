@@ -42,10 +42,10 @@ System::Void WebViewManager::UpdateSkillContent()
 	FormController::Instance->ExecuteFunctionAsync(global::form::umaForm->choiceWebView2,
 		"updateSkillContent", gcnew array<System::Object^>{});
 }
-System::Void WebViewManager::HideSkillContent()
+System::Void WebViewManager::hideSkillHintContent()
 {
 	FormController::Instance->ExecuteFunctionAsync(global::form::umaForm->choiceWebView2,
-		"hideSkillContent", gcnew array<System::Object^>{});
+		"hideSkillHintContent", gcnew array<System::Object^>{});
 }
 #pragma endregion
 

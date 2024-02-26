@@ -23,7 +23,7 @@ public:
 	System::Void ChangeChoiceHtmlLanguage(int softwareLangType);
 	System::Void CleanChoiceTable();
 	System::Void UpdateSkillContent();
-	System::Void HideSkillContent();
+	System::Void hideSkillHintContent();
 
 	//void SetGameServer(int gameServer);
 	//void SetJpServerLanguage(int jpServerLangType);

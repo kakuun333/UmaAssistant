@@ -83,7 +83,7 @@ void Scanner::_UpdateSapokaOrCharacterChoice(UmaEventData sapokaUmaEventData)
 	System::String^ sys_event_title = util::stdStr2system(sapokaUmaEventData.Get<std::string>(UmaEventDataType::EVENT_TITLE));
 	WebViewManager::Instance->ChangeEventName(sys_event_title);
 
-	WebViewManager::Instance->HideSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
+	WebViewManager::Instance->hideSkillHintContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
 	WebViewManager::Instance->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
 }
 
@@ -110,7 +110,7 @@ void Scanner::_UpdateScenarioChoice(ScenarioEventData scenarioEventData)
 
 	WebViewManager::Instance->ChangeEventName(sys_event_title);
 
-	WebViewManager::Instance->HideSkillContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
+	WebViewManager::Instance->hideSkillHintContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
 	WebViewManager::Instance->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
 }
 
@@ -148,10 +148,11 @@ std::string Scanner::_GetScannedText(cv::Mat image, ImageType imgType, bool engl
 				break;
 			case ImageType::IMG_HENSEI_CHARACTER_NAME:
 				ocr_jpn->SetVariable("tessedit_char_blacklist", u8"@#$%^*_+<>?()[]{}|\\`†.,;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
-				ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE/*PSM_SINGLE_BLOCK*/);
 				ocr_jpn->SetVariable("tessedit_char_whitelist", u8"");
+				ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE/*PSM_SINGLE_BLOCK*/);
 				break;
 			case ImageType::IMG_DATE:
+				ocr_jpn->SetVariable("tessedit_char_blacklist", u8"");
 				ocr_jpn->SetVariable("tessedit_char_whitelist", u8"ジュニアクラシックシニア級0123456789０１２３４５６７８９月前後半");
 				ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 				break;
@@ -171,11 +172,18 @@ std::string Scanner::_GetScannedText(cv::Mat image, ImageType imgType, bool engl
 			{
 			case ImageType::IMG_EVENT_NAME:
 				ocr_tw->SetVariable("tessedit_char_blacklist", u8"@$%^*_-+<>[]{}|\\`†;；=《》579"); // 有在事件名稱中出現的符號 0368:/#
+				ocr_tw->SetVariable("tessedit_char_whitelist", u8"");
 				ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 				break;
 			case ImageType::IMG_HENSEI_CHARACTER_NAME:
 				ocr_tw->SetVariable("tessedit_char_blacklist", u8"@#$%^*_+<>?()[]{}|\\`†.,;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
+				ocr_tw->SetVariable("tessedit_char_whitelist", u8"");
 				ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_LINE/*PSM_SINGLE_BLOCK*/);
+				break;
+			case ImageType::IMG_DATE:
+				ocr_tw->SetVariable("tessedit_char_blacklist", u8"");
+				ocr_tw->SetVariable("tessedit_char_whitelist", u8"新手經典資深級0123456789０１２３４５６７８９月前後半");
+				ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 				break;
 			}
 
@@ -343,8 +351,8 @@ void Scanner::_Scan()
 		if (ss.IsDate())
 		{
 			std::string scanned_date = this->_GetScannedText(ss.date_gray_bin, ImageType::IMG_DATE);
-			UmaCSharp::Umalog::d("Scanner", "scanned_date: " + util::stdStr2system(scanned_date));
-			UmaCSharp::Umalog::d("Scanner", "TryFindScheduledRace: " + (dataManager->TryFindScheduledRace(scanned_date) ? "true" : "false"));
+			umalog->print("[Scanner] scanned_date: ", scanned_date);
+			umalog->print("[Scanner] TryFindScheduledRace: ", dataManager->TryFindScheduledRace(scanned_date) ? "true" : "false");
 
 			// 更新 Discord RPC 狀態
 			if (config->DiscordRPC)
@@ -354,7 +362,7 @@ void Scanner::_Scan()
 
 			if (dataManager->TryFindScheduledRace(scanned_date) && !global::form::notificationForm->Visible)
 			{
-				UmaCSharp::Umalog::d("Scanner", "即將顯示 NotificationForm");
+				umalog->print("[Scanner] 即將顯示 NotificationForm", scanned_date);
 				FormController::Instance->ShowForm(global::form::notificationForm);
 			}
 		}
