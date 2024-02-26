@@ -15,6 +15,7 @@ std::map<std::string, std::string> DataManager::_currentCharacterInfoDict =
 
 bool DataManager::TryFindScheduledRace(std::string scanned_race_date)
 {
+	if (scanned_race_date.empty()) return false;
 	if (loaded_race_schedule_json.empty()) return false;
 
 	for (const auto& race_obj : loaded_race_schedule_json)
@@ -32,6 +33,8 @@ bool DataManager::TryFindScheduledRace(std::string scanned_race_date)
 
 bool DataManager::TryFindCurrentDate(std::string scanned_race_date)
 {
+	if (scanned_race_date.empty()) return false;
+
 	std::string dateType;
 
 	switch (Config::GetInstance()->GameServer)

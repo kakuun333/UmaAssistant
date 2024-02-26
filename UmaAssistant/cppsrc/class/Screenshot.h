@@ -31,7 +31,8 @@ constexpr inline int EMULATOR_FIX_GAME_POS_Y = 36;
 
 constexpr inline double EVENT_ICON_METRIC = 0.535/*0.55*//*0.73*/;
 
-constexpr inline double IS_EVENT_TITLE_METRIC = 0.3;
+constexpr inline double IS_EVENT_NAME_METRIC = 0.3;
+constexpr inline double IS_DATE_METRIC = 0.35;
 
 enum ImagePattern
 {
@@ -58,7 +59,9 @@ private:
 	// ========== variables ========== //
 	cv::Mat _hwnd2mat(HWND hwnd);
 
-	bool _isEventTitle = true;
+	bool _isEventName = true;
+
+	bool _isDate = true;
 
 	bool _hasEventIcon = false;
 
@@ -76,7 +79,7 @@ private:
 	// 檢查是否有 EventIcon，並設置 _hasEventIcon 和 _eventIconWhitePixelRatio
 	void _CheckEventIcon(cv::Mat img);
 
-	void _GetEventTitleImage();
+	void _GetEventNameImage();
 
 	void _GetEventIconImage();
 
@@ -104,9 +107,14 @@ public:
 		return true;
 	}
 
-	inline bool IsEventTitle()
+	inline bool IsDate()
 	{
-		return _isEventTitle;
+		return _isDate;
+	}
+
+	inline bool IsEventName()
+	{
+		return _isEventName;
 	}
 
 	inline void SetHasEventIcon(bool value)

@@ -533,7 +533,7 @@ Screenshot::Screenshot()
 	// event_title
 	try
 	{
-		this->_GetEventTitleImage();
+		this->_GetEventNameImage();
 	}
 	catch (const std::exception& e)
 	{
@@ -634,6 +634,8 @@ void Screenshot::ShowImage()
 
 void Screenshot::_GetDateImage()
 {
+	UmaLog* umalog = UmaLog::GetInstance();
+
 	date_gray_bin = oimg.clone();
 	this->_CropImage(date_gray_bin, ImageType::IMG_DATE);
 	this->_ResizeImage(date_gray_bin, 2);
@@ -646,9 +648,24 @@ void Screenshot::_GetDateImage()
 
 	// OTSU
 	cv::threshold(date_gray_bin, date_gray_bin, 230/*230*/, 255, cv::THRESH_OTSU);
+
+	double date_gray_bin_BPR = _GetBlackPixelRatio(date_gray_bin);
+	std::cout << "[Screenshot] date_gray_bin_BPR: " << date_gray_bin_BPR << '\n';
+	if (date_gray_bin_BPR > IS_DATE_METRIC || date_gray_bin_BPR == 0 || date_gray_bin_BPR == 1)
+	{
+		/*
+		* [Screenshot] date_gray_bin_BPR: 0.311228
+		* [DEBUG][Scanner] scanned_date: クラシック級12月前半
+		*
+		* [Screenshot] date_gray_bin_BPR: 0.235254
+		* [DEBUG][Scanner] scanned_date: シニア1月前半
+		*/
+		umalog->print(u8"[Screenshot] 可能不是日期");
+		_isDate = false;
+	}
 }
 
-void Screenshot::_GetEventTitleImage()
+void Screenshot::_GetEventNameImage()
 {
 	UmaLog* umalog = UmaLog::GetInstance();
 
@@ -679,7 +696,7 @@ void Screenshot::_GetEventTitleImage()
 
 	double event_title_gray_bin_WPR = _GetWhitePixelRatio(event_title_gray_bin);
 	std::cout << "[Screenshot] event_title_gray_bin_WPR: " << event_title_gray_bin_WPR << '\n';
-	if (event_title_gray_bin_WPR > IS_EVENT_TITLE_METRIC || event_title_gray_bin_WPR == 0)
+	if (event_title_gray_bin_WPR > IS_EVENT_NAME_METRIC || event_title_gray_bin_WPR == 0)
 	{
 		/*
 		* WPR: 0.12677
@@ -690,7 +707,7 @@ void Screenshot::_GetEventTitleImage()
 		* [Scanner] event_title_gray_bin:  交感走力の限界突破に関する買的研
 		*/
 		umalog->print(u8"[Screenshot] 可能不是事件");
-		_isEventTitle = false;
+		_isEventName = false;
 	}
 
 	event_title_gray_bin_high_thresh = oimg.clone();

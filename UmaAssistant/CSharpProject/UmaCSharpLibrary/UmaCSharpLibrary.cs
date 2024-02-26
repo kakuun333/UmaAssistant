@@ -193,7 +193,7 @@ namespace UmaCSharp
         {
             if (!m_isInitialized) return;
 
-            Umalog.d(TAG, "已終結 DiscordRPC");
+            //Umalog.d(TAG, "已終結 DiscordRPC");
 
             client.Dispose();
 

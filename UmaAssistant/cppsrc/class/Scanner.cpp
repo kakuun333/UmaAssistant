@@ -320,7 +320,7 @@ void Scanner::_Scan()
 		std::string henseiCharNameText;
 
 		// 如果是 EventTitle 才辨識 event_text
-		if (ss.IsEventTitle())
+		if (ss.IsEventName())
 		{
 			gray_event_text = this->_GetScannedText(ss.event_title_gray, ImageType::IMG_EVENT_NAME);
 			gray_bin_event_text = this->_GetScannedText(ss.event_title_gray_bin, ImageType::IMG_EVENT_NAME);
@@ -340,21 +340,23 @@ void Scanner::_Scan()
 		//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 		//===================== 處理 date =======================
 		//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-
-		std::string scanned_date = this->_GetScannedText(ss.date_gray_bin, ImageType::IMG_DATE);
-		UmaCSharp::Umalog::d("Scanner", "scanned_date: " + util::stdStr2system(scanned_date));
-		UmaCSharp::Umalog::d("Scanner", "TryFindScheduledRace: " + (dataManager->TryFindScheduledRace(scanned_date) ? "true" : "false"));
-		
-		// 更新 Discord RPC 狀態
-		if (config->DiscordRPC)
+		if (ss.IsDate())
 		{
-			dataManager->TryFindCurrentDate(scanned_date);
-		}
+			std::string scanned_date = this->_GetScannedText(ss.date_gray_bin, ImageType::IMG_DATE);
+			UmaCSharp::Umalog::d("Scanner", "scanned_date: " + util::stdStr2system(scanned_date));
+			UmaCSharp::Umalog::d("Scanner", "TryFindScheduledRace: " + (dataManager->TryFindScheduledRace(scanned_date) ? "true" : "false"));
 
-		if (dataManager->TryFindScheduledRace(scanned_date) && !global::form::notificationForm->Visible)
-		{
-			UmaCSharp::Umalog::d("Scanner", "即將顯示 NotificationForm");
-			FormController::Instance->ShowForm(global::form::notificationForm);
+			// 更新 Discord RPC 狀態
+			if (config->DiscordRPC)
+			{
+				dataManager->TryFindCurrentDate(scanned_date);
+			}
+
+			if (dataManager->TryFindScheduledRace(scanned_date) && !global::form::notificationForm->Visible)
+			{
+				UmaCSharp::Umalog::d("Scanner", "即將顯示 NotificationForm");
+				FormController::Instance->ShowForm(global::form::notificationForm);
+			}
 		}
 
 
@@ -365,7 +367,7 @@ void Scanner::_Scan()
 		if (_previousEventText != gray_event_text &&
 			_previousEventText != gray_bin_event_text &&
 			_previousEventText != gray_bin_inv_event_text &&
-			ss.IsEventTitle())
+			ss.IsEventName())
 		{
 			/*
 			* 如果 _previousEventText 都不一樣就重置 _updatedChoice
