@@ -3,8 +3,7 @@
     
     chcp 65001
         將 console page 轉成 utf-8
----]] local umalib = require("UmaLuaLib");
-local dumper = require("html_dumper");
+]] local dumper = require("html_dumper");
 local parser = require("event_parser");
 local utility = require("utility");
 local pe = require("print_enhance");

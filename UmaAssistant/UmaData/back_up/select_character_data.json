@@ -1,5 +1,20 @@
 [
   {
+    "icon": "i_159.png",
+    "jp_event_owner": "ドゥラメンテ（Red in Black）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_158.png",
+    "jp_event_owner": "イクノディクタス（Mantle of Steel）",
+    "tw_event_owner": null
+  },
+  {
+    "icon": "i_157.png",
+    "jp_event_owner": "ビコーペガサス（疾風ペガサス・零式）",
+    "tw_event_owner": null
+  },
+  {
     "icon": "i_156.png",
     "jp_event_owner": "マンハッタンカフェ（柳緑小夜）",
     "tw_event_owner": null
@@ -307,12 +322,12 @@
   {
     "icon": "i_95.png",
     "jp_event_owner": "ナリタタイシン（ディファレンス･エンジニア）",
-    "tw_event_owner": "成田大進（與眾不同的技師）"
+    "tw_event_owner": null
   },
   {
     "icon": "i_94.png",
     "jp_event_owner": "ウイニングチケット（Dream Deliverer）",
-    "tw_event_owner": "勝利獎券（Dream Deliverer）"
+    "tw_event_owner": null
   },
   {
     "icon": "i_93.png",
@@ -332,12 +347,12 @@
   {
     "icon": "i_90.png",
     "jp_event_owner": "ゴールドシップ（RUN！乱！ランチャー！！）",
-    "tw_event_owner": null
+    "tw_event_owner": "黃金船（RUN！亂！亂槍射手！！）"
   },
   {
     "icon": "i_89.png",
     "jp_event_owner": "メジロマックイーン（さざ波フェアレディ）",
-    "tw_event_owner": null
+    "tw_event_owner": "目白麥昆（漣漪窈窕淑女）"
   },
   {
     "icon": "i_88.png",
@@ -382,7 +397,7 @@
   {
     "icon": "i_80.png",
     "jp_event_owner": "メジロパーマー（Line Breakthrough）",
-    "tw_event_owner": "目白善信（Line Breakthrough）"
+    "tw_event_owner": null
   },
   {
     "icon": "i_79.png",
@@ -397,7 +412,7 @@
   {
     "icon": "i_77.png",
     "jp_event_owner": "ナイスネイチャ（RUN&WIN）",
-    "tw_event_owner": "優秀素質（RUN＆WIN）"
+    "tw_event_owner": null
   },
   {
     "icon": "i_76.png",
@@ -427,7 +442,7 @@
   {
     "icon": "i_71.png",
     "jp_event_owner": "サトノダイヤモンド（Natural Brilliance）",
-    "tw_event_owner": "里見光鑽（Natural Brilliance）"
+    "tw_event_owner": null
   },
   {
     "icon": "i_70.png",
@@ -442,7 +457,7 @@
   {
     "icon": "i_68.png",
     "jp_event_owner": "アドマイヤベガ（Starry Nocturne）",
-    "tw_event_owner": "愛慕織姬（Starry Nocturne）"
+    "tw_event_owner": null
   },
   {
     "icon": "i_67.png",
@@ -482,12 +497,12 @@
   {
     "icon": "i_60.png",
     "jp_event_owner": "ファインモーション（Noble Seamair）",
-    "tw_event_owner": "美妙姿勢（Noble Seamair）"
+    "tw_event_owner": null
   },
   {
     "icon": "i_59.png",
     "jp_event_owner": "ビワハヤヒデ（ノエルージュ･キャロル）",
-    "tw_event_owner": "琵琶晨光（聖夜紅袍頌歌）"
+    "tw_event_owner": null
   },
   {
     "icon": "i_58.png",
@@ -497,7 +512,7 @@
   {
     "icon": "i_57.png",
     "jp_event_owner": "メジロドーベル（ツイステッド･ライン）",
-    "tw_event_owner": "目白多伯（Twisted Line）"
+    "tw_event_owner": null
   },
   {
     "icon": "i_56.png",
@@ -517,7 +532,7 @@
   {
     "icon": "i_53.png",
     "jp_event_owner": "マンハッタンカフェ（Creeping Black）",
-    "tw_event_owner": "曼哈頓咖啡（Creeping Black）"
+    "tw_event_owner": null
   },
   {
     "icon": "i_52.png",
@@ -532,7 +547,7 @@
   {
     "icon": "i_50.png",
     "jp_event_owner": "ライスシャワー（Make up Vampire!）",
-    "tw_event_owner": "米浴（Make up Vampire!）"
+    "tw_event_owner": null
   },
   {
     "icon": "i_49.png",
@@ -562,12 +577,12 @@
   {
     "icon": "i_44.png",
     "jp_event_owner": "マルゼンスキー（ぶっとび☆さまーナイト）",
-    "tw_event_owner": null
+    "tw_event_owner": "丸善斯基（飛越☆盛夏騎士）"
   },
   {
     "icon": "i_43.png",
     "jp_event_owner": "スペシャルウィーク（ほっぴん♪ビタミンハート）",
-    "tw_event_owner": null
+    "tw_event_owner": "特別週（跳躍♪富含維他命的心）"
   },
   {
     "icon": "i_42.png",
@@ -642,7 +657,7 @@
   {
     "icon": "i_28.png",
     "jp_event_owner": "ビワハヤヒデ（pf.Victory formula...）",
-    "tw_event_owner": "琵琶晨光（pf.Victory formula...）"
+    "tw_event_owner": null
   },
   {
     "icon": "i_27.png",
@@ -682,7 +697,7 @@
   {
     "icon": "i_20.png",
     "jp_event_owner": "ウイニングチケット（Go To Winning!）",
-    "tw_event_owner": "勝利獎券（Go To Winning!）"
+    "tw_event_owner": null
   },
   {
     "icon": "i_19.png",
@@ -712,7 +727,7 @@
   {
     "icon": "i_14.png",
     "jp_event_owner": "エルコンドルパサー（エル☆Número 1）",
-    "tw_event_owner": "神鷹（神鷹☆Número 1）"
+    "tw_event_owner": null
   },
   {
     "icon": "i_13.png",

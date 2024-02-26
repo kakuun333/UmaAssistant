@@ -1,6 +1,7 @@
+package.path = "./UmaLua/?.lua"
 Settings = {
-    DumpEventData = true,
-    DumpSkillData = false
+    DumpEventData = false,
+    DumpSkillData = true
 }
 local dumper = require("html_dumper");
 local parser = require("event_parser");

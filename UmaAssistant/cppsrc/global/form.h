@@ -8,6 +8,7 @@
 #include "../../SettingsForm.h"
 #include "../../PreviewForm.h"
 #include "../../RaceScheduleForm.h"
+#include "../../NotificationForm.h"
 
 namespace global
 {
@@ -17,5 +18,6 @@ namespace global
 		extern gcroot<UmaAssistant::SettingsForm^> settingsForm;
 		extern gcroot<UmaAssistant::PreviewForm^> previewForm;
 		extern gcroot<UmaAssistant::RaceScheduleForm^> raceScheduleForm;
+		extern gcroot<UmaAssistant::NotificationForm^> notificationForm;
 	};
 };

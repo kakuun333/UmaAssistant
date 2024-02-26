@@ -159,6 +159,8 @@ namespace UmaAssistant
 	{
 		DataManager* dataManager = DataManager::GetInstance();
 
+
+		global::form::notificationForm->Show();
 		/* UmaDataUpdater */
 		//UmaDataUpdater::GetInstance()->Update();
 		//Config::GetInstance()->WriteToJson();

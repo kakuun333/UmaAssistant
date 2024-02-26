@@ -63,3 +63,22 @@ System::Void FormController::ExecuteFunctionAsync(WebView2^ webView2, String^ fu
         _ExecuteFunctionAsync(_webView2Temp, functionName, param);
     }
 }
+
+
+System::Void FormController::_ShowForm(Form^ form)
+{
+    form->Show();
+}
+
+System::Void FormController::ShowForm(Form^ form)
+{
+    if (form->InvokeRequired)
+    {
+        Action<Form^>^ action = gcnew Action<Form^>(this, &FormController::_ShowForm);
+        form->Invoke(action, form);
+    }
+    else
+    {
+        form->Show();
+    }
+}

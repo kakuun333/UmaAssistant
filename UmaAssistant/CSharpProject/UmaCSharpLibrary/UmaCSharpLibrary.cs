@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace UmaCSharp
 {
-    public static class UmaLog
+    public static class Umalog
     {
         public static void d(string tag, string message)
         {
@@ -49,9 +49,9 @@ namespace UmaCSharp
                 return fileContent;
             }
             catch (FileNotFoundException)
-            { UmaLog.d(TAG, "JSON 檔案未找到。"); }
+            { Umalog.d(TAG, "JSON 檔案未找到。"); }
             catch (Exception ex)
-            { UmaLog.d(TAG, "發生錯誤：" + ex.Message); }
+            { Umalog.d(TAG, "發生錯誤：" + ex.Message); }
 
             return fileContent;
         }
@@ -170,7 +170,7 @@ namespace UmaCSharp
             // Subscribe to events
             client.OnReady += (sender, e) =>
             {
-                UmaLog.d(TAG, "使用者已就緒: " + e.User.Username);
+                Umalog.d(TAG, "使用者已就緒: " + e.User.Username);
             };
 
             //client.OnPresenceUpdate += (sender, e) =>
@@ -193,6 +193,8 @@ namespace UmaCSharp
         {
             if (!m_isInitialized) return;
 
+            Umalog.d(TAG, "已終結 DiscordRPC");
+
             client.Dispose();
 
             m_isInitialized = false;
@@ -205,7 +207,7 @@ namespace UmaCSharp
         /// <param name="gameServer"></param>
         /// <param name="largeImageUrl"></param>
         /// <param name="smallImageUrl"></param>
-        public void SetPresence(int gameServer, int softwareLanguage, string currentCharacterName)
+        public void SetPresence(int gameServer, int softwareLanguage, string currentCharacterName, string state = "")
         {
             if (!m_isInitialized) return;
 
@@ -214,19 +216,16 @@ namespace UmaCSharp
             string _largeImageText = string.Empty;
             string _smallImageText = string.Empty;
             string _details = string.Empty;
-            string _state = string.Empty;
 
             switch (gameServer)
             {
                 case (int)GameServerType.JP:
                     _largeImageText = JP_LARGE_IMAGE_TEXT;
                     _smallImageText = string.IsNullOrEmpty(currentCharacterName) ? string.Empty : currentCharacterName;
-                    _state          = string.Empty; // TODO: 顯示培育中的日期
                     break;
                 case (int)GameServerType.TW:
                     _largeImageText = TW_LARGE_IMAGE_TEXT;
                     _smallImageText = string.IsNullOrEmpty(currentCharacterName) ? string.Empty : currentCharacterName;
-                    _state          = string.Empty; // TODO: 顯示培育中的日期
                     break;
             }
 
@@ -241,15 +240,12 @@ namespace UmaCSharp
                     break;
             }
 
-
-            
-
             //Set the rich presence
             //Call this as many times as you want and anywhere in your code.
             client.SetPresence(new RichPresence()
             {
                 Details = _details,
-                State = _state,
+                State = state,
                 Timestamps = m_startTimestamps,
 
                 Assets = new Assets()

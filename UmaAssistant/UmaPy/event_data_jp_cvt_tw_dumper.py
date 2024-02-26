@@ -1,6 +1,7 @@
 import re
 import time
 import json
+import util
 import utility
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -17,9 +18,11 @@ class DumpDataType:
 
 
 
-char_cvt_data_dict = utility.read_json_file(r"../UmaData/convert_data/event_data_jp_cvt_tw_char.json") or {};
+char_cvt_data_dict = util.read_json(r"../UmaData/convert_data/event_data_jp_cvt_tw_char.json") or {};
+# char_cvt_data_dict = utility.read_json_file(r"../UmaData/convert_data/event_data_jp_cvt_tw_char.json") or {};
 
-card_cvt_data_dict = utility.read_json_file(r"../UmaData/convert_data/event_data_jp_cvt_tw_card.json") or {};
+
+card_cvt_data_dict = util.read_json(r"../UmaData/convert_data/event_data_jp_cvt_tw_card.json") or {};
 
 """
 event_dict = {
@@ -126,7 +129,7 @@ def get_event_name_dict():
 
     return dict;
 
-def get_event_title_list():
+def get_event_name_list():
     list = [];
 
 
@@ -141,25 +144,25 @@ def get_event_title_list():
             if (title != None and a.text): # 有些 title 沒有 '/' 就會造成無限迴圈
                                            # https://wiki.biligame.com/umamusume/%E3%80%90%E7%89%B9%E9%9B%B7%E6%A3%AE%E5%AD%B8%E5%9C%92%E3%80%91%E9%B6%B4%E4%B8%B8%E5%BC%B7%E5%BF%97
 
-                event_title = a.text
+                event_name = a.text
 
-                event_title = utility.convert_nami(event_title);
+                event_name = utility.convert_nami(event_name);
 
-                event_title = utility.replace(event_title, "·", "・");
+                event_name = utility.replace(event_name, "·", "・");
 
-                event_title = utility.replace(event_title, "＃", "#");
+                event_name = utility.replace(event_name, "＃", "#");
 
-                event_title = utility.replace(event_title, "／", "/");
+                event_name = utility.replace(event_name, "／", "/");
 
-                event_title = utility.replace(event_title, "　", "");
+                event_name = utility.replace(event_name, "　", "");
 
-                event_title = utility.replace(event_title, "～", "〜");
+                event_name = utility.replace(event_name, "〜", "～");
 
-                event_title = utility.replace(event_title, "―", "ー"); # 信仰心と親切心が交わる時ーー
+                event_name = utility.replace(event_name, "―", "ー"); # 信仰心と親切心が交わる時ーー
 
-                print("event_title: " + event_title);
+                print("event_name: " + event_name);
 
-                list.append(event_title);
+                list.append(event_name);
         except:
             pass;
 
@@ -251,7 +254,7 @@ def dump_card_convert_data():
         got_tw_list = False;
         tw_event_name_list = [];
         while (not got_tw_list):
-            tw_event_name_list = get_event_title_list();
+            tw_event_name_list = get_event_name_list();
             if (len(tw_event_name_list) != 0):
                 got_tw_list = True;
             time.sleep(0.25);
@@ -263,7 +266,7 @@ def dump_card_convert_data():
         got_jp_list = False;
         jp_event_name_list = [];
         while (not got_jp_list):
-            jp_event_name_list = get_event_title_list();
+            jp_event_name_list = get_event_name_list();
             if (len(jp_event_name_list) != 0):
                 got_jp_list = True;
             time.sleep(0.25);
@@ -271,14 +274,22 @@ def dump_card_convert_data():
         event_name_dict = list_to_dict(jp_event_name_list, tw_event_name_list);
 
 
-        card_cvt_data_dict[jp_event_owner] = {
-            "tw_event_owner": tw_event_owner,
-            "event_name_dict": event_name_dict,
-        }
+        if jp_event_owner in card_cvt_data_dict:
+            # 如果已存在，則更新 event_name_dict 的值
+            print("存在 jp_event_owner")
+            card_cvt_data_dict[jp_event_owner]["tw_event_owner"] = tw_event_owner
+            card_cvt_data_dict[jp_event_owner]["event_name_dict"].update(event_name_dict)
+        else:
+            # 如果不存在，則創建一個新的項目
+            print("不存在 jp_event_owner")
+            card_cvt_data_dict[jp_event_owner] = {
+                "tw_event_owner": tw_event_owner,
+                "event_name_dict": event_name_dict,
+            }
 
-        json_string = json.dumps(card_cvt_data_dict, indent=2, ensure_ascii=False)
-
-        utility.write_convert_data_card(json_string);
+        util.write_json("../UmaData/convert_data/event_data_jp_cvt_tw_card.json", card_cvt_data_dict);
+        # json_string = json.dumps(card_cvt_data_dict, indent=2, ensure_ascii=False)
+        # utility.write_convert_data_card(json_string);
 
         driver.close();
 
@@ -308,7 +319,7 @@ def dump_char_convert_data():
         got_tw_list = False;
         tw_event_name_list = [];
         while (not got_tw_list):
-            tw_event_name_list = get_event_title_list();
+            tw_event_name_list = get_event_name_list();
             if (len(tw_event_name_list) != 0):
                 got_tw_list = True;
             time.sleep(0.25);
@@ -322,21 +333,30 @@ def dump_char_convert_data():
         got_jp_list = False;
         jp_event_name_list = [];
         while (not got_jp_list):
-            jp_event_name_list = get_event_title_list();
+            jp_event_name_list = get_event_name_list();
             if (len(jp_event_name_list) != 0):
                 got_jp_list = True;
             time.sleep(0.25);
 
         event_name_dict = list_to_dict(jp_event_name_list, tw_event_name_list);
 
-        char_cvt_data_dict[jp_char_event_owner] = {
-            "tw_event_owner": tw_char_event_owner,
-            "event_name_dict": event_name_dict,
-        }
+        if jp_char_event_owner in char_cvt_data_dict:
+            # 如果已存在，則更新 event_name_dict 的值
+            print("存在 jp_char_event_owner")
+            char_cvt_data_dict[jp_char_event_owner]["tw_event_owner"] = tw_char_event_owner
+            char_cvt_data_dict[jp_char_event_owner]["event_name_dict"].update(event_name_dict)
+        else:
+            # 如果不存在，則創建一個新的項目
+            print("不存在 jp_char_event_owner")
+            char_cvt_data_dict[jp_char_event_owner] = {
+                "tw_event_owner": tw_char_event_owner,
+                "event_name_dict": event_name_dict,
+            }
 
-        json_string = json.dumps(char_cvt_data_dict, indent=2, ensure_ascii=False)
+        util.write_json("../UmaData/convert_data/event_data_jp_cvt_tw_char.json", char_cvt_data_dict);
 
-        utility.write_convert_data_char(json_string);
+        # json_string = json.dumps(char_cvt_data_dict, indent=2, ensure_ascii=False)
+        # utility.write_convert_data_char(json_string);
 
         driver.close();
 
@@ -358,7 +378,7 @@ def dump_single_cvt_data(umaDataType, tw_data_url):
         got_tw_list = False;
         tw_event_name_list = [];
         while (not got_tw_list):
-            tw_event_name_list = get_event_title_list();
+            tw_event_name_list = get_event_name_list();
             if (len(tw_event_name_list) != 0):
                 got_tw_list = True;
             time.sleep(0.25);
@@ -372,21 +392,32 @@ def dump_single_cvt_data(umaDataType, tw_data_url):
         got_jp_list = False;
         jp_event_name_list = [];
         while (not got_jp_list):
-            jp_event_name_list = get_event_title_list();
+            jp_event_name_list = get_event_name_list();
             if (len(jp_event_name_list) != 0):
                 got_jp_list = True;
             time.sleep(0.25);
 
         event_name_dict = list_to_dict(jp_event_name_list, tw_event_name_list);
 
-        char_cvt_data_dict[jp_char_event_owner] = {
-            "tw_event_owner": tw_char_event_owner,
-            "event_name_dict": event_name_dict,
-        }
+        if jp_char_event_owner in char_cvt_data_dict:
+            # 如果已存在，則更新 event_name_dict 的值
+            print("存在 jp_char_event_owner")
+            char_cvt_data_dict[jp_char_event_owner]["tw_event_owner"] = tw_char_event_owner
+            char_cvt_data_dict[jp_char_event_owner]["event_name_dict"].update(event_name_dict)
+        else:
+            # 如果不存在，則創建一個新的項目
+            print("不存在 jp_char_event_owner")
+            char_cvt_data_dict[jp_char_event_owner] = {
+                "tw_event_owner": tw_char_event_owner,
+                "event_name_dict": event_name_dict,
+            }
 
-        json_string = json.dumps(char_cvt_data_dict, indent=2, ensure_ascii=False)
 
-        utility.write_convert_data_char(json_string);
+        util.write_json("../UmaData/convert_data/event_data_jp_cvt_tw_char.json", char_cvt_data_dict);
+
+        # json_string = json.dumps(char_cvt_data_dict, indent=2, ensure_ascii=False)
+        # utility.write_convert_data_char(json_string);
+    
     elif (umaDataType == DumpDataType.SAPOKA):
         tw_event_owner = get_tw_card_event_owner();
         jp_event_owner = get_jp_card_event_owner();
@@ -395,7 +426,7 @@ def dump_single_cvt_data(umaDataType, tw_data_url):
         got_tw_list = False;
         tw_event_name_list = [];
         while (not got_tw_list):
-            tw_event_name_list = get_event_title_list();
+            tw_event_name_list = get_event_name_list();
             if (len(tw_event_name_list) != 0):
                 got_tw_list = True;
             time.sleep(0.25);
@@ -407,7 +438,7 @@ def dump_single_cvt_data(umaDataType, tw_data_url):
         got_jp_list = False;
         jp_event_name_list = [];
         while (not got_jp_list):
-            jp_event_name_list = get_event_title_list();
+            jp_event_name_list = get_event_name_list();
             if (len(jp_event_name_list) != 0):
                 got_jp_list = True;
             time.sleep(0.25);
@@ -415,98 +446,39 @@ def dump_single_cvt_data(umaDataType, tw_data_url):
         event_name_dict = list_to_dict(jp_event_name_list, tw_event_name_list);
 
 
-        card_cvt_data_dict[jp_event_owner] = {
-            "tw_event_owner": tw_event_owner,
-            "event_name_dict": event_name_dict,
-        }
+        if jp_event_owner in card_cvt_data_dict:
+            # 如果已存在，則更新 event_name_dict 的值
+            print("存在 jp_event_owner")
+            card_cvt_data_dict[jp_event_owner]["tw_event_owner"] = tw_event_owner
+            card_cvt_data_dict[jp_event_owner]["event_name_dict"].update(event_name_dict)
+        else:
+            # 如果不存在，則創建一個新的項目
+            print("不存在 jp_event_owner")
+            card_cvt_data_dict[jp_event_owner] = {
+                "tw_event_owner": tw_event_owner,
+                "event_name_dict": event_name_dict,
+            }
 
-        json_string = json.dumps(card_cvt_data_dict, indent=2, ensure_ascii=False)
 
-        utility.write_convert_data_card(json_string);
+        util.write_json("../UmaData/convert_data/event_data_jp_cvt_tw_card.json", card_cvt_data_dict);
+
+        # json_string = json.dumps(card_cvt_data_dict, indent=2, ensure_ascii=False)
+        # utility.write_convert_data_card(json_string);
 
 
 #####   獲取單筆資料    #####
 
 # 角色
-dump_single_cvt_data(DumpDataType.CHARACTER, "https://wiki.biligame.com/umamusume/%E3%80%90Rocket%E2%98%86Star%E3%80%91%E6%8E%A1%E7%8F%A0")
+# dump_single_cvt_data(DumpDataType.CHARACTER, "https://wiki.biligame.com/umamusume/%E3%80%90Rocket%E2%98%86Star%E3%80%91%E6%8E%A1%E7%8F%A0")
 
 # 支援卡
-# dump_single_cvt_data(DumpDataType.SAPOKA, "https://wiki.biligame.com/umamusume/%E3%80%90%E5%B8%9D%E7%9A%87%E2%94%80%E2%94%80%E7%9A%87%E2%94%80%E2%94%80%E7%9A%87%E2%94%80%E2%94%80%EF%BC%81%EF%BC%81%EF%BC%81%E3%80%91%E6%9D%B1%E6%B5%B7%E5%B8%9D%E7%9A%87");
-# dump_single_cvt_data(DumpDataType.SAPOKA, "https://wiki.biligame.com/umamusume/%E3%80%90TT_Ignition!%E3%80%91%E9%9B%99%E6%B8%A6%E8%BC%AA");
-
-
-
-#####   獲取支援卡資料  #####
-# dump_card_convert_data();
+# dump_single_cvt_data(DumpDataType.SAPOKA, "https://wiki.biligame.com/umamusume/%E3%80%90from_the_GROUND_UP%E3%80%91%E6%98%8E%E4%BA%AE%E5%85%89%E6%9A%88");
 
 #####   獲取角色資料    #####
 # dump_char_convert_data();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# driver.get("https://wiki.biligame.com/umamusume/%E3%80%90%E7%89%B9%E9%9B%B7%E6%A3%AE%E5%AD%B8%E5%9C%92%E3%80%91%E9%B6%B4%E4%B8%B8%E5%BC%B7%E5%BF%97");
-# time.sleep(6);
-
-# tw_event_owner = get_tw_card_event_owner();
-# jp_event_owner = get_jp_card_event_owner();
-
-# event_name_dict = get_event_name_dict();
-
-
-# got_tw_list = False;
-# tw_event_name_list = [];
-# while (not got_tw_list):
-#     tw_event_name_list = get_event_title_list();
-#     if (len(tw_event_name_list) != 0):
-#         got_tw_list = True;
-#     time.sleep(0.25);
-
-# open_jp_url();
-
-# utility.switch_to_new_tab(driver);
-
-# got_jp_list = False;
-# jp_event_name_list = [];
-# while (not got_jp_list):
-#     jp_event_name_list = get_event_title_list();
-#     if (len(jp_event_name_list) != 0):
-#         got_jp_list = True;
-#     time.sleep(0.25);
-
-# event_name_dict = list_to_dict(jp_event_name_list, tw_event_name_list);
-
-
-# event_dict[jp_event_owner] = {
-#     "tw_event_owner": tw_event_owner,
-#     "event_name_dict": event_name_dict,
-# }
-
-# json_string = json.dumps(event_dict, indent=2, ensure_ascii=False)
-
-# utility.write_convert_data_card(json_string);
+#####   獲取支援卡資料  #####
+dump_card_convert_data();
 
 

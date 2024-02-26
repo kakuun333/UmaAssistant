@@ -399,14 +399,14 @@ def dump_scenario_event_data_jp():
 
 ##### single_dump_mode #####
 ## character ##
-dump_character_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/437714");
-dump_character_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/437715");
+# dump_character_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/437714");
+# dump_character_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/437715");
 
 ## sapoka ##
 # dump_sapoka_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/437702");
 # dump_sapoka_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/437703");
 # dump_sapoka_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/437279");
-# dump_sapoka_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/437704");
+dump_sapoka_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/437704");
 # dump_sapoka_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/437701");
 # dump_sapoka_event_data_jp(single_dump_mode=True, url="https://gamewith.jp/uma-musume/article/show/437705");
 

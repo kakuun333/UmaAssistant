@@ -38,33 +38,46 @@ void LocalServer::HandleUmaWebRequest(System::Object^ obj)
 		// 讀取檔案
 		array<System::Byte>^ fileData = File::ReadAllBytes(filePath);
 
-		// 設定回應標頭
-		switch (fileType)
-		{
-		case FileType::HTML:
-			response->ContentType = "text/html";
-			break;
-		case FileType::CSS:
-			response->ContentType = "text/css";
-			break;
-		case FileType::JSON:
-			response->ContentType = "application/json";
-			break;
-		case FileType::JAVASCRIPT:
-			response->ContentType = "text/javascript";
-			break;
-		case FileType::TTF:
-			response->ContentType = "application/font-sfnt";
-			break;
-		case FileType::PNG:
-			response->ContentType = "image/png";
-			break;
-		}
-		
-		response->ContentLength64 = fileData->Length;
 
-		// 寫入回應數據
-		response->OutputStream->Write(fileData, 0, fileData->Length);
+		if (System::IO::File::Exists(filePath))
+		{
+			array<System::Byte>^ fileData = System::IO::File::ReadAllBytes(filePath);
+
+			// 設定回應標頭
+			switch (fileType)
+			{
+			case FileType::HTML:
+				response->ContentType = "text/html";
+				break;
+			case FileType::CSS:
+				response->ContentType = "text/css";
+				break;
+			case FileType::JSON:
+				response->ContentType = "application/json";
+				break;
+			case FileType::JAVASCRIPT:
+				response->ContentType = "text/javascript";
+				break;
+			case FileType::TTF:
+				response->ContentType = "application/font-sfnt";
+				break;
+			case FileType::PNG:
+				response->ContentType = "image/png";
+				break;
+			}
+
+			response->ContentLength64 = fileData->Length;
+
+			// 寫入回應數據
+			response->OutputStream->Write(fileData, 0, fileData->Length);
+		}
+		else
+		{
+			// 檔案不存在的處理邏輯
+			response->StatusCode = (int)HttpStatusCode::NotFound;
+			response->StatusDescription = "File not found.";
+			response->OutputStream->Close();
+		}
 	}
 	catch (FileNotFoundException^)
 	{

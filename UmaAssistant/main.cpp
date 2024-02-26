@@ -88,6 +88,9 @@ int main(array<String^>^ args)
 	UmaAssistant::RaceScheduleForm^ raceScheduleForm = gcnew UmaAssistant::RaceScheduleForm();
 	global::form::raceScheduleForm = raceScheduleForm;
 
+	UmaAssistant::NotificationForm^ notificationForm = gcnew UmaAssistant::NotificationForm();
+	global::form::notificationForm = notificationForm;
+
 	UmaAssistant::UmaForm^ umaForm = gcnew UmaAssistant::UmaForm();
 	global::form::umaForm = umaForm;
 #pragma endregion

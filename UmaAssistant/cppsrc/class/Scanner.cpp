@@ -141,13 +141,15 @@ std::string Scanner::_GetScannedText(cv::Mat image, ImageType imgType, bool engl
 		case static_cast<int>(GameServerType::JP):
 			switch (imgType)
 			{
-			case ImageType::IMG_EVENT_TITLE:
+			case ImageType::IMG_EVENT_NAME:
 				ocr_jpn->SetVariable("tessedit_char_blacklist", u8"@$%^*_-+<>[]{}|\\`†;；=《》579"); // 有在事件名稱中出現的符號 0368:/#
+				ocr_jpn->SetVariable("tessedit_char_whitelist", u8"");
 				ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 				break;
 			case ImageType::IMG_HENSEI_CHARACTER_NAME:
 				ocr_jpn->SetVariable("tessedit_char_blacklist", u8"@#$%^*_+<>?()[]{}|\\`†.,;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
 				ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE/*PSM_SINGLE_BLOCK*/);
+				ocr_jpn->SetVariable("tessedit_char_whitelist", u8"");
 				break;
 			case ImageType::IMG_DATE:
 				ocr_jpn->SetVariable("tessedit_char_whitelist", u8"ジュニアクラシックシニア級0123456789０１２３４５６７８９月前後半");
@@ -167,7 +169,7 @@ std::string Scanner::_GetScannedText(cv::Mat image, ImageType imgType, bool engl
 		case static_cast<int>(GameServerType::TW):
 			switch (imgType)
 			{
-			case ImageType::IMG_EVENT_TITLE:
+			case ImageType::IMG_EVENT_NAME:
 				ocr_tw->SetVariable("tessedit_char_blacklist", u8"@$%^*_-+<>[]{}|\\`†;；=《》579"); // 有在事件名稱中出現的符號 0368:/#
 				ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 				break;
@@ -241,10 +243,10 @@ void Scanner::_LookingForCurrentCharacter(Screenshot& ss, std::string& henseiCha
 			std::string gray_bin_inv_another_name_text = this->_GetScannedText(ss.hensei_character_another_name_gray_bin_inv, ImageType::IMG_HENSEI_CHARACTER_NAME);
 			std::string eng_gray_bin_another_name_text = this->_GetScannedText(ss.hensei_character_another_name_gray_bin, ImageType::IMG_HENSEI_CHARACTER_NAME, true);
 
-			std::cout << "gray_another_name_text: " << gray_another_name_text << std::endl;
-			std::cout << "gray_bin_another_name_text: " << gray_bin_another_name_text << std::endl;
-			std::cout << "gray_bin_inv_another_name_text: " << gray_bin_inv_another_name_text << std::endl;
-			std::cout << "eng_gray_bin_another_name_text: " << eng_gray_bin_another_name_text << std::endl;
+			std::cout << "gray_another_name_text: " << gray_another_name_text << '\n';
+			std::cout << "gray_bin_another_name_text: " << gray_bin_another_name_text << '\n';
+			std::cout << "gray_bin_inv_another_name_text: " << gray_bin_inv_another_name_text << '\n';
+			std::cout << "eng_gray_bin_another_name_text: " << eng_gray_bin_another_name_text << '\n';
 
 			std::deque<std::string> scanned_text_list;
 			scanned_text_list.push_back(gray_another_name_text);
@@ -254,11 +256,11 @@ void Scanner::_LookingForCurrentCharacter(Screenshot& ss, std::string& henseiCha
 
 			if (dataManager->TryGetCurrentCharacterByList(scanned_text_list))
 			{
-				std::cout << "[Scanner] 成功找到角色！" << std::endl;
+				std::cout << "[Scanner] 成功找到角色！\n";
 			}
 			else
 			{
-				std::cout << "[Scanner] 無法找到角色！" << std::endl;
+				std::cout << "[Scanner] 無法找到角色！\n";
 			}
 		}
 		catch (const std::exception& e)
@@ -320,9 +322,9 @@ void Scanner::_Scan()
 		// 如果是 EventTitle 才辨識 event_text
 		if (ss.IsEventTitle())
 		{
-			gray_event_text = this->_GetScannedText(ss.event_title_gray);
-			gray_bin_event_text = this->_GetScannedText(ss.event_title_gray_bin);
-			gray_bin_inv_event_text = this->_GetScannedText(ss.event_title_gray_bin_inv);
+			gray_event_text = this->_GetScannedText(ss.event_title_gray, ImageType::IMG_EVENT_NAME);
+			gray_bin_event_text = this->_GetScannedText(ss.event_title_gray_bin, ImageType::IMG_EVENT_NAME);
+			gray_bin_inv_event_text = this->_GetScannedText(ss.event_title_gray_bin_inv, ImageType::IMG_EVENT_NAME);
 
 			// 檢查 eventText 是否都是空字串
 			if (gray_event_text.empty() && gray_bin_event_text.empty() && gray_bin_inv_event_text.empty())
@@ -338,13 +340,22 @@ void Scanner::_Scan()
 		//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 		//===================== 處理 date =======================
 		//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-		if (config->GameServer == static_cast<int>(GameServerType::JP))
+
+		std::string scanned_date = this->_GetScannedText(ss.date_gray_bin, ImageType::IMG_DATE);
+		UmaCSharp::Umalog::d("Scanner", "scanned_date: " + util::stdStr2system(scanned_date));
+		UmaCSharp::Umalog::d("Scanner", "TryFindScheduledRace: " + (dataManager->TryFindScheduledRace(scanned_date) ? "true" : "false"));
+		
+		// 更新 Discord RPC 狀態
+		if (config->DiscordRPC)
 		{
-			std::string scanned_date = this->_GetScannedText(ss.date_gray_bin, ImageType::IMG_DATE);
-			UmaCSharp::UmaLog::d("Scanner", "_________________________________________DATE:" + util::stdStr2system(scanned_date));
-			umalog->print("[Scanner] TryFindScheduledRace", dataManager->TryFindScheduledRace(scanned_date) == true ? "true" : "false");
+			dataManager->TryFindCurrentDate(scanned_date);
 		}
 
+		if (dataManager->TryFindScheduledRace(scanned_date) && !global::form::notificationForm->Visible)
+		{
+			UmaCSharp::Umalog::d("Scanner", "即將顯示 NotificationForm");
+			FormController::Instance->ShowForm(global::form::notificationForm);
+		}
 
 
 		// 尋找 CurrentCharacter
@@ -386,9 +397,9 @@ void Scanner::_Scan()
 				continue;
 			}
 
-			//std::cout << eventNameData.event_type << std::endl;
-			//std::cout << eventNameData.event_name << std::endl;
-			//std::cout << eventNameData.similarity << std::endl;
+			//std::cout << eventNameData.event_type << '\n';
+			//std::cout << eventNameData.event_name << '\n';
+			//std::cout << eventNameData.similarity << '\n';
 
 			std::variant<UmaEventData, ScenarioEventData> variant = dataManager->GetEventDataByUmaEventNameData(eventNameData);
 
@@ -398,7 +409,7 @@ void Scanner::_Scan()
 
 				if (eventData.IsDataComplete())
 				{
-					std::cout << "eventData.event_owner: " << eventData.event_owner << std::endl;
+					std::cout << "eventData.event_owner: " << eventData.event_owner << '\n';
 
 
 					// 檢查是否與上次的 EventData 一致

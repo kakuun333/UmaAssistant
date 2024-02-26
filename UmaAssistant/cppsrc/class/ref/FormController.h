@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../../global/form.h"
+
 #using "CSharpRuntime/Newtonsoft.Json.dll"
 using namespace Newtonsoft::Json;
 using namespace Microsoft::Web::WebView2::WinForms;
@@ -27,13 +29,15 @@ private:
 	System::Void _ExecuteFunctionAsyncInternal(String^ functionName, array<Object^>^ param);
 
 	System::Void _ExecuteFunctionAsync(WebView2^ webView2, String^ functionName, array<Object^>^ param);
+
+	System::Void _ShowForm(Form^ form);
 public:
 	static property FormController^ Instance { FormController^ get() { return %_instance; } }
 
-
 	System::Void InvokeScript(WebBrowser^ webBrowser, String^ script, array<Object^>^ param);
 
-
 	System::Void ExecuteFunctionAsync(WebView2^ webView2, String^ functionName, array<Object^>^ param);
+
+	System::Void ShowForm(Form^ form);
 };
 

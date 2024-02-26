@@ -31,7 +31,7 @@ class DataManager
 private:
 	DataManager() {}
 
-	static DataManager* _instance;
+	static DataManager* ms_instance;
 
 	static std::map<std::string, std::string> _currentCharacterInfoDict;
 
@@ -44,18 +44,24 @@ private:
 	json event_name_data_jp_json;
 	json event_name_data_tw_json;
 
-	json race_schedule_json;
+	json loaded_race_schedule_json;
+
+	json race_date_data_json;
+
+	std::string m_current_date;
 
 	std::mutex dataMutex;
+	static std::mutex ms_mtx;
 public:
 	static DataManager* GetInstance()
 	{
-		if (_instance == nullptr)
-		{
-			_instance = new DataManager();
-		}
-		return _instance;
+		std::lock_guard lock(ms_mtx);
+		if (ms_instance == nullptr) { ms_instance = new DataManager(); }
+		return ms_instance;
 	}
+	DataManager(DataManager const&) = delete;
+	DataManager& operator=(DataManager const&) = delete;
+	~DataManager() {}
 
 	void InitEventDataJson();
 	
@@ -70,10 +76,17 @@ public:
 
 	bool TryFindScheduledRace(std::string scanned_date);
 
+	bool TryFindCurrentDate(std::string scanned_race_date);
+
 #pragma region ¤º´O¨ç¦¡
+	inline std::string GetCurrentDate()
+	{
+		return m_current_date;
+	}
+
 	inline void SetRaceScheduleJson(json _json)
 	{
-		race_schedule_json = _json;
+		loaded_race_schedule_json = _json;
 	}
 
 	inline std::string GetCurrentCharacter()

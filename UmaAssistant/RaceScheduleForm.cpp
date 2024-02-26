@@ -55,7 +55,7 @@ namespace UmaAssistant
 		{
 			DataManager::GetInstance()->SetRaceScheduleJson(json::parse(j_msg["messageContent"].get<std::string>()));
 
-			UmaCSharp::UmaLog::d("RaceScheduleForm", "已載入比賽排程！");
+			UmaCSharp::Umalog::d("RaceScheduleForm", "已載入賽事排程！");
 		}
 	}
 
@@ -106,10 +106,6 @@ namespace UmaAssistant
 		_dragOffset.X = e->X;
 		_dragOffset.Y = e->Y;
 	}
-	System::Void RaceScheduleForm::RaceScheduleForm_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
-	{
-		_isDraggingForm = false;
-	}
 	System::Void RaceScheduleForm::RaceScheduleForm_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
 	{
 		if (_isDraggingForm)
@@ -117,6 +113,10 @@ namespace UmaAssistant
 			System::Drawing::Point currentFormPos = PointToScreen(System::Drawing::Point(e->X, e->Y));
 			this->Location = System::Drawing::Point(currentFormPos.X - _dragOffset.X, currentFormPos.Y - _dragOffset.Y);
 		}
+	}
+	System::Void RaceScheduleForm::RaceScheduleForm_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e)
+	{
+		_isDraggingForm = false;
 	}
 #pragma endregion
 }

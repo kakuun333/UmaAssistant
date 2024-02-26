@@ -155,16 +155,16 @@
       <Command>rd /s /q $(OutDir)</Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>xcopy /E /C /Y $(SolutionDir)UmaData\ $(OutDir)UmaData\ 
+      <Command>xcopy /C /Y "$(SolutionDir)UmaData\*.json" "$(OutDir)UmaData\"
 
 xcopy /E /C /Y $(SolutionDir)UmaWeb\ $(OutDir)UmaWeb\
 xcopy /E /C /Y $(SolutionDir)UmaMisc\ $(OutDir)UmaMisc\
 
-xcopy /E /C /Y $(SolutionDir)UmaTemp\ $(OutDir)UmaTemp\
-
 xcopy /E /C /Y $(SolutionDir)tessdata\ $(OutDir)tessdata\
 xcopy /E /C /Y $(SolutionDir)CSharpRuntime\*.dll $(OutDir)CSharpRuntime\*.dll
 xcopy /E /C /Y $(SolutionDir)cppdll\ $(OutDir)
+
+mkdir $(OutDir)UmaTemp\
 
 move $(OutDir)Microsoft.Web.WebView2.Core.dll $(OutDir)CSharpRuntime\Microsoft.Web.WebView2.Core.dll
 
@@ -219,6 +219,7 @@ move $(OutDir)WebView2Loader.dll $(OutDir)CSharpRuntime\WebView2Loader.dll</Comm
     <ClCompile Include="cppsrc\util\CharacterFilter.cpp" />
     <ClCompile Include="cppsrc\util\Constants.cpp" />
     <ClCompile Include="cppsrc\util\FormControl.cpp" />
+    <ClCompile Include="NotificationForm.cpp" />
     <ClCompile Include="PreviewForm.cpp" />
     <ClCompile Include="cppsrc\class\ref\RefSingleton.cpp" />
     <ClCompile Include="RaceScheduleForm.cpp" />
@@ -264,6 +265,9 @@ move $(OutDir)WebView2Loader.dll $(OutDir)CSharpRuntime\WebView2Loader.dll</Comm
     <ClInclude Include="cppsrc\util\Constants.h" />
     <ClInclude Include="cppsrc\util\FormControl.h" />
     <ClInclude Include="cppsrc\util\Singleton.h" />
+    <ClInclude Include="NotificationForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PreviewForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -282,6 +286,9 @@ move $(OutDir)WebView2Loader.dll $(OutDir)CSharpRuntime\WebView2Loader.dll</Comm
     <ClInclude Include="class\ref\WebViewManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="NotificationForm.resx">
+      <DependentUpon>NotificationForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PreviewForm.resx" />
     <EmbeddedResource Include="RaceScheduleForm.resx">
       <DependentUpon>RaceScheduleForm.h</DependentUpon>

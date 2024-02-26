@@ -1,8 +1,8 @@
 ﻿#include "DataManager.h"
 
 #using "CSharpRuntime/UmaCSharpLibrary.dll"
-
-DataManager* DataManager::_instance = nullptr;
+std::mutex DataManager::ms_mtx;
+DataManager* DataManager::ms_instance = nullptr;
 bool DataManager::_currentCharacterInfoLocked = false;
 std::map<std::string, std::string> DataManager::_currentCharacterInfoDict =
 {
@@ -15,9 +15,9 @@ std::map<std::string, std::string> DataManager::_currentCharacterInfoDict =
 
 bool DataManager::TryFindScheduledRace(std::string scanned_race_date)
 {
-	if (race_schedule_json.empty()) return false;
+	if (loaded_race_schedule_json.empty()) return false;
 
-	for (const auto& race_obj : race_schedule_json)
+	for (const auto& race_obj : loaded_race_schedule_json)
 	{
 		std::string race_date_grade = race_obj["race_date_grade"];
 		std::string race_date_day = race_obj["race_date_day"];
@@ -25,6 +25,32 @@ bool DataManager::TryFindScheduledRace(std::string scanned_race_date)
 		std::string race_date = race_date_grade + race_date_day;
 		
 		if (util::GetSimilarity(race_date, scanned_race_date) > 80) return true;
+	}
+
+	return false;
+}
+
+bool DataManager::TryFindCurrentDate(std::string scanned_race_date)
+{
+	std::string dateType;
+
+	switch (Config::GetInstance()->GameServer)
+	{
+	case static_cast<int>(GameServerType::JP):
+		dateType = "jp";
+		break;
+	case static_cast<int>(GameServerType::TW):
+		dateType = "tw";
+		break;
+	}
+	
+	for (const auto& race_date : race_date_data_json[dateType])
+	{
+		if (race_date == scanned_race_date)
+		{
+			m_current_date = race_date;
+			return true;
+		}
 	}
 
 	return false;
@@ -74,7 +100,7 @@ void DataManager::InitEventDataJson()
 {
 	FileManager* fileManager = FileManager::GetInstance();
 
-	// event_data
+	// event_data //
 	event_data_jp_json = fileManager->ReadJson(global::path::std_event_data_jp_json);
 	event_name_data_jp_json = fileManager->ReadJson(global::path::std_UmaData + "\\event_name_data_jp.json");
 
@@ -84,6 +110,8 @@ void DataManager::InitEventDataJson()
 	// jp server translation data //
 	event_data_jp_trans_tw_json = fileManager->ReadJson(global::path::std_event_data_jp_trans_tw_json);
 
+	// race_date_data //
+	race_date_data_json = fileManager->ReadJson(global::path::std_UmaData + "\\race_date_data.json");
 }
 
 bool DataManager::TryGetCurrentCharacterByList(std::deque<std::string> scanned_text_list)
@@ -130,7 +158,7 @@ bool DataManager::TryGetCurrentCharacterByList(std::deque<std::string> scanned_t
 				
 				if (similarity < util::SIMILAR_METRIC) continue;
 
-				std::cout << "scanned_text: " << scanned_text << ", event_owner: " << event_owner << ", similarity: " << similarity << std::endl;
+				std::cout << "scanned_text: " << scanned_text << ", event_owner: " << event_owner << ", similarity: " << similarity << '\n';
 
 
 				UmaGetCharData umaGetCharData;
@@ -143,7 +171,7 @@ bool DataManager::TryGetCurrentCharacterByList(std::deque<std::string> scanned_t
 				similarCharList.push_back(umaGetCharData);
 				lock.unlock();
 
-				std::cout << "FOUND CHARACTER: " << event_owner << std::endl;
+				std::cout << "FOUND CHARACTER: " << event_owner << '\n';
 			}
 		}
 	}
@@ -254,7 +282,7 @@ std::variant<UmaEventData, ScenarioEventData> DataManager::GetEventDataByUmaEven
 
 	if (umaEventNameData.event_type == "character")
 	{
-		std::cout << "umaEventNameData.event_type == character" << std::endl;
+		std::cout << "umaEventNameData.event_type == character" << '\n';
 
 		UmaEventData umaEventData;
 		umaEventData.event_owner = _currentCharacterInfoDict["event_owner"];
@@ -274,7 +302,7 @@ std::variant<UmaEventData, ScenarioEventData> DataManager::GetEventDataByUmaEven
 	}
 	else if (umaEventNameData.event_type == "sapoka")
 	{
-		std::cout << "umaEventNameData.event_type == sapoka" << std::endl;
+		std::cout << "umaEventNameData.event_type == sapoka" << '\n';
 
 		std::deque<UmaEventData> foundEventDataList;
 
@@ -310,7 +338,7 @@ std::variant<UmaEventData, ScenarioEventData> DataManager::GetEventDataByUmaEven
 
 		if (foundEventDataList.empty())
 		{
-			std::cout << "foundEventDataList.empty()" << std::endl;
+			std::cout << "foundEventDataList.empty()" << '\n';
 			return UmaEventData{};
 		}
 
@@ -327,7 +355,7 @@ std::variant<UmaEventData, ScenarioEventData> DataManager::GetEventDataByUmaEven
 	}
 	else if (umaEventNameData.event_type == "scenario")
 	{
-		std::cout << "umaEventNameData.event_type == scenario" << std::endl;
+		std::cout << "umaEventNameData.event_type == scenario" << '\n';
 
 		ScenarioEventData scenarioEventData;
 		scenarioEventData.event_name = umaEventNameData.event_name;

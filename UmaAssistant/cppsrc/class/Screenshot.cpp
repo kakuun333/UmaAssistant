@@ -76,13 +76,13 @@ cv::Mat Screenshot::_hwnd2mat(HWND hwnd = GetDesktopWindow())
 	UmaLog* umalog = UmaLog::GetInstance();
 
 	//HWND gameHWND = FindWindow(nullptr, L"umamusume");
-	//if (gameHWND == NULL) { std::cout << u8"找不到遊戲視窗" << std::endl; return cv::Mat(); }
+	//if (gameHWND == NULL) { std::cout << u8"找不到遊戲視窗" << '\n'; return cv::Mat(); }
 	HWND gameHWND = GameWindowFinder::GetInstance()->GetCurrentGameWindow();
 	if (gameHWND == NULL) return cv::Mat();
 
 	//if (this->IsWindowCovered(gameHWND))
 	//{
-	//	std::cout << u8"視窗被覆蓋" << std::endl;
+	//	std::cout << u8"視窗被覆蓋" << '\n';
 	//	return cv::Mat();
 	//}
 
@@ -210,7 +210,7 @@ void Screenshot::_CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPat
 	case static_cast<int>(GameWindowType::DMM):
 		switch (imgType)
 		{
-		case IMG_EVENT_TITLE:
+		case IMG_EVENT_NAME:
 			if (this->GetHasEventIcon())
 			{
 				crop_x = img_width - (img_width * 0.78);
@@ -259,7 +259,7 @@ void Screenshot::_CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPat
 		case IMG_DATE:
 			crop_x = img_width - (img_width * 0.77);
 			crop_y = img_height - (img_height * 0.965);
-			crop_width = img_width - (img_width * 0.72);
+			crop_width = img_width - (img_width * 0.715);
 			crop_height = img_height - (img_height * 0.981);
 			break;
 		}
@@ -268,7 +268,7 @@ void Screenshot::_CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPat
 	case static_cast<int>(GameWindowType::EMULATOR):
 		switch (imgType)
 		{
-		case IMG_EVENT_TITLE:
+		case IMG_EVENT_NAME:
 			if (this->GetHasEventIcon())
 			{
 				crop_x = img_width - (img_width * 0.785);
@@ -315,9 +315,9 @@ void Screenshot::_CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPat
 			crop_height = img_height - (img_height * 0.948);
 			break;
 		case IMG_DATE:
-			crop_x = img_width - (img_width * 0.77);
-			crop_y = img_height - (img_height * 0.965);
-			crop_width = img_width - (img_width * 0.72);
+			crop_x = img_width - (img_width * 0.78);
+			crop_y = img_height - (img_height * 0.97);
+			crop_width = img_width - (img_width * 0.75);
 			crop_height = img_height - (img_height * 0.981);
 			break;
 		}
@@ -440,9 +440,9 @@ void Screenshot::_SetEventTitleBound(cv::Mat& img)
 
 
 
-	std::cout << "[GetEventTitleBound] textCount: " << textCount << std::endl;
-	std::cout << "[GetEventTitleBound] textBound: " << textBound << std::endl;
-	std::cout << "[GetEventTitleBound] whitePixelRatio: " << WHITE_PIXEL_RATIO << std::endl;
+	std::cout << "[GetEventTitleBound] textCount: " << textCount << '\n';
+	std::cout << "[GetEventTitleBound] textBound: " << textBound << '\n';
+	std::cout << "[GetEventTitleBound] whitePixelRatio: " << WHITE_PIXEL_RATIO << '\n';
 }
 
 void Screenshot::_ResizeImage(cv::Mat& img, float scale_factor = 2.0 /*放大倍數*/, cv::InterpolationFlags interpolationFlag)
@@ -462,7 +462,7 @@ const double Screenshot::_GetWhitePixelRatio(cv::Mat img)
 	const int imgPixelCount = img.cols * img.rows;
 	const double whitePixelRatio = static_cast<double>(whitePixelCount) / static_cast<double>(imgPixelCount);
 
-	//std::cout << "whitePixelRatio: " << whitePixelRatio << std::endl;
+	//std::cout << "whitePixelRatio: " << whitePixelRatio << '\n';
 
 	return whitePixelRatio;
 }
@@ -642,10 +642,10 @@ void Screenshot::_GetDateImage()
 	cv::cvtColor(date_gray_bin, date_gray_bin, cv::COLOR_BGR2GRAY);
 
 	// 使用高斯模糊去除噪音
-	cv::GaussianBlur(date_gray_bin, date_gray_bin, cv::Size(3, 3), 0);
+	//cv::GaussianBlur(date_gray_bin, date_gray_bin, cv::Size(3, 3), 0);
 
 	// OTSU
-	cv::threshold(date_gray_bin, date_gray_bin, 180/*230*/, 255, cv::THRESH_OTSU);
+	cv::threshold(date_gray_bin, date_gray_bin, 230/*230*/, 255, cv::THRESH_OTSU);
 }
 
 void Screenshot::_GetEventTitleImage()
@@ -654,31 +654,31 @@ void Screenshot::_GetEventTitleImage()
 
 	// event_title_oimg //
 	event_title_oimg = oimg.clone();
-	this->_CropImage(event_title_oimg, ImageType::IMG_EVENT_TITLE);
-	//std::cout << "event_title_oimg whiteRatio: " << this->GetWhitePixelRatio(event_title_oimg) << std::endl;
+	this->_CropImage(event_title_oimg, ImageType::IMG_EVENT_NAME);
+	//std::cout << "event_title_oimg whiteRatio: " << this->GetWhitePixelRatio(event_title_oimg) << '\n';
 
 	// event_title_resize //
 	event_title_resize = oimg.clone();
-	this->_CropImage(event_title_resize, ImageType::IMG_EVENT_TITLE);	
+	this->_CropImage(event_title_resize, ImageType::IMG_EVENT_NAME);	
 	this->_ResizeImage(event_title_resize, 2);
-	//std::cout << "event_title_resize whiteRatio: " << this->GetWhitePixelRatio(event_title_resize) << std::endl;
+	//std::cout << "event_title_resize whiteRatio: " << this->GetWhitePixelRatio(event_title_resize) << '\n';
 
 	// event_title_gray //
 	event_title_gray = oimg.clone();
-	this->_CropImage(event_title_gray, ImageType::IMG_EVENT_TITLE);
+	this->_CropImage(event_title_gray, ImageType::IMG_EVENT_NAME);
 	this->_ResizeImage(event_title_gray, 2);
 	cv::cvtColor(event_title_gray, event_title_gray, cv::COLOR_BGR2GRAY);
 
 	// event_title_gray_bin 裁切 -> 放大 + 去鋸齒 -> 灰值化 -> 二值化 //
 	int thresh = 208/*208*/;
 	event_title_gray_bin = oimg.clone();
-	this->_CropImage(event_title_gray_bin, ImageType::IMG_EVENT_TITLE, ImagePattern::EVENT_TITLE_GRAY_BIN);
+	this->_CropImage(event_title_gray_bin, ImageType::IMG_EVENT_NAME, ImagePattern::EVENT_TITLE_GRAY_BIN);
 	this->_ResizeImage(event_title_gray_bin, 2);
 	cv::cvtColor(event_title_gray_bin, event_title_gray_bin, cv::COLOR_BGR2GRAY);
 	cv::threshold(event_title_gray_bin, event_title_gray_bin, thresh/*230*/, 255, cv::THRESH_BINARY);
 
 	double event_title_gray_bin_WPR = _GetWhitePixelRatio(event_title_gray_bin);
-	std::cout << "[Screenshot] event_title_gray_bin_WPR: " << event_title_gray_bin_WPR << std::endl;
+	std::cout << "[Screenshot] event_title_gray_bin_WPR: " << event_title_gray_bin_WPR << '\n';
 	if (event_title_gray_bin_WPR > IS_EVENT_TITLE_METRIC || event_title_gray_bin_WPR == 0)
 	{
 		/*
@@ -694,7 +694,7 @@ void Screenshot::_GetEventTitleImage()
 	}
 
 	event_title_gray_bin_high_thresh = oimg.clone();
-	this->_CropImage(event_title_gray_bin_high_thresh, ImageType::IMG_EVENT_TITLE, ImagePattern::EVENT_TITLE_GRAY_BIN);
+	this->_CropImage(event_title_gray_bin_high_thresh, ImageType::IMG_EVENT_NAME, ImagePattern::EVENT_TITLE_GRAY_BIN);
 	this->_ResizeImage(event_title_gray_bin_high_thresh, 2);
 	cv::cvtColor(event_title_gray_bin_high_thresh, event_title_gray_bin_high_thresh, cv::COLOR_BGR2GRAY);
 	cv::threshold(event_title_gray_bin_high_thresh, event_title_gray_bin_high_thresh, 235/*230*/, 255, cv::THRESH_BINARY);
@@ -702,7 +702,7 @@ void Screenshot::_GetEventTitleImage()
 
 	// event_title_gray_bin_inv 裁切 -> 放大 + 去鋸齒 -> 灰值化 -> 二值化 //
 	event_title_gray_bin_inv = oimg.clone();
-	this->_CropImage(event_title_gray_bin_inv, ImageType::IMG_EVENT_TITLE);
+	this->_CropImage(event_title_gray_bin_inv, ImageType::IMG_EVENT_NAME);
 	this->_ResizeImage(event_title_gray_bin_inv, 1.5);
 	cv::cvtColor(event_title_gray_bin_inv, event_title_gray_bin_inv, cv::COLOR_BGR2GRAY);
 	cv::threshold(event_title_gray_bin_inv, event_title_gray_bin_inv, thresh/*230*/, 255, cv::THRESH_BINARY_INV);

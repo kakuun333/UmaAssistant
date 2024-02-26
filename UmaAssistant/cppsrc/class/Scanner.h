@@ -31,6 +31,7 @@
 #include "../global/form.h"
 #include "../global/umaswitch.h"
 
+
 #using "CSharpRuntime/UmaCSharpLibrary.dll"
 
 const std::string INIT_EVENT_TITLE_TEXT = "INIT_EVENT_TITLE_TEXT";
@@ -72,7 +73,7 @@ private:
 
 	void _Scan();
 
-	std::string _GetScannedText(cv::Mat image, ImageType imgType = ImageType::IMG_EVENT_TITLE, bool englishMode = false);
+	std::string _GetScannedText(cv::Mat image, ImageType imgType = ImageType::IMG_EVENT_NAME, bool englishMode = false);
 
 	void _UpdateSapokaOrCharacterChoice(UmaEventData sapokaUmaEventData);
 

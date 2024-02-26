@@ -9,5 +9,6 @@ namespace global
 		gcroot<UmaAssistant::SettingsForm^> settingsForm = nullptr;
 		gcroot<UmaAssistant::PreviewForm^> previewForm = nullptr;
 		gcroot<UmaAssistant::RaceScheduleForm^> raceScheduleForm = nullptr;
+		gcroot<UmaAssistant::NotificationForm^> notificationForm = nullptr;
 	};
 };
