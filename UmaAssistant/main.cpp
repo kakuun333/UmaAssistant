@@ -106,7 +106,7 @@ int main(array<String^>^ args)
 		global::form::settingsForm->debugMode_checkBox->Checked = true;
 		break;
 	case false:
-		global::form::settingsForm->debugMode_checkBox->Checked = true;
+		global::form::settingsForm->debugMode_checkBox->Checked = false;
 		break;
 	}
 
