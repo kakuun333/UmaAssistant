@@ -68,6 +68,36 @@ def remove_space(str):
     str = str.replace("　", "");
     str = str.replace("\n", "");
     return str;
+
+def add_space_between_uppercase(input: str) -> str:
+    """
+    在大寫字母左邊添加半形空白鍵\n
+    例如：`CreepingBlack`會變成`Creeping Black`
+    """
+    if (not has_alphabet(input)): return input;
+    if input == "": return input;
+
+    output: str = "";
+
+    for idx in range(len(input)):
+        char = input[idx];
+        if (idx == 0):
+            output += char;
+        elif (input[idx - 1] == " "):
+            output += char;
+        elif (input[idx - 1].isupper()):
+            output += char;
+        elif (idx + 1 < len(input) and input[idx + 1].isupper()):
+            output += char;
+        elif (char.isupper()):
+            output += " " + char;
+        else:
+            output += char;
+
+    return output;
+
+def has_alphabet(input_string: str):
+    return any(char.isalpha() for char in input_string)
 ########## event_data ##########
 
 ### 加工 choice_name

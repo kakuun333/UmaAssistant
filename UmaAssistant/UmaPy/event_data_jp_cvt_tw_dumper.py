@@ -210,6 +210,26 @@ def open_jp_url():
         url = a.get_attribute("href");
         driver.execute_script(f"window.open('{url}', '_blank');");
 
+def replace_wrong_another_name(another_name: str) -> str:
+    if another_name == "エル☆Número1": another_name = "エル☆Número 1";
+    if another_name == "pf.Victoryformula...": another_name = "pf.Victory formula...";
+    if another_name == "MakeupVampire!": another_name = "Make up Vampire!";
+    if another_name == "CreepingBlack": another_name = "Creeping Black";
+    if another_name == "ツイステッド・ライン": another_name = "ツイステッド･ライン";
+    if another_name == "ノエルージュ・キャロル": another_name = "ノエルージュ･キャロル";
+    if another_name == "NobleSeamair": another_name = "Noble Seamair";
+    if another_name == "StarryNocturne": another_name = "Starry Nocturne";
+    if another_name == "NaturalBrilliance": another_name = "Natural Brilliance";
+    if another_name == "RUN＆WIN": another_name = "RUN&WIN";
+    if another_name == "LineBreakthrough": another_name = "Line Breakthrough";
+    if another_name == "DreamDeliverer": another_name = "Dream Deliverer";
+    if another_name == "ディファレンス・エンジニア": another_name = "ディファレンス･エンジニア";
+    if another_name == "FluttertailSpirit": another_name = "Fluttertail Spirit";
+    if another_name == "ButterflySting": another_name = "Butterfly Sting";
+    if another_name == "不凍のアクア・ウィタエ": another_name = "不凍のアクア･ウィタエ";
+    if another_name == "GoToWinning!": another_name = "Go To Winning!";
+
+
 def get_jp_char_event_owner():
     table_list = driver.find_elements(By.CLASS_NAME, "wikitable");
     tbody = table_list[0].find_element(By.XPATH, ".//tbody");
@@ -217,12 +237,14 @@ def get_jp_char_event_owner():
     td_list = tr_list[1].find_elements(By.XPATH, ".//td");
     name = utility.remove_space(td_list[1].text);
     another_name = utility.remove_space(td_list[2].text);
+    
+    replace_wrong_another_name(another_name);
+
     jp_char_event_owner = name + "（" + another_name + "）";
 
     print(jp_char_event_owner);
     
     return jp_char_event_owner;
-
 
 def list_to_dict(jp_event_name_list, tw_event_name_list):
     dict = {};
@@ -299,9 +321,6 @@ def dump_card_convert_data():
 
         utility.return_to_first_window(driver);
 
-
-
-
 def dump_char_convert_data():
     # https://wiki.biligame.com/umamusume/%E3%80%90%E7%89%B9%E9%9B%B7%E6%A3%AE%E5%AD%B8%E5%9C%92%E3%80%91%E9%B6%B4%E4%B8%B8%E5%BC%B7%E5%BF%97
     driver.get("https://wiki.biligame.com/umamusume/%E7%B9%81%E4%B8%AD%E8%B5%9B%E9%A9%AC%E5%A8%98%E4%B8%80%E8%A7%88");
@@ -365,7 +384,6 @@ def dump_char_convert_data():
         driver.close();
 
         utility.return_to_first_window(driver);
-
 
 def dump_single_cvt_data(umaDataType, tw_data_url):
     driver.get(tw_data_url);
@@ -475,10 +493,10 @@ def dump_single_cvt_data(umaDataType, tw_data_url):
 # dump_single_cvt_data(DumpDataType.SAPOKA, "https://wiki.biligame.com/umamusume/%E3%80%90from_the_GROUND_UP%E3%80%91%E6%98%8E%E4%BA%AE%E5%85%89%E6%9A%88");
 
 #####   獲取角色資料    #####
-# dump_char_convert_data();
+dump_char_convert_data();
 
 
 #####   獲取支援卡資料  #####
-dump_card_convert_data();
+# dump_card_convert_data();
 
 
