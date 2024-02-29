@@ -26,7 +26,6 @@ private:
 
 	void StartLocalServer(Object^ port);
 
-
 	void HandleUmaWebRequest(Object^ obj);
 public:
 	static property LocalServer^ Instance { LocalServer^ get() { return % _instance; } }

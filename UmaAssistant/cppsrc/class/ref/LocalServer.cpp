@@ -68,8 +68,15 @@ void LocalServer::HandleUmaWebRequest(System::Object^ obj)
 
 			response->ContentLength64 = fileData->Length;
 
-			// 寫入回應數據
-			response->OutputStream->Write(fileData, 0, fileData->Length);
+			try
+			{
+				// 寫入回應數據
+				response->OutputStream->Write(fileData, 0, fileData->Length);
+			}
+			catch (System::Net::HttpListenerException^ ex)
+			{
+				std::cout << u8"[LocalServer] 處理 HTTP 請求時發生例外\n";
+			}
 		}
 		else
 		{
