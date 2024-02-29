@@ -1,6 +1,5 @@
 #include "Config.h"
 
-Config* Config::_instance = nullptr;
 
 std::map<std::string, int> Config::InitGameWindowBoundOffset()
 {

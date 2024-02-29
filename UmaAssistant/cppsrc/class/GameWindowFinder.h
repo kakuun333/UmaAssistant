@@ -20,19 +20,16 @@
 // class
 #include "Config.h"
 #include "DataManager.h"
+#include <singleton_mutex.hpp>
 
 // global
 #include "../global/form.h"
 
 const std::string NULL_GAME_WINDOW_NAME = "NULL_GAME_WINDOW_NAME_UMA_ASSISTANT";
 
-class GameWindowFinder
+class GameWindowFinder : public SingletonMutex<GameWindowFinder>
 {
 private:
-	GameWindowFinder() {}
-
-	static GameWindowFinder* _instance;
-
 	static HWND _currentGameWindow;
 	static std::string _currentGameWindowName;
 
@@ -43,15 +40,6 @@ private:
 	//bool _previousFoundGameWindow = false;
 
 public:
-	static GameWindowFinder* GetInstance()
-	{
-		if (_instance == nullptr)
-		{
-			_instance = new GameWindowFinder();
-		}
-		return _instance;
-	}
-
 	void EnumWindow();
 
 	void CreateFindGameWindowThread();

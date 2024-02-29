@@ -27,11 +27,6 @@ using json = nlohmann::json;
 // global
 #include "cppsrc/global/form.h"
 
-// singleton
-//#include "test.h"
-
-
-
 
 // .NET
 using namespace System;
@@ -162,12 +157,7 @@ int main(array<String^>^ args)
 	}
 #pragma endregion
 #pragma region 運行主要的 Form
-	//test::GetInstance().foo();
-
-	
-
 	Application::Run(umaForm); // 啟動主要的 Form (UmaForm)
-
 #pragma endregion
 #pragma region 釋放資源
 	// 中止 LocalServer
@@ -179,6 +169,5 @@ int main(array<String^>^ args)
 	// 卸載字型
 	RemoveFontResourceW(util::string2wstring(global::path::std_MochiyPopOne).c_str());
 #pragma endregion
-
 	return 0;
 }

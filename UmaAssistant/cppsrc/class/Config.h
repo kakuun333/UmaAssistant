@@ -13,6 +13,7 @@
 // class
 #include "FileManager.h"
 #include "GameWindowFinder.h"
+#include <singleton_mutex.hpp>
 
 // 3rdparty
 #include <nlohmann/json.hpp>
@@ -25,20 +26,11 @@ const std::string DEFAULT_PREVIOUS_CURRENT_CHARACTER_NAME = "DEFAULT_PREVIOUS_CU
 // global
 #include "../global/path.h"
 
-class Config
+class Config : public SingletonMutex<Config>
 {
 private:
-	Config() {}
-	static Config* _instance;
-
 	std::map<std::string, int> InitGameWindowBoundOffset();
 public:
-	static Config* GetInstance()
-	{
-		if (_instance == nullptr) _instance = new Config();
-		return _instance;
-	}
-
 	//bool ShowEnhanceSkill;
 	bool DebugMode;
 	bool AlwaysOnTop;
@@ -59,7 +51,5 @@ public:
 	void Update();
 
 	void WriteToJson();
-
-
 };
 

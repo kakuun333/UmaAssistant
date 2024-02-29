@@ -5,13 +5,11 @@
 #include <fstream>
 #include <utility>
 
-class UmaLog
+#include <singleton_mutex.hpp>
+
+class UmaLog : public SingletonMutex<UmaLog>
 {
 private:
-	UmaLog() {}
-
-	static UmaLog* _instance;
-
 	static std::fstream _file;
 
 	// パラメータパックが空になったら終了
@@ -28,16 +26,6 @@ private:
 	}
 
 public:
-	static UmaLog* GetInstance()
-	{
-		if (_instance == nullptr)
-		{
-			_instance = new UmaLog();
-		}
-
-		return _instance;
-	}
-
 	static void init(std::string logFilePath)
 	{
 		if (_file.is_open()) return;

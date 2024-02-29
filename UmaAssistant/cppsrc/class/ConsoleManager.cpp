@@ -1,10 +1,6 @@
 ﻿#include "ConsoleManager.h"
 
 
-
-
-ConsoleManager* ConsoleManager::_instance = nullptr;
-
 bool ConsoleManager::_isExist = false;
 
 BOOL ConsoleManager::_CtrlHandler(DWORD fdwCtrlType)

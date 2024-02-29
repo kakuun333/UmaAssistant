@@ -137,7 +137,7 @@
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)vcpkg\installed\x64-windows\include;D:\Libraries\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)cppsrc\include;$(ProjectDir)vcpkg\installed\x64-windows\include;D:\Libraries\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -238,6 +238,7 @@ move $(OutDir)WebView2Loader.dll $(OutDir)CSharpRuntime\WebView2Loader.dll</Comm
     <ClInclude Include="cppsrc\class\data\UmaGetCharData.h" />
     <ClInclude Include="cppsrc\class\FileManager.h" />
     <ClInclude Include="cppsrc\class\GameWindowFinder.h" />
+    <ClInclude Include="cppsrc\include\singleton_mutex.hpp" />
     <ClInclude Include="cppsrc\class\ref\eventtest.h" />
     <ClInclude Include="cppsrc\class\ref\FormController.h" />
     <ClInclude Include="cppsrc\class\ref\FormDesigner.h" />
@@ -264,7 +265,6 @@ move $(OutDir)WebView2Loader.dll $(OutDir)CSharpRuntime\WebView2Loader.dll</Comm
     <ClInclude Include="cppsrc\util\CharacterFilter.h" />
     <ClInclude Include="cppsrc\util\Constants.h" />
     <ClInclude Include="cppsrc\util\FormControl.h" />
-    <ClInclude Include="cppsrc\util\Singleton.h" />
     <ClInclude Include="NotificationForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -282,7 +282,6 @@ move $(OutDir)WebView2Loader.dll $(OutDir)CSharpRuntime\WebView2Loader.dll</Comm
     <ClInclude Include="UmaForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="test.h" />
     <ClInclude Include="class\ref\WebViewManager.h" />
   </ItemGroup>
   <ItemGroup>

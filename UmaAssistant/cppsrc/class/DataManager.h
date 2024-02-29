@@ -19,6 +19,7 @@ using json = nlohmann::json;
 #include "data/UmaEventNameData.h"
 #include "data/ScenarioEventData.h"
 #include "data/UmaGetCharData.h"
+#include <singleton_mutex.hpp>
 
 // ref class
 #include "ref/WebViewManager.h"
@@ -26,12 +27,9 @@ using json = nlohmann::json;
 // global
 #include "../global/form.h"
 
-class DataManager
+class DataManager : public SingletonMutex<DataManager>
 {
 private:
-	DataManager() {}
-
-	static DataManager* ms_instance;
 
 	static std::map<std::string, std::string> _currentCharacterInfoDict;
 
@@ -51,21 +49,9 @@ private:
 	std::string m_current_date;
 
 	std::mutex dataMutex;
-	static std::mutex ms_mtx;
 public:
-	static DataManager* GetInstance()
-	{
-		std::lock_guard lock(ms_mtx);
-		if (ms_instance == nullptr) { ms_instance = new DataManager(); }
-		return ms_instance;
-	}
-	DataManager(DataManager const&) = delete;
-	DataManager& operator=(DataManager const&) = delete;
-	~DataManager() {}
-
 	void InitEventDataJson();
 	
-
 	bool SetCurrentCharacterInfoDict(std::string event_owner);
 
 	bool TryGetCurrentCharacterByList(std::deque<std::string> scanned_text_list);

@@ -1,7 +1,5 @@
 ﻿#include "FileManager.h"
 
-FileManager* FileManager::_instance = nullptr;
-
 
 json FileManager::ReadJson(std::string path)
 {

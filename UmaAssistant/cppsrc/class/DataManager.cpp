@@ -1,8 +1,7 @@
 ﻿#include "DataManager.h"
 
 #using "CSharpRuntime/UmaCSharpLibrary.dll"
-std::mutex DataManager::ms_mtx;
-DataManager* DataManager::ms_instance = nullptr;
+
 bool DataManager::_currentCharacterInfoLocked = false;
 std::map<std::string, std::string> DataManager::_currentCharacterInfoDict =
 {

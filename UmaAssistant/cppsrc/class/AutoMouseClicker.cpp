@@ -1,6 +1,5 @@
 #include "AutoMouseClicker.h"
 
-AutoMouseClicker* AutoMouseClicker::_instance = nullptr;
 bool AutoMouseClicker::_starting = false;
 
 void AutoMouseClicker::Start()

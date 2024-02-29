@@ -131,9 +131,6 @@
     <ClInclude Include="UmaForm.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="test.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
     <ClInclude Include="cppsrc\class\data\ScenarioEventData.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
@@ -242,9 +239,6 @@
     <ClInclude Include="cppsrc\util\FormControl.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="cppsrc\util\Singleton.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
     <ClInclude Include="class\ref\WebViewManager.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
@@ -255,6 +249,9 @@
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="NotificationForm.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cppsrc\include\singleton_mutex.hpp">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

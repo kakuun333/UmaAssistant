@@ -1,6 +1,5 @@
 ﻿#include "Scanner.h"
 
-Scanner* Scanner::_instance = nullptr;
 bool Scanner::_scanning = false;
 tesseract::TessBaseAPI* Scanner::ocr_jpn = nullptr;
 tesseract::TessBaseAPI* Scanner::ocr_tw = nullptr;
@@ -83,7 +82,7 @@ void Scanner::_UpdateSapokaOrCharacterChoice(UmaEventData sapokaUmaEventData)
 	System::String^ sys_event_title = util::stdStr2system(sapokaUmaEventData.Get<std::string>(UmaEventDataType::EVENT_TITLE));
 	WebViewManager::Instance->ChangeEventName(sys_event_title);
 
-	WebViewManager::Instance->hideSkillHintContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
+	WebViewManager::Instance->HideSkillHintContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
 	WebViewManager::Instance->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
 }
 
@@ -110,7 +109,7 @@ void Scanner::_UpdateScenarioChoice(ScenarioEventData scenarioEventData)
 
 	WebViewManager::Instance->ChangeEventName(sys_event_title);
 
-	WebViewManager::Instance->hideSkillHintContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
+	WebViewManager::Instance->HideSkillHintContent(); // 隱藏 skill_hint_content 避免更新 ChoiceTable 時 skill_hint_content 無法再隱藏
 	WebViewManager::Instance->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
 }
 

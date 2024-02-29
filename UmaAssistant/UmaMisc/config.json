@@ -6,7 +6,7 @@
     "WinFormButton": 16777216
   },
   "DebugMode": true,
-  "DiscordRPC": true,
+  "DiscordRPC": false,
   "GameServer": 0,
   "GameWindow": 0,
   "GameWindowBoundOffset": {
@@ -29,7 +29,7 @@
     "Port": "5854"
   },
   "OutputLogFile": false,
-  "PreviousCurrentCharacterName": "コパノリッキー（陰陽八卦☆開運衣）",
+  "PreviousCurrentCharacterName": "トーセンジョーダン（ポップス☆ジョーカー）",
   "ScanInterval": 100,
   "SoftwareLanguage": 1
 }

@@ -23,6 +23,7 @@
 #include "data/ScenarioEventData.h"
 #include "data/UmaEventData.h"
 #include "data/ScenarioEventData.h"
+#include <singleton_mutex.hpp>
 
 // enum
 #include "../enum/ImageType.h"
@@ -37,13 +38,10 @@
 const std::string INIT_EVENT_TITLE_TEXT = "INIT_EVENT_TITLE_TEXT";
 const std::string INIT_HENSEI_CHAR_NAME_TEXT = "INIT_HENSEI_CHAR_NAME_TEXT";
 
-class Scanner
+class Scanner : public SingletonMutex<Scanner>
 {
 private:
-
 #pragma region 私人成員變數
-	static Scanner* _instance;
-
 	static bool _scanning;
 
 	static tesseract::TessBaseAPI* ocr_jpn;
@@ -69,8 +67,6 @@ private:
 #pragma endregion
 
 #pragma region 私人成員函數
-	Scanner() {};
-
 	void _Scan();
 
 	std::string _GetScannedText(cv::Mat image, ImageType imgType = ImageType::IMG_EVENT_NAME, bool englishMode = false);
@@ -108,15 +104,6 @@ private:
 
 public:
 #pragma region 公共靜態成員函數
-	static Scanner* GetInstance()
-	{
-		if (_instance == nullptr)
-		{
-			_instance = new Scanner();
-		}
-		return _instance;
-	}
-
 	static void InitOcrJpn();
 
 	static void InitOcrTw();

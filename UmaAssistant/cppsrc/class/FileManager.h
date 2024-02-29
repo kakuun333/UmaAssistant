@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <singleton_mutex.hpp>
 
 // 3rdparty
 #include <nlohmann/json.hpp>
@@ -17,23 +18,9 @@ using namespace System;
 using namespace System::IO;
 
 
-class FileManager
+class FileManager : public SingletonMutex<FileManager>
 {
-private:
-	FileManager() {}
-
-	static FileManager* _instance;
-
 public:
-	static FileManager* GetInstance()
-	{
-		if (_instance == nullptr)
-		{
-			_instance = new FileManager();
-		}
-		return _instance;
-	}
-
 	nlohmann::json ReadJson(std::string path);
 
 	void WriteJson(std::string path, std::string jsonString);

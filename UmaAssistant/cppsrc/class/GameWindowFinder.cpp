@@ -1,15 +1,10 @@
 ﻿#include "GameWindowFinder.h"
 
-
 #using "CSharpRuntime/UmaCSharpLibrary.dll"
-
-
-GameWindowFinder* GameWindowFinder::_instance = nullptr;
 
 HWND GameWindowFinder::_currentGameWindow = NULL;
 
 std::map<std::string, HWND> GameWindowFinder::_windowDict = {};
-
 
 /*
 * 如果用空的 std::string 的話會找到名字是空的 HWND

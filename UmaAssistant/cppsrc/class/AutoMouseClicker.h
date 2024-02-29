@@ -8,29 +8,13 @@
 
 // class
 #include "Config.h"
+#include <singleton_mutex.hpp>
 
-// global
-//#include "../global/global.h"
-
-class AutoMouseClicker
+class AutoMouseClicker : public SingletonMutex<AutoMouseClicker>
 {
 private:
-	AutoMouseClicker() {}
-
-	static AutoMouseClicker* _instance;
-
 	static bool _starting;
 public:
-	static AutoMouseClicker* GetInstance()
-	{
-		if (_instance == nullptr)
-		{
-			_instance = new AutoMouseClicker();
-		}
-		return _instance;
-	}
-
 	void Start();
-
 	void Stop();
 };
