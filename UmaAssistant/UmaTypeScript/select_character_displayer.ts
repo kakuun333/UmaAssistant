@@ -9,11 +9,9 @@ function createCharacterImageButton(jp_event_owner: string, tw_event_owner: stri
     IE 瀏覽器不支持語法
     char_img.src = `../UmaMisc/Image/Character/${img_name}`;
     */ 
-    //https://raw.githubusercontent.com/kakuun333/UmaAssistant/main/UmaAssistant/UmaMisc/Image/Character/i_1.png
-    // char_img.src = `../UmaMisc/Image/Character/${img_name}`;
-    char_img.src = `https://raw.githubusercontent.com/kakuun333/UmaAssistant/main/UmaAssistant/UmaMisc/Image/Character/${img_name}`;
+    //https://raw.githubusercontent.com/kakuun333/UmaAssistant/data/UmaMisc/Image/Character/i_1.png
+    char_img.src = `https://raw.githubusercontent.com/kakuun333/UmaAssistant/data/UmaMisc/Image/Character/${img_name}`;
     char_img.alt = `<jp_event_owner>${jp_event_owner}</jp_event_owner><tw_event_owner>${tw_event_owner}</tw_event_owner>`;
-    // char_img.alt = "<jp_event_owner>"+jp_event_owner+"</jp_event_owner>"+"<tw_event_owner>"+tw_event_owner+"</tw_event_owner>";
     char_img.loading = "eager";
     char_img.draggable = false;
 
