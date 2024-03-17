@@ -1,53 +1,98 @@
-function cleanSkillLabelRow(): void
+// function cleanSkillLabelRow(): void
+// {
+//     const skill_effect = document.getElementById("skill_effect")!;
+//     const skill_condition = document.getElementById("skill_condition")!;
+
+//     while (skill_effect.lastChild)
+//     {
+//         skill_effect.removeChild(skill_effect.lastChild);
+//     }
+
+//     while (skill_condition.lastChild)
+//     {
+//         skill_condition.removeChild(skill_condition.lastChild);
+//     }
+// }
+
+// function createSkillLabel(skillDataType: SkillDataType, skill_effect_title: string, skill_effect_data: string): void
+// {
+//     let skill_label: Element | null = null;
+
+//     let targetClassName: string | null = null;
+
+//     switch (skillDataType)
+//     {
+//         case SkillDataType.SKILL_EFFECT:
+//             skill_label = document.getElementById("skill_effect");
+//             targetClassName = "skill_effect_data";
+//             break;
+//         case SkillDataType.SKILL_CONDITION:
+//             skill_label = document.getElementById("skill_condition");
+//             targetClassName = "skill_condition_data";
+//             break;
+//     }
+
+
+//     // ------------------------------------- //
+//     const tr = document.createElement("tr");
+//     skill_label!.appendChild(tr);
+
+//     // ------------------------------------- //
+//     const th = document.createElement("th");
+//     th.className = "enhance_skill_data " + targetClassName;
+    
+//     th.innerHTML = "<span>" + skill_effect_title + "</span>";
+//     tr.appendChild(th);
+    
+//     // ------------------------------------- //
+//     const td = document.createElement("td");
+//     td.innerHTML = "<span>" + skill_effect_data + "</span>";
+//     tr.appendChild(td);
+// }
+
+function createEnhanceData(skillDataType: SkillDataType, enhanceDataTitle: string, enhanceDataData: string): void
 {
-    const skill_effect = document.getElementById("skill_effect")!;
-    const skill_condition = document.getElementById("skill_condition")!;
+    let tableElement = undefined;
 
-    while (skill_effect.lastChild)
-    {
-        skill_effect.removeChild(skill_effect.lastChild);
-    }
-
-    while (skill_condition.lastChild)
-    {
-        skill_condition.removeChild(skill_condition.lastChild);
-    }
-}
-
-function createSkillLabel(skillDataType: SkillDataType, skill_effect_title: string, skill_effect_data: string): void
-{
-    let skill_label: Element | null = null;
-
-    let targetClassName: string | null = null;
-
+    const tr = document.createElement("tr");
+    tr.className = "enhance_data";
+    
+    const th = document.createElement("th");
+    th.innerHTML = enhanceDataTitle;
+    const td = document.createElement("td");
+    td.innerHTML = enhanceDataData;
     switch (skillDataType)
     {
         case SkillDataType.SKILL_EFFECT:
-            skill_label = document.getElementById("skill_effect");
-            targetClassName = "skill_effect_data";
+            tableElement = document.getElementById("skill_effect_table")!;
+            th.className = "skill_effect_title"
+            td.className = "skill_effect"
             break;
         case SkillDataType.SKILL_CONDITION:
-            skill_label = document.getElementById("skill_condition");
-            targetClassName = "skill_condition_data";
+            tableElement = document.getElementById("skill_condition_table")!;
+            th.className = "skill_condition_title"
+            td.className = "skill_condition"
             break;
     }
 
-
-    // ------------------------------------- //
-    const tr = document.createElement("tr");
-    skill_label!.appendChild(tr);
-
-    // ------------------------------------- //
-    const th = document.createElement("th");
-    th.className = "enhance_skill_data " + targetClassName;
-    
-    th.innerHTML = "<span>" + skill_effect_title + "</span>";
     tr.appendChild(th);
-    
-    // ------------------------------------- //
-    const td = document.createElement("td");
-    td.innerHTML = "<span>" + skill_effect_data + "</span>";
     tr.appendChild(td);
+    tableElement.appendChild(tr);
+}
+
+function cleanEnhanceDataTable()
+{
+    const skill_effect_table = document.getElementById("skill_effect_table")!;
+    const skill_condition_table = document.getElementById("skill_condition_table")!;
+    while (skill_effect_table.lastChild)
+    {
+        skill_effect_table.removeChild(skill_effect_table.lastChild);
+    }
+
+    while (skill_condition_table.lastChild)
+    {
+        skill_condition_table.removeChild(skill_condition_table.lastChild);
+    }
 }
 
 function findSkillData(event: any, skill_hint: Element): void
@@ -62,6 +107,8 @@ function findSkillData(event: any, skill_hint: Element): void
     const lower_skill = document.getElementById("lower_skill")!;
     const upper_skill_title = document.getElementById("upper_skill_title")!;
     const lower_skill_title = document.getElementById("lower_skill_title")!;
+    const skill_effect_title = document.getElementById("skill_effect_title")!;
+    const skill_condition_title = document.getElementById("skill_condition_title")!;
     const skill_table = document.getElementById("skill_table")!;
     // element
 
@@ -89,124 +136,101 @@ function findSkillData(event: any, skill_hint: Element): void
         break;
     }
 
-    for (let color in skill_data)
+
+    for (let skill_rare in skill_data)
     {
-        // if (!skill_data.hasOwnProperty(color)) continue;
-        let color_obj = skill_data[color];
-        for (let skill_rare in color_obj)
+        let rare_obj = skill_data[skill_rare];
+        for (let json_skill_name in rare_obj)
         {
-            // if (!color_obj.hasOwnProperty(skill_rare)) continue;
-            let rare_obj = color_obj[skill_rare];
-            for (let json_skill_name in rare_obj)
+            let skill_name_obj = rare_obj[json_skill_name];
+            // <span class=\"skill_hint\">『負けん気』
+            let match_skill_name = skill_hint.outerHTML.match(skill_hint_pattern)!;
+            // 第二個括號捕獲的字串: match_skill_name[2]
+            if (json_skill_name == match_skill_name[2])
             {
-                // if (!rare_obj.hasOwnProperty(json_skill_name)) continue;
-                let skill_name_obj = rare_obj[json_skill_name];
-                // <span class=\"skill_hint\">『負けん気』
-                let match_skill_name = skill_hint.outerHTML.match(skill_hint_pattern)!;
-                // 第二個括號捕獲的字串: match_skill_name[2]
-                if (json_skill_name == match_skill_name[2])
+                skill_name.innerText = json_skill_name;
+                // 更新背景顏色
+                if (skill_rare == "rare")
                 {
+                    skill_hint_content.style.background = 'linear-gradient(to right,  rgb(254, 242, 176), rgb(254, 195, 57))';
+                }
+                else if (skill_rare == "normal")
+                {
+                    skill_hint_content.style.background = 'linear-gradient(to right,  rgb(248, 248, 248), rgb(199, 199, 212))';
+                }
+                // ===== 更新基本的 skill 資訊 ===== //
+                // skill_pt
+                if (skill_name_obj["pt"] != undefined)
+                {
+                    skill_pt.innerText = skill_name_obj["pt"];
+                }
+                else
+                {
+                    skill_pt.parentElement!.parentElement!.style.display = "none";
+                }
+                // skill_description
+                if (skill_name_obj["description"] != undefined)
+                {
+                    skill_description.innerText = skill_name_obj["description"];
+                }
+                // icon
+                if (skill_name_obj["icon"] != undefined)
+                {
+                    skill_icon.src = `../UmaMisc/Image/Skill/${skill_name_obj["icon"]}.png`
+                }
+                // upper_skill
+                if (skill_name_obj["upper_skill"] != undefined)
+                {
+                    upper_skill.innerText = skill_name_obj["upper_skill"];
+                    upper_skill_title.parentElement!.parentElement!.style.display = "table-row";
+                }
+                else
+                {
+                    upper_skill_title.parentElement!.parentElement!.style.display = "none";
+                }
+                // lower_skill
+                if (skill_name_obj["lower_skill"] != undefined)
+                {
+                    lower_skill.innerText = skill_name_obj["lower_skill"];
+                    lower_skill_title.parentElement!.parentElement!.style.display = "table-row";
+                }
+                else
+                {
+                    lower_skill_title.parentElement!.parentElement!.style.display = "none";
+                }
 
-                    skill_name.innerText = json_skill_name;
-
-                    // 更新背景顏色
-                    if (skill_rare == "rare")
+                // ========================== EnhanceSkillData ========================== //
+                cleanEnhanceDataTable(); // remove all elements from table
+                // effect
+                if (skill_name_obj["effect"] != undefined)
+                {
+                    for (let skill_data_title in skill_name_obj["effect"])
                     {
-                        skill_hint_content.style.background = 'linear-gradient(to right,  rgb(254, 242, 176), rgb(254, 195, 57))';
+                        const skill_data_data = skill_name_obj["effect"][skill_data_title];
+                        createEnhanceData(SkillDataType.SKILL_EFFECT, skill_data_title, skill_data_data);
                     }
-                    else if (skill_rare == "normal")
+                }
+                else
+                {
+                    skill_effect_title.parentElement!.parentElement!.style.display = "none";
+                }
+                // condition
+                if (skill_name_obj["condition"] != undefined)
+                {
+                    for (let skill_data_title in skill_name_obj["condition"])
                     {
-                        skill_hint_content.style.background = 'linear-gradient(to right,  rgb(248, 248, 248), rgb(199, 199, 212))';
+                        const skill_data_data = skill_name_obj["condition"][skill_data_title];
+                        createEnhanceData(SkillDataType.SKILL_CONDITION, skill_data_title, skill_data_data);
                     }
-
-                    // ===== 更新基本的 skill 資訊 ===== //
-                    // skill_pt
-                    if (skill_name_obj["skill_pt"] != undefined)
-                    {
-                        skill_pt.innerText = skill_name_obj["skill_pt"];
-                    }
-                    else
-                    {
-                        skill_pt.parentElement!.parentElement!.style.display = "none";
-                    }
-                    // skill_description
-                    if (skill_name_obj["skill_description"] != undefined)
-                    {
-                        skill_description.innerText = skill_name_obj["skill_description"];
-                    }
-                    // skill_icon_name
-                    if (skill_name_obj["skill_icon_name"] != undefined)
-                    {
-                        skill_icon.src = "../UmaMisc/Image/Skill/" + skill_name_obj["skill_icon_name"] + ".png"
-                    }
-                    // upper_skill
-                    if (skill_name_obj["upper_skill"] != undefined)
-                    {
-                        upper_skill.innerText = skill_name_obj["upper_skill"];
-                        upper_skill_title.parentElement!.parentElement!.style.display = "table-row";
-                    }
-                    else
-                    {
-                        upper_skill_title.parentElement!.parentElement!.style.display = "none";
-                    }
-                    // lower_skill
-                    if (skill_name_obj["lower_skill"] != undefined)
-                    {
-                        lower_skill.innerText = skill_name_obj["lower_skill"];
-                        lower_skill_title.parentElement!.parentElement!.style.display = "table-row";
-                    }
-                    else
-                    {
-                        lower_skill_title.parentElement!.parentElement!.style.display = "none";
-                    }
-
-
-
-                    // ========== enhance_skill_data ========== //
-                    let enhance_skill_data = null;
-                    switch (Config.GameServer)
-                    {
-                    case GameServer.JP:
-                        switch (Config.JpServerLanguage)
-                        {
-                        case JpServerLanguage.JP:
-                            enhance_skill_data = enhance_skill_data_jp;
-                            break;
-                        case JpServerLanguage.TW:
-                            enhance_skill_data = enhance_skill_data_jp;
-                            break;
-                        }
-                        break;
-                    case GameServer.TW:
-                        enhance_skill_data = enhance_skill_data_tw;
-                        break;
-                    }
-
-                    cleanSkillLabelRow();
-
-                    // 添加進階技能詳細資訊
-                    for (let skill_data_type in enhance_skill_data[json_skill_name])
-                    {
-                        const skill_data_v = enhance_skill_data[json_skill_name][skill_data_type];
-
-                        for (let skill_data_title in skill_data_v)
-                        {
-                            const skill_data_data = skill_data_v[skill_data_title];
-                            // console.log(skill_data_title, skill_data_data);
-
-                            if (skill_data_data == null) continue;
-
-                            createSkillLabel(
-                                skill_data_type as SkillDataType,
-                                skill_data_title,
-                                skill_data_data
-                            );
-                        }
-                    }
+                }
+                else
+                {
+                    skill_condition_title.parentElement!.parentElement!.style.display = "none";
                 }
             }
         }
     }
+
 
     // style
     let mouseX = event.clientX;
@@ -315,13 +339,13 @@ if (!isMobileDevice())
         skill_data_jp_trans_tw = jsonData;
     });
     
-    readJson("../UmaData/enhance_skill_data_jp.json", (jsonData: string | null) => {
-        enhance_skill_data_jp = jsonData;
-    });
+    // readJson("../UmaData/enhance_skill_data_jp.json", (jsonData: string | null) => {
+    //     enhance_skill_data_jp = jsonData;
+    // });
     
-    readJson("../UmaData/enhance_skill_data_tw.json", (jsonData: string | null) => {
-        enhance_skill_data_tw = jsonData;
-    });    
+    // readJson("../UmaData/enhance_skill_data_tw.json", (jsonData: string | null) => {
+    //     enhance_skill_data_tw = jsonData;
+    // });    
 }
 
 

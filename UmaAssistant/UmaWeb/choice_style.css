@@ -85,23 +85,11 @@ th {
 }
 
 /* id *//* id *//* id *//* id *//* id */
-/*
-#custom_scroll {
-    position: fixed;
-    top: 1px;
-    right: 1px;
-    height: 100vh;
-    width: 5px;
-    background-color: #533081;
-    border-radius: 10%;
-    cursor: ew-resize;
-}
-*/
 
 #choice_table {
     width: 100%;
-    /* color: rgb(0, 255, 255); */
 }
+
 
 #choice_table th {
     color: #f8e2ff;
@@ -156,19 +144,32 @@ th {
     font-size: 1.2em;
 }
 
-#skill_effect_table > tr {
-    /* background: linear-gradient(to right bottom,  rgb(248, 248, 248), rgb(214, 214, 233), rgb(248, 248, 248)); */
-}
-
-#skill_effect_title {
-    /* background: linear-gradient(to right bottom,  rgb(248, 248, 248), rgb(214, 214, 233), rgb(248, 248, 248)); */
-}
-
-#skill_condition_title {
-    /* background: linear-gradient(to right bottom,  rgb(248, 248, 248), rgb(214, 214, 233), rgb(248, 248, 248)); */
-}
-
 /* class *//* class *//* class *//* class */
+
+/*
+#skill_effect_table {
+    width: 100%;
+}
+#skill_condition_table {
+    width: 100%;
+}
+*/
+
+.skill_effect_title {
+    text-align: left;
+}
+
+.skill_condition_title {
+    text-align: left;
+}
+
+.skill_effect {
+    text-align: left;
+}
+
+.skill_condition {
+    text-align: left;
+}
 
 .enhance_skill_data {
     width: 30%;
@@ -241,15 +242,3 @@ th {
 .max_strength {
     color: rgb(196, 243, 255);
 }
-
-
-
-/* .skill_hint:hover {
-    color: red;
-} */
-
-
-
-
-
-
