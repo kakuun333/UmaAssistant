@@ -1,0 +1,37 @@
+{
+  "jp": {
+    "champions_meeting": {
+      "racecourse": "阪神",
+      "race_distance": "1600m",
+      "race_distance_type": "マイル",
+      "race_track": "芝・良",
+      "race_direction": "右・外",
+      "race_weather": "晴/昼",
+      "race_season": "春",
+      "race_date": "4月中旬",
+      "race_construction": {
+        "直線": "0~470",
+        "コーナー": "470~800",
+        "最終コーナー": "800~1130",
+        "最終直線": "1130~1600",
+        "上り坂": "1400~1520",
+        "下り坂": "950~1350",
+        "序盤": "0~270",
+        "中盤": "270~1070",
+        "終盤": "1070~1600"
+      }
+    }
+  },
+  "tw": {
+    "champions_meeting": {
+      "racecourse": "",
+      "race_distance": "",
+      "race_distance_type": "",
+      "race_track": "",
+      "race_direction": "",
+      "race_weather": "",
+      "race_season": "",
+      "race_construction": {}
+    }
+  }
+}
