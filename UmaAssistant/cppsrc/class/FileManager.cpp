@@ -1,4 +1,4 @@
-﻿#include "FileManager.h"
+#include "FileManager.h"
 
 
 json FileManager::ReadJson(std::string path)

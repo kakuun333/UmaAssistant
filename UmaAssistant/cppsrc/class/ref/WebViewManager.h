@@ -7,7 +7,7 @@ ref class WebViewManager
 {
 private:
 	WebViewManager() {}
-	WebViewManager(const WebViewManager%) { throw gcnew System::InvalidOperationException(u8"³æ¤@¼Ò¦¡¤£¥i¥H¦³½Æ»s«Øºc¤l¡Csingleton cannot be copy-constructed"); }
+	WebViewManager(const WebViewManager%) { throw gcnew System::InvalidOperationException(u8"å–®ä¸€æ¨¡å¼ä¸å¯ä»¥æœ‰è¤‡è£½å»ºæ§‹å­ã€‚singleton cannot be copy-constructed"); }
 	static WebViewManager _instance;
 
 public:

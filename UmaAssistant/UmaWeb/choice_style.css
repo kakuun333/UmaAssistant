@@ -29,6 +29,7 @@
 body {
     /* overflow: hidden; */
     
+    /* background: transparent; */
     background: linear-gradient(to right, #10182a, #10192d);
 
     /* font */
@@ -65,6 +66,7 @@ th {
     width: 100%;
     border-radius: 10px 10px 10px 10px;
     background-color: rgb(40, 48, 68);
+    /* background-color: rgba(40, 48, 68, 0.5); */
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -78,6 +80,7 @@ th {
     /* border: 5px solid #702680; */
     border-radius: 10px 10px 10px 10px;
     background-color: rgb(40, 48, 68);
+    /* background-color: rgba(40, 48, 68, 0.5); */
 }
 
 #choice_table th {

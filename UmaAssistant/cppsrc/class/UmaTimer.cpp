@@ -8,13 +8,13 @@ void UmaTimer::Start()
 
 double UmaTimer::Stop()
 {
-	// °O¿ıµ²§ô®É¶¡
+	// è¨˜éŒ„çµæŸæ™‚é–“
 	std::chrono::system_clock::time_point end_time = std::chrono::system_clock::now();
 
-	// ­pºâ°õ¦æ®É¶¡¡]²@¬í¡^
+	// è¨ˆç®—åŸ·è¡Œæ™‚é–“ï¼ˆæ¯«ç§’ï¼‰
 	std::chrono::milliseconds duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - _startTime);
 
-	// ±N®É¶¡®tÂà´«¬°¬í
+	// å°‡æ™‚é–“å·®è½‰æ›ç‚ºç§’
 	double seconds = duration.count() * 1.0f / 1000;
 
 	return seconds;

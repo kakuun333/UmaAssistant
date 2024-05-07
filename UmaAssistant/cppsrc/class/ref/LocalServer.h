@@ -19,7 +19,7 @@ public ref class LocalServer
 
 private:
 	LocalServer() {}
-	LocalServer(const LocalServer%) { throw gcnew System::InvalidOperationException(u8"³æ¤@¼Ò¦¡¤£¥i¥H¦³½Æ»s«Øºc¤l¡Csingleton cannot be copy-constructed"); }
+	LocalServer(const LocalServer%) { throw gcnew System::InvalidOperationException(u8"å–®ä¸€æ¨¡å¼ä¸å¯ä»¥æœ‰è¤‡è£½å»ºæ§‹å­ã€‚singleton cannot be copy-constructed"); }
 	static LocalServer _instance;
 
 	static HttpListener^ _listener;

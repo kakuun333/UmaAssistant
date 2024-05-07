@@ -6,18 +6,18 @@ void LocalServer::HandleUmaWebRequest(System::Object^ obj)
 {
 	array<System::Object^>^ paramsArray = static_cast<array<System::Object^>^>(obj);
 
-	// ³B²z½Ğ¨Dªº¹ê»ÚÅŞ¿è
+	// è™•ç†è«‹æ±‚çš„å¯¦éš›é‚è¼¯
 	HttpListenerContext^ context = dynamic_cast<HttpListenerContext^>(paramsArray[0]);
 	HttpListenerRequest^ request = context->Request;
 	HttpListenerResponse^ response = context->Response;
 
-	// ÀÉ®×Ãş«¬
+	// æª”æ¡ˆé¡å‹
 	FileType fileType = static_cast<FileType>(safe_cast<System::Int32>(paramsArray[1]));
 
-	// ÀÉ®×¸ô®|Ãş«¬
+	// æª”æ¡ˆè·¯å¾‘é¡å‹
 	FilePathType filePathType = static_cast<FilePathType>(safe_cast<System::Int32>(paramsArray[2]));
 
-	// ÀÉ®×¸ô®|
+	// æª”æ¡ˆè·¯å¾‘
 	System::String^ filePath;
 
 	switch (filePathType)
@@ -35,7 +35,7 @@ void LocalServer::HandleUmaWebRequest(System::Object^ obj)
 
 	try
 	{
-		// Åª¨úÀÉ®×
+		// è®€å–æª”æ¡ˆ
 		array<System::Byte>^ fileData = File::ReadAllBytes(filePath);
 
 
@@ -43,7 +43,7 @@ void LocalServer::HandleUmaWebRequest(System::Object^ obj)
 		{
 			array<System::Byte>^ fileData = System::IO::File::ReadAllBytes(filePath);
 
-			// ³]©w¦^À³¼ĞÀY
+			// è¨­å®šå›æ‡‰æ¨™é ­
 			switch (fileType)
 			{
 			case FileType::HTML:
@@ -70,17 +70,17 @@ void LocalServer::HandleUmaWebRequest(System::Object^ obj)
 
 			try
 			{
-				// ¼g¤J¦^À³¼Æ¾Ú
+				// å¯«å…¥å›æ‡‰æ•¸æ“š
 				response->OutputStream->Write(fileData, 0, fileData->Length);
 			}
 			catch (System::Net::HttpListenerException^ ex)
 			{
-				std::cout << u8"[LocalServer] ³B²z HTTP ½Ğ¨D®Éµo¥Í¨Ò¥~\n";
+				std::cout << u8"[LocalServer] è™•ç† HTTP è«‹æ±‚æ™‚ç™¼ç”Ÿä¾‹å¤–\n";
 			}
 		}
 		else
 		{
-			// ÀÉ®×¤£¦s¦bªº³B²zÅŞ¿è
+			// æª”æ¡ˆä¸å­˜åœ¨çš„è™•ç†é‚è¼¯
 			response->StatusCode = (int)HttpStatusCode::NotFound;
 			response->StatusDescription = "File not found.";
 			response->OutputStream->Close();
@@ -88,11 +88,11 @@ void LocalServer::HandleUmaWebRequest(System::Object^ obj)
 	}
 	catch (FileNotFoundException^)
 	{
-		// ÀÉ®×¤£¦s¦bªº³B²zÅŞ¿è
+		// æª”æ¡ˆä¸å­˜åœ¨çš„è™•ç†é‚è¼¯
 		response->StatusCode = (int)HttpStatusCode::NotFound;
 	}
 
-	// Ãö³¬¦^À³¬y
+	// é—œé–‰å›æ‡‰æµ
 	response->OutputStream->Close();
 }
 
@@ -102,25 +102,25 @@ void LocalServer::StartLocalServer(Object^ port)
 {
 	System::String^ port_str = dynamic_cast<System::String^>(port);
 
-	// ³Ğ«Ø HttpListener ª«¥ó
+	// å‰µå»º HttpListener ç‰©ä»¶
 	HttpListener^ listener = gcnew HttpListener();
 
 	_listener = listener;
 
-	// ²K¥[­nÅ¥¨úªº«eºó¡]URL¡^
+	// æ·»åŠ è¦è½å–çš„å‰ç¶´ï¼ˆURLï¼‰
 	listener->Prefixes->Add("http://localhost:" + port_str + "/");
 
 	try
 	{
-		// ¶}©lºÊÅ¥½Ğ¨D
+		// é–‹å§‹ç›£è½è«‹æ±‚
 		listener->Start();
 
-		std::cout << u8"¥¿¦bºÊÅ¥¥»¦a¦øªA¾¹... Port: " << util::systemStr2std(port_str) << std::endl;
+		std::cout << u8"æ­£åœ¨ç›£è½æœ¬åœ°ä¼ºæœå™¨... Port: " << util::systemStr2std(port_str) << std::endl;
 
 		while (true)
 		{
 
-			// µ¥«İ½Ğ¨D
+			// ç­‰å¾…è«‹æ±‚
 			HttpListenerContext^ context = listener->GetContext();
 
 			String^ requestUrl = context->Request->Url->AbsolutePath;
@@ -194,7 +194,7 @@ void LocalServer::StartLocalServer(Object^ port)
 	}
 	finally
 	{
-		// Ãö³¬¦øªA¾¹
+		// é—œé–‰ä¼ºæœå™¨
 		listener->Close();
 		//listener->Stop();
 	}

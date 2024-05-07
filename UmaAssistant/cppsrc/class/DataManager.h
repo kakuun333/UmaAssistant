@@ -64,7 +64,7 @@ public:
 
 	bool TryFindCurrentDate(std::string scanned_race_date);
 
-#pragma region ¤º´O¨ç¦¡
+#pragma region 
 	inline std::string GetCurrentDate()
 	{
 		return m_current_date;

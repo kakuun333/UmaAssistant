@@ -10,7 +10,7 @@ private:
 	static URLManager* _instance;
 
 
-	// ¦^½Õ¨ç¼Æ¡A¥Î©ó³B²z±µ¦¬¨ìªº¼Æ¾Ú
+	// å›èª¿å‡½æ•¸ï¼Œç”¨æ–¼è™•ç†æ¥æ”¶åˆ°çš„æ•¸æ“š
 	static size_t _WriteCallback(void* contents, size_t size, size_t nmemb, std::string* output);
 
 public:

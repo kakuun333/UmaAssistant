@@ -19,7 +19,7 @@
 #include <nlohmann/json.hpp>
 using json = nlohmann::json;
 
-constexpr inline int DEFAULT_SCAN_INTERVAL = 100; // ²@¬í
+constexpr inline int DEFAULT_SCAN_INTERVAL = 100; // ï¿½@ï¿½ï¿½
 const std::string DEFAULT_LOCAL_SERVER_PORT = "5854";
 const std::string DEFAULT_PREVIOUS_CURRENT_CHARACTER_NAME = "DEFAULT_PREVIOUS_CURRENT_CHARACTER_NAME";
 

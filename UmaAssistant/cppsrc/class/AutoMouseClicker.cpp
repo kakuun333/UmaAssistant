@@ -14,13 +14,13 @@ void AutoMouseClicker::Start()
 				{
 					INPUT input;
 					input.type = INPUT_MOUSE;
-					input.mi.dwFlags = MOUSEEVENTF_LEFTDOWN; // ¥ªÁä«ö¤U
+					input.mi.dwFlags = MOUSEEVENTF_LEFTDOWN; // å·¦éµæŒ‰ä¸‹
 					SendInput(1, &input, sizeof(INPUT));
 
-					// µ¥«İ¤@¬q®É¶¡
+					// ç­‰å¾…ä¸€æ®µæ™‚é–“
 					std::this_thread::sleep_for(std::chrono::milliseconds(1/*10*/));
 
-					input.mi.dwFlags = MOUSEEVENTF_LEFTUP; // ¥ªÁäÄÀ©ñ
+					input.mi.dwFlags = MOUSEEVENTF_LEFTUP; // å·¦éµé‡‹æ”¾
 					SendInput(1, &input, sizeof(INPUT));
 				}
 

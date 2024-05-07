@@ -11,13 +11,13 @@ using namespace System::Windows::Forms;
 
 
 /// <summary>
-/// Åı Windows Form ¦b¦h°õ¦æºüªº¾Ş§@ÅÜ±o§ó¤è«K
+/// è®“ Windows Form åœ¨å¤šåŸ·è¡Œç·’çš„æ“ä½œè®Šå¾—æ›´æ–¹ä¾¿
 /// </summary>
 ref class FormController
 {
 private:
 	FormController() {}
-	FormController(const FormController%) { throw gcnew System::InvalidOperationException(u8"³æ¤@¼Ò¦¡¤£¥i¥H¦³½Æ»s«Øºc¤l¡Csingleton cannot be copy-constructed"); }
+	FormController(const FormController%) { throw gcnew System::InvalidOperationException(u8"å–®ä¸€æ¨¡å¼ä¸å¯ä»¥æœ‰è¤‡è£½å»ºæ§‹å­ã€‚singleton cannot be copy-constructed"); }
 	static FormController _instance;
 
 	//static WebBrowser^ webBrowserTemp;

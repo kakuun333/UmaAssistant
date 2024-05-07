@@ -19,7 +19,7 @@ ref class FormDesigner
 {
 private:
 	FormDesigner() {}
-	FormDesigner(const FormDesigner%) { throw gcnew System::InvalidOperationException(u8"³æ¤@¼Ò¦¡¤£¥i¥H¦³½Æ»s«Øºc¤l¡Csingleton cannot be copy-constructed"); }
+	FormDesigner(const FormDesigner%) { throw gcnew System::InvalidOperationException(u8"å–®ä¸€æ¨¡å¼ä¸å¯ä»¥æœ‰è¤‡è£½å»ºæ§‹å­ã€‚singleton cannot be copy-constructed"); }
 	static FormDesigner _instance;
 
 public:
@@ -27,6 +27,6 @@ public:
 	
 	System::Void CreateChoiceTable(UmaChoice choice);
 
-	// ¶Ç¤J textbox «á­pºâ¥X table_layout ««ª½©Ò»İªº°ª«×
+	// å‚³å…¥ textbox å¾Œè¨ˆç®—å‡º table_layout å‚ç›´æ‰€éœ€çš„é«˜åº¦
 	int CalcChoiceTableVerticalSize(TextBox^ choice_effect_textbox);
 };

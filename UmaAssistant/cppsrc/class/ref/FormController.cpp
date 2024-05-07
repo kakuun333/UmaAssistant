@@ -2,8 +2,8 @@
 
 System::Void FormController::_InvokeScriptInternal(String^ script, array<Object^>^ param)
 {
-    // ¹ê»Úªº©e¬£¨ç¼Æ
-    // ¶i¦æ»P InvokeScript ¬Û¦Pªº¾Þ§@
+    // å¯¦éš›çš„å§”æ´¾å‡½æ•¸
+    // é€²è¡Œèˆ‡ InvokeScript ç›¸åŒçš„æ“ä½œ
     _webBrowserTemp->Document->InvokeScript(script, param);
 }
 

@@ -55,7 +55,7 @@ public:
 
 	UmaEvent umaEvent;
 
-	// ¦pªG¸ê®Æ§¹¾ãªğ¦^ true¡A¤£§¹¾ãªğ¦^ false
+	// å¦‚æœè³‡æ–™å®Œæ•´è¿”å› trueï¼Œä¸å®Œæ•´è¿”å› false
 	inline bool IsDataComplete()
 	{
 		//std::cout << "1" << std::endl;

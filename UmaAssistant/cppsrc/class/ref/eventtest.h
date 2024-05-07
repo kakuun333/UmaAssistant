@@ -1,21 +1,21 @@
 #pragma once
 using namespace System;
 
-// ©w¸q¤@­Ó©e¬£(delegate)¡A¥¦±N¥Î§@¦^½Õ(callback)ªºÃş«¬
+// å®šç¾©ä¸€å€‹å§”æ´¾(delegate)ï¼Œå®ƒå°‡ç”¨ä½œå›èª¿(callback)çš„é¡å‹
 public delegate System::String^ MyCallbackDelegate(int result);
 
-// ©w¸q¤@­ÓÃş¡A¨ä¤¤¥]§t¤@­Ó¨ç¼Æ¡A¥¦±µ¨ü©e¬£(delegate)§@¬°°Ñ¼Æ¨Ã½Õ¥Î¸Ó©e¬£(delegate)
+// å®šç¾©ä¸€å€‹é¡ï¼Œå…¶ä¸­åŒ…å«ä¸€å€‹å‡½æ•¸ï¼Œå®ƒæ¥å—å§”æ´¾(delegate)ä½œç‚ºåƒæ•¸ä¸¦èª¿ç”¨è©²å§”æ´¾(delegate)
 public ref class eventtest
 {
 public:
-    // ¨ç¼Æ±µ¨ü©e¬£(delegate)§@¬°°Ñ¼Æ¡A¨Ã±N¨ä§@¬°¦^½Õ(callback)½Õ¥Î
+    // å‡½æ•¸æ¥å—å§”æ´¾(delegate)ä½œç‚ºåƒæ•¸ï¼Œä¸¦å°‡å…¶ä½œç‚ºå›èª¿(callback)èª¿ç”¨
     void perform(MyCallbackDelegate^ callback)
     {
-        // ¼ÒÀÀ¬YºØ¾Ş§@¡A³o¸Ì¨Ï¥Î¤@­ÓÀH¾÷¼Æ§@¬°µ²ªG
+        // æ¨¡æ“¬æŸç¨®æ“ä½œï¼Œé€™è£¡ä½¿ç”¨ä¸€å€‹éš¨æ©Ÿæ•¸ä½œç‚ºçµæœ
         Random^ rand = gcnew Random();
         int result = rand->Next(100);
 
-        // ½Õ¥Î¦^½Õ(callback)¡A±Nµ²ªG¶Ç»¼µ¹¦^½Õ(callback)
+        // èª¿ç”¨å›èª¿(callback)ï¼Œå°‡çµæœå‚³éçµ¦å›èª¿(callback)
         callback(result);
     }
 };

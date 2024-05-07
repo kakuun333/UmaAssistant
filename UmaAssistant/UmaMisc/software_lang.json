@@ -1,6 +1,6 @@
 {
 	"tw": {
-		"version_label": "v1.3.0",
+		"version_label": "v1.3.1",
 		"select_window_btn": "選取視窗",
         "scan_btn": "啓動",
         "clean_current_character_btn": "清除角色",
@@ -27,7 +27,7 @@
         "title_select_window_label": "選取視窗"
     },
     "jp": {
-		"version_label": "v1.3.0",
+		"version_label": "v1.3.1",
 		"select_window_btn": "ウィンドウ選択",
         "scan_btn": "スキャン",
         "clean_current_character_btn": "削除する",

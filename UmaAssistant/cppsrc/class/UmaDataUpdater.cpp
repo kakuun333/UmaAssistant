@@ -15,7 +15,7 @@ UmaDataUpdater* UmaDataUpdater::_instance = nullptr;
 //    if (std::regex_search(html, matches, pattern))
 //    {
 //        removedHtmlTagJsonData = matches[0];
-//        // matches[0] ¦sÀx¾ã­Ó¤Ç°tªº¦r¦ê
+//        // matches[0] å­˜å„²æ•´å€‹åŒ¹é…çš„å­—ä¸²
 //        std::cout << "Full match: " << matches[0] << std::endl;
 //
 //    }
@@ -34,8 +34,8 @@ void UmaDataUpdater::_UpdateFileFormUrl(std::string filePath, std::string url)
 
 	std::string jsonData = urlManager->GetResponseByUrl(url);
 
-    fileManager->WriteJson(filePath, jsonData); // §â html ¼g¤J .json ¸Ì­±¡C
-	std::cout << u8"[UmaDataUpdater] ¦¨¥\§ó·s " << filePath << std::endl;
+    fileManager->WriteJson(filePath, jsonData); // æŠŠ html å¯«å…¥ .json è£¡é¢ã€‚
+	std::cout << u8"[UmaDataUpdater] æˆåŠŸæ›´æ–° " << filePath << std::endl;
 }
 
 

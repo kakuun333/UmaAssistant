@@ -70,13 +70,13 @@ private:
 	// ========== member functions ========== //
 	void _CropImage(cv::Mat& img, ImageType imgType, ImagePattern imgPattern);
 
-	void _ResizeImage(cv::Mat& img, float scale_factor /*©ñ¤j­¿¼Æ*/, cv::InterpolationFlags interpolationFlag = cv::INTER_LINEAR/*INTER_LINEAR*/);
+	void _ResizeImage(cv::Mat& img, float scale_factor /*æ”¾å¤§å€æ•¸*/, cv::InterpolationFlags interpolationFlag = cv::INTER_LINEAR/*INTER_LINEAR*/);
 
 	const double _GetWhitePixelRatio(cv::Mat img);
 
 	const double _GetBlackPixelRatio(cv::Mat img);
 
-	// ÀË¬d¬O§_¦³ EventIcon¡A¨Ã³]¸m _hasEventIcon ©M _eventIconWhitePixelRatio
+	// æª¢æŸ¥æ˜¯å¦æœ‰ EventIconï¼Œä¸¦è¨­ç½® _hasEventIcon å’Œ _eventIconWhitePixelRatio
 	void _CheckEventIcon(cv::Mat img);
 
 	void _GetEventNameImage();

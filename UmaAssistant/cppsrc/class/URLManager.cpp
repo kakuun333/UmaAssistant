@@ -18,23 +18,23 @@ std::string URLManager::GetResponseByUrl(std::string url)
     CURL* curl;
     CURLcode res;
 
-    curl_global_init(CURL_GLOBAL_DEFAULT); // ªì©l¤Æ libcurl
+    curl_global_init(CURL_GLOBAL_DEFAULT); // åˆå§‹åŒ– libcurl
 
-    curl = curl_easy_init(); // ³Ğ«Ø¤@­Ó CURL ¥y¬`
+    curl = curl_easy_init(); // å‰µå»ºä¸€å€‹ CURL å¥æŸ„
 
     if (curl)
     {
-        curl_easy_setopt(curl, CURLOPT_URL, url.c_str()); // ³]¸m url¡A¨Ã¥B url ¥²¶·¬° const char*
+        curl_easy_setopt(curl, CURLOPT_URL, url.c_str()); // è¨­ç½® urlï¼Œä¸¦ä¸” url å¿…é ˆç‚º const char*
 
-        // ³]¸m¦^½Õ¨ç¼Æ
+        // è¨­ç½®å›èª¿å‡½æ•¸
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, &URLManager::_WriteCallback);
 
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response);
 
 
-        res = curl_easy_perform(curl); // ½Ğ¨D HTTP
+        res = curl_easy_perform(curl); // è«‹æ±‚ HTTP
 
-        // ÀË¬d½Ğ¨Dµ²ªG
+        // æª¢æŸ¥è«‹æ±‚çµæœ
         if (res == CURLE_OK)
         {
             std::cout << "res == CURLE_OK" << std::endl;
@@ -45,10 +45,10 @@ std::string URLManager::GetResponseByUrl(std::string url)
         }
 
 
-        curl_easy_cleanup(curl); // ²M²z CURL ¥y¬`
+        curl_easy_cleanup(curl); // æ¸…ç† CURL å¥æŸ„
     }
 
-    curl_global_cleanup(); // ²M²z libcurl
+    curl_global_cleanup(); // æ¸…ç† libcurl
 
 
     return response;

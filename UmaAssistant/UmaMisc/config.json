@@ -1,11 +1,11 @@
 {
-  "AlwaysOnTop": true,
+  "AlwaysOnTop": false,
   "AutoMouseClick": false,
   "AutoMouseClickKey": {
     "VK": 6,
     "WinFormButton": 16777216
   },
-  "DebugMode": true,
+  "DebugMode": false,
   "DiscordRPC": false,
   "GameServer": 0,
   "GameWindow": 0,
@@ -23,13 +23,13 @@
       "Y": 0
     }
   },
-  "GameWindowName": "umamusume",
+  "GameWindowName": "NULL_GAME_WINDOW_NAME_UMA_ASSISTANT",
   "JpServerLang": 0,
   "LocalServer": {
     "Port": "5854"
   },
   "OutputLogFile": false,
-  "PreviousCurrentCharacterName": "トーセンジョーダン（ポップス☆ジョーカー）",
+  "PreviousCurrentCharacterName": "DEFAULT_PREVIOUS_CURRENT_CHARACTER_NAME",
   "ScanInterval": 100,
   "SoftwareLanguage": 1
 }

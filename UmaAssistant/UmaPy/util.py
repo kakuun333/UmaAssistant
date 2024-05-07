@@ -14,20 +14,13 @@ def write_file(path: str, string):
     with open(path, "w+", encoding="utf-8") as file:
         file.write(string);
 
-
-
-
 def read_json(file_path: str):
     with open(file_path, "r", encoding="utf-8") as json_file:
         readed_data = json.load(json_file, strict=False);
-
     return readed_data;
 
-
 def write_json(file_path: str, data: Union[dict, list], indent: int = 2):
-
     json_string = json.dumps(data, indent=indent, ensure_ascii=False)
-
     with open(file_path, "w+", encoding="utf-8") as json_file:
         json_file.write(json_string);
 
@@ -98,6 +91,8 @@ def add_space_between_uppercase(input: str) -> str:
 
 def has_alphabet(input_string: str):
     return any(char.isalpha() for char in input_string)
+
+
 ########## event_data ##########
 
 ### 加工 choice_name

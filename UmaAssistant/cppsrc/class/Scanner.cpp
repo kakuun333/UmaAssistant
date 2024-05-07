@@ -1,4 +1,4 @@
-﻿#include "Scanner.h"
+#include "Scanner.h"
 
 bool Scanner::_scanning = false;
 tesseract::TessBaseAPI* Scanner::ocr_jpn = nullptr;

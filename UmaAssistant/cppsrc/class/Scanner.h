@@ -1,4 +1,4 @@
-﻿#pragma once
+#include <tesseract/baseapi.h> // Tesseract OCR Version: 5.3.3#pragma once
 
 // STL
 #include <iostream>

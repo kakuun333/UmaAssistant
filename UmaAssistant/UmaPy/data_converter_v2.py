@@ -20,8 +20,8 @@ select_character_data = util.read_json("../UmaData/select_character_data.json");
 # translation_data
 translation_data = util.read_json("../UmaData/convert_data/translation_data.json");
 
-# missed_data
-missed_data = util.read_json("../UmaData/convert_data/missed_data.json");
+# wrong_name_data
+wrong_name_data = util.read_json("../UmaData/convert_data/wrong_name_data.json");
 
 char_cvt_data = util.read_json("../UmaData/convert_data/event_data_jp_cvt_tw_char.json");
 sapoka_cvt_data = util.read_json("../UmaData/convert_data/event_data_jp_cvt_tw_card.json");
@@ -264,7 +264,7 @@ def convert_choice_name_jp_to_tw(choice_name):
 
 def convert_choice_effect_jp_to_tw(choice_effect, jp_event_owner = None, tw_event_owner = None, cvt_skill_data = True):
     # 修正日文技能名稱
-    for incorrect_skill_title, correct_skill_title in missed_data["jp_to_tw"]["skill_title"].items():
+    for incorrect_skill_title, correct_skill_title in wrong_name_data["jp_to_tw"]["skill_title"].items():
         choice_effect = re.sub(rf'{incorrect_skill_title}(?!◯)', correct_skill_title, choice_effect, flags=re.IGNORECASE);
 
     # 翻譯 jp 轉 tw
@@ -319,8 +319,8 @@ def convert_to_event_data_tw(eventDataType, convert_data):
     if (eventDataType == EventDataType.SCENARIO):
         for scenario_type, scenario_type_v in event_data_jp[eventDataType].items():
             for jp_event_name, jp_event_name_v in scenario_type_v.items():
-                if (jp_event_name in missed_data["jp_to_tw"]["event_name"]):
-                    jp_event_name = missed_data["jp_to_tw"]["event_name"][jp_event_name];
+                if (jp_event_name in wrong_name_data["jp_to_tw"]["event_name"]):
+                    jp_event_name = wrong_name_data["jp_to_tw"]["event_name"][jp_event_name];
                 if jp_event_name in convert_data:
                     event_data_tw[eventDataType][scenario_type][convert_data[jp_event_name]["tw_event_name"]] = [];
                     for choice in jp_event_name_v:
@@ -342,8 +342,8 @@ def convert_to_event_data_tw(eventDataType, convert_data):
             for rare, rare_v in event_type_v.items():
                 for jp_event_owner, jp_event_owner_v in rare_v.items():
 
-                    if (jp_event_owner in missed_data["jp_to_tw"]["event_owner"]):
-                        jp_event_owner = missed_data["jp_to_tw"]["event_owner"][jp_event_owner];
+                    if (jp_event_owner in wrong_name_data["jp_to_tw"]["event_owner"]):
+                        jp_event_owner = wrong_name_data["jp_to_tw"]["event_owner"][jp_event_owner];
                     
                     if jp_event_owner in convert_data:
 
@@ -351,8 +351,8 @@ def convert_to_event_data_tw(eventDataType, convert_data):
 
                         for jp_event_name, jp_event_name_v in jp_event_owner_v.items():
 
-                            if (jp_event_name in missed_data["jp_to_tw"]["event_name"]):
-                                jp_event_name = missed_data["jp_to_tw"]["event_name"][jp_event_name];
+                            if (jp_event_name in wrong_name_data["jp_to_tw"]["event_name"]):
+                                jp_event_name = wrong_name_data["jp_to_tw"]["event_name"][jp_event_name];
                             
                             if jp_event_name in convert_data[jp_event_owner]["event_name_dict"]:
 
@@ -463,7 +463,7 @@ util.write_json("../UmaData/skill_data_tw.json", skill_data_tw);
 def select_character_jp_owner_to_tw_owner():
     for jp_event_owner, jp_event_owner_v in char_cvt_data.items():
         
-        # for origin_name, cvt_name in missed_data["jp_to_tw"]["event_owner"].items():
+        # for origin_name, cvt_name in wrong_name_data["jp_to_tw"]["event_owner"].items():
         #     if (jp_event_owner == cvt_name):
         #         jp_event_owner = origin_name;
 

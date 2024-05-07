@@ -1,4 +1,4 @@
-﻿#include "DataManager.h"
+#include "DataManager.h"
 
 #using "CSharpRuntime/UmaCSharpLibrary.dll"
 

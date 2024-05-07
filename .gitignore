@@ -4,9 +4,6 @@ UmaAssistant/*.rar
 
 UmaAssistant/vcpkg
 
-## private src
-UmaAssistant/cppsrc/include/singleton_mutex.hpp
-
 ## 無視 js
 UmaAssistant/UmaWeb/*.js
 
