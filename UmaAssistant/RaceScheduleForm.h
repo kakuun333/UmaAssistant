@@ -16,14 +16,14 @@ namespace UmaAssistant {
 
 
 	/// <summary>
-	/// RaceScheduleForm ªººK­n
+	/// RaceScheduleForm çš„æ‘˜è¦
 	/// </summary>
 	public ref class RaceScheduleForm : public System::Windows::Forms::Form
 	{
 	public: RaceScheduleForm(void);
 	protected:
 		/// <summary>
-		/// ²M°£¥ô¦ó¨Ï¥Î¤¤ªº¸ê·½¡C
+		/// æ¸…é™¤ä»»ä½•ä½¿ç”¨ä¸­çš„è³‡æºã€‚
 		/// </summary>
 		~RaceScheduleForm()
 		{
@@ -39,14 +39,14 @@ namespace UmaAssistant {
 	public: Microsoft::Web::WebView2::WinForms::WebView2^ raceScheduleWebView2;
 	private:
 		/// <summary>
-		/// ³]­p¤u¨ã©Ò»İªºÅÜ¼Æ¡C
+		/// è¨­è¨ˆå·¥å…·æ‰€éœ€çš„è®Šæ•¸ã€‚
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// ¦¹¬°³]­p¤u¨ã¤ä´©©Ò»İªº¤èªk - ½Ğ¤Å¨Ï¥Îµ{¦¡½X½s¿è¾¹­×§ï
-		/// ³o­Ó¤èªkªº¤º®e¡C
+		/// æ­¤ç‚ºè¨­è¨ˆå·¥å…·æ”¯æ´æ‰€éœ€çš„æ–¹æ³• - è«‹å‹¿ä½¿ç”¨ç¨‹å¼ç¢¼ç·¨è¼¯å™¨ä¿®æ”¹
+		/// é€™å€‹æ–¹æ³•çš„å…§å®¹ã€‚
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -82,7 +82,7 @@ namespace UmaAssistant {
 			this->raceSchedule_label->Name = L"raceSchedule_label";
 			this->raceSchedule_label->Size = System::Drawing::Size(74, 24);
 			this->raceSchedule_label->TabIndex = 26;
-			this->raceSchedule_label->Text = L"ÁÉ¨Æ±Æµ{";
+			this->raceSchedule_label->Text = L"è³½äº‹æ’ç¨‹";
 			// 
 			// minimize_btn
 			// 
@@ -167,7 +167,7 @@ namespace UmaAssistant {
 #pragma endregion
 
 
-#pragma region ¨p¤HÅÜ¼Æ
+#pragma region ç§äººè®Šæ•¸
 	private: bool _isDraggingForm = false;
 	private: System::Drawing::Point _dragOffset;
 #pragma endregion
@@ -181,7 +181,7 @@ namespace UmaAssistant {
 	private: System::Void RaceScheduleForm_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
 #pragma endregion
 
-#pragma region EventHandler ¨ç¦¡
+#pragma region EventHandler å‡½å¼
 	private: System::Void OnWebMessageReceived(System::Object^ sender, CoreWebView2WebMessageReceivedEventArgs^ e);
 	private: System::Void OnNavigationCompleted(System::Object^ sender, CoreWebView2NavigationCompletedEventArgs^ e);
 #pragma endregion

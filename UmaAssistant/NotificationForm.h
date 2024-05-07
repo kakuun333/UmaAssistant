@@ -10,7 +10,7 @@ namespace UmaAssistant {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// NotificationForm ªººK­n
+	/// NotificationForm çš„æ‘˜è¦
 	/// </summary>
 	public ref class NotificationForm : public System::Windows::Forms::Form
 	{
@@ -19,7 +19,7 @@ namespace UmaAssistant {
 		{
 			InitializeComponent();
 			//
-			//TODO:  ¦b¦¹¥[¤J«Øºc¨ç¦¡µ{¦¡½X
+			//TODO:  åœ¨æ­¤åŠ å…¥å»ºæ§‹å‡½å¼ç¨‹å¼ç¢¼
 			//
 			this->Show();
 			this->Hide();
@@ -27,7 +27,7 @@ namespace UmaAssistant {
 
 	protected:
 		/// <summary>
-		/// ²M°£¥ô¦ó¨Ï¥Î¤¤ªº¸ê·½¡C
+		/// æ¸…é™¤ä»»ä½•ä½¿ç”¨ä¸­çš„è³‡æºã€‚
 		/// </summary>
 		~NotificationForm()
 		{
@@ -42,14 +42,14 @@ namespace UmaAssistant {
 	public: System::Windows::Forms::Label^ label1;
 	private:
 		/// <summary>
-		/// ³]­p¤u¨ã©Ò»İªºÅÜ¼Æ¡C
+		/// è¨­è¨ˆå·¥å…·æ‰€éœ€çš„è®Šæ•¸ã€‚
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// ¦¹¬°³]­p¤u¨ã¤ä´©©Ò»İªº¤èªk - ½Ğ¤Å¨Ï¥Îµ{¦¡½X½s¿è¾¹­×§ï
-		/// ³o­Ó¤èªkªº¤º®e¡C
+		/// æ­¤ç‚ºè¨­è¨ˆå·¥å…·æ”¯æ´æ‰€éœ€çš„æ–¹æ³• - è«‹å‹¿ä½¿ç”¨ç¨‹å¼ç¢¼ç·¨è¼¯å™¨ä¿®æ”¹
+		/// é€™å€‹æ–¹æ³•çš„å…§å®¹ã€‚
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -93,7 +93,7 @@ namespace UmaAssistant {
 			this->raceSchedule_label->Name = L"raceSchedule_label";
 			this->raceSchedule_label->Size = System::Drawing::Size(42, 24);
 			this->raceSchedule_label->TabIndex = 30;
-			this->raceSchedule_label->Text = L"³qª¾";
+			this->raceSchedule_label->Text = L"é€šçŸ¥";
 			// 
 			// icon_pictureBox
 			// 
@@ -117,7 +117,7 @@ namespace UmaAssistant {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(154, 24);
 			this->label1->TabIndex = 31;
-			this->label1->Text = L"°»´ú¨ì¤w¦w±ÆªºÁÉ¨Æ";
+			this->label1->Text = L"åµæ¸¬åˆ°å·²å®‰æ’çš„è³½äº‹";
 			// 
 			// NotificationForm
 			// 
@@ -147,7 +147,7 @@ namespace UmaAssistant {
 #pragma endregion
 
 
-#pragma region ¨p¤HÅÜ¼Æ
+#pragma region ç§äººè®Šæ•¸
 	private: bool _isDraggingForm = false;
 	private: System::Drawing::Point _dragOffset;
 #pragma endregion
