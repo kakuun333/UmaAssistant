@@ -8,7 +8,7 @@
       "race_direction": "左",
       "race_weather": "曇/昼",
       "race_season": "春",
-      "race_date": "6月中旬",
+      "race_date": "6月20日",
       "race_construction": {
         "直線": [
           "0~380",
@@ -46,43 +46,43 @@
   },
   "tw": {
     "champions_meeting": {
-      "racecourse": "中京",
-      "race_distance": "1200m",
-      "race_distance_type": "短距離",
-      "race_track": "草地．良好",
+      "racecourse": "東京",
+      "race_distance": "1600m",
+      "race_distance_type": "一哩",
+      "race_track": "沙地．差",
       "race_direction": "逆",
-      "race_weather": "晴",
+      "race_weather": "雪/午",
       "race_season": "冬",
       "race_construction": {
         "直線": [
-          "0~380"
+          "0~650"
         ],
         "彎道": [
-          "380~580"
+          "650~870"
         ],
         "最終彎道": [
-          "580~790"
+          "870~1100"
         ],
         "最終直線": [
-          "790~1200"
+          "1100~1600"
         ],
         "上坡": [
-          "880~1000"
+          "1100~1400"
         ],
         "下坡": [
-          "120~870"
+          "600~800"
         ],
         "初期": [
-          "0~200"
+          "0~270"
         ],
         "中期": [
-          "200~800"
+          "270~1070"
         ],
         "後期": [
-          "800~1200"
+          "1070~1600"
         ]
       },
-      "race_date": "5月18日"
+      "race_date": "6月21日"
     }
   }
 }
