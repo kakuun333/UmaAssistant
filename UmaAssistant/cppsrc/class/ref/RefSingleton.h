@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 generic<typename T>
 ref class RefSingleton

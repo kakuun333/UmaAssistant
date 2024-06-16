@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 // STL
 #include <string>
@@ -29,7 +29,7 @@ namespace global
 		extern gcroot<System::String^> character_name_displayer_js;
 
 		// UmaTemp
-		extern gcroot<System::String^> umaTemp; // �Ȧs�ɦ�m
+		extern gcroot<System::String^> umaTemp; // 暫存檔位置
 		extern gcroot<System::String^> screenshot;
 		extern gcroot<System::String^> screenshot_event;
 

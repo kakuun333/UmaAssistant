@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 namespace UmaAssistant {
 
@@ -11,7 +11,7 @@ namespace UmaAssistant {
 
 
 	/// <summary>
-	/// PreviewForm ªººK­n
+	/// PreviewForm çš„æ‘˜è¦
 	/// </summary>
 	public ref class PreviewForm : public System::Windows::Forms::Form
 	{
@@ -25,7 +25,7 @@ namespace UmaAssistant {
 
 	protected:
 		/// <summary>
-		/// ²M°£¥ô¦ó¨Ï¥Î¤¤ªº¸ê·½¡C
+		/// æ¸…é™¤ä»»ä½•ä½¿ç”¨ä¸­çš„è³‡æºã€‚
 		/// </summary>
 		~PreviewForm()
 		{
@@ -48,7 +48,7 @@ namespace UmaAssistant {
 
 	private:
 		/// <summary>
-		/// ³]­p¤u¨ã©Ò»İªºÅÜ¼Æ¡C
+		/// è¨­è¨ˆå·¥å…·æ‰€éœ€çš„è®Šæ•¸ã€‚
 		/// </summary>
 		System::ComponentModel::Container ^components;
 		bool draggingForm = false;
@@ -56,8 +56,8 @@ namespace UmaAssistant {
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// ¦¹¬°³]­p¤u¨ã¤ä´©©Ò»İªº¤èªk - ½Ğ¤Å¨Ï¥Îµ{¦¡½X½s¿è¾¹­×§ï
-		/// ³o­Ó¤èªkªº¤º®e¡C
+		/// æ­¤ç‚ºè¨­è¨ˆå·¥å…·æ”¯æ´æ‰€éœ€çš„æ–¹æ³• - è«‹å‹¿ä½¿ç”¨ç¨‹å¼ç¢¼ç·¨è¼¯å™¨ä¿®æ”¹
+		/// é€™å€‹æ–¹æ³•çš„å…§å®¹ã€‚
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -97,7 +97,7 @@ namespace UmaAssistant {
 			this->select_window_label->Name = L"select_window_label";
 			this->select_window_label->Size = System::Drawing::Size(138, 24);
 			this->select_window_label->TabIndex = 33;
-			this->select_window_label->Text = L"½Ğ¿ï¾Ü¹CÀ¸µøµ¡¡G";
+			this->select_window_label->Text = L"è«‹é¸æ“‡éŠæˆ²è¦–çª—ï¼š";
 			// 
 			// icon_pictureBox
 			// 
@@ -159,7 +159,7 @@ namespace UmaAssistant {
 			this->title_select_window_label->Name = L"title_select_window_label";
 			this->title_select_window_label->Size = System::Drawing::Size(74, 24);
 			this->title_select_window_label->TabIndex = 37;
-			this->title_select_window_label->Text = L"¿ï¨úµøµ¡";
+			this->title_select_window_label->Text = L"é¸å–è¦–çª—";
 			// 
 			// PreviewForm
 			// 

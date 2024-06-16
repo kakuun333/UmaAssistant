@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 // STL
 #include <iostream>
@@ -14,22 +14,22 @@ namespace util
 {
 	std::wstring string2wstring(const std::string& str);
 
-	// §â System::String^ Âà¦¨ std::string
+	// æŠŠ System::String^ è½‰æˆ std::string
 	std::string systemStr2std(System::String^ systemStr);
 
-	// §â std::string Âà¦¨ System::String^
+	// æŠŠ std::string è½‰æˆ System::String^
 	System::String^ stdStr2system(std::string stdStr);
 
-	// §â char* Âà¦¨ wchat_t*
-	// ¥²¶·¨Ï¥Î delete[] ÄÀ©ñ°O¾ĞÅé
+	// æŠŠ char* è½‰æˆ wchat_t*
+	// å¿…é ˆä½¿ç”¨ delete[] é‡‹æ”¾è¨˜æ†¶é«”
 	wchar_t* char2wchar(const char* str);
 
-	// §â utf8 Âà¦¨ utf16
-	// ¥²¶·¨Ï¥Î delete[] ÄÀ©ñ°O¾ĞÅé
+	// æŠŠ utf8 è½‰æˆ utf16
+	// å¿…é ˆä½¿ç”¨ delete[] é‡‹æ”¾è¨˜æ†¶é«”
 	wchar_t* utf8to16(char* utf8);
 
-	// §â utf16 Âà¦¨ utf8
-	// ¥²¶·¨Ï¥Î delete[] ÄÀ©ñ°O¾ĞÅé
+	// æŠŠ utf16 è½‰æˆ utf8
+	// å¿…é ˆä½¿ç”¨ delete[] é‡‹æ”¾è¨˜æ†¶é«”
 	char* utf16to8(wchar_t* utf16);
 	char* utf16to8(System::String^ sys_string);
 }

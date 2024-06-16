@@ -1,4 +1,4 @@
-#include "umaswitch.h"
+﻿#include "umaswitch.h"
 
 namespace global
 {

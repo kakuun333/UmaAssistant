@@ -1,6 +1,6 @@
-//{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ ²£¥Íªº Include ÀÉ®×¡C
-// ¥Ñ UmaAssistant.rc ¨Ï¥Î
+ï»¿//{{NO_DEPENDENCIES}}
+// Microsoft Visual C++ ç”¢ç”Ÿçš„ Include æª”æ¡ˆã€‚
+// ç”± UmaAssistant.rc ä½¿ç”¨
 //
 #define IDI_ICON1                       102
 

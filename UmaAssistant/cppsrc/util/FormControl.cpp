@@ -1,4 +1,4 @@
-#include "FormControl.h"
+ï»¿#include "FormControl.h"
 
 
 
@@ -10,12 +10,12 @@ namespace util
 		{
 			if (parentControl->InvokeRequired)
 			{
-				// ¦pªG¤£¦b UI °õ¦æºü¤W¡A«h¨Ï¥Î Invoke ¤èªk
+				// å¦‚æžœä¸åœ¨ UI åŸ·è¡Œç·’ä¸Šï¼Œå‰‡ä½¿ç”¨ Invoke æ–¹æ³•
 				parentControl->Invoke(gcnew Action<Control^, Control^>(&Add), parentControl, childControl);
 			}
 			else
 			{
-				// ¦b UI °õ¦æºü¤W°õ¦æ¾Þ§@
+				// åœ¨ UI åŸ·è¡Œç·’ä¸ŠåŸ·è¡Œæ“ä½œ
 				parentControl->Controls->Add(childControl);
 			}
 		}

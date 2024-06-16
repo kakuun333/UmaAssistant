@@ -1,4 +1,4 @@
-#include "NotificationForm.h"
+ï»¿#include "NotificationForm.h"
 
 
 namespace UmaAssistant
@@ -30,9 +30,9 @@ namespace UmaAssistant
 
 	System::Void NotificationForm::NotificationForm_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e)
 	{
-		// ¨ú®øÃö³¬¾Þ§@¡AÁ×§K form ³Q¦Û°ÊÄÀ©ñ
+		// å–æ¶ˆé—œé–‰æ“ä½œï¼Œé¿å… form è¢«è‡ªå‹•é‡‹æ”¾
 		e->Cancel = true;
-		// ÁôÂÃµøµ¡
+		// éš±è—è¦–çª—
 		this->Hide();
 	}
 #pragma endregion

@@ -1,4 +1,4 @@
-#ifndef SINGLETON_MUTEX_HPP
+﻿#ifndef SINGLETON_MUTEX_HPP
 #define SINGLETON_MUTEX_HPP
 
 #include <mutex>

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 enum ImageType
 {
 	IMG_EVENT_NAME,

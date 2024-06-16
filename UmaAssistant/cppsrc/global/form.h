@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 // C++/CLI
 #include <vcclr.h>

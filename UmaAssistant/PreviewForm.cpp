@@ -1,4 +1,4 @@
-#include "PreviewForm.h"
+ï»¿#include "PreviewForm.h"
 
 // STL
 #include <map>
@@ -16,21 +16,21 @@ namespace UmaAssistant
 	{
 		InitializeComponent();
 		//
-		//TODO:  ¦b¦¹¥[¤J«Øºc¨ç¦¡µ{¦¡½X
+		//TODO:  åœ¨æ­¤åŠ å…¥å»ºæ§‹å‡½å¼ç¨‹å¼ç¢¼
 		//
 
-		// §ó§ï .resx ÀÉªº¸ô®|¬° UmaAssistant/UmaAssistant/form
+		// æ›´æ”¹ .resx æª”çš„è·¯å¾‘ç‚º UmaAssistant/UmaAssistant/form
 		/*System::Resources::ResourceManager^ resources = gcnew System::Resources::ResourceManager(L"UmaAssistant.UmaAssistant.form.PreviewForm",
 			System::Reflection::Assembly::GetExecutingAssembly());*/
 
-			// µù¥U FormClosing ¨Æ¥ó
+			// è¨»å†Š FormClosing äº‹ä»¶
 		this->FormClosing += gcnew FormClosingEventHandler(this, &PreviewForm::FormClosingHandler);
 		window_listbox->SelectedIndexChanged += gcnew EventHandler(this, &PreviewForm::OnSelectedIndexChanged);
 	}
 
 	void PreviewForm::OnSelectedIndexChanged(Object^ sender, EventArgs^ e)
 	{
-		// ³B²z¿ï¾Ü¶µ¥Ø§ó§ïªºÅÞ¿è
+		// è™•ç†é¸æ“‡é …ç›®æ›´æ”¹çš„é‚è¼¯
 		if (window_listbox->SelectedIndex != -1)
 		{
 			System::String^ selectedItem = dynamic_cast<System::String^>(window_listbox->SelectedItem);
@@ -55,10 +55,10 @@ namespace UmaAssistant
 
 	void PreviewForm::FormClosingHandler(Object^ sender, FormClosingEventArgs^ e)
 	{
-		// ¨ú®øÃö³¬¾Þ§@¡AÁ×§K form ³Q¦Û°ÊÄÀ©ñ
+		// å–æ¶ˆé—œé–‰æ“ä½œï¼Œé¿å… form è¢«è‡ªå‹•é‡‹æ”¾
 		e->Cancel = true;
 
-		// ÁôÂÃµøµ¡
+		// éš±è—è¦–çª—
 		this->Hide();
 	}
 
