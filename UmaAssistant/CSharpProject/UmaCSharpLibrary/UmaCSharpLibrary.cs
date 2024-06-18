@@ -91,7 +91,7 @@ namespace UmaCSharp
         private const string JP_APP_CLIENT_ID = "1195236155709468752";
         private const string TW_APP_CLIENT_ID = "1195259431106138132";
         private const string LARGE_IMAGE_URL = "https://raw.githubusercontent.com/kakuun333/UmaAssistant/main/UmaAssistant/UmaMisc/Image/DiscordRPC/umamusume_icon.png";
-        private const string CHARACTER_ICON_URL = "https://raw.githubusercontent.com/kakuun333/UmaAssistant/main/UmaAssistant/UmaMisc/Image/Character/";
+        private const string CHARACTER_ICON_URL = "https://raw.githubusercontent.com/kakuun333/UmaAssistant/data/UmaMisc/Image/Character/";
         private const string JP_LARGE_IMAGE_TEXT = "ウマ娘 プリティーダービー";
         private const string TW_LARGE_IMAGE_TEXT = "賽馬娘 Pretty Derby";
         #endregion
@@ -141,7 +141,7 @@ namespace UmaCSharp
                 }
             }
 
-            m_characterSmallIconUrl = CHARACTER_ICON_URL + iconName;
+            m_characterSmallIconUrl = CHARACTER_ICON_URL + iconName + ".png";
         }
 
         /// <summary>
