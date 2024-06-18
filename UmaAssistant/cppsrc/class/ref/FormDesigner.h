@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 // util
 #include "../../util/CharacterFilter.h"

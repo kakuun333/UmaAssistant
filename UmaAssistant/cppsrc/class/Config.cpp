@@ -1,4 +1,4 @@
-#include "Config.h"
+﻿#include "Config.h"
 
 
 std::map<std::string, int> Config::InitGameWindowBoundOffset()

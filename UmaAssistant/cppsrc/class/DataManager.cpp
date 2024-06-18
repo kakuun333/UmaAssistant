@@ -1,9 +1,9 @@
-#include "DataManager.h"
+﻿#include "DataManager.h"
+
 
 #using "CSharpRuntime/UmaCSharpLibrary.dll"
 
-bool DataManager::_currentCharacterInfoLocked = false;
-std::map<std::string, std::string> DataManager::_currentCharacterInfoDict =
+std::map<std::string, std::string> DataManager::m_CurrentCharacterInfoDict =
 {
 	// route
 	{ "rare", "" },
@@ -11,6 +11,29 @@ std::map<std::string, std::string> DataManager::_currentCharacterInfoDict =
 	// characterName
 	{ "event_owner", "" },
 };
+
+void DataManager::InitEventDataJson()
+{
+	FileManager* fileManager = FileManager::GetInstance();
+
+	// event_data //
+	event_data_jp_json = fileManager->ReadJson(global::path::std_event_data_jp_json);
+	event_name_data_jp_json = fileManager->ReadJson(global::path::std_UmaData + "\\event_name_data_jp.json");
+
+	event_data_tw_json = fileManager->ReadJson(global::path::std_event_data_tw_json);
+	event_name_data_tw_json = fileManager->ReadJson(global::path::std_UmaData + "\\event_name_data_tw.json");
+
+	// jp server translation data //
+	event_data_jp_trans_tw_json = fileManager->ReadJson(global::path::std_event_data_jp_trans_tw_json);
+
+	// race_date_data //
+	race_date_data_json = fileManager->ReadJson(global::path::std_UmaData + "\\race_date_data.json");
+
+	m_EventDataMap.emplace(GameServerType::JP, event_data_jp_json);
+	m_EventDataMap.emplace(GameServerType::TW, event_data_tw_json);
+	m_EventNameDataMap.emplace(GameServerType::JP, event_name_data_jp_json);
+	m_EventNameDataMap.emplace(GameServerType::TW, event_name_data_tw_json);
+}
 
 bool DataManager::TryFindScheduledRace(std::string scanned_race_date)
 {
@@ -62,17 +85,7 @@ bool DataManager::SetCurrentCharacterInfoDict(std::string event_owner)
 {
 	if (event_owner.empty()) return false;
 
-	json event_data_json;
-
-	switch (Config::GetInstance()->GameServer)
-	{
-	case static_cast<int>(GameServerType::JP):
-		event_data_json = event_data_jp_json;
-		break;
-	case static_cast<int>(GameServerType::TW):
-		event_data_json = event_data_tw_json;
-		break;
-	}
+	json& event_data_json = m_EventDataMap[static_cast<GameServerType>(Config::GetInstance()->GameServer)];
 
 	for (json::iterator it = event_data_json["character"].begin(); it != event_data_json["character"].end(); ++it)
 	{
@@ -83,8 +96,8 @@ bool DataManager::SetCurrentCharacterInfoDict(std::string event_owner)
 			std::string json_event_owner = it2.key();
 			if (json_event_owner == event_owner)
 			{
-				_currentCharacterInfoDict["rare"] = rare;
-				_currentCharacterInfoDict["event_owner"] = json_event_owner;
+				m_CurrentCharacterInfoDict["rare"] = rare;
+				m_CurrentCharacterInfoDict["event_owner"] = json_event_owner;
 
 				// config
 				Config::GetInstance()->PreviousCurrentCharacterName = json_event_owner;
@@ -98,38 +111,11 @@ bool DataManager::SetCurrentCharacterInfoDict(std::string event_owner)
 	return false;
 }
 
-void DataManager::InitEventDataJson()
-{
-	FileManager* fileManager = FileManager::GetInstance();
-
-	// event_data //
-	event_data_jp_json = fileManager->ReadJson(global::path::std_event_data_jp_json);
-	event_name_data_jp_json = fileManager->ReadJson(global::path::std_UmaData + "\\event_name_data_jp.json");
-
-	event_data_tw_json = fileManager->ReadJson(global::path::std_event_data_tw_json);
-	event_name_data_tw_json = fileManager->ReadJson(global::path::std_UmaData + "\\event_name_data_tw.json");
-
-	// jp server translation data //
-	event_data_jp_trans_tw_json = fileManager->ReadJson(global::path::std_event_data_jp_trans_tw_json);
-
-	// race_date_data //
-	race_date_data_json = fileManager->ReadJson(global::path::std_UmaData + "\\race_date_data.json");
-}
-
 bool DataManager::TryGetCurrentCharacterByList(std::deque<std::string> scanned_text_list)
 {
 	bool foundChar = false;
-	json event_data_json;
 
-	switch (Config::GetInstance()->GameServer)
-	{
-	case static_cast<int>(GameServerType::JP):
-		event_data_json = event_data_jp_json;
-		break;
-	case static_cast<int>(GameServerType::TW):
-		event_data_json = event_data_tw_json;
-		break;
-	}
+	json& event_data_json = m_EventDataMap[static_cast<GameServerType>(Config::GetInstance()->GameServer)];
 
 	// event_owner		
 	std::deque<UmaGetCharData> similarCharList = {};
@@ -146,19 +132,9 @@ bool DataManager::TryGetCurrentCharacterByList(std::deque<std::string> scanned_t
 
 			for (const auto& scanned_text : scanned_text_list)
 			{
-				float similarity = util::GetCharacterNameSimilarity(scanned_text, event_owner);
-
-				/*
-				為什麼 similarity == 100 ？？？？？？......
-
-				scanned_text: IButterflyStingl, event_owner:アドマイヤベガ（Starry Nocturne）, similarity:-1
-				scanned_text: IButterflyStingl, event_owner:アドマイヤベガ（Starry Nocturne）, similarity:-1
-				scanned_text: IButterflyStingl, event_owner:アドマイヤベガ（Starry Nocturne）, similarity:-1
-				scanned_text: ButterflySting, event_owner:アドマイヤベガ（Starry Nocturne）, similarity:100
-				*/
-
+				const float similarity = util::GetSimilarity(scanned_text, event_owner);
 				
-				if (similarity < util::SIMILAR_METRIC) continue;
+				if (similarity < m_SIMILAR_METRIC) continue;
 
 				std::cout << "scanned_text: " << scanned_text << ", event_owner: " << event_owner << ", similarity: " << similarity << '\n';
 
@@ -192,9 +168,9 @@ bool DataManager::TryGetCurrentCharacterByList(std::deque<std::string> scanned_t
 
 	if (maxElement != similarCharList.end())
 	{
-		_currentCharacterInfoDict["rare"] = maxElement->rare;
-		_currentCharacterInfoDict["event_owner"] = maxElement->event_owner;
-		_currentCharacterInfoLocked = true;
+		m_CurrentCharacterInfoDict["rare"] = maxElement->rare;
+		m_CurrentCharacterInfoDict["event_owner"] = maxElement->event_owner;
+		m_CurrentCharacterInfoLocked = true;
 		foundChar = true;
 		WebViewManager::Instance->ChangeCharacterName(util::stdStr2system(maxElement->event_owner));
 
@@ -211,37 +187,27 @@ UmaEventNameData DataManager::GetMaxSimilarityUmaEventNameDataByList(std::deque<
 {
 	std::deque<UmaEventNameData> similarEventNameList = {};
 
-	json event_data_name_json;
-
-	switch (Config::GetInstance()->GameServer)
-	{
-	case static_cast<int>(GameServerType::JP):
-		event_data_name_json = event_name_data_jp_json;
-		break;
-	case static_cast<int>(GameServerType::TW):
-		event_data_name_json = event_name_data_tw_json;
-		break;
-	}
+	json& event_data_name_json = m_EventNameDataMap[static_cast<GameServerType>(Config::GetInstance()->GameServer)];
 
 	
 	for (json::iterator it_event_type = event_data_name_json.begin(); it_event_type != event_data_name_json.end(); ++it_event_type)
 	{
 		for (const auto& event_name : it_event_type.value())
 		{
-			for (std::string scanned_text : scanned_text_list)
+			for (const std::string& scanned_text : scanned_text_list)
 			{
-				float similarity = util::GetSimilarity(scanned_text, event_name);
-				
-				if (similarity >= util::SIMILAR_METRIC)
+				const double similarity = util::GetSimilarity(scanned_text, event_name);
+
+				if (similarity > m_SIMILAR_METRIC)
 				{
 					UmaEventNameData simEventData;
-
 					simEventData.event_type = it_event_type.key();
 					simEventData.event_name = event_name;
 					simEventData.matched_scanned_text = scanned_text;
 					simEventData.similarity = similarity;
 
-					similarEventNameList.push_back(simEventData);
+					// Add the simEventData object to the vector directly
+					similarEventNameList.push_back(std::move(simEventData));
 				}
 			}
 		}
@@ -249,56 +215,30 @@ UmaEventNameData DataManager::GetMaxSimilarityUmaEventNameDataByList(std::deque<
 
 	if (similarEventNameList.empty()) return UmaEventNameData();
 
-	// 使用 std::max_element 找到最大的 similarity
-	auto maxElement = std::max_element(similarEventNameList.begin(), similarEventNameList.end(),
-		[](const UmaEventNameData& sim_data1, const UmaEventNameData& sim_data2)
-		{
-			return sim_data1.similarity < sim_data2.similarity;
-		}
-	);
-
-	return *maxElement;
+	// 找到最大的 similarity
+	return m_FindMaxSimilarityData(similarEventNameList);
 }
 
 std::variant<UmaEventData, ScenarioEventData> DataManager::GetEventDataByUmaEventNameData(UmaEventNameData umaEventNameData)
 {
-	json event_data_json;
-
-	switch (Config::GetInstance()->GameServer)
-	{
-	case static_cast<int>(GameServerType::JP):
-		switch (Config::GetInstance()->JpServerLang)
-		{
-		case static_cast<int>(JpServerLangType::JP):
-			event_data_json = event_data_jp_json;
-			break;
-		case static_cast<int>(JpServerLangType::TW):
-			event_data_json = event_data_jp_trans_tw_json;
-			break;
-		}
-		break;
-	case static_cast<int>(GameServerType::TW):
-		event_data_json = event_data_tw_json;
-		break;
-	}
+	json& event_data_json = m_EventDataMap[static_cast<GameServerType>(Config::GetInstance()->GameServer)];
 
 	if (umaEventNameData.event_type == "character")
 	{
 		std::cout << "umaEventNameData.event_type == character" << '\n';
 
 		UmaEventData umaEventData;
-		umaEventData.event_owner = _currentCharacterInfoDict["event_owner"];
+		umaEventData.event_owner = m_CurrentCharacterInfoDict["event_owner"];
 		umaEventData.umaEvent.event_name = umaEventNameData.event_name;
 
-
-		for (const auto& choice_obj : event_data_json["character"][_currentCharacterInfoDict["rare"]][_currentCharacterInfoDict["event_owner"]][umaEventNameData.event_name])
+		for (const auto& choice_obj : event_data_json["character"][m_CurrentCharacterInfoDict["rare"]][m_CurrentCharacterInfoDict["event_owner"]][umaEventNameData.event_name])
 		{
 			UmaChoice umaChoice;
 
 			umaChoice.choice_name = choice_obj["choice_name"].get<std::string>();
 			umaChoice.choice_effect = choice_obj["choice_effect"].get<std::string>();
 
-			umaEventData.umaEvent.choice_list.push_back(umaChoice);
+			umaEventData.umaEvent.choice_list.push_back(std::move(umaChoice));
 		}
 		return umaEventData;
 	}
@@ -319,20 +259,18 @@ std::variant<UmaEventData, ScenarioEventData> DataManager::GetEventDataByUmaEven
 						UmaEventData umaEventData;
 						umaEventData.umaEvent.event_name = umaEventNameData.event_name;
 						umaEventData.rare = it_rare.key();
-
 						umaEventData.event_owner = it_event_owner.key();
 
 						for (const auto& choice_obj : it_event_name.value())
 						{
 							UmaChoice umaChoice;
-
 							umaChoice.choice_name = choice_obj["choice_name"].get<std::string>();
 							umaChoice.choice_effect = choice_obj["choice_effect"].get<std::string>();
 
 							umaEventData.umaEvent.choice_list.push_back(umaChoice);
 						}
 						
-						foundEventDataList.push_back(umaEventData);
+						foundEventDataList.push_back(std::move(umaEventData));
 					}
 				}
 			}
@@ -347,9 +285,9 @@ std::variant<UmaEventData, ScenarioEventData> DataManager::GetEventDataByUmaEven
 
 		// 使用 std::max_element 找到 rare 最大的 UmaEventData
 		auto maxElement = std::max_element(foundEventDataList.begin(), foundEventDataList.end(),
-			[](const UmaEventData& event_data1, const UmaEventData& sim_data2)
+			[](const UmaEventData& sim_data1, const UmaEventData& sim_data2)
 			{
-				return event_data1.rare.size() < sim_data2.rare.size();
+				return sim_data1.rare.size() < sim_data2.rare.size();
 			}
 		);
 
@@ -371,7 +309,6 @@ std::variant<UmaEventData, ScenarioEventData> DataManager::GetEventDataByUmaEven
 					for (const auto& choice_obj : it_event_name.value())
 					{
 						UmaChoice umaChoice;
-
 						umaChoice.choice_name = choice_obj["choice_name"].get<std::string>();
 						umaChoice.choice_effect = choice_obj["choice_effect"].get<std::string>();
 
@@ -384,4 +321,16 @@ std::variant<UmaEventData, ScenarioEventData> DataManager::GetEventDataByUmaEven
 		return scenarioEventData;
 	}
 
+	return {};
+}
+
+
+UmaEventNameData DataManager::m_FindMaxSimilarityData(const std::deque<UmaEventNameData>& dataList) const
+{
+	return *std::max_element(dataList.begin(), dataList.end(),
+							 [](const UmaEventNameData& data1, const UmaEventNameData& data2)
+							 {
+								 return data1.similarity < data2.similarity;
+							 }
+	);
 }

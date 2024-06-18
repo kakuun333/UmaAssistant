@@ -1,4 +1,4 @@
-#include "Screenshot.h"
+﻿#include "Screenshot.h"
 
 #pragma region 靜態變數
 // event_title

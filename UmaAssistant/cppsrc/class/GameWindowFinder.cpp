@@ -1,4 +1,4 @@
-#include "GameWindowFinder.h"
+﻿#include "GameWindowFinder.h"
 
 #using "CSharpRuntime/UmaCSharpLibrary.dll"
 

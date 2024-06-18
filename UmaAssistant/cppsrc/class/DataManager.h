@@ -6,11 +6,12 @@
 #include <deque>
 #include <variant>
 
+
 // 3rdparty
 #include <nlohmann/json.hpp>
 using json = nlohmann::json;
 
-// util
+
 #include "../util/CharacterCompare.h"
 
 // class
@@ -19,6 +20,8 @@ using json = nlohmann::json;
 #include "data/UmaEventNameData.h"
 #include "data/ScenarioEventData.h"
 #include "data/UmaGetCharData.h"
+
+// include
 #include <singleton_mutex.hpp>
 
 // ref class
@@ -29,11 +32,42 @@ using json = nlohmann::json;
 
 class DataManager : public SingletonMutex<DataManager>
 {
+public:
+	void InitEventDataJson();
+	
+	bool SetCurrentCharacterInfoDict(std::string event_owner);
+
+	bool TryGetCurrentCharacterByList(std::deque<std::string> scanned_text_list);
+
+	UmaEventNameData GetMaxSimilarityUmaEventNameDataByList(std::deque<std::string> scanned_text_list);
+
+	std::variant<UmaEventData, ScenarioEventData> GetEventDataByUmaEventNameData(UmaEventNameData umaEventNameData);
+
+	bool TryFindScheduledRace(std::string scanned_date);
+
+	bool TryFindCurrentDate(std::string scanned_race_date);
+public:
+	inline std::map<std::string, std::string> GetCurrentCharacterInfoDict()	{ return m_CurrentCharacterInfoDict;	} const
+
+	inline std::string GetCurrentDate()	{ return m_current_date; } const
+
+	inline std::string GetCurrentCharacter() { return m_CurrentCharacterInfoDict["event_owner"];	} const
+
+	inline bool IsCurrentCharacterInfoLocked() { return m_CurrentCharacterInfoLocked; } const
+
+	inline void SetCurrentCharacterInfoLock(bool value) { m_CurrentCharacterInfoLocked = value;	}
+
+	inline void SetRaceScheduleJson(json jsonData)	{ loaded_race_schedule_json = jsonData; }
 private:
+	UmaEventNameData m_FindMaxSimilarityData(const std::deque<UmaEventNameData>& dataList) const;
+private:
+	static std::map<std::string, std::string> m_CurrentCharacterInfoDict;
+	static inline constexpr double m_SIMILAR_METRIC = 0.5;
+private:
+	bool m_CurrentCharacterInfoLocked = false;
 
-	static std::map<std::string, std::string> _currentCharacterInfoDict;
-
-	static bool _currentCharacterInfoLocked;
+	std::map<GameServerType, json> m_EventDataMap;
+	std::map<GameServerType, json> m_EventNameDataMap;
 
 	json event_data_jp_json;
 	json event_data_tw_json;
@@ -49,50 +83,4 @@ private:
 	std::string m_current_date;
 
 	std::mutex dataMutex;
-public:
-	void InitEventDataJson();
-	
-	bool SetCurrentCharacterInfoDict(std::string event_owner);
-
-	bool TryGetCurrentCharacterByList(std::deque<std::string> scanned_text_list);
-
-	UmaEventNameData GetMaxSimilarityUmaEventNameDataByList(std::deque<std::string> scanned_text_list);
-
-	std::variant<UmaEventData, ScenarioEventData> GetEventDataByUmaEventNameData(UmaEventNameData umaEventNameData);
-
-	bool TryFindScheduledRace(std::string scanned_date);
-
-	bool TryFindCurrentDate(std::string scanned_race_date);
-
-#pragma region 
-	inline std::string GetCurrentDate()
-	{
-		return m_current_date;
-	}
-
-	inline void SetRaceScheduleJson(json _json)
-	{
-		loaded_race_schedule_json = _json;
-	}
-
-	inline std::string GetCurrentCharacter()
-	{
-		return _currentCharacterInfoDict["event_owner"];
-	}
-
-	inline bool IsCurrentCharacterInfoLocked()
-	{
-		return _currentCharacterInfoLocked;
-	}
-
-	inline void SetCurrentCharacterInfoLock(bool value)
-	{
-		_currentCharacterInfoLocked = value;
-	}
-
-	inline std::map<std::string, std::string> GetCurrentCharacterInfoDict()
-	{
-		return _currentCharacterInfoDict;
-	}
-#pragma endregion
 };

@@ -1,4 +1,4 @@
-#include "ConsoleManager.h"
+﻿#include "ConsoleManager.h"
 
 
 bool ConsoleManager::_isExist = false;

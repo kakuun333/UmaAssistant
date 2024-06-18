@@ -1,4 +1,4 @@
-#include "AutoMouseClicker.h"
+﻿#include "AutoMouseClicker.h"
 
 bool AutoMouseClicker::_starting = false;
 

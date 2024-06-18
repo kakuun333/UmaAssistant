@@ -1,4 +1,4 @@
-#include "UmaTimer.h"
+﻿#include "UmaTimer.h"
 
 
 void UmaTimer::Start()

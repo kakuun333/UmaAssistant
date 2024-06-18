@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #using "control/Microsoft.Web.WebView2.Core.dll"
 #using "control/Microsoft.Web.WebView2.WinForms.dll"

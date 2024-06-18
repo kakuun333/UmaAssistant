@@ -220,12 +220,12 @@ namespace UmaAssistant
 			// 
 			this->app_name_label->AutoSize = true;
 			this->app_name_label->BackColor = System::Drawing::Color::Transparent;
-			this->app_name_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->app_name_label->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->app_name_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 																			   static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->app_name_label->Location = System::Drawing::Point(42, 7);
 			this->app_name_label->Name = L"app_name_label";
-			this->app_name_label->Size = System::Drawing::Size(41, 20);
+			this->app_name_label->Size = System::Drawing::Size(42, 24);
 			this->app_name_label->TabIndex = 26;
 			this->app_name_label->Text = L"設定";
 			// 
@@ -237,9 +237,9 @@ namespace UmaAssistant
 			this->debugMode_checkBox->FlatAppearance->CheckedBackColor = System::Drawing::Color::Black;
 			this->debugMode_checkBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 																				   static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->debugMode_checkBox->Location = System::Drawing::Point(120, 3);
+			this->debugMode_checkBox->Location = System::Drawing::Point(135, 3);
 			this->debugMode_checkBox->Name = L"debugMode_checkBox";
-			this->debugMode_checkBox->Size = System::Drawing::Size(101, 21);
+			this->debugMode_checkBox->Size = System::Drawing::Size(108, 24);
 			this->debugMode_checkBox->TabIndex = 27;
 			this->debugMode_checkBox->Text = L"Debug 模式";
 			this->debugMode_checkBox->UseVisualStyleBackColor = false;
@@ -248,12 +248,12 @@ namespace UmaAssistant
 			// 
 			this->local_server_port_label->AutoSize = true;
 			this->local_server_port_label->BackColor = System::Drawing::Color::Transparent;
-			this->local_server_port_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->local_server_port_label->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
 			this->local_server_port_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 																						static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->local_server_port_label->Location = System::Drawing::Point(3, 0);
 			this->local_server_port_label->Name = L"local_server_port_label";
-			this->local_server_port_label->Size = System::Drawing::Size(142, 17);
+			this->local_server_port_label->Size = System::Drawing::Size(156, 20);
 			this->local_server_port_label->TabIndex = 28;
 			this->local_server_port_label->Text = L"本地伺服器埠口(Port)";
 			// 
@@ -268,7 +268,7 @@ namespace UmaAssistant
 			this->serverPortTextBox->Location = System::Drawing::Point(234, 3);
 			this->serverPortTextBox->MaxLength = 5;
 			this->serverPortTextBox->Name = L"serverPortTextBox";
-			this->serverPortTextBox->Size = System::Drawing::Size(122, 16);
+			this->serverPortTextBox->Size = System::Drawing::Size(122, 20);
 			this->serverPortTextBox->TabIndex = 29;
 			this->serverPortTextBox->Text = L"12345";
 			// 
@@ -281,7 +281,7 @@ namespace UmaAssistant
 																					static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->jp_server_radio_btn->Location = System::Drawing::Point(3, 3);
 			this->jp_server_radio_btn->Name = L"jp_server_radio_btn";
-			this->jp_server_radio_btn->Size = System::Drawing::Size(54, 21);
+			this->jp_server_radio_btn->Size = System::Drawing::Size(55, 24);
 			this->jp_server_radio_btn->TabIndex = 30;
 			this->jp_server_radio_btn->TabStop = true;
 			this->jp_server_radio_btn->Text = L"日服";
@@ -291,12 +291,12 @@ namespace UmaAssistant
 			// 
 			this->game_server_type_label->AutoSize = true;
 			this->game_server_type_label->BackColor = System::Drawing::Color::Transparent;
-			this->game_server_type_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->game_server_type_label->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
 			this->game_server_type_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 																					   static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->game_server_type_label->Location = System::Drawing::Point(12, 88);
 			this->game_server_type_label->Name = L"game_server_type_label";
-			this->game_server_type_label->Size = System::Drawing::Size(92, 17);
+			this->game_server_type_label->Size = System::Drawing::Size(93, 20);
 			this->game_server_type_label->TabIndex = 32;
 			this->game_server_type_label->Text = L"遊戲伺服器：";
 			// 
@@ -308,7 +308,7 @@ namespace UmaAssistant
 																					static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->tw_server_radio_btn->Location = System::Drawing::Point(145, 3);
 			this->tw_server_radio_btn->Name = L"tw_server_radio_btn";
-			this->tw_server_radio_btn->Size = System::Drawing::Size(68, 21);
+			this->tw_server_radio_btn->Size = System::Drawing::Size(69, 24);
 			this->tw_server_radio_btn->TabIndex = 31;
 			this->tw_server_radio_btn->Text = L"繁中服";
 			this->tw_server_radio_btn->UseVisualStyleBackColor = false;
@@ -357,7 +357,7 @@ namespace UmaAssistant
 																			  static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->dmm_radio_btn->Location = System::Drawing::Point(3, 3);
 			this->dmm_radio_btn->Name = L"dmm_radio_btn";
-			this->dmm_radio_btn->Size = System::Drawing::Size(58, 21);
+			this->dmm_radio_btn->Size = System::Drawing::Size(66, 24);
 			this->dmm_radio_btn->TabIndex = 30;
 			this->dmm_radio_btn->TabStop = true;
 			this->dmm_radio_btn->Text = L"DMM";
@@ -371,7 +371,7 @@ namespace UmaAssistant
 																				   static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->emulator_radio_btn->Location = System::Drawing::Point(146, 3);
 			this->emulator_radio_btn->Name = L"emulator_radio_btn";
-			this->emulator_radio_btn->Size = System::Drawing::Size(68, 21);
+			this->emulator_radio_btn->Size = System::Drawing::Size(69, 24);
 			this->emulator_radio_btn->TabIndex = 31;
 			this->emulator_radio_btn->Text = L"模擬器";
 			this->emulator_radio_btn->UseVisualStyleBackColor = false;
@@ -380,12 +380,12 @@ namespace UmaAssistant
 			// 
 			this->window_type_label->AutoSize = true;
 			this->window_type_label->BackColor = System::Drawing::Color::Transparent;
-			this->window_type_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->window_type_label->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
 			this->window_type_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 																				  static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->window_type_label->Location = System::Drawing::Point(12, 148);
 			this->window_type_label->Name = L"window_type_label";
-			this->window_type_label->Size = System::Drawing::Size(78, 17);
+			this->window_type_label->Size = System::Drawing::Size(79, 20);
 			this->window_type_label->TabIndex = 34;
 			this->window_type_label->Text = L"視窗類型：";
 			// 
@@ -399,7 +399,7 @@ namespace UmaAssistant
 																						static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->autoMouceClick_checkBox->Location = System::Drawing::Point(3, 3);
 			this->autoMouceClick_checkBox->Name = L"autoMouceClick_checkBox";
-			this->autoMouceClick_checkBox->Size = System::Drawing::Size(83, 21);
+			this->autoMouceClick_checkBox->Size = System::Drawing::Size(84, 23);
 			this->autoMouceClick_checkBox->TabIndex = 36;
 			this->autoMouceClick_checkBox->Text = L"滑鼠連點";
 			this->autoMouceClick_checkBox->UseVisualStyleBackColor = false;
@@ -414,7 +414,7 @@ namespace UmaAssistant
 																					 static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->alwaysOnTop_checkBox->Location = System::Drawing::Point(3, 3);
 			this->alwaysOnTop_checkBox->Name = L"alwaysOnTop_checkBox";
-			this->alwaysOnTop_checkBox->Size = System::Drawing::Size(111, 21);
+			this->alwaysOnTop_checkBox->Size = System::Drawing::Size(112, 24);
 			this->alwaysOnTop_checkBox->TabIndex = 37;
 			this->alwaysOnTop_checkBox->Text = L"顯示在最上層";
 			this->alwaysOnTop_checkBox->UseVisualStyleBackColor = false;
@@ -440,9 +440,9 @@ namespace UmaAssistant
 			this->discordRpc_checkBox->FlatAppearance->CheckedBackColor = System::Drawing::Color::Black;
 			this->discordRpc_checkBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 																					static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->discordRpc_checkBox->Location = System::Drawing::Point(3, 30);
+			this->discordRpc_checkBox->Location = System::Drawing::Point(3, 33);
 			this->discordRpc_checkBox->Name = L"discordRpc_checkBox";
-			this->discordRpc_checkBox->Size = System::Drawing::Size(107, 21);
+			this->discordRpc_checkBox->Size = System::Drawing::Size(126, 24);
 			this->discordRpc_checkBox->TabIndex = 48;
 			this->discordRpc_checkBox->Text = L"Discord RPC";
 			this->discordRpc_checkBox->UseVisualStyleBackColor = false;
@@ -455,9 +455,9 @@ namespace UmaAssistant
 			this->outputLogFile_checkBox->FlatAppearance->CheckedBackColor = System::Drawing::Color::Black;
 			this->outputLogFile_checkBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 																					   static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->outputLogFile_checkBox->Location = System::Drawing::Point(120, 30);
+			this->outputLogFile_checkBox->Location = System::Drawing::Point(135, 33);
 			this->outputLogFile_checkBox->Name = L"outputLogFile_checkBox";
-			this->outputLogFile_checkBox->Size = System::Drawing::Size(111, 21);
+			this->outputLogFile_checkBox->Size = System::Drawing::Size(112, 24);
 			this->outputLogFile_checkBox->TabIndex = 38;
 			this->outputLogFile_checkBox->Text = L"輸出偵錯日誌";
 			this->outputLogFile_checkBox->UseVisualStyleBackColor = false;
@@ -485,13 +485,13 @@ namespace UmaAssistant
 																						  static_cast<System::Int32>(static_cast<System::Byte>(60)), static_cast<System::Int32>(static_cast<System::Byte>(81)));
 			this->autoMouseClickKey_textBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->autoMouseClickKey_textBox->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->autoMouseClickKey_textBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->autoMouseClickKey_textBox->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
 			this->autoMouseClickKey_textBox->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 																						  static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->autoMouseClickKey_textBox->Location = System::Drawing::Point(234, 3);
 			this->autoMouseClickKey_textBox->Name = L"autoMouseClickKey_textBox";
 			this->autoMouseClickKey_textBox->ReadOnly = true;
-			this->autoMouseClickKey_textBox->Size = System::Drawing::Size(122, 16);
+			this->autoMouseClickKey_textBox->Size = System::Drawing::Size(122, 20);
 			this->autoMouseClickKey_textBox->TabIndex = 37;
 			this->autoMouseClickKey_textBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &SettingsForm::autoMouseClickKey_textBox_KeyDown);
 			this->autoMouseClickKey_textBox->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &SettingsForm::autoMouseClickKey_textBox_MouseDown);
@@ -541,7 +541,7 @@ namespace UmaAssistant
 																						  static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->jpServerLang_jp_radio_btn->Location = System::Drawing::Point(3, 3);
 			this->jpServerLang_jp_radio_btn->Name = L"jpServerLang_jp_radio_btn";
-			this->jpServerLang_jp_radio_btn->Size = System::Drawing::Size(54, 21);
+			this->jpServerLang_jp_radio_btn->Size = System::Drawing::Size(55, 24);
 			this->jpServerLang_jp_radio_btn->TabIndex = 30;
 			this->jpServerLang_jp_radio_btn->TabStop = true;
 			this->jpServerLang_jp_radio_btn->Text = L"日文";
@@ -556,7 +556,7 @@ namespace UmaAssistant
 																						  static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->jpServerLang_tw_radio_btn->Location = System::Drawing::Point(145, 3);
 			this->jpServerLang_tw_radio_btn->Name = L"jpServerLang_tw_radio_btn";
-			this->jpServerLang_tw_radio_btn->Size = System::Drawing::Size(82, 21);
+			this->jpServerLang_tw_radio_btn->Size = System::Drawing::Size(83, 24);
 			this->jpServerLang_tw_radio_btn->TabIndex = 31;
 			this->jpServerLang_tw_radio_btn->Text = L"繁體中文";
 			this->jpServerLang_tw_radio_btn->UseVisualStyleBackColor = false;
@@ -565,12 +565,12 @@ namespace UmaAssistant
 			// 
 			this->jp_server_lang_label->AutoSize = true;
 			this->jp_server_lang_label->BackColor = System::Drawing::Color::Transparent;
-			this->jp_server_lang_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->jp_server_lang_label->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
 			this->jp_server_lang_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 																					 static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->jp_server_lang_label->Location = System::Drawing::Point(12, 208);
 			this->jp_server_lang_label->Name = L"jp_server_lang_label";
-			this->jp_server_lang_label->Size = System::Drawing::Size(106, 17);
+			this->jp_server_lang_label->Size = System::Drawing::Size(107, 20);
 			this->jp_server_lang_label->TabIndex = 42;
 			this->jp_server_lang_label->Text = L"日服文本語言：";
 			// 
@@ -598,12 +598,12 @@ namespace UmaAssistant
 			// 
 			this->scan_interval_label->AutoSize = true;
 			this->scan_interval_label->BackColor = System::Drawing::Color::Transparent;
-			this->scan_interval_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->scan_interval_label->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
 			this->scan_interval_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 																					static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->scan_interval_label->Location = System::Drawing::Point(3, 0);
 			this->scan_interval_label->Name = L"scan_interval_label";
-			this->scan_interval_label->Size = System::Drawing::Size(120, 17);
+			this->scan_interval_label->Size = System::Drawing::Size(121, 20);
 			this->scan_interval_label->TabIndex = 28;
 			this->scan_interval_label->Text = L"辨識事件間隔時間";
 			// 
@@ -618,7 +618,7 @@ namespace UmaAssistant
 			this->scanInterval_textBox->Location = System::Drawing::Point(234, 3);
 			this->scanInterval_textBox->MaxLength = 4;
 			this->scanInterval_textBox->Name = L"scanInterval_textBox";
-			this->scanInterval_textBox->Size = System::Drawing::Size(67, 16);
+			this->scanInterval_textBox->Size = System::Drawing::Size(67, 20);
 			this->scanInterval_textBox->TabIndex = 29;
 			this->scanInterval_textBox->Text = L"100";
 			// 
@@ -626,12 +626,12 @@ namespace UmaAssistant
 			// 
 			this->scan_interval_ms_label->AutoSize = true;
 			this->scan_interval_ms_label->BackColor = System::Drawing::Color::Transparent;
-			this->scan_interval_ms_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->scan_interval_ms_label->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
 			this->scan_interval_ms_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 																					   static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->scan_interval_ms_label->Location = System::Drawing::Point(307, 0);
 			this->scan_interval_ms_label->Name = L"scan_interval_ms_label";
-			this->scan_interval_ms_label->Size = System::Drawing::Size(36, 17);
+			this->scan_interval_ms_label->Size = System::Drawing::Size(37, 20);
 			this->scan_interval_ms_label->TabIndex = 45;
 			this->scan_interval_ms_label->Text = L"毫秒";
 			// 
@@ -643,7 +643,7 @@ namespace UmaAssistant
 			this->default_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
 																									 static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
 			this->default_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->default_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->default_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->default_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 																			static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->default_btn->Location = System::Drawing::Point(268, 428);
@@ -660,12 +660,12 @@ namespace UmaAssistant
 			// 
 			this->label7->AutoSize = true;
 			this->label7->BackColor = System::Drawing::Color::Transparent;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->label7->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
 			this->label7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 																	   static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->label7->Location = System::Drawing::Point(12, 32);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(162, 17);
+			this->label7->Size = System::Drawing::Size(163, 20);
 			this->label7->TabIndex = 46;
 			this->label7->Text = L"軟體語言／ソフト言語：";
 			// 
@@ -695,7 +695,7 @@ namespace UmaAssistant
 																						   static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->software_lang_jp_radio_btn->Location = System::Drawing::Point(3, 3);
 			this->software_lang_jp_radio_btn->Name = L"software_lang_jp_radio_btn";
-			this->software_lang_jp_radio_btn->Size = System::Drawing::Size(68, 21);
+			this->software_lang_jp_radio_btn->Size = System::Drawing::Size(69, 24);
 			this->software_lang_jp_radio_btn->TabIndex = 30;
 			this->software_lang_jp_radio_btn->Text = L"日本語";
 			this->software_lang_jp_radio_btn->UseVisualStyleBackColor = false;
@@ -709,7 +709,7 @@ namespace UmaAssistant
 																						   static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->software_lang_tw_radio_btn->Location = System::Drawing::Point(143, 3);
 			this->software_lang_tw_radio_btn->Name = L"software_lang_tw_radio_btn";
-			this->software_lang_tw_radio_btn->Size = System::Drawing::Size(82, 21);
+			this->software_lang_tw_radio_btn->Size = System::Drawing::Size(83, 24);
 			this->software_lang_tw_radio_btn->TabIndex = 31;
 			this->software_lang_tw_radio_btn->TabStop = true;
 			this->software_lang_tw_radio_btn->Text = L"繁體中文";
@@ -723,7 +723,7 @@ namespace UmaAssistant
 			this->test_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
 																								  static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
 			this->test_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->test_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->test_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->test_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 																		 static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->test_btn->Location = System::Drawing::Point(110, 428);
@@ -744,7 +744,7 @@ namespace UmaAssistant
 			this->screenshotPreview_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
 																											   static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
 			this->screenshotPreview_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->screenshotPreview_btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->screenshotPreview_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->screenshotPreview_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
 																					  static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->screenshotPreview_btn->Location = System::Drawing::Point(9, 428);
@@ -781,7 +781,7 @@ namespace UmaAssistant
 			this->Controls->Add(this->icon_pictureBox);
 			this->Controls->Add(this->minimize_btn);
 			this->Controls->Add(this->close_form_btn);
-			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 10));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"SettingsForm";

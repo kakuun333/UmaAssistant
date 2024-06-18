@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 using namespace System;
 
 // 定義一個委派(delegate)，它將用作回調(callback)的類型
