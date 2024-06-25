@@ -6,8 +6,7 @@
 // Windows API
 #include <vcclr.h>
 
-// util
-#include "../util/CharacterConvert.h"
+#include <Util/CharacterConvert.h>
 
 
 namespace global

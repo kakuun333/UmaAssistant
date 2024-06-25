@@ -1,19 +1,13 @@
 ﻿#include "SettingsForm.h"
 
-// enum
-#include "cppsrc/enum/SoftwareLanguageType.h"
-#include "cppsrc/enum/GameServerType.h"
-
-// class
-#include "cppsrc/class/AutoMouseClicker.h"
-#include "cppsrc/class/Screenshot.h"
-
-#include "cppsrc/class/Config.h"
-#include "cppsrc/class/ConsoleManager.h"
-#include "cppsrc/class/DataManager.h"
-
-// global
-#include "cppsrc/global/form.h"
+#include <Enum/SoftwareLanguageType.h>
+#include <Enum/GameServerType.h>
+#include <Manager/MouseManager.h>
+#include <Manager/ConsoleManager.h>
+#include <Manager/DataManager.h>
+#include <Screenshot.h>
+#include <Config.h>
+#include <Global/form.h>
 
 
 #using "CSharpRuntime/UmaCSharpLibrary.dll"
@@ -118,17 +112,17 @@ namespace UmaAssistant
 		autoMouseClickKey_textBox->Text = buttonName;
 
 
-		AutoMouseClicker* autoMouseClicker = AutoMouseClicker::GetInstance();
+		MouseManager* mouseManager = MouseManager::GetInstance();
 
 		switch (Config::GetInstance()->AutoMouseClick)
 		{
 		case true:
 			autoMouceClick_checkBox->Checked = true;
-			autoMouseClicker->Start();
+			mouseManager->Start();
 			break;
 		case false:
 			autoMouceClick_checkBox->Checked = false;
-			autoMouseClicker->Stop();
+			mouseManager->Stop();
 			break;
 		}
 #pragma endregion
@@ -469,16 +463,16 @@ namespace UmaAssistant
 	void SettingsForm::autoMouceClick_checkBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e)
 	{
 		CheckBox^ checkbox = dynamic_cast<CheckBox^>(sender);
-		AutoMouseClicker* autoMouseClicker = AutoMouseClicker::GetInstance();
+		MouseManager* mouseManager = MouseManager::GetInstance();
 
 		if (checkbox->Checked)
 		{
-			autoMouseClicker->Start();
+			mouseManager->Start();
 			Config::GetInstance()->AutoMouseClick = checkbox->Checked;
 		}
 		else
 		{
-			autoMouseClicker->Stop();
+			mouseManager->Stop();
 			Config::GetInstance()->AutoMouseClick = checkbox->Checked;
 		}
 

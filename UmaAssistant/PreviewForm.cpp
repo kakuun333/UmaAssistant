@@ -4,8 +4,7 @@
 #include <map>
 #include <string>
 
-// class
-#include "cppsrc/class/GameWindowFinder.h"
+#include <Manager/GameWindowManager.h>
 
 // global
 //#include "global/global.h"
@@ -35,16 +34,16 @@ namespace UmaAssistant
 		{
 			System::String^ selectedItem = dynamic_cast<System::String^>(window_listbox->SelectedItem);
 
-			GameWindowFinder* windowFinder = GameWindowFinder::GetInstance();
+			GameWindowManager* gameWindowManager = GameWindowManager::GetInstance();
 
-			std::map<std::string, HWND> windowDict = windowFinder->GetWindowDict();
+			std::map<std::string, HWND> windowDict = gameWindowManager->GetWindowDict();
 
 			std::string windowName = util::systemStr2std(selectedItem);
 
 			if (windowDict[windowName])
 			{
-				windowFinder->SetCurrentGameWindow(windowName);
-				windowFinder->SetCurrentGameWindowName(windowName);
+				gameWindowManager->SetCurrentGameWindow(windowName);
+				gameWindowManager->SetCurrentGameWindowName(windowName);
 
 				Config::GetInstance()->GameWindowName = windowName;
 				Config::GetInstance()->WriteToJson();

@@ -85,6 +85,7 @@
     <EnableManagedIncrementalBuild>false</EnableManagedIncrementalBuild>
     <CopyCppRuntimeToOutputDir>false</CopyCppRuntimeToOutputDir>
     <CopyLocalProjectReference>true</CopyLocalProjectReference>
+    <IntDir>$(ShortProjectName)\Intermediate\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <VcpkgInstalledDir>
@@ -138,7 +139,7 @@
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)cppsrc\include;$(ProjectDir)vcpkg\installed\x64-windows\include;D:\Libraries\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)vcpkg\installed\x64-windows\include;D:\Libraries\opencv\build\include;$(ProjectDir);$(ProjectDir)cppsrc;$(ProjectDir)cppsrc\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <Optimization>Full</Optimization>
@@ -166,7 +167,7 @@ xcopy /E /C /Y $(SolutionDir)UmaMisc\ $(OutDir)UmaMisc\
 
 xcopy /E /C /Y $(SolutionDir)tessdata\ $(OutDir)tessdata\
 xcopy /E /C /Y $(SolutionDir)CSharpRuntime\*.dll $(OutDir)CSharpRuntime\*.dll
-xcopy /E /C /Y $(SolutionDir)cppdll\ $(OutDir)
+xcopy /E /C /Y $(SolutionDir)CppDLL\ $(OutDir)
 
 mkdir $(OutDir)UmaTemp\
 
@@ -196,86 +197,84 @@ move $(OutDir)WebView2Loader.dll $(OutDir)CSharpRuntime\WebView2Loader.dll</Comm
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cppsrc\class\AutoMouseClicker.cpp" />
-    <ClCompile Include="cppsrc\class\Config.cpp" />
-    <ClCompile Include="cppsrc\class\ConsoleManager.cpp" />
-    <ClCompile Include="cppsrc\class\DataManager.cpp" />
-    <ClCompile Include="cppsrc\class\data\ScenarioEventData.cpp" />
-    <ClCompile Include="cppsrc\class\data\UmaEventData.cpp" />
-    <ClCompile Include="cppsrc\class\data\UmaEventNameData.cpp" />
-    <ClCompile Include="cppsrc\class\FileManager.cpp" />
-    <ClCompile Include="cppsrc\class\GameWindowFinder.cpp" />
-    <ClCompile Include="cppsrc\class\ref\eventtest.cpp" />
-    <ClCompile Include="cppsrc\class\ref\FormController.cpp" />
-    <ClCompile Include="cppsrc\class\ref\FormDesigner.cpp" />
-    <ClCompile Include="cppsrc\class\ref\LocalServer.cpp" />
-    <ClCompile Include="cppsrc\class\ref\WebViewManager.cpp" />
-    <ClCompile Include="cppsrc\class\Scanner.cpp" />
-    <ClCompile Include="cppsrc\class\Screenshot.cpp" />
-    <ClCompile Include="cppsrc\class\UmaLog.cpp" />
-    <ClCompile Include="cppsrc\class\UmaTimer.cpp" />
-    <ClCompile Include="cppsrc\global\form.cpp" />
-    <ClCompile Include="cppsrc\global\path.cpp" />
-    <ClCompile Include="cppsrc\global\umaswitch.cpp" />
-    <ClCompile Include="cppsrc\util\CharacterCombine.cpp" />
-    <ClCompile Include="cppsrc\util\CharacterCompare.cpp" />
-    <ClCompile Include="cppsrc\util\CharacterConvert.cpp" />
-    <ClCompile Include="cppsrc\util\CharacterFilter.cpp" />
-    <ClCompile Include="cppsrc\util\Constants.cpp" />
-    <ClCompile Include="cppsrc\util\FormControl.cpp" />
+    <ClCompile Include="CppSrc\Manager\MouseManager.cpp" />
+    <ClCompile Include="CppSrc\Config.cpp" />
+    <ClCompile Include="CppSrc\Manager\ConsoleManager.cpp" />
+    <ClCompile Include="CppSrc\Manager\DataManager.cpp" />
+    <ClCompile Include="CppSrc\UmaData\ScenarioEventData.cpp" />
+    <ClCompile Include="CppSrc\UmaData\UmaEventData.cpp" />
+    <ClCompile Include="CppSrc\UmaData\UmaEventNameData.cpp" />
+    <ClCompile Include="CppSrc\Manager\FileManager.cpp" />
+    <ClCompile Include="CppSrc\Manager\GameWindowManager.cpp" />
+    <ClCompile Include="CppSrc\RefManager\FormController.cpp" />
+    <ClCompile Include="CppSrc\RefManager\FormDesigner.cpp" />
+    <ClCompile Include="CppSrc\RefManager\LocalServerManager.cpp" />
+    <ClCompile Include="CppSrc\RefManager\WebViewManager.cpp" />
+    <ClCompile Include="CppSrc\Scanner.cpp" />
+    <ClCompile Include="CppSrc\Screenshot.cpp" />
+    <ClCompile Include="CppSrc\UmaLog.cpp" />
+    <ClCompile Include="CppSrc\UmaTimer.cpp" />
+    <ClCompile Include="CppSrc\Global\form.cpp" />
+    <ClCompile Include="CppSrc\Global\path.cpp" />
+    <ClCompile Include="CppSrc\Global\umaswitch.cpp" />
+    <ClCompile Include="CppSrc\Util\CharacterCombine.cpp" />
+    <ClCompile Include="CppSrc\Util\CharacterCompare.cpp" />
+    <ClCompile Include="CppSrc\Util\CharacterConvert.cpp" />
+    <ClCompile Include="CppSrc\Util\CharacterFilter.cpp" />
+    <ClCompile Include="CppSrc\Util\Constants.cpp" />
+    <ClCompile Include="CppSrc\Util\FormControl.cpp" />
     <ClCompile Include="NotificationForm.cpp" />
     <ClCompile Include="PreviewForm.cpp" />
-    <ClCompile Include="cppsrc\class\ref\RefSingleton.cpp" />
+    <ClCompile Include="CppSrc\RefManager\RefSingleton.cpp" />
     <ClCompile Include="RaceScheduleForm.cpp" />
     <ClCompile Include="SettingsForm.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="UmaForm.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cppsrc\class\AutoMouseClicker.h" />
-    <ClInclude Include="cppsrc\class\Config.h" />
-    <ClInclude Include="cppsrc\class\ConsoleManager.h" />
-    <ClInclude Include="cppsrc\class\DataManager.h" />
-    <ClInclude Include="cppsrc\class\data\ScenarioEventData.h" />
-    <ClInclude Include="cppsrc\class\data\UmaEventData.h" />
-    <ClInclude Include="cppsrc\class\data\UmaEventNameData.h" />
-    <ClInclude Include="cppsrc\class\data\UmaGetCharData.h" />
-    <ClInclude Include="cppsrc\class\FileManager.h" />
-    <ClInclude Include="cppsrc\class\GameWindowFinder.h" />
-    <ClInclude Include="cppsrc\include\singleton_mutex.hpp" />
-    <ClInclude Include="cppsrc\class\ref\eventtest.h" />
-    <ClInclude Include="cppsrc\class\ref\FormController.h" />
-    <ClInclude Include="cppsrc\class\ref\FormDesigner.h" />
-    <ClInclude Include="cppsrc\class\ref\LocalServer.h" />
-    <ClInclude Include="cppsrc\class\ref\WebViewManager.h" />
-    <ClInclude Include="cppsrc\class\Scanner.h" />
-    <ClInclude Include="cppsrc\class\Screenshot.h" />
-    <ClInclude Include="cppsrc\class\UmaLog.h" />
-    <ClInclude Include="cppsrc\class\UmaTimer.h" />
-    <ClInclude Include="cppsrc\enum\FilePathType.h" />
-    <ClInclude Include="cppsrc\enum\FileType.h" />
-    <ClInclude Include="cppsrc\enum\GameServerType.h" />
-    <ClInclude Include="cppsrc\enum\GameWindowType.h" />
-    <ClInclude Include="cppsrc\enum\ImageType.h" />
-    <ClInclude Include="cppsrc\enum\JpServerLangType.h" />
-    <ClInclude Include="cppsrc\enum\SoftwareLanguageType.h" />
-    <ClInclude Include="cppsrc\enum\UmaEventDataType.h" />
-    <ClInclude Include="cppsrc\global\form.h" />
-    <ClInclude Include="cppsrc\global\path.h" />
-    <ClInclude Include="cppsrc\global\umaswitch.h" />
-    <ClInclude Include="cppsrc\util\CharacterCombine.h" />
-    <ClInclude Include="cppsrc\util\CharacterCompare.h" />
-    <ClInclude Include="cppsrc\util\CharacterConvert.h" />
-    <ClInclude Include="cppsrc\util\CharacterFilter.h" />
-    <ClInclude Include="cppsrc\util\Constants.h" />
-    <ClInclude Include="cppsrc\util\FormControl.h" />
+    <ClInclude Include="CppSrc\Manager\MouseManager.h" />
+    <ClInclude Include="CppSrc\Config.h" />
+    <ClInclude Include="CppSrc\Manager\ConsoleManager.h" />
+    <ClInclude Include="CppSrc\Manager\DataManager.h" />
+    <ClInclude Include="CppSrc\UmaData\ScenarioEventData.h" />
+    <ClInclude Include="CppSrc\UmaData\UmaEventData.h" />
+    <ClInclude Include="CppSrc\UmaData\UmaEventNameData.h" />
+    <ClInclude Include="CppSrc\UmaData\UmaGetCharData.h" />
+    <ClInclude Include="CppSrc\Manager\FileManager.h" />
+    <ClInclude Include="CppSrc\Manager\GameWindowManager.h" />
+    <ClInclude Include="CppSrc\include\singleton_mutex.hpp" />
+    <ClInclude Include="CppSrc\RefManager\FormController.h" />
+    <ClInclude Include="CppSrc\RefManager\FormDesigner.h" />
+    <ClInclude Include="CppSrc\RefManager\LocalServerManager.h" />
+    <ClInclude Include="CppSrc\RefManager\WebViewManager.h" />
+    <ClInclude Include="CppSrc\Scanner.h" />
+    <ClInclude Include="CppSrc\Screenshot.h" />
+    <ClInclude Include="CppSrc\UmaLog.h" />
+    <ClInclude Include="CppSrc\UmaTimer.h" />
+    <ClInclude Include="CppSrc\Enum\FilePathType.h" />
+    <ClInclude Include="CppSrc\Enum\FileType.h" />
+    <ClInclude Include="CppSrc\Enum\GameServerType.h" />
+    <ClInclude Include="CppSrc\Enum\GameWindowType.h" />
+    <ClInclude Include="CppSrc\Enum\ImageType.h" />
+    <ClInclude Include="CppSrc\Enum\JpServerLangType.h" />
+    <ClInclude Include="CppSrc\Enum\SoftwareLanguageType.h" />
+    <ClInclude Include="CppSrc\Enum\UmaEventDataType.h" />
+    <ClInclude Include="CppSrc\Global\form.h" />
+    <ClInclude Include="CppSrc\Global\path.h" />
+    <ClInclude Include="CppSrc\Global\umaswitch.h" />
+    <ClInclude Include="CppSrc\Util\CharacterCombine.h" />
+    <ClInclude Include="CppSrc\Util\CharacterCompare.h" />
+    <ClInclude Include="CppSrc\Util\CharacterConvert.h" />
+    <ClInclude Include="CppSrc\Util\CharacterFilter.h" />
+    <ClInclude Include="CppSrc\Util\Constants.h" />
+    <ClInclude Include="CppSrc\Util\FormControl.h" />
     <ClInclude Include="NotificationForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PreviewForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="cppsrc\class\ref\RefSingleton.h" />
+    <ClInclude Include="CppSrc\RefManager\RefSingleton.h" />
     <ClInclude Include="RaceScheduleForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -306,6 +305,9 @@ move $(OutDir)WebView2Loader.dll $(OutDir)CSharpRuntime\WebView2Loader.dll</Comm
     <ResourceCompile Include="UmaAssistant.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CSharpControls\Microsoft.Web.WebView2.Core.dll" />
+    <None Include="CSharpControls\Microsoft.Web.WebView2.WinForms.dll" />
+    <None Include="CSharpControls\RoundedButton.dll" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -12,20 +12,18 @@ namespace fs = std::filesystem;
 #include <nlohmann/json.hpp>
 using json = nlohmann::json;
 
-// class
-#include "cppsrc/class/DataManager.h"
-#include "cppsrc/class/Scanner.h"
-#include "cppsrc/class/GameWindowFinder.h"
-#include "cppsrc/class/FileManager.h"
-#include "cppsrc/class/ConsoleManager.h"
-#include "cppsrc/class/Config.h"
-#include "cppsrc/class/UmaLog.h"
+#include <Manager/DataManager.h>
+#include <Manager/GameWindowManager.h>
+#include <Manager/FileManager.h>
+#include <Manager/ConsoleManager.h>
 
-// ref class
-#include "cppsrc/class/ref/LocalServer.h"
+#include <Scanner.h>
+#include <Config.h>
+#include <UmaLog.h>
 
-// global
-#include "cppsrc/global/form.h"
+#include <RefManager/LocalServerManager.h>
+
+#include <Global/form.h>
 
 
 // .NET
@@ -68,7 +66,7 @@ int main(array<String^>^ args)
 #pragma endregion
 #pragma region 啟動本地伺服器
 	System::String^ port = util::stdStr2system(Config::GetInstance()->LocalServer["Port"]);
-	LocalServer::Instance->Start(port);
+	LocalServerManager::Instance->Start(port);
 #pragma endregion
 #pragma region 初始化 Form
 	Application::EnableVisualStyles();
@@ -138,12 +136,12 @@ int main(array<String^>^ args)
 		break;
 	}
 #pragma endregion
-#pragma region 初始化 GameWindowFinder
+#pragma region 初始化 GameWindowManager
 	/*
-	* 初始化 UmaForm 之後才可以初始化 GameWindowFinder
+	* 初始化 UmaForm 之後才可以初始化 GameWindowManager
 	* 因為 WindowFinder 需要與 UmaForm 的物件互動
 	*/
-	GameWindowFinder::GetInstance()->CreateFindGameWindowThread();
+	GameWindowManager::GetInstance()->CreateFindGameWindowThread();
 #pragma endregion
 #pragma region 初始化語言
 	switch (Config::GetInstance()->SoftwareLanguage)
@@ -161,7 +159,7 @@ int main(array<String^>^ args)
 #pragma endregion
 #pragma region 釋放資源
 	// 中止 LocalServer
-	LocalServer::Instance->Stop();
+	LocalServerManager::Instance->Stop();
 
 	// 關閉 Console
 	ConsoleManager::GetInstance()->Disable();

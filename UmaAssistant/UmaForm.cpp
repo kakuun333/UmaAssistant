@@ -3,16 +3,13 @@
 // util
 #include "cppsrc/util/CharacterConvert.h"
 
-// class
-#include "cppsrc/class/Config.h"
-#include "cppsrc/class/Scanner.h"
-#include "cppsrc/class/DataManager.h"
-#include "cppsrc/class/ConsoleManager.h"
-#include "cppsrc/class/ref/WebViewManager.h"
-#include "cppsrc/class/ref/LocalServer.h"
-
-// global
-#include "cppsrc/global/umaswitch.h"
+#include <Config.h>
+#include <Scanner.h>
+#include <Manager/DataManager.h>
+#include <Manager/ConsoleManager.h>
+#include <RefManager/WebViewManager.h>
+#include <RefManager/LocalServerManager.h>
+#include <Global/umaswitch.h>
 
 #using "CSharpRuntime/UmaCSharpLibrary.dll"
 
@@ -225,7 +222,7 @@ namespace UmaAssistant
 	System::Void UmaForm::OnApplicationExit(System::Object^ sender, EventArgs^ e)
 	{
 		// 中止 LocalServer
-		LocalServer::Instance->Stop();
+		LocalServerManager::Instance->Stop();
 
 		// 關閉 Console
 		ConsoleManager::GetInstance()->Disable();
@@ -290,7 +287,7 @@ namespace UmaAssistant
 	System::Void UmaForm::select_window_btn_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		global::form::previewForm->window_listbox->Items->Clear();
-		GameWindowFinder::GetInstance()->EnumWindow();
+		GameWindowManager::GetInstance()->EnumWindow();
 		global::form::previewForm->Show();
 	}
 

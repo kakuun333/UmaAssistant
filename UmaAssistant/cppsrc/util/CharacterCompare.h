@@ -9,16 +9,12 @@
 #include <nlohmann/json.hpp>
 using json = nlohmann::json;
 
-// class
-#include "../class/FileManager.h"
-
-// global
-#include "../global/form.h"
-#include "../global/path.h"
-
-// util
 #include "CharacterFilter.h"
 #include "Constants.h"
+
+#include <Manager/FileManager.h>
+#include <Global/form.h>
+#include <Global/path.h>
 
 namespace util
 {

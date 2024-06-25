@@ -4,11 +4,11 @@
 #include <vcclr.h>
 
 // WinForm
-#include "../../UmaForm.h"
-#include "../../SettingsForm.h"
-#include "../../PreviewForm.h"
-#include "../../RaceScheduleForm.h"
-#include "../../NotificationForm.h"
+#include <UmaForm.h>
+#include <SettingsForm.h>
+#include <PreviewForm.h>
+#include <RaceScheduleForm.h>
+#include <NotificationForm.h>
 
 namespace global
 {

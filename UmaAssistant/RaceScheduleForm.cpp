@@ -1,17 +1,12 @@
 ﻿#include "RaceScheduleForm.h"
 
-// class
-#include "cppsrc/class/Config.h"
-
-// util
-#include "cppsrc/util/CharacterConvert.h"
-
-
+#include <Config.h>
+#include <Util/CharacterConvert.h>
 
 #using "CSharpRuntime/UmaCSharpLibrary.dll"
 
-using namespace System::Collections::Generic;
 
+using namespace System::Collections::Generic;
 
 namespace UmaAssistant
 {

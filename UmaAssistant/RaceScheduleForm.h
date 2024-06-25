@@ -1,7 +1,7 @@
 ﻿#pragma once
 
-#using "control/Microsoft.Web.WebView2.Core.dll"
-#using "control/Microsoft.Web.WebView2.WinForms.dll"
+#using "CSharpControls/Microsoft.Web.WebView2.Core.dll"
+#using "CSharpControls/Microsoft.Web.WebView2.WinForms.dll"
 using namespace Microsoft::Web::WebView2::Core;
 using namespace Microsoft::Web::WebView2::WinForms;
 

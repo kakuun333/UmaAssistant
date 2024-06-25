@@ -220,12 +220,12 @@ namespace UmaAssistant
 			// 
 			this->app_name_label->AutoSize = true;
 			this->app_name_label->BackColor = System::Drawing::Color::Transparent;
-			this->app_name_label->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
+			this->app_name_label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->app_name_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
 																			   static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->app_name_label->Location = System::Drawing::Point(42, 7);
 			this->app_name_label->Name = L"app_name_label";
-			this->app_name_label->Size = System::Drawing::Size(42, 24);
+			this->app_name_label->Size = System::Drawing::Size(41, 20);
 			this->app_name_label->TabIndex = 26;
 			this->app_name_label->Text = L"設定";
 			// 
