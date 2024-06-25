@@ -1,7 +1,7 @@
 ﻿#include "DataManager.h"
 
 
-#using "CSharpRuntime/UmaCSharpLibrary.dll"
+#using "CSharpDLL/UmaCSharpLibrary.dll"
 
 std::map<std::string, std::string> DataManager::m_CurrentCharacterInfoDict =
 {

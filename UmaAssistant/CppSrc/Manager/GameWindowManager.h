@@ -22,7 +22,7 @@
 #include <Config.h>
 #include <Global/form.h>
 
-#using "CSharpRuntime/UmaCSharpLibrary.dll"
+#using "CSharpDLL/UmaCSharpLibrary.dll"
 
 const std::string NULL_GAME_WINDOW_NAME = "NULL_GAME_WINDOW_NAME_UMA_ASSISTANT";
 

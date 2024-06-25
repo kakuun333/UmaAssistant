@@ -11,7 +11,7 @@
 #include <RefManager/LocalServerManager.h>
 #include <Global/umaswitch.h>
 
-#using "CSharpRuntime/UmaCSharpLibrary.dll"
+#using "CSharpDLL/UmaCSharpLibrary.dll"
 
 using namespace Microsoft::Web::WebView2::Core;
 using namespace Microsoft::Web::WebView2::WinForms;
@@ -244,7 +244,7 @@ namespace UmaAssistant
 
 		if (!global::umaswitch::Scanning)
 		{
-			if (!Scanner::IsInited())
+			if (!scanner->IsInited())
 			{
 				umalog->print("[UmaForm] Scanner 尚未完成初始化！");
 				return;

@@ -2,7 +2,7 @@
 
 #include <Global/form.h>
 
-#using "CSharpRuntime/Newtonsoft.Json.dll"
+#using "CSharpDLL/Newtonsoft.Json.dll"
 using namespace Newtonsoft::Json;
 using namespace Microsoft::Web::WebView2::WinForms;
 

@@ -3,7 +3,7 @@
 #include <Config.h>
 #include <Util/CharacterConvert.h>
 
-#using "CSharpRuntime/UmaCSharpLibrary.dll"
+#using "CSharpDLL/UmaCSharpLibrary.dll"
 
 
 using namespace System::Collections::Generic;

@@ -1,11 +1,11 @@
 ﻿#pragma once
 
-#using "CSharpControls/Microsoft.Web.WebView2.Core.dll"
-#using "CSharpControls/Microsoft.Web.WebView2.WinForms.dll"
+#using "CSharpDLL/Microsoft.Web.WebView2.Core.dll"
+#using "CSharpDLL/Microsoft.Web.WebView2.WinForms.dll"
 using namespace Microsoft::Web::WebView2::Core;
 using namespace Microsoft::Web::WebView2::WinForms;
 
-//#using "control/UmaCustomControl.RoundedButton.dll"
+#using "CSharpDLL/RoundedButton.dll"
 
 namespace UmaAssistant
 {
@@ -26,6 +26,8 @@ namespace UmaAssistant
 	public: Microsoft::Web::WebView2::WinForms::WebView2^ choiceWebView2;
 	public: Microsoft::Web::WebView2::WinForms::WebView2^ characterNameWebView2;
 	private: UmaCustomControl::RoundedButton^ raceSchedule_btn;
+	private: System::Windows::Forms::Label^ app_name_label;
+
 
 	public: Microsoft::Web::WebView2::WinForms::WebView2^ selectCharacterWebView2;
 
@@ -62,7 +64,7 @@ namespace UmaAssistant
 
 	private: UmaCustomControl::RoundedButton^ clean_current_character_btn;
 	public: System::Windows::Forms::Label^ game_window_status_label;
-	private: System::Windows::Forms::Label^ app_name_label;
+
 	private: UmaCustomControl::RoundedButton^ select_window_btn;
 	private: System::Windows::Forms::Label^ version_label;
 	public: UmaCustomControl::RoundedButton^ select_character_btn;
@@ -85,7 +87,6 @@ namespace UmaAssistant
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
 			this->clean_current_character_btn = (gcnew UmaCustomControl::RoundedButton());
 			this->game_window_status_label = (gcnew System::Windows::Forms::Label());
-			this->app_name_label = (gcnew System::Windows::Forms::Label());
 			this->select_window_btn = (gcnew UmaCustomControl::RoundedButton());
 			this->version_label = (gcnew System::Windows::Forms::Label());
 			this->select_character_btn = (gcnew UmaCustomControl::RoundedButton());
@@ -94,6 +95,7 @@ namespace UmaAssistant
 			this->characterNameWebView2 = (gcnew Microsoft::Web::WebView2::WinForms::WebView2());
 			this->selectCharacterWebView2 = (gcnew Microsoft::Web::WebView2::WinForms::WebView2());
 			this->raceSchedule_btn = (gcnew UmaCustomControl::RoundedButton());
+			this->app_name_label = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->icon_pictureBox))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->choiceWebView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->characterNameWebView2))->BeginInit();
@@ -129,11 +131,11 @@ namespace UmaAssistant
 			this->close_form_btn->BackColor = System::Drawing::Color::Transparent;
 			this->close_form_btn->FlatAppearance->BorderSize = 0;
 			this->close_form_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(125)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+																										static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->close_form_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->close_form_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->close_form_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
-				static_cast<System::Int32>(static_cast<System::Byte>(151)));
+																			   static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->close_form_btn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"close_form_btn.Image")));
 			this->close_form_btn->Location = System::Drawing::Point(521, 0);
 			this->close_form_btn->Name = L"close_form_btn";
@@ -150,11 +152,11 @@ namespace UmaAssistant
 			this->minimize_btn->BackColor = System::Drawing::Color::Transparent;
 			this->minimize_btn->FlatAppearance->BorderSize = 0;
 			this->minimize_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
-				static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
+																									  static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
 			this->minimize_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->minimize_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->minimize_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
-				static_cast<System::Int32>(static_cast<System::Byte>(151)));
+																			 static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->minimize_btn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"minimize_btn.Image")));
 			this->minimize_btn->Location = System::Drawing::Point(476, 0);
 			this->minimize_btn->Name = L"minimize_btn";
@@ -168,15 +170,15 @@ namespace UmaAssistant
 			// settings_btn
 			// 
 			this->settings_btn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)), static_cast<System::Int32>(static_cast<System::Byte>(61)),
-				static_cast<System::Int32>(static_cast<System::Byte>(81)));
+																			 static_cast<System::Int32>(static_cast<System::Byte>(81)));
 			this->settings_btn->CausesValidation = false;
 			this->settings_btn->FlatAppearance->BorderSize = 0;
 			this->settings_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
-				static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
+																									  static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
 			this->settings_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->settings_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->settings_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
-				static_cast<System::Int32>(static_cast<System::Byte>(151)));
+																			 static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->settings_btn->Location = System::Drawing::Point(185, 43);
 			this->settings_btn->Name = L"settings_btn";
 			this->settings_btn->Radius = 10;
@@ -190,14 +192,14 @@ namespace UmaAssistant
 			// scan_btn
 			// 
 			this->scan_btn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)), static_cast<System::Int32>(static_cast<System::Byte>(61)),
-				static_cast<System::Int32>(static_cast<System::Byte>(81)));
+																		 static_cast<System::Int32>(static_cast<System::Byte>(81)));
 			this->scan_btn->FlatAppearance->BorderSize = 0;
 			this->scan_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
-				static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
+																								  static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
 			this->scan_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->scan_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->scan_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
-				static_cast<System::Int32>(static_cast<System::Byte>(151)));
+																		 static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->scan_btn->Location = System::Drawing::Point(9, 43);
 			this->scan_btn->Name = L"scan_btn";
 			this->scan_btn->Radius = 10;
@@ -216,14 +218,14 @@ namespace UmaAssistant
 			// clean_current_character_btn
 			// 
 			this->clean_current_character_btn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)),
-				static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(81)));
+																							static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(81)));
 			this->clean_current_character_btn->FlatAppearance->BorderSize = 0;
 			this->clean_current_character_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
-				static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
+																													 static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
 			this->clean_current_character_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->clean_current_character_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->clean_current_character_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
-				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
+																							static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->clean_current_character_btn->Location = System::Drawing::Point(366, 44);
 			this->clean_current_character_btn->Name = L"clean_current_character_btn";
 			this->clean_current_character_btn->Radius = 10;
@@ -247,30 +249,17 @@ namespace UmaAssistant
 			this->game_window_status_label->TabIndex = 8;
 			this->game_window_status_label->Text = L"未找到遊戲視窗";
 			// 
-			// app_name_label
-			// 
-			this->app_name_label->Anchor = System::Windows::Forms::AnchorStyles::Left;
-			this->app_name_label->AutoSize = true;
-			this->app_name_label->BackColor = System::Drawing::Color::Transparent;
-			this->app_name_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
-				static_cast<System::Int32>(static_cast<System::Byte>(151)));
-			this->app_name_label->Location = System::Drawing::Point(36, 2);
-			this->app_name_label->Name = L"app_name_label";
-			this->app_name_label->Size = System::Drawing::Size(123, 20);
-			this->app_name_label->TabIndex = 25;
-			this->app_name_label->Text = L"UmaAssistant";
-			// 
 			// select_window_btn
 			// 
 			this->select_window_btn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)),
-				static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(81)));
+																				  static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(81)));
 			this->select_window_btn->FlatAppearance->BorderSize = 0;
 			this->select_window_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
-				static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
+																										   static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
 			this->select_window_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->select_window_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->select_window_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
-				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
+																				  static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->select_window_btn->Location = System::Drawing::Point(97, 43);
 			this->select_window_btn->Name = L"select_window_btn";
 			this->select_window_btn->Radius = 10;
@@ -287,7 +276,7 @@ namespace UmaAssistant
 			this->version_label->AutoSize = true;
 			this->version_label->BackColor = System::Drawing::Color::Transparent;
 			this->version_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
-				static_cast<System::Int32>(static_cast<System::Byte>(151)));
+																			  static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->version_label->Location = System::Drawing::Point(36, 19);
 			this->version_label->Name = L"version_label";
 			this->version_label->Size = System::Drawing::Size(58, 20);
@@ -297,14 +286,14 @@ namespace UmaAssistant
 			// select_character_btn
 			// 
 			this->select_character_btn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)),
-				static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(81)));
+																					 static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(81)));
 			this->select_character_btn->FlatAppearance->BorderSize = 0;
 			this->select_character_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
-				static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
+																											  static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
 			this->select_character_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->select_character_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->select_character_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
-				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
+																					 static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->select_character_btn->Location = System::Drawing::Point(458, 44);
 			this->select_character_btn->Name = L"select_character_btn";
 			this->select_character_btn->Radius = 10;
@@ -321,11 +310,11 @@ namespace UmaAssistant
 			this->close_select_character_btn->BackColor = System::Drawing::Color::Transparent;
 			this->close_select_character_btn->FlatAppearance->BorderSize = 0;
 			this->close_select_character_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(125)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+																													static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->close_select_character_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->close_select_character_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->close_select_character_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
-				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
+																						   static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->close_select_character_btn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"close_select_character_btn.Image")));
 			this->close_select_character_btn->Location = System::Drawing::Point(771, 0);
 			this->close_select_character_btn->Name = L"close_select_character_btn";
@@ -365,7 +354,7 @@ namespace UmaAssistant
 			this->selectCharacterWebView2->AllowExternalDrop = true;
 			this->selectCharacterWebView2->CreationProperties = nullptr;
 			this->selectCharacterWebView2->DefaultBackgroundColor = System::Drawing::Color::White;
-			this->selectCharacterWebView2->Location = System::Drawing::Point(559, 42);
+			this->selectCharacterWebView2->Location = System::Drawing::Point(562, 42);
 			this->selectCharacterWebView2->Name = L"selectCharacterWebView2";
 			this->selectCharacterWebView2->Size = System::Drawing::Size(489, 496);
 			this->selectCharacterWebView2->TabIndex = 34;
@@ -374,15 +363,15 @@ namespace UmaAssistant
 			// raceSchedule_btn
 			// 
 			this->raceSchedule_btn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(44)), static_cast<System::Int32>(static_cast<System::Byte>(61)),
-				static_cast<System::Int32>(static_cast<System::Byte>(81)));
+																				 static_cast<System::Int32>(static_cast<System::Byte>(81)));
 			this->raceSchedule_btn->CausesValidation = false;
 			this->raceSchedule_btn->FlatAppearance->BorderSize = 0;
 			this->raceSchedule_btn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(45)),
-				static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
+																										  static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(55)));
 			this->raceSchedule_btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->raceSchedule_btn->Font = (gcnew System::Drawing::Font(L"Mochiy Pop One", 12));
 			this->raceSchedule_btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)),
-				static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
+																				 static_cast<System::Int32>(static_cast<System::Byte>(193)), static_cast<System::Int32>(static_cast<System::Byte>(151)));
 			this->raceSchedule_btn->Location = System::Drawing::Point(275, 43);
 			this->raceSchedule_btn->Name = L"raceSchedule_btn";
 			this->raceSchedule_btn->Radius = 10;
@@ -392,6 +381,19 @@ namespace UmaAssistant
 			this->raceSchedule_btn->Text = L"賽事排程";
 			this->raceSchedule_btn->UseVisualStyleBackColor = false;
 			this->raceSchedule_btn->Click += gcnew System::EventHandler(this, &UmaForm::raceSchedule_btn_Click);
+			// 
+			// app_name_label
+			// 
+			this->app_name_label->Anchor = System::Windows::Forms::AnchorStyles::Left;
+			this->app_name_label->AutoSize = true;
+			this->app_name_label->BackColor = System::Drawing::Color::Transparent;
+			this->app_name_label->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(207)), static_cast<System::Int32>(static_cast<System::Byte>(193)),
+																			   static_cast<System::Int32>(static_cast<System::Byte>(151)));
+			this->app_name_label->Location = System::Drawing::Point(36, 2);
+			this->app_name_label->Name = L"app_name_label";
+			this->app_name_label->Size = System::Drawing::Size(123, 20);
+			this->app_name_label->TabIndex = 25;
+			this->app_name_label->Text = L"UmaAssistant";
 			// 
 			// UmaForm
 			// 

@@ -272,8 +272,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="CSharpControls\Microsoft.Web.WebView2.Core.dll" />
-    <None Include="CSharpControls\Microsoft.Web.WebView2.WinForms.dll" />
-    <None Include="CSharpControls\RoundedButton.dll" />
+    <None Include="CSharpDLL\Microsoft.Web.WebView2.Core.dll" />
+    <None Include="CSharpDLL\Microsoft.Web.WebView2.WinForms.dll" />
+    <None Include="CSharpDLL\RoundedButton.dll" />
   </ItemGroup>
 </Project>

@@ -85,7 +85,7 @@
     <EnableManagedIncrementalBuild>false</EnableManagedIncrementalBuild>
     <CopyCppRuntimeToOutputDir>false</CopyCppRuntimeToOutputDir>
     <CopyLocalProjectReference>true</CopyLocalProjectReference>
-    <IntDir>$(ShortProjectName)\Intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(ProjectDir)\Intermediate\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <VcpkgInstalledDir>
@@ -166,29 +166,32 @@ xcopy /E /C /Y $(SolutionDir)UmaWeb\ $(OutDir)UmaWeb\
 xcopy /E /C /Y $(SolutionDir)UmaMisc\ $(OutDir)UmaMisc\
 
 xcopy /E /C /Y $(SolutionDir)tessdata\ $(OutDir)tessdata\
-xcopy /E /C /Y $(SolutionDir)CSharpRuntime\*.dll $(OutDir)CSharpRuntime\*.dll
+xcopy /E /C /Y $(SolutionDir)CSharpDLL\*.dll $(OutDir)CSharpDLL\*.dll
 xcopy /E /C /Y $(SolutionDir)CppDLL\ $(OutDir)
 
 mkdir $(OutDir)UmaTemp\
 
-move $(OutDir)Microsoft.Web.WebView2.Core.dll $(OutDir)CSharpRuntime\Microsoft.Web.WebView2.Core.dll
+move $(OutDir)Microsoft.Web.WebView2.Core.dll $(OutDir)CSharpDLL\Microsoft.Web.WebView2.Core.dll
 
-move $(OutDir)Microsoft.Web.WebView2.Core.xml $(OutDir)CSharpRuntime\Microsoft.Web.WebView2.Core.xml
+move $(OutDir)Microsoft.Web.WebView2.Core.xml $(OutDir)CSharpDLL\Microsoft.Web.WebView2.Core.xml
 
-move $(OutDir)Microsoft.Web.WebView2.WinForms.dll $(OutDir)CSharpRuntime\Microsoft.Web.WebView2.WinForms.dll
+move $(OutDir)Microsoft.Web.WebView2.WinForms.dll $(OutDir)CSharpDLL\Microsoft.Web.WebView2.WinForms.dll
 
-move $(OutDir)Microsoft.Web.WebView2.WinForms.xml $(OutDir)CSharpRuntime\Microsoft.Web.WebView2.WinForms.xml
+move $(OutDir)Microsoft.Web.WebView2.WinForms.xml $(OutDir)CSharpDLL\Microsoft.Web.WebView2.WinForms.xml
 
-move $(OutDir)RoundedButton.dll $(OutDir)CSharpRuntime\RoundedButton.dll
-move $(OutDir)WebView2Loader.dll $(OutDir)CSharpRuntime\WebView2Loader.dll</Command>
+move $(OutDir)RoundedButton.dll $(OutDir)CSharpDLL\RoundedButton.dll
+move $(OutDir)WebView2Loader.dll $(OutDir)CSharpDLL\WebView2Loader.dll
+
+del $(OutDir)CSharpDLL\*.xml</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="Microsoft.Web.WebView2.WinForms">
       <HintPath>packages\Microsoft.Web.WebView2.1.0.2277.86\lib\net45\Microsoft.Web.WebView2.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="RoundedButton">
-      <HintPath>control\RoundedButton.dll</HintPath>
+      <HintPath>CSharpDLL\RoundedButton.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -305,9 +308,9 @@ move $(OutDir)WebView2Loader.dll $(OutDir)CSharpRuntime\WebView2Loader.dll</Comm
     <ResourceCompile Include="UmaAssistant.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CSharpControls\Microsoft.Web.WebView2.Core.dll" />
-    <None Include="CSharpControls\Microsoft.Web.WebView2.WinForms.dll" />
-    <None Include="CSharpControls\RoundedButton.dll" />
+    <None Include="CSharpDLL\Microsoft.Web.WebView2.Core.dll" />
+    <None Include="CSharpDLL\Microsoft.Web.WebView2.WinForms.dll" />
+    <None Include="CSharpDLL\RoundedButton.dll" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

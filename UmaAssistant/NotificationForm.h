@@ -1,5 +1,7 @@
 ﻿#pragma once
 
+#using "CSharpDLL/RoundedButton.dll"
+
 namespace UmaAssistant {
 
 	using namespace System;

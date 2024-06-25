@@ -1,8 +1,8 @@
 ﻿#pragma once
 
-#include "cppsrc/enum/SoftwareLanguageType.h"
+#include <Enum/SoftwareLanguageType.h>
 
-//#using "control/UmaCustomControl.RoundedButton.dll"
+#using "CSharpDLL/RoundedButton.dll"
 
 namespace UmaAssistant
 {

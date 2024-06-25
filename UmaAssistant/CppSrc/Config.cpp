@@ -1,7 +1,7 @@
 ﻿#include "Config.h"
 
 
-std::map<std::string, int> Config::InitGameWindowBoundOffset()
+std::map<std::string, int> Config::m_InitGameWindowBoundOffset()
 {
 	std::map<std::string, int> tmp =
 	{
@@ -20,22 +20,21 @@ void Config::Update()
 	json json_config = fileManager->ReadJson(global::path::std_config);
 
 	// bool
-	//ShowEnhanceSkill = json_config["ShowEnhanceSkill"].empty() ? true : json_config["ShowEnhanceSkill"].get<bool>();
-	DebugMode = json_config["DebugMode"].empty() ? false : json_config["DebugMode"].get<bool>();
-	AlwaysOnTop = json_config["AlwaysOnTop"].empty() ? false : json_config["AlwaysOnTop"].get<bool>();
-	AutoMouseClick = json_config["AutoMouseClick"].empty() ? false : json_config["AutoMouseClick"].get<bool>();
-	OutputLogFile = json_config["OutputLogFile"].empty() ? false : json_config["OutputLogFile"].get<bool>();
-	DiscordRPC = json_config["DiscordRPC"].empty() ? false : json_config["DiscordRPC"].get<bool>();
+	DebugMode			= json_config["DebugMode"].empty() ? false : json_config["DebugMode"].get<bool>();
+	AlwaysOnTop			= json_config["AlwaysOnTop"].empty() ? false : json_config["AlwaysOnTop"].get<bool>();
+	AutoMouseClick		= json_config["AutoMouseClick"].empty() ? false : json_config["AutoMouseClick"].get<bool>();
+	OutputLogFile		= json_config["OutputLogFile"].empty() ? false : json_config["OutputLogFile"].get<bool>();
+	DiscordRPC			= json_config["DiscordRPC"].empty() ? false : json_config["DiscordRPC"].get<bool>();
 
 	// int
-	SoftwareLanguage = json_config["SoftwareLanguage"].empty() ? static_cast<int>(SoftwareLanguageType::TW) : json_config["SoftwareLanguage"].get<int>();
-	GameServer = json_config["GameServer"].empty() ? static_cast<int>(GameServerType::JP) : json_config["GameServer"].get<int>();
-	GameWindow = json_config["GameWindow"].empty() ? static_cast<int>(GameWindowType::DMM) : json_config["GameWindow"].get<int>();
-	JpServerLang = json_config["JpServerLang"].empty() ? static_cast<int>(JpServerLangType::JP) : json_config["JpServerLang"].get<int>();
-	ScanInterval = json_config["ScanInterval"].empty() ? DEFAULT_SCAN_INTERVAL : json_config["ScanInterval"].get<int>();
+	SoftwareLanguage	= json_config["SoftwareLanguage"].empty() ? static_cast<int>(SoftwareLanguageType::TW) : json_config["SoftwareLanguage"].get<int>();
+	GameServer			= json_config["GameServer"].empty() ? static_cast<int>(GameServerType::JP) : json_config["GameServer"].get<int>();
+	GameWindow			= json_config["GameWindow"].empty() ? static_cast<int>(GameWindowType::DMM) : json_config["GameWindow"].get<int>();
+	JpServerLang		= json_config["JpServerLang"].empty() ? static_cast<int>(JpServerLangType::JP) : json_config["JpServerLang"].get<int>();
+	ScanInterval		= json_config["ScanInterval"].empty() ? DEFAULT_SCAN_INTERVAL : json_config["ScanInterval"].get<int>();
 
 	// std::string
-	GameWindowName = json_config["GameWindowName"].empty() ? NULL_GAME_WINDOW_NAME : json_config["GameWindowName"].get<std::string>();
+	GameWindowName		= json_config["GameWindowName"].empty() ? NULL_GAME_WINDOW_NAME : json_config["GameWindowName"].get<std::string>();
 	PreviousCurrentCharacterName = json_config["PreviousCurrentCharacterName"].empty() ? DEFAULT_PREVIOUS_CURRENT_CHARACTER_NAME : json_config["PreviousCurrentCharacterName"].get<std::string>();
 
 	// std::map
@@ -44,8 +43,8 @@ void Config::Update()
 
 	LocalServer["Port"] = json_config["LocalServer"]["Port"].empty() ? DEFAULT_LOCAL_SERVER_PORT : json_config["LocalServer"]["Port"].get<std::string>();
 
-	GameWindowBoundOffset["DMM"] = json_config["GameWindowBoundOffset"]["DMM"].empty() ? InitGameWindowBoundOffset() : json_config["GameWindowBoundOffset"]["DMM"].get<std::map<std::string, int>>();
-	GameWindowBoundOffset["Emulator"] = json_config["GameWindowBoundOffset"]["Emulator"].empty() ? InitGameWindowBoundOffset() : json_config["GameWindowBoundOffset"]["Emulator"].get<std::map<std::string, int>>();
+	GameWindowBoundOffset["DMM"] = json_config["GameWindowBoundOffset"]["DMM"].empty() ? m_InitGameWindowBoundOffset() : json_config["GameWindowBoundOffset"]["DMM"].get<std::map<std::string, int>>();
+	GameWindowBoundOffset["Emulator"] = json_config["GameWindowBoundOffset"]["Emulator"].empty() ? m_InitGameWindowBoundOffset() : json_config["GameWindowBoundOffset"]["Emulator"].get<std::map<std::string, int>>();
 }
 
 void Config::WriteToJson()

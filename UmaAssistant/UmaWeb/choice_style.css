@@ -44,7 +44,7 @@ body {
 img {
     width: 1.4em;
     height: 1.4em;
-    padding-right: 0.5ch;
+    padding-right: 0.4ch;
 }
 
 /* 把 th 的字型從粗體改回一般 */
@@ -213,6 +213,18 @@ th {
 .status_kasikosa{
     color: #55bd84;
 }
+
+/* 三女神欠片 */
+.status_kakera_ao {
+    color: rgb(119, 127, 214);
+}
+.status_kakera_aka {
+    color: rgb(236, 96, 107);
+}
+.status_kakera_kiniro {
+    color: rgb(248, 211, 72);
+}
+
 
 .skill_hint {
     color: rgb(250, 236, 110);

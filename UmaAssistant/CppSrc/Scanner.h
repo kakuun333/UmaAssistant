@@ -31,93 +31,84 @@
 
 
 
-#using "CSharpRuntime/UmaCSharpLibrary.dll"
+#using "CSharpDLL/UmaCSharpLibrary.dll"
 
 const std::string INIT_EVENT_TITLE_TEXT = "INIT_EVENT_TITLE_TEXT";
 const std::string INIT_HENSEI_CHAR_NAME_TEXT = "INIT_HENSEI_CHAR_NAME_TEXT";
 
 class Scanner : public SingletonMutex<Scanner>
 {
+public:
+	void InitOcrJpn();
+	void InitOcrTw();
+	void InitOcrEng();
+
+	inline bool IsInited()
+	{
+		if (m_OcrJpn != nullptr && m_OcrTw != nullptr && m_OcrEng != nullptr)
+			return true;
+		else
+			return false;
+	}
+
+	void Start();
+
+	void Stop();
+
 private:
-#pragma region 私人成員變數
-	static bool _scanning;
+	void m_Scan();
 
-	static tesseract::TessBaseAPI* ocr_jpn;
+	std::string m_GetScannedText(cv::Mat image, ImageType imgType = ImageType::IMG_EVENT_NAME, bool englishMode = false);
 
-	static tesseract::TessBaseAPI* ocr_tw;
+	void m_UpdateSapokaOrCharacterChoice(UmaEventData sapokaUmaEventData);
 
-	static tesseract::TessBaseAPI* ocr_eng;
-
-
-	// 互斥鎖，用來保護共享資料，避免程式崩潰。
-	std::mutex ocrMutex;
-	std::mutex dataMutex;
-
-	std::string _previousEventText = INIT_EVENT_TITLE_TEXT;
-	//std::string _previousCharacterNameText;
-	//std::string _previousHenseiCharNameText = INIT_HENSEI_CHAR_NAME_TEXT;
-
-	UmaEventData _previousUpdatedUmaEventData;
-
-	ScenarioEventData _previousUpdatedScenarioEventData;
-
-	bool _updatedChoice = false;
-#pragma endregion
-
-#pragma region 私人成員函數
-	void _Scan();
-
-	std::string _GetScannedText(cv::Mat image, ImageType imgType = ImageType::IMG_EVENT_NAME, bool englishMode = false);
-
-	void _UpdateSapokaOrCharacterChoice(UmaEventData sapokaUmaEventData);
-
-	void _UpdateScenarioChoice(ScenarioEventData scenarioEventData);
+	void m_UpdateScenarioChoice(ScenarioEventData scenarioEventData);
 
 	// 尋找 CurrentCharacter
-	void _LookingForCurrentCharacter(Screenshot& ss, std::string& henseiCharNameText);
+	void m_LookingForCurrentCharacter(Screenshot& ss, std::string& henseiCharNameText);
 
-	inline void _PrintScanned(double elapsedTime)
+	inline void m_PrintScanned(const double& elapsedTime)
 	{
 		printf("[Scanner] ============== SCANNED [%.2fs] ==============\n", elapsedTime);
 	}
 
 	// 檢查使否與上次掃描更新的 EventData 的 event_title 相同。
 	template<typename T>
-	inline bool _IsSameAsPreviousUpdatedEventData(T currentEventData)
+	inline bool m_IsSameAsPreviousUpdatedEventData(T currentEventData)
 	{
 		if constexpr (std::is_same_v<T, UmaEventData>)
 		{
-			if (currentEventData.umaEvent.event_title == _previousUpdatedUmaEventData.umaEvent.event_name)
+			if (currentEventData.umaEvent.event_title == m_PreviousUpdatedUmaEventData.umaEvent.event_name)
 				return true;
 		}
 		else if constexpr (std::is_same_v<T, ScenarioEventData>)
 		{
-			if (currentEventData.event_name == _previousUpdatedScenarioEventData.event_name)
+			if (currentEventData.event_name == m_PreviousUpdatedScenarioEventData.event_name)
 				return true;
 		}
 
 		return false;
 	}
-#pragma endregion
 
-public:
-#pragma region 公共靜態成員函數
-	static void InitOcrJpn();
+private:
+	bool m_Scanning = false;
 
-	static void InitOcrTw();
+	tesseract::TessBaseAPI* m_OcrJpn = nullptr;
+	tesseract::TessBaseAPI* m_OcrTw = nullptr;
+	tesseract::TessBaseAPI* m_OcrEng = nullptr;
 
-	static void InitOcrEng();
 
-	inline static bool IsInited()
-	{
-		if (ocr_eng != nullptr && ocr_jpn != nullptr && ocr_tw != nullptr)
-			return true;
-		else
-			return false;
-	}
-#pragma endregion
+	// 互斥鎖，用來保護共享資料，避免程式崩潰。
+	std::mutex m_OcrMutex;
+	std::mutex m_DataMutex;
 
-	void Start();
+	std::string m_PreviousEventText = INIT_EVENT_TITLE_TEXT;
+	//std::string _previousCharacterNameText;
+	//std::string _previousHenseiCharNameText = INIT_HENSEI_CHAR_NAME_TEXT;
 
-	void Stop();
+	UmaEventData m_PreviousUpdatedUmaEventData;
+
+	ScenarioEventData m_PreviousUpdatedScenarioEventData;
+
+	bool m_UpdatedChoice = false;
 };

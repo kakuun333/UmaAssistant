@@ -1,14 +1,8 @@
 ﻿#include "Scanner.h"
 
-bool Scanner::_scanning = false;
-tesseract::TessBaseAPI* Scanner::ocr_jpn = nullptr;
-tesseract::TessBaseAPI* Scanner::ocr_tw = nullptr;
-tesseract::TessBaseAPI* Scanner::ocr_eng = nullptr;
-
-
 void Scanner::InitOcrJpn()
 {
-	std::thread initThread([]()
+	std::thread initThread([=]()
 		{
 			tesseract::TessBaseAPI* ocr = new tesseract::TessBaseAPI(); // 初始化 Tesseract
 
@@ -16,10 +10,11 @@ void Scanner::InitOcrJpn()
 
 			ocr->SetPageSegMode(tesseract::PSM_SINGLE_LINE/*tesseract::PSM_SINGLE_BLOCK*/);
 
-			ocr->SetVariable("textord_tabfind_find_tables", "0"); // 禁用 vertical script
-			ocr->SetVariable("textord_orientation", "0"); // 禁用旋轉
+			ocr->SetVariable("textord_tabfind_find_tables", "0"); // defulat: 1, run table detection
+			ocr->SetVariable("textord_tabfind_vertical_text", "0"); // defulat: 1, Enable vertical detection
+			ocr->SetVariable("textord_tabfind_vertical_horizontal_mix", "0"); // defulat: 1, find horizontal lines such as headers in vertical page mode
 
-			ocr_jpn = ocr;
+			m_OcrJpn = ocr;
 		});
 
 	initThread.detach();
@@ -27,7 +22,7 @@ void Scanner::InitOcrJpn()
 
 void Scanner::InitOcrTw()
 {
-	std::thread initThread([]()
+	std::thread initThread([=]()
 		{
 			tesseract::TessBaseAPI* ocr = new tesseract::TessBaseAPI(); // 初始化 Tesseract
 
@@ -35,10 +30,11 @@ void Scanner::InitOcrTw()
 
 			ocr->SetPageSegMode(tesseract::PSM_AUTO/*PSM_SINGLE_LINE*//*tesseract::PSM_SINGLE_BLOCK*/);
 
-			ocr->SetVariable("textord_tabfind_find_tables", "0"); // 禁用 vertical script
-			ocr->SetVariable("textord_orientation", "0"); // 禁用旋轉
+			ocr->SetVariable("textord_tabfind_find_tables", "0"); // defulat: 1, run table detection
+			ocr->SetVariable("textord_tabfind_vertical_text", "0"); // defulat: 1, Enable vertical detection
+			ocr->SetVariable("textord_tabfind_vertical_horizontal_mix", "0"); // defulat: 1, find horizontal lines such as headers in vertical page mode
 
-			ocr_tw = ocr;
+			m_OcrTw = ocr;
 		});
 
 	initThread.detach();
@@ -46,7 +42,7 @@ void Scanner::InitOcrTw()
 
 void Scanner::InitOcrEng()
 {
-	std::thread initThread([]()
+	std::thread initThread([=]()
 		{
 			tesseract::TessBaseAPI* ocr = new tesseract::TessBaseAPI(); // 初始化 Tesseract
 
@@ -55,10 +51,11 @@ void Scanner::InitOcrEng()
 
 			ocr->SetPageSegMode(/*tesseract::PSM_AUTO*/tesseract::PSM_SINGLE_LINE/*tesseract::PSM_SINGLE_BLOCK*/);
 
-			ocr->SetVariable("textord_tabfind_find_tables", "0"); // 禁用 vertical script
-			ocr->SetVariable("textord_orientation", "0"); // 禁用旋轉
+			ocr->SetVariable("textord_tabfind_find_tables", "0"); // defulat: 1, run table detection
+			ocr->SetVariable("textord_tabfind_vertical_text", "0"); // defulat: 1, Enable vertical detection
+			ocr->SetVariable("textord_tabfind_vertical_horizontal_mix", "0"); // defulat: 1, find horizontal lines such as headers in vertical page mode
 
-			ocr_eng = ocr;
+			m_OcrEng = ocr;
 		});
 
 	initThread.detach();
@@ -67,7 +64,7 @@ void Scanner::InitOcrEng()
 
 
 #pragma region 私人函數
-void Scanner::_UpdateSapokaOrCharacterChoice(UmaEventData sapokaUmaEventData)
+void Scanner::m_UpdateSapokaOrCharacterChoice(UmaEventData sapokaUmaEventData)
 {
 	WebViewManager::Instance->CleanChoiceTable();
 
@@ -86,7 +83,7 @@ void Scanner::_UpdateSapokaOrCharacterChoice(UmaEventData sapokaUmaEventData)
 	WebViewManager::Instance->UpdateSkillContent(); // 重新尋找 skill_hint 再監聽
 }
 
-void Scanner::_UpdateScenarioChoice(ScenarioEventData scenarioEventData)
+void Scanner::m_UpdateScenarioChoice(ScenarioEventData scenarioEventData)
 {
 	WebViewManager::Instance->CleanChoiceTable();
 
@@ -114,9 +111,9 @@ void Scanner::_UpdateScenarioChoice(ScenarioEventData scenarioEventData)
 }
 
 
-std::string Scanner::_GetScannedText(cv::Mat image, ImageType imgType, bool englishMode)
+std::string Scanner::m_GetScannedText(cv::Mat image, ImageType imgType, bool englishMode)
 {
-	std::unique_lock<std::mutex> lock(ocrMutex);
+	std::unique_lock<std::mutex> lock(m_OcrMutex);
 
 	UmaLog* umalog = UmaLog::GetInstance();
 
@@ -127,12 +124,12 @@ std::string Scanner::_GetScannedText(cv::Mat image, ImageType imgType, bool engl
 	{
 	case true:
 		// 設置圖片到 ocr
-		ocr_eng->SetImage(image.data, image.cols, image.rows, 1, image.step);
+		m_OcrEng->SetImage(image.data, image.cols, image.rows, 1, image.step);
 
 		// 進行文字辨識
-		ocr_eng->Recognize(0);
+		m_OcrEng->Recognize(0);
 
-		utf8 = ocr_eng->GetUTF8Text();
+		utf8 = m_OcrEng->GetUTF8Text();
 		break;
 	case false:
 		switch (Config::GetInstance()->GameServer)
@@ -141,58 +138,58 @@ std::string Scanner::_GetScannedText(cv::Mat image, ImageType imgType, bool engl
 			switch (imgType)
 			{
 			case ImageType::IMG_EVENT_NAME:
-				ocr_jpn->SetVariable("tessedit_char_blacklist", u8"@$%^*_-+<>[]{}|\\`†;；=《》579"); // 有在事件名稱中出現的符號 0368:/#
-				ocr_jpn->SetVariable("tessedit_char_whitelist", u8"");
-				ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
+				m_OcrJpn->SetVariable("tessedit_char_blacklist", u8"@$%^*_-+<>[]{}|\\`†;；=《》579"); // 有在事件名稱中出現的符號 0368:/#
+				m_OcrJpn->SetVariable("tessedit_char_whitelist", u8"");
+				m_OcrJpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 				break;
 			case ImageType::IMG_HENSEI_CHARACTER_NAME:
-				ocr_jpn->SetVariable("tessedit_char_blacklist", u8"@#$%^*_+<>?()[]{}|\\`†.,;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
-				ocr_jpn->SetVariable("tessedit_char_whitelist", u8"");
-				ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE/*PSM_SINGLE_BLOCK*/);
+				m_OcrJpn->SetVariable("tessedit_char_blacklist", u8"@#$%^*_+<>?()[]{}|\\`†.,;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
+				m_OcrJpn->SetVariable("tessedit_char_whitelist", u8"");
+				m_OcrJpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE/*PSM_SINGLE_BLOCK*/);
 				break;
 			case ImageType::IMG_DATE:
-				ocr_jpn->SetVariable("tessedit_char_blacklist", u8"");
-				ocr_jpn->SetVariable("tessedit_char_whitelist", u8"ジュニアクラシックシニア級0123456789０１２３４５６７８９月前後半");
-				ocr_jpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
+				m_OcrJpn->SetVariable("tessedit_char_blacklist", u8"");
+				m_OcrJpn->SetVariable("tessedit_char_whitelist", u8"ジュニアクラシックシニア級0123456789０１２３４５６７８９月前後半");
+				m_OcrJpn->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 				break;
 			}
 
 			// 設置圖片到 ocr
-			ocr_jpn->SetImage(image.data, image.cols, image.rows, 1, image.step);
+			m_OcrJpn->SetImage(image.data, image.cols, image.rows, 1, image.step);
 
 			// 進行文字辨識
-			ocr_jpn->Recognize(0);
+			m_OcrJpn->Recognize(0);
 
-			utf8 = ocr_jpn->GetUTF8Text();
+			utf8 = m_OcrJpn->GetUTF8Text();
 			break;
 
 		case static_cast<int>(GameServerType::TW):
 			switch (imgType)
 			{
 			case ImageType::IMG_EVENT_NAME:
-				ocr_tw->SetVariable("tessedit_char_blacklist", u8"@$%^*_-+<>[]{}|\\`†;；=《》579"); // 有在事件名稱中出現的符號 0368:/#
-				ocr_tw->SetVariable("tessedit_char_whitelist", u8"");
-				ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
+				m_OcrTw->SetVariable("tessedit_char_blacklist", u8"@$%^*_-+<>[]{}|\\`†;；=《》579"); // 有在事件名稱中出現的符號 0368:/#
+				m_OcrTw->SetVariable("tessedit_char_whitelist", u8"");
+				m_OcrTw->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 				break;
 			case ImageType::IMG_HENSEI_CHARACTER_NAME:
-				ocr_tw->SetVariable("tessedit_char_blacklist", u8"@#$%^*_+<>?()[]{}|\\`†.,;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
-				ocr_tw->SetVariable("tessedit_char_whitelist", u8"");
-				ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_LINE/*PSM_SINGLE_BLOCK*/);
+				m_OcrTw->SetVariable("tessedit_char_blacklist", u8"@#$%^*_+<>?()[]{}|\\`†.,;；=「」【】『』〈〉［］〔〕≪≫（）〔〕");
+				m_OcrTw->SetVariable("tessedit_char_whitelist", u8"");
+				m_OcrTw->SetPageSegMode(tesseract::PSM_SINGLE_LINE/*PSM_SINGLE_BLOCK*/);
 				break;
 			case ImageType::IMG_DATE:
-				ocr_tw->SetVariable("tessedit_char_blacklist", u8"");
-				ocr_tw->SetVariable("tessedit_char_whitelist", u8"新手經典資深級0123456789０１２３４５６７８９月前後半");
-				ocr_tw->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
+				m_OcrTw->SetVariable("tessedit_char_blacklist", u8"");
+				m_OcrTw->SetVariable("tessedit_char_whitelist", u8"新手經典資深級0123456789０１２３４５６７８９月前後半");
+				m_OcrTw->SetPageSegMode(tesseract::PSM_SINGLE_LINE);
 				break;
 			}
 
 			// 設置圖片到 ocr
-			ocr_tw->SetImage(image.data, image.cols, image.rows, 1, image.step);
+			m_OcrTw->SetImage(image.data, image.cols, image.rows, 1, image.step);
 
 			// 進行文字辨識
-			ocr_tw->Recognize(0);
+			m_OcrTw->Recognize(0);
 
-			utf8 = ocr_tw->GetUTF8Text();
+			utf8 = m_OcrTw->GetUTF8Text();
 			break;
 		}
 	}
@@ -234,7 +231,7 @@ std::string Scanner::_GetScannedText(cv::Mat image, ImageType imgType, bool engl
 
 
 
-void Scanner::_LookingForCurrentCharacter(Screenshot& ss, std::string& henseiCharNameText)
+void Scanner::m_LookingForCurrentCharacter(Screenshot& ss, std::string& henseiCharNameText)
 {
 	DataManager* dataManager = DataManager::GetInstance();
 	UmaLog* umalog = UmaLog::GetInstance();
@@ -245,10 +242,10 @@ void Scanner::_LookingForCurrentCharacter(Screenshot& ss, std::string& henseiCha
 	{
 		try
 		{
-			std::string gray_another_name_text = this->_GetScannedText(ss.hensei_character_another_name_gray, ImageType::IMG_HENSEI_CHARACTER_NAME);
-			std::string gray_bin_another_name_text = this->_GetScannedText(ss.hensei_character_another_name_gray_bin, ImageType::IMG_HENSEI_CHARACTER_NAME);
-			std::string gray_bin_inv_another_name_text = this->_GetScannedText(ss.hensei_character_another_name_gray_bin_inv, ImageType::IMG_HENSEI_CHARACTER_NAME);
-			std::string eng_gray_bin_another_name_text = this->_GetScannedText(ss.hensei_character_another_name_gray_bin, ImageType::IMG_HENSEI_CHARACTER_NAME, true);
+			std::string gray_another_name_text = this->m_GetScannedText(ss.hensei_character_another_name_gray, ImageType::IMG_HENSEI_CHARACTER_NAME);
+			std::string gray_bin_another_name_text = this->m_GetScannedText(ss.hensei_character_another_name_gray_bin, ImageType::IMG_HENSEI_CHARACTER_NAME);
+			std::string gray_bin_inv_another_name_text = this->m_GetScannedText(ss.hensei_character_another_name_gray_bin_inv, ImageType::IMG_HENSEI_CHARACTER_NAME);
+			std::string eng_gray_bin_another_name_text = this->m_GetScannedText(ss.hensei_character_another_name_gray_bin, ImageType::IMG_HENSEI_CHARACTER_NAME, true);
 
 			std::cout << "gray_another_name_text: " << gray_another_name_text << '\n';
 			std::cout << "gray_bin_another_name_text: " << gray_bin_another_name_text << '\n';
@@ -293,13 +290,13 @@ void Scanner::_LookingForCurrentCharacter(Screenshot& ss, std::string& henseiCha
 
 
 
-void Scanner::_Scan()
+void Scanner::m_Scan()
 {
 	DataManager* dataManager = DataManager::GetInstance();
 	UmaLog* umalog = UmaLog::GetInstance();
 	Config* config = Config::GetInstance();
 
-	this->_scanning = true;
+	this->m_Scanning = true;
 	while (global::umaswitch::Scanning)
 	{
 		std::unique_ptr<UmaTimer> timer = std::make_unique<UmaTimer>();
@@ -323,21 +320,20 @@ void Scanner::_Scan()
 		std::string gray_bin_event_text;
 		std::string gray_event_text;
 		std::string gray_bin_inv_event_text;
-
 		std::string henseiCharNameText;
 
 		// 如果是 EventTitle 才辨識 event_text
 		if (ss.IsEventName())
 		{
-			gray_event_text = this->_GetScannedText(ss.event_title_gray, ImageType::IMG_EVENT_NAME);
-			gray_bin_event_text = this->_GetScannedText(ss.event_title_gray_bin, ImageType::IMG_EVENT_NAME);
-			gray_bin_inv_event_text = this->_GetScannedText(ss.event_title_gray_bin_inv, ImageType::IMG_EVENT_NAME);
+			gray_event_text = this->m_GetScannedText(ss.event_title_gray, ImageType::IMG_EVENT_NAME);
+			gray_bin_event_text = this->m_GetScannedText(ss.event_title_gray_bin, ImageType::IMG_EVENT_NAME);
+			gray_bin_inv_event_text = this->m_GetScannedText(ss.event_title_gray_bin_inv, ImageType::IMG_EVENT_NAME);
 
 			// 檢查 eventText 是否都是空字串
 			if (gray_event_text.empty() && gray_bin_event_text.empty() && gray_bin_inv_event_text.empty())
 			{
 				umalog->print(u8"[Scanner] 所有 eventText 都是空字串");
-				this->_PrintScanned(timer->Stop());
+				this->m_PrintScanned(timer->Stop());
 				std::this_thread::sleep_for(std::chrono::milliseconds(Config::GetInstance()->ScanInterval));
 				continue;
 			}
@@ -349,7 +345,7 @@ void Scanner::_Scan()
 		//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 		if (ss.IsDate())
 		{
-			std::string scanned_date = this->_GetScannedText(ss.date_gray_bin, ImageType::IMG_DATE);
+			std::string scanned_date = this->m_GetScannedText(ss.date_gray_bin, ImageType::IMG_DATE);
 			umalog->print("[Scanner] scanned_date: ", scanned_date);
 			umalog->print("[Scanner] TryFindScheduledRace: ", dataManager->TryFindScheduledRace(scanned_date) ? "true" : "false");
 
@@ -368,18 +364,18 @@ void Scanner::_Scan()
 
 
 		// 尋找 CurrentCharacter
-		this->_LookingForCurrentCharacter(ss, henseiCharNameText);
+		this->m_LookingForCurrentCharacter(ss, henseiCharNameText);
 
 #pragma region 尋找 character 或 sapoka 或 scenario 的事件
-		if (_previousEventText != gray_event_text &&
-			_previousEventText != gray_bin_event_text &&
-			_previousEventText != gray_bin_inv_event_text &&
+		if (m_PreviousEventText != gray_event_text &&
+			m_PreviousEventText != gray_bin_event_text &&
+			m_PreviousEventText != gray_bin_inv_event_text &&
 			ss.IsEventName())
 		{
 			/*
-			* 如果 _previousEventText 都不一樣就重置 _updatedChoice
+			* 如果 m_PreviousEventText 都不一樣就重置 m_UpdatedChoice
 			*/
-			_updatedChoice = false;
+			m_UpdatedChoice = false;
 
 
 			umalog->print(u8"[Scanner] gray_event_text: ", gray_event_text);
@@ -400,7 +396,7 @@ void Scanner::_Scan()
 			{
 				umalog->print(u8"[Scanner] eventNameData.event_type.empty()");
 
-				this->_PrintScanned(timer->Stop());
+				this->m_PrintScanned(timer->Stop());
 
 				std::this_thread::sleep_for(std::chrono::milliseconds(Config::GetInstance()->ScanInterval));
 				continue;
@@ -422,21 +418,21 @@ void Scanner::_Scan()
 
 
 					// 檢查是否與上次的 EventData 一致
-					if (this->_IsSameAsPreviousUpdatedEventData(eventNameData))
+					if (this->m_IsSameAsPreviousUpdatedEventData(eventNameData))
 					{
 						umalog->print(u8"[Scanner] 獲取到的 EventData 上次的 event_name 一致");
 
-						this->_PrintScanned(timer->Stop());
+						this->m_PrintScanned(timer->Stop());
 
 						std::this_thread::sleep_for(std::chrono::milliseconds(Config::GetInstance()->ScanInterval));
 						continue;
 					}
 
-					_updatedChoice = true;
-					_previousEventText = eventNameData.matched_scanned_text;
-					_previousUpdatedUmaEventData = eventData;
 
-					this->_UpdateSapokaOrCharacterChoice(eventData);
+					this->m_UpdateSapokaOrCharacterChoice(eventData);
+					m_PreviousEventText = eventNameData.matched_scanned_text;
+					m_PreviousUpdatedUmaEventData = eventData;
+					m_UpdatedChoice = true;
 				}
 			}
 			else if (std::holds_alternative<ScenarioEventData>(variant))
@@ -446,21 +442,20 @@ void Scanner::_Scan()
 				if (eventData.IsDataComplete())
 				{
 					// 檢查是否與上次的 EventData 一致
-					if (this->_IsSameAsPreviousUpdatedEventData(eventNameData))
+					if (this->m_IsSameAsPreviousUpdatedEventData(eventNameData))
 					{
 						umalog->print(u8"[Scanner] 獲取到的 EventData 上次的 event_name 一致");
 
-						this->_PrintScanned(timer->Stop());
+						this->m_PrintScanned(timer->Stop());
 
 						std::this_thread::sleep_for(std::chrono::milliseconds(Config::GetInstance()->ScanInterval));
 						continue;
 					}
 
-					_updatedChoice = true;
-					_previousEventText = eventNameData.matched_scanned_text;
-					_previousUpdatedScenarioEventData = eventData;
-
-					this->_UpdateScenarioChoice(eventData);
+					this->m_UpdateScenarioChoice(eventData);
+					m_PreviousEventText = eventNameData.matched_scanned_text;
+					m_PreviousUpdatedScenarioEventData = eventData;
+					m_UpdatedChoice = true;
 				}
 			}
 		}
@@ -478,13 +473,13 @@ void Scanner::_Scan()
 		//
 		// 更新上次辨識到的文字
 		//
-		umalog->print(u8"[Scanner] _previousEventText: ", _previousEventText);
+		umalog->print(u8"[Scanner] _previousEventText: ", m_PreviousEventText);
 
-		this->_PrintScanned(timer->Stop());
+		this->m_PrintScanned(timer->Stop());
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(Config::GetInstance()->ScanInterval));
 	}
-	this->_scanning = false;
+	this->m_Scanning = false;
 }
 
 #pragma endregion 私人函數
@@ -502,7 +497,7 @@ void Scanner::Start()
 
 	global::umaswitch::Scanning = true;
 
-	std::thread scanThread(&Scanner::_Scan, this);
+	std::thread scanThread(&Scanner::m_Scan, this);
 
 	scanThread.detach();
 
@@ -542,7 +537,7 @@ void Scanner::Stop()
 
 			do
 			{
-				if (_scanning)
+				if (m_Scanning)
 				{
 					global::umaswitch::Scanning = false;
 					stopped = true;

@@ -29,7 +29,7 @@ body {
 
     /* font */
     font-family: "MochiyPopOne", sans-serif;
-    color: #cfc197;
+    color: rgb(255, 255, 187);
     font-size: 0.9em;
     
     user-select: none;
@@ -38,11 +38,6 @@ body {
 
 th {
     font-weight: normal;
-}
-
-img {
-    width: 5.285em;
-    height: 5.285em;
 }
 
 table {
@@ -55,15 +50,28 @@ table {
 } */
 
 /*   id   *//*   id   *//*   id   *//*   id   */
+#filter_text_label {
+    background-color: rgb(40, 48, 68);
+    border-radius: 10px 10px 0px 0px;
+    
+    margin-top: 10px;
+}
+
+#filter_container {
+    background-color: rgb(40, 48, 68);
+    border-radius: 0px 0px 10px 10px;
+
+    margin-bottom: 10px;
+}
 
 #search_table {
     background-color: rgb(40, 48, 68);
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 10px;
 }
 
 #icon_table {
     background-color: rgb(40, 48, 68);
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 10px;
 }
 
 #search_title {
@@ -82,10 +90,12 @@ table {
 
     background: linear-gradient(to right, #4638c5, #6e20eb);
     border-radius: 10px 10px 10px 10px;
-    color: #cfc197;
+    color: rgb(255, 255, 187);
+
+    text-align: center;
 }
 #search_textbox::placeholder {
-    color: #cfc197; /* 設定placeholder的顏色 */
+    color: rgb(255, 255, 187); /* 設定placeholder的顏色 */
 }
 #search_textbox:focus::placeholder {
     color: #7e7e7e; /* 設定placeholder的顏色 */
@@ -106,9 +116,23 @@ table {
     }
 }
 
+.character_icon {
+    width: 5.285em;
+    height: 5.285em;
+
+    border-radius: 10px;
+}
+
 .character_icon:hover {
     cursor: pointer;
     transform: scale(1.1);
     animation: scaleCharacterImgAnim 0.1s forwards
 }
 
+.is_gameserver_filter_hide {
+    display: none;
+}
+
+.is_search_filter_hide {
+    display: none;
+}

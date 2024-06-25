@@ -10,7 +10,7 @@
 #include <Global/form.h>
 
 
-#using "CSharpRuntime/UmaCSharpLibrary.dll"
+#using "CSharpDLL/UmaCSharpLibrary.dll"
 
 using namespace System::Collections::Generic;
 

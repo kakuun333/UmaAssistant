@@ -18,8 +18,8 @@ using json = nlohmann::json;
 // include
 #include <singleton_mutex.hpp>
 
-constexpr inline int DEFAULT_SCAN_INTERVAL = 100; // �@��
-const std::string DEFAULT_LOCAL_SERVER_PORT = "5854";
+constexpr inline int DEFAULT_SCAN_INTERVAL = 100;
+const std::string DEFAULT_LOCAL_SERVER_PORT = "58541";
 const std::string DEFAULT_PREVIOUS_CURRENT_CHARACTER_NAME = "DEFAULT_PREVIOUS_CURRENT_CHARACTER_NAME";
 
 // global
@@ -27,10 +27,10 @@ const std::string DEFAULT_PREVIOUS_CURRENT_CHARACTER_NAME = "DEFAULT_PREVIOUS_CU
 
 class Config : public SingletonMutex<Config>
 {
-private:
-	std::map<std::string, int> InitGameWindowBoundOffset();
 public:
-	//bool ShowEnhanceSkill;
+	void Update();
+	void WriteToJson();
+public:
 	bool DebugMode;
 	bool AlwaysOnTop;
 	bool AutoMouseClick;
@@ -46,9 +46,7 @@ public:
 	std::map<std::string, int> AutoMouseClickKey;
 	std::map<std::string, std::string> LocalServer;
 	std::map<std::string, std::map<std::string, int>> GameWindowBoundOffset;
-
-	void Update();
-
-	void WriteToJson();
+private:
+	std::map<std::string, int> m_InitGameWindowBoundOffset();
 };
 

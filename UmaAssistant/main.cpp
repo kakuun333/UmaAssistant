@@ -37,7 +37,7 @@ int main(array<String^>^ args)
 {
 #pragma region 初始化 CSharpRuntime 路徑
 	AppDomain^ currentDomain = AppDomain::CurrentDomain;
-	currentDomain->AppendPrivatePath("CSharpRuntime");
+	currentDomain->AppendPrivatePath("CSharpDLL");
 #pragma endregion
 
 #pragma region 初始化 config
@@ -57,9 +57,10 @@ int main(array<String^>^ args)
 #pragma endregion
 
 #pragma region 初始化 Scanner
-	Scanner::InitOcrJpn();
-	Scanner::InitOcrTw();
-	Scanner::InitOcrEng();
+	Scanner* scanner = Scanner::GetInstance();
+	scanner->InitOcrJpn();
+	scanner->InitOcrTw();
+	scanner->InitOcrEng();
 #pragma endregion
 #pragma region 初始化 DataManager
 	DataManager::GetInstance()->InitEventDataJson();
