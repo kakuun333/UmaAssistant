@@ -1,4 +1,4 @@
-﻿#include <tesseract/baseapi.h> // Tesseract OCR Version: 5.3.3#pragma once
+﻿#pragma once
 
 // STL
 #include <iostream>
@@ -12,22 +12,27 @@
 #include <tesseract/baseapi.h> // Tesseract OCR Version: 5.3.3
 #include <leptonica/allheaders.h>
 
-
+// Util
+#include <Util/CharacterFilter.h>
 
 #include "Config.h"
 #include "Screenshot.h"
 #include "UmaTimer.h"
-#include <Util/CharacterFilter.h>
-#include <Enum/ImageType.h>
 #include <RefManager/WebViewManager.h>
 #include <UmaData/ScenarioEventData.h>
 #include <UmaData/UmaEventData.h>
 #include <UmaData/UmaEventNameData.h>
+
+// include
+#include <singleton_mutex.hpp>
+
+// Enum
+#include <Enum/ImageType.h>
+
+// Global
 #include <Global/form.h>
 #include <Global/umaswitch.h>
-
-
-#include <singleton_mutex.hpp>
+//#include <Global/path.h>
 
 
 

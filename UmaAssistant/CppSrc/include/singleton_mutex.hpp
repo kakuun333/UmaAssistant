@@ -3,14 +3,23 @@
 
 #include <mutex>
 
-template <typename TYPE>
+template <typename Derived>
 class SingletonMutex
 {
 public:
-    inline static TYPE* GetInstance()
+    inline static Derived* GetInstance()
     {
-        std::lock_guard _lock(m_mutex);
-        if (m_instance == nullptr) m_instance = new TYPE();
+        try
+        {
+            throw gcnew AccessViolationException("WTF");
+            std::lock_guard _lock(m_mutex);
+            if (m_instance == nullptr) m_instance = new Derived();
+        }
+        catch (AccessViolationException^ ex)
+        {
+            Console::WriteLine("發生 AccessViolationException！");
+            Console::WriteLine(ex->Message);
+        }
         return m_instance;
     }
 protected:
@@ -24,7 +33,7 @@ protected:
     SingletonMutex& operator=(const SingletonMutex&&) = delete;
 private:
     inline static std::mutex m_mutex;
-    inline static TYPE* m_instance;
+    inline static Derived* m_instance;
 };
 
 #endif // SINGLETON_MUTEX_HPP

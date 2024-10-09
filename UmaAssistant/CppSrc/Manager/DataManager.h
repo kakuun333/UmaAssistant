@@ -12,16 +12,23 @@
 using json = nlohmann::json;
 
 
-// include
-#include <singleton_mutex.hpp>
+// Util
+#include <Util/CharacterCompare.h>
 
-#include "Config.h"
+
+#include <Config.h>
 #include <UmaData/UmaEventData.h>
 #include <UmaData/UmaEventNameData.h>
 #include <UmaData/ScenarioEventData.h>
 #include <UmaData/UmaGetCharData.h>
-#include <Util/CharacterCompare.h>
+
+// include
+#include <singleton_mutex.hpp>
+
+// RefManager
 #include <RefManager/WebViewManager.h>
+
+// Global
 #include <Global/form.h>
 
 class DataManager : public SingletonMutex<DataManager>

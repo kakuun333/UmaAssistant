@@ -235,6 +235,7 @@ del $(OutDir)CSharpDLL\*.xml</Command>
     <ClCompile Include="UmaForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CppSrc\include\singleton_mutex.hpp" />
     <ClInclude Include="CppSrc\Manager\MouseManager.h" />
     <ClInclude Include="CppSrc\Config.h" />
     <ClInclude Include="CppSrc\Manager\ConsoleManager.h" />
@@ -245,7 +246,6 @@ del $(OutDir)CSharpDLL\*.xml</Command>
     <ClInclude Include="CppSrc\UmaData\UmaGetCharData.h" />
     <ClInclude Include="CppSrc\Manager\FileManager.h" />
     <ClInclude Include="CppSrc\Manager\GameWindowManager.h" />
-    <ClInclude Include="CppSrc\include\singleton_mutex.hpp" />
     <ClInclude Include="CppSrc\RefManager\FormController.h" />
     <ClInclude Include="CppSrc\RefManager\FormDesigner.h" />
     <ClInclude Include="CppSrc\RefManager\LocalServerManager.h" />

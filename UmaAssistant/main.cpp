@@ -51,16 +51,10 @@ int main(array<String^>^ args)
 	}
 #pragma endregion
 
-#pragma region 初始化字型
-	// 加載字型
-	AddFontResourceW(util::string2wstring(global::path::std_MochiyPopOne).c_str());
-#pragma endregion
-
 #pragma region 初始化 Scanner
-	Scanner* scanner = Scanner::GetInstance();
-	scanner->InitOcrJpn();
-	scanner->InitOcrTw();
-	scanner->InitOcrEng();
+	Scanner::GetInstance()->InitOcrJpn();
+	Scanner::GetInstance()->InitOcrTw();
+	Scanner::GetInstance()->InitOcrEng();
 #pragma endregion
 #pragma region 初始化 DataManager
 	DataManager::GetInstance()->InitEventDataJson();
@@ -155,6 +149,12 @@ int main(array<String^>^ args)
 		break;
 	}
 #pragma endregion
+
+#pragma region 初始化字型
+	// 加載字型
+	AddFontResourceW(util::string2wstring(global::path::std_MochiyPopOne).c_str());
+#pragma endregion
+
 #pragma region 運行主要的 Form
 	Application::Run(umaForm); // 啟動主要的 Form (UmaForm)
 #pragma endregion

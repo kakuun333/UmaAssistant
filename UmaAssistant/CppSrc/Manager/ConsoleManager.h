@@ -3,15 +3,16 @@
 // STL
 #include <cstdio>
 
+// include
+#include <singleton_mutex.hpp>
 
 // Windows API
 #include <Windows.h>
 
-// include
-#include <singleton_mutex.hpp>
-
-
+// Util
 #include <Util/CharacterConvert.h>
+
+// Global
 #include <Global/form.h>
 #include <Global/path.h>
 

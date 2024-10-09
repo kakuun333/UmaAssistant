@@ -3,8 +3,15 @@
   <h1 align="center">UmaAssistant</h1>
 </p>
 
-## 文檔語言｜ドキュメント言語
-### [繁體中文](./README.md)｜[日本語](./README_jp.md)
+<h3 align="center">文檔語言｜ドキュメント言語</h3>  
+<h3 align="center">
+  <a href="./README.md">繁體中文</a>｜<a href="./README_jp.md">日本語</a>
+</h3>
+
+## コミュニティー
+著作者が運営している Discord サーバーがあります、このサーバーにソフトの最新情報を通知し、バグ報告を楽にするためにつくりました。  
+### **[Discord サーバーに入る](https://discord.gg/VQpYkWXYw2)**  
+![Discord Banner 2](https://discordapp.com/api/guilds/1180922259146281053/widget.png?style=banner2)  
 
 ## はじめに
 このソフトは自動で DMM 版とAndroidエミュレータのウィンドウからウマ娘のイベントを検出し、可能な選択肢効果を与え、効果中のスキル詳細を見えるようにします。
@@ -24,8 +31,8 @@
 ## 稼働環境
 
 ### OSスペック
-`Windows 10 64位元 22H2`  
-`Windows 11 64位元 23H2`  
+`Windows 10 64bit 22H2`  
+`Windows 11 64bit 23H2`  
 他の Windows バージョンは試したことないですが、もしかしたら実行できるかもしれません。
 > [!WARNING]
 > 32bit は実行できません。
@@ -130,11 +137,6 @@ A.
 ## バグ報告
 イベントが検出できないバグ、育成しているウマ娘が検出できないバグ或はプログラムの不具合がありましたら  
 [Issues](https://github.com/kakuun333/UmaAssistant/issues) に又は[コミュニティー](https://github.com/kakuun333/UmaAssistant/blob/main/README_jp.md#%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%83%86%E3%82%A3%E3%83%BC)に提出していただけると助かります。  
-
-## コミュニティー
-著作者が運営している Discord サーバーがあります、このサーバーにソフトの最新情報を通知し、バグ報告を楽にするためにつくりました。  
-**[Discord サーバーに入る](https://discord.gg/VQpYkWXYw2)**  
-![Discord Banner 2](https://discordapp.com/api/guilds/1180922259146281053/widget.png?style=banner2)  
 
 ## 免責
 - このソフトは`スキャン`を押した時に、使用者が指定した画面からスクリーンショットを撮ってゲーム内の文字を検出するに関わる作業がおこなわれます。これらに関する作業は個人情報などをとりません、作業を終えた直後にスクリーンショットが壊滅されます。  

@@ -5,12 +5,12 @@
 #include <fstream>
 #include <string>
 
+// include
+#include <singleton_mutex.hpp>
+
 // 3rdparty
 #include <nlohmann/json.hpp>
 using json = nlohmann::json;
-
-// include
-#include <singleton_mutex.hpp>
 
 #include <Util/CharacterConvert.h>
 

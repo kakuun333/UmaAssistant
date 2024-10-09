@@ -6,10 +6,12 @@
 // Windows API
 #include <Windows.h>
 
+//
+#include <Config.h>
+
 // include
 #include <singleton_mutex.hpp>
 
-#include <Config.h>
 
 class MouseManager : public SingletonMutex<MouseManager>
 {

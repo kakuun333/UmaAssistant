@@ -58,28 +58,8 @@ def dump_skill_data_jp():
         print(touchstart_listener);
 
         if touchstart_listener:
-            # 获取事件监听器的 handler 对象
             handler_object = touchstart_listener.get('handler', {})
             print("handler_object:", handler_object);
-
-            # if handler_object_id:
-            #     # 使用 Runtime.getProperties 获取 handler 对象的属性
-            #     properties_result = driver.execute_cdp_cmd('Runtime.getProperties', {'objectId': handler_object_id})
-            #     print("properties_result:", properties_result);
-
-            #     # 找到 [[Scopes]] 对象
-            #     scopes_object = next((prop for prop in properties_result.get('result', []) if prop.get('name') == '[[Scopes]]'), None)
-
-            #     print("scopes_object:", scopes_object);
-            #     if scopes_object:
-            #         # 获取 [[Scopes]] 中的 [1] 中的 URL 属性
-            #         url_property = next((prop for prop in scopes_object.get('value', {}).get('objectId', {}).get('result', []) if prop.get('name') == '1'), None)
-
-            #         if url_property:
-            #             url = url_property.get('value', {}).get('value')
-            #             print(url)
-
-
 
         print("已執行！")
         time.sleep(20);

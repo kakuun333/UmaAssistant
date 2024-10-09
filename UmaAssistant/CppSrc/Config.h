@@ -4,26 +4,29 @@
 #include <map>
 #include <string>
 
-// 3rdparty
-#include <nlohmann/json.hpp>
-using json = nlohmann::json;
-
+// Enum
 #include <Enum/GameServerType.h>
 #include <Enum/GameWindowType.h>
 #include <Enum/SoftwareLanguageType.h>
 #include <Enum/JpServerLangType.h>
+
+// Manager
 #include <Manager/FileManager.h>
 #include <Manager/GameWindowManager.h>
 
 // include
 #include <singleton_mutex.hpp>
 
+// 3rdparty
+#include <nlohmann/json.hpp>
+using json = nlohmann::json;
+
 constexpr inline int DEFAULT_SCAN_INTERVAL = 100;
 const std::string DEFAULT_LOCAL_SERVER_PORT = "58541";
 const std::string DEFAULT_PREVIOUS_CURRENT_CHARACTER_NAME = "DEFAULT_PREVIOUS_CURRENT_CHARACTER_NAME";
 
-// global
-#include "../global/path.h"
+// Global
+#include <Global/path.h>
 
 class Config : public SingletonMutex<Config>
 {

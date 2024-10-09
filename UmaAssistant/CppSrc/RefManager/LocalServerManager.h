@@ -1,9 +1,10 @@
 ﻿#pragma once
 
+// Enum
 #include <Enum/FileType.h>
 #include <Enum/FilePathType.h>
 
-// global
+// Global
 #include <Global/form.h>
 #include <Global/path.h>
 

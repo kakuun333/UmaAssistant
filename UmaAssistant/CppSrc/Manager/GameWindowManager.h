@@ -10,16 +10,23 @@
 // MS
 #include <Windows.h>
 
+// Enum
+#include <Enum/GameWindowType.h>
+#include <Enum/SoftwareLanguageType.h>
+
+// Util
+#include <Util/FormControl.h>
+
+
+#include <Config.h>
+
+// Manager
+#include <Manager/DataManager.h>
+
 // include
 #include <singleton_mutex.hpp>
 
-
-
-#include <Enum/GameWindowType.h>
-#include <Enum/SoftwareLanguageType.h>
-#include <Util/FormControl.h>
-#include <Manager/DataManager.h>
-#include <Config.h>
+// Global
 #include <Global/form.h>
 
 #using "CSharpDLL/UmaCSharpLibrary.dll"

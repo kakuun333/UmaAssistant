@@ -9,11 +9,14 @@
 // opencv
 #include <opencv2/opencv.hpp>
 
-
+// Enum
 #include <Enum/ImageType.h>
-#include <Manager/GameWindowManager.h>
+
 #include <Config.h>
 #include <UmaLog.h>
+
+// Manager
+#include <Manager/GameWindowManager.h>
 
 using namespace System;
 using namespace System::Drawing;
