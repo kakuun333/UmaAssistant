@@ -8,6 +8,19 @@
   <a href="./README.md">繁體中文</a>｜<a href="./README_jp.md">日本語</a>
 </h3>
 
+## 他のバージョン
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0abd0def-a6b6-46ac-ba4f-05d8e8c55341" width="250" height="250" />
+</p>
+<p align="center">
+  <a href="https://apps.microsoft.com/detail/9NWC1TLJ59JS">
+  	<img src="https://github.com/user-attachments/assets/56a722d2-be62-41ae-b441-5ef1a91b0a86" width="200" height="60"/>
+  </a>
+  <a href="https://play.google.com/store/apps/details?id=com.kakuun.umaassistant">
+  	<img src="https://github.com/user-attachments/assets/dff93ca3-c3b2-48eb-bf78-0b91690b6534" width="200" height="60"/>
+  </a>
+</p>
+
 ## コミュニティー
 著作者が運営している Discord サーバーがあります、このサーバーにソフトの最新情報を通知し、バグ報告を楽にするためにつくりました。  
 ### **[Discord サーバーに入る](https://discord.gg/VQpYkWXYw2)**  
